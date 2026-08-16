@@ -17,7 +17,7 @@
 
   Usage:
     clj -M -m nemo-words.ipa <word> [<word> ...]"
-  (:require [clojure.java.io :as io]
+  (:require [nemo-words.ioutil :as ioutil]
             [nemo-words.strutil :as strutil]))
 
 ;; --------------------------------------------------------- ARPABET -> IPA (US)
@@ -57,7 +57,7 @@
 
 ;; ------------------------------------------------------------- source loaders
 (defn- resource-reader [path]
-  (some-> (io/resource path) io/reader))
+  (some-> (ioutil/resource-io path) ioutil/reader-io))
 
 (defn- strip-slashes [s]
   (strutil/replace-str s #"^/+|/+$" ""))
