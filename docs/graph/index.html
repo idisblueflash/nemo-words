@@ -227,6 +227,8 @@ const ALL_CATEGORIES = [
   { name: 'PrivateFunction', color: '#9a95d6' },
   { name: 'Data', color: '#d8c25a' },
   { name: 'PrivateData', color: '#c2ac4c' },
+  { name: 'Multimethod', color: '#d99a4e' },
+  { name: 'PrivateMultimethod', color: '#b8793e' },
   { name: 'EntryPoint', color: '#c85c5c' },
   { name: 'External', color: '#9a9a9a' },
 ];
@@ -345,7 +347,7 @@ function renderGraph(graph) {
     ...graph.nodes.map((n) => ({
       data: {
         id: n.qid, qid: n.qid, ns: n.ns, name: n.name, form: n.form,
-        category: n.category, docstring: n.docstring, layer: n.layer,
+        category: n.category, docstring: n.docstring, layer: n.layer, methods: n.methods,
         color: n.color, editable: isEditable(n), markable: isMarkable(n),
         done: !!doneState[n.qid],
         label: n.category === 'External' ? n.name : n.name,
@@ -515,6 +517,7 @@ function showPanel(data) {
       </label>` : ''}
     </div>
     <div class="badge">${escapeHtml(data.category)}${data.form ? ' · ' + escapeHtml(data.form) : ''}</div>
+    ${data.methods && data.methods.length ? `<div class="badge">dispatches: ${data.methods.map(escapeHtml).join(', ')}</div>` : ''}
     <div class="doc ${data.docstring ? '' : 'none'}">${data.docstring ? escapeHtml(data.docstring) : '(no docstring)'}</div>
   `;
   const btn = document.getElementById('panel-rename-btn');

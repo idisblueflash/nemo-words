@@ -62,11 +62,16 @@ const CATEGORY_COLOR = {
   PrivateFunction: '#9a95d6',
   Data: '#d8c25a',
   PrivateData: '#c2ac4c',
+  Multimethod: '#d99a4e',
+  PrivateMultimethod: '#b8793e',
   EntryPoint: '#c85c5c',
   External: '#9a9a9a',
 };
 
-const DEF_START_RE = /^\((defn-|defn|def)\s+(?:\^\S+\s+|\^\{[^}]*\}\s+)*([A-Za-z0-9_\-!?*<>=.+]+)/gm;
+// defmethod forms don't get their own node -- each one's body is folded
+// into its defmulti's node (same name), same as gen-dgml.sh. Assumes the
+// defmulti appears before its defmethods in source order.
+const DEF_START_RE = /^\((defmulti|defmethod|defn-|defn|def)\s+(?:\^\S+\s+|\^\{[^}]*\}\s+)*([A-Za-z0-9_\-!?*<>=.+]+)/gm;
 
 // Scans src/nemo_words/*.clj fresh from disk every call -- small codebase,
 // no caching needed, and it guarantees /api/graph and /api/rename never
@@ -111,13 +116,28 @@ function scanCodebase() {
       const end = i < defs.length - 1 ? defs[i + 1].start : content.length;
       let body = content.slice(d.start, end);
       const qid = `${ns}/${d.name}`;
+
+      if (d.form === 'defmethod') {
+        // Fold this method's body into its defmulti's node (same qid)
+        // instead of creating a separate node.
+        const existing = nodeByQid.get(qid);
+        if (existing) {
+          existing.body += '\n' + body;
+          const dispatchMatch = body.match(/^\(defmethod\s+\S+\s+([^\s)]+)/);
+          if (dispatchMatch) existing.methods.push(dispatchMatch[1]);
+        }
+        continue;
+      }
+
       const isPrivate = d.form === 'defn-' || /^\([\w-]+\s+\^:private\b/.test(body);
       const category = d.name === '-main'
         ? 'EntryPoint'
-        : d.form.startsWith('defn')
-          ? (isPrivate ? 'PrivateFunction' : 'Function')
-          : (isPrivate ? 'PrivateData' : 'Data');
-      const docSpan = d.form.startsWith('defn') ? parseDocstring(content, d.end) : null;
+        : d.form === 'defmulti'
+          ? (isPrivate ? 'PrivateMultimethod' : 'Multimethod')
+          : d.form.startsWith('defn')
+            ? (isPrivate ? 'PrivateFunction' : 'Function')
+            : (isPrivate ? 'PrivateData' : 'Data');
+      const docSpan = (d.form.startsWith('defn') || d.form === 'defmulti') ? parseDocstring(content, d.end) : null;
       const docstring = docSpan ? docSpan.text : null;
       // Blank out the docstring so it isn't scanned for calls below --
       // example code in a docstring would otherwise produce phantom edges.
@@ -131,7 +151,7 @@ function scanCodebase() {
       // strutil adapter namespace is L1, everything else local is L2.
       const layer = d.name === '-main' ? 3 : ns.endsWith('.strutil') ? 1 : 2;
 
-      nodeByQid.set(qid, { qid, ns, name: d.name, form: d.form, category, docstring, layer, body });
+      nodeByQid.set(qid, { qid, ns, name: d.name, form: d.form, category, docstring, layer, body, methods: [] });
       nsOrder.get(ns).push(qid);
     }
   }
