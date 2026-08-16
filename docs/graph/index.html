@@ -81,6 +81,11 @@
   }
   .panel .rename-btn:hover { border-color: var(--teal); }
   .panel .rename-btn[disabled] { opacity: 0.4; cursor: default; }
+  .panel .done-toggle {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    font-family: var(--font-mono); font-size: 0.72rem; color: var(--moss); cursor: pointer;
+  }
+  .panel .done-toggle input { cursor: pointer; }
   .panel .badge {
     display: inline-block; font-family: var(--font-mono); font-size: 0.68rem;
     padding: 0.1rem 0.5rem; border-radius: 999px; margin-bottom: 0.9rem;
@@ -114,7 +119,7 @@
 
 <header>
   <h1>src/nemo_words/ — dependency graph</h1>
-  <span class="hint">click a node for its docstring · double-click (or the panel's Rename button) to rename — rewrites the source on disk</span>
+  <span class="hint">click a node for its docstring · double-click (or the panel's Rename button) to rename — rewrites the source on disk · right-click (or the panel's done checkbox) to mark done</span>
   <span class="spacer"></span>
   <button id="refresh">Rescan</button>
   <span id="status"></span>
@@ -160,6 +165,28 @@ function persistSavedPositions() {
 
 const savedPositions = loadSavedPositions(); // qid -> { x, y }, overrides computeLayout
 
+const DONE_KEY = 'nemo-graph-done-nodes';
+
+function loadDoneState() {
+  try {
+    return JSON.parse(localStorage.getItem(DONE_KEY)) || {};
+  } catch {
+    return {};
+  }
+}
+
+function persistDoneState() {
+  localStorage.setItem(DONE_KEY, JSON.stringify(doneState));
+}
+
+const doneState = loadDoneState(); // qid -> true, marks a def as done editing
+
+const DONE_BADGE_SVG = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'>
+  <circle cx='8' cy='8' r='7' fill='#2f6f68' stroke='#ffffff' stroke-width='1.4'/>
+  <path d='M4.6 8.4l2.2 2.2 4.6-5' fill='none' stroke='#ffffff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/>
+</svg>`;
+const DONE_BADGE_URL = 'data:image/svg+xml,' + encodeURIComponent(DONE_BADGE_SVG);
+
 const statusEl = document.getElementById('status');
 const panelEl = document.getElementById('panel');
 const bandsEl = document.getElementById('bands');
@@ -171,6 +198,10 @@ function setStatus(text, kind) {
 
 function isEditable(node) {
   return node.category !== 'External' && node.name !== '-main';
+}
+
+function isMarkable(node) {
+  return node.category !== 'External';
 }
 
 function computeLayout(nodes) {
@@ -203,7 +234,8 @@ function renderGraph(graph) {
       data: {
         id: n.qid, qid: n.qid, ns: n.ns, name: n.name, form: n.form,
         category: n.category, docstring: n.docstring, layer: n.layer,
-        color: n.color, editable: isEditable(n),
+        color: n.color, editable: isEditable(n), markable: isMarkable(n),
+        done: !!doneState[n.qid],
         label: n.category === 'External' ? n.name : n.name,
       },
       position: positions.get(n.qid),
@@ -243,6 +275,20 @@ function renderGraph(graph) {
         style: { 'border-width': 2, 'border-color': '#8a2f2a' },
       },
       {
+        selector: 'node[?done]',
+        style: {
+          'background-image': DONE_BADGE_URL,
+          'background-width': '15px',
+          'background-height': '15px',
+          'background-position-x': '100%',
+          'background-position-y': '0%',
+          'background-offset-x': 3,
+          'background-offset-y': -6,
+          'background-clip': 'none',
+          'background-repeat': 'no-repeat',
+        },
+      },
+      {
         selector: 'node:selected',
         style: { 'border-width': 3, 'border-color': '#2f6f68' },
       },
@@ -271,6 +317,13 @@ function renderGraph(graph) {
   cy.on('tap', 'node', (evt) => showPanel(evt.target.data()));
   cy.on('tap', (evt) => { if (evt.target === cy) clearPanel(); });
   cy.on('dbltap', 'node', (evt) => beginCanvasRename(evt.target));
+  cy.on('cxttap', 'node', (evt) => {
+    const n = evt.target;
+    if (!n.data('markable')) return;
+    const nowDone = !n.data('done');
+    setDone(n.data('qid'), nowDone);
+    if (selectedQid === n.data('qid')) showPanel(n.data());
+  });
   cy.on('dragfree', 'node', (evt) => {
     const n = evt.target;
     savedPositions[n.data('qid')] = { x: n.position('x'), y: n.position('y') };
@@ -333,11 +386,16 @@ function clearPanel() {
 function showPanel(data) {
   selectedQid = data.qid;
   const editable = data.editable;
+  const markable = data.markable;
   panelEl.innerHTML = `
     <div class="qid">${escapeHtml(data.qid)}</div>
     <div class="name-row">
       <span class="name" id="panel-name">${escapeHtml(data.name)}</span>
       <button class="rename-btn" id="panel-rename-btn" ${editable ? '' : 'disabled title="not editable"'}>rename</button>
+      ${markable ? `
+      <label class="done-toggle" title="mark as done">
+        <input type="checkbox" id="panel-done-checkbox" ${data.done ? 'checked' : ''}> done
+      </label>` : ''}
     </div>
     <div class="badge">${escapeHtml(data.category)}${data.form ? ' · ' + escapeHtml(data.form) : ''}</div>
     <div class="doc ${data.docstring ? '' : 'none'}">${data.docstring ? escapeHtml(data.docstring) : '(no docstring)'}</div>
@@ -345,6 +403,23 @@ function showPanel(data) {
   const btn = document.getElementById('panel-rename-btn');
   if (btn && editable) {
     btn.addEventListener('click', () => beginPanelRename(data));
+  }
+  const checkbox = document.getElementById('panel-done-checkbox');
+  if (checkbox) {
+    checkbox.addEventListener('change', () => setDone(data.qid, checkbox.checked));
+  }
+}
+
+function setDone(qid, done) {
+  if (done) doneState[qid] = true;
+  else delete doneState[qid];
+  persistDoneState();
+  if (cy) {
+    const n = cy.getElementById(qid);
+    if (n.length) {
+      n.data('done', done);
+      cy.style().update();
+    }
   }
 }
 
@@ -418,6 +493,11 @@ async function submitRename(qid, newName) {
       savedPositions[selectedQid] = savedPositions[qid];
       delete savedPositions[qid];
       persistSavedPositions();
+    }
+    if (doneState[qid]) {
+      doneState[selectedQid] = doneState[qid];
+      delete doneState[qid];
+      persistDoneState();
     }
     setStatus(`renamed — wrote ${data.changedFiles.join(', ')}`, 'ok');
     renderGraph(data.graph);
