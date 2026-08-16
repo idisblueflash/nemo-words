@@ -1,11 +1,10 @@
 (ns nemo-words.ipa
-  "Cross-reference IPA lookup across four open US-English sources.
+  "Cross-reference IPA lookup across three open US-English sources.
 
   The point of cross-referencing: when several independent sources AGREE on a
   transcription you can trust it as a \"perfect match\" anchor; when they
   DISAGREE that is the signal to slow down and inspect (dialect variants,
-  careful vs. reduced forms, or a bad synthesis). No single source is right
-  for every word:
+  careful vs. reduced forms). No single source is right for every word:
 
     1. ipa-dict   data/en_US.txt            open-dict-data (Wiktionary-derived),
                                              full IPA WITH stress; thin on medical.
@@ -13,16 +12,12 @@
                                              coverage, lists variants, but NO stress.
     3. CMUdict    data/cmudict.dict         CMU, ARPABET->IPA here, HAS stress;
                                              thin on medical.
-    4. eSpeak NG  `espeak-ng` binary         rule-based generator, always answers
-                                             (good on Greco-Latin roots) — VERIFY.
 
-  Sources 1-3 are curated (human-checked); source 4 is synthesized and flagged.
+  All three sources are curated (human-checked).
 
   Usage:
-    clj -M -m nemo-words.ipa <word> [<word> ...]
-    clj -M -m nemo-words.ipa --no-espeak <word>  ; skip the generator, curated only"
+    clj -M -m nemo-words.ipa <word> [<word> ...]"
   (:require [clojure.java.io :as io]
-            [clojure.java.shell :as shell]
             [clojure.string :as str]))
 
 ;; --------------------------------------------------------- ARPABET -> IPA (US)
@@ -135,27 +130,6 @@
            dedupe-vals))
     {}))
 
-(defn- find-executable [names]
-  (some (fn [n]
-          (let [{:keys [exit out]} (shell/sh "which" n)]
-            (when (zero? exit)
-              (str/trim out))))
-        names))
-
-(defn- sh-with-timeout [timeout-ms & args]
-  (let [f (future (apply shell/sh args))
-        result (deref f timeout-ms ::timeout)]
-    (when-not (= result ::timeout)
-      result)))
-
-(defn espeak-ipa
-  "Rule-based IPA from eSpeak NG, or nil if the binary is unavailable."
-  [word]
-  (when-let [exe (find-executable ["espeak-ng" "espeak"])]
-    (when-let [{:keys [out]} (sh-with-timeout 10000 exe "-q" "--ipa" "-v" "en-us" word)]
-      (let [got (str/replace (str/trim out) #"\n" " ")]
-        (when (seq got) got)))))
-
 ;; ----------------------------------------------------------------------- main
 (defn- fmt
   ([variants] (fmt variants 3))
@@ -168,25 +142,16 @@
        (str (str/join "  " (map #(str "/" % "/") shown)) extra)))))
 
 (defn -main [& args]
-  (let [use-espeak? (not (some #{"--no-espeak"} args))
-        words (remove #{"--no-espeak"} args)]
+  (let [words args]
     (if (empty? words)
-      (println (str "Usage: clj -M -m nemo-words.ipa <word> [<word> ...]\n"
-                     "       clj -M -m nemo-words.ipa --no-espeak <word>"))
+      (println "Usage: clj -M -m nemo-words.ipa <word> [<word> ...]")
       (let [idict (load-ipa-dict)
             wiki (load-wikipron)
-            cmu (load-cmudict)
-            espeak-available? (boolean (find-executable ["espeak-ng" "espeak"]))]
+            cmu (load-cmudict)]
         (doseq [word words]
           (let [w (str/lower-case (str/trim word))]
             (println (str "\n\033[1m" word "\033[0m"))
             (println (str "  ipa-dict  : " (fmt (get idict w []))))
             (println (str "  wikipron  : " (fmt (get wiki w [])) "  \033[2m[no stress marks]\033[0m"))
-            (println (str "  cmudict   : " (fmt (get cmu w []))))
-            (when use-espeak?
-              (if espeak-available?
-                (let [e (espeak-ipa w)
-                      tail (if e (str "/" e "/") "\033[2m(no output)\033[0m")]
-                  (println (str "  espeak    : " tail "  \033[2m[rule-based — verify]\033[0m")))
-                (println "  espeak    : \033[2m(espeak-ng not installed: brew install espeak-ng)\033[0m")))))
+            (println (str "  cmudict   : " (fmt (get cmu w []))))))
         (println)))))
