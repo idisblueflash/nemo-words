@@ -227,14 +227,19 @@ function renderGraph(graph) {
       },
       {
         selector: 'edge',
+        // curve-style: 'bezier' silently fails to paint anything here (its
+        // control-point geometry appears to cache off stale zero-sized
+        // bounds from the very first, pre-layout style pass, the same class
+        // of bug the node-visibility fix above works around) -- 'straight'
+        // needs no control-point calc so it isn't affected.
         style: {
-          width: 1,
-          'line-color': '#9aa39c',
-          'target-arrow-color': '#9aa39c',
+          width: 1.5,
+          'line-color': '#8a958d',
+          'target-arrow-color': '#8a958d',
           'target-arrow-shape': 'triangle',
-          'arrow-scale': 0.7,
-          'curve-style': 'bezier',
-          opacity: 0.65,
+          'arrow-scale': 0.8,
+          'curve-style': 'straight',
+          opacity: 0.8,
         },
       },
     ],
@@ -253,8 +258,11 @@ function renderGraph(graph) {
   // even though later queries report a correct width. Forcing a full style
   // recompute here (after elements + fonts have settled) fixes it.
   cy.style().update();
-  cy.fit(undefined, 60);
-  positionBands(activeLayers);
+  requestAnimationFrame(() => {
+    cy.resize();
+    cy.fit(undefined, 60);
+    positionBands(activeLayers);
+  });
 
   if (selectedQid) {
     const n = cy.getElementById(selectedQid);
