@@ -1,0 +1,192 @@
+(ns nemo-words.ipa
+  "Cross-reference IPA lookup across four open US-English sources.
+
+  The point of cross-referencing: when several independent sources AGREE on a
+  transcription you can trust it as a \"perfect match\" anchor; when they
+  DISAGREE that is the signal to slow down and inspect (dialect variants,
+  careful vs. reduced forms, or a bad synthesis). No single source is right
+  for every word:
+
+    1. ipa-dict   data/en_US.txt            open-dict-data (Wiktionary-derived),
+                                             full IPA WITH stress; thin on medical.
+    2. WikiPron   data/wikipron_us_broad.tsv Wiktionary scrape — best rare/medical
+                                             coverage, lists variants, but NO stress.
+    3. CMUdict    data/cmudict.dict         CMU, ARPABET->IPA here, HAS stress;
+                                             thin on medical.
+    4. eSpeak NG  `espeak-ng` binary         rule-based generator, always answers
+                                             (good on Greco-Latin roots) — VERIFY.
+
+  Sources 1-3 are curated (human-checked); source 4 is synthesized and flagged.
+
+  Usage:
+    clj -M -m nemo-words.ipa <word> [<word> ...]
+    clj -M -m nemo-words.ipa --no-espeak <word>  ; skip the generator, curated only"
+  (:require [clojure.java.io :as io]
+            [clojure.java.shell :as shell]
+            [clojure.string :as str]))
+
+;; --------------------------------------------------------- ARPABET -> IPA (US)
+;; Base phoneme map. Vowels that carry an ARPABET stress digit are handled in
+;; arpabet->ipa so we can (a) render ER0 as ɚ vs ER1/2 as ɝ, (b) render AH0 as
+;; the schwa ə, and (c) place the IPA stress mark before the stressed vowel.
+(def ^:private arpa
+  {"AA" "ɑ" "AE" "æ" "AH" "ʌ" "AO" "ɔ" "AW" "aʊ" "AY" "aɪ"
+   "B" "b" "CH" "tʃ" "D" "d" "DH" "ð" "EH" "ɛ" "ER" "ɝ"
+   "EY" "eɪ" "F" "f" "G" "ɡ" "HH" "h" "IH" "ɪ" "IY" "i"
+   "JH" "dʒ" "K" "k" "L" "l" "M" "m" "N" "n" "NG" "ŋ"
+   "OW" "oʊ" "OY" "ɔɪ" "P" "p" "R" "ɹ" "S" "s" "SH" "ʃ"
+   "T" "t" "TH" "θ" "UH" "ʊ" "UW" "u" "V" "v" "W" "w"
+   "Y" "j" "Z" "z" "ZH" "ʒ"})
+
+(def ^:private vowel-arpa
+  #{"AA" "AE" "AH" "AO" "AW" "AY" "EH" "ER"
+    "EY" "IH" "IY" "OW" "OY" "UH" "UW"})
+
+(defn arpabet->ipa
+  "['F' 'L' 'IH0' 'B' ...] -> IPA string with stress marks placed before the
+  stressed vowel. ARPABET stress digit: 1=primary (ˈ), 2=secondary (ˌ), 0=none."
+  [tokens]
+  (apply str
+         (for [tok tokens
+               :let [has-digit? (and (seq tok) (contains? #{\0 \1 \2} (last tok)))
+                     base (if has-digit? (subs tok 0 (dec (count tok))) tok)
+                     digit (when has-digit? (str (last tok)))]]
+           (if (and has-digit? (contains? vowel-arpa base))
+             (cond
+               (and (= base "AH") (= digit "0")) "ə"
+               (and (= base "ER") (= digit "0")) "ɚ"
+               (= digit "1") (str "ˈ" (get arpa base base))
+               (= digit "2") (str "ˌ" (get arpa base base))
+               :else (get arpa base base))
+             (get arpa base base)))))
+
+;; ------------------------------------------------------------- source loaders
+(defn- resource-reader [path]
+  (some-> (io/resource path) io/reader))
+
+(defn- strip-slashes [s]
+  (str/replace s #"^/+|/+$" ""))
+
+(defn- add-variants [acc word variants]
+  (if (and (seq word) (seq variants))
+    (update acc word (fnil into []) variants)
+    acc))
+
+(defn- dedupe-vals [m]
+  (into {} (for [[k v] m] [k (vec (distinct v))])))
+
+(defn load-ipa-dict
+  "word -> [variant, ...] (full IPA, slashes stripped, stress kept)."
+  []
+  (if-let [rdr (resource-reader "data/en_US.txt")]
+    (with-open [r rdr]
+      (->> (line-seq r)
+           (reduce
+            (fn [acc line]
+              (let [parts (str/split line #"\t" 2)]
+                (if (< (count parts) 2)
+                  acc
+                  (let [word (str/lower-case (str/trim (first parts)))
+                        variants (->> (str/split (second parts) #",")
+                                      (map #(strip-slashes (str/trim %)))
+                                      (remove str/blank?))]
+                    (add-variants acc word variants)))))
+            {})
+           dedupe-vals))
+    {}))
+
+(defn load-wikipron
+  "word -> [variant, ...]. Source is space-separated phonemes, NO stress; we
+  join them into a compact string. Multiple lines per word = variants."
+  []
+  (if-let [rdr (resource-reader "data/wikipron_us_broad.tsv")]
+    (with-open [r rdr]
+      (->> (line-seq r)
+           (reduce
+            (fn [acc line]
+              (let [parts (str/split line #"\t" 2)]
+                (if (< (count parts) 2)
+                  acc
+                  (let [word (str/lower-case (str/trim (first parts)))
+                        ipa (apply str (str/split (str/trim (second parts)) #"\s+"))]
+                    (add-variants acc word (when (seq ipa) [ipa]))))))
+            {})
+           dedupe-vals))
+    {}))
+
+(defn load-cmudict
+  "word -> [IPA variant, ...], converted from ARPABET. Variant markers like
+  'word(2)' are folded into the base word."
+  []
+  (if-let [rdr (resource-reader "data/cmudict.dict")]
+    (with-open [r rdr]
+      (->> (line-seq r)
+           (reduce
+            (fn [acc raw-line]
+              (let [line (str/trim (first (str/split raw-line #"#" 2)))]
+                (if (str/blank? line)
+                  acc
+                  (let [parts (str/split line #"\s+")
+                        head (first parts)
+                        tokens (rest parts)
+                        word (str/lower-case (str/trim (first (str/split head #"\(" 2))))]
+                    (add-variants acc word (when (seq tokens) [(arpabet->ipa tokens)]))))))
+            {})
+           dedupe-vals))
+    {}))
+
+(defn- find-executable [names]
+  (some (fn [n]
+          (let [{:keys [exit out]} (shell/sh "which" n)]
+            (when (zero? exit)
+              (str/trim out))))
+        names))
+
+(defn- sh-with-timeout [timeout-ms & args]
+  (let [f (future (apply shell/sh args))
+        result (deref f timeout-ms ::timeout)]
+    (when-not (= result ::timeout)
+      result)))
+
+(defn espeak-ipa
+  "Rule-based IPA from eSpeak NG, or nil if the binary is unavailable."
+  [word]
+  (when-let [exe (find-executable ["espeak-ng" "espeak"])]
+    (when-let [{:keys [out]} (sh-with-timeout 10000 exe "-q" "--ipa" "-v" "en-us" word)]
+      (let [got (str/replace (str/trim out) #"\n" " ")]
+        (when (seq got) got)))))
+
+;; ----------------------------------------------------------------------- main
+(defn- fmt
+  ([variants] (fmt variants 3))
+  ([variants cap]
+   (if (empty? variants)
+     "\033[2m(no entry)\033[0m"
+     (let [shown (take cap variants)
+           extra (when (> (count variants) cap)
+                   (str "  (+" (- (count variants) cap) " more)"))]
+       (str (str/join "  " (map #(str "/" % "/") shown)) extra)))))
+
+(defn -main [& args]
+  (let [use-espeak? (not (some #{"--no-espeak"} args))
+        words (remove #{"--no-espeak"} args)]
+    (if (empty? words)
+      (println (str "Usage: clj -M -m nemo-words.ipa <word> [<word> ...]\n"
+                     "       clj -M -m nemo-words.ipa --no-espeak <word>"))
+      (let [idict (load-ipa-dict)
+            wiki (load-wikipron)
+            cmu (load-cmudict)
+            espeak-available? (boolean (find-executable ["espeak-ng" "espeak"]))]
+        (doseq [word words]
+          (let [w (str/lower-case (str/trim word))]
+            (println (str "\n\033[1m" word "\033[0m"))
+            (println (str "  ipa-dict  : " (fmt (get idict w []))))
+            (println (str "  wikipron  : " (fmt (get wiki w [])) "  \033[2m[no stress marks]\033[0m"))
+            (println (str "  cmudict   : " (fmt (get cmu w []))))
+            (when use-espeak?
+              (if espeak-available?
+                (let [e (espeak-ipa w)
+                      tail (if e (str "/" e "/") "\033[2m(no output)\033[0m")]
+                  (println (str "  espeak    : " tail "  \033[2m[rule-based — verify]\033[0m")))
+                (println "  espeak    : \033[2m(espeak-ng not installed: brew install espeak-ng)\033[0m")))))
+        (println)))))
