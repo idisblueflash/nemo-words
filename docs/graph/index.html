@@ -49,6 +49,41 @@
     padding: 0.35rem 0.7rem; cursor: pointer;
   }
   header button:hover { border-color: var(--teal); color: var(--teal); }
+
+  .filter-wrap { position: relative; }
+  .filter-wrap > summary {
+    font-family: var(--font-mono); font-size: 0.78rem; background: var(--surface);
+    border: 1px solid var(--line); color: var(--ink); border-radius: 6px;
+    padding: 0.35rem 0.7rem; cursor: pointer; list-style: none;
+  }
+  .filter-wrap > summary::-webkit-details-marker { display: none; }
+  .filter-wrap > summary:hover { border-color: var(--teal); color: var(--teal); }
+  .filter-wrap[open] > summary { border-color: var(--teal); color: var(--teal); }
+  .filter-panel {
+    position: absolute; top: calc(100% + 6px); right: 0; z-index: 20;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 0.6rem 0.8rem; min-width: 12rem; box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  }
+  .filter-panel .filter-row {
+    display: flex; align-items: center; gap: 0.45rem; padding: 0.2rem 0;
+    font-family: var(--font-mono); font-size: 0.76rem; cursor: pointer;
+  }
+  .filter-panel .filter-row input { cursor: pointer; }
+  .filter-panel .swatch {
+    width: 0.65rem; height: 0.65rem; border-radius: 50%; flex-shrink: 0;
+    border: 1px solid rgba(0,0,0,0.15);
+  }
+  .filter-panel .filter-actions {
+    display: flex; gap: 0.5rem; margin-top: 0.4rem; padding-top: 0.4rem;
+    border-top: 1px solid var(--line);
+  }
+  .filter-panel .filter-actions button {
+    font-family: var(--font-mono); font-size: 0.7rem; background: none;
+    border: 1px solid var(--line); color: var(--moss); border-radius: 5px;
+    padding: 0.15rem 0.5rem; cursor: pointer;
+  }
+  .filter-panel .filter-actions button:hover { border-color: var(--teal); color: var(--teal); }
+
   #status { font-family: var(--font-mono); font-size: 0.78rem; color: var(--moss); min-width: 14rem; text-align: right; }
   #status.error { color: var(--danger); }
   #status.ok { color: var(--teal); }
@@ -121,6 +156,10 @@
   <h1>src/nemo_words/ — dependency graph</h1>
   <span class="hint">click a node for its docstring · double-click (or the panel's Rename button) to rename — rewrites the source on disk · right-click (or the panel's done checkbox) to mark done</span>
   <span class="spacer"></span>
+  <details class="filter-wrap" id="filter-wrap">
+    <summary id="filter-summary">Filter</summary>
+    <div class="filter-panel" id="filter-panel"></div>
+  </details>
   <button id="refresh">Rescan</button>
   <span id="status"></span>
 </header>
@@ -181,6 +220,33 @@ function persistDoneState() {
 
 const doneState = loadDoneState(); // qid -> true, marks a def as done editing
 
+// Fixed set, mirrors CATEGORY_COLOR in scripts/graph-server.js -- kept in
+// sync by hand since the front end has no access to the server's map.
+const ALL_CATEGORIES = [
+  { name: 'Function', color: '#7fb379' },
+  { name: 'PrivateFunction', color: '#9a95d6' },
+  { name: 'Data', color: '#d8c25a' },
+  { name: 'PrivateData', color: '#c2ac4c' },
+  { name: 'EntryPoint', color: '#c85c5c' },
+  { name: 'External', color: '#9a9a9a' },
+];
+
+const FILTER_KEY = 'nemo-graph-hidden-categories';
+
+function loadHiddenCategories() {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(FILTER_KEY)) || []);
+  } catch {
+    return new Set();
+  }
+}
+
+function persistHiddenCategories() {
+  localStorage.setItem(FILTER_KEY, JSON.stringify([...hiddenCategories]));
+}
+
+const hiddenCategories = loadHiddenCategories(); // Set<category>, hides every node of that category
+
 const DONE_BADGE_SVG = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'>
   <circle cx='8' cy='8' r='7' fill='#2f6f68' stroke='#ffffff' stroke-width='1.4'/>
   <path d='M4.6 8.4l2.2 2.2 4.6-5' fill='none' stroke='#ffffff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/>
@@ -190,10 +256,56 @@ const DONE_BADGE_URL = 'data:image/svg+xml,' + encodeURIComponent(DONE_BADGE_SVG
 const statusEl = document.getElementById('status');
 const panelEl = document.getElementById('panel');
 const bandsEl = document.getElementById('bands');
+const filterWrapEl = document.getElementById('filter-wrap');
+const filterPanelEl = document.getElementById('filter-panel');
 
 function setStatus(text, kind) {
   statusEl.textContent = text;
   statusEl.className = kind || '';
+}
+
+function renderFilterPanel() {
+  filterPanelEl.innerHTML = ALL_CATEGORIES.map(({ name, color }) => `
+    <label class="filter-row">
+      <input type="checkbox" data-category="${name}" ${hiddenCategories.has(name) ? '' : 'checked'}>
+      <span class="swatch" style="background:${color}"></span>
+      ${name}
+    </label>
+  `).join('') + `
+    <div class="filter-actions">
+      <button id="filter-show-all">show all</button>
+      <button id="filter-hide-all">hide all</button>
+    </div>
+  `;
+  filterPanelEl.querySelectorAll('input[type="checkbox"]').forEach((input) => {
+    input.addEventListener('change', () => {
+      setCategoryHidden(input.dataset.category, !input.checked);
+    });
+  });
+  document.getElementById('filter-show-all').addEventListener('click', () => setAllCategoriesHidden(false));
+  document.getElementById('filter-hide-all').addEventListener('click', () => setAllCategoriesHidden(true));
+}
+
+function applyCategoryVisibility() {
+  if (!cy) return;
+  for (const { name } of ALL_CATEGORIES) {
+    cy.nodes(`[category = "${name}"]`).toggleClass('hidden-cat', hiddenCategories.has(name));
+  }
+}
+
+function setCategoryHidden(category, hidden) {
+  if (hidden) hiddenCategories.add(category);
+  else hiddenCategories.delete(category);
+  persistHiddenCategories();
+  applyCategoryVisibility();
+}
+
+function setAllCategoriesHidden(hidden) {
+  hiddenCategories.clear();
+  if (hidden) for (const { name } of ALL_CATEGORIES) hiddenCategories.add(name);
+  persistHiddenCategories();
+  renderFilterPanel();
+  applyCategoryVisibility();
 }
 
 function isEditable(node) {
@@ -238,6 +350,7 @@ function renderGraph(graph) {
         done: !!doneState[n.qid],
         label: n.category === 'External' ? n.name : n.name,
       },
+      classes: hiddenCategories.has(n.category) ? 'hidden-cat' : '',
       position: positions.get(n.qid),
     })),
     ...graph.edges
@@ -291,6 +404,10 @@ function renderGraph(graph) {
       {
         selector: 'node:selected',
         style: { 'border-width': 3, 'border-color': '#2f6f68' },
+      },
+      {
+        selector: 'node.hidden-cat',
+        style: { display: 'none' },
       },
       {
         selector: 'edge',
@@ -525,6 +642,10 @@ async function loadGraph() {
 }
 
 document.getElementById('refresh').addEventListener('click', loadGraph);
+document.addEventListener('click', (e) => {
+  if (filterWrapEl.open && !filterWrapEl.contains(e.target)) filterWrapEl.open = false;
+});
+renderFilterPanel();
 loadGraph();
 </script>
 </body>
