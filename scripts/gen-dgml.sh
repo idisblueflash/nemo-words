@@ -83,9 +83,9 @@ for my $file (@files) {
     }
     $ns_requires{$ns} = \%requires;
 
-    my @defs; # { start, form, name }
+    my @defs; # { start, head_end, form, name }
     while ($content =~ /^\((defn-|defn|def)\s+(?:\^\S+\s+|\^\{[^}]*\}\s+)*([A-Za-z0-9_\-!?*<>=.+]+)/mg) {
-        push @defs, { start => $-[0], form => $1, name => $2 };
+        push @defs, { start => $-[0], head_end => $+[0], form => $1, name => $2 };
     }
     next unless @defs;
 
@@ -94,6 +94,19 @@ for my $file (@files) {
         my $start   = $d->{start};
         my $end     = ($i < $#defs) ? $defs[$i + 1]{start} : length($content);
         my $body    = substr($content, $start, $end - $start);
+
+        # Blank out the docstring (if any) so it isn't scanned for calls --
+        # example code in a docstring would otherwise produce phantom edges.
+        if ($d->{form} =~ /^defn/) {
+            my $rel = $d->{head_end} - $start;
+            my $rest = substr($body, $rel);
+            if ($rest =~ /^(\s*)("(?:\\.|[^"\\])*")/) {
+                my $doc_start = $rel + length($1);
+                my $doc_len   = length($2);
+                substr($body, $doc_start, $doc_len) = ' ' x $doc_len;
+            }
+        }
+
         my $qid     = "$ns/$d->{name}";
         my $private = ($d->{form} eq 'defn-') || ($body =~ /^\([\w-]+\s+\^:private\b/);
         my $category =

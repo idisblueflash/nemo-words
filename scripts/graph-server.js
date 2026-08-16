@@ -40,6 +40,9 @@ function boundaryRegex(name) {
   return new RegExp(`(?<![${SYM_CLASS}])${escapeRegex(name)}(?![${SYM_CLASS}])`, 'g');
 }
 
+// Returns {text, start, end} for the docstring immediately following pos
+// (start/end span the whole literal, quotes included), or null if there
+// isn't one.
 function parseDocstring(content, pos) {
   let i = pos;
   while (i < content.length && /\s/.test(content[i])) i++;
@@ -51,7 +54,7 @@ function parseDocstring(content, pos) {
     buf += content[j];
     j++;
   }
-  return buf;
+  return { text: buf, start: i, end: j + 1 };
 }
 
 const CATEGORY_COLOR = {
@@ -106,7 +109,7 @@ function scanCodebase() {
     for (let i = 0; i < defs.length; i++) {
       const d = defs[i];
       const end = i < defs.length - 1 ? defs[i + 1].start : content.length;
-      const body = content.slice(d.start, end);
+      let body = content.slice(d.start, end);
       const qid = `${ns}/${d.name}`;
       const isPrivate = d.form === 'defn-' || /^\([\w-]+\s+\^:private\b/.test(body);
       const category = d.name === '-main'
@@ -114,7 +117,15 @@ function scanCodebase() {
         : d.form.startsWith('defn')
           ? (isPrivate ? 'PrivateFunction' : 'Function')
           : (isPrivate ? 'PrivateData' : 'Data');
-      const docstring = d.form.startsWith('defn') ? parseDocstring(content, d.end) : null;
+      const docSpan = d.form.startsWith('defn') ? parseDocstring(content, d.end) : null;
+      const docstring = docSpan ? docSpan.text : null;
+      // Blank out the docstring so it isn't scanned for calls below --
+      // example code in a docstring would otherwise produce phantom edges.
+      if (docSpan) {
+        const relStart = docSpan.start - d.start;
+        const relEnd = docSpan.end - d.start;
+        body = body.slice(0, relStart) + ' '.repeat(relEnd - relStart) + body.slice(relEnd);
+      }
       // Layer mirrors docs/layers.md's hand-drawn stratification, computed
       // rather than hand-set: -main is always the surface (L3), the
       // strutil adapter namespace is L1, everything else local is L2.
