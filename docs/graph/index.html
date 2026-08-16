@@ -39,6 +39,9 @@
     font-size: 1.05rem; margin: 0; font-weight: 600;
   }
   header .hint { font-size: 0.82rem; color: var(--moss); }
+  @media (max-width: 760px) {
+    header .hint { display: none; }
+  }
   header .spacer { flex: 1; }
   header button {
     font-family: var(--font-mono); font-size: 0.78rem; background: var(--surface);
@@ -50,8 +53,8 @@
   #status.error { color: var(--danger); }
   #status.ok { color: var(--teal); }
 
-  .stage { flex: 1; display: flex; min-height: 0; }
-  .cy-wrap { flex: 1; position: relative; min-width: 0; }
+  .stage { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+  .cy-wrap { flex: 1; position: relative; min-width: 0; min-height: 0; }
   #cy { position: absolute; inset: 0; }
 
   .band-line { position: absolute; left: 0; right: 0; border-top: 1px dashed var(--line); pointer-events: none; }
@@ -63,7 +66,8 @@
   }
 
   .panel {
-    width: 320px; flex-shrink: 0; border-left: 1px solid var(--line);
+    width: 100%; height: 220px; flex-shrink: 0; border-left: none;
+    border-top: 1px solid var(--line);
     background: var(--surface); padding: 1.25rem; overflow-y: auto;
   }
   .panel .empty { color: var(--moss); font-size: 0.9rem; }
@@ -140,6 +144,22 @@ const NODE_SPACING = 170;
 let cy = null;
 let selectedQid = null;
 
+const POSITIONS_KEY = 'nemo-graph-node-positions';
+
+function loadSavedPositions() {
+  try {
+    return JSON.parse(localStorage.getItem(POSITIONS_KEY)) || {};
+  } catch {
+    return {};
+  }
+}
+
+function persistSavedPositions() {
+  localStorage.setItem(POSITIONS_KEY, JSON.stringify(savedPositions));
+}
+
+const savedPositions = loadSavedPositions(); // qid -> { x, y }, overrides computeLayout
+
 const statusEl = document.getElementById('status');
 const panelEl = document.getElementById('panel');
 const bandsEl = document.getElementById('bands');
@@ -168,7 +188,8 @@ function computeLayout(nodes) {
     const arr = byLayer.get(layer);
     const totalWidth = (arr.length - 1) * NODE_SPACING;
     arr.forEach((n, i) => {
-      positions.set(n.qid, { x: i * NODE_SPACING - totalWidth / 2, y: bandIdx * BAND_HEIGHT });
+      const fallback = { x: i * NODE_SPACING - totalWidth / 2, y: bandIdx * BAND_HEIGHT };
+      positions.set(n.qid, savedPositions[n.qid] || fallback);
     });
   });
   return { positions, activeLayers };
@@ -250,6 +271,11 @@ function renderGraph(graph) {
   cy.on('tap', 'node', (evt) => showPanel(evt.target.data()));
   cy.on('tap', (evt) => { if (evt.target === cy) clearPanel(); });
   cy.on('dbltap', 'node', (evt) => beginCanvasRename(evt.target));
+  cy.on('dragfree', 'node', (evt) => {
+    const n = evt.target;
+    savedPositions[n.data('qid')] = { x: n.position('x'), y: n.position('y') };
+    persistSavedPositions();
+  });
   cy.on('render pan zoom', () => positionBands(activeLayers));
 
   // Nodes styled `width: 'label'` measure their text lazily; on the very
@@ -388,6 +414,11 @@ async function submitRename(qid, newName) {
       return;
     }
     selectedQid = `${qid.slice(0, qid.indexOf('/'))}/${newName}`;
+    if (savedPositions[qid]) {
+      savedPositions[selectedQid] = savedPositions[qid];
+      delete savedPositions[qid];
+      persistSavedPositions();
+    }
     setStatus(`renamed — wrote ${data.changedFiles.join(', ')}`, 'ok');
     renderGraph(data.graph);
   } catch (e) {
