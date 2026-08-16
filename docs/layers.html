@@ -1,0 +1,455 @@
+<title>src/nemo_words/ — a stratified reading</title>
+<style>
+  :root {
+    --stone: #eef1ec;
+    --surface: #ffffff;
+    --ink: #1e2420;
+    --moss: #5c6a60;
+    --ochre: #b8792e;
+    --teal: #2f6f68;
+    --line: #d3d8cf;
+
+    --band-l3: #ffffff;
+    --band-l2: #e6ece4;
+    --band-l1: #dbe6de;
+    --band-l0: #cfdcd2;
+
+    --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --font-body: Optima, Candara, "Noto Sans", "Segoe UI", ui-sans-serif, sans-serif;
+    --font-mono: ui-monospace, "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --stone: #141815;
+      --surface: #1a1f1b;
+      --ink: #e9ece6;
+      --moss: #93a196;
+      --ochre: #d99b4e;
+      --teal: #5fada4;
+      --line: #2a322c;
+
+      --band-l3: #1a1f1b;
+      --band-l2: #182420;
+      --band-l1: #152722;
+      --band-l0: #102420;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --stone: #141815;
+    --surface: #1a1f1b;
+    --ink: #e9ece6;
+    --moss: #93a196;
+    --ochre: #d99b4e;
+    --teal: #5fada4;
+    --line: #2a322c;
+
+    --band-l3: #1a1f1b;
+    --band-l2: #182420;
+    --band-l1: #152722;
+    --band-l0: #102420;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--stone);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 0.9rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    line-height: 1.15;
+    margin: 0 0 1rem;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+
+  .lede {
+    font-size: 1.05rem;
+    color: var(--moss);
+    max-width: 62ch;
+    margin: 0;
+  }
+
+  .lede code, p code, li code, td code {
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 0.05em 0.4em;
+    color: var(--teal);
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0 0 0.3rem;
+    color: var(--ink);
+  }
+
+  .section-note {
+    color: var(--moss);
+    font-size: 0.95rem;
+    margin: 0 0 1.5rem;
+    max-width: 60ch;
+  }
+
+  /* ---- cross-section diagram ---- */
+
+  .core-sample {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.5rem 1.5rem 1rem;
+    overflow-x: auto;
+  }
+
+  .core-sample svg {
+    width: 100%;
+    height: auto;
+    min-width: 640px;
+    display: block;
+  }
+
+  .band-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+  }
+
+  .node-title {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .node-sub {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+  }
+
+  .depth-tick {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+  }
+
+  /* ---- layer detail cards ---- */
+
+  .strata {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .stratum {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 1.25rem;
+    padding: 1.5rem 1.5rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .stratum:first-child { border-top: none; }
+
+  .stratum[data-layer="3"] { background: var(--band-l3); }
+  .stratum[data-layer="2"] { background: var(--band-l2); }
+  .stratum[data-layer="1"] { background: var(--band-l1); }
+  .stratum[data-layer="0"] { background: var(--band-l0); }
+
+  .stratum-index {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--moss);
+    padding-top: 0.2rem;
+  }
+
+  .stratum-index strong {
+    display: block;
+    font-size: 1.6rem;
+    color: var(--ink);
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .stratum-body h3 {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem;
+  }
+
+  .stratum-body p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--ink);
+    max-width: 62ch;
+  }
+
+  .stratum-body p + p { margin-top: 0.6rem; }
+
+  /* ---- dependency rule ---- */
+
+  .rule-block {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    overflow-x: auto;
+  }
+
+  .rule-line {
+    display: flex;
+    gap: 0.6rem;
+    align-items: baseline;
+    white-space: pre;
+    padding: 0.15rem 0;
+  }
+
+  .rule-line .arrow { color: var(--ochre); }
+  .rule-line .dep { color: var(--moss); }
+
+  .rule-block .caveat {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--moss);
+    white-space: normal;
+    margin-top: 0.9rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--line);
+  }
+
+  /* ---- gaps ---- */
+
+  .gaps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .gaps li {
+    position: relative;
+    padding-left: 1.4rem;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+
+  .gaps li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 0.7rem;
+    height: 2px;
+    background: var(--ochre);
+  }
+
+  .gaps code {
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    color: var(--teal);
+  }
+
+  footer {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--moss);
+    border-top: 1px solid var(--line);
+    padding-top: 1.25rem;
+  }
+
+  @media (max-width: 620px) {
+    .stratum { grid-template-columns: 1fr; gap: 0.4rem; }
+    .stratum-index strong { display: inline; margin-right: 0.5rem; }
+  }
+</style>
+
+<div class="page">
+
+  <header>
+    <p class="eyebrow">src/nemo_words/ · hand-drawn core sample, not dgml</p>
+    <h1>A stratified reading of the codebase</h1>
+    <p class="lede">
+      Three files, four layers. Bedrock at the bottom is the standard
+      library; everything above it is built to depend only on what's
+      beneath. This is a manual cross-section — cut through the actual
+      <code>:require</code> forms — kept separate from the auto-generated
+      <code>docs/nemo_words.dgml</code> call graph.
+    </p>
+  </header>
+
+  <section>
+    <h2>Cross-section</h2>
+    <p class="section-note">
+      Entry points sit at the surface, the standard library is bedrock.
+      Arrows run downhill, in the direction of dependency. The dashed line
+      is the one place a domain namespace reaches past its adapter, straight
+      to bedrock.
+    </p>
+
+    <div class="core-sample">
+      <svg viewBox="0 0 860 600" xmlns="http://www.w3.org/2000/svg" role="img"
+           aria-label="Layered cross-section of src/nemo_words: L3 entry points nemo-words.ipa/-main and nemo-words.core/-main at the top, L2 domain nemo-words.ipa, L1 adapter nemo-words.strutil, L0 external clojure.string and clojure.java.io at the bottom, connected by downward dependency arrows.">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="var(--ochre)"></path>
+          </marker>
+        </defs>
+
+        <!-- bands -->
+        <rect x="0" y="0" width="860" height="140" fill="var(--band-l3)"></rect>
+        <rect x="0" y="140" width="860" height="150" fill="var(--band-l2)"></rect>
+        <rect x="0" y="290" width="860" height="150" fill="var(--band-l1)"></rect>
+        <rect x="0" y="440" width="860" height="150" fill="var(--band-l0)"></rect>
+        <line x1="0" y1="140" x2="860" y2="140" stroke="var(--line)"></line>
+        <line x1="0" y1="290" x2="860" y2="290" stroke="var(--line)"></line>
+        <line x1="0" y1="440" x2="860" y2="440" stroke="var(--line)"></line>
+
+        <!-- depth ruler -->
+        <text x="18" y="34" class="band-label" fill="var(--moss)">L3 — entry points</text>
+        <text x="18" y="174" class="band-label" fill="var(--moss)">L2 — domain</text>
+        <text x="18" y="324" class="band-label" fill="var(--moss)">L1 — adapter</text>
+        <text x="18" y="474" class="band-label" fill="var(--moss)">L0 — external / stdlib</text>
+
+        <!-- L3 nodes -->
+        <rect x="60" y="55" width="230" height="56" rx="7" fill="var(--surface)" stroke="var(--line)"></rect>
+        <text x="175" y="80" text-anchor="middle" class="node-title" fill="var(--ink)">nemo-words.ipa</text>
+        <text x="175" y="97" text-anchor="middle" class="node-sub" fill="var(--moss)">/-main</text>
+
+        <rect x="570" y="55" width="230" height="56" rx="7" fill="var(--surface)" stroke="var(--line)" stroke-dasharray="3 3"></rect>
+        <text x="685" y="80" text-anchor="middle" class="node-title" fill="var(--ink)">nemo-words.core</text>
+        <text x="685" y="97" text-anchor="middle" class="node-sub" fill="var(--moss)">/-main · unwired</text>
+
+        <!-- L2 node -->
+        <rect x="330" y="197" width="200" height="56" rx="7" fill="var(--surface)" stroke="var(--line)"></rect>
+        <text x="430" y="222" text-anchor="middle" class="node-title" fill="var(--ink)">nemo-words.ipa</text>
+        <text x="430" y="239" text-anchor="middle" class="node-sub" fill="var(--moss)">arpabet→ipa · 3 loaders · fmt</text>
+
+        <!-- L1 node -->
+        <rect x="330" y="347" width="200" height="56" rx="7" fill="var(--surface)" stroke="var(--line)"></rect>
+        <text x="430" y="368" text-anchor="middle" class="node-title" fill="var(--ink)">nemo-words.strutil</text>
+        <text x="430" y="386" text-anchor="middle" class="node-sub" fill="var(--teal)">replace· trim· split· lower-case· blank?· join-str</text>
+
+        <!-- L0 nodes -->
+        <rect x="230" y="497" width="200" height="56" rx="7" fill="var(--stone)" stroke="var(--line)"></rect>
+        <text x="330" y="530" text-anchor="middle" class="node-title" fill="var(--moss)">clojure.string</text>
+
+        <rect x="470" y="497" width="200" height="56" rx="7" fill="var(--stone)" stroke="var(--line)"></rect>
+        <text x="570" y="530" text-anchor="middle" class="node-title" fill="var(--moss)">clojure.java.io</text>
+
+        <!-- edges -->
+        <!-- ipa/-main -> ipa (L3 -> L2) -->
+        <path d="M195,111 C210,150 300,170 355,197" fill="none" stroke="var(--ochre)" stroke-width="1.6" marker-end="url(#arrow)"></path>
+
+        <!-- ipa -> strutil (L2 -> L1) -->
+        <path d="M420,253 C412,280 412,320 420,347" fill="none" stroke="var(--ochre)" stroke-width="1.6" marker-end="url(#arrow)"></path>
+
+        <!-- strutil -> clojure.string (L1 -> L0) -->
+        <path d="M400,403 C380,430 355,460 340,497" fill="none" stroke="var(--ochre)" stroke-width="1.6" marker-end="url(#arrow)"></path>
+
+        <!-- ipa -> clojure.java.io (L2 -> L0, fault line, skips L1) -->
+        <path d="M480,253 C560,330 585,420 575,497" fill="none" stroke="var(--ochre)" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arrow)"></path>
+      </svg>
+    </div>
+  </section>
+
+  <section>
+    <h2>The four strata</h2>
+    <p class="section-note">Read bottom to top: each layer is built on the one beneath it, and knows nothing about the one above.</p>
+
+    <div class="strata">
+      <div class="stratum" data-layer="3">
+        <div class="stratum-index"><strong>L3</strong>entry<br>points</div>
+        <div class="stratum-body">
+          <h3>Entry points</h3>
+          <p><code>nemo-words.ipa/-main</code> parses word arguments, calls the L2 loaders, and prints. <code>nemo-words.core/-main</code> is the project scaffold's own "Hello" entry point — orchestration only, no business logic in either.</p>
+        </div>
+      </div>
+
+      <div class="stratum" data-layer="2">
+        <div class="stratum-index"><strong>L2</strong>domain</div>
+        <div class="stratum-body">
+          <h3>nemo-words.ipa</h3>
+          <p>ARPABET→IPA conversion (<code>arpabet->ipa</code>, <code>arpabet-phoneme->ipa</code>, <code>arpabet-vowels</code>), the three cross-referenced source loaders (<code>load-ipa-dict</code>, <code>load-wikipron</code>, <code>load-cmudict</code>), and output formatting (<code>fmt</code>).</p>
+          <p>Depends on L1 for every string operation, and reaches directly into L0's <code>clojure.java.io</code> for resource IO — the one place bedrock is touched outside the adapter layer.</p>
+        </div>
+      </div>
+
+      <div class="stratum" data-layer="1">
+        <div class="stratum-index"><strong>L1</strong>adapter</div>
+        <div class="stratum-body">
+          <h3>nemo-words.strutil</h3>
+          <p>Renames <code>clojure.string</code>'s call sites to a verb-<code>str</code> form — <code>replace-str</code>, <code>trim-str</code>, <code>split-str</code>, <code>lower-case-str</code>, <code>blank-str?</code>, <code>join-str</code>. Its only purpose is the naming seam: domain code depends on this namespace, never on the external lib directly.</p>
+        </div>
+      </div>
+
+      <div class="stratum" data-layer="0">
+        <div class="stratum-index"><strong>L0</strong>external<br>/ stdlib</div>
+        <div class="stratum-body">
+          <h3>clojure.string · clojure.java.io</h3>
+          <p>Not part of this project. Consumed only by L1, or directly by L2 where no adapter exists yet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Dependency rule</h2>
+    <p class="section-note">No upward or sideways edges: L1 never calls into L2 or L3, and L2 never calls <code>core.clj</code> or vice versa.</p>
+    <div class="rule-block">
+      <div class="rule-line"><span>strutil       (L1)</span><span class="arrow">-&gt;</span><span class="dep">clojure.string (L0)</span></div>
+      <div class="rule-line"><span>ipa           (L2)</span><span class="arrow">-&gt;</span><span class="dep">strutil (L1), clojure.java.io (L0)</span></div>
+      <div class="rule-line"><span>ipa/-main     (L3)</span><span class="arrow">-&gt;</span><span class="dep">ipa (L2)</span></div>
+      <div class="rule-line"><span>core/-main    (L3)</span><span class="arrow">-&gt;</span><span class="dep">nothing yet</span></div>
+      <p class="caveat">The <code>ipa (L2) -&gt; clojure.java.io (L0)</code> edge is the exception drawn as a dashed fault line above — it skips the adapter layer because no L1 IO wrapper exists yet.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Next core samples</h2>
+    <ul class="gaps">
+      <li><code>ipa.clj</code>'s <code>resource-reader</code> calls <code>clojure.java.io</code> straight from L2 — there's no L1 IO adapter (an <code>nemo-words.iolib</code>, say) mirroring what <code>strutil</code> does for <code>clojure.string</code>.</li>
+      <li><code>core.clj</code> is an unconnected scaffold: it doesn't call into the <code>ipa</code> domain, so it's a dangling L3 node with nothing beneath it.</li>
+    </ul>
+  </section>
+
+  <footer>
+    hand-authored — src/nemo_words/{core,ipa,strutil}.clj · see also docs/nemo_words.dgml (generated call graph)
+  </footer>
+
+</div>

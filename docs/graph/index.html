@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>src/nemo_words/ — dependency graph</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --stone: #eef1ec;
+    --surface: #ffffff;
+    --ink: #1e2420;
+    --moss: #5c6a60;
+    --ochre: #b8792e;
+    --teal: #2f6f68;
+    --line: #d3d8cf;
+    --danger: #b0453f;
+    --font-body: Optima, Candara, "Noto Sans", "Segoe UI", ui-sans-serif, sans-serif;
+    --font-mono: ui-monospace, "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --stone: #141815; --surface: #1a1f1b; --ink: #e9ece6;
+      --moss: #93a196; --ochre: #d99b4e; --teal: #5fada4; --line: #2a322c;
+      --danger: #e08b85;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: var(--stone); color: var(--ink); font-family: var(--font-body);
+    display: flex; flex-direction: column; -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    padding: 0.9rem 1.25rem; border-bottom: 1px solid var(--line);
+    display: flex; align-items: baseline; gap: 1rem; flex-shrink: 0;
+  }
+  header h1 {
+    font-size: 1.05rem; margin: 0; font-weight: 600;
+  }
+  header .hint { font-size: 0.82rem; color: var(--moss); }
+  header .spacer { flex: 1; }
+  header button {
+    font-family: var(--font-mono); font-size: 0.78rem; background: var(--surface);
+    border: 1px solid var(--line); color: var(--ink); border-radius: 6px;
+    padding: 0.35rem 0.7rem; cursor: pointer;
+  }
+  header button:hover { border-color: var(--teal); color: var(--teal); }
+  #status { font-family: var(--font-mono); font-size: 0.78rem; color: var(--moss); min-width: 14rem; text-align: right; }
+  #status.error { color: var(--danger); }
+  #status.ok { color: var(--teal); }
+
+  .stage { flex: 1; display: flex; min-height: 0; }
+  .cy-wrap { flex: 1; position: relative; min-width: 0; }
+  #cy { position: absolute; inset: 0; }
+
+  .band-line { position: absolute; left: 0; right: 0; border-top: 1px dashed var(--line); pointer-events: none; }
+  .band-tag {
+    position: absolute; right: 0.75rem; transform: translateY(-50%);
+    font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em;
+    color: var(--moss); background: var(--stone); padding: 0.1rem 0.5rem;
+    border: 1px solid var(--line); border-radius: 999px; pointer-events: none;
+  }
+
+  .panel {
+    width: 320px; flex-shrink: 0; border-left: 1px solid var(--line);
+    background: var(--surface); padding: 1.25rem; overflow-y: auto;
+  }
+  .panel .empty { color: var(--moss); font-size: 0.9rem; }
+  .panel .qid { font-family: var(--font-mono); font-size: 0.72rem; color: var(--moss); word-break: break-all; }
+  .panel .name-row { display: flex; align-items: center; gap: 0.5rem; margin: 0.3rem 0 0.6rem; }
+  .panel .name { font-family: var(--font-mono); font-size: 1.1rem; font-weight: 600; word-break: break-word; }
+  .panel .rename-btn {
+    font-family: var(--font-mono); font-size: 0.68rem; color: var(--teal);
+    background: none; border: 1px solid var(--line); border-radius: 5px;
+    padding: 0.15rem 0.45rem; cursor: pointer;
+  }
+  .panel .rename-btn:hover { border-color: var(--teal); }
+  .panel .rename-btn[disabled] { opacity: 0.4; cursor: default; }
+  .panel .badge {
+    display: inline-block; font-family: var(--font-mono); font-size: 0.68rem;
+    padding: 0.1rem 0.5rem; border-radius: 999px; margin-bottom: 0.9rem;
+    border: 1px solid var(--line); color: var(--moss);
+  }
+  .panel .doc {
+    font-size: 0.88rem; line-height: 1.55; white-space: pre-wrap;
+    border-top: 1px solid var(--line); padding-top: 0.8rem;
+  }
+  .panel .doc.none { color: var(--moss); font-style: italic; }
+  .panel .rename-inline { display: flex; gap: 0.4rem; margin: 0.3rem 0 0.6rem; }
+  .panel .rename-inline input {
+    flex: 1; font-family: var(--font-mono); font-size: 0.95rem; padding: 0.2rem 0.4rem;
+    border: 1px solid var(--teal); border-radius: 5px; background: var(--surface); color: var(--ink);
+  }
+
+  input.canvas-rename {
+    position: fixed; z-index: 50; font-family: var(--font-mono); font-size: 12px;
+    border: 1.5px solid var(--teal); border-radius: 5px; padding: 2px 6px;
+    background: var(--surface); color: var(--ink); width: 140px;
+  }
+
+  footer {
+    padding: 0.4rem 1.25rem; border-top: 1px solid var(--line); flex-shrink: 0;
+    font-family: var(--font-mono); font-size: 0.72rem; color: var(--moss);
+  }
+  footer code { color: var(--teal); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>src/nemo_words/ — dependency graph</h1>
+  <span class="hint">click a node for its docstring · double-click (or the panel's Rename button) to rename — rewrites the source on disk</span>
+  <span class="spacer"></span>
+  <button id="refresh">Rescan</button>
+  <span id="status"></span>
+</header>
+
+<div class="stage">
+  <div class="cy-wrap">
+    <div id="bands"></div>
+    <div id="cy"></div>
+  </div>
+  <div class="panel" id="panel">
+    <p class="empty">Click a node to see its docstring. Double-click a node (or use the Rename button here) to rename it — this rewrites the def site and every call site in <code>src/nemo_words/</code>.</p>
+  </div>
+</div>
+
+<footer>generated live from <code>src/nemo_words/*.clj</code> by <code>scripts/graph-server.js</code> — same heuristic as <code>scripts/gen-dgml.sh</code></footer>
+
+<script src="vendor/cytoscape.min.js"></script>
+<script>
+'use strict';
+
+const LAYER_LABELS = { 3: 'L3 · entry points', 2: 'L2 · domain', 1: 'L1 · adapter', 0: 'L0 · external / stdlib' };
+const LAYER_ORDER = [3, 2, 1, 0]; // top to bottom, mirrors docs/layers.md
+const BAND_HEIGHT = 150;
+const NODE_SPACING = 170;
+
+let cy = null;
+let selectedQid = null;
+
+const statusEl = document.getElementById('status');
+const panelEl = document.getElementById('panel');
+const bandsEl = document.getElementById('bands');
+
+function setStatus(text, kind) {
+  statusEl.textContent = text;
+  statusEl.className = kind || '';
+}
+
+function isEditable(node) {
+  return node.category !== 'External' && node.name !== '-main';
+}
+
+function computeLayout(nodes) {
+  const byLayer = new Map();
+  for (const n of nodes) {
+    if (!byLayer.has(n.layer)) byLayer.set(n.layer, []);
+    byLayer.get(n.layer).push(n);
+  }
+  for (const arr of byLayer.values()) {
+    arr.sort((a, b) => (a.ns + '/' + a.name).localeCompare(b.ns + '/' + b.name));
+  }
+  const activeLayers = LAYER_ORDER.filter((l) => byLayer.has(l));
+  const positions = new Map();
+  activeLayers.forEach((layer, bandIdx) => {
+    const arr = byLayer.get(layer);
+    const totalWidth = (arr.length - 1) * NODE_SPACING;
+    arr.forEach((n, i) => {
+      positions.set(n.qid, { x: i * NODE_SPACING - totalWidth / 2, y: bandIdx * BAND_HEIGHT });
+    });
+  });
+  return { positions, activeLayers };
+}
+
+function renderGraph(graph) {
+  const { positions, activeLayers } = computeLayout(graph.nodes);
+
+  const elements = [
+    ...graph.nodes.map((n) => ({
+      data: {
+        id: n.qid, qid: n.qid, ns: n.ns, name: n.name, form: n.form,
+        category: n.category, docstring: n.docstring, layer: n.layer,
+        color: n.color, editable: isEditable(n),
+        label: n.category === 'External' ? n.name : n.name,
+      },
+      position: positions.get(n.qid),
+    })),
+    ...graph.edges
+      .filter((e) => positions.has(e.source) && positions.has(e.target))
+      .map((e) => ({ data: { id: `${e.source}=>${e.target}`, source: e.source, target: e.target } })),
+  ];
+
+  if (cy) cy.destroy();
+  cy = cytoscape({
+    container: document.getElementById('cy'),
+    elements,
+    style: [
+      {
+        selector: 'node',
+        style: {
+          'background-color': 'data(color)',
+          label: 'data(label)',
+          'font-family': 'ui-monospace, Menlo, monospace',
+          'font-size': 10,
+          'text-valign': 'center',
+          'text-halign': 'center',
+          color: '#14181a',
+          'text-wrap': 'wrap',
+          'text-max-width': '90px',
+          shape: 'round-rectangle',
+          width: 'label',
+          height: 28,
+          padding: '8px',
+          'border-width': 1,
+          'border-color': 'rgba(0,0,0,0.15)',
+        },
+      },
+      {
+        selector: 'node[category = "EntryPoint"]',
+        style: { 'border-width': 2, 'border-color': '#8a2f2a' },
+      },
+      {
+        selector: 'node:selected',
+        style: { 'border-width': 3, 'border-color': '#2f6f68' },
+      },
+      {
+        selector: 'edge',
+        style: {
+          width: 1,
+          'line-color': '#9aa39c',
+          'target-arrow-color': '#9aa39c',
+          'target-arrow-shape': 'triangle',
+          'arrow-scale': 0.7,
+          'curve-style': 'bezier',
+          opacity: 0.65,
+        },
+      },
+    ],
+    layout: { name: 'preset' },
+    wheelSensitivity: 0.25,
+  });
+
+  cy.on('tap', 'node', (evt) => showPanel(evt.target.data()));
+  cy.on('tap', (evt) => { if (evt.target === cy) clearPanel(); });
+  cy.on('dbltap', 'node', (evt) => beginCanvasRename(evt.target));
+  cy.on('render pan zoom', () => positionBands(activeLayers));
+
+  // Nodes styled `width: 'label'` measure their text lazily; on the very
+  // first style pass some nodes' label metrics aren't ready yet, and
+  // cytoscape caches that as "takes up no space" -> permanently invisible
+  // even though later queries report a correct width. Forcing a full style
+  // recompute here (after elements + fonts have settled) fixes it.
+  cy.style().update();
+  cy.fit(undefined, 60);
+  positionBands(activeLayers);
+
+  if (selectedQid) {
+    const n = cy.getElementById(selectedQid);
+    if (n.length) showPanel(n.data());
+  }
+}
+
+function positionBands(activeLayers) {
+  if (!cy) return;
+  bandsEl.innerHTML = '';
+  const zoom = cy.zoom();
+  const pan = cy.pan();
+  const wrap = document.querySelector('.cy-wrap').getBoundingClientRect();
+
+  activeLayers.forEach((layer, i) => {
+    const modelY = i * BAND_HEIGHT;
+    const screenY = modelY * zoom + pan.y;
+
+    const tag = document.createElement('div');
+    tag.className = 'band-tag';
+    tag.style.top = `${screenY}px`;
+    tag.textContent = LAYER_LABELS[layer] || `L${layer}`;
+    bandsEl.appendChild(tag);
+
+    if (i > 0) {
+      const prevY = (i - 1) * BAND_HEIGHT * zoom + pan.y;
+      const line = document.createElement('div');
+      line.className = 'band-line';
+      line.style.top = `${(screenY + prevY) / 2}px`;
+      bandsEl.appendChild(line);
+    }
+  });
+  void wrap; // reserved for future viewport-relative clamping
+}
+
+function clearPanel() {
+  selectedQid = null;
+  if (cy) cy.nodes().unselect();
+  panelEl.innerHTML = '<p class="empty">Click a node to see its docstring. Double-click a node (or use the Rename button here) to rename it — this rewrites the def site and every call site in <code>src/nemo_words/</code>.</p>';
+}
+
+function showPanel(data) {
+  selectedQid = data.qid;
+  const editable = data.editable;
+  panelEl.innerHTML = `
+    <div class="qid">${escapeHtml(data.qid)}</div>
+    <div class="name-row">
+      <span class="name" id="panel-name">${escapeHtml(data.name)}</span>
+      <button class="rename-btn" id="panel-rename-btn" ${editable ? '' : 'disabled title="not editable"'}>rename</button>
+    </div>
+    <div class="badge">${escapeHtml(data.category)}${data.form ? ' · ' + escapeHtml(data.form) : ''}</div>
+    <div class="doc ${data.docstring ? '' : 'none'}">${data.docstring ? escapeHtml(data.docstring) : '(no docstring)'}</div>
+  `;
+  const btn = document.getElementById('panel-rename-btn');
+  if (btn && editable) {
+    btn.addEventListener('click', () => beginPanelRename(data));
+  }
+}
+
+function beginPanelRename(data) {
+  const row = document.querySelector('.name-row');
+  row.outerHTML = `
+    <div class="rename-inline">
+      <input id="panel-rename-input" value="${escapeHtml(data.name)}" spellcheck="false">
+    </div>
+  `;
+  const input = document.getElementById('panel-rename-input');
+  input.focus();
+  input.select();
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') input.blur();
+    if (e.key === 'Escape') showPanel(data);
+  });
+  input.addEventListener('blur', () => {
+    const newName = input.value.trim();
+    if (!newName || newName === data.name) { showPanel(data); return; }
+    submitRename(data.qid, newName);
+  });
+}
+
+function beginCanvasRename(node) {
+  const data = node.data();
+  if (!data.editable) return;
+  const rp = node.renderedPosition();
+  const rect = document.getElementById('cy').getBoundingClientRect();
+  const input = document.createElement('input');
+  input.className = 'canvas-rename';
+  input.value = data.name;
+  input.spellcheck = false;
+  input.style.left = `${rect.left + rp.x - 70}px`;
+  input.style.top = `${rect.top + rp.y - 12}px`;
+  document.body.appendChild(input);
+  input.focus();
+  input.select();
+
+  let cancelled = false;
+  const remove = () => { if (input.parentNode) document.body.removeChild(input); };
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') input.blur();
+    if (e.key === 'Escape') { cancelled = true; remove(); }
+  });
+  input.addEventListener('blur', () => {
+    if (cancelled) return;
+    const newName = input.value.trim();
+    remove();
+    if (!newName || newName === data.name) return;
+    submitRename(data.qid, newName);
+  });
+}
+
+async function submitRename(qid, newName) {
+  setStatus(`renaming ${qid} -> ${newName} ...`);
+  try {
+    const res = await fetch('/api/rename', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ qid, newName }),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.ok) {
+      setStatus(data.error || `rename failed (${res.status})`, 'error');
+      clearPanel();
+      return;
+    }
+    selectedQid = `${qid.slice(0, qid.indexOf('/'))}/${newName}`;
+    setStatus(`renamed — wrote ${data.changedFiles.join(', ')}`, 'ok');
+    renderGraph(data.graph);
+  } catch (e) {
+    setStatus(String(e.message || e), 'error');
+  }
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, (c) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+  }[c]));
+}
+
+async function loadGraph() {
+  setStatus('loading...');
+  try {
+    const res = await fetch('/api/graph');
+    const graph = await res.json();
+    renderGraph(graph);
+    setStatus(`${graph.nodes.length} nodes, ${graph.edges.length} edges`, 'ok');
+  } catch (e) {
+    setStatus(String(e.message || e), 'error');
+  }
+}
+
+document.getElementById('refresh').addEventListener('click', loadGraph);
+loadGraph();
+</script>
+</body>
+</html>
