@@ -18,13 +18,13 @@
   Usage:
     clj -M -m nemo-words.ipa <word> [<word> ...]"
   (:require [clojure.java.io :as io]
-            [clojure.string :as str]))
+            [nemo-words.strutil :as strutil]))
 
 ;; --------------------------------------------------------- ARPABET -> IPA (US)
 ;; Base phoneme map. Vowels that carry an ARPABET stress digit are handled in
 ;; arpabet->ipa so we can (a) render ER0 as ɚ vs ER1/2 as ɝ, (b) render AH0 as
 ;; the schwa ə, and (c) place the IPA stress mark before the stressed vowel.
-(def ^:private arpa
+(def ^:private arpabet-phoneme->ipa
   {"AA" "ɑ" "AE" "æ" "AH" "ʌ" "AO" "ɔ" "AW" "aʊ" "AY" "aɪ"
    "B" "b" "CH" "tʃ" "D" "d" "DH" "ð" "EH" "ɛ" "ER" "ɝ"
    "EY" "eɪ" "F" "f" "G" "ɡ" "HH" "h" "IH" "ɪ" "IY" "i"
@@ -33,7 +33,7 @@
    "T" "t" "TH" "θ" "UH" "ʊ" "UW" "u" "V" "v" "W" "w"
    "Y" "j" "Z" "z" "ZH" "ʒ"})
 
-(def ^:private vowel-arpa
+(def ^:private arpabet-vowels
   #{"AA" "AE" "AH" "AO" "AW" "AY" "EH" "ER"
     "EY" "IH" "IY" "OW" "OY" "UH" "UW"})
 
@@ -46,21 +46,21 @@
                :let [has-digit? (and (seq tok) (contains? #{\0 \1 \2} (last tok)))
                      base (if has-digit? (subs tok 0 (dec (count tok))) tok)
                      digit (when has-digit? (str (last tok)))]]
-           (if (and has-digit? (contains? vowel-arpa base))
+           (if (and has-digit? (contains? arpabet-vowels base))
              (cond
                (and (= base "AH") (= digit "0")) "ə"
                (and (= base "ER") (= digit "0")) "ɚ"
-               (= digit "1") (str "ˈ" (get arpa base base))
-               (= digit "2") (str "ˌ" (get arpa base base))
-               :else (get arpa base base))
-             (get arpa base base)))))
+               (= digit "1") (str "ˈ" (get arpabet-phoneme->ipa base base))
+               (= digit "2") (str "ˌ" (get arpabet-phoneme->ipa base base))
+               :else (get arpabet-phoneme->ipa base base))
+             (get arpabet-phoneme->ipa base base)))))
 
 ;; ------------------------------------------------------------- source loaders
 (defn- resource-reader [path]
   (some-> (io/resource path) io/reader))
 
 (defn- strip-slashes [s]
-  (str/replace s #"^/+|/+$" ""))
+  (strutil/replace-str s #"^/+|/+$" ""))
 
 (defn- add-variants [acc word variants]
   (if (and (seq word) (seq variants))
@@ -78,13 +78,13 @@
       (->> (line-seq r)
            (reduce
             (fn [acc line]
-              (let [parts (str/split line #"\t" 2)]
+              (let [parts (strutil/split-str line #"\t" 2)]
                 (if (< (count parts) 2)
                   acc
-                  (let [word (str/lower-case (str/trim (first parts)))
-                        variants (->> (str/split (second parts) #",")
-                                      (map #(strip-slashes (str/trim %)))
-                                      (remove str/blank?))]
+                  (let [word (strutil/lower-case-str (strutil/trim-str (first parts)))
+                        variants (->> (strutil/split-str (second parts) #",")
+                                      (map #(strip-slashes (strutil/trim-str %)))
+                                      (remove strutil/blank-str?))]
                     (add-variants acc word variants)))))
             {})
            dedupe-vals))
@@ -99,11 +99,11 @@
       (->> (line-seq r)
            (reduce
             (fn [acc line]
-              (let [parts (str/split line #"\t" 2)]
+              (let [parts (strutil/split-str line #"\t" 2)]
                 (if (< (count parts) 2)
                   acc
-                  (let [word (str/lower-case (str/trim (first parts)))
-                        ipa (apply str (str/split (str/trim (second parts)) #"\s+"))]
+                  (let [word (strutil/lower-case-str (strutil/trim-str (first parts)))
+                        ipa (apply str (strutil/split-str (strutil/trim-str (second parts)) #"\s+"))]
                     (add-variants acc word (when (seq ipa) [ipa]))))))
             {})
            dedupe-vals))
@@ -118,13 +118,13 @@
       (->> (line-seq r)
            (reduce
             (fn [acc raw-line]
-              (let [line (str/trim (first (str/split raw-line #"#" 2)))]
-                (if (str/blank? line)
+              (let [line (strutil/trim-str (first (strutil/split-str raw-line #"#" 2)))]
+                (if (strutil/blank-str? line)
                   acc
-                  (let [parts (str/split line #"\s+")
+                  (let [parts (strutil/split-str line #"\s+")
                         head (first parts)
                         tokens (rest parts)
-                        word (str/lower-case (str/trim (first (str/split head #"\(" 2))))]
+                        word (strutil/lower-case-str (strutil/trim-str (first (strutil/split-str head #"\(" 2))))]
                     (add-variants acc word (when (seq tokens) [(arpabet->ipa tokens)]))))))
             {})
            dedupe-vals))
@@ -139,7 +139,7 @@
      (let [shown (take cap variants)
            extra (when (> (count variants) cap)
                    (str "  (+" (- (count variants) cap) " more)"))]
-       (str (str/join "  " (map #(str "/" % "/") shown)) extra)))))
+       (str (strutil/join-str "  " (map #(str "/" % "/") shown)) extra)))))
 
 (defn -main [& args]
   (let [words args]
@@ -149,7 +149,7 @@
             wiki (load-wikipron)
             cmu (load-cmudict)]
         (doseq [word words]
-          (let [w (str/lower-case (str/trim word))]
+          (let [w (strutil/lower-case-str (strutil/trim-str word))]
             (println (str "\n\033[1m" word "\033[0m"))
             (println (str "  ipa-dict  : " (fmt (get idict w []))))
             (println (str "  wikipron  : " (fmt (get wiki w [])) "  \033[2m[no stress marks]\033[0m"))
