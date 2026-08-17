@@ -1,0 +1,8 @@
+/target
+/classes
+/.cpcache
+*.jar
+.nrepl-port
+.lsp/
+.clj-kondo/.cache/
+.clerk/
