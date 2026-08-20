@@ -6,3 +6,6 @@
 .lsp/
 .clj-kondo/.cache/
 .clerk/
+resources/data/kaikki-en.jsonl
+/scripts/
+.vmark/
