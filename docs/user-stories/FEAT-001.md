@@ -66,6 +66,7 @@ The four-source cross-reference tool in `src/nemo_words/ipa.clj` (ipa-dict, Wiki
 
 - [ ] [[US-006]] Extend the Lexical Sets
   - [ ] [[US-007]] Find the dominant RP+GA pairing for a missing GA combination
+    - [ ] [[US-013]] Extract the RP+GA nucleus fragment for one row
   - [ ] [[US-008]] Select and rank the example words for a new set — superseded by [[US-010]]
 
 ## Could have
@@ -86,13 +87,14 @@ Parallel functions (independently unit-testable on Clojure data):
 
   [[US-001]] ipa/lookup-rows      dict + opts      ->  [{:word :rp :ga}]
   [[US-002]] -> [[US-003]] freq/annotate-freq  rows ->  rows + :freq
-  [[US-007]] pairs/dominant-pair  triples          ->  [rp ga]
+  [[US-013]] pairs/extract-nucleus rp + ga + target-ga -> [rp-nucleus ga-nucleus] | nil
+  [[US-007]] pairs/dominant-pair  triples + target-ga  ->  [rp-nucleus ga-nucleus]
   [[US-009]] keyword/pick-keyword rows             ->  keyword
   [[US-010]] rank/top-n           rows + score + n  ->  top-n rows
   [[US-011]] sets/upsert + save!  sets + kw + rows  ->  lexical-sets.edn
   [[US-012]] rime/filter-coda     rows + key + sound ->  rows (rhotic sets only)
 
-                    │  (all seven land)
+                    │  (all eight land)
                     ▼
   [[US-004]] build-set  = lookup-rows -> [filter-coda, rhotic sets only] -> annotate-freq
                            -> top-n -> upsert -> save!
@@ -101,11 +103,11 @@ Parallel functions (independently unit-testable on Clojure data):
   [[US-005]] pick-example-words-by-ipa  (reads lexical-sets.edn; thin CLI)
                     │
                     ▼
-  [[US-006]] extend-set = lookup-rows -> dominant-pair -> lookup-rows
+  [[US-006]] extend-set = lookup-rows -> dominant-pair [uses extract-nucleus] -> lookup-rows
                            -> [filter-coda, rhotic sets only] -> annotate-freq
                            -> top-n -> pick-keyword -> upsert -> save!
 ```
 
-- **Parallel:** [[US-001]], [[US-002]]→[[US-003]], [[US-007]], [[US-009]], [[US-010]], [[US-011]], [[US-012]] — seven independent functions, buildable in any order or concurrently.
-- **Sequential:** [[US-004]] needs US-001/US-003/US-010/US-011/US-012 done; [[US-005]] needs US-004's output file; [[US-006]] needs all seven functions plus US-004's composition as a template. [[US-008]] is folded into [[US-010]] and needs no separate work.
+- **Parallel:** [[US-001]], [[US-002]]→[[US-003]], [[US-013]]→[[US-007]], [[US-009]], [[US-010]], [[US-011]], [[US-012]] — eight independent functions, buildable in any order or concurrently ([[US-007]] composes [[US-013]] in-process but both are still unit-testable on plain data ahead of [[US-006]]).
+- **Sequential:** [[US-004]] needs US-001/US-003/US-010/US-011/US-012 done; [[US-005]] needs US-004's output file; [[US-006]] needs all eight functions plus US-004's composition as a template. [[US-008]] is folded into [[US-010]] and needs no separate work.
 
