@@ -1,6 +1,8 @@
 (ns nemo-words.ipa-test
-  (:require [clojure.test :refer [deftest is testing]]
-            [nemo-words.ipa :as ipa]))
+  (:require [clojure.set :as set]
+            [clojure.test :refer [deftest is testing]]
+            [nemo-words.ipa :as ipa]
+            [nemo-words.strutil :as strutil]))
 
 (deftest arpabet->ipa-test
   (testing "no stress digit"
@@ -89,3 +91,72 @@
 (deftest resource-reader-test
   (is (nil? ((var ipa/resource-reader) "no/such/file")))
   (is (some? ((var ipa/resource-reader) "data/en_US.txt"))))
+
+;; -------------------------------------------------------- lookup-rows (US-001)
+(def ^:private dict-fixture
+  [{:word "car" :rp "/kɑː/" :ga "/kɑɹ/"}
+   {:word "star" :rp "/stɑː/" :ga "/stɑɹ/"}
+   {:word "dog" :rp "/dɒɡ/" :ga "/dɔɡ/"}
+   {:word "a-alike" :rp "" :ga "/ˈeɪəˈlaɪk/"}
+   {:word "no-ga-word" :rp "/nəʊɡə/" :ga ""}
+   {:word "gnarly" :rp "/ˈnɑː.li/" :ga "/ˈnɑɹ.li/"}
+   {:word "narwhal" :rp "/ˈnɑː.li/, /ˈnɑːw.əl/" :ga "/ˈnɑɹ.wəl/, /ˈnɑɹ.li/"}
+   {:word "away" :rp "/eɪ̯/, /ə/, /ˈʌ/" :ga "/eɪ̯/, /ə/, /ˈʌ/"}])
+
+(deftest lookup-rows-exact-word-test
+  (testing "exact word lookup returns exactly one row"
+    (is (= [{:word "car" :rp "/kɑː/" :ga "/kɑɹ/"}]
+           (ipa/lookup-rows dict-fixture {:word "car"})))))
+
+(deftest lookup-rows-rp-substring-test
+  (testing "every returned row's :rp contains the query, none excluded that do"
+    (let [rows (ipa/lookup-rows dict-fixture {:rp "ɑː"})]
+      (is (seq rows))
+      (is (every? #(strutil/includes-str? (:rp %) "ɑː") rows))
+      (is (= #{"car" "star" "gnarly" "narwhal"} (set (map :word rows)))))))
+
+(deftest lookup-rows-exact-pair-test
+  (testing "every returned row has exactly the given :rp and :ga"
+    (let [rows (ipa/lookup-rows dict-fixture {:pair ["/ˈnɑː.li/" "/ˈnɑɹ.li/"]})]
+      (is (= [{:word "gnarly" :rp "/ˈnɑː.li/" :ga "/ˈnɑɹ.li/"}] rows))
+      (is (every? #(and (= (:rp %) "/ˈnɑː.li/") (= (:ga %) "/ˈnɑɹ.li/")) rows)))))
+
+(deftest lookup-rows-pair-substring-test
+  (testing "both rp and ga independently match as substrings, even split across variants"
+    (let [rows (ipa/lookup-rows dict-fixture {:pair-substring ["ɑː" "ɑɹ"]})
+          matched-words (set (map :word rows))]
+      (is (set/subset? #{"gnarly" "narwhal"} matched-words)))))
+
+(deftest lookup-rows-no-matches-test
+  (testing "unknown word yields empty seq, no error"
+    (is (= [] (ipa/lookup-rows dict-fixture {:word "zzznotaword"}))))
+  (testing "unknown IPA substring yields empty seq, no error"
+    (is (= [] (ipa/lookup-rows dict-fixture {:rp "xyz-not-ipa"})))))
+
+(deftest lookup-rows-empty-rp-cell-test
+  (testing "row for word with no RP transcription has :rp = empty string, not nil"
+    (let [rows (ipa/lookup-rows dict-fixture {:word "a-alike"})]
+      (is (= [{:word "a-alike" :rp "" :ga "/ˈeɪəˈlaɪk/"}] rows))))
+  (testing "that row is never returned by an rp substring lookup with a non-empty query"
+    (let [rows (ipa/lookup-rows dict-fixture {:rp "eɪ"})]
+      (is (not (contains? (set (map :word rows)) "a-alike"))))))
+
+(deftest lookup-rows-empty-ga-cell-test
+  (testing "row for word with no GA transcription has :ga = empty string, not nil"
+    (let [rows (ipa/lookup-rows dict-fixture {:word "no-ga-word"})]
+      (is (= [{:word "no-ga-word" :rp "/nəʊɡə/" :ga ""}] rows))))
+  (testing "that row is never returned by a ga substring lookup with a non-empty query"
+    (let [rows (ipa/lookup-rows dict-fixture {:ga "ə"})]
+      (is (not (contains? (set (map :word rows)) "no-ga-word"))))))
+
+(deftest lookup-rows-multi-variant-cell-test
+  (testing "row is returned and :ga is the full raw comma-joined cell, not just the matched variant"
+    (let [rows (ipa/lookup-rows dict-fixture {:ga "ˈʌ"})]
+      (is (= [{:word "away" :rp "/eɪ̯/, /ə/, /ˈʌ/" :ga "/eɪ̯/, /ə/, /ˈʌ/"}] rows)))))
+
+(deftest lookup-rows-ga-substring-test
+  (testing "every returned row's :ga contains the query"
+    (let [rows (ipa/lookup-rows dict-fixture {:ga "ɑɹ"})]
+      (is (seq rows))
+      (is (every? #(strutil/includes-str? (:ga %) "ɑɹ") rows))
+      (is (= #{"car" "star" "gnarly" "narwhal"} (set (map :word rows)))))))
