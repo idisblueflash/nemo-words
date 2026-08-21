@@ -47,6 +47,14 @@
   [s]
   (str/blank? s))
 
+(defn includes-str?
+  "true if s contains substr.
+
+  Example:
+    (includes-str? \"hello world\" \"lo wo\") ;=> true"
+  [s substr]
+  (str/includes? s substr))
+
 (defn join-str
   "Join coll into a string, optionally interposing separator between elements.
 

@@ -205,6 +205,66 @@
            dedupe-vals))
     {}))
 
+;; ---------------------------------------------------- RP/GA dict (US-001)
+;; en_US_RP_ipa.tsv line format: word<TAB>GA-cell<TAB>RP-cell (GA first, then
+;; RP; see US-001's "Data reality" note). Loaded into lookup-rows' expected
+;; shape: seq of {:word :rp :ga}, raw cell text unchanged (comma-joined
+;; variants kept as-is, "" not nil when a cell is empty).
+(defn load-rp-ga-dict
+  "Load resources/data/en_US_RP_ipa.tsv into a seq of {:word :rp :ga} rows,
+  or () if the resource isn't found.
+
+  Example:
+    (load-rp-ga-dict) ;=> ({:word \"car\" :rp \"/kɑː/\" :ga \"/kɑɹ/\"} ...)"
+  []
+  (if-let [rdr (resource-reader "data/en_US_RP_ipa.tsv")]
+    (with-open [r rdr]
+      (->> (line-seq r)
+           (keep (fn [line]
+                   (let [[word ga rp] (split-str-by line tab-splitter -1)]
+                     (when (seq word)
+                       {:word (clean-word word)
+                        :rp (or rp "")
+                        :ga (or ga "")}))))
+           doall))
+    '()))
+
+;; ------------------------------------------------------------ lookup-rows
+(defn lookup-rows
+  "dict (seq of {:word :rp :ga}) + opts -> matching rows, unchanged.
+
+  opts is one of:
+    {:word w}                exact match on :word
+    {:rp ipa} / {:ga ipa}    substring match on the raw :rp/:ga cell text
+    {:pair [rp ga]}          exact match on both :rp and :ga
+    {:pair-substring [rp ga]} substring match on :rp and :ga independently
+
+  Example:
+    (lookup-rows [{:word \"car\" :rp \"/kɑː/\" :ga \"/kɑɹ/\"}] {:word \"car\"})
+    ;=> ({:word \"car\" :rp \"/kɑː/\" :ga \"/kɑɹ/\"})"
+  [dict opts]
+  (cond
+    (contains? opts :word)
+    (filter #(= (:word %) (:word opts)) dict)
+
+    (contains? opts :rp)
+    (filter #(strutil/includes-str? (:rp %) (:rp opts)) dict)
+
+    (contains? opts :ga)
+    (filter #(strutil/includes-str? (:ga %) (:ga opts)) dict)
+
+    (contains? opts :pair)
+    (let [[rp ga] (:pair opts)]
+      (filter #(and (= (:rp %) rp) (= (:ga %) ga)) dict))
+
+    (contains? opts :pair-substring)
+    (let [[rp ga] (:pair-substring opts)]
+      (filter #(and (strutil/includes-str? (:rp %) rp)
+                    (strutil/includes-str? (:ga %) ga))
+              dict))
+
+    :else '()))
+
 ;; ----------------------------------------------------------------------- main
 (def ^:private bold-start-text "\033[1m")
 (def ^:private faint-start-text "\033[2m")
