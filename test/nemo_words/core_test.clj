@@ -11,14 +11,16 @@
   [{:word "car" :rp "/kɑː/" :ga "/kɑɹ/"}
    {:word "star" :rp "/stɑː/" :ga "/stɑɹ/"}])
 
-(deftest ipa-lookup-test
+(deftest ipa-lookup-word-match-test
   (testing "CLI wrapper mirrors lookup-rows: same N rows, as TSV word\\tRP\\tGA, exit 0"
     (let [out (java.io.StringWriter.)
           exit-code (binding [*out* out]
                       (core/ipa-lookup dict-fixture ["--word" "car"]))
           lines (->> (str/split-lines (str out)) (remove str/blank?))]
       (is (= 0 exit-code))
-      (is (= ["car\t/kɑː/\t/kɑɹ/"] lines))))
+      (is (= ["car\t/kɑː/\t/kɑɹ/"] lines)))))
+
+(deftest ipa-lookup-zero-matches-test
   (testing "zero matches still exits 0 with no output lines"
     (let [out (java.io.StringWriter.)
           exit-code (binding [*out* out]
