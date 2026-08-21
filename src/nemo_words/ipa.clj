@@ -1,5 +1,5 @@
 (ns nemo-words.ipa
-  "Cross-reference IPA lookup across three open US-English sources.
+  "Cross-reference IPA lookup across open English-pronunciation sources.
 
   The point of cross-referencing: when several independent sources AGREE on a
   transcription you can trust it as a \"perfect match\" anchor; when they
@@ -11,9 +11,11 @@
     2. WikiPron   data/wikipron_us_broad.tsv Wiktionary scrape — best rare/medical
                                              coverage, lists variants, but NO stress.
     3. CMUdict    data/cmudict.dict         CMU, ARPABET->IPA here, HAS stress;
-                                             thin on medical.
+                                             thin on medical. US-only.
+    4. ipa-dict UK data/en_UK.txt           open-dict-data, same format as #1 but
+                                             Received Pronunciation (non-rhotic).
 
-  All three sources are curated (human-checked).
+  All four sources are curated (human-checked).
 
   Usage:
     clj -M -m nemo-words.ipa <word> [<word> ...]"
@@ -127,11 +129,11 @@
     (parse-line :cmudict \"CAT K AE1 T\") ;=> [\"cat\" (\"kˈæt\")]"
   (fn [brand _line] brand))
 
-;; :ipa-dict line -> [word variants]. Full IPA, slashes stripped, stress
-;; kept; variants are comma-separated.
-;; (parse-line :ipa-dict "cat\t/kˈæt/, /kæt/") ;=> ["cat" ("kˈæt" "kæt")]
-(defmethod parse-line :ipa-dict
-  [_ line]
+;; Shared by :ipa-dict and :ipa-dict-uk, which use the identical
+;; tab-separated "word\t/ipa/, /ipa/, ..." line format.
+;; (parse-ipa-dict-line "cat\t/kˈæt/, /kæt/") ;=> ["cat" ("kˈæt" "kæt")]
+(defn- parse-ipa-dict-line
+  [line]
   (let [parts (split-str-by line tab-splitter 2)]
     (if (< (count parts) 2)
       [nil nil]
@@ -139,6 +141,18 @@
        (->> (split-str-by (second parts) comma-splitter)
             (map #(strip-slashes (strutil/trim-str %)))
             (remove strutil/blank-str?))])))
+
+;; :ipa-dict line -> [word variants]. Full IPA, slashes stripped, stress
+;; kept; variants are comma-separated. US (rhotic) pronunciations.
+(defmethod parse-line :ipa-dict
+  [_ line]
+  (parse-ipa-dict-line line))
+
+;; :ipa-dict-uk line -> [word variants]. Same format as :ipa-dict, but
+;; Received Pronunciation (non-rhotic) pronunciations.
+(defmethod parse-line :ipa-dict-uk
+  [_ line]
+  (parse-ipa-dict-line line))
 
 ;; :wikipron line -> [word variants]. Source is space-separated phonemes,
 ;; NO stress; joined into a compact string.
@@ -171,10 +185,11 @@
   "Per-brand classpath resource path, dispatched by load-dictionary-by-brand."
   {:ipa-dict "data/en_US.txt"
    :wikipron "data/wikipron_us_broad.tsv"
-   :cmudict "data/cmudict.dict"})
+   :cmudict "data/cmudict.dict"
+   :ipa-dict-uk "data/en_UK.txt"})
 
 (defn load-dictionary-by-brand
-  "brand (:ipa-dict, :wikipron, or :cmudict) -> word -> [variant, ...].
+  "brand (:ipa-dict, :wikipron, :cmudict, or :ipa-dict-uk) -> word -> [variant, ...].
 
   Example:
     (load-dictionary-by-brand :cmudict) ;=> {\"cat\" [\"kˈæt\"], \"read\" [\"ɹˈid\" \"ɹˈɛd\"], ...}"
@@ -213,22 +228,25 @@
        (str (strutil/join-str "  " (map #(str "/" % "/") shown)) extra)))))
 
 (defn search-word
-  "Print one word's cross-referenced entries from all three sources.
+  "Print one word's cross-referenced entries from all four sources.
 
   Example:
-    (search-word \"cat\" idict wiki cmu)
+    (search-word \"cat\" idict wiki cmu idict-uk)
     ;; prints:
     ;; cat
-    ;;   ipa-dict  : /kˈæt/
-    ;;   wikipron  : /kæt/  [no stress marks]
-    ;;   cmudict   : /kˈæt/"
-  [word idict wiki cmu]
+    ;;   ipa-dict     : /kˈæt/
+    ;;   wikipron     : /kæt/  [no stress marks]
+    ;;   cmudict      : /kˈæt/
+    ;;   ipa-dict-uk  : /kˈat/"
+  [word idict wiki cmu idict-uk]
   (let [w (clean-word word)]
     (println (str "\n" bold-start-text word reset-color-text))
-    (println (str "  ipa-dict  : " (fmt (get idict w []))))
-    (println (str "  wikipron  : " (fmt (get wiki w []))
+    (println (str "  ipa-dict     : " (fmt (get idict w []))))
+    (println (str "  wikipron     : " (fmt (get wiki w []))
                   "  " faint-start-text "[no stress marks]" reset-color-text))
-    (println (str "  cmudict   : " (fmt (get cmu w []))))))
+    (println (str "  cmudict      : " (fmt (get cmu w []))))
+    (println (str "  ipa-dict-uk  : " (fmt (get idict-uk w []))
+                  "  " faint-start-text "[RP]" reset-color-text))))
 
 (defn -main
   "Entry point: look up each word arg across all three sources and print
@@ -244,7 +262,8 @@
       (println "Usage: clj -M -m nemo-words.ipa <word> [<word> ...]")
       (let [idict (load-dictionary-by-brand :ipa-dict)
             wiki (load-dictionary-by-brand :wikipron)
-            cmu (load-dictionary-by-brand :cmudict)]
+            cmu (load-dictionary-by-brand :cmudict)
+            idict-uk (load-dictionary-by-brand :ipa-dict-uk)]
         (doseq [word words]
-          (search-word word idict wiki cmu))
+          (search-word word idict wiki cmu idict-uk))
         (println)))))
