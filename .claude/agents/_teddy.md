@@ -82,8 +82,8 @@ never more.
   as you decompose the AC into smaller increments — don't limit yourself
   to only the Example.
 - Don't add error handling, CLI flags, or output formats an AC doesn't ask
-  for yet — later ACs will ask for them explicitly (e.g. `--seed`,
-  `--verify`) and you implement them when their turn comes.
+  for yet — e.g. a flag or output format a later AC's Given/When/Then
+  explicitly asks for — and you implement them when their turn comes.
 - If two ACs conflict or an AC is ambiguous, stop and report the conflict
   rather than guessing silently.
 - When all ACs are green, run the full suite once more end-to-end, then
