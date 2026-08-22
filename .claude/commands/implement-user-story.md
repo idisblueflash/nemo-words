@@ -84,11 +84,36 @@ pass or after `_buzz` resolved everything):
    fixes — `_buzz` commits its own work per its workflow, but confirm with
    `git status` rather than assuming). Write a commit message naming the
    story (slug + title).
-3. Report to the user: branch name, worktree path, story slug/title,
-   AC summary from `_teddy`, and confirmation of the `status: done` flag.
-   Do not push or open a PR — that needs separate explicit go-ahead.
-4. Leave the worktree in place (don't call `ExitWorktree` unless the user
-   asks) so the user can inspect or continue from it.
+3. **Push and open a PR**, right away, as part of this same invocation —
+   this does not need separate explicit go-ahead, unlike other push/PR
+   actions elsewhere in this repo's agents. Push the branch, then
+   `gh pr create` with title = story slug/title and a body summarizing
+   which ACs `_teddy` covered and confirming `_qa`'s clean pass.
+4. Report to the user: branch name, worktree path, story slug/title,
+   AC summary from `_teddy`, confirmation of the `status: done` flag, and
+   the PR URL.
+5. Leave the worktree in place (don't call `ExitWorktree` yet) so the user
+   can inspect it, review the PR on GitHub, or continue from it.
+
+## 5. Merge and clean up — only on explicit instruction
+
+This is a separate, later invocation/message, not a continuation of step 4
+— the user reviews the PR on GitHub (or however they like) in the
+meantime, and this command does not poll or wait for that.
+
+When the user explicitly asks to merge (e.g. "merge PR `<slug>`", "merge
+it", "it's ready, merge and clean up"):
+
+1. Check the PR's current state (`gh pr view`). If it isn't merged yet,
+   merge it (`gh pr merge`). If it's already merged (e.g. the user merged
+   it themselves via the GitHub UI), just confirm that rather than
+   re-merging.
+2. Once merged, call `ExitWorktree` to clean up the worktree.
+3. Report the merge commit and confirm the worktree was removed.
+
+Never infer this step from the PR being opened, CI going green, or any
+other signal short of the user's explicit merge instruction — the
+worktree stays until the user actually says to clean it up.
 
 ## Rules
 
@@ -97,3 +122,6 @@ pass or after `_buzz` resolved everything):
 - Never mark `status: done` while any `bugs:` entry is open.
 - If `_teddy` reports an ambiguity or AC conflict, stop and report it to the
   user before dispatching `_qa` — there's nothing to verify yet.
+- Never call `ExitWorktree` except in step 5, after an explicit user
+  instruction to merge/clean up — not automatically once the PR is open,
+  and not inferred from any other signal.
