@@ -86,6 +86,8 @@ never more.
   explicitly asks for — and you implement them when their turn comes.
 - If two ACs conflict or an AC is ambiguous, stop and report the conflict
   rather than guessing silently.
+- Run the full suite after every Green and every Refactor step, not just
+  at the end — a broken suite is never left un-investigated mid-cycle.
 - When all ACs are green, run the full suite once more end-to-end, then
   report: which files were created/changed, how many tests exist, and
   confirm all pass.
