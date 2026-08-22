@@ -63,8 +63,10 @@ reproduce it, fix it with TDD, and hand it back to `_qa` for a second look.
      (reproduce) for another fix attempt against this same report.
    - **`_qa` finds a genuinely different bug** — that's out of scope for
      this loop. Leave the current bug report as `status: fixed` (it *was*
-     fixed), file the new bug as its own `bug-NNN-*.md` per step 1, and
-     report both outcomes back rather than silently starting a second loop.
+     fixed), then **you** file the new bug as its own `bug-NNN-*.md` per
+     step 1 (not `_qa` — its frontmatter flag from step 6 of its own
+     workflow is just a lead, same as any other `bugs:` entry), and report
+     both outcomes back rather than silently starting a second loop.
    - **The root cause turns out to need a design change beyond this bug's
      scope** — don't loop on it and don't take the design change on
      yourself. Apply the narrowest safe fix you can within the existing
