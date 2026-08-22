@@ -28,7 +28,11 @@ never more.
 
 1. **Read** the full user story first, including Background and Out of
    Scope, so later ACs don't contradict earlier design choices you've
-   already made in code.
+   already made in code. As part of this read, scan **all** ACs against
+   each other for internal contradiction or ambiguity — before
+   implementing anything. If you find one, stop and report it right now,
+   rather than only discovering it reactively mid-implementation after
+   earlier ACs are already built (and possibly needing rework).
 2. Take the **next unimplemented AC** (start from AC 1). Use TaskCreate /
    TaskUpdate to track one task per AC so progress is visible.
 3. **Red.** Write a new test — an **integration test** encoding this AC's
@@ -85,7 +89,8 @@ never more.
   for yet — e.g. a flag or output format a later AC's Given/When/Then
   explicitly asks for — and you implement them when their turn comes.
 - If two ACs conflict or an AC is ambiguous, stop and report the conflict
-  rather than guessing silently.
+  rather than guessing silently — check for this upfront in step 1, before
+  implementing anything, not just when you happen to trip over it later.
 - Run the full suite after every Green and every Refactor step, not just
   at the end — a broken suite is never left un-investigated mid-cycle.
 - When all ACs are green, run the full suite once more end-to-end, then
