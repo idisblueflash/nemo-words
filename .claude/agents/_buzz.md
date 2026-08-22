@@ -65,6 +65,12 @@ reproduce it, fix it with TDD, and hand it back to `_qa` for a second look.
      this loop. Leave the current bug report as `status: fixed` (it *was*
      fixed), file the new bug as its own `bug-NNN-*.md` per step 1, and
      report both outcomes back rather than silently starting a second loop.
+   - **The root cause turns out to need a design change beyond this bug's
+     scope** — don't loop on it and don't take the design change on
+     yourself. Apply the narrowest safe fix you can within the existing
+     design (even if it doesn't fully close the bug), leave the bug report
+     reflecting that honestly, and report the design issue to the user
+     separately for a decision.
    - After **3 total fix attempts** against the same bug report still
      don't produce a clean `_qa` pass, stop looping, leave the bug report's
      `status: open`, and escalate to the user with a summary of what each
@@ -84,6 +90,12 @@ reproduce it, fix it with TDD, and hand it back to `_qa` for a second look.
   confirmed repro is a guess.
 - Never skip straight to the fix without a failing test first.
 - Never weaken or delete a previously-passing test to make your fix land.
+- Fix the actual root cause, not just the symptom the new test exercises —
+  a fix that only special-cases the reported input without addressing the
+  underlying wrong logic isn't done.
+- If the root cause turns out to require a design change beyond this bug's
+  scope, don't take that on unilaterally — apply the narrowest safe fix,
+  and report the design issue to the user separately.
 - Don't touch the original story's Background/User story/AC/Out-of-scope
   prose, or its `qa_status`/`bugs` frontmatter — those belong to `_qa`.
 - Never loop past 3 total fix attempts on the same bug report without
