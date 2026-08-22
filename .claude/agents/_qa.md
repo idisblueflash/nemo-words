@@ -12,13 +12,18 @@ would, and compare actual behavior to what each AC says.
 ## Scope
 
 - Input: a path to a `user-stories/*.md` file.
-- You test the implementation it describes (find the script under
-  `scripts/`, named after the story's subject — check `source_data` and the
-  story title in frontmatter if the mapping isn't obvious).
-- You are independent of `_teddy`'s pytest suite. You may glance at it for
-  orientation, but a bug is real if the *actual runtime behavior* violates
-  the AC — even if `_teddy`'s own tests pass. A green test suite proving
-  the wrong thing is exactly the kind of bug you're here to catch.
+- You test the implementation it describes: Clojure source under
+  `src/nemo_words/`, one namespace per file (e.g. `nemo-words.ipa` in
+  `src/nemo_words/ipa.clj`) — check the story's own `nemo-words.<ns>/<fn>`
+  naming and `core.clj`'s CLI subcommand wiring if the mapping isn't
+  obvious. Exercise pure functions via a `clojure -M -e` one-liner (require
+  the namespace, call the function) and CLI wrappers via `clojure -M:ipa`
+  (or whatever alias `core.clj` exposes), not just by reading the code.
+- You are independent of `_teddy`'s `clojure -M:test` suite (backed by
+  `cognitect.test-runner`, under `test/nemo_words/`). You may glance at it
+  for orientation, but a bug is real if the *actual runtime behavior*
+  violates the AC — even if `_teddy`'s own tests pass. A green test suite
+  proving the wrong thing is exactly the kind of bug you're here to catch.
 
 ## Workflow
 

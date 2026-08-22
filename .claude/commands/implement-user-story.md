@@ -11,7 +11,11 @@ individual phases (_teddy / _qa / _buzz).
 
 ## 0. Resolve the story
 
-- Read `$ARGUMENTS`. If it doesn't exist, stop and report the bad path.
+- Normalize `$ARGUMENTS` to a path relative to the repo root (resolve it
+  against the repo root if given as absolute or relative-to-cwd) — the rest
+  of this command assumes a repo-relative path that still resolves once
+  you're inside the worktree. If it doesn't exist, stop and report the bad
+  path.
 - Derive a slug from the filename without extension (e.g. `US-004` from
   `docs/user-stories/US-004.md`). You'll use it for the branch/worktree name
   and in status updates.
@@ -21,13 +25,22 @@ individual phases (_teddy / _qa / _buzz).
 Call `EnterWorktree` with `name` set to a lowercase, hyphenated form of the
 slug (e.g. `us-004`). This creates a new git worktree on a new branch and
 switches the session into it. All following steps run inside that worktree —
-the story file path (`$ARGUMENTS`) is the same relative path inside it.
+the normalized story file path is the same relative path inside it.
+
+If `EnterWorktree` fails because that name/branch already exists (a prior
+run of this command on the same story), don't guess — report it to the user
+and ask whether to resume in the existing worktree (`EnterWorktree` with
+`path`) or use a new name (e.g. suffix `-2`).
 
 ## 2. Implement — dispatch `_teddy`
 
 Dispatch the `_teddy` subagent (Agent tool, `subagent_type: "_teddy"`) with
 the story file path. Wait for it to finish and report which ACs are covered,
 what files it created/changed, and that its test suite passes.
+
+Commit `_teddy`'s work now, before moving on — implementation + tests, one
+commit, message naming the story slug. This checkpoint protects the work if
+`_qa` or `_buzz` fails or the session is interrupted later.
 
 ## 3. Verify — dispatch `_qa`
 
@@ -43,14 +56,16 @@ only its prose summary.
 
 If `qa_status: bug` (any entries under `bugs:`):
 
-1. Dispatch `_buzz` (`subagent_type: "_buzz"`) once per distinct bug entry
-   (or batched, if `_buzz` can take the whole list at once) — point it at the
-   story file and the specific `bugs:` entry/entries. Per `_buzz`'s own
-   workflow this means: create the bug doc, reproduce, fix with TDD, then
-   call `_qa` back for a second review — `_buzz` does the `_qa` callback
-   itself, so let it.
-2. After `_buzz` reports back, re-read the story frontmatter for the fresh
-   `qa_status`.
+1. Dispatch `_buzz` (`subagent_type: "_buzz"`) once per distinct `bugs:`
+   entry, sequentially — one bug report, reproduction, and TDD fix per
+   dispatch. Don't batch multiple bugs into one dispatch: `_buzz`'s report
+   format and its `_qa` callback are built around a single bug at a time,
+   and batching risks one fix's test changes masking another's regression.
+   Point each dispatch at the story file and that entry's AC number.
+   `_buzz` calls `_qa` back itself after each fix — let it; don't also
+   dispatch `_qa` yourself in this step.
+2. After all flagged bugs have gone through `_buzz`, re-read the story
+   frontmatter for the current `qa_status`.
 3. If it's now `passing`, proceed to 4.b. If bugs remain (new or
    unresolved), report the outstanding bugs to the user and stop — do not
    loop indefinitely or guess at further fixes yourself. Only re-dispatch
@@ -64,9 +79,11 @@ pass or after `_buzz` resolved everything):
 1. Edit the story file's frontmatter to add `status: done` (alongside the
    existing `qa_status: passing`) — this is the "story implemented and
    verified" flag, distinct from `_qa`'s own `qa_status` field.
-2. Commit the work in the worktree: the implementation, tests, story
-   frontmatter update, and any bug docs/fixes from step 4.a. Write a commit
-   message naming the story (slug + title).
+2. Commit this final state: the `status: done` frontmatter edit, plus
+   anything from step 4.a not already committed by `_buzz` (bug reports,
+   fixes — `_buzz` commits its own work per its workflow, but confirm with
+   `git status` rather than assuming). Write a commit message naming the
+   story (slug + title).
 3. Report to the user: branch name, worktree path, story slug/title,
    AC summary from `_teddy`, and confirmation of the `status: done` flag.
    Do not push or open a PR — that needs separate explicit go-ahead.
