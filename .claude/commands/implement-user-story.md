@@ -63,13 +63,24 @@ If `qa_status: bug` (any entries under `bugs:`):
    and batching risks one fix's test changes masking another's regression.
    Point each dispatch at the story file and that entry's AC number.
    `_buzz` calls `_qa` back itself after each fix — let it; don't also
-   dispatch `_qa` yourself in this step.
+   dispatch `_qa` yourself in this step. This is one **round**; track a
+   round counter for this story (starts at 1).
 2. After all flagged bugs have gone through `_buzz`, re-read the story
    frontmatter for the current `qa_status`.
 3. If it's now `passing`, proceed to 4.b. If bugs remain (new or
-   unresolved), report the outstanding bugs to the user and stop — do not
-   loop indefinitely or guess at further fixes yourself. Only re-dispatch
-   `_buzz` again if the user says to keep going.
+   unresolved):
+   - Report the outstanding bugs to the user, including the current round
+     count (e.g. "round 2 of 3"), and stop — do not loop indefinitely or
+     guess at further fixes yourself.
+   - If this was round 3 (i.e. 3 rounds of dispatching `_buzz` for this
+     story's remaining bugs have completed and bugs still remain), stop
+     here regardless of what the user wants to do next — do not start a
+     4th round even if asked to keep going. Report that the 3-round cap
+     was hit and that persistent bugs after 3 rounds need closer human
+     review rather than another automated attempt.
+   - Otherwise (round 1 or 2 just completed), only start the next round
+     (increment the counter, go back to step 1) if the user explicitly
+     says to keep going.
 
 ### 4.b — clean pass
 
