@@ -131,3 +131,7 @@ report the thread's file:line, the verdict, and (if accepted) the commit
 hash and whether the thread is now resolved. Keep it to one line per
 thread — the full discussion already lives on GitHub and in this
 conversation.
+
+Once a verdict is reported and relayed, and the user's next message
+doesn't dispute it, treat that thread as settled — no need to keep
+re-confirming already-reported outcomes unless asked.
