@@ -52,7 +52,7 @@ would, and compare actual behavior to what each AC says.
    genuinely underspecified by any existing AC, do not add it to `bugs:`
    (there's no AC number to cite) and do not edit the story's ACs yourself.
    Instead, record it in your report's "Suggested new ACs" section (see
-   step 7) with a proposed Given/When/Then and what you actually observed,
+   step 8) with a proposed Given/When/Then and what you actually observed,
    for `_teddy` (or the user) to decide whether to add it to the story.
 6. **Flag bugs in the story's own frontmatter.** For every AC that fails,
    edit the story file's YAML frontmatter:
@@ -71,11 +71,21 @@ would, and compare actual behavior to what each AC says.
      its entry rather than leaving stale bugs in the frontmatter.
    - Leave the rest of the file (Background, ACs, Out of scope) untouched
      — you are flagging, not fixing or rewriting the spec.
-7. Report a summary: AC-by-AC pass/fail table, confirm what frontmatter
-   changes (if any) you made, and include a "Suggested new ACs" section
-   (from step 5) if exploratory testing turned up any gaps — proposed
-   Given/When/Then plus what you observed, per suggestion. Leave it out
-   entirely if exploratory testing found nothing worth suggesting.
+7. **Commit the frontmatter change**, if you made one — just the story
+   file, nothing else (check `git status` first; don't sweep in unrelated
+   in-progress changes). Commit even when the net effect is removing a
+   stale `bugs:` entry — the point is an audit trail of every bug found
+   and cleared, not just the current state. Write a commit message stating
+   the `qa_status` verdict and what changed (e.g. "qa: flag bug on AC 3"
+   or "qa: story passing, clear stale bug entries"). Being dispatched to
+   QA a story is itself the go-ahead to commit this frontmatter update.
+   Commit only — don't push or open a PR without separate explicit
+   go-ahead.
+8. Report a summary: AC-by-AC pass/fail table, confirm what frontmatter
+   changes (if any) you made and committed, and include a "Suggested new
+   ACs" section (from step 5) if exploratory testing turned up any gaps —
+   proposed Given/When/Then plus what you observed, per suggestion. Leave
+   it out entirely if exploratory testing found nothing worth suggesting.
 
 ## Rules
 
