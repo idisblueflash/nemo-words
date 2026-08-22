@@ -31,13 +31,15 @@ never more.
    already made in code.
 2. Take the **next unimplemented AC** (start from AC 1). Use TaskCreate /
    TaskUpdate to track one task per AC so progress is visible.
-3. **Red.** Write a new test (or a small set of tightly-related tests) that
-   encodes a slice of that AC's Given/When/Then and its worked Example —
-   the whole thing if it's simple, or the next small piece of it if the AC
-   naturally decomposes into several functions/steps. Run the test suite
-   and confirm the new test **fails** (and fails for the right reason — a
-   missing implementation, not a typo). Never write production code before
-   you've seen the red failure.
+3. **Red.** Write a new test — an **integration test** encoding this AC's
+   full Given/When/Then and worked Example end-to-end (via the same public
+   function/CLI entry point an end user would use) if this is the first
+   cycle for the AC, or a **unit test** for the next small slice/
+   implementation detail if the AC naturally decomposes into several
+   functions/steps and you're driving out one piece at a time. Run the
+   test suite and confirm the new test **fails** (and fails for the right
+   reason — a missing implementation, not a typo). Never write production
+   code before you've seen the red failure.
 4. **Green.** Write the minimal production code to make that test pass,
    without over-building for ACs (or later slices of this AC) you haven't
    reached yet. Run the full suite — the new test and all previously-
@@ -48,11 +50,13 @@ never more.
    need. Re-run the suite after any refactor; it must stay green. If
    nothing needs refactoring, say so and move on — refactoring is not
    mandatory every step.
-6. If this AC's Given/When/Then and worked Example aren't all green yet,
-   repeat steps 3-5 for the next slice of this same AC — take the smallest
-   step that gets you to green each time, rather than one large
-   implementation pass. Once they are, mark that AC's task complete and
-   move to the next AC. Do not skip ahead or batch multiple ACs into one
+6. If this AC's integration test (or, if you haven't written it yet, the
+   AC's Given/When/Then and worked Example as a whole) isn't green yet,
+   repeat steps 3-5 — adding unit tests for the next slice/implementation
+   detail — for this same AC. Take the smallest step that gets you to
+   green each time, rather than one large implementation pass. Once the
+   AC's integration test is green, mark that AC's task complete and move
+   to the next AC. Do not skip ahead or batch multiple ACs into one
    red/green cycle.
 
 ## Rules
@@ -68,8 +72,15 @@ never more.
   parse, then validate, then format). Take the smallest step that gets you
   to green each time; don't write a pile of code in one shot and then
   discover half of it wasn't needed.
-- Tests must actually exercise the Example given in the AC where one is
-  provided, not just abstract behavior.
+- Every AC needs at least one **integration test** that exercises its
+  worked Example literally, end-to-end, via the same public function/CLI
+  entry point an end user would use — this is the durable regression check
+  for that AC's contract (this repo has no other automated, committed
+  check of AC-level behavior; `_qa`'s black-box passes are ad hoc and not
+  persisted as tests). Beyond that, add **unit tests** for implementation
+  details, edge cases, and error paths the worked Example doesn't cover,
+  as you decompose the AC into smaller increments — don't limit yourself
+  to only the Example.
 - Don't add error handling, CLI flags, or output formats an AC doesn't ask
   for yet — later ACs will ask for them explicitly (e.g. `--seed`,
   `--verify`) and you implement them when their turn comes.
