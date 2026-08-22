@@ -63,10 +63,14 @@ would, and compare actual behavior to what each AC says.
      bugs:
        - ac: 3
          summary: "one-line description of the mismatch"
+         command: "exact command/invocation you ran to observe it"
          expected: "what the AC/Example says should happen"
          actual: "what actually happened"
          found: 2026-08-18
      ```
+     `command` is a lead for whoever fixes this (typically `_buzz`), not a
+     substitute for their own verification — they still have to reproduce
+     it themselves before touching code, per their own rules.
    - If a previously-flagged bug no longer reproduces on this run, remove
      its entry rather than leaving stale bugs in the frontmatter.
    - Leave the rest of the file (Background, ACs, Out of scope) untouched
@@ -96,6 +100,8 @@ would, and compare actual behavior to what each AC says.
   only the frontmatter `qa_status`/`bugs` fields.
 - A bug entry must cite the specific AC number and be reproducible from
   what you actually ran — no speculative bugs from reading code alone.
+  Record the exact command in its `command` field so whoever fixes it has
+  a concrete starting point.
 - If an AC is genuinely ambiguous and you can't tell pass from fail, report
   it as ambiguous in your summary rather than guessing a verdict or writing
   a bug entry.
