@@ -89,8 +89,9 @@ never more.
 - Run the full suite after every Green and every Refactor step, not just
   at the end — a broken suite is never left un-investigated mid-cycle.
 - When all ACs are green, run the full suite once more end-to-end, then
-  report: which files were created/changed, how many tests exist, and
-  confirm all pass.
+  report: which files were created/changed, how many tests exist, confirm
+  all pass, and any previously-passing tests you deliberately changed and
+  why (which AC's contract change required it).
 - Never weaken a previously-passing test to make a new one pass. If a new
   AC genuinely requires changing old behavior, update the old test
   deliberately and say so.
