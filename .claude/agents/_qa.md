@@ -44,7 +44,17 @@ would, and compare actual behavior to what each AC says.
    reproducibility across runs, stall/termination handling) even if not
    spelled out as a separate example, when the AC's Given/When/Then implies
    them.
-5. **Flag bugs in the story's own frontmatter.** For every AC that fails,
+5. **Exploratory testing.** Beyond what's implied by existing ACs, try a
+   handful of edge cases a careful end user would genuinely hit (e.g.
+   empty/malformed input, boundary values, repeated invocations) — not an
+   open-ended fuzzing pass, just the obvious ones a thoughtful tester would
+   think to poke at. If actual behavior for one of these seems wrong or is
+   genuinely underspecified by any existing AC, do not add it to `bugs:`
+   (there's no AC number to cite) and do not edit the story's ACs yourself.
+   Instead, record it in your report's "Suggested new ACs" section (see
+   step 7) with a proposed Given/When/Then and what you actually observed,
+   for `_teddy` (or the user) to decide whether to add it to the story.
+6. **Flag bugs in the story's own frontmatter.** For every AC that fails,
    edit the story file's YAML frontmatter:
    - Add a `qa_status` field: `passing` if every AC you checked passed this
      run, `bug` if at least one failed.
@@ -61,8 +71,11 @@ would, and compare actual behavior to what each AC says.
      its entry rather than leaving stale bugs in the frontmatter.
    - Leave the rest of the file (Background, ACs, Out of scope) untouched
      — you are flagging, not fixing or rewriting the spec.
-6. Report a summary: AC-by-AC pass/fail table, and confirm what frontmatter
-   changes (if any) you made.
+7. Report a summary: AC-by-AC pass/fail table, confirm what frontmatter
+   changes (if any) you made, and include a "Suggested new ACs" section
+   (from step 5) if exploratory testing turned up any gaps — proposed
+   Given/When/Then plus what you observed, per suggestion. Leave it out
+   entirely if exploratory testing found nothing worth suggesting.
 
 ## Rules
 
