@@ -107,3 +107,40 @@
         (when (and idx rp-variant)
           [(nucleus-trim (nth (syllables rp-variant) idx))
            (nucleus-trim (nth ga-segs idx))])))))
+
+(defn- tally-pairs
+  "Rows (`{:word :rp :ga}`) plus target-ga -> a seq of `[pair count]`
+  entries, sorted by count descending, ties broken by first-occurrence
+  order of the pair in `triples`. Rows where extract-nucleus returns nil
+  contribute nothing."
+  [triples target-ga]
+  (let [pairs (keep #(extract-nucleus (:rp %) (:ga %) target-ga) triples)
+        order (into {} (map-indexed (fn [i p] [p i]) (distinct pairs)))
+        counts (frequencies pairs)]
+    (sort-by (fn [[p n]] [(- n) (order p)]) counts)))
+
+(defn pair-distribution
+  "Rows (`{:word :rp :ga}`) plus target-ga -> `[{:pair :count :pct} ...]`,
+  the full tally of `[rp-nucleus ga-nucleus]` fragment pairings across all
+  matches, sorted by count descending (ties broken by first-occurrence
+  order in `triples`). Returns `[]` when nothing can be tallied.
+
+  Example:
+    (pair-distribution [{:word \"car\" :rp \"/kɑː/\" :ga \"/kɑɹ/\"}] \"/ɑɹ/\")
+    ;=> [{:pair [\"ɑː\" \"ɑɹ\"] :count 1 :pct 100}]"
+  [triples target-ga]
+  (let [tallied (tally-pairs triples target-ga)
+        total (reduce + (map second tallied))]
+    (mapv (fn [[p n]]
+            {:pair p :count n :pct (int (Math/round (* 100.0 (/ n total))))})
+          tallied)))
+
+(defn dominant-pair
+  "Rows (`{:word :rp :ga}`) plus target-ga -> the single highest-percentage
+  `[rp-nucleus ga-nucleus]` pairing, or nil when nothing can be tallied.
+
+  Example:
+    (dominant-pair [{:word \"car\" :rp \"/kɑː/\" :ga \"/kɑɹ/\"}] \"/ɑɹ/\")
+    ;=> [\"ɑː\" \"ɑɹ\"]"
+  [triples target-ga]
+  (-> (pair-distribution triples target-ga) first :pair))
