@@ -2,6 +2,7 @@
   (:require [nemo-words.freq :as freq]
             [nemo-words.ioutil :as ioutil]
             [nemo-words.ipa :as ipa]
+            [nemo-words.sets :as sets]
             [nemo-words.strutil :as strutil]))
 
 (defn- clean-lines
@@ -89,17 +90,52 @@
       (println (str (:word row) "\t" (:rp row) "\t" (:ga row))))
     0))
 
+(defn pick-example-words-by-ipa
+  "Thin CLI wrapper: lexical-sets map + query IPA string -> sets/pick-by-ga
+  -> print one line of EDN (a vector of {:keyword :rp :ga :words} maps) to
+  stdout. Returns the process exit code (always 0).
+
+  Example:
+    (pick-example-words-by-ipa
+      {\"nurse\" {:rp \"/ɜː/\" :ga \"/ɜr/\" :words [\"bird\"]}} \"/ɜr/\")
+    ;; prints [{:keyword \"nurse\", :rp \"/ɜː/\", :ga \"/ɜr/\", :words [\"bird\"]}]
+    ;=> 0"
+  [lexical-sets query]
+  (println (pr-str (sets/pick-by-ga lexical-sets query)))
+  0)
+
+(defn pick-example-words-by-ipa-cli
+  "Full CLI entry for the pick-example-words-by-ipa subcommand: loads
+  lexical-sets.edn (or path, when given, for testability) and either
+  delegates to pick-example-words-by-ipa or, if the file doesn't exist
+  yet, prints a clear error to stderr and returns a non-zero exit code.
+
+  Example:
+    (pick-example-words-by-ipa-cli [\"/ɜr/\"]) ;; reads lexical-sets.edn, prints matches, exits 0"
+  ([args] (pick-example-words-by-ipa-cli args sets/default-path))
+  ([args path]
+   (let [query (first args)
+         lexical-sets (sets/load! path)]
+     (if (nil? lexical-sets)
+       (do (binding [*out* *err*]
+             (println "No lexical sets built yet. Run build-set (US-004) first."))
+           1)
+       (pick-example-words-by-ipa lexical-sets query)))))
+
 (defn -main
   "Entry point invoked by `clj -M -m nemo-words.core`. Dispatches the
-  word-freq and ipa-lookup subcommands; any other/no args prints a greeting.
+  word-freq, ipa-lookup, and pick-example-words-by-ipa subcommands; any
+  other/no args prints a greeting.
 
   Example:
     (-main) ;; prints \"Hello, nemo-words!\"
     (-main \"word-freq\" \"car\" \"star\") ;; prints \"car\\t<freq>\" then \"star\\t<freq>\"
-    (-main \"ipa-lookup\" \"--word\" \"car\") ;; prints \"car\\t/kɑː/\\t/kɑɹ/\", exits 0"
+    (-main \"ipa-lookup\" \"--word\" \"car\") ;; prints \"car\\t/kɑː/\\t/kɑɹ/\", exits 0
+    (-main \"pick-example-words-by-ipa\" \"/ɜr/\") ;; prints an EDN vector of matches, exits 0"
   [& args]
   (let [[subcommand & rest-args] args]
     (cond
       (= subcommand "word-freq") (word-freq-cli rest-args)
       (= subcommand "ipa-lookup") (ipa-lookup (ipa/load-rp-ga-dict) rest-args)
+      (= subcommand "pick-example-words-by-ipa") (pick-example-words-by-ipa-cli rest-args)
       :else (println "Hello, nemo-words!"))))

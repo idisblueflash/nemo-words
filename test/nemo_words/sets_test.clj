@@ -41,6 +41,21 @@
       (sets/save! {"nurse" ["bird" "word"]} path)
       (is (= {"nurse" ["bird" "word"]} (edn/read-string (slurp path)))))))
 
+(deftest load-nil-when-file-missing-test
+  (testing "load! returns nil when the file doesn't exist yet"
+    (let [path (temp-path)]
+      (is (nil? (sets/load! path))))))
+
+(deftest load-reads-existing-file-test
+  (testing "load! reads back a previously-saved lexical-sets map"
+    (let [path (temp-path)]
+      (sets/save! {"nurse" {:rp "/ɜː/" :ga "/ɜr/" :words ["bird"]}} path)
+      (is (= {"nurse" {:rp "/ɜː/" :ga "/ɜr/" :words ["bird"]}} (sets/load! path))))))
+
+(deftest pick-by-ga-no-match-test
+  (testing "pick-by-ga returns [] when no entry's :ga contains the query"
+    (is (= [] (sets/pick-by-ga {"nurse" {:rp "/ɜː/" :ga "/ɜr/" :words ["bird"]}} "/zzz/")))))
+
 (deftest save-fails-test
   (testing "Save fails: throws and leaves any pre-existing file untouched"
     (let [path (temp-path)
