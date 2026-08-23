@@ -64,7 +64,7 @@ The four-source cross-reference tool in `src/nemo_words/ipa.clj` (ipa-dict, Wiki
 
 ## Should have
 
-- [ ] [[US-006]] Extend the Lexical Sets
+- [x] [[US-006]] Extend the Lexical Sets
   - [x] [[US-007]] Find the dominant RP+GA pairing for a missing GA combination
     - [x] [[US-013]] Extract the RP+GA nucleus fragment for one row
   - [ ] [[US-008]] Select and rank the example words for a new set — superseded by [[US-010]]
@@ -103,7 +103,7 @@ Parallel functions (independently unit-testable on Clojure data):
                     ▼
   :done [[US-005]] pick-example-words-by-ipa  (reads lexical-sets.edn; thin CLI)
 
-  [[US-006]] extend-set = lookup-rows -> dominant-pair [uses extract-nucleus] -> lookup-rows
+  :done [[US-006]] extend-set = lookup-rows -> dominant-pair [uses extract-nucleus] -> lookup-rows
                            -> [filter-coda, rhotic sets only] -> annotate-freq
                            -> top-n -> pick-keyword -> upsert -> save!
 
