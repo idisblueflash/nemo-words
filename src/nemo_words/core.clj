@@ -125,7 +125,9 @@
 (defn -main
   "Entry point invoked by `clj -M -m nemo-words.core`. Dispatches the
   word-freq, ipa-lookup, and pick-example-words-by-ipa subcommands; any
-  other/no args prints a greeting.
+  other/no args prints a greeting. Passes the dispatched subcommand's
+  returned exit code to System/exit so the real OS process exit status
+  matches it (a bare return value here has no effect on the process).
 
   Example:
     (-main) ;; prints \"Hello, nemo-words!\"
@@ -133,9 +135,10 @@
     (-main \"ipa-lookup\" \"--word\" \"car\") ;; prints \"car\\t/kɑː/\\t/kɑɹ/\", exits 0
     (-main \"pick-example-words-by-ipa\" \"/ɜr/\") ;; prints an EDN vector of matches, exits 0"
   [& args]
-  (let [[subcommand & rest-args] args]
-    (cond
-      (= subcommand "word-freq") (word-freq-cli rest-args)
-      (= subcommand "ipa-lookup") (ipa-lookup (ipa/load-rp-ga-dict) rest-args)
-      (= subcommand "pick-example-words-by-ipa") (pick-example-words-by-ipa-cli rest-args)
-      :else (println "Hello, nemo-words!"))))
+  (let [[subcommand & rest-args] args
+        exit-code (cond
+                    (= subcommand "word-freq") (word-freq-cli rest-args)
+                    (= subcommand "ipa-lookup") (ipa-lookup (ipa/load-rp-ga-dict) rest-args)
+                    (= subcommand "pick-example-words-by-ipa") (pick-example-words-by-ipa-cli rest-args)
+                    :else (do (println "Hello, nemo-words!") 0))]
+    (System/exit exit-code)))

@@ -137,3 +137,20 @@
           lines (->> (str/split-lines out) (remove str/blank?))]
       (is (= 0 exit-code))
       (is (= ["car\t/kɑː/\t/kɑɹ/"] lines)))))
+
+;; -------------------------------------- pick-example-words-by-ipa exit code (bug-001, US-005 AC4)
+;; Same real-process rationale as main-dispatches-ipa-lookup-subcommand-test above:
+;; -main must translate a subcommand's returned exit code into an actual
+;; process exit code via System/exit, not just discard it.
+(deftest main-pick-example-words-by-ipa-missing-lexical-sets-exits-nonzero-test
+  (testing "`clojure -M -m nemo-words.core pick-example-words-by-ipa /ɜr/` exits non-zero (per US-005 AC 4) when lexical-sets.edn is missing"
+    (is (not (.exists (java.io.File. "resources/lexical-sets.edn")))
+        "precondition: resources/lexical-sets.edn (the default path) must not exist for this test to be meaningful")
+    (let [proc (-> (ProcessBuilder. ["clojure" "-M" "-m" "nemo-words.core"
+                                      "pick-example-words-by-ipa" "/ɜr/"])
+                    (.redirectErrorStream true)
+                    .start)
+          out (slurp (.getInputStream proc))
+          exit-code (.waitFor proc)]
+      (is (not (zero? exit-code)))
+      (is (str/includes? (str/lower-case out) "no lexical sets built yet")))))
