@@ -54,13 +54,13 @@ The four-source cross-reference tool in `src/nemo_words/ipa.clj` (ipa-dict, Wiki
 
 ## Must have
 
-- [ ] [[US-001]] Support IPA search for both RP and GA
-- [ ] [[US-003]] CLI for word frequency with Google's API
+- [x] [[US-001]] Support IPA search for both RP and GA
+- [x] [[US-003]] CLI for word frequency with Google's API
 - [x] [[US-004]] Prepare the custom example words
 - [x] [[US-005]] Use the Lexical Sets
 - [x] [[US-010]] Generic top-N ranking filter
 - [x] [[US-011]] Upsert a set into lexical-sets.edn
-- [ ] [[US-012]] Filter out onset-r false positives from rhotic lexical-set lookups
+- [x] [[US-012]] Filter out onset-r false positives from rhotic lexical-set lookups
 
 ## Should have
 
@@ -86,15 +86,15 @@ Every leaf story is a pure (or thinly-impure) Clojure function with a frozen dat
 ```
 Parallel functions (independently unit-testable on Clojure data):
 
-  [[US-001]] ipa/lookup-rows      dict + opts      ->  [{:word :rp :ga}]
-  [[US-002]] -> [[US-003]] freq/annotate-freq  rows ->  rows + :freq   (used by [[US-006]] only)
+  :done [[US-001]] ipa/lookup-rows      dict + opts      ->  [{:word :rp :ga}]
+  :done [[US-002]] -> [[US-003]] freq/annotate-freq  rows ->  rows + :freq   (used by [[US-006]] only)
   :done [[US-013]] pairs/extract-nucleus rp + ga + target-ga -> [rp-nucleus ga-nucleus] | nil
   :done [[US-014]]'s pairs/extract-syllable    rp + ga + target-ga -> {:onset :nucleus :coda} | nil  (sibling of extract-nucleus)
   :done [[US-007]] pairs/dominant-pair  triples + target-ga  ->  [rp-nucleus ga-nucleus]
   :done [[US-009]] keyword/pick-keyword rows             ->  keyword
   :done [[US-010]] rank/top-n           rows + score + n  ->  top-n rows   (used by [[US-006]] only)
   :done [[US-011]] sets/upsert + save!  sets + kw + rows  ->  lexical-sets.edn
-  [[US-012]] rime/filter-coda     rows + key + sound ->  rows (rhotic sets only)
+  :done [[US-012]] rime/filter-coda     rows + key + sound ->  rows (rhotic sets only)
 
                     │
                     ▼
