@@ -41,3 +41,68 @@
 (deftest extract-nucleus-target-ga-not-found-test
   (testing "target-ga not found in any GA variant -> nil, no throw"
     (is (nil? (pairs/extract-nucleus "/ˈnɑː.li/" "/ˈnɑɹ.li/" "/ʊə/")))))
+
+;; -- dominant-pair / pair-distribution fixtures --------------------------
+
+(def ^:private car-row
+  ;; extract-nucleus "/kɑː/" "/kɑɹ/" "/ɑɹ/" => ["ɑː" "ɑɹ"]
+  {:word "car" :rp "/kɑː/" :ga "/kɑɹ/"})
+
+(def ^:private par-row
+  ;; extract-nucleus "/pɔː/" "/pɑɹ/" "/ɑɹ/" => ["ɔː" "ɑɹ"]
+  {:word "par" :rp "/pɔː/" :ga "/pɑɹ/"})
+
+(def ^:private scar-row
+  ;; extract-nucleus "/skɛə/" "/skɑɹ/" "/ɑɹ/" => ["ɛə" "ɑɹ"]
+  {:word "scar" :rp "/skɛə/" :ga "/skɑɹ/"})
+
+(def ^:private narwhal-mismatched-row
+  ;; ga variant "nɑɹ.li" has 2 syllables; the only rp variant "nɑːw.ə.l"
+  ;; has 3 -> extract-nucleus returns nil, row is skipped.
+  {:word "narwhal" :rp "/ˈnɑːw.ə.l/" :ga "/ˈnɑɹ.li/"})
+
+(deftest dominant-pair-clear-majority-test
+  (testing "one RP nucleus clearly dominates"
+    (let [triples (concat (repeat 8 car-row) (repeat 2 scar-row))]
+      (is (= ["ɑː" "ɑɹ"] (pairs/dominant-pair triples "/ɑɹ/"))))))
+
+(deftest dominant-pair-tie-is-stable-on-input-order-test
+  (testing "exact tie resolved by first-occurrence-in-input order"
+    (let [triples (concat (repeat 5 car-row) (repeat 5 par-row))]
+      (is (= ["ɑː" "ɑɹ"] (pairs/dominant-pair triples "/ɑɹ/"))))))
+
+(deftest dominant-pair-single-pairing-test
+  (testing "only one nucleus pairing exists -> that pairing, 100% dominance"
+    (let [triples (repeat 3 car-row)]
+      (is (= ["ɑː" "ɑɹ"] (pairs/dominant-pair triples "/ɑɹ/"))))))
+
+(deftest dominant-pair-skips-mismatched-syllable-row-test
+  (testing "row with mismatched syllable count contributes nothing"
+    (let [triples [narwhal-mismatched-row car-row]]
+      (is (= ["ɑː" "ɑɹ"] (pairs/dominant-pair triples "/ɑɹ/"))))))
+
+(deftest pair-distribution-full-spread-test
+  (testing "returns the entire tally, sorted by count descending"
+    (let [triples (concat (repeat 8 car-row) (repeat 2 scar-row))]
+      (is (= [{:pair ["ɑː" "ɑɹ"] :count 8 :pct 80}
+              {:pair ["ɛə" "ɑɹ"] :count 2 :pct 20}]
+             (pairs/pair-distribution triples "/ɑɹ/")))
+      (is (= ["ɑː" "ɑɹ"] (pairs/dominant-pair triples "/ɑɹ/"))))))
+
+(deftest dominant-pair-no-triples-test
+  (testing "empty triples -> nil, not a bogus pair or a throw"
+    (is (nil? (pairs/dominant-pair [] "/ʊə/")))))
+
+(deftest pair-distribution-no-triples-test
+  (testing "empty triples -> [], not nil"
+    (is (= [] (pairs/pair-distribution [] "/ʊə/")))))
+
+(deftest dominant-pair-all-rows-skipped-test
+  (testing "every row skipped -> nil, same as empty-triples case"
+    (let [triples [narwhal-mismatched-row narwhal-mismatched-row]]
+      (is (nil? (pairs/dominant-pair triples "/ɑɹ/"))))))
+
+(deftest pair-distribution-all-rows-skipped-test
+  (testing "every row skipped -> []"
+    (let [triples [narwhal-mismatched-row narwhal-mismatched-row]]
+      (is (= [] (pairs/pair-distribution triples "/ɑɹ/"))))))
