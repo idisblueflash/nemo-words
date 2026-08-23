@@ -55,6 +55,15 @@
   [s substr]
   (str/includes? s substr))
 
+(defn index-of-str
+  "Index of the first occurrence of substr in s at or after from-index, or
+  nil if not found.
+
+  Example:
+    (index-of-str \"kɑɹkɑɹ\" \"ɑɹ\" 2) ;=> 4"
+  [s substr from-index]
+  (str/index-of s substr from-index))
+
 (defn join-str
   "Join coll into a string, optionally interposing separator between elements.
 
