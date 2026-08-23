@@ -68,7 +68,7 @@ The four-source cross-reference tool in `src/nemo_words/ipa.clj` (ipa-dict, Wiki
   - [x] [[US-007]] Find the dominant RP+GA pairing for a missing GA combination
     - [x] [[US-013]] Extract the RP+GA nucleus fragment for one row
   - [ ] [[US-008]] Select and rank the example words for a new set — superseded by [[US-010]]
-- [ ] [[US-014]] Find the best-matched example word for a target word's syllable
+- [x] [[US-014]] Find the best-matched example word for a target word's syllable
 
 ## Could have
 
@@ -89,7 +89,7 @@ Parallel functions (independently unit-testable on Clojure data):
   [[US-001]] ipa/lookup-rows      dict + opts      ->  [{:word :rp :ga}]
   [[US-002]] -> [[US-003]] freq/annotate-freq  rows ->  rows + :freq   (used by [[US-006]] only)
   :done [[US-013]] pairs/extract-nucleus rp + ga + target-ga -> [rp-nucleus ga-nucleus] | nil
-  [[US-014]]'s pairs/extract-syllable    rp + ga + target-ga -> {:onset :nucleus :coda} | nil  (sibling of extract-nucleus)
+  :done [[US-014]]'s pairs/extract-syllable    rp + ga + target-ga -> {:onset :nucleus :coda} | nil  (sibling of extract-nucleus)
   :done [[US-007]] pairs/dominant-pair  triples + target-ga  ->  [rp-nucleus ga-nucleus]
   :done [[US-009]] keyword/pick-keyword rows             ->  keyword
   :done [[US-010]] rank/top-n           rows + score + n  ->  top-n rows   (used by [[US-006]] only)

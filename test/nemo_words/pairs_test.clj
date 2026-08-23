@@ -97,6 +97,22 @@
   (testing "empty triples -> [], not nil"
     (is (= [] (pairs/pair-distribution [] "/ʊə/")))))
 
+;; -- extract-syllable (US-014) -------------------------------------------
+
+(deftest extract-syllable-basic-test
+  (testing "returns {:onset :nucleus :coda} for the matching GA syllable"
+    (is (= {:onset "n" :nucleus "ɑɹ" :coda ""}
+           (pairs/extract-syllable "/ˈnɑː.li/" "/ˈnɑɹ.li/" "/ɑɹ/")))))
+
+(deftest extract-syllable-with-coda-test
+  (testing "coda is captured when the matching syllable has trailing consonants"
+    (is (= {:onset "st" :nucleus "ɑɹ" :coda "t"}
+           (pairs/extract-syllable "/ˈstɑː.tli/" "/ˈstɑɹt.li/" "/ɑɹ/")))))
+
+(deftest extract-syllable-not-found-test
+  (testing "target-ga not found in any GA variant -> nil, no throw"
+    (is (nil? (pairs/extract-syllable "/ˈnɑː.li/" "/ˈnɑɹ.li/" "/ʊə/")))))
+
 (deftest dominant-pair-all-rows-skipped-test
   (testing "every row skipped -> nil, same as empty-triples case"
     (let [triples [narwhal-mismatched-row narwhal-mismatched-row]]

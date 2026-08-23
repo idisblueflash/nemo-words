@@ -86,6 +86,46 @@
       trim-leading-consonants
       trim-trailing-consonants))
 
+(defn- split-syllable
+  "Split a single (possibly stressed) syllable segment into its onset,
+  nucleus, and coda consonants, per the same consonant set and rules as
+  nucleus-trim (rhotic ɹ is never treated as a coda consonant).
+
+  Example:
+    (split-syllable \"ˈnɑɹ\") ;=> {:onset \"n\" :nucleus \"ɑɹ\" :coda \"\"}"
+  [segment]
+  (let [s (drop-stress segment)
+        after-onset (trim-leading-consonants s)
+        onset (subs s 0 (- (count s) (count after-onset)))
+        nucleus (trim-trailing-consonants after-onset)
+        coda (subs after-onset (count nucleus))]
+    {:onset onset :nucleus nucleus :coda coda}))
+
+(defn extract-syllable
+  "One row's raw :rp/:ga cell text plus the target-ga substring that
+  matched it -> {:onset :nucleus :coda} for the matching GA syllable, or
+  nil if no aligned pair can be found. Same syllable-segment selection as
+  extract-nucleus (GA variant containing target-ga, RP variant with a
+  matching syllable count), but the onset/coda consonants are returned
+  alongside the nucleus instead of being trimmed away.
+
+  Example:
+    (extract-syllable \"/ˈnɑː.li/\" \"/ˈnɑɹ.li/\" \"/ɑɹ/\")
+    ;=> {:onset \"n\" :nucleus \"ɑɹ\" :coda \"\"}"
+  [rp ga target-ga]
+  (let [target (strip-slashes target-ga)
+        ga-variant (first (filter #(strutil/includes-str? % target)
+                                   (variants ga)))]
+    (when ga-variant
+      (let [ga-segs (syllables ga-variant)
+            idx (first (keep-indexed (fn [i seg] (when (strutil/includes-str? seg target) i))
+                                      ga-segs))
+            ga-syll-count (count ga-segs)
+            rp-variant (first (filter #(= (count (syllables %)) ga-syll-count)
+                                       (variants rp)))]
+        (when (and idx rp-variant)
+          (split-syllable (nth ga-segs idx)))))))
+
 (defn extract-nucleus
   "One row's raw :rp/:ga cell text plus the target-ga substring that
   matched it -> [rp-nucleus ga-nucleus], or nil if no aligned pair can be
