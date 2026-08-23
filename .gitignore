@@ -10,3 +10,4 @@ resources/data/kaikki-en.jsonl
 resources/lexical-sets.edn
 /scripts/
 .vmark/
+.DS_Store
