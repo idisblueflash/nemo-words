@@ -1,8 +1,16 @@
 (ns nemo-words.core-test
-  (:require [clojure.string :as str]
+  (:require [clojure.edn :as edn]
+            [clojure.string :as str]
             [clojure.test :refer [deftest is testing]]
             [nemo-words.core :as core]
-            [nemo-words.freq :as freq]))
+            [nemo-words.freq :as freq])
+  (:import (java.io File)))
+
+(defn- temp-sets-path []
+  (let [f (File/createTempFile "lexical-sets" ".edn")]
+    (.delete f)
+    (.deleteOnExit f)
+    (.getPath f)))
 
 (deftest smoke-test
   (is (= 1 1)))
@@ -64,6 +72,56 @@
       (is (= 0 exit-code))
       (is (= [] lines)))))
 
+;; ------------------------------------------- pick-example-words-by-ipa (US-005)
+(deftest pick-example-words-by-ipa-single-match-test
+  (testing "IPA matches exactly one set: stdout is an EDN vector with that entry's map, nothing else"
+    (let [path (temp-sets-path)]
+      (spit path (pr-str {"nurse" {:rp "/ɜː/" :ga "/ɜr/" :words ["bird" "word"]}}))
+      (let [out (java.io.StringWriter.)
+            exit-code (binding [*out* out]
+                        (core/pick-example-words-by-ipa-cli ["/ɜr/"] path))
+            lines (->> (str/split-lines (str out)) (remove str/blank?))]
+        (is (= 0 exit-code))
+        (is (= 1 (count lines)))
+        (is (= [{:keyword "nurse" :rp "/ɜː/" :ga "/ɜr/" :words ["bird" "word"]}]
+               (edn/read-string (str out))))))))
+
+(deftest pick-example-words-by-ipa-multiple-matches-test
+  (testing "IPA matches more than one set: one map per matching entry, in lexical-sets.edn's order"
+    (let [path (temp-sets-path)]
+      (spit path (pr-str {"lettER" {:rp "ə" :ga "əɹ"
+                                     :words ["paper" "metre" "calendar" "stupor" "succour" "martyr"]}
+                           "commA" {:rp "ə" :ga "ə" :words ["catalpa" "quota" "vodka"]}}))
+      (let [out (java.io.StringWriter.)
+            exit-code (binding [*out* out]
+                        (core/pick-example-words-by-ipa-cli ["ə"] path))]
+        (is (= 0 exit-code))
+        (is (= [{:keyword "lettER" :rp "ə" :ga "əɹ"
+                 :words ["paper" "metre" "calendar" "stupor" "succour" "martyr"]}
+                {:keyword "commA" :rp "ə" :ga "ə" :words ["catalpa" "quota" "vodka"]}]
+               (edn/read-string (str out))))))))
+
+(deftest pick-example-words-by-ipa-no-match-test
+  (testing "IPA matches no set: stdout is the empty EDN vector \"[]\", process exits 0"
+    (let [path (temp-sets-path)]
+      (spit path (pr-str {"nurse" {:rp "/ɜː/" :ga "/ɜr/" :words ["bird" "word"]}}))
+      (let [out (java.io.StringWriter.)
+            exit-code (binding [*out* out]
+                        (core/pick-example-words-by-ipa-cli ["/zzz/"] path))]
+        (is (= 0 exit-code))
+        (is (= "[]" (str/trim (str out))))
+        (is (= [] (edn/read-string (str out))))))))
+
+(deftest pick-example-words-by-ipa-no-lexical-sets-file-test
+  (testing "lexical-sets.edn does not exist yet: clear message, non-zero exit"
+    (let [path (temp-sets-path)
+          out (java.io.StringWriter.)
+          err (java.io.StringWriter.)
+          exit-code (binding [*out* out *err* err]
+                      (core/pick-example-words-by-ipa-cli ["/ɜr/"] path))]
+      (is (not (zero? exit-code)))
+      (is (str/includes? (str/lower-case (str err)) "no lexical sets built yet")))))
+
 ;; ---------------------------------------------------- -main dispatch (US-001 AC10)
 ;; AC10 is specifically about the real shell/process boundary (per the story's
 ;; background: "because US-005's external AI-agent consumer needs a real
@@ -79,3 +137,20 @@
           lines (->> (str/split-lines out) (remove str/blank?))]
       (is (= 0 exit-code))
       (is (= ["car\t/kɑː/\t/kɑɹ/"] lines)))))
+
+;; -------------------------------------- pick-example-words-by-ipa exit code (bug-001, US-005 AC4)
+;; Same real-process rationale as main-dispatches-ipa-lookup-subcommand-test above:
+;; -main must translate a subcommand's returned exit code into an actual
+;; process exit code via System/exit, not just discard it.
+(deftest main-pick-example-words-by-ipa-missing-lexical-sets-exits-nonzero-test
+  (testing "`clojure -M -m nemo-words.core pick-example-words-by-ipa /ɜr/` exits non-zero (per US-005 AC 4) when lexical-sets.edn is missing"
+    (is (not (.exists (java.io.File. "resources/lexical-sets.edn")))
+        "precondition: resources/lexical-sets.edn (the default path) must not exist for this test to be meaningful")
+    (let [proc (-> (ProcessBuilder. ["clojure" "-M" "-m" "nemo-words.core"
+                                      "pick-example-words-by-ipa" "/ɜr/"])
+                    (.redirectErrorStream true)
+                    .start)
+          out (slurp (.getInputStream proc))
+          exit-code (.waitFor proc)]
+      (is (not (zero? exit-code)))
+      (is (str/includes? (str/lower-case out) "no lexical sets built yet")))))

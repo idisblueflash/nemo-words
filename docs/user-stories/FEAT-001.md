@@ -57,7 +57,7 @@ The four-source cross-reference tool in `src/nemo_words/ipa.clj` (ipa-dict, Wiki
 - [ ] [[US-001]] Support IPA search for both RP and GA
 - [ ] [[US-003]] CLI for word frequency with Google's API
 - [x] [[US-004]] Prepare the custom example words
-- [ ] [[US-005]] Use the Lexical Sets
+- [x] [[US-005]] Use the Lexical Sets
 - [x] [[US-010]] Generic top-N ranking filter
 - [x] [[US-011]] Upsert a set into lexical-sets.edn
 - [ ] [[US-012]] Filter out onset-r false positives from rhotic lexical-set lookups
@@ -101,7 +101,7 @@ Parallel functions (independently unit-testable on Clojure data):
   :done [[US-004]] build-set  = [seed row: keyword, rp, ga, words] -> verify each word against dict -> upsert -> save!
                     │                                             (registers lexical-sets.edn's human-facing overview only)
                     ▼
-  [[US-005]] pick-example-words-by-ipa  (reads lexical-sets.edn; thin CLI)
+  :done [[US-005]] pick-example-words-by-ipa  (reads lexical-sets.edn; thin CLI)
 
   [[US-006]] extend-set = lookup-rows -> dominant-pair [uses extract-nucleus] -> lookup-rows
                            -> [filter-coda, rhotic sets only] -> annotate-freq

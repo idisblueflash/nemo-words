@@ -1,17 +1,13 @@
 (ns nemo-words.build-set
   "Register an existing lexical set's hand-picked seed words into
   lexical-sets.edn, re-verifying each against the current dict (US-004)."
-  (:require [clojure.edn :as edn]
-            [clojure.java.io :as io]
-            [nemo-words.ipa :as ipa]
+  (:require [nemo-words.ipa :as ipa]
             [nemo-words.sets :as sets]))
 
 (defn- load-sets
   "path -> lexical-sets map read from path, or {} if path doesn't exist yet."
   [path]
-  (if (.exists (io/file path))
-    (edn/read-string (slurp path))
-    {}))
+  (or (sets/load! path) {}))
 
 (defn build-set
   "dict + keyword + rp + ga + words (+ optional path, default
