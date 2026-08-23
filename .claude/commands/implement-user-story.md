@@ -91,7 +91,11 @@ pass or after `_buzz` resolved everything):
    existing `qa_status: passing`) — this is the "story implemented and
    verified" flag, distinct from `_qa`'s own `qa_status` field.
 2. Sync the parent feature file: search `docs/user-stories/FEAT-*.md` for a
-   `[[<slug>]]` reference (e.g. `[[US-007]]`). If found:
+   `[[<slug>]]` reference (e.g. `[[US-007]]`). Every story belongs to some
+   feature file, so if none references the slug, stop and report this to
+   the user rather than silently proceeding — the story is either missing
+   its feature-file entry (needs adding) or the search missed it. Once
+   found:
    - Flip that line's checkbox from `[ ]` to `[x]` wherever it appears in
      the Must/Should/Could-have lists.
    - If the slug also appears in the "Ordering" section's parallel-functions
@@ -99,8 +103,6 @@ pass or after `_buzz` resolved everything):
      `:done ` immediately before the `[[<slug>]]` reference on that line,
      matching the existing style of already-done entries in that block —
      don't touch entries for other stories on the same line.
-   If no `FEAT-*.md` references the slug, skip this step silently — not
-   every story is tracked in a feature file.
 3. Commit this final state: the `status: done` frontmatter edit, the
    `FEAT-*.md` sync from step 2 (if any), plus anything from step 4.a not
    already committed by `_buzz` (bug reports, fixes — `_buzz` commits its
