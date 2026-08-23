@@ -107,6 +107,30 @@
         (is (not= -1 starlet-idx))
         (is (< narwhal-idx starlet-idx))))))
 
+;; -- best-candidates (bug-001) -----------------------------------------
+;; Regression for docs/user-stories/bug-001-best-candidates-drops-empty-rp-rows.md:
+;; a candidate whose :rp cell is genuinely empty (like "narwhal" in the real
+;; en_US_RP_ipa.tsv dict) must still be found via its :ga match, not dropped
+;; from the candidate pool.
+
+(def ^:private bug001-dict
+  [{:word "gnarly" :rp "/ˈnɑː.li/" :ga "/ˈnɑɹ.li/"}
+   ;; narwhal: empty :rp cell (as in the real en_US_RP_ipa.tsv row), single
+   ;; syllable :ga matching -> must still be found
+   {:word "narwhal" :rp "" :ga "/ˈnɑɹʍəl/"}
+   {:word "starlet" :rp "/ˈstɑː.lət/" :ga "/ˈstɑɹ.lət/"}])
+
+(deftest best-candidates-includes-empty-rp-candidate-test
+  (testing "a candidate with an empty :rp cell is still matched via :ga"
+    (with-redefs [freq/fetch-freq-map (fn [_words] {})]
+      (let [ranked (match/best-candidates bug001-dict "gnarly" "ɑː" "ɑɹ")
+            words (map :word ranked)
+            narwhal-idx (.indexOf words "narwhal")
+            starlet-idx (.indexOf words "starlet")]
+        (is (not= -1 narwhal-idx) "narwhal (empty :rp) must appear in results")
+        (is (not= -1 starlet-idx))
+        (is (< narwhal-idx starlet-idx))))))
+
 ;; -- best-candidates (US-014 AC6) ------------------------------------------
 
 (deftest best-candidates-does-not-persist-lexical-sets-test

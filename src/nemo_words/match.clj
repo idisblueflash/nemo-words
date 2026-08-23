@@ -32,10 +32,16 @@
     (best-candidates dict \"gnarly\" \"ɑː\" \"ɑɹ\")
     ;=> ({:word \"narwhal\" ... :score 1 :freq ...} {:word \"starlet\" ... :score 0 :freq ...} ...)"
   [dict target-word rp ga]
+  ;; Candidate pool is filtered on :ga alone (not {:rp rp :ga ga}): per
+  ;; ipa/lookup-rows' cond, opts with both :rp and :ga present would match
+  ;; only the :rp branch, silently dropping every row with an empty :rp
+  ;; cell (~23% of the dict, see US-001's "Data reality" note) regardless
+  ;; of a :ga match (bug-001). :ga is the reliable field; extract-syllable
+  ;; below already re-verifies rp/ga syllable alignment per row.
   (let [target (->> (ipa/lookup-rows dict {:word target-word})
                      first
                      (#(pairs/extract-syllable (:rp %) (:ga %) ga)))]
-    (->> (ipa/lookup-rows dict {:rp rp :ga ga})
+    (->> (ipa/lookup-rows dict {:ga ga})
          (keep (fn [row]
                  (when-let [syll (pairs/extract-syllable (:rp row) (:ga row) ga)]
                    (assoc row :score (score target syll)))))
