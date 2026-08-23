@@ -265,6 +265,24 @@
 
     :else '()))
 
+;; --------------------------------------------------------- word-matches? (US-004)
+(defn word-matches?
+  "dict + word + rp + ga -> true if word still resolves to a row in dict
+  whose :rp and :ga cells contain rp and ga (as substrings), false
+  otherwise (including when word isn't in dict at all).
+
+  Example:
+    (word-matches? [{:word \"car\" :rp \"/kɑː/\" :ga \"/kɑɹ/\"}] \"car\" \"/kɑː/\" \"/kɑɹ/\")
+    ;=> true
+    (word-matches? [{:word \"car\" :rp \"/kɑː/\" :ga \"/kɑɹ/\"}] \"car\" \"/xxx/\" \"/kɑɹ/\")
+    ;=> false"
+  [dict word rp ga]
+  (boolean
+   (some (fn [row]
+           (and (strutil/includes-str? (:rp row) rp)
+                (strutil/includes-str? (:ga row) ga)))
+         (lookup-rows dict {:word word}))))
+
 ;; ----------------------------------------------------------------------- main
 (def ^:private bold-start-text "\033[1m")
 (def ^:private faint-start-text "\033[2m")

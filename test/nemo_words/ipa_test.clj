@@ -160,3 +160,12 @@
       (is (seq rows))
       (is (every? #(strutil/includes-str? (:ga %) "ɑɹ") rows))
       (is (= #{"car" "star" "gnarly" "narwhal"} (set (map :word rows)))))))
+
+;; ------------------------------------------------------------- word-matches? (US-004)
+(deftest word-matches?-test
+  (testing "word resolves to the given rp/ga pair in the dict"
+    (is (true? (ipa/word-matches? dict-fixture "car" "/kɑː/" "/kɑɹ/"))))
+  (testing "word no longer matches the given rp/ga pair"
+    (is (false? (ipa/word-matches? dict-fixture "car" "/xxx/" "/kɑɹ/"))))
+  (testing "word not in dict at all"
+    (is (false? (ipa/word-matches? dict-fixture "zzznotaword" "/kɑː/" "/kɑɹ/")))))
