@@ -61,6 +61,7 @@ The four-source cross-reference tool in `src/nemo_words/ipa.clj` (ipa-dict, Wiki
 - [x] [[US-010]] Generic top-N ranking filter
 - [x] [[US-011]] Upsert a set into lexical-sets.edn
 - [x] [[US-012]] Filter out onset-r false positives from rhotic lexical-set lookups
+- [x] [[US-015]] CLI to populate the initial Lexical Sets
 
 ## Should have
 

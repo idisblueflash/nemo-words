@@ -54,3 +54,28 @@
         (is (= {:rp "/æ/" :ga "/æ/" :words ["cat" "hat"]} (get saved "trap")))
         (is (= {:rp "/ɜː/" :ga "/ɜr/" :words nurse-seed-words}
                (get saved "nurse")))))))
+
+;; --------------------------------------------- populate-lexical-sets (US-015)
+(deftest populate-lexical-sets-builds-every-table-row-test
+  (testing "Populate every Wells set from a clean slate"
+    (let [path (temp-path)
+          dict (mapv (fn [[kw rp ga words]]
+                        {:word (first words) :rp (str "/" rp "/") :ga (str "/" ga "/")})
+                      build-set/lexical-sets-table)
+          summaries (build-set/populate-lexical-sets dict path)
+          saved (edn/read-string (slurp path))]
+      (is (= (count build-set/lexical-sets-table) (count saved) (count summaries)))
+      (doseq [[kw rp ga words] build-set/lexical-sets-table]
+        (is (= {:rp rp :ga ga :words [(first words)]} (get saved kw))
+            (str kw " keeps only its dict-verified word")))
+      (is (= (mapv first build-set/lexical-sets-table)
+             (mapv :keyword summaries))))))
+
+(deftest populate-lexical-sets-reports-kept-and-dropped-test
+  (testing "A seed word no longer matches the current dict is reported as dropped"
+    (let [path (temp-path)
+          empty-dict []
+          summaries (build-set/populate-lexical-sets empty-dict path)
+          nurse-summary (first (filter #(= "NURSE" (:keyword %)) summaries))]
+      (is (= [] (:kept nurse-summary)))
+      (is (= ["hurt" "lurk" "urge" "burst" "jerk" "term"] (:dropped nurse-summary))))))

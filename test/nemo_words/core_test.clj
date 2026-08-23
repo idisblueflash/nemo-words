@@ -2,8 +2,11 @@
   (:require [clojure.edn :as edn]
             [clojure.string :as str]
             [clojure.test :refer [deftest is testing]]
+            [nemo-words.build-set :as build-set]
             [nemo-words.core :as core]
-            [nemo-words.freq :as freq])
+            [nemo-words.freq :as freq]
+            [nemo-words.ipa :as ipa]
+            [nemo-words.sets :as sets])
   (:import (java.io File)))
 
 (defn- temp-sets-path []
@@ -154,3 +157,53 @@
           exit-code (.waitFor proc)]
       (is (not (zero? exit-code)))
       (is (str/includes? (str/lower-case out) "no lexical sets built yet")))))
+
+;; ---------------------------------------------------------- build-set (US-015)
+(def ^:private nurse-dict-fixture
+  [{:word "hurt" :rp "/ɜː/" :ga "/ɜr/"}
+   {:word "lurk" :rp "/ɜː/" :ga "/ɜr/"}])
+
+(deftest build-set-cli-registers-a-set-test
+  (testing "`build-set nurse /ɜː/ /ɜr/ hurt lurk` upserts \"nurse\" and prints a kept/dropped summary"
+    (let [path (temp-sets-path)]
+      (with-redefs [ipa/load-rp-ga-dict (fn [] nurse-dict-fixture)
+                    sets/default-path path]
+        (let [out (java.io.StringWriter.)
+              exit-code (binding [*out* out]
+                          (core/build-set-cli ["nurse" "/ɜː/" "/ɜr/" "hurt" "lurk"]))]
+          (is (= 0 exit-code))
+          (is (str/includes? (str out) "nurse\tkept 2/2"))
+          (is (= {:rp "/ɜː/" :ga "/ɜr/" :words ["hurt" "lurk"]}
+                 (get (edn/read-string (slurp path)) "nurse"))))))))
+
+(deftest build-set-cli-reports-dropped-words-test
+  (testing "a seed word that no longer matches the dict is dropped and reported"
+    (let [path (temp-sets-path)]
+      (with-redefs [ipa/load-rp-ga-dict (fn [] nurse-dict-fixture)
+                    sets/default-path path]
+        (let [out (java.io.StringWriter.)
+              exit-code (binding [*out* out]
+                          (core/build-set-cli ["nurse" "/ɜː/" "/ɜr/" "hurt" "stale"]))]
+          (is (= 0 exit-code))
+          (is (str/includes? (str out) "nurse\tkept 1/2\tdropped: [\"stale\"]"))
+          (is (= ["hurt"] (get-in (edn/read-string (slurp path)) ["nurse" :words]))))))))
+
+;; ----------------------------------------------- populate-lexical-sets (US-015)
+(deftest populate-lexical-sets-cli-writes-all-wells-sets-test
+  (testing "`populate-lexical-sets` builds every row of build-set/lexical-sets-table"
+    (let [path (temp-sets-path)
+          all-words-dict (mapv (fn [[kw rp ga words]]
+                                  (mapv (fn [w] {:word w :rp (str "/" rp "/") :ga (str "/" ga "/")})
+                                        words))
+                                build-set/lexical-sets-table)]
+      (with-redefs [ipa/load-rp-ga-dict (fn [] (apply concat all-words-dict))
+                    sets/default-path path]
+        (let [out (java.io.StringWriter.)
+              exit-code (binding [*out* out]
+                          (core/populate-lexical-sets-cli []))
+              saved (edn/read-string (slurp path))
+              lines (->> (str/split-lines (str out)) (remove str/blank?))]
+          (is (= 0 exit-code))
+          (is (= (count build-set/lexical-sets-table) (count saved) (count lines)))
+          (doseq [[kw _rp _ga words] build-set/lexical-sets-table]
+            (is (= words (get-in saved [kw :words])) (str kw " keeps every seed word"))))))))
