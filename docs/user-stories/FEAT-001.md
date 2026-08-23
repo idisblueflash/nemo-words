@@ -62,6 +62,7 @@ The four-source cross-reference tool in `src/nemo_words/ipa.clj` (ipa-dict, Wiki
 - [x] [[US-011]] Upsert a set into lexical-sets.edn
 - [x] [[US-012]] Filter out onset-r false positives from rhotic lexical-set lookups
 - [x] [[US-015]] CLI to populate the initial Lexical Sets
+- [ ] [[US-016]] A better kaikki IPA dictionary extractor
 
 ## Should have
 
