@@ -90,20 +90,31 @@ pass or after `_buzz` resolved everything):
 1. Edit the story file's frontmatter to add `status: done` (alongside the
    existing `qa_status: passing`) — this is the "story implemented and
    verified" flag, distinct from `_qa`'s own `qa_status` field.
-2. Commit this final state: the `status: done` frontmatter edit, plus
-   anything from step 4.a not already committed by `_buzz` (bug reports,
-   fixes — `_buzz` commits its own work per its workflow, but confirm with
-   `git status` rather than assuming). Write a commit message naming the
-   story (slug + title).
-3. **Push and open a PR**, right away, as part of this same invocation —
+2. Sync the parent feature file: search `docs/user-stories/FEAT-*.md` for a
+   `[[<slug>]]` reference (e.g. `[[US-007]]`). If found:
+   - Flip that line's checkbox from `[ ]` to `[x]` wherever it appears in
+     the Must/Should/Could-have lists.
+   - If the slug also appears in the "Ordering" section's parallel-functions
+     diagram (the fenced code block under "Parallel functions"), prepend
+     `:done ` immediately before the `[[<slug>]]` reference on that line,
+     matching the existing style of already-done entries in that block —
+     don't touch entries for other stories on the same line.
+   If no `FEAT-*.md` references the slug, skip this step silently — not
+   every story is tracked in a feature file.
+3. Commit this final state: the `status: done` frontmatter edit, the
+   `FEAT-*.md` sync from step 2 (if any), plus anything from step 4.a not
+   already committed by `_buzz` (bug reports, fixes — `_buzz` commits its
+   own work per its workflow, but confirm with `git status` rather than
+   assuming). Write a commit message naming the story (slug + title).
+4. **Push and open a PR**, right away, as part of this same invocation —
    this does not need separate explicit go-ahead, unlike other push/PR
    actions elsewhere in this repo's agents. Push the branch, then
    `gh pr create` with title = story slug/title and a body summarizing
    which ACs `_teddy` covered and confirming `_qa`'s clean pass.
-4. Report to the user: branch name, worktree path, story slug/title,
+5. Report to the user: branch name, worktree path, story slug/title,
    AC summary from `_teddy`, confirmation of the `status: done` flag, and
    the PR URL.
-5. Leave the worktree in place (don't call `ExitWorktree` yet) so the user
+6. Leave the worktree in place (don't call `ExitWorktree` yet) so the user
    can inspect it, review the PR on GitHub, or continue from it.
 
 ## 5. Merge and clean up — only on explicit instruction

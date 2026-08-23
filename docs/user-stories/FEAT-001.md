@@ -58,21 +58,21 @@ The four-source cross-reference tool in `src/nemo_words/ipa.clj` (ipa-dict, Wiki
 - [ ] [[US-003]] CLI for word frequency with Google's API
 - [ ] [[US-004]] Prepare the custom example words
 - [ ] [[US-005]] Use the Lexical Sets
-- [ ] [[US-010]] Generic top-N ranking filter
-- [ ] [[US-011]] Upsert a set into lexical-sets.edn
+- [x] [[US-010]] Generic top-N ranking filter
+- [x] [[US-011]] Upsert a set into lexical-sets.edn
 - [ ] [[US-012]] Filter out onset-r false positives from rhotic lexical-set lookups
 
 ## Should have
 
 - [ ] [[US-006]] Extend the Lexical Sets
-  - [ ] [[US-007]] Find the dominant RP+GA pairing for a missing GA combination
-    - [ ] [[US-013]] Extract the RP+GA nucleus fragment for one row
+  - [x] [[US-007]] Find the dominant RP+GA pairing for a missing GA combination
+    - [x] [[US-013]] Extract the RP+GA nucleus fragment for one row
   - [ ] [[US-008]] Select and rank the example words for a new set — superseded by [[US-010]]
 
 ## Could have
 
 - [x] [[US-002]] PoC on Google Books Ngram Views API — Done
-- [ ] [[US-009]] Pick the representative keyword for a new set
+- [x] [[US-009]] Pick the representative keyword for a new set
 
 ## Won't have
 
@@ -87,11 +87,11 @@ Parallel functions (independently unit-testable on Clojure data):
 
   [[US-001]] ipa/lookup-rows      dict + opts      ->  [{:word :rp :ga}]
   [[US-002]] -> [[US-003]] freq/annotate-freq  rows ->  rows + :freq
-  [[US-013]] pairs/extract-nucleus rp + ga + target-ga -> [rp-nucleus ga-nucleus] | nil
-  [[US-007]] pairs/dominant-pair  triples + target-ga  ->  [rp-nucleus ga-nucleus]
-  [[US-009]] keyword/pick-keyword rows             ->  keyword
-  [[US-010]] rank/top-n           rows + score + n  ->  top-n rows
-  [[US-011]] sets/upsert + save!  sets + kw + rows  ->  lexical-sets.edn
+  :done [[US-013]] pairs/extract-nucleus rp + ga + target-ga -> [rp-nucleus ga-nucleus] | nil
+  :done [[US-007]] pairs/dominant-pair  triples + target-ga  ->  [rp-nucleus ga-nucleus]
+  :done [[US-009]] keyword/pick-keyword rows             ->  keyword
+  :done [[US-010]] rank/top-n           rows + score + n  ->  top-n rows
+  :done [[US-011]] sets/upsert + save!  sets + kw + rows  ->  lexical-sets.edn
   [[US-012]] rime/filter-coda     rows + key + sound ->  rows (rhotic sets only)
 
                     │  (all eight land)
