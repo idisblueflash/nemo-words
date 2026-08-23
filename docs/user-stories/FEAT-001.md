@@ -42,7 +42,7 @@ The table above has already been corrected in three places against the real `en_
 
 Also confirmed (not a notation bug, a genuine GA merger already known from [[US-012]]'s background): **THOUGHT** has an empty GA cell for most checked words (`taught`, `sauce`, `hawk`, `jaw` all have GA = `""`; only `broad` carries GA `ɔ`), same as CLOTH — this is real data collapse from the cot-caught-type merger, not something a table fix can recover.
 
-That table is the seed data and the target shape for `lexical-sets.edn`: [[US-004]] builds each row above (keyword + RP + GA → \~60 ranked example words, replacing the table's hand-picked 5-7) from the real dictionary; [[US-006]] extends the table to GA combinations Wells' 24 keywords don't cover (e.g. dialects/mergers not in his scheme) by picking a new keyword and defining pair the same way. [[US-005]] is how a downstream AI agent then turns "I need words for the /ɜr/ sound" into a ready word list for composing a mnemonic story — the actual end-user-facing feature this backlog exists to build.
+That table is the seed data for `lexical-sets.edn`: [[US-004]] registers each row above (keyword + RP + GA + its hand-picked words) into `lexical-sets.edn` as-is, only re-verifying each seed word still matches that pair in the real dictionary (dropping any that don't); [[US-006]] extends the table to GA combinations Wells' 24 keywords don't cover (e.g. dialects/mergers not in his scheme) by picking a new keyword and defining pair the same way. `lexical-sets.edn`'s word list is a human-facing quick overview only, never searched programmatically — [[US-014]] is where the real per-target-word example search happens, hitting the dictionary fresh (unbounded, unsaved) and scoring candidates by how well their onset/coda echo the target word's own syllable, the actual end-user-facing feature this backlog exists to build. [[US-005]] is a simpler adjacent lookup: turning "I need words for the /ɜr/ sound" into `lexical-sets.edn`'s overview list for a downstream AI agent.
 
 ### Why Kaikki (Kikka)
 
@@ -68,6 +68,7 @@ The four-source cross-reference tool in `src/nemo_words/ipa.clj` (ipa-dict, Wiki
   - [x] [[US-007]] Find the dominant RP+GA pairing for a missing GA combination
     - [x] [[US-013]] Extract the RP+GA nucleus fragment for one row
   - [ ] [[US-008]] Select and rank the example words for a new set — superseded by [[US-010]]
+- [ ] [[US-014]] Find the best-matched example word for a target word's syllable
 
 ## Could have
 
@@ -86,28 +87,32 @@ Every leaf story is a pure (or thinly-impure) Clojure function with a frozen dat
 Parallel functions (independently unit-testable on Clojure data):
 
   [[US-001]] ipa/lookup-rows      dict + opts      ->  [{:word :rp :ga}]
-  [[US-002]] -> [[US-003]] freq/annotate-freq  rows ->  rows + :freq
+  [[US-002]] -> [[US-003]] freq/annotate-freq  rows ->  rows + :freq   (used by [[US-006]] only)
   :done [[US-013]] pairs/extract-nucleus rp + ga + target-ga -> [rp-nucleus ga-nucleus] | nil
+  [[US-014]]'s pairs/extract-syllable    rp + ga + target-ga -> {:onset :nucleus :coda} | nil  (sibling of extract-nucleus)
   :done [[US-007]] pairs/dominant-pair  triples + target-ga  ->  [rp-nucleus ga-nucleus]
   :done [[US-009]] keyword/pick-keyword rows             ->  keyword
-  :done [[US-010]] rank/top-n           rows + score + n  ->  top-n rows
+  :done [[US-010]] rank/top-n           rows + score + n  ->  top-n rows   (used by [[US-006]] only)
   :done [[US-011]] sets/upsert + save!  sets + kw + rows  ->  lexical-sets.edn
   [[US-012]] rime/filter-coda     rows + key + sound ->  rows (rhotic sets only)
 
-                    │  (all eight land)
-                    ▼
-  [[US-004]] build-set  = lookup-rows -> [filter-coda, rhotic sets only] -> annotate-freq
-                           -> top-n -> upsert -> save!
                     │
+                    ▼
+  [[US-004]] build-set  = [seed row: keyword, rp, ga, words] -> verify each word against dict -> upsert -> save!
+                    │                                             (registers lexical-sets.edn's human-facing overview only)
                     ▼
   [[US-005]] pick-example-words-by-ipa  (reads lexical-sets.edn; thin CLI)
-                    │
-                    ▼
+
   [[US-006]] extend-set = lookup-rows -> dominant-pair [uses extract-nucleus] -> lookup-rows
                            -> [filter-coda, rhotic sets only] -> annotate-freq
                            -> top-n -> pick-keyword -> upsert -> save!
+
+  [[US-014]] best-candidates = lookup-rows [target word's own row] -> extract-syllable
+                           -> lookup-rows [full pair pool, unbounded, unsaved] -> extract-syllable per row
+                           -> match/score -> sort by :score desc
+                           (never touches lexical-sets.edn; independent of US-004/US-005/US-006)
 ```
 
-- **Parallel:** [[US-001]], [[US-002]]→[[US-003]], [[US-013]]→[[US-007]], [[US-009]], [[US-010]], [[US-011]], [[US-012]] — eight independent functions, buildable in any order or concurrently ([[US-007]] composes [[US-013]] in-process but both are still unit-testable on plain data ahead of [[US-006]]).
-- **Sequential:** [[US-004]] needs US-001/US-003/US-010/US-011/US-012 done; [[US-005]] needs US-004's output file; [[US-006]] needs all eight functions plus US-004's composition as a template. [[US-008]] is folded into [[US-010]] and needs no separate work.
+- **Parallel:** [[US-001]], [[US-002]]→[[US-003]], [[US-013]]→[[US-007]], [[US-009]], [[US-010]], [[US-011]], [[US-012]], [[US-014]]'s `extract-syllable`/`score` — independent functions, buildable in any order or concurrently ([[US-007]] composes [[US-013]] in-process but both are still unit-testable on plain data ahead of [[US-006]]).
+- **Sequential:** [[US-004]] just needs [[US-001]] (to verify seed words) and [[US-011]]; [[US-005]] needs [[US-004]]'s output file; [[US-006]] needs US-001/US-003/US-007/US-009/US-010/US-011/US-012 plus [[US-004]]'s composition as a template; [[US-014]] needs [[US-001]] and its own `extract-syllable`/`score`, nothing else — it doesn't depend on [[US-004]] or [[US-006]] at all. [[US-008]] is folded into [[US-010]] and needs no separate work.
 
