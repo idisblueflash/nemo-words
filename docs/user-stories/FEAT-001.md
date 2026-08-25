@@ -46,6 +46,15 @@ That table is the seed data for `lexical-sets.edn`: [[US-004]] registers each ro
 
 ### Why Kaikki (Kikka)
 
+**Superseded**: this section is kept as the historical record of why
+Kaikki was originally chosen — see [[0002-switch-cmudict-beep-primary-dictionary]]
+for why the project switched to CMUdict (GA) + BEEP (RP) instead, and
+[[FEAT-002]] for the feature that rebuilds the dictionary file this
+section describes. `en_US_RP_ipa.tsv` below no longer exists once
+[[FEAT-002]] ships — it's replaced by `resources/data/ga_rp.tsv`, in the
+raw ARPABET/MRPA-token format [[0003-match-nucleus-against-arpabet-mrpa-tokens]]
+decided on, not Kaikki's native IPA.
+
 "The real dictionary" above is [Kaikki (Wiktextract)](https://kaikki.org/dictionary/English), the source `en_US_RP_ipa.tsv` in [[US-001]] is extracted from. This surfaced as a concrete gap during mnemonic-card grooming — see `[[gnarly]]`, the case that exposed it — and got resolved against [[Open Sourced English Dictionary Grid]], which scores every candidate open dictionary (Cambridge, Kaikki, ipa-dict, CMUdict, WikiPron) on five criteria: has stress marks, covers both RP and GenAm, ships as a downloadable local dict (not just a live lookup site), and supports IPA→word search (needed for [[US-001]]'s substring queries). Kaikki is the only source that clears all four — Cambridge has no local dict, ipa-dict has different stressing style, WikiPron is US-only, CMUdict has no native IPA and no RP. The team had already downloaded and extracted the full Kaikki `.jsonl` (3.2 GB) before this comparison, which removed the one soft objection ("don't want to pull down a huge file") from consideration.
 
 One consequence of that choice worth calling out explicitly, because it drives how [[US-001]]'s substring-match ACs read: Kaikki's GA transcriptions for r-colored vowels use narrow-IPA notation — the vowel followed directly by `ɹ`, no length mark (e.g. `/ɑɹ/`), not the Cambridge-dictionary convention (`/ɑːr/`). Confirmed against the actual `en_US_RP_ipa.tsv`: `car\t/kɑɹ/\t/kɑː/` and `gnarly\t/ˈnɑɹli/\t/ˈnɑːli/` — GA is `/ˈnɑɹli/`, not `/ˈnɑːrli/`. [[US-001]]'s lookup is a raw substring match against Kaikki's cell text as stored, so callers must query in Kaikki's actual style (`/ɑɹ/`, narrow IPA with `ɹ`), not the Cambridge `/ɑːr/` form — this is why the AC fixtures in [[US-001]] use `/ɑɹ/`, not `/ɑːr/`.
@@ -63,6 +72,7 @@ The four-source cross-reference tool in `src/nemo_words/ipa.clj` (ipa-dict, Wiki
 - [x] [[US-012]] Filter out onset-r false positives from rhotic lexical-set lookups
 - [x] [[US-015]] CLI to populate the initial Lexical Sets
 - [x] [[US-016]] A better kaikki IPA dictionary extractor
+- [ ] [[FEAT-002]] Build the CMUdict (GA) + BEEP (RP) pronunciation dictionary (own feature — see FEAT-002)
 
 ## Should have
 

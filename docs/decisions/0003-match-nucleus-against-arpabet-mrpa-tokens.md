@@ -8,7 +8,7 @@ date: 2026-08-25
 
 ## Context and Problem Statement
 
-[[US-017]] switches the primary dictionary build to CMUdict (GA) + BEEP
+[[FEAT-002]] switches the primary dictionary build to CMUdict (GA) + BEEP
 (RP), and both are translated into IPA for the output TSV's columns.
 Downstream lexical-set consumers (`populate-lexical-sets`, `ipa-lookup`)
 need to identify a word's vowel nucleus to classify it into a Wells
@@ -91,7 +91,7 @@ raw data.
 
 ## Links
 
-* [[US-017]] — the story this decision revises (needs updating to build
+* [[FEAT-002]] — the story this decision revises (needs updating to build
   `ga_rp.tsv` with raw tokens instead of `ga_rp_ipa.tsv` with
   pre-translated IPA)
 * [[investigation-001-lexical-sets-dictionary-comparison]] — source of
