@@ -148,3 +148,57 @@ of "does any OTHER entry with ipa carry a regional tag"; (2) re-running
 issue-001's Option-3-supplementation question after this lands, since
 `cancel` and `myth` (issue-001's own examples for why supplementation was
 needed) turn out to be fixed by Option 1 alone.
+
+## Cross-dictionary agreement PoC against the Wells table (2026-08-23)
+
+Separate, informal PoC (not the code path this story ships, no test
+suite — plain scratch scripts run against FEAT-001's 27-row Wells table
+and its original example-word lists), done to sanity-check the untagged-
+fallback fix's value and see how the other local dicts under
+`resources/data/` compare as an RP/GA source. Method: for each Wells row,
+look up every example word in a dict, check whether its transcription
+contains the row's claimed RP and/or GA symbol; **coverage** = words
+found / words attempted, **agreement** = matches / checks among found
+words, **composite** = coverage × agreement.
+
+| Dict | Coverage | Agreement | Composite |
+|---|---|---|---|
+| `en_US_RP_ipa.tsv`-style tagged-only extraction (current shipped script) | 98.1% | 66.6% | 65.3% |
+| Same raw `kaikki-en.jsonl`, with untagged-IPA fallback for both columns | 98.1% | 89.7% | **88.0%** |
+| `en_UK.txt` (RP only) | 96.8% | 85.2% | 82.5% |
+| `en_US.txt` (GA only) | 98.1% | 84.1% | 82.5% |
+| `wikipron_us_broad.tsv` (GA only) | 97.4% | 85.3% | 83.1% |
+| `cmudict.dict` (GA only, ARPAbet) | 98.1% | 100.0%\* | 98.1%\* |
+| BEEP (downloaded, RP, not in this repo) + `cmudict.dict` (GA) | 100.0% | 100.0%\* | 100.0%\* |
+
+\* CMUdict's ARPAbet inventory can't distinguish some Wells-set pairs at
+all (STRUT/commA and NURSE/lettER collapse to the same phoneme, split
+only by stress digit) — its perfect score reflects that this particular
+155-word list doesn't happen to expose that collision, not that the
+ambiguity is gone. Treat the CMUdict-involving rows as an upper bound,
+not a clean win.
+
+**This directly corroborates the fix's direction and size**: applying
+just the untagged-fallback logic to raw Kaikki jumps composite agreement
+from 65.3% (current shipped extraction) to 88.0% — a bigger relative
+gain than switching to any of the single-accent alternative dicts
+(`en_US.txt`/`en_UK.txt`/`wikipron_us_broad.tsv`, all ~82-83%), and
+already close to CMUdict's inflated ceiling. Reinforces the
+recommendation above that Option 3 (cmudict/wikipron supplementation) is
+unlikely to be worth doing once this story lands — the untagged-fallback
+fix alone captures most of the available gain.
+
+**BEEP+CMUdict's 100% is a useful reference ceiling, not a recommended
+source swap**: BEEP (Cambridge's RP counterpart to CMUdict, ARPAbet-like,
+`https://openslr.org/14/`) was purpose-built with dedicated phonemes for
+exactly the RP/GA distinctions Wells' sets need (separate `oh`/`ao` for
+LOT-CLOTH vs. THOUGHT-NORTH-FORCE, separate `ah`/`ax` for STRUT vs.
+commA, dedicated `ia`/`ea`/`ua` diphthongs for NEAR/SQUARE/CURE) and,
+being non-rhotic RP, never hits the composed-vs-decomposed r-colored-
+vowel notation problem that affects Kaikki, `en_US_RP_ipa.tsv`, and
+WikiPron. It is **not** a candidate replacement for Kaikki in this
+pipeline: it's research-only/non-commercial licensed (Oxford/MRC-derived,
+via OpenSLR resource 14), ARPAbet-style rather than IPA (would need
+translation to stay consistent with `lexical-sets.edn`), and was only
+downloaded to a scratch directory for this comparison, not added to
+`resources/data/`.
