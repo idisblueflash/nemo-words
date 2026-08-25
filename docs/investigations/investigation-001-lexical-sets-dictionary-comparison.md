@@ -1,9 +1,9 @@
 ---
 title: "PoC: scoring candidate pronunciation dictionaries against the Lexical Sets Table"
 status: findings-recorded
-story: "[[FEAT-001]]"
-related_issue: "[[issue-001-kaikki-dict-missing-common-words]]"
-related_issue_2: "[[investigation-002-us-016-kaikki-dialect-tag-gating]]"
+story: "[FEAT-001](../user-stories/FEAT-001.md)"
+related_issue: "[issue-001-kaikki-dict-missing-common-words](../issues/issue-001-kaikki-dict-missing-common-words.md)"
+related_issue_2: "[investigation-002-us-016-kaikki-dialect-tag-gating](investigation-002-us-016-kaikki-dialect-tag-gating.md)"
 investigated: 2026-08-25
 ---
 
@@ -64,13 +64,13 @@ downstream dependency.
    problem.** Once a word is present, Kaikki's match quality (75.2%) is
    close to ipa-dict's (77.4%) and not far off the others. But 22% of
    target words are simply missing as headwords — this is the exact defect
-   [[issue-001-kaikki-dict-missing-common-words]] already root-caused
+   [issue-001-kaikki-dict-missing-common-words](../issues/issue-001-kaikki-dict-missing-common-words.md) already root-caused
    (`build-kaikki-ipa-dict.js`'s `pickDialectIpas` dropping words whose only
    regional-tagged `sounds` entries are audio-only, no `ipa` field) and
-   [[US-016]] is the in-flight fix for. **[[investigation-002]] found that
+   [US-016](../user-stories/US-016.md) is the in-flight fix for. **[investigation-002](investigation-002-us-016-kaikki-dialect-tag-gating.md) found that
    fix recovers 33.8% of Kaikki's currently-dropped words and explicitly
    flagged that cmudict/wikipron supplementation ("Option 3") is "very
-   likely unnecessary once [[US-016]] lands."** This PoC's Kaikki score
+   likely unnecessary once [US-016](../user-stories/US-016.md) lands."** This PoC's Kaikki score
    should be re-measured after US-016 ships, before treating 58.7% as
    Kaikki's ceiling — it's a pre-fix number.
 

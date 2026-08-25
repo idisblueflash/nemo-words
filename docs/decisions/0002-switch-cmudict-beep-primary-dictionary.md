@@ -6,7 +6,7 @@ date: 2026-08-25
 
 # 0002. Switch to CMUdict (GA) + BEEP (RP) as the primary pronunciation dictionary
 
-Technical Story: [[US-016]]
+Technical Story: [US-016](../user-stories/US-016.md)
 
 ## Context and Problem Statement
 
@@ -129,12 +129,12 @@ are outweighed by that accuracy gap.
 ## Links
 
 * Supersedes ADR-0001
-* [[investigation-001-lexical-sets-dictionary-comparison]] — source of
+* [investigation-001-lexical-sets-dictionary-comparison](../investigations/investigation-001-lexical-sets-dictionary-comparison.md) — source of
   the post-fix measurement motivating this switch
-* [[investigation-002-us-016-kaikki-dialect-tag-gating]] — source of the
+* [investigation-002-us-016-kaikki-dialect-tag-gating](../investigations/investigation-002-us-016-kaikki-dialect-tag-gating.md) — source of the
   original pre-fix simulation ADR-0001 relied on
-* [[US-016]] — the dialect-tag-gating fix whose real-world impact fell
+* [US-016](../user-stories/US-016.md) — the dialect-tag-gating fix whose real-world impact fell
   short of the pre-fix prediction
-* [[issue-001-kaikki-dict-missing-common-words]] — root-caused the
+* [issue-001-kaikki-dict-missing-common-words](../issues/issue-001-kaikki-dict-missing-common-words.md) — root-caused the
   coverage defect both ADRs address
-* [[FEAT-001]] — original Lexical Sets Table / dictionary-selection story
+* [FEAT-001](../user-stories/FEAT-001.md) — original Lexical Sets Table / dictionary-selection story

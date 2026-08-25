@@ -1,7 +1,7 @@
 ---
 title: "best-candidates drops candidates with an empty RP cell (e.g. narwhal) from the candidate pool"
 status: fixed
-original_story: "[[US-014]]"
+original_story: "[US-014](US-014.md)"
 ac: 1
 found: 2026-08-23
 ---

@@ -1,8 +1,8 @@
 ---
 title: "US-016 investigation: kaikki dialect-tag gating fix against real data"
 status: resolved
-story: "[[US-016]]"
-related_issue: "[[issue-001-kaikki-dict-missing-common-words]]"
+story: "[US-016](../user-stories/US-016.md)"
+related_issue: "[issue-001-kaikki-dict-missing-common-words](../issues/issue-001-kaikki-dict-missing-common-words.md)"
 investigated: 2026-08-23
 ---
 

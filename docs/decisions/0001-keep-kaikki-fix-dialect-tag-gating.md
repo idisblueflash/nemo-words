@@ -6,18 +6,18 @@ date: 2026-08-23
 
 # 0001. Keep Kaikki as the primary dictionary; fix dialect-tag gating (US-016) instead of switching to an alternate source
 
-Technical Story: [[US-016]]
+Technical Story: [US-016](../user-stories/US-016.md)
 
 ## Context and Problem Statement
 
 FEAT-001 chose Kaikki (`resources/data/en_US_RP_ipa.tsv`) as the project's
-pronunciation dictionary. [[issue-001-kaikki-dict-missing-common-words]]
+pronunciation dictionary. [issue-001-kaikki-dict-missing-common-words](../issues/issue-001-kaikki-dict-missing-common-words.md)
 root-caused a coverage gap: `build-kaikki-ipa-dict.js`'s dialect-tag gating
 drops a word entirely when its only regional-tagged `sounds` entries are
 audio-only (no `ipa` field), even when an untagged real-ipa entry exists
 that could be recovered. This causes common words (e.g. `ship`, `the`,
 `milk`, `tree`, `bus`) to go missing from the generated TSV, undermining
-downstream consumers like [[US-015]]'s `populate-lexical-sets` that rely on
+downstream consumers like [US-015](../user-stories/US-015.md)'s `populate-lexical-sets` that rely on
 Kaikki as seed data. Given this gap, does the project fix the extractor, or
 replace/supplement Kaikki with an alternate dictionary?
 
@@ -123,12 +123,12 @@ option.
 ## Links
 
 * Superseded by ADR-0002
-* [[US-016]] — the in-flight story implementing this fix
-* [[investigation-002-us-016-kaikki-dialect-tag-gating]] — source of the
+* [US-016](../user-stories/US-016.md) — the in-flight story implementing this fix
+* [investigation-002-us-016-kaikki-dialect-tag-gating](../investigations/investigation-002-us-016-kaikki-dialect-tag-gating.md) — source of the
   cross-dictionary PoC and 65.3%→88.0% measurement cited in the outcome
-* [[investigation-001-lexical-sets-dictionary-comparison]] — the follow-up
+* [investigation-001-lexical-sets-dictionary-comparison](../investigations/investigation-001-lexical-sets-dictionary-comparison.md) — the follow-up
   PoC that reopened this question and led to ADR-0002 (superseding this
   record)
-* [[issue-001-kaikki-dict-missing-common-words]] — root-caused the
+* [issue-001-kaikki-dict-missing-common-words](../issues/issue-001-kaikki-dict-missing-common-words.md) — root-caused the
   coverage defect this ADR addresses
-* [[FEAT-001]] — original Lexical Sets Table / dictionary-selection story
+* [FEAT-001](../user-stories/FEAT-001.md) — original Lexical Sets Table / dictionary-selection story

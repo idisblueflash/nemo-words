@@ -1,7 +1,7 @@
 ---
 title: "pick-example-words-by-ipa exits 0 instead of non-zero when lexical-sets.edn is missing"
 status: fixed
-original_story: "[[US-005]]"
+original_story: "[US-005](US-005.md)"
 ac: 4
 found: 2026-08-23
 ---

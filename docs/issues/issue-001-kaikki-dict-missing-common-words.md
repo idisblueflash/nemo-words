@@ -1,8 +1,8 @@
 ---
 title: "en_US_RP_ipa.tsv is missing many common plain words, causing heavy seed-word drop rates in populate-lexical-sets"
 status: handed-off
-story: "[[US-016]]"
-related_story: "[[US-015]]"
+story: "[US-016](../user-stories/US-016.md)"
+related_story: "[US-015](../user-stories/US-015.md)"
 found: 2026-08-23
 investigated: 2026-08-23
 ---
@@ -11,7 +11,7 @@ investigated: 2026-08-23
 
 Re-running `clojure -M -m nemo-words.core populate-lexical-sets` against a
 freshly built `resources/data/en_US_RP_ipa.tsv` drops far more seed words
-than [[US-015]]'s background section anticipates. That story documents
+than [US-015](../user-stories/US-015.md)'s background section anticipates. That story documents
 drops as expected mainly for the 7 rhotic rows (composed vs. decomposed
 r-colored vowel, e.g. `hurt` → dict GA `/hɝt/` not `/ɜɹ/`). In practice,
 plain (non-rhotic) sets drop heavily too, e.g.:
@@ -43,13 +43,13 @@ also has at least one entry tagged with some *other* region (which
 disqualifies the untagged fallback per the `hasAnyRegionalTag` check),
 gets skipped entirely rather than partially included. This is a data
 coverage gap in the extraction, separate from the already-documented
-empty-RP-cell issue ([[US-001]]'s ~23% empty-RP-cell rate, bug-001).
+empty-RP-cell issue ([US-001](../user-stories/US-001.md)'s ~23% empty-RP-cell rate, bug-001).
 
 ## Impact
 
 `populate-lexical-sets`/`build-set` behave correctly per their ACs
 (filter to what verifies, report drops, no error) — this is not a code
-bug in [[US-004]]/[[US-015]]. But the practical result is that several
+bug in [US-004](../user-stories/US-004.md)/[US-015](../user-stories/US-015.md). But the practical result is that several
 Wells sets bootstrap with very few (or, for KIT, zero) example words,
 which undermines the CLI's stated purpose of bootstrapping a usable
 `lexical-sets.edn` from a fresh checkout.
@@ -85,7 +85,7 @@ a narrow KIT-set edge case.
 
 **Option 3 checked concretely**: `cmudict.dict` and `wikipron_us_broad.tsv`
 cover nearly all sampled missing words (`cancel` missing from wikipron's
-broad set too) but both are GA/US-only, confirming [[FEAT-001]]'s original
+broad set too) but both are GA/US-only, confirming [FEAT-001](../user-stories/FEAT-001.md)'s original
 rejection of them as primary sources (no RP, and CMUdict has no native
 IPA). Using either as a supplement would only patch the GA column and
 reopens the stress-notation-mismatch problem FEAT-001 already ruled out.

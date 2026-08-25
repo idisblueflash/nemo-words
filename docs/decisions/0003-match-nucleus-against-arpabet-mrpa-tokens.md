@@ -8,11 +8,11 @@ date: 2026-08-25
 
 ## Context and Problem Statement
 
-[[FEAT-002]] switches the primary dictionary build to CMUdict (GA) + BEEP
+[FEAT-002](../user-stories/FEAT-002.md) switches the primary dictionary build to CMUdict (GA) + BEEP
 (RP), and both are translated into IPA for the output TSV's columns.
 Downstream lexical-set consumers (`populate-lexical-sets`, `ipa-lookup`)
 need to identify a word's vowel nucleus to classify it into a Wells
-lexical set. [[investigation-001-lexical-sets-dictionary-comparison]]
+lexical set. [investigation-001-lexical-sets-dictionary-comparison](../investigations/investigation-001-lexical-sets-dictionary-comparison.md)
 (finding 4) already found that doing this against IPA output requires
 extra normalization: narrower/broader-style transcriptions collapse a
 vowel+r into a single rhotic ligature (`ɝ`/`ɚ`), which then has to be
@@ -91,11 +91,11 @@ raw data.
 
 ## Links
 
-* [[FEAT-002]] — the story this decision revises (needs updating to build
+* [FEAT-002](../user-stories/FEAT-002.md) — the story this decision revises (needs updating to build
   `ga_rp.tsv` with raw tokens instead of `ga_rp_ipa.tsv` with
   pre-translated IPA)
-* [[investigation-001-lexical-sets-dictionary-comparison]] — source of
+* [investigation-001-lexical-sets-dictionary-comparison](../investigations/investigation-001-lexical-sets-dictionary-comparison.md) — source of
   the rhotic-ligature normalization finding (finding 4) motivating this
   decision
-* [[0002-switch-cmudict-beep-primary-dictionary]] — the ADR this one
+* [0002-switch-cmudict-beep-primary-dictionary](0002-switch-cmudict-beep-primary-dictionary.md) — the ADR this one
   builds on (CMUdict+BEEP as the source dictionaries)
