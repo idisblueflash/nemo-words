@@ -1,5 +1,5 @@
 ---
-status: accepted
+status: superseded
 deciders: Flash Hu
 date: 2026-08-23
 ---
@@ -122,6 +122,7 @@ option.
 
 ## Links
 
+* Superseded by ADR-0002
 * [[US-016]] — the in-flight story implementing this fix
 * [[investigation-002-us-016-kaikki-dialect-tag-gating]] — source of the
   cross-dictionary PoC and 65.3%→88.0% measurement cited in the outcome
