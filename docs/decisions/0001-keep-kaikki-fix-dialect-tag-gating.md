@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 deciders: Flash Hu
 date: 2026-08-23
 ---
