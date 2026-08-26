@@ -169,3 +169,37 @@
     (is (false? (ipa/word-matches? dict-fixture "car" "/xxx/" "/kɑɹ/"))))
   (testing "word not in dict at all"
     (is (false? (ipa/word-matches? dict-fixture "zzznotaword" "/kɑː/" "/kɑɹ/")))))
+
+;; ------------------------------------------------------------- mrpa->ipa (US-021)
+(deftest mrpa->ipa-test
+  (testing "converts a simple token vector"
+    (is (= "kɑː" (ipa/mrpa->ipa ["k" "aa"])))))
+
+(deftest rp-tokens->ipa-single-variant-test
+  (testing "wraps mrpa->ipa for a single variant"
+    (is (= "kɑː" (ipa/rp-tokens->ipa "k aa")))))
+
+(deftest rp-tokens->ipa-multi-variant-test
+  (testing "handles comma-joined multi-variant cells"
+    (is (= "kɛə,kɛ" (ipa/rp-tokens->ipa "k ea,k eh")))))
+
+(deftest mrpa->ipa-never-introduces-stress-test
+  (testing "no ˈ or ˌ appears in the output, for any token vector"
+    (doseq [tokens [["k" "aa"] (keys ipa/mrpa-phoneme->ipa) ["p" "ea" "sil" "t"]]]
+      (let [result (ipa/mrpa->ipa tokens)]
+        (is (not (strutil/includes-str? result "ˈ")))
+        (is (not (strutil/includes-str? result "ˌ")))))))
+
+(deftest ipa->mrpa-test
+  (testing "reconstructs a simple word's tokens"
+    (is (= ["k" "aa"] (ipa/ipa->mrpa "kɑː")))))
+
+(deftest ipa->mrpa-multi-codepoint-test
+  (testing "handles multi-codepoint IPA symbols, not a mis-split single-character read"
+    (is (= ["k" "ea"] (ipa/ipa->mrpa "kɛə")))))
+
+(deftest mrpa-ipa-round-trip-test
+  (testing "round-trips through mrpa->ipa then ipa->mrpa for every token vector"
+    (doseq [v [["k" "aa"] ["p" "ea" "t"] ["ch" "ao" "n"] ["sh" "iy" "n"]
+               (vec (remove #(= "sil" %) (keys ipa/mrpa-phoneme->ipa)))]]
+      (is (= v (ipa/ipa->mrpa (ipa/mrpa->ipa v)))))))
