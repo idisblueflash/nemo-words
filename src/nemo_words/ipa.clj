@@ -514,59 +514,162 @@
            doall))
     '()))
 
-;; ------------------------------------------------------------ lookup-rows
+;; ------------------------------------------------------------ lookup-rows (US-022)
+(defn- strip-stress-digits
+  "Remove ARPABET stress digits (0/1/2) from a token string, so a query with
+  no stress info (an IPA nucleus string carries none) still matches a stored
+  token cell whose vowels do carry one -- mirroring the old IPA-text
+  substring match, where the stress mark was a separate adjacent character
+  and never blocked a match on the phoneme spelling itself.
+
+  Example:
+    (strip-stress-digits \"K AA1 R\") ;=> \"K AA R\""
+  [s]
+  (strutil/replace-str s #"[0-9]" ""))
+
+(defn- ga-query->token-string
+  "IPA query string -> ARPABET token string (via ipa->arpabet), stress
+  digits stripped for comparison.
+
+  Example:
+    (ga-query->token-string \"/ɑɹ/\") ;=> \"AA R\""
+  [ipa]
+  (strip-stress-digits (strutil/join-str " " (ipa->arpabet ipa))))
+
+(defn- rp-query->token-string
+  "IPA query string -> MRPA token string (via ipa->mrpa). BEEP tokens carry
+  no stress digit, so there's nothing to strip here.
+
+  Example:
+    (rp-query->token-string \"ɛə\") ;=> \"ea\""
+  [ipa]
+  (strutil/join-str " " (ipa->mrpa ipa)))
+
+;; A row with a :ga-tokens/:rp-tokens key (the shape US-019's load-ga-rp-dict
+;; actually produces) is matched in token space; a row still on the
+;; pre-US-019 {:word :rp :ga} IPA-text shape (as used by
+;; match.clj/extend_set.clj/rime.clj's own test fixtures, out of this
+;; story's scope) falls back to the old direct IPA-text match, so neither
+;; caller shape regresses.
+(defn- ga-field-matches?
+  "row + raw IPA query + its ga-query->token-string conversion -> true if
+  the query matches row's GA cell (substring, stress-digit-agnostic in
+  token space).
+
+  Example:
+    (ga-field-matches? {:ga-tokens \"K AA1 R\"} \"/ɑɹ/\" \"AA R\") ;=> true
+    (ga-field-matches? {:ga \"/kɑɹ/\"} \"/ɑɹ/\" \"AA R\")          ;=> true"
+  [row query token-query]
+  (if (contains? row :ga-tokens)
+    (strutil/includes-str? (strip-stress-digits (:ga-tokens row)) token-query)
+    (strutil/includes-str? (:ga row) query)))
+
+(defn- rp-field-matches?
+  "row + raw IPA query + its rp-query->token-string conversion -> true if
+  the query matches row's RP cell (substring).
+
+  Example:
+    (rp-field-matches? {:rp-tokens \"k ea\"} \"ɛə\" \"ea\") ;=> true
+    (rp-field-matches? {:rp \"/kɛə/\"} \"ɛə\" \"ea\")        ;=> true"
+  [row query token-query]
+  (if (contains? row :rp-tokens)
+    (strutil/includes-str? (:rp-tokens row) token-query)
+    (strutil/includes-str? (:rp row) query)))
+
+(defn- ga-field-exact-match?
+  "Exact-match counterpart of ga-field-matches?, for :pair.
+
+  Example:
+    (ga-field-exact-match? {:ga-tokens \"K AA1 R\"} \"/ɑɹ/\" \"AA R\") ;=> false"
+  [row query token-query]
+  (if (contains? row :ga-tokens)
+    (= (strip-stress-digits (:ga-tokens row)) token-query)
+    (= (:ga row) query)))
+
+(defn- rp-field-exact-match?
+  "Exact-match counterpart of rp-field-matches?, for :pair.
+
+  Example:
+    (rp-field-exact-match? {:rp-tokens \"k aa\"} \"kɑː\" \"k aa\") ;=> true"
+  [row query token-query]
+  (if (contains? row :rp-tokens)
+    (= (:rp-tokens row) token-query)
+    (= (:rp row) query)))
+
 (defn lookup-rows
-  "dict (seq of {:word :rp :ga}) + opts -> matching rows, unchanged.
+  "dict (seq of {:word :ga-tokens :rp-tokens}, per US-019's load-ga-rp-dict)
+  + opts -> matching rows.
 
   opts is one of:
     {:word w}                exact match on :word
-    {:rp ipa} / {:ga ipa}    substring match on the raw :rp/:ga cell text
-    {:pair [rp ga]}          exact match on both :rp and :ga
-    {:pair-substring [rp ga]} substring match on :rp and :ga independently
+    {:rp ipa} / {:ga ipa}    ipa is an IPA-string query exactly as before
+                             (US-022): converted once internally via
+                             ipa->mrpa/ipa->arpabet into a raw token string,
+                             then matched (stress-digit-agnostic on the GA
+                             side) as a substring of the row's
+                             :rp-tokens/:ga-tokens cell
+    {:pair [rp ga]}          exact match on both converted token strings
+    {:pair-substring [rp ga]} substring match on :rp-tokens and :ga-tokens
+                             independently
 
   Example:
-    (lookup-rows [{:word \"car\" :rp \"/kɑː/\" :ga \"/kɑɹ/\"}] {:word \"car\"})
-    ;=> ({:word \"car\" :rp \"/kɑː/\" :ga \"/kɑɹ/\"})"
+    (lookup-rows [{:word \"car\" :ga-tokens \"K AA1 R\" :rp-tokens \"k aa\"}] {:word \"car\"})
+    ;=> ({:word \"car\" :ga-tokens \"K AA1 R\" :rp-tokens \"k aa\"})"
   [dict opts]
   (cond
     (contains? opts :word)
     (filter #(= (:word %) (:word opts)) dict)
 
     (contains? opts :rp)
-    (filter #(strutil/includes-str? (:rp %) (:rp opts)) dict)
+    (let [query (:rp opts)
+          token-query (rp-query->token-string query)]
+      (filter #(rp-field-matches? % query token-query) dict))
 
     (contains? opts :ga)
-    (filter #(strutil/includes-str? (:ga %) (:ga opts)) dict)
+    (let [query (:ga opts)
+          token-query (ga-query->token-string query)]
+      (filter #(ga-field-matches? % query token-query) dict))
 
     (contains? opts :pair)
-    (let [[rp ga] (:pair opts)]
-      (filter #(and (= (:rp %) rp) (= (:ga %) ga)) dict))
+    (let [[rp ga] (:pair opts)
+          rp-token-query (rp-query->token-string rp)
+          ga-token-query (ga-query->token-string ga)]
+      (filter #(and (rp-field-exact-match? % rp rp-token-query)
+                    (ga-field-exact-match? % ga ga-token-query))
+              dict))
 
     (contains? opts :pair-substring)
-    (let [[rp ga] (:pair-substring opts)]
-      (filter #(and (strutil/includes-str? (:rp %) rp)
-                    (strutil/includes-str? (:ga %) ga))
+    (let [[rp ga] (:pair-substring opts)
+          rp-token-query (rp-query->token-string rp)
+          ga-token-query (ga-query->token-string ga)]
+      (filter #(and (rp-field-matches? % rp rp-token-query)
+                    (ga-field-matches? % ga ga-token-query))
               dict))
 
     :else '()))
 
-;; --------------------------------------------------------- word-matches? (US-004)
+;; --------------------------------------------------------- word-matches? (US-004, US-022)
 (defn word-matches?
   "dict + word + rp + ga -> true if word still resolves to a row in dict
-  whose :rp and :ga cells contain rp and ga (as substrings), false
-  otherwise (including when word isn't in dict at all).
+  whose GA/RP cell contains rp and ga (as IPA-string queries, matched per
+  lookup-rows' :rp/:ga -- token-converted substring for
+  {:word :ga-tokens :rp-tokens} rows, direct IPA-text substring for the
+  older {:word :rp :ga} shape), false otherwise (including when word isn't
+  in dict at all).
 
   Example:
-    (word-matches? [{:word \"car\" :rp \"/kɑː/\" :ga \"/kɑɹ/\"}] \"car\" \"/kɑː/\" \"/kɑɹ/\")
+    (word-matches? [{:word \"car\" :ga-tokens \"K AA1 R\" :rp-tokens \"k aa\"}] \"car\" \"kɑː\" \"/ɑɹ/\")
     ;=> true
-    (word-matches? [{:word \"car\" :rp \"/kɑː/\" :ga \"/kɑɹ/\"}] \"car\" \"/xxx/\" \"/kɑɹ/\")
+    (word-matches? [{:word \"car\" :ga-tokens \"K AA1 R\" :rp-tokens \"k aa\"}] \"car\" \"xxx\" \"/ɑɹ/\")
     ;=> false"
   [dict word rp ga]
-  (boolean
-   (some (fn [row]
-           (and (strutil/includes-str? (:rp row) rp)
-                (strutil/includes-str? (:ga row) ga)))
-         (lookup-rows dict {:word word}))))
+  (let [rp-token-query (rp-query->token-string rp)
+        ga-token-query (ga-query->token-string ga)]
+    (boolean
+     (some (fn [row]
+             (and (rp-field-matches? row rp rp-token-query)
+                  (ga-field-matches? row ga ga-token-query)))
+           (lookup-rows dict {:word word})))))
 
 ;; ----------------------------------------------------------------------- main
 (def ^:private bold-start-text "\033[1m")

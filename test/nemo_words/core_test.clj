@@ -134,14 +134,15 @@
 ;; US-019 renamed load-rp-ga-dict -> load-ga-rp-dict and re-pointed it at
 ;; resources/data/ga_rp.tsv, whose rows are shaped {:word :ga-tokens
 ;; :rp-tokens} (raw ARPABET/MRPA tokens), not the old {:word :rp :ga}
-;; IPA-cell shape ipa-lookup/lookup-rows still read from. US-019's own story
-;; text flags this as an expected, hard-dependency break ("a hard dependency
-;; for the build to keep working after this story ships, not optional
-;; follow-up") to be fixed by US-022's token-based-matching migration; until
-;; then --word lookups still find the row by :word but the printed RP/GA
-;; cells come up empty since :rp/:ga aren't populated on the new row shape.
+;; IPA-cell shape. US-022 migrated lookup-rows' :word/:rp/:ga/:pair matching
+;; to work against that shape (this subcommand already called the renamed
+;; load-ga-rp-dict, confirmed by populate-lexical-sets-cli-calls-load-ga-rp-dict-test
+;; above), but core.clj's ipa-lookup CLI wrapper still *prints* (:rp row)/
+;; (:ga row) directly, which stay nil/empty on the new row shape -- wiring
+;; ga-tokens->ipa/rp-tokens->ipa into that display is US-023's job, not this
+;; story's, so the printed RP/GA cells are still expected to come up empty.
 (deftest main-dispatches-ipa-lookup-subcommand-test
-  (testing "`clojure -M -m nemo-words.core ipa-lookup --word car` prints the row and exits 0 (RP/GA cells empty pending US-022)"
+  (testing "`clojure -M -m nemo-words.core ipa-lookup --word car` prints the row and exits 0 (RP/GA cells empty pending US-023)"
     (let [proc (-> (ProcessBuilder. ["clojure" "-M" "-m" "nemo-words.core" "ipa-lookup" "--word" "car"])
                     (.redirectErrorStream true)
                     .start)
@@ -150,6 +151,20 @@
           lines (->> (str/split-lines out) (remove str/blank?))]
       (is (= 0 exit-code))
       (is (= ["car\t\t"] lines)))))
+
+;; -------------------------- CLI subcommands use the renamed loader (US-022 AC4)
+;; load-rp-ga-dict was renamed load-ga-rp-dict by US-019; this pins that
+;; populate-lexical-sets-cli calls the renamed var (not some stale/removed
+;; name) by counting invocations through a with-redefs spy.
+(deftest populate-lexical-sets-cli-calls-load-ga-rp-dict-test
+  (testing "populate-lexical-sets-cli loads the dict via ipa/load-ga-rp-dict"
+    (let [path (temp-sets-path)
+          calls (atom 0)]
+      (with-redefs [ipa/load-ga-rp-dict (fn [] (swap! calls inc) [])
+                    sets/default-path path]
+        (binding [*out* (java.io.StringWriter.)]
+          (core/populate-lexical-sets-cli [])))
+      (is (pos? @calls)))))
 
 ;; -------------------------------------- pick-example-words-by-ipa exit code (bug-001, US-005 AC4)
 ;; Same real-process rationale as main-dispatches-ipa-lookup-subcommand-test above:
