@@ -169,12 +169,12 @@
 ;; BEEP's non-rhotic phoneme map. BEEP tokens carry no stress digit at all,
 ;; so mrpa->ipa is a straight per-token lookup and concatenation.
 (def mrpa-phoneme->ipa
-  {"aa" "ɑː" "ae" "æ" "ah" "ʌ" "ao" "ɒ" "ax" "ə" "ay" "aɪ" "b" "b" "ch" "tʃ"
-   "d" "d" "dh" "ð" "ea" "ɛə" "eh" "ɛ" "er" "ɜː" "ey" "eɪ" "f" "f" "g" "ɡ"
-   "hh" "h" "ia" "ɪə" "ih" "ɪ" "iy" "iː" "jh" "dʒ" "k" "k" "l" "l" "m" "m"
-   "n" "n" "ng" "ŋ" "oh" "əʊ" "ow" "aʊ" "oy" "ɔɪ" "p" "p" "r" "ɹ" "s" "s"
-   "sh" "ʃ" "sil" "" "t" "t" "th" "θ" "ua" "ʊə" "uh" "ʊ" "uw" "uː" "v" "v"
-   "w" "w" "y" "j" "z" "z" "zh" "ʒ"})
+  {"aa" "ɑː" "ae" "æ" "ah" "ʌ" "ao" "ɔː" "ax" "ə" "ay" "aɪ" "aw" "aʊ" "b" "b"
+   "ch" "tʃ" "d" "d" "dh" "ð" "ea" "ɛə" "eh" "ɛ" "er" "ɜː" "ey" "eɪ" "f" "f"
+   "g" "ɡ" "hh" "h" "ia" "ɪə" "ih" "ɪ" "iy" "iː" "jh" "dʒ" "k" "k" "l" "l"
+   "m" "m" "n" "n" "ng" "ŋ" "oh" "ɒ" "ow" "əʊ" "oy" "ɔɪ" "p" "p" "r" "ɹ"
+   "s" "s" "sh" "ʃ" "sil" "" "t" "t" "th" "θ" "ua" "ʊə" "uh" "ʊ" "uw" "uː"
+   "v" "v" "w" "w" "y" "j" "z" "z" "zh" "ʒ"})
 
 (defn mrpa->ipa
   "MRPA token vector -> IPA string. Maps each token through
