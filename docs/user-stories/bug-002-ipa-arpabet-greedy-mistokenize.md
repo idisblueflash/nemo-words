@@ -1,7 +1,7 @@
 ---
 title: "ipa->arpabet mis-tokenizes when adjacent single-vowel/consonant-pair IPA output happens to spell a multi-codepoint symbol"
 status: closed
-resolution: wontfix-scope-narrowed
+resolution: fixed
 original_story: "[US-020](US-020.md)"
 ac: 5
 found: 2026-08-26
@@ -111,18 +111,30 @@ carry boundary information.
 
 ## Resolution (2026-08-26)
 
-Confirmed via web research that this is an inherent property of
-delimiter-free multi-symbol phonetic encodings, not something specific
-to this implementation. The only other actively bidirectional
-ARPABET↔IPA converter found
-([tarling/arpabet-and-ipa-convertor-ts](https://github.com/tarling/arpabet-and-ipa-convertor-ts))
-uses the same maximal-munch strategy with the identical blind spot and
-no backtracking; forward-only converters
-([wwesantos/arpabet-to-ipa](https://github.com/wwesantos/arpabet-to-ipa),
-[chorusai/arpa2ipa](https://github.com/chorusai/arpa2ipa)) avoid the
-problem only by not attempting the reverse direction. Went with option
-(a): narrowed US-020's AC 5 to guarantee round-trip only for ARPABET
-token vectors following real ARPABET/CMUdict phonotactics, and added a
-"Second, distinct limitation, also accepted" note (with citations) to
-the story's Background section documenting the 31/135,166 exception.
-Closed as wontfix — not a code defect.
+Initially investigated options (a) narrow AC 5's scope or (b) redesign
+`arpabet->ipa`'s output to carry boundary information, and confirmed via
+web research that no other ARPABET↔IPA tool solves this class of
+problem either (see prior investigation above).
+
+Went with a narrower version of (b) that avoids the ripple effect
+originally assumed: an exhaustive pairwise check of every
+`arpabet-phoneme->ipa` base against every other showed only **three**
+adjacent-base pairs can ever collide (`T`+`SH`→`CH`, `AO`+`IH`→`OY`,
+`D`+`ZH`→`JH` — provably exhaustive, since every mapped IPA rendering is
+at most 2 codepoints, so a 3+-token span can't collide). `arpabet->ipa`
+now inserts a zero-width non-joiner (`U+200C`) between exactly those
+three pairs at concatenation time, while it still has the real token
+boundaries. This is invisible in display output and doesn't touch any
+existing exact-string test assertion (none contain a colliding pair),
+so the "reused as-is" visible-output guarantee holds. `ipa->arpabet`
+needed no changes: its existing unrecognized-codepoint skip already
+treats the marker as a forced token break.
+
+Verified against the full `resources/data/cmudict.dict` corpus (135,166
+entries): 0 round-trip failures, down from 31. AC 5 was restored to its
+original unrestricted wording. Fixed via TDD in
+`src/nemo_words/ipa.clj` (`render-arpabet-token`, `colliding-adjacent-bases`,
+`token-boundary-marker`) with new tests in `test/nemo_words/ipa_test.clj`
+(`round-trip-boundary-collision-test`, and the randomized round-trip
+generator now covers any token arrangement, not just alternating
+consonant/vowel). Closed as fixed, not wontfix.

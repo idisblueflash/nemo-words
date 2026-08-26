@@ -186,27 +186,30 @@
 ;; ------------------------------------------ round-trip property (US-020)
 ;; ARPABET tokens always carry a stress digit on vowels (per CMUdict
 ;; convention, e.g. "K AE1 T"), never a bare vowel symbol, so the
-;; generator below only ever emits digited vowel tokens. Consonants are
-;; interspersed between vowels (a C-V-C-V-... shape) so no two
-;; consonants are ever concatenated directly against each other -
-;; avoiding the tokenizer's inherent, accepted ambiguity where e.g. a
-;; literal "T" immediately followed by "SH" is indistinguishable from
-;; "CH" once rendered to the contiguous IPA string "tʃ" (a limitation of
-;; any greedy re-tokenization of a delimiter-free string, not unlike the
-;; AH0/ER0 collapse the story already calls out).
+;; generator below only ever emits digited vowel tokens.
+(deftest round-trip-boundary-collision-test
+  (testing "adjacent tokens whose IPA renderings concatenate into a
+            different symbol's spelling still round-trip (T+SH vs CH,
+            AO+IH vs OY, D+ZH vs JH)"
+    (doseq [v [["S" "AO1" "IH0" "NG"]
+               ["N" "AH1" "T" "SH" "EH2" "L"]
+               ["B" "AE1" "D" "ZH" "AA1" "B"]]]
+      (is (= v (ipa/ipa->arpabet ((var ipa/arpabet->ipa) v))) (str "vector: " v)))))
+
 (def ^:private round-trip-consonants
   (remove @(var ipa/arpabet-vowels) (keys @(var ipa/arpabet-phoneme->ipa))))
 
 (def ^:private round-trip-vowel-tokens
   (for [v @(var ipa/arpabet-vowels) d ["0" "1" "2"]] (str v d)))
 
-(defn- random-cv-token-vector
-  "A random alternating consonant/vowel-with-digit ARPABET token vector,
-  e.g. (\"K\" \"AE1\" \"T\")."
-  [n-vowels]
-  (vec (mapcat (fn [_]
-                 [(rand-nth round-trip-consonants) (rand-nth round-trip-vowel-tokens)])
-               (range n-vowels))))
+(def ^:private round-trip-all-tokens
+  (concat round-trip-consonants round-trip-vowel-tokens))
+
+(defn- random-token-vector
+  "A random ARPABET token vector of length n, freely mixing consonants
+  and digited vowels in any order (e.g. (\"T\" \"SH\" \"AE1\" \"K\"))."
+  [n]
+  (vec (repeatedly n #(rand-nth round-trip-all-tokens))))
 
 (deftest round-trip-arpabet-ipa-arpabet-test
   (testing "every single ARPABET token round-trips through arpabet->ipa then ipa->arpabet"
@@ -217,9 +220,9 @@
     (doseq [v [["K" "AE1" "T"] ["R" "IY1" "D"] ["R" "EH1" "D"]
                ["K" "AA1" "R"] ["F" "L" "IH0" "B"] ["AE2" "D"]]]
       (is (= v (ipa/ipa->arpabet ((var ipa/arpabet->ipa) v))) (str "vector: " v))))
-  (testing "randomized C-V-C-V... token vectors round-trip exactly"
-    (dotimes [_ 200]
-      (let [v (random-cv-token-vector (inc (rand-int 4)))]
+  (testing "randomized token vectors, any consonant/vowel arrangement, round-trip exactly"
+    (dotimes [_ 500]
+      (let [v (random-token-vector (inc (rand-int 6)))]
         (is (= v (ipa/ipa->arpabet ((var ipa/arpabet->ipa) v))) (str "vector: " v))))))
 
 ;; ------------------------------------------------------------- word-matches? (US-004)
