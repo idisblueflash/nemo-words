@@ -203,32 +203,57 @@
       (is (strutil/includes-str? (:rp-tokens car-row) "k aa"))
       (is (every? #(and (string? (:ga-tokens %)) (string? (:rp-tokens %))) rows)))))
 
-;; -------------------------------------------------------- lookup-rows (US-001)
+;; -------------------------------------------------------- lookup-rows (US-001, US-022)
+;; US-022 migrates matching to raw token comparison against the
+;; {:word :ga-tokens :rp-tokens} shape US-019's loader produces. Old :rp/:ga
+;; IPA-text fields are kept alongside for now so not-yet-migrated opts
+;; (:pair, :pair-substring, still on the old fields until this story's later
+;; ACs land) keep passing unaffected.
 (def ^:private dict-fixture
-  [{:word "car" :rp "/kɑː/" :ga "/kɑɹ/"}
-   {:word "star" :rp "/stɑː/" :ga "/stɑɹ/"}
-   {:word "dog" :rp "/dɒɡ/" :ga "/dɔɡ/"}
-   {:word "a-alike" :rp "" :ga "/ˈeɪəˈlaɪk/"}
-   {:word "no-ga-word" :rp "/nəʊɡə/" :ga ""}
-   {:word "gnarly" :rp "/ˈnɑː.li/" :ga "/ˈnɑɹ.li/"}
-   {:word "narwhal" :rp "/ˈnɑː.li/, /ˈnɑːw.əl/" :ga "/ˈnɑɹ.wəl/, /ˈnɑɹ.li/"}
-   {:word "away" :rp "/eɪ̯/, /ə/, /ˈʌ/" :ga "/eɪ̯/, /ə/, /ˈʌ/"}])
+  [{:word "car" :rp "/kɑː/" :ga "/kɑɹ/" :ga-tokens "K AA1 R" :rp-tokens "k aa"}
+   {:word "star" :rp "/stɑː/" :ga "/stɑɹ/" :ga-tokens "S T AA1 R" :rp-tokens "s t aa"}
+   {:word "dog" :rp "/dɒɡ/" :ga "/dɔɡ/" :ga-tokens "D AO1 G" :rp-tokens "d o g"}
+   {:word "a-alike" :rp "" :ga "/ˈeɪəˈlaɪk/" :ga-tokens "" :rp-tokens ""}
+   {:word "no-ga-word" :rp "/nəʊɡə/" :ga "" :ga-tokens "" :rp-tokens "n oh g ax"}
+   {:word "gnarly" :rp "/ˈnɑː.li/" :ga "/ˈnɑɹ.li/" :ga-tokens "N AA1 R L IY0" :rp-tokens "n aa l iy"}
+   {:word "narwhal" :rp "/ˈnɑː.li/, /ˈnɑːw.əl/" :ga "/ˈnɑɹ.wəl/, /ˈnɑɹ.li/"
+    :ga-tokens "N AA1 R W AA0 L,N AA1 R L IY0" :rp-tokens "n aa w aa l,n aa l iy"}
+   {:word "away" :rp "/eɪ̯/, /ə/, /ˈʌ/" :ga "/eɪ̯/, /ə/, /ˈʌ/"
+    :ga-tokens "EY0,AH0,AH1" :rp-tokens "ey,ax,ah"}])
 
 (deftest lookup-rows-exact-word-test
   (testing "exact word lookup returns exactly one row"
-    (is (= [{:word "car" :rp "/kɑː/" :ga "/kɑɹ/"}]
+    (is (= [{:word "car" :rp "/kɑː/" :ga "/kɑɹ/" :ga-tokens "K AA1 R" :rp-tokens "k aa"}]
            (ipa/lookup-rows dict-fixture {:word "car"})))))
 
 (deftest lookup-rows-rp-substring-test
-  (testing "every returned row's :rp contains the query, none excluded that do"
+  (testing "every returned row matches, via ipa->mrpa token conversion, none excluded that do"
     (let [rows (ipa/lookup-rows dict-fixture {:rp "ɑː"})]
       (is (seq rows))
-      (is (every? #(strutil/includes-str? (:rp %) "ɑː") rows))
       (is (= #{"car" "star" "gnarly" "narwhal"} (set (map :word rows)))))))
+
+;; --------------------- lookup-rows :rp IPA query -> MRPA tokens (US-022 AC2)
+;; :rp keeps accepting an IPA-string query exactly as before; internally
+;; it's converted once via ipa->mrpa, then matched as a substring against
+;; the row's raw :rp-tokens cell -- matching BEEP's non-rhotic tokens
+;; directly, no ligature-decomposition step needed.
+(deftest lookup-rows-rp-query-converts-to-tokens-test
+  (testing "worked example: {:rp \"ɛə\"} matches a row via ipa->mrpa token conversion"
+    (let [dict [{:word "care" :ga-tokens "K EH1 R" :rp-tokens "k ea"}]
+          rows (ipa/lookup-rows dict {:rp "ɛə"})]
+      (is (= [{:word "care" :ga-tokens "K EH1 R" :rp-tokens "k ea"}] rows)))))
+
+;; Old-shape-only fixture (no :ga-tokens/:rp-tokens): exercises lookup-rows'
+;; backward-compatible direct-IPA-text fallback path for :pair, used by
+;; callers (match.clj/extend_set.clj/rime.clj) not yet migrated onto
+;; US-019's {:word :ga-tokens :rp-tokens} dict shape.
+(def ^:private old-shape-dict-fixture
+  [{:word "gnarly" :rp "/ˈnɑː.li/" :ga "/ˈnɑɹ.li/"}
+   {:word "narwhal" :rp "/ˈnɑː.li/, /ˈnɑːw.əl/" :ga "/ˈnɑɹ.wəl/, /ˈnɑɹ.li/"}])
 
 (deftest lookup-rows-exact-pair-test
   (testing "every returned row has exactly the given :rp and :ga"
-    (let [rows (ipa/lookup-rows dict-fixture {:pair ["/ˈnɑː.li/" "/ˈnɑɹ.li/"]})]
+    (let [rows (ipa/lookup-rows old-shape-dict-fixture {:pair ["/ˈnɑː.li/" "/ˈnɑɹ.li/"]})]
       (is (= [{:word "gnarly" :rp "/ˈnɑː.li/" :ga "/ˈnɑɹ.li/"}] rows))
       (is (every? #(and (= (:rp %) "/ˈnɑː.li/") (= (:ga %) "/ˈnɑɹ.li/")) rows)))))
 
@@ -247,30 +272,47 @@
 (deftest lookup-rows-empty-rp-cell-test
   (testing "row for word with no RP transcription has :rp = empty string, not nil"
     (let [rows (ipa/lookup-rows dict-fixture {:word "a-alike"})]
-      (is (= [{:word "a-alike" :rp "" :ga "/ˈeɪəˈlaɪk/"}] rows))))
+      (is (= [{:word "a-alike" :rp "" :ga "/ˈeɪəˈlaɪk/" :ga-tokens "" :rp-tokens ""}] rows))))
   (testing "that row is never returned by an rp substring lookup with a non-empty query"
     (let [rows (ipa/lookup-rows dict-fixture {:rp "eɪ"})]
       (is (not (contains? (set (map :word rows)) "a-alike"))))))
 
+;; --------------------- lookup-rows :ga IPA query -> ARPABET tokens (US-022 AC1)
+;; :ga keeps accepting an IPA-string query exactly as before; internally it's
+;; converted once via ipa->arpabet, then matched (stress-digit-agnostic, since
+;; the query carries no per-word stress placement) as a substring against the
+;; row's raw :ga-tokens cell -- no more direct IPA-text substring match.
+(deftest lookup-rows-ga-query-converts-to-tokens-test
+  (testing "worked example: {:ga \"/ɑɹ/\"} matches a row via ipa->arpabet token conversion, not IPA text"
+    (let [dict [{:word "car" :ga-tokens "K AA1 R" :rp-tokens "k aa"}]
+          rows (ipa/lookup-rows dict {:ga "/ɑɹ/"})]
+      (is (= [{:word "car" :ga-tokens "K AA1 R" :rp-tokens "k aa"}] rows)))))
+
 (deftest lookup-rows-empty-ga-cell-test
-  (testing "row for word with no GA transcription has :ga = empty string, not nil"
+  (testing "row for word with no GA transcription has :ga-tokens = empty string, not nil"
     (let [rows (ipa/lookup-rows dict-fixture {:word "no-ga-word"})]
-      (is (= [{:word "no-ga-word" :rp "/nəʊɡə/" :ga ""}] rows))))
+      (is (= [{:word "no-ga-word" :rp "/nəʊɡə/" :ga "" :ga-tokens "" :rp-tokens "n oh g ax"}] rows))))
   (testing "that row is never returned by a ga substring lookup with a non-empty query"
     (let [rows (ipa/lookup-rows dict-fixture {:ga "ə"})]
       (is (not (contains? (set (map :word rows)) "no-ga-word"))))))
 
 (deftest lookup-rows-multi-variant-cell-test
-  (testing "row is returned and :ga is the full raw comma-joined cell, not just the matched variant"
+  (testing "row is returned and :ga-tokens is the full raw comma-joined cell, not just the matched variant"
     (let [rows (ipa/lookup-rows dict-fixture {:ga "ˈʌ"})]
-      (is (= [{:word "away" :rp "/eɪ̯/, /ə/, /ˈʌ/" :ga "/eɪ̯/, /ə/, /ˈʌ/"}] rows)))))
+      (is (= [{:word "away" :rp "/eɪ̯/, /ə/, /ˈʌ/" :ga "/eɪ̯/, /ə/, /ˈʌ/"
+               :ga-tokens "EY0,AH0,AH1" :rp-tokens "ey,ax,ah"}]
+             rows)))))
 
 (deftest lookup-rows-ga-substring-test
-  (testing "every returned row's :ga contains the query"
+  (testing "every returned row's :ga-tokens contains the converted query, stress digits ignored"
     (let [rows (ipa/lookup-rows dict-fixture {:ga "ɑɹ"})]
       (is (seq rows))
-      (is (every? #(strutil/includes-str? (:ga %) "ɑɹ") rows))
       (is (= #{"car" "star" "gnarly" "narwhal"} (set (map :word rows)))))))
+
+(deftest lookup-rows-ga-query-ignores-stress-digit-mismatch-test
+  (testing "the query's default (unstressed) digit doesn't block a match against a stressed stored token"
+    (let [dict [{:word "car" :ga-tokens "K AA1 R" :rp-tokens "k aa"}]]
+      (is (= 1 (count (ipa/lookup-rows dict {:ga "ɑɹ"})))))))
 
 ;; -------------------------------------------------- ga-tokens->ipa (US-020)
 (deftest ga-tokens->ipa-single-variant-test
@@ -351,14 +393,52 @@
       (let [v (random-token-vector (inc (rand-int 6)))]
         (is (= v (ipa/ipa->arpabet ((var ipa/arpabet->ipa) v))) (str "vector: " v))))))
 
-;; ------------------------------------------------------------- word-matches? (US-004)
+;; ------------------------------------------------------------- word-matches? (US-004, US-022 AC3)
+;; word-matches? needs no signature change from US-022 -- it keeps taking
+;; IPA-string rp/ga queries and just inherits lookup-rows' new token-based
+;; matching against the {:word :ga-tokens :rp-tokens} shape.
+(def ^:private token-dict-fixture
+  [{:word "car" :ga-tokens "K AA1 R" :rp-tokens "k aa"}])
+
 (deftest word-matches?-test
-  (testing "word resolves to the given rp/ga pair in the dict"
-    (is (true? (ipa/word-matches? dict-fixture "car" "/kɑː/" "/kɑɹ/"))))
+  (testing "word resolves to the given rp/ga pair in the dict, matched via token conversion"
+    (is (true? (ipa/word-matches? token-dict-fixture "car" "kɑː" "ɑɹ"))))
   (testing "word no longer matches the given rp/ga pair"
-    (is (false? (ipa/word-matches? dict-fixture "car" "/xxx/" "/kɑɹ/"))))
+    (is (false? (ipa/word-matches? token-dict-fixture "car" "iː" "ɑɹ"))))
   (testing "word not in dict at all"
-    (is (false? (ipa/word-matches? dict-fixture "zzznotaword" "/kɑː/" "/kɑɹ/")))))
+    (is (false? (ipa/word-matches? token-dict-fixture "zzznotaword" "kɑː" "ɑɹ")))))
+
+;; word-matches? on a NURSE-set candidate word, against a {:ga-tokens
+;; :rp-tokens} dict, per lexical-sets.edn's NURSE row ["ɜː" "ɜɹ"]
+;; (build_set.clj's lexical-sets-table). The GA target "ɜɹ" is a
+;; decomposed nucleus+rhotic (never how CMUdict's r-colored ER renders as
+;; IPA, which collapses to the ligature ɝ) -- confirming ADR-0003's point
+;; that token-space matching needs no ligature-decomposition step to find
+;; it, since ARPABET's "ER" spelling already textually contains "R".
+(def ^:private nurse-token-dict
+  [{:word "hurt" :ga-tokens "HH ER1 T" :rp-tokens "h er t"}
+   {:word "cat" :ga-tokens "K AE1 T" :rp-tokens "k ae t"}])
+
+;; ---------- no ligature-decomposition step in the matching path (US-022 AC5)
+;; Rhotic IPA ligatures ("ɝ", "ɚ") convert straight to a single ARPABET
+;; token (ER1/ER0) via ipa->arpabet -- lookup-rows never runs a separate
+;; decomposition step over the query or the stored cell before comparing.
+(def ^:private rhotic-ligature-dict
+  [{:word "hurt" :ga-tokens "HH ER1 T" :rp-tokens "h er t"}])
+
+(deftest lookup-rows-ga-query-with-stressed-rhotic-ligature-test
+  (testing "'ɝ' converts straight to an ER token and matches by plain substring comparison"
+    (is (= ["hurt"] (map :word (ipa/lookup-rows rhotic-ligature-dict {:ga "ɝ"}))))))
+
+(deftest lookup-rows-ga-query-with-unstressed-rhotic-ligature-test
+  (testing "'ɚ' converts straight to ER0 and matches the same way, no decomposition step"
+    (is (= ["hurt"] (map :word (ipa/lookup-rows rhotic-ligature-dict {:ga "ɚ"}))))))
+
+(deftest word-matches?-nurse-lexical-set-test
+  (testing "a NURSE candidate word matches NURSE's rp/ga targets"
+    (is (true? (ipa/word-matches? nurse-token-dict "hurt" "ɜː" "ɜɹ"))))
+  (testing "a non-NURSE candidate word does not match NURSE's targets"
+    (is (false? (ipa/word-matches? nurse-token-dict "cat" "ɜː" "ɜɹ")))))
 
 ;; ------------------------------------------------------------- mrpa->ipa (US-021)
 (deftest mrpa->ipa-test
