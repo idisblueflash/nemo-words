@@ -196,6 +196,21 @@
                ["B" "AE1" "D" "ZH" "AA1" "B"]]]
       (is (= v (ipa/ipa->arpabet ((var ipa/arpabet->ipa) v))) (str "vector: " v)))))
 
+(deftest colliding-adjacent-bases-derivation-test
+  (testing "the hardcoded collision set matches what an exhaustive pairwise
+            check of arpabet-phoneme->ipa derives today, so a future change
+            to the phoneme map fails loudly here instead of silently
+            reintroducing an unmarked boundary collision"
+    (let [phoneme->ipa @(var ipa/arpabet-phoneme->ipa)
+          bases (keys phoneme->ipa)
+          derived (set (for [prev bases
+                              base bases
+                              :let [concatenated (str (get phoneme->ipa prev)
+                                                       (get phoneme->ipa base))]
+                              :when (contains? (set (vals phoneme->ipa)) concatenated)]
+                          [prev base]))]
+      (is (= @(var ipa/colliding-adjacent-bases) derived)))))
+
 (def ^:private round-trip-consonants
   (remove @(var ipa/arpabet-vowels) (keys @(var ipa/arpabet-phoneme->ipa))))
 
