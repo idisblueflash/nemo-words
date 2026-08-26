@@ -147,6 +147,62 @@
       (is (not-any? #(re-find #"[ɛəː]" %) (mapcat identity (vals dict))))
       (is (some #{"k aa"} (get dict "car"))))))
 
+;; ------------------------------------------------------ build-ga-rp-rows (US-019)
+(deftest build-ga-rp-rows-both-sources-test
+  (testing "a word present in both CMUdict-raw and BEEP-raw gets both columns populated with raw tokens"
+    (let [rows (ipa/build-ga-rp-rows (ipa/load-dictionary-by-brand :cmudict-raw)
+                                      (ipa/load-dictionary-by-brand :beep-raw))
+          car-row (first (filter #(= (:word %) "car") rows))]
+      (is (some? car-row))
+      (is (= "K AA1 R" (:ga car-row)))
+      (is (strutil/includes-str? (:rp car-row) "k aa")))))
+
+(deftest build-ga-rp-rows-no-ipa-translation-test
+  (testing "the GA column keeps raw ARPABET tokens, not IPA"
+    (let [rows (ipa/build-ga-rp-rows (ipa/load-dictionary-by-brand :cmudict-raw)
+                                      (ipa/load-dictionary-by-brand :beep-raw))
+          car-row (first (filter #(= (:word %) "car") rows))]
+      (is (= "K AA1 R" (:ga car-row)))
+      (is (not= "/kˈɑɹ/" (:ga car-row))))))
+
+(deftest build-ga-rp-rows-one-source-only-test
+  (testing "a word found in only GA still gets a row, RP left empty, not dropped"
+    (let [rows (ipa/build-ga-rp-rows {"onlyga" ["W AH1 N"]} {})]
+      (is (= [{:word "onlyga" :ga "W AH1 N" :rp ""}] rows))))
+  (testing "a word found in only RP still gets a row, GA left empty, not dropped"
+    (let [rows (ipa/build-ga-rp-rows {} {"onlyrp" ["w uh n"]})]
+      (is (= [{:word "onlyrp" :ga "" :rp "w uh n"}] rows)))))
+
+(deftest build-ga-rp-rows-neither-source-test
+  (testing "a word absent from both sources produces no row for it, and no empty-cell row either"
+    (let [rows (ipa/build-ga-rp-rows {"car" ["K AA1 R"]} {"car" ["k aa"]})]
+      (is (nil? (first (filter #(= (:word %) "nowhere") rows))))
+      (is (not-any? #(and (= "" (:ga %)) (= "" (:rp %))) rows)))))
+
+(deftest build-ga-rp-rows-excludes-beep-pseudo-words-test
+  (testing "BEEP's symbol pseudo-words never appear in the built rows"
+    (let [rows (ipa/build-ga-rp-rows (ipa/load-dictionary-by-brand :cmudict-raw)
+                                      (ipa/load-dictionary-by-brand :beep-raw))]
+      (is (nil? (first (filter #(= (:word %) "!exclamation-point") rows))))
+      (is (not-any? #(re-find #"[^a-z'-]" (:word %)) rows)))))
+
+(deftest build-ga-rp-rows-multiple-variants-comma-joined-test
+  (testing "multiple raw-token variants for the same word are comma-joined, same convention as before"
+    (let [rows (ipa/build-ga-rp-rows {"read" ["R IY1 D" "R EH1 D"]} {})
+          read-row (first (filter #(= (:word %) "read") rows))]
+      (is (= "R IY1 D,R EH1 D" (:ga read-row))))))
+
+;; --------------------------------------------------- load-ga-rp-dict (US-019)
+(deftest load-ga-rp-dict-reads-built-file-test
+  (testing "reads resources/data/ga_rp.tsv (built by write-ga-rp-dict!) into {:word :ga-tokens :rp-tokens} rows"
+    (let [rows (ipa/load-ga-rp-dict)
+          car-row (first (filter #(= (:word %) "car") rows))]
+      (is (seq rows))
+      (is (some? car-row))
+      (is (= "K AA1 R" (:ga-tokens car-row)))
+      (is (strutil/includes-str? (:rp-tokens car-row) "k aa"))
+      (is (every? #(and (string? (:ga-tokens %)) (string? (:rp-tokens %))) rows)))))
+
 ;; -------------------------------------------------------- lookup-rows (US-001)
 (def ^:private dict-fixture
   [{:word "car" :rp "/kɑː/" :ga "/kɑɹ/"}

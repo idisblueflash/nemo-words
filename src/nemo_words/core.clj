@@ -142,7 +142,7 @@
     ;=> 0"
   [args]
   (let [[keyword rp ga & words] args
-        dict (ipa/load-rp-ga-dict)
+        dict (ipa/load-ga-rp-dict)
         result (build-set/build-set dict keyword rp ga words)
         kept (get-in result [keyword :words])]
     (report-build-set-summary {:keyword keyword
@@ -164,16 +164,34 @@
     ;; prints one summary line per Wells set, writes lexical-sets.edn
     ;=> 0"
   [_args]
-  (let [dict (ipa/load-rp-ga-dict)
+  (let [dict (ipa/load-ga-rp-dict)
         summaries (build-set/populate-lexical-sets dict)]
     (doseq [{:keys [kept dropped] :as summary} summaries]
       (report-build-set-summary summary (+ (count kept) (count dropped))))
     0))
 
+(defn build-ga-rp-dict-cli
+  "Full CLI entry for the build-ga-rp-dict subcommand (US-019): unions
+  :cmudict-raw + :beep-raw's raw phoneme tokens and writes them to path
+  (ipa/default-ga-rp-path if omitted, given for testability) as
+  word<TAB>GA<TAB>RP rows. Prints a one-line row-count summary and returns
+  exit code 0.
+
+  Example:
+    (build-ga-rp-dict-cli [])
+    ;; writes resources/data/ga_rp.tsv, prints \"wrote N rows to resources/data/ga_rp.tsv\"
+    ;=> 0"
+  ([_args] (build-ga-rp-dict-cli _args ipa/default-ga-rp-path))
+  ([_args path]
+   (let [n (ipa/write-ga-rp-dict! path)]
+     (println (str "wrote " n " rows to " path))
+     0)))
+
 (defn -main
   "Entry point invoked by `clj -M -m nemo-words.core`. Dispatches the
-  word-freq, ipa-lookup, pick-example-words-by-ipa, build-set, and
-  populate-lexical-sets subcommands; any other/no args prints a greeting.
+  word-freq, ipa-lookup, pick-example-words-by-ipa, build-set,
+  populate-lexical-sets, and build-ga-rp-dict subcommands; any other/no
+  args prints a greeting.
   Passes the dispatched subcommand's returned exit code to System/exit so
   the real OS process exit status matches it (a bare return value here has
   no effect on the process).
@@ -189,9 +207,10 @@
   (let [[subcommand & rest-args] args
         exit-code (cond
                     (= subcommand "word-freq") (word-freq-cli rest-args)
-                    (= subcommand "ipa-lookup") (ipa-lookup (ipa/load-rp-ga-dict) rest-args)
+                    (= subcommand "ipa-lookup") (ipa-lookup (ipa/load-ga-rp-dict) rest-args)
                     (= subcommand "pick-example-words-by-ipa") (pick-example-words-by-ipa-cli rest-args)
                     (= subcommand "build-set") (build-set-cli rest-args)
                     (= subcommand "populate-lexical-sets") (populate-lexical-sets-cli rest-args)
+                    (= subcommand "build-ga-rp-dict") (build-ga-rp-dict-cli rest-args)
                     :else (do (println "Hello, nemo-words!") 0))]
     (System/exit exit-code)))

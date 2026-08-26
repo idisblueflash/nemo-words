@@ -312,27 +312,88 @@
            dedupe-vals))
     {}))
 
-;; ---------------------------------------------------- RP/GA dict (US-001)
-;; en_US_RP_ipa.tsv line format: word<TAB>GA-cell<TAB>RP-cell (GA first, then
-;; RP; see US-001's "Data reality" note). Loaded into lookup-rows' expected
-;; shape: seq of {:word :rp :ga}, raw cell text unchanged (comma-joined
-;; variants kept as-is, "" not nil when a cell is empty).
-(defn load-rp-ga-dict
-  "Load resources/data/en_US_RP_ipa.tsv into a seq of {:word :rp :ga} rows,
-  or () if the resource isn't found.
+;; ------------------------------------------------- GA/RP dict build (US-019)
+(defn- comma-join-variants
+  "dict + word -> comma-joined variant string, \"\" when word is absent or
+  has no variants.
 
   Example:
-    (load-rp-ga-dict) ;=> ({:word \"car\" :rp \"/kɑː/\" :ga \"/kɑɹ/\"} ...)"
+    (comma-join-variants {\"read\" [\"R EH1 D\" \"R IY1 D\"]} \"read\") ;=> \"R EH1 D,R IY1 D\"
+    (comma-join-variants {} \"missing\") ;=> \"\""
+  [dict word]
+  (strutil/join-str "," (get dict word [])))
+
+(defn build-ga-rp-rows
+  "ga-dict (word -> raw ARPABET variants, e.g. from :cmudict-raw) + rp-dict
+  (word -> raw MRPA variants, e.g. from :beep-raw) -> seq of {:word :ga :rp}
+  rows, one per word in the union of both dicts' keys. Multi-variant cells
+  are comma-joined; a word present in only one source still gets a row with
+  \"\" (not omitted) for the missing side. A word is dropped entirely only
+  when both the GA and RP cells would be empty.
+
+  Example:
+    (build-ga-rp-rows {\"car\" [\"K AA1 R\"]} {\"car\" [\"k aa\"]})
+    ;=> ({:word \"car\" :ga \"K AA1 R\" :rp \"k aa\"})"
+  [ga-dict rp-dict]
+  (->> (into (set (keys ga-dict)) (keys rp-dict))
+       sort
+       (keep (fn [word]
+               (let [ga (comma-join-variants ga-dict word)
+                     rp (comma-join-variants rp-dict word)]
+                 (when (or (seq ga) (seq rp))
+                   {:word word :ga ga :rp rp}))))))
+
+(def default-ga-rp-path
+  "Default location of the built GA/RP raw-token TSV."
+  "resources/data/ga_rp.tsv")
+
+(defn ga-rp-tsv-lines
+  "rows (seq of {:word :ga :rp}) -> seq of tab-joined \"word\\tGA\\tRP\" lines,
+  same order as rows.
+
+  Example:
+    (ga-rp-tsv-lines [{:word \"car\" :ga \"K AA1 R\" :rp \"k aa\"}])
+    ;=> (\"car\\tK AA1 R\\tk aa\")"
+  [rows]
+  (map (fn [{:keys [word ga rp]}] (strutil/join-str "\t" [word ga rp])) rows))
+
+(defn write-ga-rp-dict!
+  "Build rows by unioning :cmudict-raw + :beep-raw (via
+  load-dictionary-by-brand) and write them as word<TAB>GA<TAB>RP lines to
+  path (default default-ga-rp-path). Returns the number of rows written.
+
+  Example:
+    (write-ga-rp-dict!) ;; writes resources/data/ga_rp.tsv, returns row count"
+  ([] (write-ga-rp-dict! default-ga-rp-path))
+  ([path]
+   (let [rows (build-ga-rp-rows (load-dictionary-by-brand :cmudict-raw)
+                                 (load-dictionary-by-brand :beep-raw))]
+     (spit path (strutil/join-str "\n" (ga-rp-tsv-lines rows)))
+     (count rows))))
+
+;; ---------------------------------------------------- GA/RP dict (US-001, renamed US-019)
+;; ga_rp.tsv line format: word<TAB>GA-cell<TAB>RP-cell (GA first, then RP;
+;; see US-001's "Data reality" note, and US-019's build step). Loaded as raw
+;; token strings unchanged (no IPA translation at load) into a thin,
+;; format-preserving shape: seq of {:word :ga-tokens :rp-tokens}, "" (not
+;; nil) when a cell is empty.
+(defn load-ga-rp-dict
+  "Load resources/data/ga_rp.tsv (US-019's build step) into a seq of
+  {:word :ga-tokens :rp-tokens} rows, or () if the resource isn't found.
+  Raw token strings are returned unchanged, no IPA translation.
+
+  Example:
+    (load-ga-rp-dict) ;=> ({:word \"car\" :ga-tokens \"K AA1 R\" :rp-tokens \"k aa\"} ...)"
   []
-  (if-let [rdr (resource-reader "data/en_US_RP_ipa.tsv")]
+  (if-let [rdr (resource-reader "data/ga_rp.tsv")]
     (with-open [r rdr]
       (->> (line-seq r)
            (keep (fn [line]
                    (let [[word ga rp] (split-str-by line tab-splitter -1)]
                      (when (seq word)
                        {:word (clean-word word)
-                        :rp (or rp "")
-                        :ga (or ga "")}))))
+                        :ga-tokens (or ga "")
+                        :rp-tokens (or rp "")}))))
            doall))
     '()))
 
