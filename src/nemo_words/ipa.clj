@@ -181,12 +181,34 @@
         [(clean-word (first (split-str-by head paren-splitter 2)))
          (when (seq tokens) [(arpabet->ipa tokens)])]))))
 
+;; BEEP headword-validity filter — kept inline per US-018's merge-conflict
+;; note (avoid a shared top-level def colliding with US-017's CMUdict work).
+(def ^:private beep-word-pattern #"^[a-z][a-z'-]*$")
+
+;; :beep-raw line -> [word variants]. BEEP is "WORD<whitespace>phoneme
+;; phoneme ...", phonemes MRPA-style lowercase, no stress digits. Phonemes
+;; are kept as-is (space-joined), not translated to IPA here — that's
+;; US-021's job. Symbol pseudo-words (e.g. !EXCLAMATION-POINT) are excluded.
+;; (parse-line :beep-raw "CAR\tk aa") ;=> ["car" ("k aa")]
+(defmethod parse-line :beep-raw
+  [_ raw-line]
+  (let [line (strutil/trim-str raw-line)]
+    (if (or (strutil/blank-str? line) (= \# (first line)))
+      [nil nil]
+      (let [parts (split-str-by line whitespace-splitter)
+            word (clean-word (first parts))
+            tokens (rest parts)]
+        (if (and (re-matches beep-word-pattern word) (seq tokens))
+          [word (list (strutil/join-str " " tokens))]
+          [nil nil])))))
+
 (def ^:private brand->resource
   "Per-brand classpath resource path, dispatched by load-dictionary-by-brand."
   {:ipa-dict "data/en_US.txt"
    :wikipron "data/wikipron_us_broad.tsv"
    :cmudict "data/cmudict.dict"
-   :ipa-dict-uk "data/en_UK.txt"})
+   :ipa-dict-uk "data/en_UK.txt"
+   :beep-raw "data/beep_uk.dict"})
 
 (defn load-dictionary-by-brand
   "brand (:ipa-dict, :wikipron, :cmudict, or :ipa-dict-uk) -> word -> [variant, ...].
