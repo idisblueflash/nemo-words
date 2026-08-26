@@ -71,7 +71,14 @@ independent, parallelizable unit of work.
   `resources/data/ga_rp.tsv` (same follow-up US-016 flagged) and
   re-check whether [US-015](US-015.md)'s `lexical-sets-table` needs any
   re-seeding, given the dictionary underneath it has changed sources and
-  format entirely.
+  format entirely. **Done (2026-08-26)**: the re-run surfaced two real
+  bugs, both filed and fixed — [bug-003](bug-003-mrpa-vowel-mapping-shift.md) (BEEP's
+  `oh`/`ao`/`ow`/`aw` MRPA table was shifted/missing an entry) and
+  [bug-004](bug-004-lookup-rows-word-case-sensitive.md) (case-sensitive word lookup dropped
+  capitalized seed words like "Boston"/"Chelsea"). What's left after both
+  fixes — `poor`/`scampi`/`catalpa`'s genuine data-limitation drops plus
+  `lettER`'s composed-vs-decomposed GA target — is scoped as
+  [US-024](US-024.md).
 - A concretely-scoped story to translate the Lexical Sets Table's
   IPA-authored targets into ARPABET/MRPA nucleus tokens directly (rather
   than converting per query at lookup time, as [US-022](US-022.md) does), if
