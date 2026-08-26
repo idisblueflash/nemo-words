@@ -19,7 +19,8 @@
 
   Usage:
     clj -M -m nemo-words.ipa <word> [<word> ...]"
-  (:require [nemo-words.ioutil :as ioutil]
+  (:require [clojure.string :as str]
+            [nemo-words.ioutil :as ioutil]
             [nemo-words.strutil :as strutil]))
 
 ;; --------------------------------------------------------- ARPABET -> IPA (US)
@@ -164,6 +165,69 @@
             ;; unrecognized codepoint: skip it defensively rather than error
             (recur (inc pos) pending-stress tokens)))))))
 
+;; ------------------------------------------------------------- MRPA -> IPA (RP, US-021)
+;; BEEP's non-rhotic phoneme map. BEEP tokens carry no stress digit at all,
+;; so mrpa->ipa is a straight per-token lookup and concatenation.
+(def mrpa-phoneme->ipa
+  {"aa" "ɑː" "ae" "æ" "ah" "ʌ" "ao" "ɒ" "ax" "ə" "ay" "aɪ" "b" "b" "ch" "tʃ"
+   "d" "d" "dh" "ð" "ea" "ɛə" "eh" "ɛ" "er" "ɜː" "ey" "eɪ" "f" "f" "g" "ɡ"
+   "hh" "h" "ia" "ɪə" "ih" "ɪ" "iy" "iː" "jh" "dʒ" "k" "k" "l" "l" "m" "m"
+   "n" "n" "ng" "ŋ" "oh" "əʊ" "ow" "aʊ" "oy" "ɔɪ" "p" "p" "r" "ɹ" "s" "s"
+   "sh" "ʃ" "sil" "" "t" "t" "th" "θ" "ua" "ʊə" "uh" "ʊ" "uw" "uː" "v" "v"
+   "w" "w" "y" "j" "z" "z" "zh" "ʒ"})
+
+(defn mrpa->ipa
+  "MRPA token vector -> IPA string. Maps each token through
+  mrpa-phoneme->ipa and concatenates; no stress logic needed (BEEP has
+  none).
+
+  Example:
+    (mrpa->ipa [\"k\" \"aa\"]) ;=> \"kɑː\""
+  [tokens]
+  (apply str (map #(get mrpa-phoneme->ipa % %) tokens)))
+
+(defn rp-tokens->ipa
+  "Raw RP cell-string -> IPA string. Splits on ',' (multi-variant), splits
+  each variant on whitespace into MRPA tokens, runs each through
+  mrpa->ipa, rejoins variants with ','.
+
+  Example:
+    (rp-tokens->ipa \"k aa\") ;=> \"kɑː\"
+    (rp-tokens->ipa \"k ea,k eh\") ;=> \"kɛə,kɛ\""
+  [cell]
+  (->> (strutil/split-str cell #",")
+       (map #(mrpa->ipa (strutil/split-str (strutil/trim-str %) #"\s+")))
+       (strutil/join-str ",")))
+
+;; Reverse of mrpa-phoneme->ipa (IPA symbol -> MRPA token), for ipa->mrpa's
+;; tokenizer. "sil" maps to "" in the forward direction and is excluded
+;; here since an empty symbol can't be matched against IPA text.
+(def ^:private ipa->mrpa-phoneme
+  (into {} (for [[token ipa] mrpa-phoneme->ipa :when (seq ipa)] [ipa token])))
+
+;; IPA symbols to try, longest-first, so e.g. "ɛə" is matched as one
+;; token instead of splitting into "ɛ" + a stray "ə".
+(def ^:private ipa-symbols-longest-first
+  (->> (keys ipa->mrpa-phoneme)
+       (sort-by count >)))
+
+(defn ipa->mrpa
+  "IPA string -> MRPA token vector. Tokenizes the IPA string greedily
+  against mrpa-phoneme->ipa's value set (longest match first), no stress
+  mark to strip.
+
+  Example:
+    (ipa->mrpa \"kɑː\") ;=> [\"k\" \"aa\"]
+    (ipa->mrpa \"kɛə\") ;=> [\"k\" \"ea\"]"
+  [ipa-str]
+  (loop [s ipa-str
+         tokens []]
+    (if (empty? s)
+      tokens
+      (if-let [match (first (filter #(str/starts-with? s %) ipa-symbols-longest-first))]
+        (recur (subs s (count match)) (conj tokens (ipa->mrpa-phoneme match)))
+        (recur (subs s 1) tokens)))))
+
 ;; ------------------------------------------------------------- source loaders
 (def ^:private tab-splitter #"\t")
 (def ^:private comma-splitter #",")
@@ -298,12 +362,55 @@
         [(clean-word (first (split-str-by head paren-splitter 2)))
          (when (seq tokens) [(arpabet->ipa tokens)])]))))
 
+;; BEEP headword-validity filter — kept inline per US-018's merge-conflict
+;; note (avoid a shared top-level def colliding with US-017's CMUdict work).
+(def ^:private beep-word-pattern #"^[a-z][a-z'-]*$")
+
+;; :beep-raw line -> [word variants]. BEEP is "WORD<whitespace>phoneme
+;; phoneme ...", phonemes MRPA-style lowercase, no stress digits. Phonemes
+;; are kept as-is (space-joined), not translated to IPA here — that's
+;; US-021's job. Symbol pseudo-words (e.g. !EXCLAMATION-POINT) are excluded.
+;; (parse-line :beep-raw "CAR\tk aa") ;=> ["car" ("k aa")]
+(defmethod parse-line :beep-raw
+  [_ raw-line]
+  (let [line (strutil/trim-str raw-line)]
+    (if (or (strutil/blank-str? line) (= \# (first line)))
+      [nil nil]
+      (let [parts (split-str-by line whitespace-splitter)
+            word (clean-word (first parts))
+            tokens (rest parts)]
+        (if (and (re-matches beep-word-pattern word) (seq tokens))
+          [word (list (strutil/join-str " " tokens))]
+          [nil nil])))))
+
+;; :cmudict-raw line -> [word variants], keeping raw ARPABET tokens (stress
+;; digits intact) instead of translating to IPA. Same line format as
+;; :cmudict: trailing '# comment' dropped, variant markers like 'word(2)'
+;; fold into the base word. Headword filter kept inline (per US-017's
+;; merge-conflict note) to avoid a shared top-level def colliding with
+;; US-018's BEEP work.
+;; (parse-line :cmudict-raw "CAT K AE1 T") ;=> ["cat" ("K AE1 T")]
+(defmethod parse-line :cmudict-raw
+  [_ raw-line]
+  (let [line (strutil/trim-str (first (split-str-by raw-line hash-splitter 2)))]
+    (if (strutil/blank-str? line)
+      [nil nil]
+      (let [parts (split-str-by line whitespace-splitter)
+            head (first parts)
+            tokens (rest parts)
+            word (clean-word (first (split-str-by head paren-splitter 2)))]
+        (if (re-matches #"^[a-z][a-z'-]*$" word)
+          [word (when (seq tokens) [(strutil/join-str " " tokens)])]
+          [nil nil])))))
+
 (def ^:private brand->resource
   "Per-brand classpath resource path, dispatched by load-dictionary-by-brand."
   {:ipa-dict "data/en_US.txt"
    :wikipron "data/wikipron_us_broad.tsv"
    :cmudict "data/cmudict.dict"
-   :ipa-dict-uk "data/en_UK.txt"})
+   :cmudict-raw "data/cmudict.dict"
+   :ipa-dict-uk "data/en_UK.txt"
+   :beep-raw "data/beep_uk.dict"})
 
 (defn load-dictionary-by-brand
   "brand (:ipa-dict, :wikipron, :cmudict, or :ipa-dict-uk) -> word -> [variant, ...].
@@ -322,27 +429,88 @@
            dedupe-vals))
     {}))
 
-;; ---------------------------------------------------- RP/GA dict (US-001)
-;; en_US_RP_ipa.tsv line format: word<TAB>GA-cell<TAB>RP-cell (GA first, then
-;; RP; see US-001's "Data reality" note). Loaded into lookup-rows' expected
-;; shape: seq of {:word :rp :ga}, raw cell text unchanged (comma-joined
-;; variants kept as-is, "" not nil when a cell is empty).
-(defn load-rp-ga-dict
-  "Load resources/data/en_US_RP_ipa.tsv into a seq of {:word :rp :ga} rows,
-  or () if the resource isn't found.
+;; ------------------------------------------------- GA/RP dict build (US-019)
+(defn- comma-join-variants
+  "dict + word -> comma-joined variant string, \"\" when word is absent or
+  has no variants.
 
   Example:
-    (load-rp-ga-dict) ;=> ({:word \"car\" :rp \"/kɑː/\" :ga \"/kɑɹ/\"} ...)"
+    (comma-join-variants {\"read\" [\"R EH1 D\" \"R IY1 D\"]} \"read\") ;=> \"R EH1 D,R IY1 D\"
+    (comma-join-variants {} \"missing\") ;=> \"\""
+  [dict word]
+  (strutil/join-str "," (get dict word [])))
+
+(defn build-ga-rp-rows
+  "ga-dict (word -> raw ARPABET variants, e.g. from :cmudict-raw) + rp-dict
+  (word -> raw MRPA variants, e.g. from :beep-raw) -> seq of {:word :ga :rp}
+  rows, one per word in the union of both dicts' keys. Multi-variant cells
+  are comma-joined; a word present in only one source still gets a row with
+  \"\" (not omitted) for the missing side. A word is dropped entirely only
+  when both the GA and RP cells would be empty.
+
+  Example:
+    (build-ga-rp-rows {\"car\" [\"K AA1 R\"]} {\"car\" [\"k aa\"]})
+    ;=> ({:word \"car\" :ga \"K AA1 R\" :rp \"k aa\"})"
+  [ga-dict rp-dict]
+  (->> (into (set (keys ga-dict)) (keys rp-dict))
+       sort
+       (keep (fn [word]
+               (let [ga (comma-join-variants ga-dict word)
+                     rp (comma-join-variants rp-dict word)]
+                 (when (or (seq ga) (seq rp))
+                   {:word word :ga ga :rp rp}))))))
+
+(def default-ga-rp-path
+  "Default location of the built GA/RP raw-token TSV."
+  "resources/data/ga_rp.tsv")
+
+(defn ga-rp-tsv-lines
+  "rows (seq of {:word :ga :rp}) -> seq of tab-joined \"word\\tGA\\tRP\" lines,
+  same order as rows.
+
+  Example:
+    (ga-rp-tsv-lines [{:word \"car\" :ga \"K AA1 R\" :rp \"k aa\"}])
+    ;=> (\"car\\tK AA1 R\\tk aa\")"
+  [rows]
+  (map (fn [{:keys [word ga rp]}] (strutil/join-str "\t" [word ga rp])) rows))
+
+(defn write-ga-rp-dict!
+  "Build rows by unioning :cmudict-raw + :beep-raw (via
+  load-dictionary-by-brand) and write them as word<TAB>GA<TAB>RP lines to
+  path (default default-ga-rp-path). Returns the number of rows written.
+
+  Example:
+    (write-ga-rp-dict!) ;; writes resources/data/ga_rp.tsv, returns row count"
+  ([] (write-ga-rp-dict! default-ga-rp-path))
+  ([path]
+   (let [rows (build-ga-rp-rows (load-dictionary-by-brand :cmudict-raw)
+                                 (load-dictionary-by-brand :beep-raw))]
+     (spit path (strutil/join-str "\n" (ga-rp-tsv-lines rows)))
+     (count rows))))
+
+;; ---------------------------------------------------- GA/RP dict (US-001, renamed US-019)
+;; ga_rp.tsv line format: word<TAB>GA-cell<TAB>RP-cell (GA first, then RP;
+;; see US-001's "Data reality" note, and US-019's build step). Loaded as raw
+;; token strings unchanged (no IPA translation at load) into a thin,
+;; format-preserving shape: seq of {:word :ga-tokens :rp-tokens}, "" (not
+;; nil) when a cell is empty.
+(defn load-ga-rp-dict
+  "Load resources/data/ga_rp.tsv (US-019's build step) into a seq of
+  {:word :ga-tokens :rp-tokens} rows, or () if the resource isn't found.
+  Raw token strings are returned unchanged, no IPA translation.
+
+  Example:
+    (load-ga-rp-dict) ;=> ({:word \"car\" :ga-tokens \"K AA1 R\" :rp-tokens \"k aa\"} ...)"
   []
-  (if-let [rdr (resource-reader "data/en_US_RP_ipa.tsv")]
+  (if-let [rdr (resource-reader "data/ga_rp.tsv")]
     (with-open [r rdr]
       (->> (line-seq r)
            (keep (fn [line]
                    (let [[word ga rp] (split-str-by line tab-splitter -1)]
                      (when (seq word)
                        {:word (clean-word word)
-                        :rp (or rp "")
-                        :ga (or ga "")}))))
+                        :ga-tokens (or ga "")
+                        :rp-tokens (or rp "")}))))
            doall))
     '()))
 
