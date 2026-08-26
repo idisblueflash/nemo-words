@@ -63,7 +63,7 @@ independent, parallelizable unit of work.
 - [x] [US-019](US-019.md) Build `ga_rp.tsv` and rename the raw-token loader (depends on US-017 + US-018)
 - [x] [US-020](US-020.md) Bidirectional ARPABET ↔ IPA conversion
 - [x] [US-021](US-021.md) Bidirectional MRPA ↔ IPA conversion
-- [ ] [US-022](US-022.md) Migrate `lookup-rows`/`word-matches?` to token-based matching (depends on US-019 + US-020 + US-021)
+- [x] [US-022](US-022.md) Migrate `lookup-rows`/`word-matches?` to token-based matching (depends on US-019 + US-020 + US-021)
 - [ ] [US-023](US-023.md) Display IPA in the `ipa-lookup` CLI subcommand (depends on US-019 + US-020 + US-021 + US-022)
 
 ## Follow-up (out of scope in the stories above, tracked separately)
