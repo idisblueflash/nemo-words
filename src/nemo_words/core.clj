@@ -75,20 +75,49 @@
       "--pair-substring" {:pair-substring [a b]}
       {})))
 
-(defn ipa-lookup
-  "Thin CLI wrapper: dict + CLI args -> lookup-rows -> print TSV
-  \"word\\tRP\\tGA\", one line per row. Returns the process exit code (always
-  0, even for zero matches).
+(defn- row->rp-display
+  "Row -> its RP display cell: converted from raw MRPA tokens via
+  ipa/rp-tokens->ipa when the row carries :rp-tokens (US-019's shape), or
+  the pre-existing :rp IPA-text field otherwise, so old-shape callers
+  don't regress.
 
   Example:
-    (ipa-lookup [{:word \"car\" :rp \"/kɑː/\" :ga \"/kɑɹ/\"}] [\"--word\" \"car\"])
-    ;; prints \"car\\t/kɑː/\\t/kɑɹ/\"
+    (row->rp-display {:rp-tokens \"k aa\"}) ;=> \"kɑː\"
+    (row->rp-display {:rp \"/kɑː/\"})       ;=> \"/kɑː/\""
+  [row]
+  (if (contains? row :rp-tokens)
+    (ipa/rp-tokens->ipa (:rp-tokens row))
+    (:rp row)))
+
+(defn- row->ga-display
+  "Row -> its GA display cell: converted from raw ARPABET tokens via
+  ipa/ga-tokens->ipa when the row carries :ga-tokens (US-019's shape), or
+  the pre-existing :ga IPA-text field otherwise, so old-shape callers
+  don't regress.
+
+  Example:
+    (row->ga-display {:ga-tokens \"K AA1 R\"}) ;=> \"kˈɑɹ\"
+    (row->ga-display {:ga \"/kɑɹ/\"})          ;=> \"/kɑɹ/\""
+  [row]
+  (if (contains? row :ga-tokens)
+    (ipa/ga-tokens->ipa (:ga-tokens row))
+    (:ga row)))
+
+(defn ipa-lookup
+  "Thin CLI wrapper: dict + CLI args -> lookup-rows -> print TSV
+  \"word\\tRP\\tGA\", one line per row, converting raw GA/RP tokens back to
+  IPA for display (US-023). Returns the process exit code (always 0, even
+  for zero matches).
+
+  Example:
+    (ipa-lookup [{:word \"car\" :ga-tokens \"K AA1 R\" :rp-tokens \"k aa\"}] [\"--word\" \"car\"])
+    ;; prints \"car\\tkɑː\\tkˈɑɹ\"
     ;=> 0"
   [dict args]
   (let [opts (parse-ipa-lookup-args args)
         rows (ipa/lookup-rows dict opts)]
     (doseq [row rows]
-      (println (str (:word row) "\t" (:rp row) "\t" (:ga row))))
+      (println (str (:word row) "\t" (row->rp-display row) "\t" (row->ga-display row))))
     0))
 
 (defn pick-example-words-by-ipa

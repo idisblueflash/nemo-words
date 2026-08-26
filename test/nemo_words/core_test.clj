@@ -75,6 +75,51 @@
       (is (= 0 exit-code))
       (is (= [] lines)))))
 
+;; ------------------------------------------- ipa-lookup displays IPA, not raw tokens (US-023)
+(def ^:private token-dict-fixture
+  [{:word "car" :ga-tokens "K AA1 R" :rp-tokens "k aa"}])
+
+(deftest ipa-lookup-ga-column-prints-ipa-not-raw-tokens-test
+  (testing "AC1: GA column prints IPA (via ga-tokens->ipa), not the raw ARPABET string"
+    (let [out (java.io.StringWriter.)
+          exit-code (binding [*out* out]
+                      (core/ipa-lookup token-dict-fixture ["--word" "car"]))
+          lines (->> (str/split-lines (str out)) (remove str/blank?))]
+      (is (= 0 exit-code))
+      (is (= [(str "car\t" (ipa/rp-tokens->ipa "k aa") "\t" (ipa/ga-tokens->ipa "K AA1 R"))]
+             lines))
+      (is (not (str/includes? (first lines) "K AA1 R"))))))
+
+(deftest ipa-lookup-rp-column-prints-ipa-not-raw-tokens-test
+  (testing "AC2: RP column prints IPA (via rp-tokens->ipa), not the raw MRPA string"
+    (let [out (java.io.StringWriter.)
+          exit-code (binding [*out* out]
+                      (core/ipa-lookup token-dict-fixture ["--word" "car"]))
+          lines (->> (str/split-lines (str out)) (remove str/blank?))]
+      (is (= 0 exit-code))
+      (is (not (str/includes? (first lines) "\tk aa\t")))
+      (is (not (str/ends-with? (first lines) "\tk aa"))))))
+
+(deftest ipa-lookup-multi-variant-tokens-print-as-comma-joined-ipa-test
+  (testing "AC3: comma-joined GA token variants print as comma-joined IPA"
+    (let [dict [{:word "read" :ga-tokens "R IY1 D,R EH1 D" :rp-tokens ""}]
+          out (java.io.StringWriter.)
+          exit-code (binding [*out* out]
+                      (core/ipa-lookup dict ["--word" "read"]))
+          lines (->> (str/split-lines (str out)) (remove str/blank?))]
+      (is (= 0 exit-code))
+      (is (= [(str "read\t\t" (ipa/ga-tokens->ipa "R IY1 D,R EH1 D"))] lines)))))
+
+(deftest ipa-lookup-empty-column-prints-empty-no-error-test
+  (testing "AC4: an absent/empty rp-tokens cell prints as empty, no conversion error raised"
+    (let [dict [{:word "solo" :ga-tokens "S OW1 L OW0" :rp-tokens ""}]
+          out (java.io.StringWriter.)
+          exit-code (binding [*out* out]
+                      (core/ipa-lookup dict ["--word" "solo"]))
+          lines (->> (str/split-lines (str out)) (remove str/blank?))]
+      (is (= 0 exit-code))
+      (is (= [(str "solo\t\t" (ipa/ga-tokens->ipa "S OW1 L OW0"))] lines)))))
+
 ;; ------------------------------------------- pick-example-words-by-ipa (US-005)
 (deftest pick-example-words-by-ipa-single-match-test
   (testing "IPA matches exactly one set: stdout is an EDN vector with that entry's map, nothing else"
@@ -135,14 +180,11 @@
 ;; resources/data/ga_rp.tsv, whose rows are shaped {:word :ga-tokens
 ;; :rp-tokens} (raw ARPABET/MRPA tokens), not the old {:word :rp :ga}
 ;; IPA-cell shape. US-022 migrated lookup-rows' :word/:rp/:ga/:pair matching
-;; to work against that shape (this subcommand already called the renamed
-;; load-ga-rp-dict, confirmed by populate-lexical-sets-cli-calls-load-ga-rp-dict-test
-;; above), but core.clj's ipa-lookup CLI wrapper still *prints* (:rp row)/
-;; (:ga row) directly, which stay nil/empty on the new row shape -- wiring
-;; ga-tokens->ipa/rp-tokens->ipa into that display is US-023's job, not this
-;; story's, so the printed RP/GA cells are still expected to come up empty.
+;; to work against that shape, and US-023 wires ga-tokens->ipa/rp-tokens->ipa
+;; into core.clj's ipa-lookup display, so the printed RP/GA cells are IPA
+;; again instead of coming up empty.
 (deftest main-dispatches-ipa-lookup-subcommand-test
-  (testing "`clojure -M -m nemo-words.core ipa-lookup --word car` prints the row and exits 0 (RP/GA cells empty pending US-023)"
+  (testing "`clojure -M -m nemo-words.core ipa-lookup --word car` prints the row as IPA and exits 0"
     (let [proc (-> (ProcessBuilder. ["clojure" "-M" "-m" "nemo-words.core" "ipa-lookup" "--word" "car"])
                     (.redirectErrorStream true)
                     .start)
@@ -150,7 +192,8 @@
           exit-code (.waitFor proc)
           lines (->> (str/split-lines out) (remove str/blank?))]
       (is (= 0 exit-code))
-      (is (= ["car\t\t"] lines)))))
+      (is (= [(str "car\t" (ipa/rp-tokens->ipa "k aa,k aa r") "\t" (ipa/ga-tokens->ipa "K AA1 R"))]
+             lines)))))
 
 ;; -------------------------- CLI subcommands use the renamed loader (US-022 AC4)
 ;; load-rp-ga-dict was renamed load-ga-rp-dict by US-019; this pins that
