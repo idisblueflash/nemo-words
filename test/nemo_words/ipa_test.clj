@@ -83,6 +83,39 @@
     (is (thrown? IllegalArgumentException
                  ((var ipa/parse-line) :unknown-brand "cat\tkæt")))))
 
+(deftest parse-line-cmudict-raw-test
+  (testing ":cmudict-raw happy path keeps raw ARPABET tokens, not IPA"
+    (is (= ["car" ["K AA1 R"]] ((var ipa/parse-line) :cmudict-raw "CAR K AA1 R"))))
+  (testing ":cmudict-raw stress digits are preserved, digit intact"
+    (is (= ["cat" ["K AE1 T"]] ((var ipa/parse-line) :cmudict-raw "CAT K AE1 T"))))
+  (testing ":cmudict-raw trailing '# comment' is stripped"
+    (is (= ["car" ["K AA1 R"]] ((var ipa/parse-line) :cmudict-raw "CAR K AA1 R # some comment"))))
+  (testing ":cmudict-raw variant marker word(2) folds into base word"
+    (is (= ["read" ["R EH1 D"]] ((var ipa/parse-line) :cmudict-raw "READ(2) R EH1 D"))))
+  (testing ":cmudict-raw comment-only or blank line"
+    (is (= [nil nil] ((var ipa/parse-line) :cmudict-raw "  ")))
+    (is (= [nil nil] ((var ipa/parse-line) :cmudict-raw "# just a comment"))))
+  (testing ":cmudict-raw headword with no phoneme tokens"
+    (is (= ["cat" nil] ((var ipa/parse-line) :cmudict-raw "CAT"))))
+  (testing ":cmudict-raw skips headwords that don't match the validity filter"
+    (is (= [nil nil] ((var ipa/parse-line) :cmudict-raw "1(THOUSAND) W AH1 N")))
+    (is (= [nil nil] ((var ipa/parse-line) :cmudict-raw "!EXCLAMATION-POINT")))))
+
+(deftest load-dictionary-by-brand-cmudict-raw-test
+  (testing "every value is a vector of raw space-joined ARPABET token strings with no IPA characters"
+    (let [dict (ipa/load-dictionary-by-brand :cmudict-raw)]
+      (is (seq dict))
+      (is (every? (fn [[_ variants]]
+                    (every? (fn [tok-str]
+                              (not (re-find #"[ɑʃˈɔɪŋɡɛɹːæʊdʒʒʌðθŋɝɚɔɪ]" tok-str)))
+                            variants))
+                  dict))))
+  (testing ":cmudict (IPA) is unaffected by :cmudict-raw's addition"
+    (let [cmu (ipa/load-dictionary-by-brand :cmudict)
+          raw (ipa/load-dictionary-by-brand :cmudict-raw)]
+      (is (= ["kˈɑɹ"] (get cmu "car")))
+      (is (= ["K AA1 R"] (get raw "car"))))))
+
 (deftest fmt-test
   (is (= "/kæt/  /khæt/" ((var ipa/fmt) ["kæt" "khæt"])))
   (is (= "/a/  /b/  (+2 more)" ((var ipa/fmt) ["a" "b" "c" "d"] 2)))

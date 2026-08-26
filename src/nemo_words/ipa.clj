@@ -202,11 +202,32 @@
           [word (list (strutil/join-str " " tokens))]
           [nil nil])))))
 
+;; :cmudict-raw line -> [word variants], keeping raw ARPABET tokens (stress
+;; digits intact) instead of translating to IPA. Same line format as
+;; :cmudict: trailing '# comment' dropped, variant markers like 'word(2)'
+;; fold into the base word. Headword filter kept inline (per US-017's
+;; merge-conflict note) to avoid a shared top-level def colliding with
+;; US-018's BEEP work.
+;; (parse-line :cmudict-raw "CAT K AE1 T") ;=> ["cat" ("K AE1 T")]
+(defmethod parse-line :cmudict-raw
+  [_ raw-line]
+  (let [line (strutil/trim-str (first (split-str-by raw-line hash-splitter 2)))]
+    (if (strutil/blank-str? line)
+      [nil nil]
+      (let [parts (split-str-by line whitespace-splitter)
+            head (first parts)
+            tokens (rest parts)
+            word (clean-word (first (split-str-by head paren-splitter 2)))]
+        (if (re-matches #"^[a-z][a-z'-]*$" word)
+          [word (when (seq tokens) [(strutil/join-str " " tokens)])]
+          [nil nil])))))
+
 (def ^:private brand->resource
   "Per-brand classpath resource path, dispatched by load-dictionary-by-brand."
   {:ipa-dict "data/en_US.txt"
    :wikipron "data/wikipron_us_broad.tsv"
    :cmudict "data/cmudict.dict"
+   :cmudict-raw "data/cmudict.dict"
    :ipa-dict-uk "data/en_UK.txt"
    :beep-raw "data/beep_uk.dict"})
 
