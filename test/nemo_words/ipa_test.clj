@@ -125,6 +125,28 @@
   (is (nil? ((var ipa/resource-reader) "no/such/file")))
   (is (some? ((var ipa/resource-reader) "data/en_US.txt"))))
 
+;; ---------------------------------------------------------- :beep-raw (US-018)
+(deftest parse-line-beep-raw-test
+  (testing "a simple BEEP line parses to raw tokens"
+    (is (= ["car" '("k aa")] ((var ipa/parse-line) :beep-raw "CAR\tk aa"))))
+  (testing "a header/comment line is skipped"
+    (is (= [nil nil] ((var ipa/parse-line) :beep-raw "# BEEP UK dictionary header"))))
+  (testing "BEEP's symbol pseudo-words are excluded"
+    (is (= [nil nil]
+           ((var ipa/parse-line) :beep-raw
+            "!EXCLAMATION-POINT\teh k s k l ah m ey sh ah n p oy n t"))))
+  (testing "BEEP's RP-specific vowel tokens are kept raw, not translated here"
+    (is (= ["care" '("k ea")] ((var ipa/parse-line) :beep-raw "CARE\tk ea")))))
+
+(deftest load-dictionary-by-brand-beep-raw-test
+  (testing "every value is a vector of raw space-joined MRPA token strings, no IPA characters"
+    (let [dict (ipa/load-dictionary-by-brand :beep-raw)]
+      (is (seq dict))
+      (is (every? vector? (vals dict)))
+      (is (every? string? (mapcat identity (vals dict))))
+      (is (not-any? #(re-find #"[ɛəː]" %) (mapcat identity (vals dict))))
+      (is (some #{"k aa"} (get dict "car"))))))
+
 ;; -------------------------------------------------------- lookup-rows (US-001)
 (def ^:private dict-fixture
   [{:word "car" :rp "/kɑː/" :ga "/kɑɹ/"}
