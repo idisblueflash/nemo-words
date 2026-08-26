@@ -19,7 +19,8 @@
 
   Usage:
     clj -M -m nemo-words.ipa <word> [<word> ...]"
-  (:require [nemo-words.ioutil :as ioutil]
+  (:require [clojure.string :as str]
+            [nemo-words.ioutil :as ioutil]
             [nemo-words.strutil :as strutil]))
 
 ;; --------------------------------------------------------- ARPABET -> IPA (US)
@@ -60,6 +61,69 @@
                (= digit "2") (str "ˌ" (get arpabet-phoneme->ipa base base))
                :else (get arpabet-phoneme->ipa base base))
              (get arpabet-phoneme->ipa base base)))))
+
+;; ------------------------------------------------------------- MRPA -> IPA (RP, US-021)
+;; BEEP's non-rhotic phoneme map. BEEP tokens carry no stress digit at all,
+;; so mrpa->ipa is a straight per-token lookup and concatenation.
+(def mrpa-phoneme->ipa
+  {"aa" "ɑː" "ae" "æ" "ah" "ʌ" "ao" "ɒ" "ax" "ə" "ay" "aɪ" "b" "b" "ch" "tʃ"
+   "d" "d" "dh" "ð" "ea" "ɛə" "eh" "ɛ" "er" "ɜː" "ey" "eɪ" "f" "f" "g" "ɡ"
+   "hh" "h" "ia" "ɪə" "ih" "ɪ" "iy" "iː" "jh" "dʒ" "k" "k" "l" "l" "m" "m"
+   "n" "n" "ng" "ŋ" "oh" "əʊ" "ow" "aʊ" "oy" "ɔɪ" "p" "p" "r" "ɹ" "s" "s"
+   "sh" "ʃ" "sil" "" "t" "t" "th" "θ" "ua" "ʊə" "uh" "ʊ" "uw" "uː" "v" "v"
+   "w" "w" "y" "j" "z" "z" "zh" "ʒ"})
+
+(defn mrpa->ipa
+  "MRPA token vector -> IPA string. Maps each token through
+  mrpa-phoneme->ipa and concatenates; no stress logic needed (BEEP has
+  none).
+
+  Example:
+    (mrpa->ipa [\"k\" \"aa\"]) ;=> \"kɑː\""
+  [tokens]
+  (apply str (map #(get mrpa-phoneme->ipa % %) tokens)))
+
+(defn rp-tokens->ipa
+  "Raw RP cell-string -> IPA string. Splits on ',' (multi-variant), splits
+  each variant on whitespace into MRPA tokens, runs each through
+  mrpa->ipa, rejoins variants with ','.
+
+  Example:
+    (rp-tokens->ipa \"k aa\") ;=> \"kɑː\"
+    (rp-tokens->ipa \"k ea,k eh\") ;=> \"kɛə,kɛ\""
+  [cell]
+  (->> (strutil/split-str cell #",")
+       (map #(mrpa->ipa (strutil/split-str (strutil/trim-str %) #"\s+")))
+       (strutil/join-str ",")))
+
+;; Reverse of mrpa-phoneme->ipa (IPA symbol -> MRPA token), for ipa->mrpa's
+;; tokenizer. "sil" maps to "" in the forward direction and is excluded
+;; here since an empty symbol can't be matched against IPA text.
+(def ^:private ipa->mrpa-phoneme
+  (into {} (for [[token ipa] mrpa-phoneme->ipa :when (seq ipa)] [ipa token])))
+
+;; IPA symbols to try, longest-first, so e.g. "ɛə" is matched as one
+;; token instead of splitting into "ɛ" + a stray "ə".
+(def ^:private ipa-symbols-longest-first
+  (->> (keys ipa->mrpa-phoneme)
+       (sort-by count >)))
+
+(defn ipa->mrpa
+  "IPA string -> MRPA token vector. Tokenizes the IPA string greedily
+  against mrpa-phoneme->ipa's value set (longest match first), no stress
+  mark to strip.
+
+  Example:
+    (ipa->mrpa \"kɑː\") ;=> [\"k\" \"aa\"]
+    (ipa->mrpa \"kɛə\") ;=> [\"k\" \"ea\"]"
+  [ipa-str]
+  (loop [s ipa-str
+         tokens []]
+    (if (empty? s)
+      tokens
+      (if-let [match (first (filter #(str/starts-with? s %) ipa-symbols-longest-first))]
+        (recur (subs s (count match)) (conj tokens (ipa->mrpa-phoneme match)))
+        (recur (subs s 1) tokens)))))
 
 ;; ------------------------------------------------------------- source loaders
 (def ^:private tab-splitter #"\t")
