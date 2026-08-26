@@ -618,7 +618,8 @@
   [dict opts]
   (cond
     (contains? opts :word)
-    (filter #(= (:word %) (:word opts)) dict)
+    (let [query (strutil/lower-case-str (:word opts))]
+      (filter #(= (strutil/lower-case-str (:word %)) query) dict))
 
     (contains? opts :rp)
     (let [query (:rp opts)

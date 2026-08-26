@@ -226,6 +226,13 @@
     (is (= [{:word "car" :rp "/kɑː/" :ga "/kɑɹ/" :ga-tokens "K AA1 R" :rp-tokens "k aa"}]
            (ipa/lookup-rows dict-fixture {:word "car"})))))
 
+(deftest lookup-rows-exact-word-case-insensitive-test
+  (testing "bug-004: {:word w} matches regardless of query casing, since the dict stores words lowercase"
+    (is (= [{:word "car" :rp "/kɑː/" :ga "/kɑɹ/" :ga-tokens "K AA1 R" :rp-tokens "k aa"}]
+           (ipa/lookup-rows dict-fixture {:word "Car"})))
+    (is (= [{:word "car" :rp "/kɑː/" :ga "/kɑɹ/" :ga-tokens "K AA1 R" :rp-tokens "k aa"}]
+           (ipa/lookup-rows dict-fixture {:word "CAR"})))))
+
 (deftest lookup-rows-rp-substring-test
   (testing "every returned row matches, via ipa->mrpa token conversion, none excluded that do"
     (let [rows (ipa/lookup-rows dict-fixture {:rp "ɑː"})]
