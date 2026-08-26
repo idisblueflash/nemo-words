@@ -40,27 +40,130 @@
   #{"AA" "AE" "AH" "AO" "AW" "AY" "EH" "ER"
     "EY" "IH" "IY" "OW" "OY" "UH" "UW"})
 
+;; Every ARPABET phoneme's IPA rendering is at most 2 codepoints, so the
+;; only way two adjacent tokens' renderings can accidentally spell a
+;; *different*, unrelated phoneme's rendering is pairwise (a 3+-token
+;; span can't collide, since that would require some token to render as
+;; the empty string). Exhaustively checked against every base pair in
+;; arpabet-phoneme->ipa: exactly these three collide.
+(def ^:private colliding-adjacent-bases
+  "Adjacent [prev-base base] pairs whose concatenated IPA rendering spells
+  the same string as some other, unrelated phoneme (T+SH vs CH, AO+IH vs
+  OY, D+ZH vs JH)."
+  #{["T" "SH"] ["AO" "IH"] ["D" "ZH"]})
+
+(def ^:private token-boundary-marker
+  "Zero-width non-joiner inserted between colliding-adjacent-bases pairs
+  so ipa->arpabet's greedy tokenizer can't misread the boundary as a
+  different phoneme. Invisible in display; ipa->arpabet's existing
+  unrecognized-codepoint skip treats it as a forced token break."
+  "‌")
+
+(defn- render-arpabet-token
+  "One ARPABET token -> [base ipa-string], stress marks placed before the
+  stressed vowel. ARPABET stress digit: 1=primary (ˈ), 2=secondary (ˌ),
+  0=none.
+
+  Example:
+    (render-arpabet-token \"IH0\")  ;=> [\"IH\" \"ɪ\"]
+    (render-arpabet-token \"AE1\")  ;=> [\"AE\" \"ˈæ\"]"
+  [tok]
+  (let [has-digit? (and (seq tok) (contains? #{\0 \1 \2} (last tok)))
+        base (if has-digit? (subs tok 0 (dec (count tok))) tok)
+        digit (when has-digit? (str (last tok)))]
+    [base
+     (if (and has-digit? (contains? arpabet-vowels base))
+       (cond
+         (and (= base "AH") (= digit "0")) "ə"
+         (and (= base "ER") (= digit "0")) "ɚ"
+         (= digit "1") (str "ˈ" (get arpabet-phoneme->ipa base base))
+         (= digit "2") (str "ˌ" (get arpabet-phoneme->ipa base base))
+         :else (get arpabet-phoneme->ipa base base))
+       (get arpabet-phoneme->ipa base base))]))
+
 (defn- arpabet->ipa
   "['F' 'L' 'IH0' 'B' ...] -> IPA string with stress marks placed before the
-  stressed vowel. ARPABET stress digit: 1=primary (ˈ), 2=secondary (ˌ), 0=none.
+  stressed vowel.
 
   Example:
     (arpabet->ipa [\"F\" \"L\" \"IH0\" \"B\"]) ;=> \"flɪb\"
     (arpabet->ipa [\"K\" \"AE1\" \"T\"])       ;=> \"kˈæt\""
   [tokens]
   (apply str
-         (for [tok tokens
-               :let [has-digit? (and (seq tok) (contains? #{\0 \1 \2} (last tok)))
-                     base (if has-digit? (subs tok 0 (dec (count tok))) tok)
-                     digit (when has-digit? (str (last tok)))]]
-           (if (and has-digit? (contains? arpabet-vowels base))
-             (cond
-               (and (= base "AH") (= digit "0")) "ə"
-               (and (= base "ER") (= digit "0")) "ɚ"
-               (= digit "1") (str "ˈ" (get arpabet-phoneme->ipa base base))
-               (= digit "2") (str "ˌ" (get arpabet-phoneme->ipa base base))
-               :else (get arpabet-phoneme->ipa base base))
-             (get arpabet-phoneme->ipa base base)))))
+         (loop [toks tokens prev-base nil rendered []]
+           (if (empty? toks)
+             rendered
+             (let [[base ipa] (render-arpabet-token (first toks))
+                   boundary? (contains? colliding-adjacent-bases [prev-base base])]
+               (recur (rest toks)
+                      base
+                      (conj rendered (if boundary? (str token-boundary-marker ipa) ipa))))))))
+
+;; --------------------------------------------------------- IPA -> ARPABET (US-020)
+(def ^:private ipa->arpabet-base
+  "IPA symbol -> ARPABET base token, the inverse of arpabet-phoneme->ipa."
+  (into {} (map (fn [[base ipa]] [ipa base]) arpabet-phoneme->ipa)))
+
+(def ^:private schwa-ipa "ə")
+(def ^:private rhotic-schwa-ipa "ɚ")
+(def ^:private primary-stress-ipa "ˈ")
+(def ^:private secondary-stress-ipa "ˌ")
+
+(def ^:private ipa-symbols
+  "All IPA symbols recognized by the tokenizer, longest first so a
+  greedy-longest-match scan splits multi-codepoint symbols (e.g. 'tʃ')
+  before falling back to single-codepoint ones."
+  (->> (concat (keys ipa->arpabet-base) [schwa-ipa rhotic-schwa-ipa])
+       distinct
+       (sort-by (comp - count))))
+
+(defn- match-longest-symbol
+  "Longest IPA symbol in ipa-symbols matching s starting at pos, or nil.
+
+  Example:
+    (match-longest-symbol \"tʃˈɛs\" 0) ;=> \"tʃ\""
+  [s pos]
+  (some (fn [sym]
+          (let [end (+ pos (count sym))]
+            (when (and (<= end (count s)) (= sym (subs s pos end)))
+              sym)))
+        ipa-symbols))
+
+(defn ipa->arpabet
+  "IPA string -> ARPABET token vector. Tokenizes greedily against
+  arpabet-phoneme->ipa's values (longest match first), re-attaching any
+  'ˈ'/'ˌ' immediately preceding a vowel as that vowel token's trailing
+  stress digit ('1'/'2'); vowels with no preceding mark get '0'.
+
+  Example:
+    (ipa->arpabet \"kˈæt\")   ;=> [\"K\" \"AE1\" \"T\"]
+    (ipa->arpabet \"tʃˈɛs\")  ;=> [\"CH\" \"EH1\" \"S\"]
+    (ipa->arpabet \"əˈbʌv\")  ;=> [\"AH0\" \"B\" \"AH1\" \"V\"]"
+  [ipa]
+  (let [len (count ipa)]
+    (loop [pos 0 pending-stress nil tokens []]
+      (if (>= pos len)
+        tokens
+        (cond
+          (= primary-stress-ipa (subs ipa pos (min len (+ pos 1))))
+          (recur (inc pos) "1" tokens)
+
+          (= secondary-stress-ipa (subs ipa pos (min len (+ pos 1))))
+          (recur (inc pos) "2" tokens)
+
+          :else
+          (if-let [sym (match-longest-symbol ipa pos)]
+            (let [base (get ipa->arpabet-base sym)
+                  new-pos (+ pos (count sym))]
+              (cond
+                (= sym schwa-ipa) (recur new-pos nil (conj tokens "AH0"))
+                (= sym rhotic-schwa-ipa) (recur new-pos nil (conj tokens "ER0"))
+                (contains? arpabet-vowels base)
+                (recur new-pos nil (conj tokens (str base (or pending-stress "0"))))
+                :else
+                (recur new-pos pending-stress (conj tokens base))))
+            ;; unrecognized codepoint: skip it defensively rather than error
+            (recur (inc pos) pending-stress tokens)))))))
 
 ;; ------------------------------------------------------------- MRPA -> IPA (RP, US-021)
 ;; BEEP's non-rhotic phoneme map. BEEP tokens carry no stress digit at all,
@@ -131,6 +234,20 @@
 (def ^:private hash-splitter #"#")
 (def ^:private whitespace-splitter #"\s+")
 (def ^:private paren-splitter #"\(")
+
+(defn ga-tokens->ipa
+  "Raw GA cell string -> IPA string. Splits cell on ',' into variants, each
+  variant on whitespace into ARPABET tokens, runs each variant's tokens
+  through arpabet->ipa, rejoins variants with ','.
+
+  Example:
+    (ga-tokens->ipa \"K AA1 R\")           ;=> \"kˈɑɹ\"
+    (ga-tokens->ipa \"R IY1 D,R EH1 D\")   ;=> \"ɹˈid,ɹˈɛd\""
+  [cell]
+  (->> (strutil/split-str cell comma-splitter)
+       (map (fn [variant]
+              (arpabet->ipa (strutil/split-str (strutil/trim-str variant) whitespace-splitter))))
+       (strutil/join-str ",")))
 
 (defn- split-str-by
   "Split s on splitter, a pre-compiled regex reused across many lines to

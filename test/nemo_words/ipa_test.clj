@@ -272,6 +272,85 @@
       (is (every? #(strutil/includes-str? (:ga %) "ɑɹ") rows))
       (is (= #{"car" "star" "gnarly" "narwhal"} (set (map :word rows)))))))
 
+;; -------------------------------------------------- ga-tokens->ipa (US-020)
+(deftest ga-tokens->ipa-single-variant-test
+  (testing "wraps arpabet->ipa for a single space-separated ARPABET variant"
+    (is (= "kˈɑɹ" (ipa/ga-tokens->ipa "K AA1 R")))))
+
+(deftest ga-tokens->ipa-multi-variant-test
+  (testing "comma-joined multi-variant cells are converted variant-by-variant"
+    (is (= "ɹˈid,ɹˈɛd" (ipa/ga-tokens->ipa "R IY1 D,R EH1 D")))))
+
+;; -------------------------------------------------- ipa->arpabet (US-020)
+(deftest ipa->arpabet-simple-word-test
+  (testing "reconstructs a simple word's tokens with stress reattached"
+    (is (= ["K" "AE1" "T"] (ipa/ipa->arpabet "kˈæt")))))
+
+(deftest ipa->arpabet-multi-codepoint-symbol-test
+  (testing "greedy longest match splits 'tʃ' as CH, not a mis-split 't' 'ʃ'"
+    (is (= ["CH" "EH1"] (take 2 (ipa/ipa->arpabet "tʃˈɛs"))))))
+
+(deftest ipa->arpabet-unstressed-leading-vowel-test
+  (testing "unstressed leading vowel with no preceding mark becomes AH0, not digit-less"
+    (is (= "AH0" (first (ipa/ipa->arpabet "əˈbʌv"))))))
+
+;; ------------------------------------------ round-trip property (US-020)
+;; ARPABET tokens always carry a stress digit on vowels (per CMUdict
+;; convention, e.g. "K AE1 T"), never a bare vowel symbol, so the
+;; generator below only ever emits digited vowel tokens.
+(deftest round-trip-boundary-collision-test
+  (testing "adjacent tokens whose IPA renderings concatenate into a
+            different symbol's spelling still round-trip (T+SH vs CH,
+            AO+IH vs OY, D+ZH vs JH)"
+    (doseq [v [["S" "AO1" "IH0" "NG"]
+               ["N" "AH1" "T" "SH" "EH2" "L"]
+               ["B" "AE1" "D" "ZH" "AA1" "B"]]]
+      (is (= v (ipa/ipa->arpabet ((var ipa/arpabet->ipa) v))) (str "vector: " v)))))
+
+(deftest colliding-adjacent-bases-derivation-test
+  (testing "the hardcoded collision set matches what an exhaustive pairwise
+            check of arpabet-phoneme->ipa derives today, so a future change
+            to the phoneme map fails loudly here instead of silently
+            reintroducing an unmarked boundary collision"
+    (let [phoneme->ipa @(var ipa/arpabet-phoneme->ipa)
+          bases (keys phoneme->ipa)
+          derived (set (for [prev bases
+                              base bases
+                              :let [concatenated (str (get phoneme->ipa prev)
+                                                       (get phoneme->ipa base))]
+                              :when (contains? (set (vals phoneme->ipa)) concatenated)]
+                          [prev base]))]
+      (is (= @(var ipa/colliding-adjacent-bases) derived)))))
+
+(def ^:private round-trip-consonants
+  (remove @(var ipa/arpabet-vowels) (keys @(var ipa/arpabet-phoneme->ipa))))
+
+(def ^:private round-trip-vowel-tokens
+  (for [v @(var ipa/arpabet-vowels) d ["0" "1" "2"]] (str v d)))
+
+(def ^:private round-trip-all-tokens
+  (concat round-trip-consonants round-trip-vowel-tokens))
+
+(defn- random-token-vector
+  "A random ARPABET token vector of length n, freely mixing consonants
+  and digited vowels in any order (e.g. (\"T\" \"SH\" \"AE1\" \"K\"))."
+  [n]
+  (vec (repeatedly n #(rand-nth round-trip-all-tokens))))
+
+(deftest round-trip-arpabet-ipa-arpabet-test
+  (testing "every single ARPABET token round-trips through arpabet->ipa then ipa->arpabet"
+    (doseq [tok (concat round-trip-consonants round-trip-vowel-tokens)]
+      (is (= [tok] (ipa/ipa->arpabet ((var ipa/arpabet->ipa) [tok])))
+          (str "token: " tok))))
+  (testing "the worked examples from this story round-trip exactly"
+    (doseq [v [["K" "AE1" "T"] ["R" "IY1" "D"] ["R" "EH1" "D"]
+               ["K" "AA1" "R"] ["F" "L" "IH0" "B"] ["AE2" "D"]]]
+      (is (= v (ipa/ipa->arpabet ((var ipa/arpabet->ipa) v))) (str "vector: " v))))
+  (testing "randomized token vectors, any consonant/vowel arrangement, round-trip exactly"
+    (dotimes [_ 500]
+      (let [v (random-token-vector (inc (rand-int 6)))]
+        (is (= v (ipa/ipa->arpabet ((var ipa/arpabet->ipa) v))) (str "vector: " v))))))
+
 ;; ------------------------------------------------------------- word-matches? (US-004)
 (deftest word-matches?-test
   (testing "word resolves to the given rp/ga pair in the dict"
