@@ -61,12 +61,92 @@
                :else (get arpabet-phoneme->ipa base base))
              (get arpabet-phoneme->ipa base base)))))
 
+;; --------------------------------------------------------- IPA -> ARPABET (US-020)
+(def ^:private ipa->arpabet-base
+  "IPA symbol -> ARPABET base token, the inverse of arpabet-phoneme->ipa."
+  (into {} (map (fn [[base ipa]] [ipa base]) arpabet-phoneme->ipa)))
+
+(def ^:private schwa-ipa "ə")
+(def ^:private rhotic-schwa-ipa "ɚ")
+(def ^:private primary-stress-ipa "ˈ")
+(def ^:private secondary-stress-ipa "ˌ")
+
+(def ^:private ipa-symbols
+  "All IPA symbols recognized by the tokenizer, longest first so a
+  greedy-longest-match scan splits multi-codepoint symbols (e.g. 'tʃ')
+  before falling back to single-codepoint ones."
+  (->> (concat (keys ipa->arpabet-base) [schwa-ipa rhotic-schwa-ipa])
+       distinct
+       (sort-by (comp - count))))
+
+(defn- match-longest-symbol
+  "Longest IPA symbol in ipa-symbols matching s starting at pos, or nil.
+
+  Example:
+    (match-longest-symbol \"tʃˈɛs\" 0) ;=> \"tʃ\""
+  [s pos]
+  (some (fn [sym]
+          (let [end (+ pos (count sym))]
+            (when (and (<= end (count s)) (= sym (subs s pos end)))
+              sym)))
+        ipa-symbols))
+
+(defn ipa->arpabet
+  "IPA string -> ARPABET token vector. Tokenizes greedily against
+  arpabet-phoneme->ipa's values (longest match first), re-attaching any
+  'ˈ'/'ˌ' immediately preceding a vowel as that vowel token's trailing
+  stress digit ('1'/'2'); vowels with no preceding mark get '0'.
+
+  Example:
+    (ipa->arpabet \"kˈæt\")   ;=> [\"K\" \"AE1\" \"T\"]
+    (ipa->arpabet \"tʃˈɛs\")  ;=> [\"CH\" \"EH1\" \"S\"]
+    (ipa->arpabet \"əˈbʌv\")  ;=> [\"AH0\" \"B\" \"AH1\" \"V\"]"
+  [ipa]
+  (let [len (count ipa)]
+    (loop [pos 0 pending-stress nil tokens []]
+      (if (>= pos len)
+        tokens
+        (cond
+          (= primary-stress-ipa (subs ipa pos (min len (+ pos 1))))
+          (recur (inc pos) "1" tokens)
+
+          (= secondary-stress-ipa (subs ipa pos (min len (+ pos 1))))
+          (recur (inc pos) "2" tokens)
+
+          :else
+          (if-let [sym (match-longest-symbol ipa pos)]
+            (let [base (get ipa->arpabet-base sym)
+                  new-pos (+ pos (count sym))]
+              (cond
+                (= sym schwa-ipa) (recur new-pos nil (conj tokens "AH0"))
+                (= sym rhotic-schwa-ipa) (recur new-pos nil (conj tokens "ER0"))
+                (contains? arpabet-vowels base)
+                (recur new-pos nil (conj tokens (str base (or pending-stress "0"))))
+                :else
+                (recur new-pos pending-stress (conj tokens base))))
+            ;; unrecognized codepoint: skip it defensively rather than error
+            (recur (inc pos) pending-stress tokens)))))))
+
 ;; ------------------------------------------------------------- source loaders
 (def ^:private tab-splitter #"\t")
 (def ^:private comma-splitter #",")
 (def ^:private hash-splitter #"#")
 (def ^:private whitespace-splitter #"\s+")
 (def ^:private paren-splitter #"\(")
+
+(defn ga-tokens->ipa
+  "Raw GA cell string -> IPA string. Splits cell on ',' into variants, each
+  variant on whitespace into ARPABET tokens, runs each variant's tokens
+  through arpabet->ipa, rejoins variants with ','.
+
+  Example:
+    (ga-tokens->ipa \"K AA1 R\")           ;=> \"kˈɑɹ\"
+    (ga-tokens->ipa \"R IY1 D,R EH1 D\")   ;=> \"ɹˈid,ɹˈɛd\""
+  [cell]
+  (->> (strutil/split-str cell comma-splitter)
+       (map (fn [variant]
+              (arpabet->ipa (strutil/split-str (strutil/trim-str variant) whitespace-splitter))))
+       (strutil/join-str ",")))
 
 (defn- split-str-by
   "Split s on splitter, a pre-compiled regex reused across many lines to
