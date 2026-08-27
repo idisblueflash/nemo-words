@@ -1,16 +1,53 @@
 # nemo-words
 
 Tools for finding example words for J. C. Wells' English Lexical Sets, backed
-by a Kaikki-derived RP/GA IPA dictionary (`resources/data/en_US_RP_ipa.tsv`).
+by an RP/GA IPA dictionary (`resources/data/ga_rp.tsv`) derived from the
+CMUdict and BEEP raw dictionaries.
+
+**Non-commercial project.** The RP pronunciation data is derived from the
+[BEEP dictionary](https://www.speech.cs.cmu.edu/comfort/details1.html),
+which is licensed for non-commercial research use only. Both this
+repository and any distributed build (including the release jar below,
+whose bundled `ga_rp.tsv` is derived from `beep_uk.dict`) are for
+personal/research use, not commercial use — see
+[ADR-0002](docs/decisions/0002-switch-cmudict-beep-primary-dictionary.md)
+for the dictionary-selection background.
+
+## Download a release
+
+No Clojure CLI needed — just a JVM (Java 11+). Download the latest
+`nemo-words.jar` from the
+[Releases page](https://github.com/idisblueflash/nemo-words/releases), then
+run any subcommand documented below directly:
+
+```sh
+java -jar nemo-words.jar ipa-lookup --word car
+java -jar nemo-words.jar pick-example-words-by-ipa "ɜɹ"
+```
+
+The jar bundles `ga_rp.tsv` and `lexical-sets.edn`, so the read-only
+subcommands (`word-freq`, `ipa-lookup`, `pick-example-words-by-ipa`) work
+standalone from any directory — that's the release jar's full supported
+surface. `build-set`, `populate-lexical-sets`, and `build-ga-rp-dict` write
+to or read raw dict files not bundled in the jar; they're source-checkout
+tools for maintaining this repo's own data, not supported for downloaded-jar
+users (see [US-025](docs/user-stories/US-025.md) for details). Clone the
+repo and use `clojure -M -m nemo-words.core <subcommand>` instead if you
+need them.
+
+To build the jar yourself from a source checkout:
+
+```sh
+clojure -T:build uberjar
+# -> target/nemo-words.jar
+```
 
 ## Setup: populate the initial Lexical Sets
 
 `resources/lexical-sets.edn` — the keyword -> `{:rp :ga :words}` lookup table
-consumed by `pick-example-words-by-ipa` — is a **local, regenerable build
-artifact**, not checked into git (see `.gitignore`). A fresh checkout has no
-`lexical-sets.edn` until you build it.
-
-Bootstrap all 26 Wells sets in one shot:
+consumed by `pick-example-words-by-ipa` — is checked into git, already
+populated with all 26 Wells sets. Re-run `populate-lexical-sets` any time
+the underlying dictionary changes, to re-verify and refresh it:
 
 ```sh
 clojure -M -m nemo-words.core populate-lexical-sets
