@@ -4,7 +4,8 @@
             [nemo-words.ioutil :as ioutil]
             [nemo-words.ipa :as ipa]
             [nemo-words.sets :as sets]
-            [nemo-words.strutil :as strutil]))
+            [nemo-words.strutil :as strutil])
+  (:gen-class))
 
 (defn- clean-lines
   "Raw lines -> trimmed, non-blank words, order preserved.
@@ -142,10 +143,10 @@
 
   Example:
     (pick-example-words-by-ipa-cli [\"/ɜr/\"]) ;; reads lexical-sets.edn, prints matches, exits 0"
-  ([args] (pick-example-words-by-ipa-cli args sets/default-path))
+  ([args] (pick-example-words-by-ipa-cli args nil))
   ([args path]
    (let [query (first args)
-         lexical-sets (sets/load! path)]
+         lexical-sets (if path (sets/load! path) (sets/load!))]
      (if (nil? lexical-sets)
        (do (binding [*out* *err*]
              (println "No lexical sets built yet. Run build-set (US-004) first."))

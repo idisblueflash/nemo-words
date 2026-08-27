@@ -6,18 +6,31 @@
             [nemo-words.strutil :as strutil]))
 
 (def default-path
-  "Default location of the lexical-sets lookup table."
+  "Default disk location of the lexical-sets lookup table."
   "resources/lexical-sets.edn")
+
+(def default-resource-path
+  "Classpath-relative location of the lexical-sets lookup table (its path
+  under resources/, which becomes the jar-root path once packaged)."
+  "lexical-sets.edn")
 
 (defn load!
   "path (default default-path) -> lexical-sets map read from path, or nil if
   the file doesn't exist yet (distinct from {}, which is a valid empty map
   a caller might otherwise mistake for \"not built\").
 
+  Checks the disk path first (so a locally rebuilt lexical-sets.edn always
+  wins), then falls back to default-resource-path on the classpath — the
+  copy bundled inside a packaged jar, where there is no writable disk file
+  at all.
+
   Example:
     (load!) ;=> {\"nurse\" {:rp \"/ɜː/\" :ga \"/ɜr/\" :words [\"bird\" \"word\"]}}
     (load! \"no/such/file.edn\") ;=> nil"
-  ([] (load! default-path))
+  ([]
+   (or (load! default-path)
+       (when-let [res (io/resource default-resource-path)]
+         (edn/read-string (slurp res)))))
   ([path]
    (when (.exists (io/file path))
      (edn/read-string (slurp path)))))

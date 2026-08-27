@@ -3,6 +3,41 @@
 Tools for finding example words for J. C. Wells' English Lexical Sets, backed
 by a Kaikki-derived RP/GA IPA dictionary (`resources/data/en_US_RP_ipa.tsv`).
 
+**Non-commercial project.** The RP pronunciation data is derived from the
+[BEEP dictionary](https://www.speech.cs.cmu.edu/comfort/details1.html),
+which is licensed for non-commercial research use only. Both this
+repository and any distributed build (including the release jar below,
+which bundles `beep_uk.dict`) are for personal/research use, not
+commercial use — see
+[ADR-0002](docs/decisions/0002-switch-cmudict-beep-primary-dictionary.md)
+for the dictionary-selection background.
+
+## Download a release
+
+No Clojure CLI needed — just a JVM (Java 11+). Download the latest
+`nemo-words.jar` from the
+[Releases page](https://github.com/idisblueflash/nemo-words/releases), then
+run any subcommand documented below directly:
+
+```sh
+java -jar nemo-words.jar ipa-lookup --word car
+java -jar nemo-words.jar pick-example-words-by-ipa "ɜɹ"
+```
+
+The jar bundles `ga_rp.tsv` and `lexical-sets.edn`, so read-only subcommands
+(`word-freq`, `ipa-lookup`, `pick-example-words-by-ipa`) work standalone from
+any directory. `build-set`/`populate-lexical-sets` still write to a disk path
+and need a writable `resources/` directory next to where you run the jar (see
+[US-025](docs/user-stories/US-025.md) for why, and its Follow-up section for
+the known limitation).
+
+To build the jar yourself from a source checkout:
+
+```sh
+clojure -T:build uberjar
+# -> target/nemo-words.jar
+```
+
 ## Setup: populate the initial Lexical Sets
 
 `resources/lexical-sets.edn` — the keyword -> `{:rp :ga :words}` lookup table
