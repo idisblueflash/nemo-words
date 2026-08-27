@@ -1,7 +1,8 @@
 # nemo-words
 
 Tools for finding example words for J. C. Wells' English Lexical Sets, backed
-by a Kaikki-derived RP/GA IPA dictionary (`resources/data/en_US_RP_ipa.tsv`).
+by an RP/GA IPA dictionary (`resources/data/ga_rp.tsv`) derived from the
+CMUdict and BEEP raw dictionaries.
 
 **Non-commercial project.** The RP pronunciation data is derived from the
 [BEEP dictionary](https://www.speech.cs.cmu.edu/comfort/details1.html),
@@ -44,11 +45,9 @@ clojure -T:build uberjar
 ## Setup: populate the initial Lexical Sets
 
 `resources/lexical-sets.edn` — the keyword -> `{:rp :ga :words}` lookup table
-consumed by `pick-example-words-by-ipa` — is a **local, regenerable build
-artifact**, not checked into git (see `.gitignore`). A fresh checkout has no
-`lexical-sets.edn` until you build it.
-
-Bootstrap all 26 Wells sets in one shot:
+consumed by `pick-example-words-by-ipa` — is checked into git, already
+populated with all 26 Wells sets. Re-run `populate-lexical-sets` any time
+the underlying dictionary changes, to re-verify and refresh it:
 
 ```sh
 clojure -M -m nemo-words.core populate-lexical-sets
