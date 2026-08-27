@@ -15,12 +15,15 @@
 
 ;; kaikki-en.jsonl (~3GB, .gitignore'd raw scrape) and wikipron_uk_broad.tsv
 ;; (unreferenced anywhere in src/) are dev-only inputs, never read at
-;; runtime by nemo-words.core -main — excluded so the uberjar ships only
-;; what the CLI actually needs (ga_rp.tsv + lexical-sets.edn, plus the
-;; cmudict/beep raw dicts that build-ga-rp-dict re-derives ga_rp.tsv from).
+;; runtime by nemo-words.core -main. cmudict.dict/beep_uk.dict are the raw
+;; dicts ga_rp.tsv is already derived from — bundling ga_rp.tsv makes them
+;; redundant for every subcommand except build-ga-rp-dict (a regen-only
+;; subcommand, out of scope for a standalone release jar; see US-025's
+;; Follow-up). All four excluded so the uberjar ships only what the CLI
+;; actually needs at runtime: ga_rp.tsv + lexical-sets.edn.
 ;; b/copy-dir's :ignores matches file *names* only, not full paths.
 (def excluded-resources
-  [#"kaikki-en\.jsonl" #"wikipron_uk_broad\.tsv"])
+  [#"kaikki-en\.jsonl" #"wikipron_uk_broad\.tsv" #"cmudict\.dict" #"beep_uk\.dict"])
 
 (defn clean [_]
   (b/delete {:path "target"}))

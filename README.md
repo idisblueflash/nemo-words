@@ -7,8 +7,8 @@ by a Kaikki-derived RP/GA IPA dictionary (`resources/data/en_US_RP_ipa.tsv`).
 [BEEP dictionary](https://www.speech.cs.cmu.edu/comfort/details1.html),
 which is licensed for non-commercial research use only. Both this
 repository and any distributed build (including the release jar below,
-which bundles `beep_uk.dict`) are for personal/research use, not
-commercial use — see
+whose bundled `ga_rp.tsv` is derived from `beep_uk.dict`) are for
+personal/research use, not commercial use — see
 [ADR-0002](docs/decisions/0002-switch-cmudict-beep-primary-dictionary.md)
 for the dictionary-selection background.
 
@@ -24,12 +24,15 @@ java -jar nemo-words.jar ipa-lookup --word car
 java -jar nemo-words.jar pick-example-words-by-ipa "ɜɹ"
 ```
 
-The jar bundles `ga_rp.tsv` and `lexical-sets.edn`, so read-only subcommands
-(`word-freq`, `ipa-lookup`, `pick-example-words-by-ipa`) work standalone from
-any directory. `build-set`/`populate-lexical-sets` still write to a disk path
-and need a writable `resources/` directory next to where you run the jar (see
-[US-025](docs/user-stories/US-025.md) for why, and its Follow-up section for
-the known limitation).
+The jar bundles `ga_rp.tsv` and `lexical-sets.edn`, so the read-only
+subcommands (`word-freq`, `ipa-lookup`, `pick-example-words-by-ipa`) work
+standalone from any directory — that's the release jar's full supported
+surface. `build-set`, `populate-lexical-sets`, and `build-ga-rp-dict` write
+to or read raw dict files not bundled in the jar; they're source-checkout
+tools for maintaining this repo's own data, not supported for downloaded-jar
+users (see [US-025](docs/user-stories/US-025.md) for details). Clone the
+repo and use `clojure -M -m nemo-words.core <subcommand>` instead if you
+need them.
 
 To build the jar yourself from a source checkout:
 
