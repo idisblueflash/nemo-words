@@ -226,6 +226,13 @@
     (is (= [{:word "car" :rp "/kɑː/" :ga "/kɑɹ/" :ga-tokens "K AA1 R" :rp-tokens "k aa"}]
            (ipa/lookup-rows dict-fixture {:word "car"})))))
 
+(deftest lookup-rows-exact-word-case-insensitive-test
+  (testing "bug-004: {:word w} matches regardless of query casing, since the dict stores words lowercase"
+    (is (= [{:word "car" :rp "/kɑː/" :ga "/kɑɹ/" :ga-tokens "K AA1 R" :rp-tokens "k aa"}]
+           (ipa/lookup-rows dict-fixture {:word "Car"})))
+    (is (= [{:word "car" :rp "/kɑː/" :ga "/kɑɹ/" :ga-tokens "K AA1 R" :rp-tokens "k aa"}]
+           (ipa/lookup-rows dict-fixture {:word "CAR"})))))
+
 (deftest lookup-rows-rp-substring-test
   (testing "every returned row matches, via ipa->mrpa token conversion, none excluded that do"
     (let [rows (ipa/lookup-rows dict-fixture {:rp "ɑː"})]
@@ -467,6 +474,20 @@
 (deftest ipa->mrpa-multi-codepoint-test
   (testing "handles multi-codepoint IPA symbols, not a mis-split single-character read"
     (is (= ["k" "ea"] (ipa/ipa->mrpa "kɛə")))))
+
+;; bug-003: oh/ao/ow were shifted to the wrong IPA vowel and aw was
+;; missing entirely, spot-checked against real resources/data/beep_uk.dict
+;; entries ('CAUSE k ao z, A-BOMB ey b oh m, "DOUBLE-QUOTE ... w ow t,
+;; ABLAUT ae b l aw t).
+(deftest mrpa->ipa-lot-cloth-goat-mouth-vowels-test
+  (testing "oh is LOT (ɒ), not GOAT"
+    (is (= "stɒp" (ipa/mrpa->ipa ["s" "t" "oh" "p"]))))
+  (testing "ao is THOUGHT (ɔː), not LOT"
+    (is (= "kɔːz" (ipa/mrpa->ipa ["k" "ao" "z"]))))
+  (testing "ow is GOAT (əʊ), not MOUTH"
+    (is (= "kwəʊt" (ipa/mrpa->ipa ["k" "w" "ow" "t"]))))
+  (testing "aw is MOUTH (aʊ), not the identity-fallback literal token"
+    (is (= "aʊt" (ipa/mrpa->ipa ["aw" "t"])))))
 
 (deftest mrpa-ipa-round-trip-test
   (testing "round-trips through mrpa->ipa then ipa->mrpa for every token vector"
