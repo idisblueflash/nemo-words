@@ -62,10 +62,10 @@
    ["START"   "ɑː" "ɑɹ" ["far" "sharp" "bark" "carve" "farm" "heart"]]
    ["NORTH"   "ɔː" "ɔɹ" ["for" "war" "short" "scorch" "born" "warm"]]
    ["FORCE"   "ɔː" "oɹ" ["four" "wore" "sport" "porch" "borne" "story"]]
-   ["CURE"    "ʊə" "ʊɹ" ["poor" "tourist" "pure" "plural" "jury"]]
-   ["happY"   "i"  "i"  ["copy" "scampi" "taxi" "sortie" "committee" "hockey" "Chelsea"]]
-   ["lettER"  "ə"  "əɹ" ["paper" "metre" "calendar" "stupor" "succour" "martyr"]]
-   ["commA"   "ə"  "ə"  ["catalpa" "quota" "vodka"]]])
+   ["CURE"    "ʊə" "ʊɹ" ["sure" "tourist" "pure" "plural" "jury"]]
+   ["happY"   "i"  "i"  ["copy" "coffee" "taxi" "sortie" "committee" "hockey" "Chelsea"]]
+   ["lettER"  "ə"  "ɚ"  ["paper" "metre" "calendar" "stupor" "succour" "martyr"]]
+   ["commA"   "ə"  "ə"  ["sofa" "quota" "vodka"]]])
 
 (defn populate-lexical-sets
   "dict (+ optional path, default sets/default-path) -> runs build-set for
