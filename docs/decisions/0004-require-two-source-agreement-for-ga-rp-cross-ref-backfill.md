@@ -12,14 +12,16 @@ Technical Story: [US-026](../user-stories/US-026.md)
 
 `resources/data/ga_rp.tsv` has a large gap of missing GA/RP cells.
 US-026's cross-ref backfill plan fills a missing cell from other dicts
-already in `resources/data/` (`wikipron-us`, `wikipron-uk`, `en-uk`,
-`kaikki-us`, `kaikki-rp`). The original selection rule filled a cell
-from a single covering source when no other source disagreed with it.
-Sampling in `US-026-investigation.md` found that `wikipron_uk_broad.tsv`
-contains a handful of noisy/low-confidence entries (e.g. "lue", "wor",
-"utz", "resh", "comly") for words that are genuine cmudict/beep
-headwords already present in `ga_rp.tsv`. A single-source fill has no
-second source to catch a bad transcription for cases like these.
+already in `resources/data/` (`wikipron-us`, `wikipron-uk`, `en-uk`;
+`kaikki-us`/`kaikki-rp` were considered but dropped as a source — the
+Wiktionary dump they'd come from isn't committed to the repo and isn't
+reliably available). The original selection rule filled a cell from a
+single covering source when no other source disagreed with it. Sampling
+in `US-026-investigation.md` found that `wikipron_uk_broad.tsv` contains
+a handful of noisy/low-confidence entries (e.g. "lue", "wor", "utz",
+"resh", "comly") for words that are genuine cmudict/beep headwords
+already present in `ga_rp.tsv`. A single-source fill has no second
+source to catch a bad transcription for cases like these.
 
 ## Considered Options
 
@@ -44,13 +46,13 @@ without needing to build and maintain a separate plausibility filter.
 
 ### Negative Consequences
 
-* Shrinks the addressable backfill slice below the originally estimated
-  ~6.9% (15,631/226,140 cells). GA only has two candidate cross-ref
-  sources (`wikipron-us`, `kaikki-us`), so a GA cell now needs both to
-  cover *and* agree on a word to be filled — this removes the
-  single-source `wikipron-us`-alone fills the original estimate counted.
-  RP is less affected, since it has three candidate sources (`en-uk`,
-  `wikipron-uk`, `kaikki-rp`).
+* Shrinks the addressable backfill slice well below the originally
+  estimated ~6.9% (15,631/226,140 cells). With `kaikki-us`/`kaikki-rp`
+  dropped, GA has only **one** candidate cross-ref source
+  (`wikipron-us`), which can never satisfy a two-source rule alone — so
+  **GA backfill is out of scope for US-026 entirely**, not merely
+  reduced. RP keeps two candidate sources (`en-uk`, `wikipron-uk`), so
+  RP-only backfill on agreement is what this story actually does.
 
 ## Links
 
