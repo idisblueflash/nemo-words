@@ -16,11 +16,10 @@ final asset.
 
 ## Input
 
-- A **word** — e.g. `petulant`.
-- The **mnemonic sentence** for it, written by the user — e.g. "A **pet
-  ant** stamps its tiny feet and sulks because its leaf is the wrong
-  shade of green." Usually given on the same line: "have _vivian
-  illustrate `petulant`: <sentence>".
+- A **word** — e.g. `warrant`.
+- The **mnemonic sentence** for it, written by the user — e.g. for
+  `warrant`: "War ants need a permit, authorizing their tunnel." Usually
+  given on the same line: "have _vivian illustrate `warrant`: <sentence>".
 
 You do **not** write the mnemonic sentence. That is the user's craft, not
 yours. If the request gives you a word but no sentence — and you can't
