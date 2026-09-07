@@ -117,6 +117,33 @@ alternatives or switch mediums per word:
 > named in the brief carries the most saturated block and the boldest
 > contour.
 
+**gpt-image-2 fights this style** — its default for "cat / grandma / cozy
+room / comic" scenes is a rendered vintage-storybook look (crosshatch
+shading, drawn fur, volumetric modelling, paper grain, detailed
+wallpaper). To hold the line, the brief must do all of the following, not
+just state the paragraph above once:
+
+- **Lead with the medium, in blunt concrete terms, and repeat it inside
+  the per-panel constraints** — not only in a style header. E.g.: "Thick
+  India-ink brush outline with visible tapered strokes and the occasional
+  broken line; interior detail lines much thinner. Fills are cel-shaded:
+  at most 3 flat value steps per shape, hard edges, one flat colour per
+  area."
+- **Give object-level negatives, not adjective negatives** (gpt-image-2
+  obeys "no hatching lines" far better than "not rendered"): "No
+  crosshatching, no hatching lines, no stippling, no pencil texture, no
+  individual fur strands, no paper grain or aged-paper texture, no
+  volumetric shading, no gradients, no drop shadows. Wallpaper / rugs /
+  fabrics are one flat colour with at most a few simple flat shapes on
+  top, never a rendered pattern."
+- **Strip texture nouns from the scene descriptions.** Name the objects
+  plainly (basket, lamp, plant, framed photo) but do not describe their
+  texture, weave, fluff, or grain. Keep backgrounds sparse — a couple of
+  flat shapes, not a furnished room.
+- **Make panel 1 the style key**: describe it first and in most detail,
+  and tell the model the other eight panels must match panel 1's line
+  weight and flat-fill treatment exactly.
+
 Why: the brush-pen line art processes fast, stays legible cropped small,
 and reads as hand-drawn rather than machine-traced; the flat gouache blocks
 make the card feel finished and inviting without fighting the linework or
