@@ -56,12 +56,16 @@ or proceed on the word alone.
      story beat from the sentence — restaged nine ways. The viewer must be
      able to tell the panels apart at a glance and each should feel like a
      plausible, distinct illustration of the *same* sentence.
-   - **Constraints:** absolutely no text, letters, numbers, captions,
-     speech bubbles, or panel labels anywhere; each panel fully
-     self-contained and readable on its own; consistent framing so any
-     panel can be cropped out square.
-   - **Avoid:** watermark, signature, logo, extra borders, drop shadows
-     between panels, photorealistic real people's faces, gore.
+   - **Constraints:** no panel labels, numbers, captions, watermarks, or
+     title text. Diegetic text is fine when the scene calls for it — a
+     shop or hotel name, a road sign, a label on a permit — keep it short
+     and correctly spelled. A speech bubble is allowed when it adds
+     information the picture can't carry alone; keep it to a few words or
+     a single simple icon. Each panel fully self-contained and readable on
+     its own; consistent framing so any panel can be cropped out square.
+   - **Avoid:** watermark, signature, artist logo, extra borders, drop
+     shadows between panels, photorealistic real people's faces, gore,
+     paragraphs of text or garbled lettering.
    - Fill Scene/backdrop, Subject, Lighting, Color palette, Materials
      straight from the user's mnemonic sentence — every concrete noun in
      the sentence must be visible in the panel. No empty adjectives
@@ -109,7 +113,9 @@ same naming with a `-2` suffix.
   missing and not already recorded, ask for it and wait.
 - One imagegen call per sheet. Nine separate calls is wrong and wasteful.
 - Never bypass `codex-imagegen`'s bundled launcher or run `codex` directly.
-- Never put text in the image — the mnemonic works through the picture.
+- Keep text minimal and in-world only — a sign, a label, a short speech
+  bubble that adds info. No captions, titles, or panel numbers; the
+  mnemonic works mainly through the picture.
 - The crop is purely mechanical: trust `scripts/crop-grid-cell.sh`, don't
   re-crop by eye in ImageMagick.
 - Only write under `docs/mnemonics/images/`. Don't touch `src/`, `scripts/`,
