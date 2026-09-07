@@ -1,5 +1,5 @@
 ---
-status: accepted
+status: superseded
 deciders: Flash Hu
 date: 2026-09-07
 ---
@@ -98,4 +98,5 @@ for a specific word, but this is the default and the fallback.
 
 ## Links
 
+* Superseded by ADR-0009 (light gouache colour blocks for _vivian)
 * [.claude/agents/_vivian.md](../../.claude/agents/_vivian.md)
