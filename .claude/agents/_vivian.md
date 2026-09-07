@@ -32,30 +32,30 @@ or proceed on the word alone.
 1. **Confirm the sentence.**
    - If the user gave a sentence, use it verbatim as the scene to
      illustrate.
-   - If they didn't, check `docs/mnemonics/log.tsv` (if it exists) for a
-     row whose first column is the word and reuse its `sentence` column;
-     grep the rest of `docs/` too. If you find one, quote it back in your
-     report so the user can confirm.
-   - If neither turns up a sentence, ask for it and end the turn. Nothing
-     else happens until you have one.
-   - Get the pronunciation from `resources/data/ga_rp.tsv` (tab-separated,
-     word then IPA) — grep the word — and include the IPA in your report,
-     but it does not change the picture; the sentence is the scene.
-
+   - If they didn't give one, ask for it and end the turn. Nothing else
+     happens until you have one — you never write it yourself.
 2. **Write ONE codex-imagegen brief for a 3×3 grid.** Invoke the
    `codex-imagegen` skill (via the Skill tool) and follow its `$imagegen`
    schema. The whole 3×3 sheet is a single generation call — not nine
    calls. Requirements to bake into the brief:
    - **Asset type:** one square image, a clean 3×3 grid of nine equal
-     panels, thin uniform white gutters (~1% of width), no outer border.
+     panels, thin uniform white gutters (\~1% of width), no outer border.
    - **Generation size:** 2304×2304 (each panel lands on 768×768; edges are
      multiples of 16 and the pixel budget is valid for gpt-image-2).
-   - **Nine variations of the *same* mnemonic scene** — same subject and
-     same story in every panel, but each panel a genuinely different *visual
-     take*: vary medium (ink drawing, gouache, papercut, 3D clay render,
-     woodblock, children's-book watercolor, noir photo, vintage poster,
-     risograph…), camera angle, palette, and time of day. The viewer must be
-     able to tell the panels apart at a glance.
+   - **One medium, nine stagings.** Pick a *single* medium / art style and
+     state it once for the whole sheet (e.g. "flat gouache children's-book
+     illustration, warm palette") — every panel is rendered the same way,
+     so the sheet looks like one artist's nine sketches, not a style
+     sampler.
+   - **What varies between the nine panels is the staging of the scene:**
+     camera angle and distance (wide establishing, low hero angle,
+     over-the-shoulder, top-down, tight close-up…), the pose, gesture and
+     expression of the actor(s), where each concrete object sits and how
+     they're arranged, the moment of the action chosen (before / during /
+     after), and the background depth. Same characters, same props, same
+     story beat from the sentence — restaged nine ways. The viewer must be
+     able to tell the panels apart at a glance and each should feel like a
+     plausible, distinct illustration of the *same* sentence.
    - **Constraints:** absolutely no text, letters, numbers, captions,
      speech bubbles, or panel labels anywhere; each panel fully
      self-contained and readable on its own; consistent framing so any
@@ -67,12 +67,10 @@ or proceed on the word alone.
      the sentence must be visible in the panel. No empty adjectives
      ("vivid", "striking"); name the objects, colors, and light. Don't add
      story elements the sentence doesn't mention.
-
 3. **Save the sheet** the skill produced to
    `docs/mnemonics/images/<word>.grid.png` (create the directory with
    `mkdir -p`; lowercase the word, keep it as-is otherwise). If a file is
    already there, append `-2`, `-3`, … rather than overwriting.
-
 4. **Show it and stop.** `SendUserFile` the grid with `display: "render"`
    and a caption. Then end your turn with a short report: the word, its
    IPA, the mnemonic sentence you illustrated, where the grid is saved, and
@@ -86,20 +84,24 @@ On the follow-up message naming a cell (a number 1–9, or "top-left" etc.
 you map to one):
 
 1. Run:
+
    ```
    scripts/crop-grid-cell.sh docs/mnemonics/images/<word>.grid.png <cell> \
      docs/mnemonics/images/<word>.png
    ```
+
 2. `SendUserFile` the final `docs/mnemonics/images/<word>.png` (render) so
    the user sees the isolated result.
+
 3. If `docs/mnemonics/log.tsv` exists and has a row for this word, you may
    note the final image path in your report so the user can wire it in —
    but do not edit `log.tsv` yourself unless asked.
+
 4. Report: final path, cell chosen, dimensions.
 
-If the user rejects the whole sheet, offer to regenerate with an adjusted
-brief (different mediums, tighter scene) — one new sheet per pass, same
-naming with a `-2` suffix.
+If the user rejects the whole sheet, offer to regenerate — try a different
+medium, or push the nine stagings further apart — one new sheet per pass,
+same naming with a `-2` suffix.
 
 ## Rules
 
@@ -115,3 +117,4 @@ naming with a `-2` suffix.
   say otherwise.
 - Verify every generated file exists and looks right (open it) before
   reporting it as done.
+
