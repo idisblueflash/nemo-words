@@ -43,7 +43,7 @@ or proceed on the word alone.
      matching morpheme/stem entries too (`omin-` matches `ominous`). On a
      hit it prints the `sentence` and the `pivot_words`; use that sentence
      verbatim and keep the `pivot_words` — they are the strongest hint for
-     which element gets the spot colour. If it exits non-zero (nothing
+     which element is the mnemonic hook. If it exits non-zero (nothing
      found), ask the user for the sentence and end the turn. Nothing else
      happens until you have one — you never write it yourself. If several
      entries match, ask the user which word sense they mean.
@@ -59,13 +59,14 @@ or proceed on the word alone.
      "## House style" below) once for the whole sheet — every panel is
      rendered the same way, so the sheet looks like one artist's nine
      sketches, not a style sampler.
-   - **Name the spot-colour element.** From the mnemonic sentence, pick the
+   - **Name the mnemonic hook element.** From the mnemonic sentence, pick the
      single concrete thing that *is* the memory hook (the pun object, the
-     word's referent) and say in the brief that this one element — and
-     nothing else — is rendered in the accent colour, identically placed on
-     the palette in all nine panels. Everything else stays monochrome. If
-     `find-mnemonic.js` returned `pivot_words`, the hook is one of those —
-     usually the most concrete / picturable one.
+     word's referent) and say in the brief that this one element gets the
+     compositional emphasis in every panel — foreground placement, the
+     boldest / most confident brush-pen contour, and the most saturated
+     gouache block on the sheet — so the eye lands on it first regardless of
+     staging. If `find-mnemonic.js` returned `pivot_words`, the hook is one
+     of those — usually the most concrete / picturable one.
    - **What varies between the nine panels is the staging of the scene:**
      camera angle and distance (wide establishing, low hero angle,
      over-the-shoulder, top-down, tight close-up…), the pose, gesture and
@@ -105,19 +106,22 @@ or proceed on the word alone.
 Every sheet _vivian generates uses **one fixed house style** — do not offer
 alternatives or switch mediums per word:
 
-> **Black-and-white manga line art with a single spot colour.** Clean,
-> confident ink linework; screentone / hatching for shading; high contrast;
-> expressive, slightly exaggerated manga faces and poses. The entire image
-> is monochrome (black ink on white) **except one element** — the key
-> mnemonic hook named in the brief — which is rendered in a single flat
-> accent colour (default: a warm red-orange, `#E8462B`). No other colour
-> anywhere. No gradients, no painted rendering, no full-colour panels.
+> **Brush-pen comic line art with light gouache colour blocks.** Hand-drawn
+> brush-pen linework with clear line-weight variation — bold, confident
+> outer contours against thinner interior detail; a little looseness and
+> the occasional broken line, never a clean even-weight vector contour.
+> Expressive, slightly exaggerated comic faces and poses. Over the line
+> art, soft flat **gouache colour blocks**: slightly chalky, low-saturation,
+> naturalistic fills across the main shapes — no gradients, no rendered
+> volume, no wash bleed, no outlining every fill. The mnemonic hook element
+> named in the brief carries the most saturated block and the boldest
+> contour.
 
-Why: the sparse line art processes fast and stays legible when cropped
-small, and the lone spot colour acts as a selective-attention cue that
-pulls the eye straight to the thing the learner must remember — colour as
-signal, not decoration. Keep the accent on the *same* object in all nine
-stagings so the cue is consistent across the sheet.
+Why: the brush-pen line art processes fast, stays legible cropped small,
+and reads as hand-drawn rather than machine-traced; the flat gouache blocks
+make the card feel finished and inviting without fighting the linework or
+muddying a small crop. See ADR-0008 (line style) and ADR-0009 (colour) in
+`docs/decisions/`.
 
 If the user explicitly asks for a different look for a particular word,
 honour it for that run, but the default and the thing you fall back to is
@@ -149,8 +153,9 @@ same naming with a `-2` suffix.
   from `scripts/find-mnemonic.js`; if it's missing and the lookup finds
   nothing, ask for it and wait.
 - One imagegen call per sheet. Nine separate calls is wrong and wasteful.
-- Default to the house style (B&W manga line art, one spot colour on the
-  mnemonic hook) unless the user asks otherwise for that word.
+- Default to the house style (brush-pen comic line art, light gouache
+  colour blocks, hook element carrying the boldest contour and most
+  saturated block) unless the user asks otherwise for that word.
 - Never bypass `codex-imagegen`'s bundled launcher or run `codex` directly.
 - Keep text minimal and in-world only — a sign, a label, a short speech
   bubble that adds info. No captions, titles, or panel numbers; the
