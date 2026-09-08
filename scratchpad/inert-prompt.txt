@@ -1,0 +1,33 @@
+$imagegen
+Use case: illustration-story
+Asset type: one square image, 2304x2304, a clean 3x3 grid of nine equal panels, thin uniform white gutters about 1% of width, no outer border. Each panel lands on ~768x768 and must be independently readable and croppable square.
+Primary request: Nine restagings of the same scene from the sentence "In a lead shirt, the sample refuses to react." A lab sample sits wearing a heavy lead shirt and will not react, no matter what a scientist does to provoke it.
+
+Input images: Image 1: style reference ONLY - copy its line quality, line-weight variation, flat chalky low-saturation fills, and sparse flat backgrounds; do NOT copy its content, characters, or composition.
+
+Scene/backdrop: a plain chemistry lab. Backgrounds sparse - at most two or three flat shapes (a flat shelf line, one window rectangle, a single flat cabinet), lots of empty light-grey space. Nothing furnished or textured.
+Subject: TWO recurring characters, identical in every panel.
+  1) THE SAMPLE - the memory hook. A rounded clear glass specimen jar with a friendly simple face, sitting completely still, arms crossed or slack, flat bored expression, not moving, not bubbling, not glowing. It wears a HEAVY LEAD SHIRT: a thick, boxy, sleeveless protective vest/apron like an X-ray lead apron, oversized and weighing it down, with a bold thick collar and a small radiation-trefoil tag on the chest.
+  2) THE SCIENTIST - a person in a white lab coat and safety goggles, expressive exaggerated comic face, trying every trick to make the sample react: holding a lit bunsen burner to it, pouring a beaker of coloured liquid on it, shaking it, zapping it with electrode clamps, shouting at it. Their effort escalates; the sample stays limp and unbothered.
+  Visible in every panel: the lead shirt, the glass sample jar, the scientist, and a failed "reaction" cue (a puff that fizzles, unlit sparks, a single flat bubble that pops to nothing).
+Style/medium: hand-drawn brush-pen comic line art with light gouache colour blocks. Thick India-ink brush outer contour with visible tapered strokes and the occasional broken line; interior detail lines much thinner. Over the lines, soft flat gouache fills: slightly chalky, low-saturation, at most 3 flat value steps per shape, hard edges, one flat colour per area, no outlining every fill.
+Composition/framing: the lead shirt on the sample gets the compositional emphasis in EVERY panel - foreground placement, the boldest most confident brush contour on the sheet, and the single most saturated gouache block on the sheet (a deep slate-blue lead shirt against otherwise muted colours). The eye must land on the lead shirt first in every panel.
+Lighting/mood: flat even daylight, no rendered light. Deadpan comedy - frantic scientist, totally unreactive sample.
+Color palette: deep slate-blue lead shirt (the one saturated block), pale clear-glass grey sample, off-white lab coat, warm beige skin, muted sage and dull ochre props, light warm-grey backgrounds.
+Materials/textures: ABSOLUTELY FLAT vector-like cel fills. Each shape is ONE solid uniform colour edge to edge with a hard boundary - the lead shirt is a single flat slate-blue silhouette with NO fold shading, NO darker crease lines, NO soft edges. At most one extra flat shadow shape per object, never a gradient. The whole image must look like flat screen-printed poster art, not a painted storybook page. NO crosshatching, no hatching lines, no stippling, no pencil texture, no paper grain or aged-paper texture, no volumetric shading, no gradients, no glossy highlights, no drop shadows, no soft airbrush shading on faces or fabric, no rendered cloth folds, no canvas or watercolour-paper texture, no beige paper grain anywhere - clean flat digital fills. Glass is a few flat shapes, not rendered. Any wall, shelf or cabinet is one flat colour with at most a couple of simple flat shapes on top, never a rendered pattern.
+Panel 1 is the STYLE KEY: draw it first and most carefully - a straight-on medium shot, scientist on the left holding a lit bunsen burner to the sample jar on the right, sample arms crossed in its slate-blue lead shirt, a small puff of smoke fizzling out between them. The other eight panels must match panel 1's line weight and flat-fill treatment exactly.
+
+What varies between the nine panels is ONLY the staging of this same scene - camera angle and distance, the scientist's pose/gesture/expression, where the jar and props sit, the moment chosen (before/during/after the failed attempt), and background depth:
+1: straight-on medium shot, scientist holding a lit bunsen burner to the sample, smoke puff fizzling.
+2: low hero angle looking up at the sample jar towering in its lead shirt, tiny frustrated scientist below tugging its arm.
+3: wide establishing shot of the whole lab bench, scientist mid-stride carrying a beaker of green liquid toward the still sample.
+4: top-down view onto the bench, scientist's hands shaking the jar hard, motion lines, sample face blank.
+5: tight close-up on the sample's chest - the slate-blue lead shirt collar and radiation tag fill the frame, scientist's goggled eyes peering in from the edge.
+6: over-the-shoulder from behind the scientist, who points an accusing finger; sample sits slumped facing us.
+7: side profile two-shot, scientist on knees pleading with clasped hands, sample looking away, one flat bubble popping above it.
+8: over-the-shoulder from behind the sample, scientist across the bench clamping electrode cables to the lead shirt, no spark.
+9: after shot - scientist collapsed exhausted across the bench, sample unchanged and upright in its lead shirt, cold burner and spilled beaker nearby.
+
+Text (verbatim): none. No panel labels, numbers, captions, watermarks, or title text. A tiny radiation-trefoil icon on the lead shirt is allowed. One optional short speech bubble with "react. please." from the scientist in at most one panel.
+Constraints: same two characters and same props in all nine panels; the lead shirt visible and emphasised in every panel; each panel self-contained; consistent framing so any panel crops out square.
+Avoid: watermark, signature, artist logo, extra borders, drop shadows between panels, photorealistic faces, gore, crosshatching, hatching, stippling, pencil texture, gradients, volumetric shading, glossy rendering, busy textured backgrounds, paragraphs of text, garbled lettering.

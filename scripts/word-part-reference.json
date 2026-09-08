@@ -1,0 +1,1165 @@
+{
+  "_comment": "Seed reference of standard Greek/Latin medical combining forms + WHO INN drug stems, for a cheap heuristic pre-filter (regex/substring match) before falling back to an LLM classify call. origin: G=Greek, L=Latin, INN=WHO stem (not classical). type: prefix|root|suffix|stem.",
+  "parts": [
+    {
+      "part": "a-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "without"
+    },
+    {
+      "part": "an-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "without"
+    },
+    {
+      "part": "anti-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "against"
+    },
+    {
+      "part": "contra-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "against"
+    },
+    {
+      "part": "dys-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "difficult, bad, abnormal"
+    },
+    {
+      "part": "mal-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "bad"
+    },
+    {
+      "part": "pseudo-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "false"
+    },
+    {
+      "part": "ab-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "away from"
+    },
+    {
+      "part": "ad-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "toward"
+    },
+    {
+      "part": "ante-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "before"
+    },
+    {
+      "part": "pre-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "before"
+    },
+    {
+      "part": "circum-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "around"
+    },
+    {
+      "part": "peri-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "around"
+    },
+    {
+      "part": "dia-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "through"
+    },
+    {
+      "part": "ecto-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "outside"
+    },
+    {
+      "part": "exo-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "outside"
+    },
+    {
+      "part": "endo-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "inside"
+    },
+    {
+      "part": "intra-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "inside"
+    },
+    {
+      "part": "epi-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "upon"
+    },
+    {
+      "part": "hypo-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "below, deficient"
+    },
+    {
+      "part": "hyper-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "above, excessive"
+    },
+    {
+      "part": "infra-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "below"
+    },
+    {
+      "part": "sub-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "below"
+    },
+    {
+      "part": "inter-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "between"
+    },
+    {
+      "part": "meta-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "beyond, change"
+    },
+    {
+      "part": "para-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "beside, abnormal"
+    },
+    {
+      "part": "retro-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "backward"
+    },
+    {
+      "part": "supra-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "above"
+    },
+    {
+      "part": "super-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "above"
+    },
+    {
+      "part": "trans-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "across"
+    },
+    {
+      "part": "sym-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "together"
+    },
+    {
+      "part": "syn-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "together"
+    },
+    {
+      "part": "mono-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "one"
+    },
+    {
+      "part": "uni-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "one"
+    },
+    {
+      "part": "bi-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "two"
+    },
+    {
+      "part": "di-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "two"
+    },
+    {
+      "part": "tri-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "three"
+    },
+    {
+      "part": "quadri-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "four"
+    },
+    {
+      "part": "tetra-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "four"
+    },
+    {
+      "part": "multi-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "many"
+    },
+    {
+      "part": "poly-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "many"
+    },
+    {
+      "part": "semi-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "half"
+    },
+    {
+      "part": "hemi-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "half"
+    },
+    {
+      "part": "macro-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "large"
+    },
+    {
+      "part": "micro-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "small"
+    },
+    {
+      "part": "megalo-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "enlarged"
+    },
+    {
+      "part": "olig-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "few, scanty"
+    },
+    {
+      "part": "pan-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "all"
+    },
+    {
+      "part": "primi-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "first"
+    },
+    {
+      "part": "nulli-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "none"
+    },
+    {
+      "part": "brady-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "slow"
+    },
+    {
+      "part": "tachy-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "fast"
+    },
+    {
+      "part": "eu-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "normal, good"
+    },
+    {
+      "part": "hetero-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "different"
+    },
+    {
+      "part": "homo-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "same"
+    },
+    {
+      "part": "iso-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "same, equal"
+    },
+    {
+      "part": "neo-",
+      "origin": "G",
+      "type": "prefix",
+      "meaning": "new"
+    },
+    {
+      "part": "re-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "again"
+    },
+    {
+      "part": "normo-",
+      "origin": "L",
+      "type": "prefix",
+      "meaning": "normal"
+    },
+    {
+      "part": "cardi/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "heart"
+    },
+    {
+      "part": "angi/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "vessel"
+    },
+    {
+      "part": "phleb/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "vein"
+    },
+    {
+      "part": "arteri/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "artery"
+    },
+    {
+      "part": "hem/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "blood"
+    },
+    {
+      "part": "hemat/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "blood"
+    },
+    {
+      "part": "hepat/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "liver"
+    },
+    {
+      "part": "nephr/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "kidney"
+    },
+    {
+      "part": "ren/o",
+      "origin": "L",
+      "type": "root",
+      "meaning": "kidney"
+    },
+    {
+      "part": "gastr/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "stomach"
+    },
+    {
+      "part": "enter/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "intestine"
+    },
+    {
+      "part": "col/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "colon"
+    },
+    {
+      "part": "colon/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "colon"
+    },
+    {
+      "part": "cholecyst/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "gallbladder"
+    },
+    {
+      "part": "pneum/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "lung, air"
+    },
+    {
+      "part": "pneumon/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "lung, air"
+    },
+    {
+      "part": "pulmon/o",
+      "origin": "L",
+      "type": "root",
+      "meaning": "lung"
+    },
+    {
+      "part": "bronch/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "bronchus"
+    },
+    {
+      "part": "rhin/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "nose"
+    },
+    {
+      "part": "nas/o",
+      "origin": "L",
+      "type": "root",
+      "meaning": "nose"
+    },
+    {
+      "part": "laryng/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "larynx"
+    },
+    {
+      "part": "pharyng/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "pharynx"
+    },
+    {
+      "part": "ot/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "ear"
+    },
+    {
+      "part": "ophthalm/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "eye"
+    },
+    {
+      "part": "ocul/o",
+      "origin": "L",
+      "type": "root",
+      "meaning": "eye"
+    },
+    {
+      "part": "dermat/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "skin"
+    },
+    {
+      "part": "derm/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "skin"
+    },
+    {
+      "part": "cutane/o",
+      "origin": "L",
+      "type": "root",
+      "meaning": "skin"
+    },
+    {
+      "part": "oste/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "bone"
+    },
+    {
+      "part": "arthr/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "joint"
+    },
+    {
+      "part": "my/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "muscle"
+    },
+    {
+      "part": "myel/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "spinal cord, bone marrow"
+    },
+    {
+      "part": "neur/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "nerve"
+    },
+    {
+      "part": "cerebr/o",
+      "origin": "L",
+      "type": "root",
+      "meaning": "brain, cerebrum"
+    },
+    {
+      "part": "encephal/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "brain"
+    },
+    {
+      "part": "splen/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "spleen"
+    },
+    {
+      "part": "thyroid/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "thyroid"
+    },
+    {
+      "part": "adren/o",
+      "origin": "L",
+      "type": "root",
+      "meaning": "adrenal gland"
+    },
+    {
+      "part": "gynec/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "woman"
+    },
+    {
+      "part": "andr/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "man"
+    },
+    {
+      "part": "mast/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "breast"
+    },
+    {
+      "part": "mamm/o",
+      "origin": "L",
+      "type": "root",
+      "meaning": "breast"
+    },
+    {
+      "part": "uter/o",
+      "origin": "L",
+      "type": "root",
+      "meaning": "uterus"
+    },
+    {
+      "part": "hyster/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "uterus"
+    },
+    {
+      "part": "oophor/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "ovary"
+    },
+    {
+      "part": "orchid/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "testis"
+    },
+    {
+      "part": "ur/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "urine"
+    },
+    {
+      "part": "cyst/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "bladder, sac"
+    },
+    {
+      "part": "thorac/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "chest"
+    },
+    {
+      "part": "abdomin/o",
+      "origin": "L",
+      "type": "root",
+      "meaning": "abdomen"
+    },
+    {
+      "part": "lymph/o",
+      "origin": "L",
+      "type": "root",
+      "meaning": "lymph"
+    },
+    {
+      "part": "immun/o",
+      "origin": "L",
+      "type": "root",
+      "meaning": "immune"
+    },
+    {
+      "part": "onc/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "tumor"
+    },
+    {
+      "part": "path/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "disease"
+    },
+    {
+      "part": "cyt/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "cell"
+    },
+    {
+      "part": "hist/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "tissue"
+    },
+    {
+      "part": "aden/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "gland"
+    },
+    {
+      "part": "lip/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "fat"
+    },
+    {
+      "part": "chondr/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "cartilage"
+    },
+    {
+      "part": "dent/o",
+      "origin": "L",
+      "type": "root",
+      "meaning": "tooth"
+    },
+    {
+      "part": "odont/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "tooth"
+    },
+    {
+      "part": "gloss/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "tongue"
+    },
+    {
+      "part": "lingu/o",
+      "origin": "L",
+      "type": "root",
+      "meaning": "tongue"
+    },
+    {
+      "part": "stomat/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "mouth"
+    },
+    {
+      "part": "kerat/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "cornea, horny tissue"
+    },
+    {
+      "part": "scler/o",
+      "origin": "G",
+      "type": "root",
+      "meaning": "hardening, sclera"
+    },
+    {
+      "part": "-ectomy",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "surgical removal"
+    },
+    {
+      "part": "-otomy",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "incision into"
+    },
+    {
+      "part": "-ostomy",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "creation of an opening"
+    },
+    {
+      "part": "-plasty",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "surgical repair, reshaping"
+    },
+    {
+      "part": "-rrhaphy",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "suturing"
+    },
+    {
+      "part": "-centesis",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "surgical puncture to remove fluid"
+    },
+    {
+      "part": "-pexy",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "surgical fixation"
+    },
+    {
+      "part": "-tripsy",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "crushing"
+    },
+    {
+      "part": "-graphy",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "process of recording"
+    },
+    {
+      "part": "-gram",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "the record, image"
+    },
+    {
+      "part": "-scopy",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "visual examination"
+    },
+    {
+      "part": "-scope",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "instrument for viewing"
+    },
+    {
+      "part": "-itis",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "inflammation"
+    },
+    {
+      "part": "-osis",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "abnormal condition, often chronic"
+    },
+    {
+      "part": "-oma",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "tumor, mass"
+    },
+    {
+      "part": "-pathy",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "disease"
+    },
+    {
+      "part": "-algia",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "pain"
+    },
+    {
+      "part": "-dynia",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "pain"
+    },
+    {
+      "part": "-emia",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "blood condition"
+    },
+    {
+      "part": "-uria",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "urine condition"
+    },
+    {
+      "part": "-rrhea",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "discharge, flow"
+    },
+    {
+      "part": "-rrhagia",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "excessive bleeding"
+    },
+    {
+      "part": "-sclerosis",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "hardening"
+    },
+    {
+      "part": "-stenosis",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "narrowing"
+    },
+    {
+      "part": "-megaly",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "enlargement"
+    },
+    {
+      "part": "-malacia",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "softening"
+    },
+    {
+      "part": "-penia",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "deficiency"
+    },
+    {
+      "part": "-cele",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "hernia, protrusion"
+    },
+    {
+      "part": "-ptosis",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "drooping, prolapse"
+    },
+    {
+      "part": "-lysis",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "breakdown, destruction"
+    },
+    {
+      "part": "-plegia",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "paralysis"
+    },
+    {
+      "part": "-paresis",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "partial paralysis"
+    },
+    {
+      "part": "-phobia",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "abnormal fear"
+    },
+    {
+      "part": "-phasia",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "speech"
+    },
+    {
+      "part": "-pnea",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "breathing"
+    },
+    {
+      "part": "-spasm",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "involuntary contraction"
+    },
+    {
+      "part": "-ac",
+      "origin": "L",
+      "type": "suffix",
+      "meaning": "pertaining to",
+      "weak": true
+    },
+    {
+      "part": "-al",
+      "origin": "L",
+      "type": "suffix",
+      "meaning": "pertaining to",
+      "weak": true
+    },
+    {
+      "part": "-ar",
+      "origin": "L",
+      "type": "suffix",
+      "meaning": "pertaining to",
+      "weak": true
+    },
+    {
+      "part": "-ary",
+      "origin": "L",
+      "type": "suffix",
+      "meaning": "pertaining to",
+      "weak": true
+    },
+    {
+      "part": "-eal",
+      "origin": "L",
+      "type": "suffix",
+      "meaning": "pertaining to",
+      "weak": true
+    },
+    {
+      "part": "-ic",
+      "origin": "L",
+      "type": "suffix",
+      "meaning": "pertaining to",
+      "weak": true
+    },
+    {
+      "part": "-ous",
+      "origin": "L",
+      "type": "suffix",
+      "meaning": "pertaining to",
+      "weak": true
+    },
+    {
+      "part": "-tic",
+      "origin": "L",
+      "type": "suffix",
+      "meaning": "pertaining to",
+      "weak": true
+    },
+    {
+      "part": "-logy",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "study of"
+    },
+    {
+      "part": "-logist",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "specialist who studies"
+    },
+    {
+      "part": "-iatrist",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "physician"
+    },
+    {
+      "part": "-iatry",
+      "origin": "G",
+      "type": "suffix",
+      "meaning": "medical treatment"
+    },
+    {
+      "part": "-ician",
+      "origin": "L",
+      "type": "suffix",
+      "meaning": "specialist"
+    },
+    {
+      "part": "-mab",
+      "origin": "INN",
+      "type": "stem",
+      "meaning": "monoclonal antibody"
+    },
+    {
+      "part": "-nib",
+      "origin": "INN",
+      "type": "stem",
+      "meaning": "kinase inhibitor"
+    },
+    {
+      "part": "-tinib",
+      "origin": "INN",
+      "type": "stem",
+      "meaning": "kinase inhibitor (tyrosine kinase subtype)"
+    },
+    {
+      "part": "-limus",
+      "origin": "INN",
+      "type": "stem",
+      "meaning": "mTOR inhibitor, immunosuppressant"
+    },
+    {
+      "part": "-statin",
+      "origin": "INN",
+      "type": "stem",
+      "meaning": "HMG-CoA reductase inhibitor"
+    },
+    {
+      "part": "-pril",
+      "origin": "INN",
+      "type": "stem",
+      "meaning": "ACE inhibitor"
+    },
+    {
+      "part": "-sartan",
+      "origin": "INN",
+      "type": "stem",
+      "meaning": "angiotensin receptor blocker"
+    },
+    {
+      "part": "-olol",
+      "origin": "INN",
+      "type": "stem",
+      "meaning": "beta blocker"
+    },
+    {
+      "part": "-azole",
+      "origin": "INN",
+      "type": "stem",
+      "meaning": "antifungal (or PPI as -prazole)"
+    },
+    {
+      "part": "-cillin",
+      "origin": "INN",
+      "type": "stem",
+      "meaning": "penicillin-class antibiotic"
+    },
+    {
+      "part": "-cycline",
+      "origin": "INN",
+      "type": "stem",
+      "meaning": "tetracycline-class antibiotic"
+    },
+    {
+      "part": "-floxacin",
+      "origin": "INN",
+      "type": "stem",
+      "meaning": "fluoroquinolone antibiotic"
+    },
+    {
+      "part": "-vir",
+      "origin": "INN",
+      "type": "stem",
+      "meaning": "antiviral"
+    },
+    {
+      "part": "-parin",
+      "origin": "INN",
+      "type": "stem",
+      "meaning": "anticoagulant, heparin-class"
+    },
+    {
+      "part": "-dipine",
+      "origin": "INN",
+      "type": "stem",
+      "meaning": "calcium channel blocker"
+    },
+    {
+      "part": "-gliptin",
+      "origin": "INN",
+      "type": "stem",
+      "meaning": "DPP-4 inhibitor"
+    },
+    {
+      "part": "-gliflozin",
+      "origin": "INN",
+      "type": "stem",
+      "meaning": "SGLT2 inhibitor"
+    },
+    {
+      "part": "-tide",
+      "origin": "INN",
+      "type": "stem",
+      "meaning": "peptide"
+    }
+  ]
+}

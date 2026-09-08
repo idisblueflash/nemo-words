@@ -1,0 +1,31 @@
+{
+  "agent_name": "_nemo",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Brainstorm 4 alternative one-sentence mnemonic story candidates for the word \"creak.\"\n\nWord: creak\nPronunciation: KREEK /krik/\nDefinition: A long, harsh squeaking or groaning sound, like the one an old wooden door, floorboard, or hinge makes when it moves.\nSound axis: \"creak\" is a perfect homophone of \"creek\" — they sound identical.\nMeaning axis (already drafted): Picture an old wooden bridge over a creek, groaning with a loud creak every time someone crosses — the tavern door makes that same sound.",
+      "expected_output": "4 new one-sentence story candidates, each depicting a single coherent physical scene (indoor OR outdoor, not both) where a creek and the creaking object could plausibly coexist. Ground truth failure mode: an earlier run produced 'Stepping past the creek, the attic floorboard creaks beneath my feet' — an attic is indoors under a roof and cannot be adjacent to an outdoor creek, so the scene doesn't hang together even though each half is individually vivid.",
+      "files": [],
+      "assertions": [
+        "No candidate combines an indoor-only setting (attic, basement, hallway) with an outdoor creek in the same sentence",
+        "Every candidate's setting/objects could physically coexist in one real-world place at the same time (e.g. a cabin door BY a creek, a dock ON a creek, a rowboat ON a creek — not a creek stitched onto an unrelated indoor room)",
+        "All candidates still use a perfect creak/creek homophone anchor",
+        "Each candidate is one sentence, ≤15 words",
+        "Candidates show genuine variety in scene/object (not near-duplicates of each other or of the saved bridge/tavern-door story)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Brainstorm one-sentence mnemonic story candidates for the word \"adjacent.\"\n\nWord: adjacent\nPronunciation: uh-JAY-sunt /əˈdʒeɪsənt/\nDefinition: Adjacent means right next to something else, sharing a border or edge — like two adjacent rooms sharing a wall.\nSound axis: \"adjacent\" hides the name \"Jason\" almost whole — a-JASON-t.\nMeaning axis (already drafted): picture Jason living in the house right next door — that's adjacent: immediately next to, sharing a border.",
+      "expected_output": "Story candidates that anchor on \"Jason\" and depict a single physically consistent model of adjacency — either a shared border/wall (no direct contact between the objects on either side) or direct touching (no wall/separator mentioned) — not both at once. Ground truth failure mode: a candidate combined 'Jason's dorm bed touches mine, our rooms share one thin wall' — a wall between two rooms means the beds on either side of it cannot also touch each other, so the two clauses contradict rather than reinforce one scene.",
+      "files": [],
+      "assertions": [
+        "No candidate states or implies a wall/partition/border separates two objects AND that the same two objects are in direct physical contact",
+        "Each candidate commits to one physical model of adjacency (contact-through-a-shared-boundary, or direct-touching-with-no-boundary-mentioned) and stays consistent within the sentence",
+        "All candidates anchor \"Jason\" against the uh-JAY-sunt / əˈdʒeɪsənt pronunciation",
+        "Each candidate is one sentence, ≤15 words",
+        "Candidates show genuine variety in scene/object, not near-duplicates of each other"
+      ]
+    }
+  ]
+}
