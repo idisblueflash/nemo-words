@@ -24,12 +24,22 @@ actually agreed to.
    (medical or general), route to `_etta_mology` instead — it decomposes and cards the
    parts, and there's no sound/story axis for those.
 3. **Get the story.** A human always picks this — never an agent, and never a
-   specialist's own top recommendation adopted automatically. Either let the user supply
+   specialist's own top recommendation adopted automatically.
+
+   **First, before any `_nemo` dispatch, pull corpus background context for the word.**
+   Run the `_corpus_search` skill (or `scripts/corpus-search.sh` directly) on the word to
+   see how it's actually used — attested example sentences, common collocates, which
+   sense dominates. This grounds the story step in real usage before brainstorming: pass
+   what you find into Nemo's dispatch prompt (representative sentences, the dominant
+   sense) so his candidates track attested usage rather than the bare definition. If the
+   corpus has zero hits for the word, note that and carry on — it's context, not a gate.
+
+   Then either let the user supply
    their own one-sentence story (they often do; accept it, apply only a tiny grammar fix
    like "need" → "needs", and confirm what makes it work), or dispatch `_nemo`
-   (`.claude/agents/_nemo.md`) with the word's pronunciation, definition, and
-   sound/meaning axes to brainstorm candidates — Nemo only *suggests*, so present its
-   candidates and let the user pick.
+   (`.claude/agents/_nemo.md`) with the word's pronunciation, definition,
+   sound/meaning axes, and the corpus context to brainstorm candidates — Nemo only
+   *suggests*, so present its candidates and let the user pick.
 
    **Collect `_logan`'s row fields from Nemo up front, per candidate**, so a later
    `_logan` dispatch (see step 4 and `docs/mnemonics/log.jsonl`'s schema in

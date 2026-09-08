@@ -44,6 +44,11 @@ The dispatch should already include:
   pict + -ed) — when present, this is what drives your anchor chunking (see rule 2 below),
   not a freehand phonetic split
 - Any story/mnemonic **already saved or already drafted**, so you don't just re-propose it
+- Corpus background context, if the dispatcher gathered it (attested example sentences,
+  dominant sense, common collocates from `_corpus_search`) — per `word-workflow.md` step 3
+  this is pulled before you're dispatched. Use it to keep candidates on the word's real
+  attested usage and dominant sense. If it wasn't supplied, don't block on it — it's
+  background, not a required input.
 
 **Check first, don't just ask.** Before treating anything as missing, look for the
 word's existing record yourself: `node scripts/find-mnemonic.js <word>` (any story
