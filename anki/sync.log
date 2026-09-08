@@ -1,0 +1,416 @@
+2026-08-03T15:55:20Z term=autologous auto-:added/synced-added log:added/synced-added -ous:added/synced-added
+2026-08-03T15:58:33Z term=hematology hemat-(matched existing haem- row, hematology already in examples):unchanged/no-sync-needed -logy:added/synced-added
+2026-08-03T16:08:10Z term=lobotomy lob-:added/synced-added -tomy:unchanged(lobotomy already in examples)/no-sync-needed
+[2026-08-04T01:13:49Z] term=pertain,contain,retain,maintain,sustain (shared root -tain/tenēre)
+  -tain: file=added, sync=added
+  per-: file=added, sync=added
+  con-: file=added, sync=added
+  re-: file=added, sync=added
+  manu-: file=added, sync=added
+  sub-: file=added, sync=added
+2026-08-04T01:23:15Z | term=apheresis (revision, not new term) | row: hair- | file: patched (clarified elision note) | sync: updated
+2026-08-04T01:31:56Z term=tumor file=added anki=added
+2026-08-04 09:49:36 term=bulge file=added sync=added
+[2026-08-04T02:14:39Z] term=diaeresis
+  dia- : file=added, sync=added
+  hair- : file=patched (added example: diaeresis), sync=updated
+  -esis : file=patched (added example: diaeresis), sync=updated
+2026-08-04T02:34:01Z term=apheresis file=added sync=added
+2026-08-04T02:51:21Z term=lymph file=patched(story updated) sync=updated
+2026-08-04T02:57:12Z term=plasma row=plas- file=added sync=added
+2026-08-04T02:57:12Z term=plasma row=-ma file=added sync=added
+2026-08-04T02:57:57Z term=plasma file=patched sync=updated
+2026-08-04T11:10:50+0800 term=hydrophobic file=patched(story: removed rabies sentence) sync=updated
+2026-08-04T03:26:12Z term=hydrophobic file=patched(story: two-line 🎭 format) sync=updated
+2026-08-04T03:43:23Z term=stack file=added sync=added
+2026-08-04T14:29:20Z term=extraneous (new deck anki/academic-word-parts.txt created, deck "02 Academic Word Parts")
+  extra- : file=added, sync=added
+  -aneus : file=added, sync=added
+2026-08-04T14:29:20Z term=consensus
+  sent- : file=added (academic-word-parts.txt), sync=added
+  con- : file=patched (medical-word-parts.txt, added example: consensus — skipped duplicate row in academic-word-parts.txt since Anki blocks duplicate Front across decks for same notetype), sync=updated
+2026-08-04T14:43:57Z term=intrinsic
+  intra- : file=added (academic-word-parts.txt), sync=added
+  secus : file=added (academic-word-parts.txt), sync=added — checked medical-word-parts.txt for intra-/secus first, no collision
+2026-08-04T14:43:57Z term=germane (whole-word entry — germanus not cleanly decomposable per Lewis-Short; germ-/-anus split would be speculative, no productive-suffix evidence like -aneus had)
+  germane : file=added (academic-word-parts.txt), sync=added
+2026-08-04T14:47:16Z term=coincidental (checked medical-word-parts.txt + academic-word-parts.txt for co-/con-/in-/cad-/-al first: con- already exists (patched for consensus, not merged — co- is a variant spelling shape, gets its own row per haem-/hemat- convention); in-/cad-/-al were all clear)
+  co- : file=added (academic-word-parts.txt), sync=added
+  in- : file=added (academic-word-parts.txt), sync=added
+  cad- : file=added (academic-word-parts.txt), sync=added
+  -al : file=added (academic-word-parts.txt), sync=added
+  (skipped -ent participial infix as grammatical scaffolding, same treatment as combining vowels)
+2026-08-04T15:06:45Z term=autonomous (checked medical-word-parts.txt first: auto- and -ous already exist there — patched both example lists rather than duplicating in academic-word-parts.txt)
+  auto- (medical-word-parts.txt) : file=patched(added example), sync=updated
+  -ous (medical-word-parts.txt) : file=patched(added example), sync=updated
+  nom (academic-word-parts.txt) : file=added, sync=added
+2026-08-04T15:06:45Z term=socratic — SKIPPED, no row added. Eponym from the proper name Socrates; does not meet the bar for a real recurring Greek/Latin morpheme (analogous to declining an arbitrary/eponymous INN prefix). The -ic suffix is genuine but already covered by the existing medical-deck -ic row with better examples; not worth a special-case patch for one eponymous word.
+2026-08-04T15:06:45Z term=pedagogical (checked medical-word-parts.txt first: -ic already exists there — patched; -al already exists in academic-word-parts.txt — patched)
+  -ic (medical-word-parts.txt) : file=patched(added example), sync=updated
+  -al (academic-word-parts.txt) : file=patched(added example), sync=updated
+  paid- (academic-word-parts.txt) : file=added, sync=added
+  agog (academic-word-parts.txt) : file=added, sync=added
+2026-08-04T15:06:45Z term=inquiry (checked academic-word-parts.txt first: in- already exists — patched, same directional sense confirmed via inquiro = in-quaero)
+  in- (academic-word-parts.txt) : file=patched(added example), sync=updated
+  quir- (academic-word-parts.txt) : file=added, sync=added
+2026-08-04T15:06:45Z term=argument
+  argu- (academic-word-parts.txt) : file=added, sync=added
+  -ment (academic-word-parts.txt) : file=added, sync=added — confirmed unrelated to the homograph Latin noun "mentum" (chin); -mentum is its own noun-forming suffix
+2026-08-04T15:06:45Z term=competency (checked medical-word-parts.txt con- and academic-word-parts.txt co- first — com- is a third assimilated spelling shape before b/p/m, distinct Front, no collision)
+  com- (academic-word-parts.txt) : file=added, sync=added
+  pet- (academic-word-parts.txt) : file=added, sync=added
+  -cy (academic-word-parts.txt) : file=added, sync=added
+2026-08-04T15:06:45Z term=cartography (checked both deck files for -graphy/-graph/chart/cart first — none existed)
+  chart- (academic-word-parts.txt) : file=added, sync=added
+  graph (academic-word-parts.txt) : file=added, sync=added
+2026-08-04T15:12:49Z term=formation (reading-room-terms.txt) : file=added, sync=added
+2026-08-05T00:48:51Z term=stack (reading-room-terms.txt) : file=patched, sync=updated
+2026-08-05T00:58:13Z term=allogeneic rows: -ic file=patched sync=updated | allo- file=added sync=added | gen file=added sync=added
+2026-08-05T01:10:05Z	term=formation	row=patched	sync=updated
+[2026-08-05T01:18:38Z] term=plas- (mnemonic patch, no re-decomposition)
+  plas-: file=patched(added mnemonic line), sync=updated
+2026-08-05T06:07:32Z term=taxonomy rows: tax- file=added sync=added | -nomy file=added sync=added
+2026-08-05T06:13:22Z term=agog (reading-room-terms.txt) : file=added, sync=failed (duplicate — existing Basic note "agog" from academic-word-parts.txt, tag academic-word-parts, blocks add via collection-wide dup check on Front+model)
+2026-08-05T06:20:00Z term=secus (medical-word-parts.txt) : file=added, sync=failed (duplicate — existing Basic note "secus" from academic-word-parts.txt, tag academic-word-parts, blocks add via collection-wide dup check on Front+model)
+[2026-08-05T06:18:19Z] term=argu- (mnemonic patch, no re-decomposition)
+  argu-: file=patched(added mnemonic line), sync=updated
+2026-08-05T06:25:00Z term=agog (merge) : collision resolved — folded Greek root sense (agog- "leading, guiding", ex. pedagogical/demagogue/synagogue) into the reading-room-terms.txt vocab card as a trailing note; removed the now-redundant row from academic-word-parts.txt; deleted stale Academic Word Parts Anki note (1785855990586); re-synced merged note into Terms deck : sync=added
+2026-08-05T06:30:00Z term=secus (merge) : collision resolved — same root (seq-/sec-, "follow") in both files; merged example lists (consecutive/sequel/execute/second/subsequent + intrinsic/extrinsic) and user's mnemonic into the existing academic-word-parts.txt row; removed redundant medical-word-parts.txt row : sync=updated
+2026-08-05T06:41:13Z term=extraneous (reading-room-terms.txt) : file=added(row, then fixed corrupted IPA byte-sequence in printf-appended row via Edit), sync=added
+2026-08-05T08:25:51Z term=residue (reading-room-terms.txt) : file=added(row), sync=added
+2026-08-06T10:28:59Z term=compete (reading-room-terms.txt) : file=added(row), sync=added
+2026-08-06T02:32:28Z term=strive (reading-room-terms.txt) : file=added(row), sync=added
+2026-08-06T08:12:36Z term=anatomy (medical-word-parts.txt) : row=-tomy status=patched(examples+=anatomy) sync=updated; row=ana- status=added sync=added
+2026-08-06T10:49:59Z term=penalty (reading-room-terms.txt) : file=added(row), sync=added
+2026-08-07T08:51:34Z term=germane (reading-room-terms.txt) : file=added(row), sync=connection-error (AnkiConnect addNote rejected as duplicate — an existing Basic-notetype note "germane" from academic-word-parts.txt/deck already occupies that Front; AnkiConnect's default duplicate check is notetype-wide, not deck-scoped, so it blocks cross-deck adds). data.json write succeeded (deck["germane"] added). Needs manual resolution in Anki or an anki-sync.js duplicateScope fix before this row can be pushed live.
+2026-08-08T12:29:46Z	-log-	patched (story line added)	updated
+2026-08-08 20:34:54	dia-	patched (added mnemonic story line)	synced (updated)
+[2026-08-09 09:23:03 +0800] term=anaemia file: haem- patched (added "anaemia" example), -ia unchanged (already had "anemia"), an- added | sync: haem- updated, an- added
+2026-08-09T01:35:21Z term=agog file=patched sync=updated
+2026-08-09T01:41:17Z	term=tacrolimus	row=patched	sync=updated
+2026-08-09T01:51:22Z term=inpatient row=patched sync=updated
+2026-08-10 09:01:16+0800 term=strive row=patched sync=updated
+2026-08-10T01:21:37Z	term=agog	row=patched	sync=updated
+2026-08-10 09:23:06 term=agog row=patched sync=updated
+2026-08-10T07:25:46Z	term=inhibitor	row=added	sync=added
+2026-08-10T07:33:04Z term=oncology (medical-word-parts.txt) : row=onc- status=added sync=added; row=-logy status=patched(examples+=oncology) sync=updated
+[2026-08-10T07:34:09Z] term=incident row=added sync=added
+2026-08-10T07:36:09Z term=steroid file: ster- added, -oid added | sync: ster- added, -oid added
+2026-08-10 15:37:19 term=compliance file=added sync=added
+2026-08-10T07:38:53Z term=colitis parts: col- [added, sync=added]; -itis [added, sync=added]
+2026-08-10T15:39:30Z term=onwards file=added sync=added
+2026-08-10T08:38:17Z	term=colon	row=added	sync=added
+2026-08-10T08:44:03Z term=intestine file=added sync=added
+2026-08-10T08:44:32Z term=colon (intestine) file=added sync=added
+2026-08-11 10:21:22 | term=restraint | file=added | sync=added
+2026-08-11 10:21:47 | term=adverse | file=added | sync=added
+2026-08-11 10:22:14 | term=mediated | file=added | sync=added
+[2026-08-11T02:22:43Z] thyroid — thyr- (Greek, shield): added to file, synced: added. -oid (Greek, resembling/form of): unchanged (thyroid already in examples), sync: unchanged.
+2026-08-11T02:26:00Z term=cytotoxic rows: cyt- file=added sync=added | tox- file=added sync=added | -ic file=patched(added example: cytotoxic) sync=updated
+2026-08-11 10:22:49 | term=trail | file=added | sync=added
+2026-08-11 10:23:17 | term=trial | file=added | sync=added
+2026-08-11 10:23:35 | term=pattern | file=added | sync=added
+2026-08-11T02:30:00Z term=chemotherapy rows: chem- file=added sync=added (flag: khemeia's ultimate etymology is disputed per LSJ — Greek-attested but origin uncertain) | -therapy file=added sync=added
+2026-08-11 10:23:55 | term=coarse | file=added | sync=added
+2026-08-11T02:31:00Z term=colitis rows: col- unchanged (colitis already in examples) sync=not-needed | -itis unchanged (colitis already in examples) sync=not-needed
+2026-08-11T02:33:00Z term=pneumonitis rows: pneumon- file=added sync=added | -itis file=patched(added example: pneumonitis) sync=updated
+2026-08-11T02:35:00Z term=steroid rows: ster- unchanged (steroid already in examples) sync=not-needed | -oid unchanged (steroid already in examples) sync=not-needed
+2026-08-11 10:25:12 | term=adjudicated | file=added | sync=added
+2026-08-11 10:25:33 | term=onset | file=added | sync=added
+2026-08-11T02:40:00Z term=infusion rows: in- (academic-word-parts.txt, matched existing row, meaning "upon, into, on") file=patched(added example: infusion) sync=updated | fus- (medical-word-parts.txt) file=added sync=added | -ion (medical-word-parts.txt) file=added sync=added
+2026-08-11 10:26:06 | term=colitis | file=added | sync=added
+2026-08-11 10:26:28 | term=pneumonitis | file=added | sync=added
+2026-08-11 10:26:52 | term=steroid | file=added | sync=added
+2026-08-11 10:28:15 | term=infusion | file=patched | sync=updated
+2026-08-12 09:54:35 | term=adjudicated | file=patched | sync=updated
+2026-08-12 10:12:05 | term=pattern | file=patched | sync=updated
+2026-08-12T12:03:36Z	term=unbidden	file=added	sync=added
+2026-08-12 20:03:45 term=faintly file=added sync=added
+2026-08-12 20:04:40 | term=pound | file=added | sync=added
+2026-08-13 16:27:18 term=dose row=added sync=added
+2026-08-13 16:27:18	term=moderate	row=added	sync=added
+2026-08-13 16:28:05	term=dozen	row=added	sync=added
+2026-08-13 16:28:07	term=warrant	row=added	sync=added
+2026-08-13 16:28:54	term=induce	row=added	sync=added
+2026-08-13 16:29:26	term=plateau	row=added	sync=added
+2026-08-13T08:29:30Z term=neutropenia file: neutr- added, -penia added | sync: neutr- added, -penia added
+2026-08-13T08:29:30Z term=diarrhea file: dia- patched (added diarrhea to examples), -rrhea added | sync: dia- updated, -rrhea added
+2026-08-13T08:29:30Z term=norovirus file: vir- added (noro- skipped — eponym from Norwalk, Ohio, no confirmed morpheme meaning) | sync: vir- added
+2026-08-13T08:29:30Z term=corticosteroids file: cortic- added, ster- patched (added corticosteroid to examples), -oid patched (added corticosteroid to examples) | sync: cortic- added, ster- updated, -oid updated
+2026-08-13T08:29:30Z term=morbidity file: morb- added, -id added, -ity added | sync: morb- added, -id added, -ity added
+2026-08-13T08:29:30Z term=mortality file: mort- added, -al added, -ity unchanged (already added by morbidity pass, same row) | sync: mort- added, -al added
+2026-08-13T08:29:33Z term=refractory (medical-word-parts.txt) rows: re- file=patched(added example: refractory) sync=updated | fract- file=added sync=added | -ory file=added sync=added
+2026-08-13T08:29:33Z term=hepatitis (medical-word-parts.txt) rows: hepat- file=added sync=added | -itis file=patched(added example: hepatitis) sync=updated
+2026-08-13T08:29:33Z term=cytokine (medical-word-parts.txt) rows: cyt- file=patched(added example: cytokine) sync=updated | -kine file=added sync=added
+2026-08-13T08:29:33Z term=syndrome (medical-word-parts.txt) rows: syn- file=added sync=added | -drome file=added sync=added
+2026-08-13T08:29:33Z term=pharmacovigilance (medical-word-parts.txt) rows: pharmaco- file=added sync=added | vigilance file=added sync=added
+2026-08-13 16:29:37	term=stools	row=added	sync=added
+2026-08-13T08:30:08Z term=eligibility file=added sync=added
+2026-08-13T08:30:08Z term=adjacent file=added sync=added
+2026-08-13T08:30:08Z term=adherence file=added sync=added
+2026-08-13T08:30:08Z term=roster file=added sync=added
+2026-08-13T08:30:08Z term=discrete file=added sync=added
+2026-08-13 16:30:26	term=causality	row=added	sync=added
+2026-08-13 16:30:40	term=episode	row=added	sync=added
+2026-08-13 16:31:20	term=escalation	row=added	sync=added
+2026-08-13 16:31:45	term=plausibly	row=added	sync=added
+2026-08-13T13:12:02Z term=overgrown file=added sync=added
+2026-08-13T13:13:07Z term=translucent file=added sync=added
+2026-08-13T13:13:55Z term=innate file=added sync=added
+2026-08-13T13:14:53Z term=affinity file=added sync=added
+2026-08-13T21:15:02Z	term=mote	file=added	sync=added
+2026-08-13T21:15:02Z	term=pale	file=added	sync=added
+2026-08-13T21:15:02Z	term=literal	file=added	sync=added
+2026-08-13T21:15:02Z	term=undeniable	file=added	sync=added
+2026-08-13T21:15:02Z	term=reassuring	file=added	sync=added
+2026-08-13T21:15:02Z	term=relief	file=added	sync=added
+2026-08-13T21:15:02Z	term=summoning	file=added	sync=added
+2026-08-13T21:15:02Z	term=least	file=added	sync=added
+2026-08-13T21:15:02Z	term=emboldened	file=added	sync=added
+2026-08-13T21:15:02Z	term=evaporate	file=added	sync=added
+2026-08-13T21:15:02Z	term=sting	file=added	sync=added
+2026-08-13T21:15:12+0800 term=steep file=added sync=added
+2026-08-13T21:15:12+0800 term=tavern file=added sync=added
+2026-08-13T21:15:12+0800 term=slates file=added sync=added
+2026-08-13T21:15:12+0800 term=parchment file=added sync=added
+2026-08-13T21:15:12+0800 term=savory file=added sync=added
+2026-08-13T21:15:12+0800 term=creak file=added sync=added
+2026-08-13T21:15:12+0800 term=curl file=added sync=added
+2026-08-13T21:15:12+0800 term=vapor file=added sync=added
+2026-08-13T21:15:12+0800 term=scatter file=added sync=added
+2026-08-13T21:15:12+0800 term=patrons file=added sync=added
+2026-08-13T13:15:20Z	term=rack	file=added	sync=added
+2026-08-13T13:15:20Z	term=brisk	file=added	sync=added
+2026-08-13T13:15:20Z	term=jerk	file=added	sync=added
+2026-08-13T13:15:20Z	term=stool	file=added	sync=added
+2026-08-13T13:15:20Z	term=flinching	file=added	sync=added
+2026-08-13T13:15:20Z	term=clock	file=added	sync=added
+2026-08-13T13:15:20Z	term=huff	file=added	sync=added
+2026-08-13T13:15:20Z	term=throne	file=added	sync=added
+2026-08-13T13:15:20Z	term=wrecked	file=added	sync=added
+2026-08-13T13:15:20Z	term=beat	file=added	sync=added
+2026-08-13T13:15:26Z	term=cobblestone	file=added	sync=added
+2026-08-13T13:15:26Z	term=tessellated	file=added	sync=added
+2026-08-13T13:15:26Z	term=hum	file=added	sync=added
+2026-08-13T13:15:26Z	term=idling	file=added	sync=added
+2026-08-13T13:15:26Z	term=breached	file=added	sync=added
+2026-08-13T13:15:26Z	term=squat	file=added	sync=added
+2026-08-13T13:15:26Z	term=apparently	file=added	sync=added
+2026-08-13T13:15:26Z	term=spiraling	file=added	sync=added
+2026-08-13T13:15:26Z	term=inward	file=added	sync=added
+2026-08-13T13:15:26Z	term=timber	file=added	sync=added
+2026-08-13T13:15:26Z term=malformed file=added sync=added
+2026-08-13T13:15:28Z term=prologue file=added sync=added
+2026-08-13T13:15:28Z term=gnarly file=added sync=added
+2026-08-13T13:15:28Z term=sweating file=added sync=added
+2026-08-13T13:15:28Z term=unwinding file=added sync=added
+2026-08-13T13:15:28Z term=cloak file=added sync=added
+2026-08-13T13:15:28Z term=suspiciously file=added sync=added
+2026-08-13T13:15:28Z term=tingle file=added sync=added
+2026-08-13T13:15:28Z term=weathered file=added sync=added
+2026-08-13T13:15:28Z term=signpost file=added sync=added
+2026-08-13T13:15:28Z term=runes file=added sync=added
+2026-08-13T13:15:28Z term=realms file=added sync=added
+2026-08-13T13:16:15Z term=circuitry file=added sync=added
+2026-08-13T13:16:54Z term=etched file=added sync=added
+2026-08-13T13:17:38Z term=dormant file=added sync=added
+2026-08-13T13:18:41Z term=inscription file=added sync=added
+2026-08-13T13:19:43Z term=implied file=added sync=added
+2026-08-14 08:58:40 +0800 term=pound file=patched sync=updated
+2026-08-15T14:20:41+0800 term=causality file=patched sync=updated
+2026-08-15T06:50:54Z term=escalation file=patched(story-added) sync=updated
+2026-08-15T08:08:55Z term=affinity file=patched(story-added) sync=updated
+2026-08-15T11:22:36Z term=gnarly file=patched sync=updated
+2026-08-15T11:43:39Z term=suspiciously file=patched sync=updated (removed stale unresolved 🎭 candidate lines from prior partial sync)
+2026-08-15T11:58:26Z term=tingle file=patched sync=updated
+2026-08-15T12:00:14Z term=suspiciously file=patched sync=updated
+2026-08-15T12:04:13Z term=tingle file=patched sync=updated
+2026-08-15T12:15:03Z term=etched file=patched sync=updated
+2026-08-15T12:15:32Z term=dormant file=patched sync=updated
+2026-08-15T12:25:18Z term=mote file=patched sync=updated
+2026-08-15T12:27:17Z term=undeniable file=patched(stale-3-story-candidates-replaced) sync=updated
+2026-08-15T12:33:24Z term=evaporate file=patched(overwrote-stale-row) sync=updated
+2026-08-15T13:09:58Z term=vapor file=patched(overwrote say/def/sound/meaning, dropped stale story candidates) sync=updated
+2026-08-15T13:16:37Z term=vapor row=patched sync=updated
+2026-08-17 10:28:39	term=stools	file=patched	anki=synced
+2026-08-17 10:30:44	term=wistful	file=added	anki=added
+2026-08-17 10:34:07	term=stools	data.json patched	anki row rebuilt	sync=OK
+2026-08-17 10:35:12	term=wistful	data.json story patched	anki row rebuilt (+2 Nemo alternates, unreviewed)	sync=OK
+2026-08-17T10:37:05Z	term=wistful	file=patched	anki=updated
+2026-08-17T02:47:01Z term=hose file=added anki=added
+2026-08-17T02:48:14Z	term=vapid	file=added	anki=added
+2026-08-17T06:14:22Z	term=circulation	file=added	sync=added
+2026-08-17T06:15:02Z	term=tertiary	file=added	sync=added
+2026-08-17T06:15:15Z	term=hose	file=patched	anki=updated
+2026-08-17T06:17:25Z	term=circulation	data.json story patched	anki row rebuilt (+2 Nemo alternates, unreviewed)	sync=OK
+2026-08-17T06:18:12Z	term=tertiary	data.json story patched	anki row rebuilt (+2 Nemo alternates, unreviewed)	sync=OK
+2026-08-17T07:10:39Z | term=inward | file=patched | anki=synced
+2026-08-17T07:26:18Z	term=weave	data.json story patched	anki row added (+2 Nemo alternates, unreviewed)	sync=OK
+2026-08-17T07:26:20Z	term=levee	data.json story patched	anki row added (+2 Nemo alternates, unreviewed)	sync=OK
+2026-08-17T07:26:44Z	term=susceptible	data.json story patched	anki row added (+2 Nemo alternates, unreviewed)	sync=OK
+2026-08-17T07:43:19Z	term=levee	file=patched	sync=updated
+2026-08-17T08:49:44Z	oncology	onc-: unchanged (already present)/synced unchanged; -logy: unchanged (already present)/synced unchanged
+2026-08-17T08:50:31Z term=conducting file=added sync=added
+2026-08-17T08:51:55Z term=stimulate file=added sync=added
+2026-08-17T08:52:28Z term=indispensable file=added sync=added
+2026-08-17T08:52:30Z term=essential file=added sync=added
+2026-08-17T08:52:32Z	term=bibliography	file=added	sync=added
+2026-08-17T08:53:37Z	term=conducting	file=updated	sync=updated
+2026-08-17T08:54:14Z	term=stimulate	file=updated	sync=updated
+2026-08-17T08:57:01Z	term=bibliography	file=updated	sync=updated
+2026-08-17T08:57:51Z	term=essential	file=updated	sync=updated
+2026-08-17T08:58:04Z	term=conducting	file=updated	sync=updated
+2026-08-18T03:12:06Z	term=journeyman	file=added	sync=added
+2026-08-18T03:12:15Z	term=acquired	file=added	sync=added
+2026-08-18T03:12:21Z term=portrait file=added sync=added
+2026-08-18T03:12:24Z term=mechanic file=added sync=added
+2026-08-18T03:15:41Z term=obtained file=added sync=added
+2026-08-18T03:15:46Z term=component file=added sync=added
+2026-08-18T03:16:06Z term=eligible file=added sync=added
+2026-08-18T03:16:08Z term=theoretical file=added sync=added
+2026-08-18T03:16:32Z term=apprenticeship file=added sync=added
+2026-08-18T03:17:01Z term=automobile file=added sync=added
+2026-08-18T03:17:01Z term=mechanic file=patched sync=updated
+2026-08-18T03:17:36Z term=acquired file=patched sync=updated
+2026-08-18T03:18:01Z term=journeyman file=patched sync=updated
+2026-08-18T03:18:50Z term=obtained file=patched sync=updated
+2026-08-18T03:19:01Z term=theoretical file=patched sync=updated
+2026-08-18T03:19:02Z term=component file=patched sync=updated
+2026-08-18T03:19:04Z term=portrait file=patched sync=updated
+2026-08-18T03:19:05Z term=eligible file=patched sync=updated
+2026-08-18T03:19:39Z term=apprenticeship file=patched sync=updated
+2026-08-18T04:25:14Z term=garage file=added sync=added
+2026-08-18T04:25:47Z term=liability file=added sync=added
+2026-08-18T04:26:05Z term=trades file=added sync=added
+2026-08-18T04:26:23Z term=certify file=added sync=added
+2026-08-18T04:26:51Z term=Quebec file=added sync=added
+2026-08-18T04:27:22Z term=garage file=updated sync=updated
+2026-08-18T04:27:39Z term=liability file=updated sync=updated
+2026-08-18T04:27:54Z term=trades file=updated sync=updated
+2026-08-18T04:29:11Z term=certify file=updated sync=updated
+2026-08-18T04:29:34Z term=Quebec file=updated sync=updated (auto-picked story, prepare-words exception)
+2026-08-18T04:38:32Z term=eligibility file=updated sync=updated (auto-picked story, batch-prep exception)
+2026-08-18T04:38:40Z term=invigilator file=added sync=added
+2026-08-18T04:39:06Z term=remediation file=added sync=added
+2026-08-18T04:39:09Z term=regional file=added sync=added
+2026-08-18T04:40:00Z term=pursuing file=added sync=added
+2026-08-18T04:40:57Z term=regional file=updated sync=updated (auto-picked story, batch-prep exception)
+2026-08-18T04:41:02Z term=invigilator file=updated sync=updated (auto-picked story, batch-prep exception)
+2026-08-18T04:41:18Z term=remediation file=updated sync=updated (auto-picked story, batch-prep exception)
+2026-08-18T04:42:02Z term=pursuing file=updated sync=updated (auto-picked story, batch-prep exception)
+2026-08-18 13:28:03 term=substance file=added sync=added
+2026-08-18T05:32:34Z term=parch file=added sync=added
+2026-08-18T13:37:01+0800 term=stance file=added sync=added
+2026-08-18T05:43:43Z term=substance file=updated sync=updated (story finalized via update-anki-story)
+2026-08-18T05:49:13Z | term=stance | data.json=patched | anki-row=rebuilt | anki-sync=updated
+2026-08-18T05:52:43Z term=studio file=added sync=added
+2026-08-18T05:55:07Z term=parch file=patched sync=updated
+2026-08-18T05:59:53Z term=stew file=added sync=added
+2026-08-18 14:03:05	term=studio	file=patched	sync=updated
+2026-08-18T06:06:59Z | term=stew | data.json patched | Anki row rebuilt+synced (story added)
+2026-08-18T06:21:46Z	term=coarse	file=patched	sync=updated
+2026-08-18T06:28:47Z	term=pale	file=patched	sync=updated
+2026-08-18T06:37:00Z term=affinity file=patched sync=updated
+2026-08-18T06:54:27Z	term=wrecked	file=patched	anki=synced
+2026-08-18T15:14:00+0800	term=obtained	file=patched	sync=updated
+2026-08-18T07:16:40Z	term=streak	file=added	sync=added
+2026-08-18T07:22:10Z term=escalation file=patched sync=updated
+2026-08-18 15:24:34 term=streak file=patched sync=updated
+2026-08-18T13:08:53Z | term=vain | file=added | sync=added
+2026-08-18T13:10:25Z | term=inert | file=added | sync=added
+2026-08-18T13:11:03Z | term=cracks | file=added | sync=added
+2026-08-18T13:11:16Z | term=shuttered | file=added | sync=added
+2026-08-18T13:11:34Z	term=latch	file=added	sync=added
+2026-08-18T13:11:36Z	term=wrung	file=added	sync=added
+2026-08-18T13:12:06Z	term=cryptic	file=added	sync=added
+2026-08-18T13:13:47Z	term=ominous	file=added	sync=added
+2026-08-18T13:14:55Z	term=vain	file=updated	sync=updated
+2026-08-18T13:15:02Z	term=shuttered	file=updated	sync=updated
+2026-08-18T13:15:35Z	term=latch	file=updated	sync=updated
+2026-08-18T13:15:36Z	term=idling	file=updated	sync=updated
+2026-08-18T13:16:04Z	term=cracks	file=updated	sync=updated
+2026-08-18T13:16:15Z	term=wrung	file=updated	sync=updated
+2026-08-18T13:16:41Z	term=inert	file=updated	sync=updated
+2026-08-18T13:16:49Z	term=cryptic	file=updated	sync=updated
+2026-08-18T13:18:04Z	term=ominous	file=updated	sync=updated
+2026-08-19T00:36:29Z term=plasma file=patched sync=ok
+2026-08-19T00:45:48Z	term=bulge	file=patched	sync=updated
+2026-08-19T01:03:35Z	term=inert	data.json=patched	anki=synced
+2026-08-19T01:25:04Z	term=paucity	file=patched	sync=updated
+2026-08-19T02:01:11Z	term=regional	file=patched	sync=updated
+2026-08-19 10:14:05 | term=latch | data.json patched | anki row rebuilt (alternates dropped) | anki-sync: Updated
+2026-08-19 10:29:17 | term=breached | data.json patched | anki row rebuilt | anki-sync: Updated
+2026-08-19 10:32:15 | term=steer | data.json new entry | anki row added | anki-sync: Added
+2026-08-19 10:32:40 | term=levee | data.json patched | anki row rebuilt | anki-sync: Updated
+2026-08-19 10:37:07 | term=steer | data.json patched | anki row rebuilt | anki-sync: Updated
+2026-08-19T04:05:31Z term=apprenticeship file=patched sync=updated
+2026-08-19T07:52:47Z term=breadth file=added sync=added
+2026-08-19 15:54:29 term=competence file=added sync=added
+2026-08-19T07:55:42Z | term=breadth | data.json patched (story added) | anki row rebuilt (alternates appended) | anki-sync: Updated
+2026-08-19T07:57:22Z | term=competence | data.json patched (story added) | anki row rebuilt (alternates appended) | anki-sync: Updated
+2026-08-19T13:34:00Z term=excelling row=added sync=added
+2026-08-19T13:34:16Z term=legible file=added anki=added
+2026-08-19T13:34:28Z term=combustion file=added sync=added
+2026-08-19T13:35:19Z	term=decent	row=added	sync=added
+2026-08-19T13:35:40Z term=fleet file=added sync=added
+2026-08-19T13:35:58Z term=granular file=added sync=added
+2026-08-19T13:35:59Z term=curriculum file=added sync=added
+2026-08-19T13:36:24Z term=inducing file=added sync=added
+2026-08-19T13:36:54Z term=slate file=added sync=added
+2026-08-19T13:36:55Z term=revised file=added sync=added
+2026-08-19T13:38:48Z term=decent file=updated sync=updated
+2026-08-19T13:38:49Z term=fleet file=updated sync=updated
+2026-08-19T13:38:50Z term=excelling file=updated sync=updated
+2026-08-19T13:39:58Z term=legible file=updated sync=updated
+2026-08-19T13:40:22Z term=combustion file=updated sync=updated
+2026-08-19T13:40:22Z term=granular file=updated sync=updated
+2026-08-19T13:40:40Z term=slate file=updated sync=updated
+2026-08-19T13:40:57Z term=curriculum file=updated sync=updated
+2026-08-19T13:41:21Z term=inducing file=updated sync=updated
+2026-08-19T13:41:29Z term=revised file=updated sync=updated
+2026-08-28T02:15:22Z term=adjoining file=added sync=added
+2026-08-28T08:23:46Z term=depicted file=added sync=added
+2026-08-28T08:25:36Z term=depict (parts only) file: de- added, pict added | sync: de- added, pict added
+2026-08-28T08:30:52Z term=occupy file=added sync=added
+2026-08-28T09:11:40Z term=occupy file=anki/reading-room-terms.txt status=patched(story) sync=updated
+[2026-08-28 17:15:12] term=preconceived
+  con- : file=patched (added example "preconceive") sync=updated
+  pre- : file=added sync=added
+  -ceive : file=added sync=added
+  -d (past participle ending) : skipped — native English/Germanic inflectional suffix, not a Latin morpheme; no row written
+2026-08-29T01:09:15Z	term=ominous	data.json=patched	anki-row=rebuilt	anki-sync=updated
+2026-08-29T01:25:35Z term=incident file=patched sync=updated
+2026-08-29T01:54:40Z term=interplay file=added sync=added
+2026-09-02T01:52:10Z	term=stamina	file=added	sync=added
+2026-09-03T01:58:37Z	consensus	-us: file added, sync added
+2026-09-03T02:02:40Z	homogeneous | homo-: added/synced added | -gen-: patched/synced updated | -ous: patched/synced updated
+2026-09-03T02:06:20Z	heterogeneous | hetero-: added/synced added | -gen-: patched/synced updated | -ous: patched/synced updated
+2026-09-03T02:21:40Z	premise | pre-: patched/synced updated | -mise: added/synced added
+2026-09-03T02:22:08Z	term=heuristic	heur-:added/synced-added	-istic:added/synced-added
+2026-09-03T02:22:16Z term=appropriate file=added sync=added
+2026-09-03T02:22:16Z term=hedge file=added sync=added
+2026-09-03T02:23:05Z term=ancestor file=added sync=added
+2026-09-03T02:23:15Z term=plausible file=added sync=added
+2026-09-03T02:24:12Z	term=hedge file=updated sync=updated
+2026-09-03T02:25:14Z	term=appropriate file=patched sync=updated story=auto-picked alternates=3
+2026-09-03T02:25:35Z	term=plausible file=updated sync=updated story=auto-picked alternates=0
+2026-09-03T02:26:05Z	term=ancestor file=updated sync=updated story=auto-picked alternates=2
+2026-09-03T02:27:23Z	term=plausible file=repaired sync=updated story=de-blobbed alternates=2
+2026-09-03T02:27:23Z	term=hedge file=repaired sync=updated story=de-blobbed alternates=2
+2026-09-03T15:12:44Z	term=causality	file=patched	sync=updated
+2026-09-05T08:20:55Z	term=emboldened	file=patched	anki=updated
+2026-09-05T09:13:38Z term=stance file=patched sync=updated
+2026-09-05T12:07:58Z term=robe file=added sync=added
+2026-09-05T12:10:01Z term=veil file=added sync=added
+2026-09-05T12:10:09Z term=wail file=added sync=added
+2026-09-05T12:10:18Z term=pail file=added sync=added
+2026-09-05 20:16:15 term=robe file=patched sync=updated
+2026-09-05T12:29:59Z | term=pale | data.json patched | anki row rebuilt | anki-sync: Updated "pale"
+2026-09-06T01:41:04Z	term=vapor	data.json=patched	anki-sync=ok
+2026-09-06T02:16:17Z	term=warrant	file=reading-room-terms.txt	status=patched	anki-sync=ok
+ term=patrons file=patched sync=ok
+2026-09-06T09:36:35Z term=premise file=added sync=added
+2026-09-06T11:05:59Z	term=premise	file=patched	sync=updated
+2026-09-07T01:58:39Z term=induce file=patched sync=ok story-finalized
+2026-09-07T11:36:48Z	term=inert	file=patched	sync=updated
+2026-09-08T09:19:40Z term=coordinate file=added sync=added

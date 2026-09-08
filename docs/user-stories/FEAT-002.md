@@ -67,6 +67,7 @@ independent, parallelizable unit of work.
 - [x] [US-023](US-023.md) Display IPA in the `ipa-lookup` CLI subcommand (depends on US-019 + US-020 + US-021 + US-022)
 
 ## Follow-up (out of scope in the stories above, tracked separately)
+
 - Re-run `clojure -M -m nemo-words.core populate-lexical-sets` against
   `resources/data/ga_rp.tsv` (same follow-up US-016 flagged) and
   re-check whether [US-015](US-015.md)'s `lexical-sets-table` needs any
@@ -83,3 +84,4 @@ independent, parallelizable unit of work.
   IPA-authored targets into ARPABET/MRPA nucleus tokens directly (rather
   than converting per query at lookup time, as [US-022](US-022.md) does), if
   per-query conversion proves too slow in practice.
+

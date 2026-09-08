@@ -1,0 +1,227 @@
+# US-026 data investigation
+
+_Verified this session by streaming/`awk`/`comm`/one-off Node scripts against
+the real files in `resources/data/` (nothing under `src/` touched). Word
+lists diffed with `sort -u` + `comm`, not eyeballed._
+
+## 1. Recomputed baseline counts
+
+`resources/data/ga_rp.tsv` actually has **294,408** rows (`wc -l` reports
+294,407 because the file has no trailing newline after the last row — the
+Background's 294,407 is an off-by-one, not a real discrepancy).
+
+| metric | count | % of 294,408 |
+|---|---|---|
+| missing GA (col 2 empty) | 168,485 | 57.2% |
+| missing RP (col 3 empty) | 57,655 | 19.6% |
+| missing both | 0 | 0% |
+
+Confirms the Background's manual-check numbers exactly, and confirms
+"missing both" is genuinely zero (every row has at least one side, per
+`build-ga-rp-rows`'s `(when (or (seq ga) (seq rp)) ...)` guard).
+
+## 2. Cross-ref overlap, all four candidate dicts
+
+| missing side | candidate dict | unique-word hits | as % of missing |
+|---|---|---|---|
+| GA (168,485) | en_US.txt | **0** | 0.0% |
+| GA (168,485) | wikipron_us_broad.tsv | 10,502 | 6.2% |
+| RP (57,655) | en_UK.txt | 2,240 | 3.9% |
+| RP (57,655) | wikipron_uk_broad.tsv | 2,748 | 4.8% |
+
+Union recoverable: **10,502 GA cells** (wikipron_us only — en_US adds
+nothing) and **3,727 RP cells** (en_UK ∪ wikipron_uk). Overall: 14,229 of
+226,140 missing cells (168,485+57,655) would be fillable from these four
+files — **~6.3% of the total gap**, not most of it.
+
+The en_US.txt 0-overlap is real, not a parsing bug (spot-checked
+apostrophe encoding matches, straight quotes both sides;
+`comm -12` on independently-sorted word lists also returns 0). Reason:
+`en_US.txt`'s 125,927-word vocabulary is almost entirely (125,798/125,927
+= 99.9%) a subset of the *has-GA* portion of `ga_rp.tsv` already — it
+looks like it shares (or was derived from) essentially the same GA
+headword list as `cmudict.dict`, so it adds zero net new GA coverage over
+what's already there.
+
+For RP, `wikipron_uk_broad.tsv` and `en_UK.txt` only partially overlap
+each other on the missing-RP set: 1,261 words both dicts have, 979 only
+in en_UK.txt, 1,487 only in wikipron_uk_broad.tsv. So wikipron_uk_broad
+(currently missing a `brand->resource` entry per Background) is not
+redundant with en_UK.txt — it contributes 1,487 RP recoveries en_UK.txt
+alone would miss, i.e. it's worth wiring up if this becomes a real story.
+
+## 3. Quality of the recoverable slice (sampled)
+
+Random samples of the words a cross-ref hit would actually recover:
+
+- **missing-GA recovered via wikipron_us_broad** (30 of 10,502, evenly
+  spaced): `abaci, affectability, araucaria, beaus, brevet, cemental,
+  cloys, correctives, deckle, domiciliary, epitomic, firstest, gargle,
+  habitualize, identically, irrevocability, liaise, membraneous,
+  nectarine, overenthusiastic, pestilential, prandial, quinquina,
+  roughhouse, seraglio, spaciousness, superego, thunderclap,
+  unadulterate, vindicative` — real headwords/inflected forms, some
+  archaic/rare but genuine English, no junk observed in this sample.
+- **missing-RP recovered via en_UK.txt**: `aba, amphitheater, babushka,
+  birdies, burrito, chico, couture, degradable, dow, euthanize, flyby,
+  globally, heft, illiquid, ki, lox, melatonin, mojo, nacho, oka,
+  phenotype, pretrial, recharged, repossession, scad, simplistic,
+  stomata, thingamabob, unfocused, wieners` — again mostly real,
+  everyday-to-technical vocabulary.
+- **missing-RP recovered via wikipron_uk_broad**: `aba, ammo, ayo,
+  biomedical, brodie, cham, comly, debarment, doable, epoxy, flam, gib,
+  gulag, hoppy, jheel, lagniappe, lue, meese, moms, neoteny, orf,
+  piddock, puffery, resh, scammer, skype, stromboli, tho, utz, wor` —
+  mostly legitimate, but a handful (`lue`, `wor`, `utz`, `resh`, `comly`)
+  look like crowd-sourced-dictionary noise (short strings, unclear
+  headword status) — expect wikipron to need a light plausibility filter
+  if used as a real source, not a blind merge.
+
+Automated classification of the full recoverable union (regex-based, not
+just the sample): possessives 3/10,502 (GA) and 3/3,727 (RP) — negligible;
+plural/‑s-ending forms ~13% (GA) and ~12% (RP); no hyphenated compounds
+recovered at all. **The recoverable slice is overwhelmingly real
+headwords, not possessive/plural noise.**
+
+## 4. Characterizing the unrecoverable remainder (no hit in any of the 4 dicts)
+
+- Missing-GA, no cross-ref hit: **157,983** words (93.8% of missing-GA).
+- Missing-RP, no cross-ref hit: **53,928** words (93.5% of missing-RP).
+
+Regex classification of the unrecoverable sets:
+
+| | possessive ('s) | ends in -s (plural/3rd person, crude heuristic) | hyphenated | other |
+|---|---|---|---|---|
+| missing-GA unrecovered (157,983) | 25,472 (16.1%) | 43,353 (27.4%) | 4,263 (2.7%) | 83,906 (53.1%) — the interesting bucket |
+| missing-RP unrecovered (53,928) | 2,275 (4.2%) | 4,189 (7.8%) | 620 (1.1%) | 46,010 (85.3%) — the interesting bucket |
+
+Stripped of apostrophes/hyphens, cross-referenced against
+`/usr/share/dict/words` (235,976-word common English wordlist, used only
+as a real-word-vs-noise proxy, not as a merge source):
+
+- Missing-GA "other" plain-word remainder (124,439 words): **45,026
+  (36.2%) are real dictionary words** ga_rp genuinely lacks GA for and
+  none of the 4 files cover either — this is a real, if modest, residual
+  gap. The other 79,413 (63.8%) are not in a standard wordlist; sample
+  (`abanda, adventurousness, allertonshire, angeluses, appanages,
+  autostrade, barbate, brandmiller, buggest, calumniators, carinto,
+  centra, chints, clavey, conciliative, corroborator, desrosieres,
+  diplomand, downgrowth, elysian, entraine, faultlessness, folios,
+  galactometer`) is a mix of genuine rare/derived English forms
+  (`angeluses, appanages, calumniators, conciliative, faultlessness,
+  downgrowth`), place-name-ish coinages (`allertonshire, autostrade`),
+  and clear surnames (`brandmiller, clavey, desrosieres`) — BEEP's
+  vocabulary (source of the RP-only/missing-GA rows) leans heavily
+  British-surname/place-name.
+- Missing-RP "other" plain-word remainder (50,081 words): only **2,915
+  (5.8%) are real dictionary words**; the other 47,166 (94.2%) are not.
+  Sample of the non-dictionary majority (`aaa, alcina, anselmi, auther,
+  bartsch, berlex, blowdryer, brabham, buday, caponigro, chattanuga,
+  darga, demirel, direnzo, duffner, eisenhour, ferrell, frankovich,
+  garrell, gillet, grabowski, guyette, hauff, heyl, horsch, jernberg`)
+  is overwhelmingly **surnames** — cmudict.dict (source of the
+  GA-only/missing-RP rows) is well known for exhaustive US personal-name
+  coverage that BEEP, en_UK.txt, and wikipron_uk_broad (all
+  British-focused, much smaller vocabularies: 65k/81k words vs
+  cmudict's ~127k) simply never had reason to include.
+
+**Bottom line on unrecoverable data: this is not a bug or an extraction
+gap — it's cmudict's and BEEP's genuinely disjoint proper-noun/surname
+vocabularies (American personal names vs British names/places), plus a
+smaller tail of genuinely rare English words neither the RP nor the GA
+side of these four cross-ref files happens to carry. None of it is
+fillable from data already in this repo.**
+
+## 5. Format convertibility (observations only, no conversion implemented)
+
+`ga_rp.tsv`'s native cell format is per-phone, space-joined tokens,
+comma-joined across variants (`AH0,EY1` / `ah,ax,ey` for word "a"): GA
+cells are stress-marked ARPABET (from `:cmudict-raw`), RP cells are
+lowercase MRPA-style with no stress digits (from `:beep-raw`).
+
+- **wikipron_us_broad.tsv / wikipron_uk_broad.tsv** are already
+  space-separated broad-IPA *phone tokens* on disk (e.g. `m ɚ ə k ə`),
+  structurally the closest match to ga_rp.tsv's per-phone-token shape —
+  but note `ipa.clj`'s existing `:wikipron` `parse-line` method
+  *discards* that segmentation, concatenating tokens into one compact
+  IPA string (`"kæt"`, no spaces) for its own purposes. A cross-ref
+  loader would need to bypass/duplicate that parse path and read the raw
+  space-joined tokens directly to keep phone boundaries. Converting
+  those IPA symbols to ARPABET/MRPA tokens is a straightforward
+  finite-alphabet mapping problem (a few dozen IPA→ARPABET symbol pairs)
+  since segmentation is already given — this is the more "convertible"
+  candidate of the two source formats.
+- **en_US.txt / en_UK.txt** store one *unsegmented* IPA transcription
+  string per word with slashes and stress marks (`/ˈbaʊt/`), not
+  per-phone tokens. Converting these to ga_rp-style space-joined tokens
+  requires phonemic *segmentation* first (deciding token boundaries
+  around affricates like `tʃ`/`dʒ`, diphthongs like `aʊ`/`aɪ`, etc.) —
+  meaningfully more work and more room for silent mis-segmentation bugs
+  than the wikipron path, which already has token boundaries for free.
+  `ipa.clj`'s current `:ipa-dict`/`:ipa-dict-uk` parsing only strips
+  slashes and keeps stress, it does not segment into phones.
+- Given the small size of the actual opportunity (14,229 cells, ~6.3% of
+  the gap) and that en_US.txt contributes literally nothing, a full
+  ARPABET/MRPA token-format conversion for either source is probably
+  not worth building. **A separate provenance-flagged cell (e.g. a raw
+  IPA string alongside GA/RP, tagged with its source dict) would be
+  simpler and safer than forcing wikipron/en_US/en_UK data through an
+  ARPABET/MRPA conversion just to fit ga_rp.tsv's existing two columns.**
+
+## 6. Kaikki sizing (mid-investigation addition)
+
+`resources/data/kaikki-en.jsonl` (a ~3GB Wiktionary/`wiktextract` dump,
+`.gitignore`'d, not committed — see US-025's Background) has a `sounds`
+array per word with region-tagged `ipa` entries (`"US"`/`"General-
+American"` for GA, `"Received-Pronunciation"`/`"RP"`/`"UK"` for RP).
+Checked against the same missing-GA/missing-RP word lists: **5,138**
+missing-GA words have a US-tagged IPA there (481 not already covered by
+`wikipron-us`), and **2,175** missing-RP words have an RP-tagged IPA
+(921 not already covered by `en-uk`/`wikipron-uk`) — real, non-
+overlapping coverage, curated (Wiktionary) rather than crowd-sourced.
+Including it raises the total addressable gap from ~6.3% to **~6.9%**
+(15,631/226,140). Because the file isn't committed, any build step that
+uses it must degrade gracefully (skip it) when it's absent, exactly
+like `resource-reader` already does for any missing classpath resource.
+
+## Recommendation
+
+The opportunity is real but modest and lower-value than the Background's
+framing might suggest at first glance:
+
+- Total addressable gap from these 4 files: **14,229 of 226,140** missing
+  cells (~6.3%), overwhelmingly good-quality real headwords, so a
+  cross-ref backfill *would* meaningfully reduce `ga_rp.tsv`'s missing-GA
+  count (10,502/168,485 = 6.2%) and missing-RP count (3,727/57,655 =
+  6.5%) if built.
+- en_US.txt should be dropped as a candidate source entirely — it
+  recovers 0 GA cells; not worth wiring into the Protocol.
+- wikipron_uk_broad.tsv (the one dict with no `brand->resource` entry
+  yet) is the single highest-value addition for RP (2,748 hits, 1,487 of
+  them not covered by en_UK.txt at all) — worth adding the missing brand
+  entry if this proceeds.
+- The remaining ~94% of missing cells is not fillable from repo data at
+  all; it's cmudict's US-surname-heavy vocabulary vs. BEEP's
+  British-surname/place-name-heavy vocabulary talking past each other,
+  plus a smaller (36% of the missing-GA "other" bucket, 6% of missing-RP)
+  tail of genuinely rare real words. Any Protocol for this story should
+  set expectations accordingly — this closes a small slice of the gap,
+  it does not "fill in" ga_rp.tsv.
+- If turned into a real story: scope IN wikipron_us_broad + wikipron_uk_broad
+  + en_UK.txt as cross-ref sources, a provenance-flagged raw-IPA cell (not
+  ARPABET/MRPA conversion) as the storage shape, and a plausibility filter
+  for wikipron's crowd-sourced noise (a handful of dubious short entries
+  seen in sampling, e.g. `lue`, `wor`, `utz`). Scope OUT en_US.txt (zero
+  value) and any ARPABET/MRPA token conversion of the IPA sources (real
+  work for a source that only closes 6% of the gap).
+
+  > Superseded after investigation: the user chose ARPABET/MRPA
+  > conversion anyway (see Background), on the basis that `ipa->arpabet`/
+  > `ipa->mrpa` already handle full-string tokenization and don't need
+  > wikipron's pre-existing phone segmentation. The RP agreement rule
+  > (fill only on single-source presence or two-source match, never on
+  > disagreement) doubles as the wikipron noise filter this
+  > recommendation asked for, so no separate plausibility filter is
+  > needed on the RP side. The GA side (wikipron-us alone, no second
+  > source to check agreement against) keeps the small residual risk
+  > the sampling in section 3 already characterized as low.

@@ -11,3 +11,18 @@ resources/data/kaikki-en.jsonl
 .vmark/
 .DS_Store
 docs/mnemonics/images/
+
+# classical dictionary corpora + vendored repos — large, refetched by
+# dictionaries/*/download.sh + build-index.js rather than committed
+dictionaries/lewis-short/data/
+dictionaries/lsj/data/
+dictionaries/lsj/vendor/
+dictionaries/open-words/vendor/
+
+# Tatoeba English corpus — large, rebuilt from source per data/tatoeba/README.md.
+# README + tsv2vrt.py stay tracked. Applies to both copies (repo-root + skill dir).
+**/tatoeba/*.tsv
+**/tatoeba/*.bz2
+**/tatoeba/*.vrt
+**/tatoeba/cwb/
+**/tatoeba/*.db
