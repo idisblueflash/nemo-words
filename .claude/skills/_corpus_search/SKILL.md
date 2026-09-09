@@ -8,7 +8,7 @@ description: |
   "find example sentences with X", "what collocates with X", or wants attested usage /
   frequency of a word or multi-word pattern. Runs `scripts/corpus-search.sh` (wrapper
   over `cqp`); does not save anything to Anki or the mnemonic log — it only reports. For
-  explaining a word's meaning/pronunciation see `english-word-explainer` / `_glossy_ary`;
+  explaining a word's meaning/pronunciation see the `english-word-explainer` skill;
   for phonetic pattern lookups see the `nemo-words` CLI.
 ---
 
@@ -106,5 +106,5 @@ scripts/corpus-search.sh --count <word>        # total match count only
    frequency table.
 
 5. **Never save.** This skill reports attested usage only. If the user then wants a
-   usage example written onto a card, that's `_glossy_ary` / the word-workflow — hand
-   off, don't write Anki or the mnemonic log here.
+   usage example written onto a card, that's the word-workflow / `update-anki-story` —
+   hand off, don't write Anki or the mnemonic log here.

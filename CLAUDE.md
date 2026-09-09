@@ -59,16 +59,18 @@ and ADR-0009 in `docs/decisions/`.
 ## The word / mnemonic agents
 
 The recurring task here is **explaining a word and saving it** — a plain-language
-definition, a pronunciation, a sound+meaning mnemonic, and (once a human picks one) a
-🎭 story — into the Anki collection (`anki/*.txt`) and the mnemonic log
-(`docs/mnemonics/log.jsonl`). Read `.claude/rules/word-workflow.md` before doing that
-work; `.claude/rules/scripts.md` covers the helper scripts.
+definition and a pronunciation worked out in chat, a sound+meaning mnemonic, and (once a
+human picks one) a 🎭 story. Only the story is carded: `anki/reading-room-terms.txt` is
+`Front` = word, `Back` = the story sentence, plain text. The structured record (with the
+sound/anchor/technique fields) lives in the mnemonic log (`docs/mnemonics/log.jsonl`).
+Read `.claude/rules/word-workflow.md` before doing that work; `.claude/rules/scripts.md`
+covers the helper scripts.
 
-- **`_glossy_ary`** (`.claude/agents/_glossy_ary.md`) — explains a general-English word
-  with no classical morpheme structure (definition + pronunciation + 🔊/📖 mnemonic via
-  the `english-word-explainer` skill) and writes it as a card in
-  `anki/reading-room-terms.txt`, synced live. Never composes or picks the 🎭 story — a
-  from-scratch dispatch saves without one.
+The explain step for a general-English word with no classical morpheme structure is just
+the `english-word-explainer` skill, invoked directly in the main loop (word-workflow.md
+steps 1–2) — there is no dedicated agent for it. The `update-anki-story` skill is the
+save path once a story is picked (writes the row + syncs + logs via `_logan`).
+
 - **`_etta_mology`** (`.claude/agents/_etta_mology.md`) — decomposes any word built from
   classical Greek/Latin morphemes (or an INN drug stem), medical or general, into its
   parts and writes each part to `anki/medical-word-parts.txt`. Domain doesn't gate her —

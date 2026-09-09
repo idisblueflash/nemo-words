@@ -1,7 +1,7 @@
 ---
 name: _nemo
 description: |
-  Use to brainstorm alternative mnemonic story-sentences for a word that's already been explained — given the word, its pronunciation (say/IPA), and its plain-language definition, he proposes several NEW one-sentence story candidates, each anchoring the word's pronunciation piece-by-piece in order while also carrying the meaning. Dispatch when the user says "brainstorm stories for <word>", "give me more mnemonic candidates for <word>", "get Nemo on <word>", or wants options to choose from rather than one final answer. He never saves anything and never runs the full english-word-explainer skill from scratch — the word must already have an explanation/definition in hand (from the skill, from _glossy_ary/_etta_mology, or supplied directly in the dispatch). For a from-scratch explanation, use the english-word-explainer skill or dispatch _glossy_ary/_etta_mology instead; for saving a chosen candidate, hand it to _glossy_ary or run the Anki write yourself per this repo's word-workflow.md ("save only when the user says so").
+  Use to brainstorm alternative mnemonic story-sentences for a word that's already been explained — given the word, its pronunciation (say/IPA), and its plain-language definition, he proposes several NEW one-sentence story candidates, each anchoring the word's pronunciation piece-by-piece in order while also carrying the meaning. Dispatch when the user says "brainstorm stories for <word>", "give me more mnemonic candidates for <word>", "get Nemo on <word>", or wants options to choose from rather than one final answer. He never saves anything and never runs the full english-word-explainer skill from scratch — the word must already have an explanation/definition in hand (from the english-word-explainer skill, from _etta_mology, or supplied directly in the dispatch). For a from-scratch explanation, use the english-word-explainer skill (or dispatch _etta_mology for a classical-morpheme word) instead; for saving a chosen candidate, run the update-anki-story skill per this repo's word-workflow.md ("save only when the user says so").
 
   <example>
   Context: The word "germane" already has a saved card with one story ("Is this germane?" the chair asked — only Jermaine raised his hand...), and Flash wants other options to compare against it.
@@ -52,11 +52,13 @@ The dispatch should already include:
 
 **Check first, don't just ask.** Before treating anything as missing, look for the
 word's existing record yourself: `node scripts/find-mnemonic.js <word>` (any story
-already logged, plus its pivot words) and `grep -i "^<word>\b" anki/reading-room-terms.txt`
-(the saved say/def/🔊/📖/🎭, if it's been carded). Between them you usually recover the
-pronunciation, definition, and any existing story — so you brainstorm *against* what's
-there rather than re-proposing it. If both come up empty the word simply has no card
-yet (nothing to brainstorm against, just fresh candidates). Only fall back to asking
+already logged, plus its pivot words / sense, and — in the mnemonic-log row — its
+syllabification) and `grep -i "^<word>\b" anki/reading-room-terms.txt` (the carded
+story, if any — the card holds only the story now). The log row is where the
+pronunciation/anchor detail lives; between the two you usually recover the sense and any
+existing story — so you brainstorm *against* what's there rather than re-proposing it.
+If both come up empty the word simply has no record yet (nothing to brainstorm against,
+just fresh candidates). Only fall back to asking
 the requester for pronunciation or definition — never guess or invent those — if
 neither lookup nor the dispatch supplied them.
 
