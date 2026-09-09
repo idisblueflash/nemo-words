@@ -30,7 +30,7 @@ lobotomy	Cutting the brain’s LOBe down to BOTtom meat.
 congenital	Comes from genes, told at birth.
 polymerize	Polish more drops, chain together from your eyes.
 hydrophobic	<b>say:</b> hy-druh-FOH-bik /ˌhaɪdrəˈfoʊbɪk/<br><b>def:</b> Water-repelling — a surface or patch that avoids and won’t mix with water, so it pushes water away and seeks other oily/hydrophobic patches instead. That’s why the sticky valine patch on deoxygenated HbS latches onto its neighbour.<br>🔊 “hydro” = water (like hydrant); “-phobic” = fearing (like phobia)<br>📖 water-fearing → repels water, sticks to other oily patches<br>🎭 A hydrant's water-phobic — that's me!<br>🎭 pertaining to fear of water
-paucity	The dog's paw scrapes the city's dry well, water lacking.
+paucity	The dog's paw scrapes the city's dry well, water lacking.	paucity.png
 tacrolimus	The drug tackles a row of immune guards, then limes us a green light.
 tackle	Tax officer grabs the rich guy and brings him down.
 allogeneic	Aloe gel? Nay, a donor's nick.
@@ -65,7 +65,7 @@ durable	During decades, the table stayed good.
 lymphoma	Lymph has cancer like beer has foam.
 foam	The beer foam stuck near his mouth.
 lymph	In your limb, clean water flows through the drain.
-lump	Sobbing, her shoulders slump; a chunk swells in her throat.
+lump	Sobbing, her shoulders slump; a chunk swells in her throat.	lump.png
 swollen	His ankle swelled up so much it looked like his real shoe size got stolen and doubled.
 swell	So fast the well filled up, then water swelled over the top.
 infusion	In the tea cup, water fuses slowly with the leaves.
@@ -73,7 +73,7 @@ droplet	A drop crashes into many tiny droplets.
 embellishment	Don't speak empty words with bells, with plain English.
 stack	She attacks the monster with a stack of books.
 formation	Form your foundation skill slowly - like rock formations, built up over centuries, layer by layer.
-agog	Uh, goggles fogging, I press close, eager to see.
+agog	Uh, goggles fogging, I press close, eager to see.	agog.png
 extraneous	An ex-boyfriend's stray cat crashes the office's spontaneous party — utterly extraneous, nobody invited it.
 residue	Scrubbing the sticky resin off the pan caused such ado — the gooey residue just wouldn't budge.
 compete	Pete lined up at the start line, ready to compete for the gold medal.
@@ -97,9 +97,9 @@ adjudicated	A June trial did settle it: judge Kate frees the kid.
 onset	<b>say:</b> ON-set /ˈɑnˌsɛt/<br><b>def:</b> The beginning or start of something — often something unwelcome, like a disease, bad weather, or a difficult period.<br>🔊 "onset" = "on" + "set" — just say the two familiar words back to back.<br>📖 Picture flipping a switch ON that sets everything in motion — the onset is that exact starting moment.<br><hr><b>mnemonic:</b><br>🎭 Her fever turned on the moment chills set in.<br>🎭 The storm turned on as dark clouds quickly set in.<br>🎭 Sadness turned on right when finals week set in.
 colitis	<b>say:</b> koh-LY-tis /koʊˈlaɪtɪs/<br><b>def:</b> Inflammation of the colon (the large intestine) — causes belly pain, cramping, and diarrhea.<br>🔊 "colitis" = "co" + LIE + "tis" — the stressed middle syllable matches "lie" exactly.<br>📖 Picture doubling over and having to lie down from colon pain — that gut-clutching pain is colitis: inflammation of the colon.<br><hr><b>mnemonic:</b><br>🎭 Cole lies curled up, 'tis his colon cramping.<br>🎭 Cole lied about the pain, 'tis diarrhea again.<br>🎭 Cole can't lie still, 'tis his gut churning badly.
 pneumonitis	<b>say:</b> noo-muh-NY-tis /ˌnuːməˈnaɪtɪs/<br><b>def:</b> Inflammation of lung tissue — often from breathing in an irritant, allergen, or an immune reaction (unlike pneumonia, which is usually infection-driven).<br>🔊 "pneumonitis" = "new" + "muh" + Nye + "tis" — say "new," then "Nye" (Bill Nye) for the stressed syllable.<br>📖 Picture Bill Nye (the science guy) explaining why your lungs feel raw and inflamed — that is pneumonitis: inflammation of lung tissue.<br><hr><b>mnemonic:</b><br>🎭 Newman ties on a mask; 'tis dust inflaming his lungs.<br>🎭 Newman's necktie chokes him; 'tis mold inflaming his lungs.<br>🎭 Newman sneezes tying his tie, 'tis pollen inflaming his lungs.
-steroid	A doctor steers around the annoyed patient to reach his inflamed knee.
+steroid	A doctor steers around the annoyed patient to reach his inflamed knee.	steroid.png
 onset	The porch light clicks on as her fever's start sets her shivering.
-trial	The court tried a dull case, weighing his guilt.
+trial	The court tried a dull case, weighing his guilt.	trial.png
 unbidden	Uninvited bids shoot up loudly from the market.
 faintly	<b>say:</b> FAYNT-lee /ˈfeɪntli/<br><b>def:</b> In a way that is weak, slight, or barely noticeable — a faint sound, smell, light, or feeling that is there but hard to detect.<br>🔊 "faintly" is just "faint" plus the everyday "-ly" ending — say "faint," then add "-lee."<br>📖 a faint smell or sound is barely there — "faintly" describes anything that shows up weak and hard to notice.<br><hr><b>mnemonic:</b><br>🎭 Fresh paint fumes barely reached my nose downstairs.<br>🎭 The saint's whisper barely reached the back pew.<br>🎭 The quaint candle's glow was barely visible at dusk.
 pound	<b>say:</b> POWND /paʊnd/<br><b>def:</b> To pound means to hit something hard, again and again — not one strike, but heavy, repeated impact: a fist pounding on a door, a heart pounding from fear, or waves pounding the shore.<br>🔊 pound rhymes exactly with ground (and found, round)<br>📖 picture a heavy weight dropped again and again, pounding into the ground with repeated heavy thuds — that's exactly what the verb means: to hit hard, over and over (a fist pounding a door, a heart pounding, waves pounding the shore)<br><hr><b>mnemonic:</b><br>🎭 A fist pounds the door again and again.<br>🎭 Waves pound the cliffs all through the storm.<br>🎭 Her heart pounds hard after the sprint.
@@ -118,11 +118,11 @@ roster	<b>say:</b> RAH-ster /ˈrɑstər/<br><b>def:</b> A roster is a list of pe
 discrete	<b>say:</b> dis-KREET /dɪsˈkrit/<br><b>def:</b> Discrete means separate and individually distinct, existing as its own separate unit rather than blended together (not to be confused with "discreet," meaning careful/private).<br>🔊 "discrete" splits perfectly into "dis" + "Crete" (the Greek island).<br>📖 picture the island of Crete sitting separate and distinct out in the sea, cut off from the mainland — that's exactly what discrete means: its own separate unit.<br><hr><b>mnemonic:</b><br>🎭 Locals diss the idea that Crete blends into Greece.<br>🎭 At the disco, each dancer kept to their own sweet spot.<br>🎭 Disco lights lined the street in separate glowing colors.
 moderate	<b>say:</b> MOD-er-it /ˈmɑdɝət/<br><b>def:</b> in the middle — not too much and not too little, not extreme in either direction<br>🔊 "moderate" is just "moderator" without the "-or" — MOD-er-it + or = moderator<br>📖 a debate moderator keeps both sides in the middle, not too heated or too calm — that balance IS being moderate<br><hr><b>mnemonic:</b><br>🎭 A forum mod judged posts on merit, keeping replies moderate.<br>🎭 The trail's mod incline has real merit: a moderate, steady climb.<br>🎭 The spicy sauce got a mod rating, merit for moderate, bearable heat.
 dozen	<b>say:</b> DUZ-en /ˈdʌzən/<br><b>def:</b> a group of exactly twelve<br>🔊 "dozen" rhymes exactly with "cousin"<br>📖 picture a dozen cousins crowding a family reunion — twelve of them, all counted as one big group<br><hr><b>mnemonic:</b><br>🎭 Does the wren carry exactly twelve worms home each trip?<br>🎭 Does grandma count again to prove the eggs total twelve?<br>🎭 Does the hen's nest hold exactly twelve warm eggs today?
-warrant	War ants need a permit authorizing their tunnel.
-induce	At the inn, the deuce card causes a sudden fight.
-plateau	Climbing the platform, his skill toed a flat line.
-stools	Sam uses the diagnostic tools for testing the patient's poop.
-causality	Caused by a ball in reality, the window broke.
+warrant	War ants need a permit authorizing their tunnel.	warrant.png
+induce	At the inn, the deuce card causes a sudden fight.	induce.png
+plateau	Climbing the platform, his skill toed a flat line.	plateau.png
+stools	Sam uses the diagnostic tools for testing the patient's poop.	stools.png
+causality	Caused by a ball in reality, the window broke.	causality.png
 episode	<b>say:</b> EP-uh-sohd /ˈɛpəˌsoʊd/<br><b>def:</b> one distinct occurrence or installment — a single event set apart from others, like one chapter of a TV series, or one bout of an illness (e.g. "an episode of diarrhea")<br>🔊 "episode" = "epi" (like an EpiPen) + "sewed" — "sewed" matches the "-sode" ending exactly<br>📖 an episode is one segment sewed onto a bigger series — one TV episode stitched into a season, or one bout of illness stitched into a longer sickness<br><hr><b>mnemonic:</b><br>🎭 That epic toad chase became the show's most-watched episode.<br>🎭 Her epic asthma flare became one code-blue episode nobody forgot.<br>🎭 Her epic new single loaded the same day as episode one.
 escalation	He escaped from his problem later, but the issue grew worse.
 plausibly	<b>say:</b> PLAW-zuh-blee /ˈplɔzəbli/<br><b>def:</b> in a way that seems reasonable or believable — could be true, even without proof<br>🔊 "plausibly" = "p" + "laws" + "-ibly" — "laws" matches the "plau(s)-" chunk exactly<br>📖 (metaphor, not literal) a plausible explanation sounds like it could pass muster under the laws of logic — reasonable enough to seem true, even if unproven<br><hr><b>mnemonic:</b><br>🎭 The law accepted his flea-thin alibi as plausibly true, despite no proof.<br>🎭 The law of averages made his flea-market luck seem plausibly real.<br>🎭 Break no law, and even a flea-brained excuse sounds plausibly true.
@@ -148,12 +148,12 @@ parchment	Under desert sun, the mapmaker unrolls a parched animal skin.
 savory	<b>say:</b> SAY-vuh-ree /ˈseɪvəri/<br><b>def:</b> Having a rich, appetizing taste or smell — salty, meaty, or spiced rather than sweet. Often used for food smells that make you hungry.<br>🔊 "savory" rhymes with "bravery" — same "-avery" ending, swap "s" for "br".<br>📖 It takes bravery to resist the savory smell of roasting meat drifting out of the tavern's kitchen.<br><hr><b>mnemonic:</b><br>🎭 I'd say this very stew tastes rich, salty, and meaty.<br>🎭 She'd say that very bacon smell was salty and rich.<br>🎭 Grandpa would say the very broth tasted deep and meaty.
 creak	Ice on the creek creaks loudly as the fisherman steps across.
 curl	A woodworker watches shavings curl into perfect spirals.
-vapor	Teens vape, per usual, clouding the yard with mist.
+vapor	Teens vape, per usual, clouding the yard with mist.	vapor.png
 scatter	<b>say:</b> SKAT-er /ˈskætər/<br><b>def:</b> To throw, drop, or spread things so they end up spread out in different directions, no longer in one place.<br>🔊 "scatter" rhymes exactly with "platter" — same "-atter" ending, swap "pl" for "sc".<br>📖 A dropped platter sends bread and coins scattering across the tavern floor.<br><hr><b>mnemonic:</b><br>🎭 The vase shattered, flinging shards in every direction.<br>🎭 Yelling scat sent the pigeons bursting off in all directions.<br>🎭 Cake batter splattered everywhere when the mixer lid popped off.
-patrons	Payday herons return, becoming pond regulars.
+patrons	Payday herons return, becoming pond regulars.	patrons.png
 rack	<b>say:</b> RAK /ræk/<br><b>def:</b> A frame or stand with bars, hooks, or shelves used to hold or store things — like a rack of weapons or mugs hanging on a tavern wall.<br>🔊 "rack" rhymes exactly with "back" — just swap the first letter.<br>📖 picture a wooden rack mounted on the back wall of the tavern, holding swords and mugs in neat rows.<br><hr><b>mnemonic:</b><br>🎭 He hung his coat back onto the wall-mounted hook stand.<br>🎭 Climbers packed their ropes onto the sturdy metal wall stand.<br>🎭 Soldiers slid their spears onto the worn wooden weapon track.
 brisk	By risking an accident, the pizza bike weaves fast through traffic.
-jerk	The perky puppy yanks its leash toward the squirrel.
+jerk	The perky puppy yanks its leash toward the squirrel.	jerk.png
 stool	<b>say:</b> STOOL /stuɫ/<br><b>def:</b> A simple seat with legs but no back or arms — like the one you sit on at a bar.<br>🔊 "stool" = "s" + "tool" — rhymes exactly with tool.<br>📖 a barstool is basically a simple wooden tool built just for sitting up at the tavern counter.<br><hr><b>mnemonic:</b><br>🎭 The bartender sat him on a wobbly wooden stool.<br>🎭 She climbed the stool to reach the top school shelf.<br>🎭 He balanced on a three-legged stool, no backrest, no arms.
 flinching	<b>say:</b> FLIN-ching /ˈfɫɪntʃɪŋ/<br><b>def:</b> Making a sudden, quick pulling-back movement or wince because something startles, hurts, or scares you.<br>🔊 "flinching" = "fl" + "inching" — rhymes exactly with inching.<br>📖 when you flinch, you're inching backward away from whatever just scared or hurt you.<br><hr><b>mnemonic:</b><br>🎭 Flynn kept flinching each time the dentist's drill buzzed.<br>🎭 She flinched, jerking back when the needle touched her skin.<br>🎭 He winced and flinched at the sudden loud clang.
 clock	<b>say:</b> KLOK /klɑk/<br><b>def:</b> (verb, informal) To clock someone or something means to notice, recognize, or spot them — often suddenly, from across a room.<br>🔊 "clock" is said exactly like the timepiece "clock" — no change in sound at all.<br>📖 your eyes clock (spot) someone the instant you glance over, the same instant way you'd glance at a clock and read the time.<br><hr><b>mnemonic:</b><br>🎭 She clocked her ex the moment he walked in.<br>🎭 I clocked the shoplifter slipping a watch off the rack.<br>🎭 He clocked her fake smile across the crowded room.
@@ -181,7 +181,7 @@ breached	Flood under the bridge reached, then broke through.
 squat	A squashed clay pot sat low, wide, and stubby on the shelf.
 apparently	<b>say:</b> uh-PAIR-unt-lee /əˈpærəntli/<br><b>def:</b> "As far as anyone can tell" or "it seems" — used when something appears to be true, but you're not fully certain yourself.<br>🔊 "apparently" hides the word "parent" right in the middle: uh-PARENT-lee.<br>📖 picture a skeptical parent saying "Apparently, you 'forgot' your homework again" — apparently = the way things seem, maybe not the full truth.<br><hr><b>mnemonic:</b><br>🎭 A pear went missing — hunters searched, but Lee wasn't sure.<br>🎭 They'd only share rumors; after a month, we weren't certain.<br>🎭 Her care seemed genuine, but Aunt Lee wasn't fully convinced.
 spiraling	<b>say:</b> SPY-ruh-ling /ˈspaɪrəlɪŋ/<br><b>def:</b> Moving in a curling, circular path that winds inward or outward — like smoke curling upward or stairs winding around a central pole.<br>🔊 "spiraling" is just "spiral" with "-ing" added.<br>📖 picture smoke curling round and round as it rises — that curling motion is spiraling.<br><hr><b>mnemonic:</b><br>🎭 A spy watched smoke curling into rings above the chimney.<br>🎭 A kite spun toward the sky, twisting into loops and rings.<br>🎭 A hawk spiraled downward, wings curling like a falling king.
-inward	Stepping in, she wrote one word, then looked deep inside.
+inward	Stepping in, she wrote one word, then looked deep inside.	inward.png
 timber	<b>say:</b> TIM-bər /ˈtɪmbər/<br><b>def:</b> Wood that has been cut and prepared for building — the beams, planks, and posts used to build houses, ships, or furniture.<br>🔊 "timber" rhymes with "limber" — just swap the L for a T.<br>📖 picture a lumberjack's freshly cut timber, its branches still limber (bendy) before they're sawed into planks.<br><hr><b>mnemonic:</b><br>🎭 Tim carried a bear-sized stack of planks for the barn.<br>🎭 Team members bared their arms hauling beams up the ship.<br>🎭 Tim's bare hands stacked fresh-cut posts for the new house.
 malformed	<b>say:</b> mal-FORMD /mælˈfɔrmd/<br><b>def:</b> Shaped or formed wrongly — not having the normal, correct shape (e.g. a malformed limb, a misshapen creature).<br>🔊 "Malformed" is just two familiar words stuck together: "mal" (as in malfunction) + "formed."<br>📖 Something malformed was formed badly (mal- = bad) — its shape came out wrong or twisted instead of normal.<br><hr><b>mnemonic:</b><br>🎭 The mall's new sign looked malformed, its letters warped oddly.<br>🎭 A mad sculptor's malformed statue had one twisted arm.<br>🎭 The clay man came out malformed, with a crooked head.
 circuitry	<b>say:</b> SUR-kuh-tree /ˈsɝkətɹi/<br><b>def:</b> The whole network of connected circuits — wires or channels — that make a device or system work together (e.g. "glowing arcane circuitry lined the walls").<br>🔊 "Circuitry" is just "circuit" + "-ry" (say "ree") — SUR-kuh-tree.<br>📖 Picture a tangle of wires looping into circuit after circuit — circuitry is the whole web of circuits wired together to make something run.<br><hr><b>mnemonic:</b><br>🎭 Sir, who rewired the tree of circuitry inside the robot?<br>🎭 Her old radio's circuitry sparked, glowing like a lit tree.<br>🎭 Sir, the tangled circuitry was finally set free from this old TV.
@@ -196,7 +196,7 @@ vapid
 circulation	Runners circle the track in a relay, blood looping through their legs.
 tertiary	In the race, the turtle finished third; she donned a hairy medal. Anchors: "tur" → turtle, "shee" → she, "-airy" → hairy
 weave	We've crossed the threads over, under, over to weave a scarf.
-levee	Heavy floodwater shoves the river; the levee bank never breaks.
+levee	Heavy floodwater shoves the river; the levee bank never breaks.	levee.png
 susceptible	The suspect shivers in a cracked tub, easily affected by cold germs.
 conducting	The sun leads a beam straight down the narrow duct. Anchors: "kun" → sun, "duct" → duct (air duct)
 stimulate	A sharp question jolts late-arriving Tim straight into the debate.
@@ -206,11 +206,11 @@ journeyman	Journey over, the handyman fixes every leak steady, still shy of mast
 acquired	The chef admired the taste she slowly gained for raw oysters.
 portrait	She pours glowing tritium ink to sketch his exact likeness.
 mechanic	The mechanic says, "I can fix this engine," grabbing her wrench.
-eligible	Riding the elephant, the prince qualifies as a marriageable bachelor.
-obtained	A bee abstained all day, then got the queen's reward.
+eligible	Riding the elephant, the prince qualifies as a marriageable bachelor.	eligible.png
+obtained	A bee abstained all day, then got the queen's reward.	obtained.png
 component	Every component clicks into place before the robot faces its opponent.
 theoretical	The sniper's theory-only reticle has never actually fired.
-apprenticeship	Ahoy — cheap rent, endless practice: I learn woodcraft aboard ship.
+apprenticeship	Ahoy — cheap rent, endless practice: I learn woodcraft aboard ship.	apprenticeship.png
 automobile	In the showroom, the salesman brags this auto can wheel itself home alone.
 garage	Squinting like it's a mirage, I finally park in the garage.
 liability	Signing the loan, he lied about his ability to repay debt.
@@ -218,18 +218,18 @@ trades	Collectors swap rare coins, chasing top mint-condition grades.
 certify	The Sir tastes the pie and certifies it blue-ribbon worthy.
 invigilator	In row three she keeps vigil, pocketing the cheat note for later.
 remediation	The crew's remedy helps the ruined nation finally fix its poisoned wells.
-regional	A legion's cooks serve Al stew flavored for this area.
+regional	A legion's cooks serve Al stew flavored for this area.	regional.png
 pursuing	Chasing the purse thief through the mall, she starts suing him.
-substance	A submarine in fighting stance leaked black substance across the deck.
+substance	A submarine in fighting stance leaked black substance across the deck.	substance.png
 parch	Peacocks march across a parched creek bed.
-stance	Last chance arrives, feet wide, she ignores coach's shouts.
+stance	Last chance arrives, feet wide, she ignores coach's shouts.	stance.png
 studio	Photographers eat stew between cuts of a video in their studio.
-stew	Stu simmers beef and potatoes together in one pot.
+stew	Stu simmers beef and potatoes together in one pot.	stew.png
 streak	He skipped ten stones straight across the creek.
 vain	He flexes his veins, vain about his muscles.
-inert	In a lead shirt, the sample refuses to react.
+inert	In a lead shirt, the sample refuses to react.	inert.png
 shuttered	The camera's shutter clicked once; the studio closed forever.
-latch	Tom flips the little metal catch, sealing the pool gate.
+latch	Tom flips the little metal catch, sealing the pool gate.	latch.png
 wrung	Soaked from rain, I wrung my shirt on the rung.
 cryptic	An old crypt door ticks, hiding a coded warning.
 ominous	Ommen watches Venus over almond trees, warning of a storm.
@@ -255,22 +255,22 @@ plausible	Amid applause, the soap-bubble illusion looked completely believable.
 appropriate	A pro eyes the Marriott ballroom; the gown's suitable.
 
 hedge	Hal teeters on the wall's edge, hedging every reporter's question.
-ancestor	Ann assesses the potter her family's craft descends from.
-robe	From the wardrobe, the judge grabs her robe.
+ancestor	Ann assesses the potter her family's craft descends from.	ancestor.png
+robe	From the wardrobe, the judge grabs her robe.	robe.png
 veil	
 wail	
 pail	
-attest	After a blood test, the doctor confirms she's pregnant.
-premise	The argument's stem is cracked, but everyone misses it.
-coordinate	Coat on, boarding late, we ordered the group as one.
-drown	The flood crowned the rooftops and drowned the church.
-wary	Where the airy field mists, I stay watchful for wolves.
-caveat	Kay chalks a V at the proposal's foot: one warning.
-critique	Chris showed the antique; the panel's review was brutal.
-triage	Tree crushes the massage spa; staff sort victims by urgency.
-era	Aaron carves a timeline, each stretch its own period.
-steward	"Stew's ready!" heard, the servant runs the boss's big house.
-prevalence	Prevailing silence sat widespread across every crowded lecture hall.
-descendant	Descend past your aunt to reach the founding ancestor.
-scarce	Rationing ventilators scares the doctors; too few for every patient.
-negate	Nick shuts the gate, cancelling the stampede's momentum.
+attest	After a blood test, the doctor confirms she's pregnant.	attest.png
+premise	The argument's stem is cracked, but everyone misses it.	premise.png
+coordinate	Coat on, boarding late, we ordered the group as one.	coordinate.png
+drown	The flood crowned the rooftops and drowned the church.	drown.png
+wary	Where the airy field mists, I stay watchful for wolves.	wary.png
+caveat	Kay chalks a V at the proposal's foot: one warning.	caveat.png
+critique	Chris showed the antique; the panel's review was brutal.	critique.png
+triage	Tree crushes the massage spa; staff sort victims by urgency.	triage.png
+era	Aaron carves a timeline, each stretch its own period.	era.png
+steward	"Stew's ready!" heard, the servant runs the boss's big house.	steward.png
+prevalence	Prevailing silence sat widespread across every crowded lecture hall.	prevalence.png
+descendant	Descend past your aunt to reach the founding ancestor.	descendant.png
+scarce	Rationing ventilators scares the doctors; too few for every patient.	scarce.png
+negate	Nick shuts the gate, cancelling the stampede's momentum.	negate.png

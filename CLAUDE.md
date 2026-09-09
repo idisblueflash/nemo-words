@@ -49,6 +49,16 @@ in the main thread: shows each grid, takes a cell number 1–9, and crops
 the final asset with `scripts/crop-grid-cell.sh` into
 `docs/mnemonics/images/<word>.png`.
 
+Picking a cell counts as choosing that image, so attaching it to the Anki
+card is a **default step, not a separate request**: right after the crop,
+set the `Image` column of the word's row in `anki/reading-room-terms.txt`
+to `<word>.png` and run
+`ANKI_FILE=reading-room-terms.txt node scripts/anki-sync.js "<word>"` —
+`anki-sync.js` uploads it as `nemo-<word>.png` and composes the `<img>`
+onto the pushed `Back` at sync time (ADR-0012). Skip only if the user opts
+out of Anki or the word has no card. Word-part images
+(`anki/medical-word-parts.txt`) have no `Image` column — don't attach those.
+
 `_vivian` is single-turn by design — it generates the grid, reports, and
 exits; it is never resumed for the crop (a resume reloads its whole
 transcript for a purely mechanical step). Mnemonic sentences come from the
