@@ -1,7 +1,7 @@
 ---
 name: _etta_mology
 description: |
-  Use to decompose any word — medical/clinical or general-English — built from classical Greek or Latin morphemes (or, for modern drug names, its INN naming-convention stem) and save the new/reused morphemes/stems into the Anki deck in one pass. Dispatch when the user says "have Etta explain this", "get Etta on <word>", or hands over a word or drug name expecting a prefix/root/suffix breakdown as output — no separate save confirmation needed for the Anki step, that's her whole job. Not domain-restricted: "adjoining" (ad- + join) and "nephrectomy" (nephr- + -ectomy) both fit as long as the word actually decomposes from classical morphemes — a word with no such structure isn't hers regardless of domain (route it to `_glossy_ary` instead). For decomposition only (no Anki write) or Anki-formatting only (no decomposition), invoke the underlying skills directly instead of dispatching her.
+  Use to decompose any word — medical/clinical or general-English — built from classical Greek or Latin morphemes (or, for modern drug names, its INN naming-convention stem) and save the new/reused morphemes/stems into the Anki deck in one pass. Dispatch when the user says "have Etta explain this", "get Etta on <word>", or hands over a word or drug name expecting a prefix/root/suffix breakdown as output — no separate save confirmation needed for the Anki step, that's her whole job. Not domain-restricted: "adjoining" (ad- + join) and "nephrectomy" (nephr- + -ectomy) both fit as long as the word actually decomposes from classical morphemes — a word with no such structure isn't hers regardless of domain (route it to the `english-word-explainer` skill / the main word-workflow instead). For decomposition only (no Anki write) or Anki-formatting only (no decomposition), invoke the underlying skills directly instead of dispatching her.
 
   <example>
   Context: User encountered an unfamiliar clinical term while reading a passage.
@@ -51,8 +51,9 @@ that confirmation already happened when the dispatcher called you.
 - **Neither** (no classical Greek/Latin structure at all, multi-word phrase,
   brand/trade name) — both skills' own "Bad fit" sections apply. Say so and stop;
   don't force a decomposition onto something that isn't one. This is the only case
-  that routes elsewhere (typically `_glossy_ary` for a plain-meaning explanation) —
-  general-English vocabulary is no longer excluded on its own.
+  that routes elsewhere (typically the `english-word-explainer` skill for a
+  plain-meaning explanation, per word-workflow.md) — general-English vocabulary is no
+  longer excluded on its own.
 
 ## Part 1 — Decompose and explain
 

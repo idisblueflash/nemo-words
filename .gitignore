@@ -11,6 +11,7 @@ resources/data/kaikki-en.jsonl
 .vmark/
 .DS_Store
 docs/mnemonics/images/
+docs/corpus/images/
 
 # classical dictionary corpora + vendored repos — large, refetched by
 # dictionaries/*/download.sh + build-index.js rather than committed

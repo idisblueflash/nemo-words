@@ -1,70 +1,86 @@
 ---
 name: update-anki-story
 description: |
-  Takes a word already carded in `anki/reading-room-terms.txt` plus a final 🎭 story text — a literal pick from Nemo's candidates, or something composed from them — and writes it as that word's canonical story: rebuilds the word's row to the standard say/def/sound/meaning/story shape (dropping any leftover "Nemo alternates" scratch block from an auto-save), pushes it live via `scripts/anki-sync.js`, and logs the pick to `docs/mnemonics/log.jsonl` via `_logan` if it isn't there yet. Use when the user says "update the Anki story for `<word>` to: `<text>`", "finalize story for `<word>`: `<text>`", or hands over a final story after reviewing a word's card in the Anki app themselves. Lightweight — no subagent dispatch for the write itself, no re-explanation, just the one field. Glossy-path words only: `_etta_mology` words never have a `story` field, so there's nothing here to finalize for them. Not for picking or brainstorming a story (see `_nemo`) — the story must already be decided when this skill runs.
+  The save path for a picked 🎭 story. Takes a word plus a final story sentence — a
+  literal pick from Nemo's candidates, something composed from them, or a story the user
+  wrote — and makes it that word's card: writes the row in `anki/reading-room-terms.txt`
+  (`Front` = word, `Back` = the story, plain text — appending the row if the word isn't
+  carded yet, patching it if it is), pushes it live via `scripts/anki-sync.js`, and logs
+  the pick to `docs/mnemonics/log.jsonl` via `_logan` if it isn't there yet. Use when the
+  user says "save", "save it", "update the Anki story for `<word>` to: `<text>`",
+  "finalize story for `<word>`: `<text>`", or hands over a final story after reviewing a
+  word's card in the Anki app. Lightweight — no subagent dispatch for the write itself,
+  no re-explanation. General-vocabulary words only: `_etta_mology` words never have a
+  story and their cards live in a different file. Not for picking or brainstorming a
+  story (see `_nemo`) — the story must already be decided when this skill runs.
 ---
 
 # Update Anki Story
 
-## Trigger example
+## Trigger examples
 
 <example>
-Context: `/prepare-words` auto-saved a Nemo top-pick story for "ubiquitous" and pushed the alternates onto its Anki card. Flash reviewed the card in the Anki app and prefers a different candidate.
-user: "update the Anki story for ubiquitous to: A book so common it's everywhere you look, in every nook."
-assistant: "I'll finalize ubiquitous's story with that text — rebuild the Anki row without the alternates block, re-sync, and log the pick."
+Context: The user picked one of Nemo's story candidates for "ubiquitous" and said "save it".
+user: "save it"
+assistant: "I'll save ubiquitous's story — write the row in reading-room-terms.txt, sync to Anki, and log it via _logan."
 <commentary>
-Flash already decided; this skill just writes it, the same way a `_glossy_ary` "add this story for X" patch would, but without the subagent round-trip.
+The human decided; this skill just writes it. First-time save and re-finalize are the
+same write.
 </commentary>
+</example>
+
+<example>
+Context: `/prepare-words` auto-saved a Nemo top-pick story for "roster". Flash reviewed the card in the Anki app against the sidecar alternates and prefers a different one.
+user: "update the Anki story for roster to: The foster home posted who's on kitchen duty tonight."
+assistant: "I'll finalize roster's story with that text — rewrite the row, re-sync, and log the pick."
 </example>
 
 ## Scope
 
-One thing only: given `<word>` + a final story text already in hand, make that word's
-🎭 story the canonical one everywhere it lives — the word's row in
-`anki/reading-room-terms.txt`, the live Anki collection, and the mnemonic log. It never
-decides the story itself (that's `_nemo` brainstorming + a human pick, or the human
-composing their own) and never re-runs the explanation/mnemonic skills — the other
-fields (`say`/`ipa`/`def`/`sound`/`meaning`) are assumed already correct and untouched.
+One thing only: given `<word>` + a final story text already in hand, make that story the
+word's card everywhere it lives — the row in `anki/reading-room-terms.txt`, the live
+Anki collection, and the mnemonic log. It never decides the story itself (that's `_nemo`
+brainstorming + a human pick, or the human composing their own).
 
 ## Steps
 
-1. **Read the word's current row** in `anki/reading-room-terms.txt` (find it by exact
-   `Front` match). Parse its `Back` field for the current `say` / `/ipa/` / `def` /
-   🔊 sound / 📖 meaning segments — these are the source of truth to preserve.
+1. **Find the word's row** in `anki/reading-room-terms.txt` by exact `Front` match.
 
-2. **Rebuild — don't append-patch — the row's `Back` field** to the file's standard
-   single-line shape, with the new story:
+2. **Write the `Back` field** to the story text, verbatim (apply only a tiny grammar fix
+   the user asked for — e.g. "need" → "needs"). The row is `Front\tBack\tImage`,
+   tab-separated:
    ```
-   <b>say:</b> <CAPS> /<ipa>/<br><b>def:</b> <def><br>🔊 <sound><br>📖 <meaning><br>🎭 <story>
+   <word>	<story sentence, plain text>	<image basename or empty>
    ```
-   Rebuilding from the parsed segments — rather than editing the existing HTML in place —
-   is what discards any leftover `<br><br><i>Nemo alternates (unreviewed):</i>...`
-   scratch block a prior `/prepare-words` auto-save left on the card: once a story is
-   finalized, the alternates have served their purpose and the card goes back to the
-   same clean shape every other word card has.
+   No `<b>`/`<br>`, no `🎭` prefix, nothing but the sentence in `Back`. The third
+   `Image` column (ADR-0012) is an optional basename under `docs/mnemonics/images/`
+   (e.g. `regional.png`) — set it only if the user gives a mnemonic image to attach,
+   otherwise leave it empty. The `<img>` tag is composed by `anki-sync.js` at sync
+   time; never put HTML in the `.txt`. If no row exists for the word, **append one**.
+   If a row exists, patch it in place — don't duplicate it. If the old row still
+   carries the legacy multi-segment HTML back (`say:`/`def:`/🔊/📖 or a
+   `<b>mnemonic:</b>` candidate list), replace the whole `Back` with just the story.
 
 3. **Push it live:**
    ```bash
    ANKI_FILE=reading-room-terms.txt node scripts/anki-sync.js "<word>"
    ```
    If AnkiConnect can't be reached, log the connection error but don't treat it as a
-   failure of steps 1-2 — the file write already succeeded; sync can be re-run later.
+   failure of steps 1–2 — the file write already succeeded; sync can be re-run later.
 
 4. **Log, don't narrate.** Append one line to `anki/sync.log` (shared with
-   `_glossy_ary`/`_etta_mology`): timestamp, `term=<word>`, file status (patched), sync
-   result. Chat report is one short confirmation line, not a restatement of the row.
+   `_etta_mology`): timestamp, `term=<word>`, file status (added/patched), sync result.
+   The chat report is one short confirmation line, not a restatement of the row.
 
 5. **Record it in the mnemonic log** if it isn't already there — check
    `node scripts/find-mnemonic.js <word>`; if there's no row (or the row's `sentence`
    differs from the final text), dispatch `_logan` with the word, the final sentence,
-   and the anchor/technique fields to append it to `docs/mnemonics/log.jsonl`.
+   `sense`, and the anchor/technique fields (`syllabification`, `anchor_unit`,
+   `keyword`, `pivot_words`, `technique`) to append it to `docs/mnemonics/log.jsonl`.
 
 ## What this skill doesn't do
 
-- Doesn't brainstorm or pick a story — the caller (a human, via chat) must already have
-  decided it.
-- Doesn't touch `say`/`ipa`/`def`/`sound`/`meaning` — only 🎭, and only the Anki row's
-  shape as a byproduct of the rebuild.
-- Doesn't run for `_etta_mology`-path words — nothing to finalize; they have no story
-  and their Anki rows live in a different file (`anki/medical-word-parts.txt`), a
-  different shape entirely.
+- Doesn't brainstorm or pick a story — the caller must already have decided it.
+- Doesn't run for `_etta_mology`-path words — they have no story and their Anki rows
+  live in `anki/medical-word-parts.txt`, a different shape entirely.
+- Doesn't push, open a PR, or share anything further without explicit go-ahead.

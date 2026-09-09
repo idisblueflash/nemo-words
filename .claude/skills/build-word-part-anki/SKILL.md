@@ -1,7 +1,7 @@
 ---
 name: build-word-part-anki
 description: |
-  Takes a morpheme breakdown (part + origin + meaning — from `explain-greek-latin-blocks`, `explain-inn-drug-stem`, or supplied directly) and writes/patches rows in `anki/medical-word-parts.txt`, one row per morpheme, tab-separated Front/Back on Anki's Basic note type. Use when the user asks to "make an Anki card" or "save this word part" for a medical morpheme/drug stem. Not for deciding parts/meanings — see those two skills. Not for whole-word vocabulary cards — those live in `anki/reading-room-terms.txt` (see `_glossy_ary`).
+  Takes a morpheme breakdown (part + origin + meaning — from `explain-greek-latin-blocks`, `explain-inn-drug-stem`, or supplied directly) and writes/patches rows in `anki/medical-word-parts.txt`, one row per morpheme, tab-separated Front/Back on Anki's Basic note type. Use when the user asks to "make an Anki card" or "save this word part" for a medical morpheme/drug stem. Not for deciding parts/meanings — see those two skills. Not for whole-word vocabulary cards — those live in `anki/reading-room-terms.txt` (see `.claude/rules/word-workflow.md`).
 ---
 
 # Build Medical Word-Part Anki Rows

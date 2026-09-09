@@ -414,3 +414,30 @@
 2026-09-07T01:58:39Z term=induce file=patched sync=ok story-finalized
 2026-09-07T11:36:48Z	term=inert	file=patched	sync=updated
 2026-09-08T09:19:40Z term=coordinate file=added sync=added
+2026-09-08T11:12:44Z	term=coordinate	file=patched(story)	sync=updated
+2026-09-08T11:53:34Z	term=drown	file=added	sync=added
+2026-09-08T11:54:05Z term=drown story-patch:file=patched/sync=updated
+2026-09-08T12:00:34Z term=wary file=added sync=added
+2026-09-08T12:55:48Z term=caveat file=added sync=added
+2026-09-08T12:56:22Z term=caveat file=patched sync=updated
+2026-09-08T13:29:48Z term=critique file=added sync=added
+2026-09-08T13:30:17Z term=critique row=patched sync=updated
+2026-09-08T13:36:00Z term=plateau file=patched sync=updated story=finalized
+2026-09-08T14:08:36Z term=triage file=added sync=added
+2026-09-09T02:05:31Z term=steroid file=patched sync=updated (story finalized)
+2026-09-09T02:14:30Z term=inward file=patched sync=updated
+2026-09-09T02:33:42Z  term=regional  file=patched  sync=updated
+2026-09-09T06:52:47Z term=trial file=patched(dedup 2→1) sync=Updated
+2026-09-09T07:02:44Z term=era file=added sync=added
+2026-09-09T07:03:17Z term=era row=patched(story-added) sync=updated
+2026-09-09T07:08:09Z term=lump file=patched sync=updated
+2026-09-09T07:15:02Z term=eligible file=patched sync=updated
+2026-09-09T07:21:51Z term=prevalence file=added sync=added
+2026-09-09T07:22:22Z term=prevalence file=patched sync=updated
+2026-09-09T08:04:40Z term=steward file=added sync=added
+2026-09-09T08:13:19Z  term=descendant  file=added  sync=added
+2026-09-09T08:20:32Z term=ancestor file=patched sync=updated (story finalized: 'Ann assesses the potter her family'\''s craft descends from.')
+2026-09-09T08:29:13Z term=scarce file=added sync=added
+2026-09-09T08:40:50Z term=negate file=added sync=added
+2026-09-09T08:41:21Z term=negate file=patched(story) sync=updated
+2026-09-09T09:39:39Z term=steroid file=patched sync=updated story-finalized

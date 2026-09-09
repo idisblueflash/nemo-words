@@ -31,10 +31,12 @@ rewrite the one you're given, shorter.
   anchors on "seeds"; a two-chunk word may have two anchors that must appear in order)
 - The **story** — the current story sentence, in full
 
-If any of these is missing, check `grep -i "^<word>\b" anki/reading-room-terms.txt` and
-`node scripts/find-mnemonic.js <word>` first (fast path to the word's saved card + logged
-story) before asking the requester — don't invent a definition or sound anchor from
-nothing, and don't shorten a story you haven't been given.
+If any of these is missing, check `node scripts/find-mnemonic.js <word>` first (the
+mnemonic-log row has the `sense`, `syllabification`, and `pivot_words` — your rhythm and
+meaning) and `grep -i "^<word>\b" anki/reading-room-terms.txt` (the carded story text —
+the card holds only the story now). Fall back to asking the requester before you invent
+a definition or sound anchor from nothing, and don't shorten a story you haven't been
+given.
 
 ---
 

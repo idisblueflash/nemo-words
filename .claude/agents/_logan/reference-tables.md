@@ -50,15 +50,14 @@ gets **one
 tags — `keyword-method` + `absurd-image` is the most common pair.
 
 **`pivot_words` and the target word:** a good mnemonic reconstructs a word
-you don't yet know from pieces you already do — so the preferred style
-avoids spelling out the target/headword literally in the sentence at all
-(the `warrant` example above never writes "warrant"; it's rebuilt purely
-from "war" + "ant" for sound and "permit"/"authorizing" for meaning).
-When the story is built this way, `pivot_words` should list only those
-stand-in words — not the target word — since the field is defined as "the
-words *from sentence* doing the memory work," and a word that never
-appears in the sentence isn't doing work there. Only include the target
-word in `pivot_words` if it is itself literally used in the sentence text.
+you don't yet know from pieces you already do — so the story sentence must
+not spell out the target/headword (or an inflection of it) at all. This is
+the canonical rule (`word-workflow.md` step 3, `_nemo`'s "no bare headword"
+gate); the `warrant` example above never writes "warrant" — it's rebuilt
+purely from "war" + "ant" for sound and "permit"/"authorizing" for meaning.
+`pivot_words` therefore lists only those stand-in words, since the field is
+defined as "the words *from sentence* doing the memory work." If a row you're
+handed has the headword in its sentence, flag it back rather than logging it.
 
 ## `anchor_unit` — the fragment of the word the story pegs onto
 
@@ -90,3 +89,5 @@ word in `pivot_words` if it is itself literally used in the sentence text.
 | `spelling-spellout`    | The mnemonic encodes the letter sequence itself (acronym or first-letter sentence), targeting orthography (*"rhythm → Rhythm Helps Your Two Hips Move"*). |
 | `visual-substitution`  | A letter or fragment is swapped for a look-alike shape or digit to make it stick visually rather than phonetically. |
 | `etymology-cognate`    | The sound-anchor word is itself an etymological cognate of the target root/morpheme, not merely a sound-alike. |
+| `chunked-sound-anchor` | The word is split into ordered sound chunks, each pegged to a concrete keyword that resembles that chunk. |
+| `scene-depicts-meaning`| The mnemonic scene itself acts out the word's definition, not just its sound. |

@@ -21,11 +21,20 @@
 //
 // Deck/notetype/tags/columns are parsed from the file's own header
 // directives each run, not hardcoded, so this stays correct if those change.
+//
+// Mnemonic images (ADR-0012): if the file declares `#media-dir:<path>` and a
+// row has a third `Image` column with a basename, the referenced file under
+// <media-dir> is uploaded to the collection as `nemo-<basename>` (the prefix
+// keeps it from colliding with anything else in the shared media folder) and
+// an <img> tag is appended to the Back field that gets pushed. The Back column
+// in the .txt file itself stays plain-text story — the <img> is composed here
+// at sync time, never stored in the file.
 
 const fs = require("fs");
 const path = require("path");
 
-const FILE = path.join(__dirname, "..", "anki", process.env.ANKI_FILE || "medical-word-parts.txt");
+const REPO_ROOT = path.join(__dirname, "..");
+const FILE = path.join(REPO_ROOT, "anki", process.env.ANKI_FILE || "medical-word-parts.txt");
 const ANKI_CONNECT_URL = process.env.ANKI_CONNECT_URL || "http://127.0.0.1:8765";
 
 function usageAndExit() {
@@ -56,18 +65,24 @@ function parseFile(text) {
       continue;
     }
     if (!line.trim()) continue;
-    const tabIdx = line.indexOf("\t");
-    if (tabIdx === -1) continue; // malformed row, skip
-    rows.push({ front: line.slice(0, tabIdx), back: line.slice(tabIdx + 1) });
+    if (line.indexOf("\t") === -1) continue; // malformed row, skip
+    // Split on every tab: Front, Back, and an optional third Image column.
+    // A story sentence never contains a literal tab, so this is safe.
+    const parts = line.split("\t");
+    rows.push({ front: parts[0], back: parts[1] || "", image: (parts[2] || "").trim() });
   }
 
   const deckName = header.deck;
   const modelName = header.notetype;
   const tags = (header.tags || "").trim().split(/\s+/).filter(Boolean);
   const columns = (header.columns || "Front\tBack").split("\t").map((c) => c.trim());
-  const [frontField, backField] = columns.length === 2 ? columns : ["Front", "Back"];
+  const frontField = columns[0] || "Front";
+  const backField = columns[1] || "Back";
+  // Directory (repo-relative) holding the files named by the Image column.
+  // Absent -> the Image column is ignored even if present.
+  const mediaDir = header["media-dir"] ? header["media-dir"].trim() : null;
 
-  return { deckName, modelName, tags, frontField, backField, rows };
+  return { deckName, modelName, tags, frontField, backField, mediaDir, rows };
 }
 
 // -- AnkiConnect client -------------------------------------------------------
@@ -112,8 +127,30 @@ function escapeQueryValue(value) {
 
 // -- Sync ---------------------------------------------------------------
 
+// Uploads the row's image (if any) into the collection and returns the Back
+// HTML to push: the plain-text story, plus a trailing <img> when an image is
+// attached. A declared-but-missing image file is a row-level failure so the
+// caller logs it and moves on rather than silently dropping the image.
+async function composeBack(row, ctx) {
+  if (!row.image || !ctx.mediaDir) return row.back;
+
+  const srcPath = path.join(REPO_ROOT, ctx.mediaDir, row.image);
+  if (!fs.existsSync(srcPath)) {
+    throw new ActionError(`image not found: ${path.join(ctx.mediaDir, row.image)}`);
+  }
+  const mediaName = `nemo-${row.image}`;
+  await invoke("storeMediaFile", {
+    filename: mediaName,
+    data: fs.readFileSync(srcPath).toString("base64"),
+  });
+
+  const sep = row.back ? "<br>" : "";
+  return `${row.back}${sep}<img src="${mediaName}">`;
+}
+
 async function syncRow(row, ctx) {
   const { deckName, modelName, tags, frontField, backField } = ctx;
+  const back = await composeBack(row, ctx);
   const query = `deck:"${escapeQueryValue(deckName)}" ${frontField}:"${escapeQueryValue(row.front)}"`;
   const noteIds = await invoke("findNotes", { query });
 
@@ -121,12 +158,12 @@ async function syncRow(row, ctx) {
     const noteId = noteIds[0];
     const infos = await invoke("notesInfo", { notes: [noteId] });
     const currentBack = infos[0] && infos[0].fields[backField] && infos[0].fields[backField].value;
-    if (currentBack === row.back) {
+    if (currentBack === back) {
       console.log(`Unchanged "${row.front}"`);
       return;
     }
     await invoke("updateNoteFields", {
-      note: { id: noteId, fields: { [backField]: row.back } },
+      note: { id: noteId, fields: { [backField]: back } },
     });
     console.log(`Updated "${row.front}"`);
     return;
@@ -136,7 +173,7 @@ async function syncRow(row, ctx) {
     note: {
       deckName,
       modelName,
-      fields: { [frontField]: row.front, [backField]: row.back },
+      fields: { [frontField]: row.front, [backField]: back },
       tags,
       // AnkiConnect's default duplicate check is notetype-wide (any deck),
       // but this project's anki/*.txt decks intentionally reuse Front text

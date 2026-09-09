@@ -13,7 +13,10 @@ node scripts/find-mnemonic.js <word>
 Prints the logged story sentence + `pivot_words` for a word if `docs/mnemonics/log.jsonl`
 has a row for it (exit 0), or exits 1 if not. This is the fast "does this word already
 have a story?" check — use it before re-brainstorming or re-explaining. Pair it with
-`grep -i "^<word>\b" anki/reading-room-terms.txt` for the carded say/def/🔊/📖/🎭.
+`grep -i "^<word>\b" anki/reading-room-terms.txt` for the carded story sentence (the
+card's `Back` column is the story, plain text; an optional 3rd `Image` column names a
+mnemonic image under `docs/mnemonics/images/` that `anki-sync.js` attaches at sync
+time — see ADR-0012).
 
 ## Classifying a word (medical vs. general)
 
@@ -23,8 +26,8 @@ node scripts/classify-word.js <word>
 
 A cheap heuristic pre-filter — prints a `**Verdict:**` line (`medical` / `ambiguous` /
 `no`) plus the matched parts. Used by `/prepare-words` to route a word to `_etta_mology`
-vs. `_glossy_ary` before spending a full agent turn. Not authoritative — the agents
-still make the real call.
+vs. the `english-word-explainer` explain step before spending a full agent turn. Not
+authoritative — the real call is made downstream.
 
 ## Pushing an `anki/*.txt` row into the live Anki collection
 
