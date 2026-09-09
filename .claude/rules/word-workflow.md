@@ -88,17 +88,21 @@ forks propose words; their output is not user consent.)
 
 ## The Anki card shape
 
-`anki/reading-room-terms.txt` — `#deck:00 Reading Room::Terms`, columns `Front\tBack`.
-`Front` is the word; `Back` is **the 🎭 story sentence as plain text** — nothing else:
+`anki/reading-room-terms.txt` — `#deck:00 Reading Room::Terms`, columns
+`Front\tBack\tImage`. `Front` is the word; `Back` is **the 🎭 story sentence as plain
+text** — nothing else; `Image` is an optional mnemonic-image basename (ADR-0012):
 
 ```
-trial	The court tried a dull case, weighing his guilt.
+trial	The court tried a dull case, weighing his guilt.	trial.png
 ```
 
-No `<b>`/`<br>`, no `🎭` prefix, no `say`/`def`/🔊/📖, no `Anchors:` line. A word with
-no story yet has an empty `Back` (or simply no row). The pronunciation, definition, and
-sound/meaning axes are build-time scaffolding (step 2) and are never carded — the
-structured record lives in `docs/mnemonics/log.jsonl`.
+No `<b>`/`<br>`, no `🎭` prefix, no `say`/`def`/🔊/📖, no `Anchors:` line in `Back`. The
+`Image` column holds a bare filename under `docs/mnemonics/images/` (or is empty);
+`anki-sync.js` uploads it as `nemo-<file>` and composes the `<img>` onto the pushed
+`Back` at sync time — the `.txt` never holds HTML. A word with no story yet has an empty
+`Back` (or simply no row). The pronunciation, definition, and sound/meaning axes are
+build-time scaffolding (step 2) and are never carded — the structured record lives in
+`docs/mnemonics/log.jsonl`.
 
 ## Explaining several words at once
 

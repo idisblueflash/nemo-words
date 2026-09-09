@@ -14,7 +14,9 @@ Prints the logged story sentence + `pivot_words` for a word if `docs/mnemonics/l
 has a row for it (exit 0), or exits 1 if not. This is the fast "does this word already
 have a story?" check — use it before re-brainstorming or re-explaining. Pair it with
 `grep -i "^<word>\b" anki/reading-room-terms.txt` for the carded story sentence (the
-card's `Back` is the story, plain text — nothing else).
+card's `Back` column is the story, plain text; an optional 3rd `Image` column names a
+mnemonic image under `docs/mnemonics/images/` that `anki-sync.js` attaches at sync
+time — see ADR-0012).
 
 ## Classifying a word (medical vs. general)
 

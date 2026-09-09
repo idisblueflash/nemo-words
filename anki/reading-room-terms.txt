@@ -3,7 +3,8 @@
 #notetype:Basic
 #deck:00 Reading Room::Terms
 #tags:reading-room-terms
-#columns:Front	Back
+#media-dir:docs/mnemonics/images
+#columns:Front	Back	Image
 cracks	Old sidewalk tracks reveal a web of thin cracks.
 Quebec	In Quebec, one quick beck of a chef's hand orders lunch in French.
 platelet	Tiny plates rush to the cut, clump into a little round droplet.

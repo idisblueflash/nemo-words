@@ -1,5 +1,5 @@
 ---
-status: accepted
+status: superseded
 deciders: Flash Hu
 date: 2026-09-09
 ---
@@ -62,6 +62,9 @@ sidecar `docs/mnemonics/alternates.jsonl` for review. `_etta_mology`, `_nemo`, a
 
 ## Links
 
+* Superseded by [ADR-0012](0012-reading-room-card-carries-an-optional-mnemonic-image.md)
+  (the card may again carry HTML — an `<img>` — for an optional mnemonic image; the
+  story-only-text principle for the `.txt` `Back` column is retained)
 * [.claude/rules/word-workflow.md](../../.claude/rules/word-workflow.md)
 * [.claude/skills/update-anki-story/SKILL.md](../../.claude/skills/update-anki-story/SKILL.md)
 * [.claude/commands/prepare-words.md](../../.claude/commands/prepare-words.md)

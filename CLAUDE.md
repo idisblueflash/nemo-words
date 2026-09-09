@@ -61,7 +61,9 @@ and ADR-0009 in `docs/decisions/`.
 The recurring task here is **explaining a word and saving it** — a plain-language
 definition and a pronunciation worked out in chat, a sound+meaning mnemonic, and (once a
 human picks one) a 🎭 story. Only the story is carded: `anki/reading-room-terms.txt` is
-`Front` = word, `Back` = the story sentence, plain text. The structured record (with the
+`Front` = word, `Back` = the story sentence (plain text), and an optional `Image` column
+naming a mnemonic image under `docs/mnemonics/images/` that `anki-sync.js` attaches to
+the card at sync time (ADR-0012). The structured record (with the
 sound/anchor/technique fields) lives in the mnemonic log (`docs/mnemonics/log.jsonl`).
 Read `.claude/rules/word-workflow.md` before doing that work; `.claude/rules/scripts.md`
 covers the helper scripts.
