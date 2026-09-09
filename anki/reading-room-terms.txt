@@ -235,7 +235,7 @@ cryptic	An old crypt door ticks, hiding a coded warning.
 ominous	Ommen watches Venus over almond trees, warning of a storm.
 steer	Truck stuck in gear, he steers off the road.
 breadth	The baker's bread loaf stretched wide across the table.
-competence	Compass-led police walk since sunrise, trusted with the border.
+competence	Compass-led police walk since sunrise, trusted with the border.	competence.png
 excelling	2. Out-selling every rival, she's clearly the best on the floor.
 legible	The ledger's neat entries let Abel read fast.
 combustion	Come start the engine as fuel busts into burning chunks.
