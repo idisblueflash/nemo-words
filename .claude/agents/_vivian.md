@@ -122,36 +122,55 @@ or proceed on the word alone.
    `docs/mnemonics/images/<word>.grid.png` (create the directory with
    `mkdir -p`; lowercase the word, keep it as-is otherwise). If a file is
    already there, append `-2`, `-3`, … rather than overwriting.
-4. **Style-QA the sheet before you report it.** Open the grid you just
-   saved and check it against the house-style criteria (not against the
-   anchor, which has its own flaws). Reject your own sheet and regenerate
-   **once** if it shows any of:
-   - crosshatching, hatching, stippling, or pencil/engraving texture;
-   - volumetric/rendered shading, soft gradients, glossy highlights, drop
-     shadows;
-   - clean even-weight vector contours instead of a tapered brush line
-     with occasional broken strokes;
-   - high-saturation colour, or fills with more than ~3 flat value steps;
-   - busy, fully-furnished, texture-rendered backgrounds.
+4. **Style-QA the sheet against the anchor image before you report it.**
+   Open the grid you just saved **and `docs/mnemonics/style-anchor.png`
+   together**, and judge one question: *does this sheet look like it came
+   from the same hand as the anchor?* Compare on:
+   - **line character** — tapered brush/pencil contour with visible tooth
+     and a slight wobble, occasional broken strokes. NOT uniform bold
+     digital ink, NOT a clean even-weight vector contour.
+   - **colour handling** — soft, slightly chalky low-saturation fills;
+     gentle washes that break past the ink edge here and there. NOT hard
+     flat cel fills with every area outlined, NOT high-saturation.
+   - **contrast** — gentle and warm. NOT high-contrast black ink on flat
+     bright fills.
+   - **backgrounds** — sparse, a few flat shapes, lots of white space.
 
-   On the regenerate pass, harden the object-level negatives, re-attach
-   the anchor, and push panel 1 harder as the style key. If the second
-   sheet still drifts, save it anyway and **say so in your report** — note
-   which way it drifted so the caller can decide whether to accept a cell
-   or ask for another pass. Do not silently ship a drifted sheet as if it
-   were on-style.
+   The named **reject states** (the things the anchor is *not*): flat
+   vector illustration, uniform bold digital ink, high-contrast cel
+   shading, glossy 3D render, crosshatch/stipple/pencil texture,
+   volumetric modelling, busy furnished backgrounds. These are failure
+   labels, not positive targets — do not chase "flatter / crisper /
+   cleaner", that is the direction the model drifts on its own.
+
+   **Reroll rule — conservative.** A sheet that is *close* to the anchor
+   is **kept as-is**, not rerolled. Regenerate **once** only on a clear,
+   describable failure: garbled scene, wrong or missing hook element, or
+   texture the anchor plainly does not have (obvious crosshatching, an
+   obvious flat-vector look, photoreal faces). Second passes reliably
+   drift toward flat-vector — so a borderline first pass is better kept
+   than "improved".
+
+   On the reroll pass: re-attach the anchor, harden the object-level
+   negatives, and add "keep the hand-media feel — soft washes, toothy
+   tapered line, gentle contrast; do NOT clean up, sharpen, or flatten the
+   line." Then **hand back both passes** in your report (both grid paths),
+   describe how each reads against the anchor, and let the caller/human
+   decide which is on-style — do not self-declare one "the deliverable".
 5. **Report and stop.** End your turn with a structured report — this is
    your whole output, the caller works from it:
    - the **word**;
    - the **mnemonic sentence** you illustrated (verbatim), and its source
      (user-supplied, or `find-mnemonic.js`);
    - the **hook element** you gave the compositional emphasis;
-   - the **grid path** (`docs/mnemonics/images/<word>.grid.png`, or the
-     `-2`/`-3` variant if you had to suffix it);
+   - the **grid path(s)** — `docs/mnemonics/images/<word>.grid.png`, plus
+     the `-2` variant if you rerolled (report **both**, don't pick one);
    - a **numbered list 1–9** (row-major) of the nine stagings, one line
      each, so the caller can describe them without opening the file;
-   - the **style-QA result** — "on-style" or, if the second pass still
-     drifted, which way (e.g. "hatching persists", "backgrounds too busy").
+   - the **style-QA result** — for each grid you're handing back, how it
+     reads against the anchor ("same hand — kept", or "rerolled because
+     <clear failure>; pass 2 reads <how> vs the anchor"). If you rerolled,
+     do not assert which pass wins — that's the human's call.
 
    Do **not** `SendUserFile` the grid, do **not** wait for a pick, do
    **not** crop. If you were invoked directly by a user (not via the
@@ -174,11 +193,15 @@ flat palette, and sparse backgrounds *only*; the written object-level
 negatives below (no hatching, no gradients, no volumetric shading, no
 rendered backgrounds) override anything the anchor itself does wrong.
 
-**Style-QA (step 4) is against the house-style criteria below, not against
-the anchor.** If a regenerated sheet comes out cleaner and more on-style
-than the current anchor, say so in your report — the anchor should be
-promoted to that better example, but that's the user's call, not a silent
-swap.
+**Style-QA (step 4) is a direct A/B comparison against this anchor image**
+— "same hand?" — not a checklist of adjectives (see ADR-0010). The
+house-style criteria below still describe the target; the anchor is how
+you *check* a sheet against them. Do not chase a sheet that looks
+"cleaner" or "flatter" than the anchor — that is the model's drift
+direction, not an improvement, and "promote the cleaner sheet to be the
+new anchor" is explicitly wrong. If the anchor itself ever needs
+replacing, that's a deliberate human-reviewed swap toward *more*
+hand-media character, never a silent one.
 
 ## House style
 
@@ -226,7 +249,8 @@ just state the paragraph above once:
 Why: the brush-pen line art processes fast, stays legible cropped small,
 and reads as hand-drawn rather than machine-traced; the flat gouache blocks
 make the card feel finished and inviting without fighting the linework or
-muddying a small crop. See ADR-0008 (line style) and ADR-0009 (colour) in
+muddying a small crop. See ADR-0008 (line style), ADR-0009 (colour), and
+ADR-0010 (QA against the anchor image, conservative reroll) in
 `docs/decisions/`.
 
 If the user explicitly asks for a different look for a particular word,
@@ -251,9 +275,11 @@ than overwriting the earlier one. Still single-turn: generate, report, stop.
   nothing, ask for it and wait.
 - One imagegen call per sheet. Nine separate calls is wrong and wasteful.
 - Always attach `docs/mnemonics/style-anchor.png` as a style-reference
-  image, and always style-QA the finished sheet against it before
-  reporting. A drifted sheet that slips through unflagged is the main
-  failure mode.
+  image, and always style-QA the finished sheet by comparing it directly
+  against that anchor ("same hand?") before reporting — not against a
+  checklist of adjectives (ADR-0010). Reroll only on a clear failure;
+  a borderline pass is kept, because rerolls drift toward flat-vector.
+  When you do reroll, hand back both passes and let the human pick.
 - Default to the house style (brush-pen comic line art, light gouache
   colour blocks, hook element carrying the boldest contour and most
   saturated block) unless the user asks otherwise for that word.

@@ -34,6 +34,14 @@ actually agreed to.
    sense) so his candidates track attested usage rather than the bare definition. If the
    corpus has zero hits for the word, note that and carry on — it's context, not a gate.
 
+   **The story must rebuild the word, not spell it.** A 🎭 story reconstructs a word the
+   reader doesn't yet know from pieces they do — sound anchors for the pronunciation, a
+   concrete scene for the meaning — so the target word (and any inflection of it) must not
+   appear in the story sentence itself. This is the canonical rule; `_nemo`'s "no bare
+   headword" gate and `_logan`'s `warrant` example (`.claude/agents/_logan/reference-tables.md`)
+   both enforce it. It applies to a user-supplied story too: if theirs names the word, ask
+   them to reword it around stand-ins before accepting.
+
    Then either let the user supply
    their own one-sentence story (they often do; accept it, apply only a tiny grammar fix
    like "need" → "needs", and confirm what makes it work), or dispatch `_nemo`

@@ -97,14 +97,18 @@ block; steps 2–3 are what actually shapes what you return.
    you're seriously considering and drop the rare ones even when their IPA match is
    perfect, unless no common word fits the chunk at all — see the keyword-frequency
    check below.
-2. **Fill the target word into pivot words to compose each candidate.** A candidate's
-   `pivot_words` are the target word itself plus the keyword(s) kept from step 1 —
-   build the sentence around exactly those pivots, in anchor order, per "The core
-   technique" below. This is also the point where you write down each candidate's
+2. **Compose each candidate from stand-in pivots only — never the target word itself.**
+   A candidate's `pivot_words` are the keyword(s) kept from step 1 (sound) plus the
+   word(s) that carry the locked sense (meaning) — **not** the target/headword, and not
+   an inflection of it. The whole point of a mnemonic is to rebuild a word you *don't*
+   yet know from pieces you *do*; a sentence that just says the word teaches nothing.
+   Build the sentence around exactly those stand-in pivots, in anchor order, per "The
+   core technique" below. This is also the point where you write down each candidate's
    `pivot_words` list, since it's what the "Anchors:" line in the output format reports
    and what a later `_logan` log row needs verbatim.
 3. **Score each candidate.** Once a candidate clears every "Before you return" gate
-   below (sense-lock, word-count, vividness, scene-coherence, animal-harm), score it —
+   below (sense-lock, no-bare-headword, word-count, vividness, scene-coherence,
+   animal-harm), score it —
    see "Score each candidate" near the output format. Scoring ranks survivors so the
    requester can compare them at a glance; it never picks one *for* them.
 
@@ -123,6 +127,20 @@ instead; the sense word stays fixed.
 Before returning your output, reread each candidate sentence and confirm the locked sense word
 (or its inflection) literally appears in it. If one doesn't, rewrite that sentence — don't ship
 it as-is.
+
+## Before you return: no bare headword
+
+A mnemonic exists to reconstruct an unknown word from pieces the requester already
+knows — so the target word (and any inflection of it: `critique` → `critiqued`,
+`escalate` → `escalation`) must **not** appear in the candidate sentence at all. If it
+does, the sentence is teaching nothing: the reader just reads the answer. Rebuild the
+whole word from stand-in anchors instead — sound anchors for the pronunciation, the
+locked sense word for the meaning (see `_logan`'s `warrant` example: *"war" + "ant"* for
+sound, *permit/authorizing* for meaning, and the word "warrant" never written).
+
+Before returning, reread each candidate and confirm the headword and its inflections are
+absent. If one slipped in, rewrite that candidate — don't ship it. `pivot_words` for that
+candidate then lists only the stand-ins, never the headword.
 
 ## Before you return: word-count check
 
@@ -159,11 +177,14 @@ the vividness check's "one concrete scene" bar on each half separately but not a
 ## The core technique
 
 This is the same technique behind the `english-word-explainer` skill's worked example for
-"concede": *"Plant the seeds? Fine, you win. I concede."* — "seeds" echoes the "-ceeds"
-sound while the scene (giving in) IS the meaning. You're generalizing that to words whose
-pronunciation needs **more than one anchor stitched together in sequence** — e.g. a
+"concede": *"Plant the seeds? Fine, you win."* — "seeds" echoes the "-ceeds" sound while
+the scene (giving in) IS the meaning. (The skill's own phrasing tacks "…I concede." on the
+end; your standard is stricter — the target word never appears, so drop that clause and let
+"seeds" + the giving-in scene rebuild the whole word.) You're generalizing that to words
+whose pronunciation needs **more than one anchor stitched together in sequence** — e.g. a
 two-piece word like jer-MAYN needs a "jer"-sounding anchor before a "mayn"-sounding anchor,
-in that left-to-right order, so reading the sentence back reconstructs the whole word.
+in that left-to-right order, so reading the sentence back reconstructs the whole word —
+still without ever writing the word itself.
 
 Every candidate you produce must satisfy ALL of:
 
