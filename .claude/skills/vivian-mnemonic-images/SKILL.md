@@ -1,6 +1,6 @@
 ---
 name: vivian-mnemonic-images
-description: Orchestrate mnemonic-image creation for one or more vocabulary words with the _vivian subagent. Dispatches a fire-and-forget _vivian per word to produce a 3×3 candidate grid, then handles the pick-and-crop back half in the main thread — showing each grid, taking the user's cell number 1–9, and cropping the final asset with scripts/crop-grid-cell.sh. Use when the user says "have _vivian illustrate <word>", "make a mnemonic image for <word(s)>", "delegate _vivian for these words", or wants image variations to choose from. Keeps _vivian single-turn so no subagent is ever resumed.
+description: Orchestrate mnemonic-image creation for one or more vocabulary words with the _vivian subagent. Dispatches a fire-and-forget _vivian per word to produce a 3×3 candidate grid, then handles the pick-and-crop back half in the main thread — showing each grid, taking the user's cell number 1–9, and cropping the final asset with scripts/crop-grid-cell.sh, then attaching it to the word's Anki card (Image column + anki-sync.js) as a default step. Use when the user says "have _vivian illustrate <word>", "make a mnemonic image for <word(s)>", "delegate _vivian for these words", or wants image variations to choose from. Keeps _vivian single-turn so no subagent is ever resumed.
 ---
 
 You are orchestrating mnemonic-image creation. The work splits in two:
@@ -78,6 +78,33 @@ the path argument handles that fine.
 Then `SendUserFile` each final `docs/mnemonics/images/<word>.png`
 (`display: "render"`) and give the user a summary table: word, cell, final
 path.
+
+## Step 4 — attach the image to the Anki card (default, no separate ask)
+
+Cropping a cell *is* the user picking that image, so attaching it to the
+card follows automatically — don't wait for a separate "sync it" request.
+For each word just cropped, if it has a row in `anki/reading-room-terms.txt`:
+
+1. Set that row's `Image` column to the bare filename `<word>.png` (add the
+   third tab-separated field, or patch it if already present). A word-part
+   image whose card lives in `anki/medical-word-parts.txt` has no `Image`
+   column — skip the attach for those, just report the crop.
+2. Sync only that row:
+
+   ```
+   ANKI_FILE=reading-room-terms.txt node scripts/anki-sync.js "<word>"
+   ```
+
+   `anki-sync.js` uploads the file as `nemo-<word>.png` and composes
+   `<story><br><img>` onto the pushed `Back` (ADR-0012); the `.txt` stays
+   plain text. If Anki is unreachable the `.txt` edit still stands and the
+   error goes to `anki/sync.log` — tell the user to re-run later.
+
+3. Add the sync result to the summary table (word, cell, final path, Anki
+   row updated / sync deferred).
+
+Skip this step only if the user said not to touch Anki, or the word has no
+card yet.
 
 ## Regeneration
 
