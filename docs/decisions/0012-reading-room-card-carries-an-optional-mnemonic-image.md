@@ -4,6 +4,10 @@ deciders: Flash Hu
 date: 2026-09-09
 ---
 
+> **Note (ADR-0013, 2026-09-10):** the image tree moved from
+> `docs/mnemonics/images/` to `images/mnemonic/`. Read the
+> `docs/mnemonics/images/<word>.png` paths below as `images/mnemonic/<word>.png`.
+
 # 0012. The reading-room Anki card carries an optional mnemonic image, via an Image column
 
 ## Context and Problem Statement

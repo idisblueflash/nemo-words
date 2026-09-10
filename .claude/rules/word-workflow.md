@@ -97,7 +97,7 @@ trial	The court tried a dull case, weighing his guilt.	trial.png
 ```
 
 No `<b>`/`<br>`, no `🎭` prefix, no `say`/`def`/🔊/📖, no `Anchors:` line in `Back`. The
-`Image` column holds a bare filename under `docs/mnemonics/images/` (or is empty);
+`Image` column holds a bare filename under `images/mnemonic/` (or is empty);
 `anki-sync.js` uploads it as `nemo-<file>` and composes the `<img>` onto the pushed
 `Back` at sync time — the `.txt` never holds HTML. A word with no story yet has an empty
 `Back` (or simply no row). The pronunciation, definition, and sound/meaning axes are

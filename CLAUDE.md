@@ -47,7 +47,7 @@ To make mnemonic images for one or more vocabulary words, invoke the
 to render a 3×3 candidate grid, then handles the pick-and-crop back half
 in the main thread: shows each grid, takes a cell number 1–9, and crops
 the final asset with `scripts/crop-grid-cell.sh` into
-`docs/mnemonics/images/<word>.png`.
+`images/mnemonic/<word>.png`.
 
 Picking a cell counts as choosing that image, so attaching it to the Anki
 card is a **default step, not a separate request**: right after the crop,
@@ -72,7 +72,7 @@ The recurring task here is **explaining a word and saving it** — a plain-langu
 definition and a pronunciation worked out in chat, a sound+meaning mnemonic, and (once a
 human picks one) a 🎭 story. Only the story is carded: `anki/reading-room-terms.txt` is
 `Front` = word, `Back` = the story sentence (plain text), and an optional `Image` column
-naming a mnemonic image under `docs/mnemonics/images/` that `anki-sync.js` attaches to
+naming a mnemonic image under `images/mnemonic/` that `anki-sync.js` attaches to
 the card at sync time (ADR-0012). The structured record (with the
 sound/anchor/technique fields) lives in the mnemonic log (`docs/mnemonics/log.jsonl`).
 Read `.claude/rules/word-workflow.md` before doing that work; `.claude/rules/scripts.md`

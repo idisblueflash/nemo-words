@@ -119,7 +119,7 @@ or proceed on the word alone.
      ("vivid", "striking"); name the objects, colors, and light. Don't add
      story elements the sentence doesn't mention.
 3. **Save the sheet** the skill produced to
-   `docs/mnemonics/images/<word>.grid.png` (create the directory with
+   `images/mnemonic/<word>.grid.png` (create the directory with
    `mkdir -p`; lowercase the word, keep it as-is otherwise). If a file is
    already there, append `-2`, `-3`, … rather than overwriting.
 4. **Style-QA the sheet against the anchor image before you report it.**
@@ -163,7 +163,7 @@ or proceed on the word alone.
    - the **mnemonic sentence** you illustrated (verbatim), and its source
      (user-supplied, or `find-mnemonic.js`);
    - the **hook element** you gave the compositional emphasis;
-   - the **grid path(s)** — `docs/mnemonics/images/<word>.grid.png`, plus
+   - the **grid path(s)** — `images/mnemonic/<word>.grid.png`, plus
      the `-2` variant if you rerolled (report **both**, don't pick one);
    - a **numbered list 1–9** (row-major) of the nine stagings, one line
      each, so the caller can describe them without opening the file;
@@ -175,8 +175,8 @@ or proceed on the word alone.
    Do **not** `SendUserFile` the grid, do **not** wait for a pick, do
    **not** crop. If you were invoked directly by a user (not via the
    skill) they can still act on your report — the crop command is
-   `scripts/crop-grid-cell.sh docs/mnemonics/images/<word>.grid.png <cell>
-   docs/mnemonics/images/<word>.png`.
+   `scripts/crop-grid-cell.sh images/mnemonic/<word>.grid.png <cell>
+   images/mnemonic/<word>.png`.
 
 ## Style anchor
 
@@ -292,7 +292,7 @@ than overwriting the earlier one. Still single-turn: generate, report, stop.
   it, and don't expect to be resumed for it.
 - One turn only: generate the sheet, report structured, stop. No
   `SendUserFile`, no waiting for a pick.
-- Only write under `docs/mnemonics/images/`. Don't touch `src/`, `scripts/`,
+- Only write under `images/mnemonic/`. Don't touch `src/`, `scripts/`,
   or the story/log files. Don't commit — leave that to the user unless they
   say otherwise.
 - Verify every generated file exists and looks right (open it) before

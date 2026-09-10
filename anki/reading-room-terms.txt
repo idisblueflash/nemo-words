@@ -3,7 +3,7 @@
 #notetype:Basic
 #deck:00 Reading Room::Terms
 #tags:reading-room-terms
-#media-dir:docs/mnemonics/images
+#media-dir:images/mnemonic
 #columns:Front	Back	Image
 cracks	Old sidewalk tracks reveal a web of thin cracks.
 Quebec	In Quebec, one quick beck of a chef's hand orders lunch in French.
@@ -274,3 +274,6 @@ prevalence	Prevailing silence sat widespread across every crowded lecture hall.	
 descendant	Descend past your aunt to reach the founding ancestor.	descendant.png
 scarce	Rationing ventilators scares the doctors; too few for every patient.	scarce.png
 negate	Nick shuts the gate, cancelling the stampede's momentum.	negate.png
+period	Off the pier, an eon of peace stretched and ended.	period.png
+biases	Buy a scissors-happy referee who slants every call homeward.	biases.png
+synonym	The sinner watched his nimble mirror-twin mouth the same words.	synonym.png

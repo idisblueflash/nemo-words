@@ -75,13 +75,13 @@ apostrophes.
 Invoke `codex-imagegen` (Skill tool) and follow its `$imagegen` schema.
 The whole sheet is **one** generation call, not nine.
 
-**Attach the style anchor** `docs/corpus/images/style-anchor.png` as a
+**Attach the style anchor** `images/corpus/style-anchor.png` as a
 style-reference image:
 
 ```
 python3 "<SKILL_DIR>/scripts/run_codex_imagegen.py" \
   --prompt-file "<PROMPT_FILE>" \
-  --image "docs/corpus/images/style-anchor.png" \
+  --image "images/corpus/style-anchor.png" \
   --timeout 600
 ```
 
@@ -152,8 +152,8 @@ Bake into the brief:
 
 ### 4. Save the sheet
 
-Save what the skill produced to `docs/corpus/images/<word>.grid.png`
-(`mkdir -p docs/corpus/images`; lowercase the word, keep it otherwise
+Save what the skill produced to `images/corpus/<word>.grid.png`
+(`mkdir -p images/corpus`; lowercase the word, keep it otherwise
 as-is). If a file is already there, append `-2`, `-3`, … — never
 overwrite.
 
@@ -189,7 +189,7 @@ then end your turn with a structured report:
 - the **corpus match count** (total hits for the word / query used);
 - a **numbered list 1–9** (row-major) of the nine caption sentences
   exactly as they appear on the sheet;
-- the **grid path** (`docs/corpus/images/<word>.grid.png`, or the
+- the **grid path** (`images/corpus/<word>.grid.png`, or the
   suffixed variant);
 - the **style-QA result** — "on-style, captions clean" or, if the second
   pass still drifted, which way.
@@ -200,7 +200,7 @@ send, report, stop.
 ## House style
 
 Fixed — do not offer alternatives or switch mediums per word. It is the
-style of `docs/corpus/images/style-anchor.png`:
+style of `images/corpus/style-anchor.png`:
 
 > **Clean rounded cartoon / webcomic line art with muted flat colour.** A
 > smooth, confident dark-brown ink outline of fairly even weight —
@@ -241,7 +241,7 @@ just state the paragraph once:
 
 See ADR-0008 (line style) and ADR-0009 (colour) in `docs/decisions/` for
 the sibling `_vivian` style; `_cora`'s anchor is its own and lives at
-`docs/corpus/images/style-anchor.png`.
+`images/corpus/style-anchor.png`.
 
 If the user explicitly asks for a different look for a run, honour it for
 that run only; the default and fallback is always the style above.
@@ -253,14 +253,14 @@ that run only; the default and fallback is always the style above.
   and illustrate as many as you have (still one sheet), noting the empty
   panels — or ask the user whether to broaden the query.
 - One imagegen call per sheet. Nine calls is wrong and wasteful.
-- Always attach `docs/corpus/images/style-anchor.png` and always style-QA the
+- Always attach `images/corpus/style-anchor.png` and always style-QA the
   finished sheet before reporting. A drifted or garbled-caption sheet
   that slips through unflagged is the main failure mode.
 - Clean corpus tokenisation in captions (spacing, apostrophes) but never
   change the wording.
 - Never bypass `codex-imagegen`'s bundled launcher or run `codex`
   directly.
-- Only write under `docs/corpus/images/`. Don't touch `src/`, `scripts/`,
+- Only write under `images/corpus/`. Don't touch `src/`, `scripts/`,
   the story/log files, or `docs/mnemonics/`. Don't commit — leave that to
   the user.
 - Verify the generated file exists and open it before reporting it done.

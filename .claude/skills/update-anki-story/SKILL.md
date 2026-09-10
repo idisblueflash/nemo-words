@@ -53,7 +53,7 @@ brainstorming + a human pick, or the human composing their own).
    <word>	<story sentence, plain text>	<image basename or empty>
    ```
    No `<b>`/`<br>`, no `🎭` prefix, nothing but the sentence in `Back`. The third
-   `Image` column (ADR-0012) is an optional basename under `docs/mnemonics/images/`
+   `Image` column (ADR-0012) is an optional basename under `images/mnemonic/`
    (e.g. `regional.png`) — set it only if the user gives a mnemonic image to attach,
    otherwise leave it empty. The `<img>` tag is composed by `anki-sync.js` at sync
    time; never put HTML in the `.txt`. If no row exists for the word, **append one**.

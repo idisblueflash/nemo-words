@@ -15,7 +15,7 @@ has a row for it (exit 0), or exits 1 if not. This is the fast "does this word a
 have a story?" check — use it before re-brainstorming or re-explaining. Pair it with
 `grep -i "^<word>\b" anki/reading-room-terms.txt` for the carded story sentence (the
 card's `Back` column is the story, plain text; an optional 3rd `Image` column names a
-mnemonic image under `docs/mnemonics/images/` that `anki-sync.js` attaches at sync
+mnemonic image under `images/mnemonic/` that `anki-sync.js` attaches at sync
 time — see ADR-0012).
 
 ## Classifying a word (medical vs. general)
