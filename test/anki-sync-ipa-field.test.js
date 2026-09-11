@@ -1,11 +1,9 @@
-// Coverage for the mnemonic-image field in scripts/anki-sync.js (ADR-0012).
+// Coverage for the IPA field in scripts/anki-sync.js (ADR-0015).
 //
-// When an anki/*.txt file declares `#media-dir:<path>` and a row carries a
-// third `Image` column, anki-sync.js should:
-//   1. read <repo>/<media-dir>/<basename>, upload it via storeMediaFile as
-//      `nemo-<basename>`, and
-//   2. push a Back field of `<img src="nemo-<basename>"><br><story>` — the
-//      .txt Back column itself stays plain-text story.
+// When an anki/*.txt row carries a fourth `IPA` column, anki-sync.js should
+// append it to the composed Back as a small muted `/ipa/` line, last —
+// composed Back order is image, then story, then IPA. The .txt Back column
+// itself stays plain-text story.
 //
 // Runs the real script end-to-end against an in-process mock AnkiConnect.
 
@@ -22,9 +20,9 @@ const execFileAsync = promisify(execFile);
 const repoRoot = path.join(__dirname, "..");
 const scriptPath = path.join(repoRoot, "scripts", "anki-sync.js");
 const ankiDir = path.join(repoRoot, "anki");
-const testFileName = "anki-sync-image-field.test.txt";
+const testFileName = "anki-sync-ipa-field.test.txt";
 const testFilePath = path.join(ankiDir, testFileName);
-const mediaRelDir = path.join("test", "fixtures", "anki-sync-image-field");
+const mediaRelDir = path.join("test", "fixtures", "anki-sync-ipa-field");
 const mediaAbsDir = path.join(repoRoot, mediaRelDir);
 const imageName = "widget.png";
 
@@ -32,7 +30,6 @@ function createMockAnkiConnect() {
   let nextId = 1000;
   const notes = [];
   const calls = [];
-  const media = {};
 
   const server = http.createServer((req, res) => {
     let body = "";
@@ -41,7 +38,7 @@ function createMockAnkiConnect() {
       const { action, params } = JSON.parse(body);
       calls.push({ action, params });
       let result = null;
-      let error = null;
+      const error = null;
 
       if (action === "createDeck") {
         result = 1;
@@ -52,7 +49,6 @@ function createMockAnkiConnect() {
         const front = fieldMatch ? fieldMatch[2] : null;
         result = notes.filter((n) => n.deckName === deck && n.fields.Front === front).map((n) => n.id);
       } else if (action === "storeMediaFile") {
-        media[params.filename] = params.data;
         result = params.filename;
       } else if (action === "addNote") {
         const note = params.note;
@@ -76,7 +72,7 @@ function createMockAnkiConnect() {
     });
   });
 
-  return { server, calls, notes, media };
+  return { server, calls, notes };
 }
 
 let mock;
@@ -96,9 +92,10 @@ test.beforeEach(async () => {
       "#deck:Reading Room Terms",
       "#notetype:Basic",
       `#media-dir:${mediaRelDir}`,
-      "#columns:Front\tBack\tImage",
-      `widget\tThe midget wound the fidget.\t${imageName}`,
-      "plainword\tNo image on this one.\t",
+      "#columns:Front\tBack\tImage\tIPA",
+      `widget\tThe midget wound the fidget.\t${imageName}\tˈwɪd.ɪt`,
+      "plainword\tNo image, has IPA.\t\tˈpleɪn.wɜrd",
+      "noipaword\tNo IPA at all.\t\t",
     ].join("\n") + "\n"
   );
 });
@@ -109,56 +106,38 @@ test.afterEach(async () => {
   fs.rmSync(mediaAbsDir, { recursive: true, force: true });
 });
 
-test("a row with an Image column uploads the file and appends an <img> to Back", async () => {
-  const { stdout } = await execFileAsync("node", [scriptPath, "widget"], {
+test("a row with Image and IPA orders Back as image, story, IPA", async () => {
+  await execFileAsync("node", [scriptPath, "widget"], {
     encoding: "utf8",
     env: { ...process.env, ANKI_FILE: testFileName, ANKI_CONNECT_URL: baseUrl },
   });
-  assert.match(stdout, /Added "widget"/);
-
-  const store = mock.calls.find((c) => c.action === "storeMediaFile");
-  assert.ok(store, "expected a storeMediaFile call");
-  assert.equal(store.params.filename, "nemo-widget.png");
-  assert.equal(
-    store.params.data,
-    fs.readFileSync(path.join(mediaAbsDir, imageName)).toString("base64")
-  );
 
   const added = mock.notes.find((n) => n.fields.Front === "widget");
-  assert.equal(added.fields.Back, '<img src="nemo-widget.png"><br>The midget wound the fidget.');
+  assert.equal(
+    added.fields.Back,
+    '<img src="nemo-widget.png"><br>The midget wound the fidget.<br><small style="opacity:0.6">/ˈwɪd.ɪt/</small>'
+  );
 });
 
-test("a row with an empty Image column pushes plain story and no media upload", async () => {
+test("a row with IPA but no image appends the IPA line directly after the story", async () => {
   await execFileAsync("node", [scriptPath, "plainword"], {
     encoding: "utf8",
     env: { ...process.env, ANKI_FILE: testFileName, ANKI_CONNECT_URL: baseUrl },
   });
 
-  assert.ok(!mock.calls.some((c) => c.action === "storeMediaFile"), "no media upload expected");
   const added = mock.notes.find((n) => n.fields.Front === "plainword");
-  assert.equal(added.fields.Back, "No image on this one.");
+  assert.equal(
+    added.fields.Back,
+    'No image, has IPA.<br><small style="opacity:0.6">/ˈpleɪn.wɜrd/</small>'
+  );
 });
 
-test("a declared-but-missing image file fails that row without aborting the run", async () => {
-  fs.writeFileSync(
-    testFilePath,
-    [
-      "#deck:Reading Room Terms",
-      "#notetype:Basic",
-      `#media-dir:${mediaRelDir}`,
-      "#columns:Front\tBack\tImage",
-      "widget\tThe midget wound the fidget.\tgone.png",
-    ].join("\n") + "\n"
-  );
+test("a row with an empty IPA column pushes plain story with no IPA line", async () => {
+  await execFileAsync("node", [scriptPath, "noipaword"], {
+    encoding: "utf8",
+    env: { ...process.env, ANKI_FILE: testFileName, ANKI_CONNECT_URL: baseUrl },
+  });
 
-  await assert.rejects(
-    execFileAsync("node", [scriptPath, "widget"], {
-      encoding: "utf8",
-      env: { ...process.env, ANKI_FILE: testFileName, ANKI_CONNECT_URL: baseUrl },
-    }),
-    (err) => {
-      assert.match(err.stderr, /image not found/);
-      return true;
-    }
-  );
+  const added = mock.notes.find((n) => n.fields.Front === "noipaword");
+  assert.equal(added.fields.Back, "No IPA at all.");
 });

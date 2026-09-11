@@ -29,6 +29,12 @@
 // an <img> tag is appended to the Back field that gets pushed. The Back column
 // in the .txt file itself stays plain-text story — the <img> is composed here
 // at sync time, never stored in the file.
+//
+// IPA (ADR-0015): an optional fourth `IPA` column carries the word's IPA
+// transcription (stress marked, e.g. `ˈɑm.ə.nəs`). If present, it's appended
+// to the composed Back as a small muted `/ipa/` line. Composed Back order is
+// image, then story, then IPA. Like the Image column, this is sync-time
+// composition only — the .txt Back column itself never gains it.
 
 const fs = require("fs");
 const path = require("path");
@@ -66,10 +72,16 @@ function parseFile(text) {
     }
     if (!line.trim()) continue;
     if (line.indexOf("\t") === -1) continue; // malformed row, skip
-    // Split on every tab: Front, Back, and an optional third Image column.
-    // A story sentence never contains a literal tab, so this is safe.
+    // Split on every tab: Front, Back, an optional third Image column, and an
+    // optional fourth IPA column. A story sentence never contains a literal
+    // tab, so this is safe.
     const parts = line.split("\t");
-    rows.push({ front: parts[0], back: parts[1] || "", image: (parts[2] || "").trim() });
+    rows.push({
+      front: parts[0],
+      back: parts[1] || "",
+      image: (parts[2] || "").trim(),
+      ipa: (parts[3] || "").trim(),
+    });
   }
 
   const deckName = header.deck;
@@ -128,24 +140,32 @@ function escapeQueryValue(value) {
 // -- Sync ---------------------------------------------------------------
 
 // Uploads the row's image (if any) into the collection and returns the Back
-// HTML to push: the plain-text story, plus a trailing <img> when an image is
-// attached. A declared-but-missing image file is a row-level failure so the
-// caller logs it and moves on rather than silently dropping the image.
+// HTML to push, in review order: the <img> (if attached), then the plain-text
+// story, then a trailing muted `/ipa/` line (if given). A declared-but-missing
+// image file is a row-level failure so the caller logs it and moves on rather
+// than silently dropping the image.
 async function composeBack(row, ctx) {
-  if (!row.image || !ctx.mediaDir) return row.back;
+  const pieces = [];
 
-  const srcPath = path.join(REPO_ROOT, ctx.mediaDir, row.image);
-  if (!fs.existsSync(srcPath)) {
-    throw new ActionError(`image not found: ${path.join(ctx.mediaDir, row.image)}`);
+  if (row.image && ctx.mediaDir) {
+    const srcPath = path.join(REPO_ROOT, ctx.mediaDir, row.image);
+    if (!fs.existsSync(srcPath)) {
+      throw new ActionError(`image not found: ${path.join(ctx.mediaDir, row.image)}`);
+    }
+    const mediaName = `nemo-${row.image}`;
+    await invoke("storeMediaFile", {
+      filename: mediaName,
+      data: fs.readFileSync(srcPath).toString("base64"),
+    });
+
+    pieces.push(`<img src="${mediaName}">`);
   }
-  const mediaName = `nemo-${row.image}`;
-  await invoke("storeMediaFile", {
-    filename: mediaName,
-    data: fs.readFileSync(srcPath).toString("base64"),
-  });
 
-  const sep = row.back ? "<br>" : "";
-  return `${row.back}${sep}<img src="${mediaName}">`;
+  if (row.back) pieces.push(row.back);
+
+  if (row.ipa) pieces.push(`<small style="opacity:0.6">/${row.ipa}/</small>`);
+
+  return pieces.join("<br>");
 }
 
 async function syncRow(row, ctx) {

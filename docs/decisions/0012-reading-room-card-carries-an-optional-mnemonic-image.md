@@ -10,6 +10,10 @@ date: 2026-09-09
 >
 > **Note (ADR-0014, 2026-09-11):** `docs/mnemonics/log.jsonl` moved to
 > `data/mnemonics/log.jsonl`.
+>
+> **Note (ADR-0015, 2026-09-11):** the composed `Back` order changed from
+> `<story><br><img>` to `<img><br><story>` — the image now comes first, ahead
+> of the story, to make room for a trailing IPA line.
 
 # 0012. The reading-room Anki card carries an optional mnemonic image, via an Image column
 
