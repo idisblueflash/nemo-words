@@ -2,7 +2,7 @@
 
 Companion to the `_logan` agent (`.claude/agents/_logan.md`) — the two
 files travel together. Controlled vocabularies for the mnemonic log
-(`docs/mnemonics/log.jsonl`).
+(`data/mnemonics/log.jsonl`).
 Each log row records how one new word was turned into a pronunciation +
 meaning mnemonic, so that after collecting many words the patterns (which
 anchors and techniques actually stick) can be mined.

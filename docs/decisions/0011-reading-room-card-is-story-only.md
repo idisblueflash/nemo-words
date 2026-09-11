@@ -4,6 +4,9 @@ deciders: Flash Hu
 date: 2026-09-09
 ---
 
+> **Note (ADR-0014, 2026-09-11):** `docs/mnemonics/log.jsonl` moved to
+> `data/mnemonics/log.jsonl`. Read the paths below accordingly.
+
 # 0011. The reading-room Anki card is story-only
 
 ## Context and Problem Statement

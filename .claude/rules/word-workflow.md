@@ -63,7 +63,7 @@ actually agreed to.
    *suggests*, so present its candidates and let the user pick.
 
    **Collect `_logan`'s row fields from Nemo up front, per candidate**, so a later
-   `_logan` dispatch (see step 4 and `docs/mnemonics/log.jsonl`'s schema in
+   `_logan` dispatch (see step 4 and `data/mnemonics/log.jsonl`'s schema in
    `.claude/agents/_logan/reference-tables.md`) can be handed a filled-in row instead of
    round-tripping questions back to the user. Ask Nemo's dispatch prompt to include, for
    each candidate alongside the sentence and score: `syllabification` (IPA, one syllable
@@ -75,7 +75,7 @@ actually agreed to.
    - Run the `update-anki-story` skill with the word + the picked story. It writes the
      word's row in `anki/reading-room-terms.txt` (`Front` = word, `Back` = the story —
      appending the row if the word isn't carded yet, patching it if it is), runs
-     `scripts/anki-sync.js`, and logs to `docs/mnemonics/log.jsonl` via `_logan`.
+     `scripts/anki-sync.js`, and logs to `data/mnemonics/log.jsonl` via `_logan`.
    - The `_logan` log step runs automatically as part of that save — don't wait for the
      user to separately ask. Hand `_logan` the fields already collected in step 3
      (`syllabification`, `anchor_unit`, `keyword`, `pivot_words`, `technique`) plus the
@@ -97,12 +97,12 @@ trial	The court tried a dull case, weighing his guilt.	trial.png
 ```
 
 No `<b>`/`<br>`, no `🎭` prefix, no `say`/`def`/🔊/📖, no `Anchors:` line in `Back`. The
-`Image` column holds a bare filename under `docs/mnemonics/images/` (or is empty);
+`Image` column holds a bare filename under `images/mnemonic/` (or is empty);
 `anki-sync.js` uploads it as `nemo-<file>` and composes the `<img>` onto the pushed
 `Back` at sync time — the `.txt` never holds HTML. A word with no story yet has an empty
 `Back` (or simply no row). The pronunciation, definition, and sound/meaning axes are
 build-time scaffolding (step 2) and are never carded — the structured record lives in
-`docs/mnemonics/log.jsonl`.
+`data/mnemonics/log.jsonl`.
 
 ## Explaining several words at once
 
@@ -124,7 +124,7 @@ has no way to pause mid-run for a human to review candidates across many words a
 `_nemo` itself still refuses this (see its own "never adopt a specialist's own top
 recommendation" rule) — the command writes the chosen story directly. The card gets the
 top-pick story only; Nemo's runner-up candidates go to a sidecar
-`docs/mnemonics/alternates.jsonl` (one entry per word) for Flash to review alongside the
+`data/mnemonics/alternates.jsonl` (one entry per word) for Flash to review alongside the
 card. Review happens later and separately: Flash reads the card in the Anki app,
 compares against the sidecar alternates, and decides whether the auto-pick stands. Once
 he has a final story, `update-anki-story` (`.claude/skills/update-anki-story/SKILL.md`)

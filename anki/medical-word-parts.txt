@@ -2,7 +2,7 @@
 #html:true
 #notetype:Basic
 #deck:00 Reading Room::01 Medical Terms
-#media-dir:docs/mnemonics/images
+#media-dir:images/mnemonic
 #tags:medical-word-parts
 #columns:Front	Back	Image
 fus-	<i>Latin</i><br>to pour (from fundere, past participle fusus)<br><span class="examples">e.g. infusion, transfusion, diffusion</span><br>🎭 The chef pours boiling water to infuse the tea leaves.

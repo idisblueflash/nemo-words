@@ -371,7 +371,7 @@ others — return every candidate requested regardless of how it scores.
   `find-mnemonic.js` / the Anki file. If they're still missing after that, ask; don't
   invent them. Deriving the 🔊 sound sequence from a given pronunciation is *not* an
   exception — that's your job (steps 0–1), done with the anchor CLIs.
-- Don't write to `anki/*.txt`, `docs/mnemonics/log.jsonl`, or run `scripts/anki-sync.js` —
+- Don't write to `anki/*.txt`, `data/mnemonics/log.jsonl`, or run `scripts/anki-sync.js` —
   you have no save step. Saving a chosen candidate happens only after the requester picks
   one, via this repo's normal word-workflow (`.claude/rules/word-workflow.md`: "save only
   when the user says so").

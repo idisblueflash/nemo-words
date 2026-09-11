@@ -30,7 +30,7 @@ prompt:
 > Attach docs/mnemonics/style-anchor.png as the style reference, style-QA
 > the finished sheet against it, and regenerate once if it drifts. Do NOT
 > crop, do NOT SendUserFile, do NOT wait for a pick. Produce the 3×3 grid,
-> save it to docs/mnemonics/images/<word>.grid.png, and end your turn with
+> save it to images/mnemonic/<word>.grid.png, and end your turn with
 > a structured report: word, mnemonic sentence used, the hook element, the
 > grid path, a numbered list (1–9, row-major) of the nine stagings, and
 > the style-QA result.
@@ -52,7 +52,7 @@ completion notifications.
 
 When an _vivian reports back:
 
-1. `SendUserFile` its `docs/mnemonics/images/<word>.grid.png` with
+1. `SendUserFile` its `images/mnemonic/<word>.grid.png` with
    `display: "render"` and a caption naming the word.
 2. Relay the mnemonic sentence and the nine-staging list.
 3. Ask for a cell number 1–9 (row-major: 1 = top-left, 3 = top-right,
@@ -67,15 +67,15 @@ When the user names cells (often several at once, e.g. "jerk 6, levee 8"),
 run one crop per word — batch them in a single message:
 
 ```
-scripts/crop-grid-cell.sh docs/mnemonics/images/<word>.grid.png <cell> \
-  docs/mnemonics/images/<word>.png
+scripts/crop-grid-cell.sh images/mnemonic/<word>.grid.png <cell> \
+  images/mnemonic/<word>.png
 ```
 
 The script assumes a 3×3 grid (its default) and divides evenly; trust it,
 don't re-crop by eye. The `<word>` may start with `-` (e.g. `-rrha`) —
 the path argument handles that fine.
 
-Then `SendUserFile` each final `docs/mnemonics/images/<word>.png`
+Then `SendUserFile` each final `images/mnemonic/<word>.png`
 (`display: "render"`) and give the user a summary table: word, cell, final
 path.
 
@@ -118,7 +118,7 @@ actually picked from.
 - Never write or paraphrase a mnemonic sentence. It comes from the user or
   from `scripts/find-mnemonic.js`; if it's missing, ask.
 - Never resume an _vivian for a crop — do the crop here.
-- Only write under `docs/mnemonics/images/`. Don't commit — leave that to
+- Only write under `images/mnemonic/`. Don't commit — leave that to
   the user.
 - If codex-imagegen times out inside _vivian (it has a hard 300s launcher
   limit and the backend can be overloaded when many run at once), the
