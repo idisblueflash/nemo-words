@@ -47,19 +47,24 @@ brainstorming + a human pick, or the human composing their own).
 1. **Find the word's row** in `anki/reading-room-terms.txt` by exact `Front` match.
 
 2. **Write the `Back` field** to the story text, verbatim (apply only a tiny grammar fix
-   the user asked for — e.g. "need" → "needs"). The row is `Front\tBack\tImage`,
+   the user asked for — e.g. "need" → "needs"). The row is `Front\tBack\tImage\tIPA`,
    tab-separated:
    ```
-   <word>	<story sentence, plain text>	<image basename or empty>
+   <word>	<story sentence, plain text>	<image basename or empty>	<IPA or empty>
    ```
    No `<b>`/`<br>`, no `🎭` prefix, nothing but the sentence in `Back`. The third
    `Image` column (ADR-0012) is an optional basename under `images/mnemonic/`
    (e.g. `regional.png`) — set it only if the user gives a mnemonic image to attach,
-   otherwise leave it empty. The `<img>` tag is composed by `anki-sync.js` at sync
-   time; never put HTML in the `.txt`. If no row exists for the word, **append one**.
-   If a row exists, patch it in place — don't duplicate it. If the old row still
-   carries the legacy multi-segment HTML back (`say:`/`def:`/🔊/📖 or a
-   `<b>mnemonic:</b>` candidate list), replace the whole `Back` with just the story.
+   otherwise leave it empty. The fourth `IPA` column (ADR-0015) is an optional
+   stress-marked transcription, syllables dot-separated (e.g. `ˈɑm.ə.nəs`) — fill it
+   from the word's `syllabification` array (word-workflow.md step 3 collects this
+   alongside the story candidates; join the array with `.`), so it's never
+   re-derived by hand. The `<img>` tag and the `/ipa/` line are both composed by
+   `anki-sync.js` at sync time; never put HTML in the `.txt`. If no
+   row exists for the word, **append one**. If a row exists, patch it in place — don't
+   duplicate it. If the old row still carries the legacy multi-segment HTML back
+   (`say:`/`def:`/🔊/📖 or a `<b>mnemonic:</b>` candidate list), replace the whole
+   `Back` with just the story.
 
 3. **Push it live:**
    ```bash

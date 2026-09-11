@@ -16,7 +16,8 @@ have a story?" check — use it before re-brainstorming or re-explaining. Pair i
 `grep -i "^<word>\b" anki/reading-room-terms.txt` for the carded story sentence (the
 card's `Back` column is the story, plain text; an optional 3rd `Image` column names a
 mnemonic image under `images/mnemonic/` that `anki-sync.js` attaches at sync
-time — see ADR-0012).
+time — see ADR-0012 — and an optional 4th `IPA` column carries a stress-marked
+transcription that `anki-sync.js` appends the same way — see ADR-0015).
 
 ## Classifying a word (medical vs. general)
 

@@ -89,20 +89,26 @@ forks propose words; their output is not user consent.)
 ## The Anki card shape
 
 `anki/reading-room-terms.txt` — `#deck:00 Reading Room::Terms`, columns
-`Front\tBack\tImage`. `Front` is the word; `Back` is **the 🎭 story sentence as plain
-text** — nothing else; `Image` is an optional mnemonic-image basename (ADR-0012):
+`Front\tBack\tImage\tIPA`. `Front` is the word; `Back` is **the 🎭 story sentence as plain
+text** — nothing else; `Image` is an optional mnemonic-image basename (ADR-0012); `IPA`
+is an optional stress-marked transcription (ADR-0015):
 
 ```
-trial	The court tried a dull case, weighing his guilt.	trial.png
+trial	The court tried a dull case, weighing his guilt.	trial.png	ˈtraɪəl
 ```
 
 No `<b>`/`<br>`, no `🎭` prefix, no `say`/`def`/🔊/📖, no `Anchors:` line in `Back`. The
 `Image` column holds a bare filename under `images/mnemonic/` (or is empty);
 `anki-sync.js` uploads it as `nemo-<file>` and composes the `<img>` onto the pushed
-`Back` at sync time — the `.txt` never holds HTML. A word with no story yet has an empty
-`Back` (or simply no row). The pronunciation, definition, and sound/meaning axes are
-build-time scaffolding (step 2) and are never carded — the structured record lives in
-`data/mnemonics/log.jsonl`.
+`Back` at sync time. The `IPA` column holds a plain IPA string, syllables dot-separated,
+stress marked (e.g. `ˈɑm.ə.nəs`) — copy it verbatim from the `syllabification` array
+already collected in step 3 for `_logan` (join with `.`); `anki-sync.js` appends it as a
+small muted `/ipa/` line after the image. The `.txt` `Back` column itself never holds
+HTML — both compositions happen at sync time. A word with no story yet has an empty
+`Back` (or simply no row). The definition and sound/meaning axes stay build-time
+scaffolding (step 2), never carded; the structured record (full `syllabification`,
+`anchor_unit`, `keyword`, `pivot_words`, `technique`) lives in `data/mnemonics/log.jsonl`
+— `IPA` on the card is a display-only derivative of it, kept in sync by hand at save time.
 
 ## Explaining several words at once
 
