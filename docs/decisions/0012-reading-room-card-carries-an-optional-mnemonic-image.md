@@ -7,6 +7,9 @@ date: 2026-09-09
 > **Note (ADR-0013, 2026-09-10):** the image tree moved from
 > `docs/mnemonics/images/` to `images/mnemonic/`. Read the
 > `docs/mnemonics/images/<word>.png` paths below as `images/mnemonic/<word>.png`.
+>
+> **Note (ADR-0014, 2026-09-11):** `docs/mnemonics/log.jsonl` moved to
+> `data/mnemonics/log.jsonl`.
 
 # 0012. The reading-room Anki card carries an optional mnemonic image, via an Image column
 

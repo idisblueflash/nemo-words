@@ -20,6 +20,9 @@ dictionaries/lsj/data/
 dictionaries/lsj/vendor/
 dictionaries/open-words/vendor/
 
+# data/ holds both tracked, hand/agent-curated data (e.g. data/mnemonics/) and
+# large corpora rebuilt from source (below) — only the latter is ignored.
+#
 # Tatoeba English corpus — large, rebuilt from source per data/tatoeba/README.md.
 # README + tsv2vrt.py stay tracked. Applies to both copies (repo-root + skill dir).
 **/tatoeba/*.tsv

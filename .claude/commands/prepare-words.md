@@ -193,7 +193,7 @@ const results = await pipeline(
   },
 
   // Stage 4: auto-save the top pick as the card's story; alternates go to a sidecar
-  // file (docs/mnemonics/alternates.jsonl) for Flash to review alongside the card.
+  // file (data/mnemonics/alternates.jsonl) for Flash to review alongside the card.
   async (item) => {
     const word = item.word
     if (
@@ -220,7 +220,7 @@ const results = await pipeline(
         `1. In anki/reading-room-terms.txt: find the row whose Front is exactly "${word}" ` +
         `and set its Back to the chosen story as PLAIN TEXT (no HTML, no 🎭 prefix). ` +
         `Append the row if it doesn't exist; patch in place if it does -- never duplicate.\n` +
-        `2. Append one line to docs/mnemonics/alternates.jsonl (create if missing): ` +
+        `2. Append one line to data/mnemonics/alternates.jsonl (create if missing): ` +
         `{"word":"${word}","chosen":<chosen>,"alternates":<alternates array>,` +
         `"def":${JSON.stringify(ctx.def || '')},"sound":${JSON.stringify(ctx.sound || '')},` +
         `"meaning":${JSON.stringify(ctx.meaning || '')},"date":"<today>"} -- one compact JSON object per line.\n` +
@@ -247,5 +247,5 @@ had a story`, or `no story stage — medical/INN route`), and flag anything that
 (Anki sync unreachable, multi-word-phrase guard triggered, etc.) instead of burying it.
 Close with a reminder that full review — picking or composing the final story — happens
 later: Flash reads the story-only card in the Anki app, compares against
-`docs/mnemonics/alternates.jsonl`, and runs the `update-anki-story` skill once he has a
+`data/mnemonics/alternates.jsonl`, and runs the `update-anki-story` skill once he has a
 final story text for a word (it writes the Anki row + syncs + logs via `_logan`).

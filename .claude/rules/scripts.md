@@ -10,7 +10,7 @@ description: The helper scripts the word/mnemonic agents use — Anki sync, mnem
 node scripts/find-mnemonic.js <word>
 ```
 
-Prints the logged story sentence + `pivot_words` for a word if `docs/mnemonics/log.jsonl`
+Prints the logged story sentence + `pivot_words` for a word if `data/mnemonics/log.jsonl`
 has a row for it (exit 0), or exits 1 if not. This is the fast "does this word already
 have a story?" check — use it before re-brainstorming or re-explaining. Pair it with
 `grep -i "^<word>\b" anki/reading-room-terms.txt` for the carded story sentence (the

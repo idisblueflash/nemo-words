@@ -6,7 +6,7 @@ description: |
   wrote — and makes it that word's card: writes the row in `anki/reading-room-terms.txt`
   (`Front` = word, `Back` = the story, plain text — appending the row if the word isn't
   carded yet, patching it if it is), pushes it live via `scripts/anki-sync.js`, and logs
-  the pick to `docs/mnemonics/log.jsonl` via `_logan` if it isn't there yet. Use when the
+  the pick to `data/mnemonics/log.jsonl` via `_logan` if it isn't there yet. Use when the
   user says "save", "save it", "update the Anki story for `<word>` to: `<text>`",
   "finalize story for `<word>`: `<text>`", or hands over a final story after reviewing a
   word's card in the Anki app. Lightweight — no subagent dispatch for the write itself,
@@ -76,7 +76,7 @@ brainstorming + a human pick, or the human composing their own).
    `node scripts/find-mnemonic.js <word>`; if there's no row (or the row's `sentence`
    differs from the final text), dispatch `_logan` with the word, the final sentence,
    `sense`, and the anchor/technique fields (`syllabification`, `anchor_unit`,
-   `keyword`, `pivot_words`, `technique`) to append it to `docs/mnemonics/log.jsonl`.
+   `keyword`, `pivot_words`, `technique`) to append it to `data/mnemonics/log.jsonl`.
 
 ## What this skill doesn't do
 

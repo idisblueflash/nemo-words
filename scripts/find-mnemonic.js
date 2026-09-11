@@ -7,7 +7,7 @@
  * Usage:
  *   node scripts/find-mnemonic.js <word> [LOG_FILE]
  *
- * Default LOG_FILE: <repo>/docs/mnemonics/log.jsonl
+ * Default LOG_FILE: <repo>/data/mnemonics/log.jsonl
  *
  * The log is one JSON object per line, e.g.:
  *   {"word":"omin-","sentence":"An almond tree ...","pivot_words":["almond","sign"], ...}
@@ -20,7 +20,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const DEFAULT_LOG = path.join(__dirname, "..", "docs", "mnemonics", "log.jsonl");
+const DEFAULT_LOG = path.join(__dirname, "..", "data", "mnemonics", "log.jsonl");
 
 function die(code, msg) {
   process.stderr.write(msg + "\n");

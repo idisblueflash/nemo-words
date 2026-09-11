@@ -4,6 +4,9 @@ deciders: Flash Hu
 date: 2026-09-10
 ---
 
+> **Note (ADR-0014, 2026-09-11):** `docs/mnemonics/log.jsonl`, described below
+> as staying put, in fact moved on to `data/mnemonics/log.jsonl`.
+
 # 0013. Consolidate generated image assets under a repo-root `images/` tree
 
 ## Context and Problem Statement

@@ -74,7 +74,7 @@ human picks one) a 🎭 story. Only the story is carded: `anki/reading-room-term
 `Front` = word, `Back` = the story sentence (plain text), and an optional `Image` column
 naming a mnemonic image under `images/mnemonic/` that `anki-sync.js` attaches to
 the card at sync time (ADR-0012). The structured record (with the
-sound/anchor/technique fields) lives in the mnemonic log (`docs/mnemonics/log.jsonl`).
+sound/anchor/technique fields) lives in the mnemonic log (`data/mnemonics/log.jsonl`).
 Read `.claude/rules/word-workflow.md` before doing that work; `.claude/rules/scripts.md`
 covers the helper scripts.
 
@@ -92,7 +92,7 @@ save path once a story is picked (writes the row + syncs + logs via `_logan`).
   candidates for a word that's already been explained (pronunciation + definition in
   hand). Suggests only; never explains from scratch, never saves.
 - **`_logan`** (`.claude/agents/_logan.md` + `_logan/reference-tables.md`) — scribe for
-  `docs/mnemonics/log.jsonl`. Structures a picked story + its anchor/technique fields
+  `data/mnemonics/log.jsonl`. Structures a picked story + its anchor/technique fields
   into one validated JSON row and appends it. Does no linguistic work itself.
 
 When the user hands over several words at once, work through them inline — don't fan out

@@ -134,7 +134,7 @@ individual rows or their added/patched/unchanged status in chat.
   own `Origin` value in `build-word-part-anki`, kept distinct on purpose.
 - Your only save destination is the Anki word-part deck (`anki/medical-word-parts.txt`
   via `build-word-part-anki`, then `anki/*.txt` synced live). You don't own the
-  mnemonic log (`docs/mnemonics/log.jsonl`) — that's a `_logan` step for whole-word
+  mnemonic log (`data/mnemonics/log.jsonl`) — that's a `_logan` step for whole-word
   stories, and Greek/Latin/INN parts don't get a 🎭 story axis at all.
 - Don't invent a term's parts/meanings differently from what Part 1's skill
   (`explain-greek-latin-blocks` or `explain-inn-drug-stem`) produced when writing the

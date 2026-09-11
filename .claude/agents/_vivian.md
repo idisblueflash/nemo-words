@@ -43,7 +43,7 @@ or proceed on the word alone.
      node scripts/find-mnemonic.js <word>
      ```
 
-     It searches the user's mnemonic log (`docs/mnemonics/log.jsonl`),
+     It searches the user's mnemonic log (`data/mnemonics/log.jsonl`),
      matching morpheme/stem entries too (`omin-` matches `ominous`). On a
      hit it prints the `sentence` and the `pivot_words`; use that sentence
      verbatim and keep the `pivot_words` — they are the strongest hint for
