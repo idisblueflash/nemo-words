@@ -1,8 +1,9 @@
 // Coverage for the IPA field in scripts/anki-sync.js (ADR-0015).
 //
 // When an anki/*.txt row carries a fourth `IPA` column, anki-sync.js should
-// append it to the composed Back as a small muted `/ipa/` line, after the
-// image (if any) — the .txt Back column itself stays plain-text story.
+// append it to the composed Back as a small muted `/ipa/` line, last —
+// composed Back order is image, then story, then IPA. The .txt Back column
+// itself stays plain-text story.
 //
 // Runs the real script end-to-end against an in-process mock AnkiConnect.
 
@@ -105,7 +106,7 @@ test.afterEach(async () => {
   fs.rmSync(mediaAbsDir, { recursive: true, force: true });
 });
 
-test("a row with Image and IPA appends both, IPA after the image", async () => {
+test("a row with Image and IPA orders Back as image, story, IPA", async () => {
   await execFileAsync("node", [scriptPath, "widget"], {
     encoding: "utf8",
     env: { ...process.env, ANKI_FILE: testFileName, ANKI_CONNECT_URL: baseUrl },
@@ -114,7 +115,7 @@ test("a row with Image and IPA appends both, IPA after the image", async () => {
   const added = mock.notes.find((n) => n.fields.Front === "widget");
   assert.equal(
     added.fields.Back,
-    'The midget wound the fidget.<br><img src="nemo-widget.png"><br><small style="opacity:0.6">/ˈwɪd.ɪt/</small>'
+    '<img src="nemo-widget.png"><br>The midget wound the fidget.<br><small style="opacity:0.6">/ˈwɪd.ɪt/</small>'
   );
 });
 

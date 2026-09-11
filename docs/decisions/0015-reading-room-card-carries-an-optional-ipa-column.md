@@ -31,16 +31,16 @@ just never surfaced back onto the card.
   reconstructed from anchors first.
 * **Add a fourth `IPA` column, composed onto `Back` at sync time** — same shape as
   ADR-0012's `Image` column. The `.txt` file's `Back` field itself stays plain-text
-  story; `anki-sync.js` appends a small muted `/ipa/` line after the image (if any)
-  when building the field it actually pushes to Anki.
+  story; `anki-sync.js` appends a small muted `/ipa/` line last, when building the
+  field it actually pushes to Anki.
 
 ## Decision Outcome
 
-Chosen option: **the fourth `IPA` column**, composed onto `Back` after the image, the
-same way ADR-0012 composes the image. This reaches the goal (the transcription is
-visible on review, after the recall attempt, with correct stress) without touching
-ADR-0011's "the story is the card" principle for the `.txt` file's own `Back` column —
-the IPA is sync-time composition, never text baked into the story.
+Chosen option: **the fourth `IPA` column**, composed onto `Back` last, after the
+image and the story. This reaches the goal (the transcription is visible on review,
+after the recall attempt, with correct stress) without touching ADR-0011's "the story
+is the card" principle for the `.txt` file's own `Back` column — the IPA is sync-time
+composition, never text baked into the story.
 
 Mechanics:
 
@@ -50,10 +50,13 @@ Mechanics:
   collected in word-workflow.md step 3, alongside the story candidates, for
   `_logan`) joined with `.`, so it's never re-derived by hand; `update-anki-story`
   fills it from the same fields it's about to hand `_logan`.
-* `anki-sync.js`: `parseFile` reads the optional fourth field; `composeBack` appends
-  `<br><small style="opacity:0.6">/<ipa>/</small>` after the image (or directly after
-  the story if there's no image). The idempotency check compares against the
-  *composed* Back, same as the image.
+* `anki-sync.js`: `parseFile` reads the optional fourth field; `composeBack` now
+  assembles the pushed `Back` in review order — `<img>` (if attached), then the
+  story, then `<small style="opacity:0.6">/<ipa>/</small>` (if given) — joined with
+  `<br>`, each piece skipped when absent. This also flips ADR-0012's original
+  story-then-image order to image-then-story (see the note added to ADR-0012), so
+  the image reads first and the IPA reads last, right after the story it confirms.
+  The idempotency check compares against the *composed* Back, same as the image.
 * Backfilled the ~41 already-logged words' `IPA` column from their existing
   `syllabification` rows in `data/mnemonics/log.jsonl`; the other ~230 carded words
   (no log row yet) get an empty `IPA` column.

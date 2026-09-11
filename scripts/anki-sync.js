@@ -32,9 +32,9 @@
 //
 // IPA (ADR-0015): an optional fourth `IPA` column carries the word's IPA
 // transcription (stress marked, e.g. `ˈɑm.ə.nəs`). If present, it's appended
-// to the composed Back as a small muted `/ipa/` line, after the image. Like
-// the Image column, this is sync-time composition only — the .txt Back column
-// itself never gains it.
+// to the composed Back as a small muted `/ipa/` line. Composed Back order is
+// image, then story, then IPA. Like the Image column, this is sync-time
+// composition only — the .txt Back column itself never gains it.
 
 const fs = require("fs");
 const path = require("path");
@@ -140,12 +140,12 @@ function escapeQueryValue(value) {
 // -- Sync ---------------------------------------------------------------
 
 // Uploads the row's image (if any) into the collection and returns the Back
-// HTML to push: the plain-text story, plus a trailing <img> when an image is
-// attached, plus a trailing muted `/ipa/` line when an IPA transcription is
-// given. A declared-but-missing image file is a row-level failure so the
-// caller logs it and moves on rather than silently dropping the image.
+// HTML to push, in review order: the <img> (if attached), then the plain-text
+// story, then a trailing muted `/ipa/` line (if given). A declared-but-missing
+// image file is a row-level failure so the caller logs it and moves on rather
+// than silently dropping the image.
 async function composeBack(row, ctx) {
-  let back = row.back;
+  const pieces = [];
 
   if (row.image && ctx.mediaDir) {
     const srcPath = path.join(REPO_ROOT, ctx.mediaDir, row.image);
@@ -158,16 +158,14 @@ async function composeBack(row, ctx) {
       data: fs.readFileSync(srcPath).toString("base64"),
     });
 
-    const sep = back ? "<br>" : "";
-    back = `${back}${sep}<img src="${mediaName}">`;
+    pieces.push(`<img src="${mediaName}">`);
   }
 
-  if (row.ipa) {
-    const sep = back ? "<br>" : "";
-    back = `${back}${sep}<small style="opacity:0.6">/${row.ipa}/</small>`;
-  }
+  if (row.back) pieces.push(row.back);
 
-  return back;
+  if (row.ipa) pieces.push(`<small style="opacity:0.6">/${row.ipa}/</small>`);
+
+  return pieces.join("<br>");
 }
 
 async function syncRow(row, ctx) {

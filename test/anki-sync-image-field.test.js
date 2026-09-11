@@ -4,7 +4,7 @@
 // third `Image` column, anki-sync.js should:
 //   1. read <repo>/<media-dir>/<basename>, upload it via storeMediaFile as
 //      `nemo-<basename>`, and
-//   2. push a Back field of `<story><br><img src="nemo-<basename>">` — the
+//   2. push a Back field of `<img src="nemo-<basename>"><br><story>` — the
 //      .txt Back column itself stays plain-text story.
 //
 // Runs the real script end-to-end against an in-process mock AnkiConnect.
@@ -125,7 +125,7 @@ test("a row with an Image column uploads the file and appends an <img> to Back",
   );
 
   const added = mock.notes.find((n) => n.fields.Front === "widget");
-  assert.equal(added.fields.Back, 'The midget wound the fidget.<br><img src="nemo-widget.png">');
+  assert.equal(added.fields.Back, '<img src="nemo-widget.png"><br>The midget wound the fidget.');
 });
 
 test("a row with an empty Image column pushes plain story and no media upload", async () => {
