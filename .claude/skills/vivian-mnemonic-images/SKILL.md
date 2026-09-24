@@ -27,18 +27,15 @@ prompt:
 > Generate a mnemonic-image candidate grid for the word "<word>".
 > <If the user supplied a sentence: "The mnemonic sentence is: <sentence>">
 > <Otherwise: "Look up its mnemonic sentence with node scripts/find-mnemonic.js <word>.">
-> Attach docs/mnemonics/style-anchor.png as the style reference, style-QA
-> the finished sheet against it, and regenerate once if it drifts. Do NOT
+> Attach docs/mnemonics/style-anchor.png as the style reference. Do NOT
 > crop, do NOT SendUserFile, do NOT wait for a pick. Produce the 3×3 grid,
 > save it to images/mnemonic/<word>.grid.png, and end your turn with
 > a structured report: word, mnemonic sentence used, the hook element, the
-> grid path, a numbered list (1–9, row-major) of the nine stagings, and
-> the style-QA result.
+> grid path, and a numbered list (1–9, row-major) of the nine stagings.
 
-_vivian handles the style anchoring and self-QA herself — you don't need
-to spell it out, but if her report says a sheet still drifted after the
-regenerate pass, relay that to the user before they pick, and offer
-another regeneration pass rather than cropping from a bad sheet.
+_vivian handles the style anchoring herself — you don't need to spell it
+out. Style consistency is checked downstream in ComfyUI, not by _vivian
+or by you, so there's no self-QA/regenerate pass to relay here.
 
 If the user gave sentences inline, pass them through verbatim — _vivian
 never writes the sentence. If a word has no sentence and none is on record,
@@ -86,13 +83,14 @@ card follows automatically — don't wait for a separate "sync it" request.
 For each word just cropped, if it has a row in `anki/reading-room-terms.txt`:
 
 1. Set that row's `Image` column to the bare filename `<word>.png` (add the
-   third tab-separated field, or patch it if already present). A word-part
-   image whose card lives in `anki/medical-word-parts.txt` has no `Image`
-   column — skip the attach for those, just report the crop.
+   third tab-separated field, or patch it if already present) — this applies
+   the same whether the row is an ordinary vocabulary card or one of
+   `_etta_mology`'s word-part rows (`Tags` = `medical-word-parts`, ADR-0016);
+   both can carry an `Image`.
 2. Sync only that row:
 
    ```
-   ANKI_FILE=reading-room-terms.txt node scripts/anki-sync.js "<word>"
+   node scripts/anki-sync.js "<word>"
    ```
 
    `anki-sync.js` uploads the file as `nemo-<word>.png` and composes

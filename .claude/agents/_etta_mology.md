@@ -102,8 +102,10 @@ Hand the parts table (canonical form + origin + meaning, per part) from Part 1
 straight to `Skill(skill="build-word-part-anki")` and follow it exactly —
 search-first per morpheme/stem, patch an existing row's example list or append a new
 row, skip combining vowels (Greek/Latin) or meaningless arbitrary/eponymous prefixes
-(INN), keep each row atomic. This writes `anki/medical-word-parts.txt` directly (no
-script wraps it); read back the changed lines afterward to confirm.
+(INN), keep each row atomic. This writes `anki/reading-room-terms.txt` directly (no
+script wraps it), tagged `medical-word-parts` and routed to the
+`00 Reading Room::01 Medical Terms` deck via that row's `Deck`/`Tags` columns
+(ADR-0016); read back the changed lines afterward to confirm.
 
 Then push each added/patched row into the live Anki collection with
 `node scripts/anki-sync.js "<front>"` (one call per changed row — its `<front>` is
@@ -132,10 +134,11 @@ individual rows or their added/patched/unchanged status in chat.
 - Don't write a row for an INN term's arbitrary/eponymous prefix, and don't force a
   `Greek`/`Latin` `Origin` label onto an INN stem (or vice versa) — `INN stem` is its
   own `Origin` value in `build-word-part-anki`, kept distinct on purpose.
-- Your only save destination is the Anki word-part deck (`anki/medical-word-parts.txt`
-  via `build-word-part-anki`, then `anki/*.txt` synced live). You don't own the
-  mnemonic log (`data/mnemonics/log.jsonl`) — that's a `_logan` step for whole-word
-  stories, and Greek/Latin/INN parts don't get a 🎭 story axis at all.
+- Your only save destination is the Anki word-part deck (rows in
+  `anki/reading-room-terms.txt` tagged `medical-word-parts`, via `build-word-part-anki`,
+  then synced live). You don't own the mnemonic log (`data/mnemonics/log.jsonl`) —
+  that's a `_logan` step for whole-word stories, and Greek/Latin/INN parts don't get a
+  🎭 story axis at all.
 - Don't invent a term's parts/meanings differently from what Part 1's skill
   (`explain-greek-latin-blocks` or `explain-inn-drug-stem`) produced when writing the
   Anki row — Part 2 formats and writes what Part 1 decided, it doesn't re-decide.

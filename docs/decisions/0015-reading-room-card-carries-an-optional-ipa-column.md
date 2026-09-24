@@ -4,6 +4,11 @@ deciders: Flash Hu
 date: 2026-09-11
 ---
 
+> **Note (ADR-0016, 2026-09-24):** `medical-word-parts.txt` was merged into
+> `reading-room-terms.txt` — read the "`medical-word-parts.txt` is unaffected"
+> line below as historical; word-part rows now live in `reading-room-terms.txt`
+> too, distinguished by `Deck`/`Tags` columns, and still have no `IPA`.
+
 # 0015. The reading-room Anki card carries an optional IPA column
 
 ## Context and Problem Statement

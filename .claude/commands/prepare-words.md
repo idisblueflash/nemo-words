@@ -13,15 +13,23 @@ before the workflow starts):
 
 ```bash
 node scripts/classify-word.js "<word>"
-grep -i "^<word>\b" anki/reading-room-terms.txt        # already carded?
+grep -i "^<word>\b" anki/reading-room-terms.txt        # already carded (either kind)?
+grep -i "^<word>\b.*\bmedical-word-parts$" anki/reading-room-terms.txt   # already a word-part card?
 node scripts/find-mnemonic.js "<word>"                 # story already logged? (exit 0 = yes)
 ```
 
 Read `classify-word.js`'s `**Verdict:**` line (`medical` / `ambiguous` / `no match`).
-From the `grep`, determine whether the word already has a **row** in
+From the first `grep`, determine whether the word already has a **row** in
 `anki/reading-room-terms.txt` (exact `Front` match); the `Back` is now just a plain-text
 story sentence (or empty), so `hasStory` = that row exists with a non-empty `Back`, OR
-`find-mnemonic.js` exits 0. Build a `word` object carrying all of it, e.g. `{ "word":
+`find-mnemonic.js` exits 0. Also record `existsAsWordPart` from the second `grep`
+(matches only a row whose `Tags` column, the file's last field, is
+`medical-word-parts` — ADR-0016 merged word-part rows into this same file) — if true,
+treat the word as `verdict: "medical"` regardless of what `classify-word.js` itself said
+(it's a belt-and-suspenders check: a word already carded as a classical-morpheme part
+never also gets routed down the `glossy`/story path — see `para-`'s duplicate-card
+incident, bug-005). Build a `word` object
+carrying all of it, e.g. `{ "word":
 "phlebotomy", "verdict": "medical", "existsInCard": true, "hasStory": false }`. These are direct,
 deterministic checks, not a judgment call — don't spend an agent on either.
 

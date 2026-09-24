@@ -13,29 +13,32 @@ breaks (see `SKILL.md` for the exact format).
 
 ## Importing cards
 
-Cards accumulate in `anki/medical-word-parts.txt` (repo root) — Anki's
-plain-text import format, modeled on this project's existing
-`anki-ivig-after-car-t-cell-therapy-*.txt` export (which also uses `Basic`).
-Header directives fix the notetype, deck, and tags right in the file, so no
-manual selection is needed at import time:
+Cards accumulate in `anki/reading-room-terms.txt` (repo root) — Anki's
+plain-text import format, shared with ordinary whole-word vocabulary rows
+since word-part rows were merged into this file (ADR-0016). Word-part rows
+are the ones whose `Deck`/`Tags` columns override the header's defaults:
 
 ```
 #separator:tab
 #html:true
 #notetype:Basic
-#deck:01 Medical Terms
-#tags:medical-word-parts
-#columns:Front	Back
-thalass-	<i>Greek</i><br>sea<br><span class="examples">e.g. thalassaemia</span>
-haem-	<i>Greek</i><br>blood<br><span class="examples">e.g. hemoglobin, hematology, hemolysis</span>
--ia	<i>Greek</i><br>condition of<br><span class="examples">e.g. anemia, hypothermia</span>
+#deck:00 Reading Room::Terms
+#tags:reading-room-terms
+#media-dir:images/mnemonic
+#columns:Front	Back	Image	IPA	Deck	Tags
+thalass-	<i>Greek</i><br>sea<br><span class="examples">e.g. thalassaemia</span>			00 Reading Room::01 Medical Terms	medical-word-parts
+haem-	<i>Greek</i><br>blood<br><span class="examples">e.g. hemoglobin, hematology, hemolysis</span>			00 Reading Room::01 Medical Terms	medical-word-parts
+-ia	<i>Greek</i><br>condition of<br><span class="examples">e.g. anemia, hypothermia</span>			00 Reading Room::01 Medical Terms	medical-word-parts
 ```
 
-**File → Import** → select `medical-word-parts.txt` → Anki reads the
-directives and imports straight into deck `01 Medical Terms` using the
-built-in `Basic` notetype, tagged `medical-word-parts`, no per-import choices
-needed — because `Basic` already exists in every collection, Anki always
-resolves it and the two columns (`Front`, `Back`) map automatically.
+In routine use, rows go live via `node scripts/anki-sync.js "<front>"`
+(AnkiConnect), which reads the row's `Deck`/`Tags` columns and routes it to
+deck `00 Reading Room::01 Medical Terms` tagged `medical-word-parts` — not a
+manual **File → Import**. A manual import would still work (Anki reads the
+header directives the same way, and imports every row in the file — both
+kinds — resolving each row's own `Deck` via its override column), but that's
+a fallback, not the normal path; see `.claude/rules/scripts.md`.
 
-Re-running import after appending new rows only adds the new ones — Anki skips
-duplicates by first-field (`Front`) match.
+Re-syncing after appending new rows only adds the new ones — `anki-sync.js`
+looks each row up by deck + `Front` first and patches in place rather than
+duplicating.

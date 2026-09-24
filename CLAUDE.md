@@ -56,8 +56,10 @@ to `<word>.png` and run
 `ANKI_FILE=reading-room-terms.txt node scripts/anki-sync.js "<word>"` —
 `anki-sync.js` uploads it as `nemo-<word>.png` and composes the `<img>`
 onto the pushed `Back` at sync time (ADR-0012). Skip only if the user opts
-out of Anki or the word has no card. Word-part images
-(`anki/medical-word-parts.txt`) have no `Image` column — don't attach those.
+out of Anki or the word has no card. Word-part rows (`Tags` column =
+`medical-word-parts` in `anki/reading-room-terms.txt`, ADR-0016) can carry an
+`Image` too, same column — but they have no `IPA` column, since they have no
+sound/story axis (see below).
 
 `_vivian` is single-turn by design — it generates the grid, reports, and
 exits; it is never resumed for the crop (a resume reloads its whole
@@ -87,9 +89,13 @@ save path once a story is picked (writes the row + syncs + logs via `_logan`).
 
 - **`_etta_mology`** (`.claude/agents/_etta_mology.md`) — decomposes any word built from
   classical Greek/Latin morphemes (or an INN drug stem), medical or general, into its
-  parts and writes each part to `anki/medical-word-parts.txt`. Domain doesn't gate her —
-  "adjoining" (ad- + join) is as much hers as "nephrectomy"; morpheme structure does. No
-  sound/story axis for these. She spot-checks parts against the `dictionaries/` CLIs.
+  parts and writes each part to `anki/reading-room-terms.txt`, tagged
+  `medical-word-parts` and routed to the `00 Reading Room::01 Medical Terms` deck
+  (ADR-0016 — word parts and whole-word terms share one file now, distinguished by the
+  row's `Deck`/`Tags` columns). Domain doesn't gate her — "adjoining" (ad- + join) is as
+  much hers as "nephrectomy"; morpheme structure does. No sound/story axis for these
+  (no `IPA` column; an `Image` is still optional). She spot-checks parts against the
+  `dictionaries/` CLIs.
 - **`_nemo`** (`.claude/agents/_nemo.md`) — brainstorms alternative one-sentence 🎭 story
   candidates for a word that's already been explained (pronunciation + definition in
   hand). Suggests only; never explains from scratch, never saves.
@@ -115,7 +121,7 @@ nemo-words ipa-lookup --ga "<ipa fragment>" | awk -F'\t' '$3 ~ /^<pattern>/'   #
 This is the same tool `_nemo` uses for mnemonic sound-anchor candidates (see
 `.claude/rules/word-workflow.md` step 2 / `_nemo.md`) — reuse it directly rather than
 guessing words and their pronunciations by hand. For rhyme/near/onset/prefix queries use
-`~/.claude/skills/english-word-explainer/rhyme/rhyme.py`; for word frequency use
+`.claude/skills/english-word-explainer/rhyme/rhyme.py`; for word frequency use
 `node scripts/word-freq.js <word>`.
 
 ## Ad-hoc corpus / concordance lookups

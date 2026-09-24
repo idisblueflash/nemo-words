@@ -1,7 +1,7 @@
 ---
 name: build-word-part-anki
 description: |
-  Takes a morpheme breakdown (part + origin + meaning — from `explain-greek-latin-blocks`, `explain-inn-drug-stem`, or supplied directly) and writes/patches rows in `anki/medical-word-parts.txt`, one row per morpheme, tab-separated Front/Back on Anki's Basic note type. Use when the user asks to "make an Anki card" or "save this word part" for a medical morpheme/drug stem. Not for deciding parts/meanings — see those two skills. Not for whole-word vocabulary cards — those live in `anki/reading-room-terms.txt` (see `.claude/rules/word-workflow.md`).
+  Takes a morpheme breakdown (part + origin + meaning — from `explain-greek-latin-blocks`, `explain-inn-drug-stem`, or supplied directly) and writes/patches rows in `anki/reading-room-terms.txt`, tagged `medical-word-parts` (ADR-0016), one row per morpheme, tab-separated on Anki's Basic note type. Use when the user asks to "make an Anki card" or "save this word part" for a medical morpheme/drug stem. Not for deciding parts/meanings — see those two skills. Not for whole-word vocabulary cards — those are ordinary (untagged) rows in the same file (see `.claude/rules/word-workflow.md`).
 ---
 
 # Build Medical Word-Part Anki Rows
@@ -11,7 +11,7 @@ description: |
 <example>
 Context: A decomposition skill just produced a parts table for "hypothermia" and the user wants it saved as flashcards.
 user: "turn this into an Anki card"
-assistant: "I'll use build-word-part-anki to write one row per part (hypo-, therm, -ia) into anki/medical-word-parts.txt."
+assistant: "I'll use build-word-part-anki to write one row per part (hypo-, therm, -ia) into anki/reading-room-terms.txt, tagged medical-word-parts."
 <commentary>
 The parts/meanings are already decided by the decomposition skill; this skill only formats and writes them, never re-decides the breakdown.
 </commentary>
@@ -20,7 +20,7 @@ The parts/meanings are already decided by the decomposition skill; this skill on
 ## Scope
 
 This skill owns exactly one thing: turning a morpheme (or INN drug-stem) breakdown
-into rows following the format below in `anki/medical-word-parts.txt`. It does not decompose
+into rows following the format below in `anki/reading-room-terms.txt`. It does not decompose
 terms itself — if the user hands you a bare term ("make an anki card for
 hypothermia") rather than an already-decomposed parts table, run
 `explain-greek-latin-blocks` (classical terms) or `explain-inn-drug-stem` (modern
@@ -31,25 +31,31 @@ file-formatting correctness.
 
 ## The file format
 
-`anki/medical-word-parts.txt` is Anki's plain-text import format, header directives
-fixing the notetype/deck/tags so no manual selection is needed at import time. It
-uses Anki's built-in **Basic** note type (ships in every collection, no custom note
-type to create) — so the file has just two columns, Front and Back:
+`anki/reading-room-terms.txt` is Anki's plain-text import format, header directives
+fixing the notetype/default-deck/default-tags so no manual selection is needed at
+import time. It uses Anki's built-in **Basic** note type (ships in every collection,
+no custom note type to create). Whole-word vocabulary rows and word-part rows share
+this one file (ADR-0016) — word-part rows are what distinguishes themselves via the
+last two columns, `Deck` and `Tags`, which override the header's default deck/tags for
+just that row:
 
 ```
 #separator:tab
 #html:true
 #notetype:Basic
-#deck:01 Medical Terms
-#tags:medical-word-parts
-#columns:Front	Back
+#deck:00 Reading Room::Terms
+#tags:reading-room-terms
+#media-dir:images/mnemonic
+#columns:Front	Back	Image	IPA	Deck	Tags
 ```
 
-One row **per morpheme/stem** (not per whole term), tab-separated:
+One row **per morpheme/stem** (not per whole term), tab-separated — `Deck` fixed to
+`00 Reading Room::01 Medical Terms` and `Tags` fixed to `medical-word-parts`; `IPA` is
+always empty (no sound/story axis for these); `Image` is optional, same as any row:
 
 ```
-haem-	<i>Greek</i><br>blood<br><span class="examples">e.g. haemoglobin, hematology, hemolysis</span>
--limus	<i>INN stem</i><br>mTOR/calcineurin-pathway immunosuppressant<br><span class="examples">e.g. tacrolimus, sirolimus, everolimus</span>
+haem-	<i>Greek</i><br>blood<br><span class="examples">e.g. haemoglobin, hematology, hemolysis</span>			00 Reading Room::01 Medical Terms	medical-word-parts
+-limus	<i>INN stem</i><br>mTOR/calcineurin-pathway immunosuppressant<br><span class="examples">e.g. tacrolimus, sirolimus, everolimus</span>			00 Reading Room::01 Medical Terms	medical-word-parts
 ```
 
 - **Front** — the canonical part form, no combining vowel (`glob`, not `globo`;
@@ -67,6 +73,11 @@ haem-	<i>Greek</i><br>blood<br><span class="examples">e.g. haemoglobin, hematolo
   - **examples** — `e.g. term1, term2`, wrapped in the `examples` span.
   The `<br>` (not a literal newline — those can't sit inside a tab-separated field)
   is what produces each visual line break once `#html:true` renders it.
+- **Image, IPA, Deck, Tags** — always `Image` empty or a bare filename under
+  `images/mnemonic/`; `IPA` always empty; `Deck` always
+  `00 Reading Room::01 Medical Terms`; `Tags` always `medical-word-parts` — every
+  word-part row carries the same fixed `Deck`/`Tags`/`IPA` values, so don't vary them
+  per row.
 
 The Anki import steps are documented in `medical-word-parts-template.md` in this
 skill's folder — read it only if you need a refresher on the import flow, not for
@@ -76,13 +87,16 @@ routine row writes.
 
 For each morpheme/stem in the breakdown you were given:
 
-1. **Search first.** Check `anki/medical-word-parts.txt` for an existing row whose
-   `Front` matches (exact match on canonical form).
+1. **Search first.** Check `anki/reading-room-terms.txt` for an existing row whose
+   `Front` matches (exact match on canonical form) and whose `Tags` column is
+   `medical-word-parts`.
 2. **Row exists** → patch its `<span class="examples">` list to add the new term,
    deduped against what's already there. Leave the origin/meaning lines alone unless
    the user is explicitly correcting them.
 3. **Row doesn't exist** → append a new row: `Part<TAB><i>Origin</i><br>meaning<br><span
-   class="examples">e.g. term1, term2</span>`.
+   class="examples">e.g. term1, term2</span><TAB><TAB><TAB>00 Reading Room::01 Medical
+   Terms<TAB>medical-word-parts` — i.e. `Front`, `Back`, empty `Image`, empty `IPA`,
+   then the fixed `Deck`/`Tags` pair.
 4. **Combining vowels don't get a row** — they carry no meaning on their own.
 5. **Arbitrary/eponymous INN prefixes don't get a row either** — same reason as
    combining vowels: no meaning of their own to test. Only the WHO stem(s) (the part
@@ -105,16 +119,16 @@ Given the breakdown for *hypothermia* (`hypo-`/Greek/"below, deficient",
 these three parts:
 
 ```
-hypo-	<i>Greek</i><br>below, deficient<br><span class="examples">e.g. hypothermia, hypoglycemia</span>
-therm	<i>Greek</i><br>heat<br><span class="examples">e.g. hypothermia, thermometer</span>
--ia	<i>Greek</i><br>condition of<br><span class="examples">e.g. anemia, hypothermia</span>
+hypo-	<i>Greek</i><br>below, deficient<br><span class="examples">e.g. hypothermia, hypoglycemia</span>			00 Reading Room::01 Medical Terms	medical-word-parts
+therm	<i>Greek</i><br>heat<br><span class="examples">e.g. hypothermia, thermometer</span>			00 Reading Room::01 Medical Terms	medical-word-parts
+-ia	<i>Greek</i><br>condition of<br><span class="examples">e.g. anemia, hypothermia</span>			00 Reading Room::01 Medical Terms	medical-word-parts
 ```
 
-If `-ia` already existed as a row (e.g. `-ia	<i>Greek</i><br>condition of<br><span
-class="examples">e.g. anemia</span>`), patch it instead of adding a duplicate:
+If `-ia` already existed as a row, patch just its `Back` field (leaving `Image`/`Deck`/
+`Tags` alone) instead of adding a duplicate:
 
 ```
--ia	<i>Greek</i><br>condition of<br><span class="examples">e.g. anemia, hypothermia</span>
+-ia	<i>Greek</i><br>condition of<br><span class="examples">e.g. anemia, hypothermia</span>			00 Reading Room::01 Medical Terms	medical-word-parts
 ```
 
 Given an INN breakdown for *tacrolimus* (`tacro-`/eponymous prefix/no confirmed
@@ -123,5 +137,5 @@ immunosuppressant"), only the stem gets a row — the prefix is skipped per rule
 above:
 
 ```
--limus	<i>INN stem</i><br>mTOR/calcineurin-pathway immunosuppressant<br><span class="examples">e.g. tacrolimus, sirolimus, everolimus</span>
+-limus	<i>INN stem</i><br>mTOR/calcineurin-pathway immunosuppressant<br><span class="examples">e.g. tacrolimus, sirolimus, everolimus</span>			00 Reading Room::01 Medical Terms	medical-word-parts
 ```

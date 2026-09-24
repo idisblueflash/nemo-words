@@ -14,6 +14,11 @@ date: 2026-09-09
 > **Note (ADR-0015, 2026-09-11):** the composed `Back` order changed from
 > `<story><br><img>` to `<img><br><story>` — the image now comes first, ahead
 > of the story, to make room for a trailing IPA line.
+>
+> **Note (ADR-0016, 2026-09-24):** `medical-word-parts.txt` was merged into
+> `reading-room-terms.txt` — read the "`medical-word-parts.txt` has no
+> `#media-dir` and two columns" line below as historical; word-part rows now
+> live in `reading-room-terms.txt` too and can carry an `Image` the same way.
 
 # 0012. The reading-room Anki card carries an optional mnemonic image, via an Image column
 

@@ -11,8 +11,9 @@ description: |
   "finalize story for `<word>`: `<text>`", or hands over a final story after reviewing a
   word's card in the Anki app. Lightweight — no subagent dispatch for the write itself,
   no re-explanation. General-vocabulary words only: `_etta_mology` words never have a
-  story and their cards live in a different file. Not for picking or brainstorming a
-  story (see `_nemo`) — the story must already be decided when this skill runs.
+  story and their rows (same file, tagged `medical-word-parts`) carry a different `Back`
+  shape entirely. Not for picking or brainstorming a story (see `_nemo`) — the story
+  must already be decided when this skill runs.
 ---
 
 # Update Anki Story
@@ -45,10 +46,21 @@ brainstorming + a human pick, or the human composing their own).
 ## Steps
 
 1. **Find the word's row** in `anki/reading-room-terms.txt` by exact `Front` match.
+   Word-part rows and whole-word rows share this one file now (ADR-0016), distinguished
+   by the row's sixth `Tags` column.
+
+   **Before writing, check whether the matched row's `Tags` column is
+   `medical-word-parts`.** If so, it's `_etta_mology`'s territory (a classical
+   morpheme/INN stem with no story axis) and this skill must **refuse to save**, not
+   just flag it — tell the requester the word is already carded as a word part and ask
+   whether they really want a second, whole-word story card before proceeding. This is
+   a hard stop, not advisory: a soft warning here is exactly what let `para-` get carded
+   twice (see bug-005) before the two files were merged.
 
 2. **Write the `Back` field** to the story text, verbatim (apply only a tiny grammar fix
-   the user asked for — e.g. "need" → "needs"). The row is `Front\tBack\tImage\tIPA`,
-   tab-separated:
+   the user asked for — e.g. "need" → "needs"). The row is
+   `Front\tBack\tImage\tIPA\tDeck\tTags`, tab-separated — leave `Deck`/`Tags` empty for
+   an ordinary vocabulary row (they default to the file header):
    ```
    <word>	<story sentence, plain text>	<image basename or empty>	<IPA or empty>
    ```
@@ -86,6 +98,7 @@ brainstorming + a human pick, or the human composing their own).
 ## What this skill doesn't do
 
 - Doesn't brainstorm or pick a story — the caller must already have decided it.
-- Doesn't run for `_etta_mology`-path words — they have no story and their Anki rows
-  live in `anki/medical-word-parts.txt`, a different shape entirely.
+- Doesn't run for `_etta_mology`-path words — they have no story; their Anki rows share
+  `anki/reading-room-terms.txt` (ADR-0016) but are tagged `medical-word-parts` and carry
+  a different `Back` shape entirely (see step 1's hard stop).
 - Doesn't push, open a PR, or share anything further without explicit go-ahead.

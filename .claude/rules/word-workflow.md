@@ -16,8 +16,8 @@ actually agreed to.
    nothing from this step is persisted. The 🔊 sound and 📖 meaning axes are scaffolding
    used to build the story in step 3; only the story (step 3) ever lands on a card. The
    skill runs the offline rhyme CLI itself (it lives
-   with `english-word-explainer`, not this repo, at
-   `~/.claude/skills/english-word-explainer/rhyme/rhyme.py`) for sound-anchor
+   with `english-word-explainer`, at
+   `.claude/skills/english-word-explainer/rhyme/rhyme.py`) for sound-anchor
    candidates. Prefer *familiar* anchors that also carry the *meaning* (e.g. transfusion
    → "fusion"; severe → "fear").
 
@@ -80,18 +80,20 @@ actually agreed to.
      user to separately ask. Hand `_logan` the fields already collected in step 3
      (`syllabification`, `anchor_unit`, `keyword`, `pivot_words`, `technique`) plus the
      word, sense, and final sentence — don't make `_logan` re-ask. This applies to a
-     word-part story (e.g. one saved alongside `anki/medical-word-parts.txt`) the same
-     as a whole-word story.
+     word-part story (e.g. one saved on a `medical-word-parts`-tagged row in
+     `anki/reading-room-terms.txt`, ADR-0016) the same as a whole-word story.
 
 Do NOT save proactively — offer, and wait for the go-ahead. (Background `/btw explain X`
 forks propose words; their output is not user consent.)
 
 ## The Anki card shape
 
-`anki/reading-room-terms.txt` — `#deck:00 Reading Room::Terms`, columns
-`Front\tBack\tImage\tIPA`. `Front` is the word; `Back` is **the 🎭 story sentence as plain
-text** — nothing else; `Image` is an optional mnemonic-image basename (ADR-0012); `IPA`
-is an optional stress-marked transcription (ADR-0015):
+`anki/reading-room-terms.txt` — header default `#deck:00 Reading Room::Terms`, columns
+`Front\tBack\tImage\tIPA\tDeck\tTags`. `Front` is the word; `Back` is **the 🎭 story
+sentence as plain text** — nothing else; `Image` is an optional mnemonic-image basename
+(ADR-0012); `IPA` is an optional stress-marked transcription (ADR-0015); `Deck`/`Tags`
+are optional per-row overrides of the file's `#deck`/`#tags` header (ADR-0016) — used
+only by `_etta_mology`'s word-part rows (see below), empty for ordinary vocabulary:
 
 ```
 trial	The court tried a dull case, weighing his guilt.	trial.png	ˈtraɪəl
@@ -111,6 +113,12 @@ story yet has an empty
 scaffolding (step 2), never carded; the structured record (full `syllabification`,
 `anchor_unit`, `keyword`, `pivot_words`, `technique`) lives in `data/mnemonics/log.jsonl`
 — `IPA` on the card is a display-only derivative of it, kept in sync by hand at save time.
+
+`_etta_mology`'s word-part rows (ADR-0016) live in this same file, distinguished by
+`Deck` = `00 Reading Room::01 Medical Terms` and `Tags` = `medical-word-parts` — their
+`Back` is the richer `<i>Origin</i><br>meaning<br><span class="examples">...</span>`
+HTML `build-word-part-anki` writes (see that skill), not a plain story sentence; they
+have no `IPA` (no sound/story axis) but can still carry an `Image`.
 
 ## Explaining several words at once
 

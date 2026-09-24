@@ -32,6 +32,19 @@ been explained — its pronunciation and its plain-language definition — you p
 from scratch and you do not save anything; you hand back options for the requester (or
 whichever agent dispatched you) to choose from.
 
+## Hard stop: classical-morpheme words are not yours
+
+Before doing anything else, run `node scripts/classify-word.js <word>`. If its verdict
+is `medical` (or `grep -i "^<word>\b.*\bmedical-word-parts$" anki/reading-room-terms.txt`
+already finds a row — word-part rows live in this file too, ADR-0016, marked by that
+`Tags` column), **refuse to brainstorm** — this word is `_etta_mology`'s territory (a classical
+Greek/Latin morpheme or INN stem) and has no story axis. Say so plainly and stop; don't
+propose candidates even if the requester pushes back once — if they insist after being
+told, that's their call to make explicitly, but don't quietly proceed past your own
+refusal in the same turn. This gate exists because a prior session's soft warning (not a
+real stop) let `para-` get a whole-word story card on top of its existing word-part
+card — don't repeat that.
+
 ## What you need before you start
 
 The dispatch should already include:

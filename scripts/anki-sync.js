@@ -9,9 +9,9 @@
 // Usage:
 //   node scripts/anki-sync.js                       # sync every row in the file
 //   node scripts/anki-sync.js <front>                # sync just the row with this exact Front
-//   ANKI_FILE=reading-room-terms.txt node scripts/anki-sync.js [<front>]
+//   ANKI_FILE=<name>.txt node scripts/anki-sync.js [<front>]
 //                                                     # sync a different anki/ file
-//                                                     # (defaults to medical-word-parts.txt)
+//                                                     # (defaults to reading-room-terms.txt)
 //
 // Upsert flow per row (mirrors scripts/update-word.js's insert-or-patch
 // pattern, just against AnkiConnect instead of data.json):
@@ -35,12 +35,22 @@
 // to the composed Back as a small muted `/ipa/` line. Composed Back order is
 // image, then story, then IPA. Like the Image column, this is sync-time
 // composition only — the .txt Back column itself never gains it.
+//
+// Deck / Tags overrides (ADR-0016): medical-word-parts.txt was merged into
+// reading-room-terms.txt so there's one file to keep in sync, but its rows
+// still belong to a different Anki deck and a different tag than ordinary
+// vocabulary rows. An optional fifth `Deck` column overrides the file's
+// `#deck` header for just that row, and an optional sixth `Tags` column
+// (space-separated) replaces the file's `#tags` header for just that row.
+// Both are per-row overrides, not additive — empty means "use the header
+// default". `Tags` only affects notes created by this run (addNote); an
+// existing note's tags are left alone on update, same as before.
 
 const fs = require("fs");
 const path = require("path");
 
 const REPO_ROOT = path.join(__dirname, "..");
-const FILE = path.join(REPO_ROOT, "anki", process.env.ANKI_FILE || "medical-word-parts.txt");
+const FILE = path.join(REPO_ROOT, "anki", process.env.ANKI_FILE || "reading-room-terms.txt");
 const ANKI_CONNECT_URL = process.env.ANKI_CONNECT_URL || "http://127.0.0.1:8765";
 
 function usageAndExit() {
@@ -72,15 +82,18 @@ function parseFile(text) {
     }
     if (!line.trim()) continue;
     if (line.indexOf("\t") === -1) continue; // malformed row, skip
-    // Split on every tab: Front, Back, an optional third Image column, and an
-    // optional fourth IPA column. A story sentence never contains a literal
-    // tab, so this is safe.
+    // Split on every tab: Front, Back, an optional third Image column, an
+    // optional fourth IPA column, and optional fifth Deck / sixth Tags
+    // override columns. A story sentence never contains a literal tab, so
+    // this is safe.
     const parts = line.split("\t");
     rows.push({
       front: parts[0],
       back: parts[1] || "",
       image: (parts[2] || "").trim(),
       ipa: (parts[3] || "").trim(),
+      deck: (parts[4] || "").trim(),
+      tags: (parts[5] || "").trim(),
     });
   }
 
@@ -169,7 +182,9 @@ async function composeBack(row, ctx) {
 }
 
 async function syncRow(row, ctx) {
-  const { deckName, modelName, tags, frontField, backField } = ctx;
+  const { modelName, frontField, backField } = ctx;
+  const deckName = row.deck || ctx.deckName;
+  const tags = row.tags ? row.tags.split(/\s+/).filter(Boolean) : ctx.tags;
   const back = await composeBack(row, ctx);
   const query = `deck:"${escapeQueryValue(deckName)}" ${frontField}:"${escapeQueryValue(row.front)}"`;
   const noteIds = await invoke("findNotes", { query });
@@ -221,7 +236,10 @@ async function main() {
 
   // Idempotent/safe even if the deck already exists — call defensively so a
   // first-run sync on a fresh collection doesn't fail with "deck was not found".
-  await invoke("createDeck", { deck: ctx.deckName });
+  // Covers the header's default deck plus every row-level Deck override in
+  // play for this run.
+  const decksInPlay = new Set([ctx.deckName, ...rows.map((r) => r.deck).filter(Boolean)]);
+  for (const deck of decksInPlay) await invoke("createDeck", { deck });
 
   let hadFailure = false;
   for (const row of rows) {

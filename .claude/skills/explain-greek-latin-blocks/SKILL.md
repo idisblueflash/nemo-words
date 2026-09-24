@@ -47,7 +47,7 @@ Bad fit:
   if asked — don't force a prefix/root/suffix split onto a phrase.
 - **Turning a breakdown into an Anki card** → that's a separate concern, handled by
   the `build-word-part-anki` skill. This skill's job ends at the parts table +
-  meaning; it does not touch `anki/medical-word-parts.txt`. Keeping the boundary here
+  meaning; it does not touch `anki/reading-room-terms.txt`. Keeping the boundary here
   is deliberate — it's what lets this skill's decomposition/explanation quality be
   evaluated on its own, independent of how the Anki row gets formatted.
 

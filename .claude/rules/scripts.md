@@ -32,30 +32,47 @@ authoritative — the real call is made downstream.
 
 ## Pushing an `anki/*.txt` row into the live Anki collection
 
-After editing a row in an `anki/*.txt` export file (a word-part card, or a
-`reading-room-terms.txt` vocabulary card), push just that row into the live collection
-via AnkiConnect with `scripts/anki-sync.js` — an upsert (findNotes → updateNoteFields,
-or addNote if absent) that patches only the Back field and leaves scheduling/review
-history alone:
+After editing a row in `anki/reading-room-terms.txt` (a whole-word vocabulary card, or
+one of `_etta_mology`'s word-part rows — both live in this one file now, ADR-0016),
+push just that row into the live collection via AnkiConnect with `scripts/anki-sync.js`
+— an upsert (findNotes → updateNoteFields, or addNote if absent) that patches only the
+Back field and leaves scheduling/review history alone:
 
 ```bash
-# defaults to anki/medical-word-parts.txt
+# defaults to anki/reading-room-terms.txt
 node scripts/anki-sync.js "-nomy"
-
-# sync a row in a different anki/ file — ANKI_FILE is a filename under anki/, not a path
-ANKI_FILE=reading-room-terms.txt node scripts/anki-sync.js "ubiquitous"
+node scripts/anki-sync.js "ubiquitous"
 
 # no <front> arg syncs every row in the file
-ANKI_FILE=reading-room-terms.txt node scripts/anki-sync.js
+node scripts/anki-sync.js
+
+# sync a different anki/ file instead — ANKI_FILE is a filename under anki/, not a path
+ANKI_FILE=<other>.txt node scripts/anki-sync.js "<front>"
+```
+
+Prefer the wrapper `scripts/anki-sync-terms.sh` over the bare `node scripts/anki-sync.js`
+form above — same call, but as a plain command (no leading shell variable-assignment,
+and no need to name the file since it's the default) it's on the `.claude/settings.json`
+allowlist and skips the manual-approval prompt that an unrecognized `VAR=value cmd`
+prefix triggers under the read-outside-working-directory sandbox check:
+
+```bash
+scripts/anki-sync-terms.sh "ubiquitous"   # sync one row
+scripts/anki-sync-terms.sh                # sync every row
 ```
 
 Deck/notetype/tags/columns are read from the target file's own `#` header lines each
-run, not hardcoded. Requires Anki running locally with AnkiConnect listening on
-`127.0.0.1:8765` (override via `ANKI_CONNECT_URL`). If it can't reach Anki, the file
-write still stands — log the connection error to `anki/sync.log` and re-run later.
+run, not hardcoded — a row's optional `Deck`/`Tags` columns override those headers for
+just that row (ADR-0016), which is how word-part rows route to the medical deck/tag
+from the same file as ordinary vocabulary rows. Requires Anki running locally with
+AnkiConnect listening on `127.0.0.1:8765` (override via `ANKI_CONNECT_URL`). If it
+can't reach Anki, the file write still stands — log the connection error to
+`anki/sync.log` and re-run later.
 
-Regression coverage: `test/anki-sync-cross-deck-duplicate.test.js` runs the real script
-end-to-end against a mock AnkiConnect (no live Anki needed) — `node --test` picks it up.
+Regression coverage: `test/anki-sync-cross-deck-duplicate.test.js`,
+`test/anki-sync-image-field.test.js`, `test/anki-sync-ipa-field.test.js`, and
+`test/anki-sync-deck-tags-override.test.js` run the real script end-to-end against a
+mock AnkiConnect (no live Anki needed) — `node --test` picks them all up.
 
 ## The classical dictionaries (`_etta_mology` Part 1.5)
 
@@ -71,4 +88,4 @@ python3 dictionaries/open-words/search.py <part>  # Latin: identify headword + g
 
 Not in `scripts/` — see `CLAUDE.md` "Ad-hoc IPA/rhyme lookups" for the `nemo-words` CLI,
 `scripts/word-freq.js` for Google-Ngram frequency, and
-`~/.claude/skills/english-word-explainer/rhyme/rhyme.py` for rhyme/near/onset/prefix.
+`.claude/skills/english-word-explainer/rhyme/rhyme.py` for rhyme/near/onset/prefix.
