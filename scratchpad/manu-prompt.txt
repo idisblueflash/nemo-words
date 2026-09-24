@@ -1,0 +1,118 @@
+$imagegen
+Use case: illustration-story
+
+ASSET
+One square image, 2304x2304. A clean 3x3 grid of nine equal square panels
+(each 768x768), separated by thin uniform white gutters about 1% of the
+image width. No outer border, no drop shadow between panels, no page edge.
+
+SCENE TO ILLUSTRATE (same scene restaged nine ways)
+The mnemonic sentence: "A blind man reads you Braille with trembling hands."
+An older blind man with closed or clouded eyes and small round dark
+glasses sits close to a younger person (you) and reads aloud from an open
+Braille book - a thick page covered in raised bump dots. His bare hands
+tremble visibly (small motion lines, a slightly shaky contour) as his
+fingertips sweep across the rows of Braille dots. The younger person leans
+in and listens. Every concrete noun must be visible in every panel: the
+blind man, his dark glasses / closed eyes, the younger listening person
+(you), the open Braille book with rows of raised dots, and his two
+trembling hands on the page.
+
+THE MNEMONIC HOOK ELEMENT
+The blind man's two trembling hands on the Braille page. In every panel
+the hands get the compositional emphasis: foreground placement, the
+boldest and most confident brush-pen contour on the sheet (with a faint
+shake/doubled line to read as trembling), and the most saturated gouache
+block on the sheet - a warm ochre/tan skin tone that is the single most
+saturated colour anywhere on the sheet. The hands and fingertips on the
+dots must be the first thing the eye lands on in every panel.
+
+HOUSE STYLE (identical in all nine panels - one artist, nine sketches)
+Brush-pen comic line art with light gouache colour blocks. Hand-drawn
+INDIA-INK BRUSH linework with STRONG line-weight variation: thick, bold,
+visibly tapered outer contours that swell and thin along their length,
+against much thinner scratchy interior detail lines. Include a little
+looseness and the occasional broken or skipped stroke where the brush
+lifts. This must read as hand-brushed, NOT as a smooth uniform digital
+outline. NEVER a clean even-weight vector contour, never a soft rounded
+storybook outline of constant width.
+Expressive, slightly exaggerated comic faces and poses. Over the line art,
+soft flat gouache colour blocks: slightly chalky, low-saturation,
+naturalistic fills across the main shapes. At most 3 flat value steps per
+shape, hard edges, one flat colour per area. The trembling hands carry the
+single most saturated block and the boldest contour.
+
+OBJECT-LEVEL NEGATIVES (hard constraints)
+No crosshatching, no hatching lines, no stippling, no pencil texture, no
+engraving texture, no paper grain, no aged-paper texture. No individual
+hair strands, no fabric weave, no wood-grain lines, no rendered patterns -
+clothing, chairs, walls, book cover are each one flat colour with at most
+a few simple flat shapes on top. The Braille dots are small evenly spaced
+flat circles, not a rendered embossed texture. No volumetric or rendered
+shading, no soft gradients, no glossy highlights, no drop shadows, no wash
+bleed. Do not outline every fill. Backgrounds sparse: a couple of flat
+shapes (a window, a doorway, a plain chair) and generous white space,
+never a fully furnished textured room.
+
+PANEL 1 IS THE STYLE KEY
+Panel 1 (top-left): eye-level medium two-shot. The blind man sits on the
+left in small round dark glasses, the open Braille book on his lap, both
+hands flat on the page mid-sweep with faint shake lines. The younger
+person sits on the right leaning in to listen. Plain flat wall behind,
+one simple window shape, lots of white space. Draw its contours with a
+thick tapered brush line that clearly varies in width, with one or two
+broken strokes. Render this panel first; the other eight panels must
+match its brush line weight and taper, its flat-fill treatment, and its
+limited low-saturation palette exactly.
+
+No volumetric face or fabric modelling, no soft grey shading on skin or
+clothing - keep every fill flat.
+
+THE NINE STAGINGS (row-major; same blind man, same younger listener, same
+Braille book, same trembling hands, same story beat - only the staging
+changes)
+1. Eye-level medium two-shot: blind man left with dark glasses and Braille
+   book on his lap, both hands sweeping the page, younger person right
+   leaning in to listen.
+2. Tight close-up: the two trembling hands and fingertips fill the frame,
+   moving across three rows of raised Braille dots; the man's chin and
+   dark glasses just visible at the top edge.
+3. Low hero angle looking up: the blind man sits tall holding the open
+   book up near his chest, hands trembling on the page, the younger person
+   small in the lower foreground looking up and listening.
+4. Wide establishing shot: a bare room, the two figures on a plain bench
+   at the far side, the open Braille book between them, huge empty room
+   and white space, the man's hands still the visual anchor.
+5. Over-the-shoulder from behind the younger person: we look past their
+   shoulder at the blind man's face and his two shaking hands on the open
+   Braille page.
+6. Top-down view: the open Braille book seen from directly above, rows of
+   raised dots, the blind man's two trembling hands spread across it from
+   one edge, the younger person's hand resting at the opposite edge.
+7. Side profile: blind man in profile on the left, mouth open reading
+   aloud, one hand trembling on the page and one raised slightly off it;
+   younger person in profile on the right, eyes closed, listening.
+8. Three-quarter view, close: the younger person gently steadies the blind
+   man's shaking wrist with one hand while his fingertips stay on the
+   Braille dots, both faces calm and focused.
+9. After: the blind man lowers his trembling hands into his lap, the
+   Braille book closed on his knee, a faint tired smile; the younger
+   person claps softly or nods. Plain wall, window shape behind.
+
+TEXT
+No panel labels, numbers, captions, watermarks, signatures, or title
+text. No speech bubbles required. If any lettering appears on the book
+spine keep it short and correctly spelled or leave it blank.
+
+INPUT IMAGES
+Image 1: style reference for line looseness, line-weight variation, flat
+limited low-saturation palette, and sparse flat backgrounds with white
+space ONLY - do NOT copy its content, characters, or composition, and do
+NOT copy its crosshatch shading, fur modelling, gradients, or rendered
+background objects; the object-level negatives in this brief override
+anything the reference does.
+
+AVOID
+watermark, signature, artist logo, extra borders, drop shadows between
+panels, photorealistic real people's faces, gore, paragraphs of text,
+garbled lettering.

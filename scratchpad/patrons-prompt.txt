@@ -1,0 +1,30 @@
+$imagegen
+Use case: illustration-story
+Asset type: ONE square image, 2304x2304, a clean 3x3 grid of nine equal square panels separated by thin uniform white gutters about 1% of the image width. No outer border, no drop shadows between panels, no page background texture.
+
+STYLE (identical across all nine panels — one artist's nine sketches of the SAME scene, not a style sampler):
+Brush-pen comic line art with light gouache colour blocks. Thick India-ink brush outer contours with visible tapered strokes and the occasional broken line; interior detail lines much thinner. Expressive, slightly exaggerated comic faces and poses. Over the line art, soft FLAT gouache colour blocks: slightly chalky, low-saturation, naturalistic fills, at most 3 flat value steps per shape, hard edges, one flat colour per area.
+Object-level negatives (obey literally): NO crosshatching, no hatching lines, no stippling, no pencil texture, no engraving texture, no individual feather or fur strands, no layered feather shading, no soft airbrushed feather modelling, no paper grain, no aged-paper texture, no volumetric/rendered shading, no gradients anywhere including the sky, no sunset gradient, no glossy highlights, no drop shadows, no wash bleed. Each heron's body is filled with ONE flat slate blue-grey; the wing is at most one darker flat grey shape with a hard edge — not many small feather shapes, not blended. Do not outline every fill. Water, grass, and sky are each ONE flat colour with at most a few simple flat shapes on top, never a rendered pattern, never a gradient, never a texture. Backgrounds sparse — a couple of flat shapes and generous white space, never a fully furnished or fully painted scene.
+No panel labels, numbers, captions, watermarks, signatures, artist logos, title text. Diegetic text only where noted, short and correctly spelled. No photorealistic real faces, no gore.
+
+Input images:
+Image 1: style reference for line looseness, line-weight variation, flat limited low-saturation palette, and sparse flat backgrounds with white space ONLY — do NOT copy its content, characters, or composition, and do NOT copy its crosshatch shading, fur modelling, gradients, or rendered background objects; the object-level negatives in this brief override anything the reference does.
+
+THE SCENE (every panel illustrates this one sentence): "Payday herons return, becoming pond regulars."
+Fixed cast and props in EVERY panel: two or three tall grey herons with long legs and long beaks; a small pond (one flat blue-grey shape); several green cattail reeds; and money signalling payday — a paycheck, a fan of banknotes, or a coin held or dropped near a heron. The herons behave like regular customers of the pond: arriving, wading, standing in a patient queue, settling in.
+
+MNEMONIC HOOK ELEMENT: the HERONS. In every panel a heron sits in the foreground, drawn with the boldest, most confident brush-pen contour on the sheet and filled with the single most saturated gouache block on the sheet (a slate blue-grey body with a warm ochre beak). The eye must land on a heron first in every panel.
+
+What varies between the nine panels is only the STAGING of this same scene — same herons, same pond, same money, same beat, restaged:
+
+1 (STYLE KEY — render first, most carefully; panels 2-9 must match its line weight and flat-fill treatment exactly): Wide establishing shot, eye level. Three herons walking in a line toward a small pond at left, the lead heron clutching a green paycheck in its beak. Flat pale sky, two flat reed clumps, lots of white space.
+2: Low hero angle looking up at one heron standing tall in the foreground, wings half-raised, a fan of banknotes tucked under one wing; pond and a second heron small behind it.
+3: Tight close-up of a heron's head and shoulders, beak holding a single gold coin, one eye wide and pleased; blurred hint of reeds as flat shapes behind.
+4: Top-down view of the round pond, three herons wading at spaced intervals like customers at counters, banknotes floating on the water surface.
+5: Over-the-shoulder from behind a heron at the pond edge, looking out at two other herons arriving in flight, a paycheck fluttering down from the sky.
+6: Two herons standing in a patient queue at the pond's edge behind a third that is dipping its beak; a coin on the muddy bank in the foreground.
+7: Wide low shot, one flat pale-orange sky (a single flat colour, NO gradient): one heron settling onto one leg to roost among the cattails, a folded paycheck pinned under its foot, pond calm behind as one flat blue shape.
+8: Medium shot, a heron mid-landing with legs outstretched and wings flared over the pond, splash drawn as three simple flat white shapes, banknotes scattering.
+9: Three-quarter group shot: all three herons clustered close together facing the viewer like familiar regulars, the middle one holding up a paycheck in its beak, pond and reeds behind as flat shapes.
+
+Every panel fully self-contained, consistent framing so any single panel can be cropped out square.

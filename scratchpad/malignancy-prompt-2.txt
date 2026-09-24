@@ -1,0 +1,38 @@
+$imagegen
+Use case: illustration-story
+Asset type: one square image, a clean 3x3 grid of nine equal panels, thin uniform white gutters (about 1% of image width) between panels, no outer border, no panel labels or numbers.
+Generation size: 2304x2304 (each panel renders at 768x768).
+Primary request: Illustrate the mnemonic sentence "Landlord's ligament snaps ending the tenancy with hostility" (for the vocabulary word "malignancy") as nine different stagings of the same scene, all in one consistent hand-drawn style, arranged in a 3x3 grid.
+
+Input images: Image 1: style reference for line looseness, line-weight variation, flat limited low-saturation palette, and sparse flat backgrounds with white space ONLY — do NOT copy its content, characters, or composition, and do NOT copy its crosshatch shading, fur modelling, gradients, or rendered background objects; the object-level negatives in this brief override anything the reference does.
+
+Style/medium (applies identically to all nine panels — panel 1 is the style key, the other eight must match its line weight and flat-fill treatment exactly): Hand-drawn brush-pen comic line art with light gouache colour washes, in the loose sketchy hand-media feel of a watercolor-illustrated storybook — NOT a clean digital comic. Tapered brush strokes with visible tooth, slight wobble, and occasional broken or incomplete contour lines; line weight varies clearly — bolder confident outer silhouette, much thinner interior detail lines. Expressive, slightly exaggerated comic faces and poses. Colour is applied as soft flat gouache/watercolor blocks: slightly chalky, low-saturation, muted naturalistic colour, gentle and soft-edged rather than hard poster-flat, colour occasionally breaks loosely past the ink line rather than filling it with perfect precision — no gradients, no glossy rendered volume, no uniform hard-edged cel fill, no outlining every single shape with the same heavy line weight.
+
+Keep the hand-media feel throughout — soft washes, toothy tapered line, gentle warm contrast; do NOT clean up, sharpen, or flatten the line; do NOT render this as flat vector illustration or uniform bold digital ink; do NOT use high-contrast black ink on bright flat fills.
+
+No crosshatching, no hatching lines, no stippling, no pencil texture, no individual fur strands, no paper grain or aged-paper texture, no volumetric shading, no gradients, no drop shadows, no glossy cel-shaded comic-book look, no uniform even-weight vector outline. Any furniture, fabric, or surface pattern is one flat muted colour with at most a few simple flat shapes on top, never a rendered pattern or weave.
+
+Scene/backdrop: A cramped apartment doorway/hallway scene. A stern landlord (a human character; a physical human ligament illustrated as a soft, muted coral-pink taut band or cord runs visibly across his knee or hip, stylized like a simple anatomy-diagram strap, not gory) stands at a tenant's open doorway holding out an eviction notice, the ligament band snapping (drawn as a small jagged break with a couple of loose motion marks) at the moment of confrontation. The tenant reacts with hostility — clenched fists, a scowling glare, a slammed door mid-motion, or a shouted retort. Background: a plain apartment hallway or doorway — a door with a number, a faint crack in the wall, a "FOR RENT" or eviction slip taped up — sparse, only a couple of flat background shapes, lots of white space.
+
+Subject: Two characters — the landlord (stocky, suit vest, clipboard or notice in hand, deadpan/smug expression) and the tenant (arms crossed or fists raised, angry scowl). The landlord's snapping ligament band across his leg/hip is the mnemonic hook element: give it the compositional emphasis in every one of the nine panels — foreground placement, the boldest and most confident brush-pen contour on the sheet, and the single most saturated (though still muted, chalky) gouache colour block on the sheet, so the eye lands on it first in every panel regardless of staging.
+
+Lighting/mood: Flat, even daylight or hallway lamp light, warm-toned, gentle contrast, no dramatic hard shadows, tense/confrontational mood.
+
+Color palette: soft chalky low-saturation apartment tones — dusty mustard yellow walls, faded denim-blue for the tenant's clothes, warm muted grey-brown for the landlord's suit vest, and one slightly more saturated but still soft coral-pink reserved only for the snapping ligament band (the hook element).
+
+Materials/textures: keep flat and plain — a wooden door, a clipboard, a paper eviction notice — no rendered wood grain, no fabric weave detail.
+
+Composition/framing across the nine panels — vary camera angle and distance, pose/gesture/expression, prop placement, and the chosen story beat (before the snap / the snap itself / just after), so each panel is a distinct, self-contained, plausible illustration of the same sentence, all croppable square:
+1. Wide establishing shot, both characters full-body in the doorway, ligament band clearly visible and about to snap, landlord holding the notice out. This is the style key panel — set the exact line weight and flat-wash treatment every other panel must match.
+2. Low hero-angle close on the landlord's leg/hip, the ligament band mid-snap with a small jagged break and loose motion marks, tenant's angry fist visible at frame edge.
+3. Over-the-shoulder from behind the tenant, looking past their shoulder at the landlord thrusting the notice forward, ligament band bold in mid-ground.
+4. Top-down angle looking into the doorway, landlord and tenant face to face, ligament band snapping visible across the landlord's leg.
+5. Tight close-up on the landlord's smug/pained face as the ligament snaps, small loose motion lines by his hip.
+6. Wide shot just after the snap: landlord staggering slightly, tenant slamming the door, notice paper fluttering to the floor.
+7. Close two-shot at chest height, tenant's clenched fist raised near the landlord's chest, ligament band prominent in the foreground between them.
+8. Side profile angle, landlord recoiling as the ligament snaps, tenant shouting with mouth open and a small speech bubble reading "Get out!", eviction notice mid-air.
+9. Low wide shot from hallway floor level looking up, dramatic hero framing of the landlord clutching his snapped ligament band while the tenant glares down at him from the doorway.
+
+Constraints: no panel labels, numbers, captions, watermarks, or title text. Diegetic text is fine and welcome when the scene calls for it (an eviction notice label, a door number, a short speech bubble of a few words) — keep any such text short and correctly spelled. Each panel fully self-contained and readable on its own; consistent framing so any panel can be cropped out square. Every concrete noun in the sentence — landlord, ligament, snap, tenancy/apartment doorway, hostility — must be visible in some form in every panel.
+
+Avoid: watermark, signature, artist logo, extra borders, drop shadows between panels, photorealistic real people's faces, gore or graphic anatomy, paragraphs of text or garbled lettering, crosshatching, stippling, pencil texture, volumetric rendering, glossy 3D render look, flat vector illustration, uniform bold digital ink, high-contrast cel shading, busy furnished backgrounds.

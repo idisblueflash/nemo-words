@@ -1,0 +1,36 @@
+$imagegen
+Use case: scientific-educational
+Asset type: one square teaching sheet, 2304x2304 px, a clean 3x3 grid of nine equal square panels with thin uniform white gutters (about 1% of width), no outer border. Panels 1-8 are illustrated; panel 9 (bottom-right) is intentionally left blank: plain warm-cream, no art, no text.
+Primary request: A 3x3 vocabulary sheet illustrating the English verb "plateaued" (to rise or grow and then level off, holding steady) used eight different ways, one attested sentence per panel, each panel a small cartoon scene with a short caption strip beneath it.
+Input images: Image 1: style reference for the clean rounded cartoon look — smooth even-weight dark ink outline, simple flat fills with only gentle soft-edged cel-shading, a muted low-saturation earthy palette, and sparse minimal backgrounds over a warm cream ground with generous negative space. Match its line quality, shading restraint, palette and background sparseness — do NOT copy its content, characters, or composition; the object-level negatives in this brief override anything the reference does.
+Scene/backdrop: each panel is a sparse minimal scene — one or two simple props sitting in a large field of plain warm-cream negative space, never a furnished room. A recurring visual motif of a line chart that rises then goes flat helps tie the sense together, but vary how it appears.
+Subject: expressive rounded cartoon people with large clear eyes and big readable expressions, loose lively poses. Vary camera distance and angle panel to panel so the nine read as distinct at a glance.
+Style/medium: clean rounded cartoon / webcomic line art. Smooth confident dark-brown ink outline of fairly even weight, rounded stroke ends, slightly heavier on the outer silhouette than on interior detail; no sketchy or broken lines. Fills are flat blocks of one colour each with at most one soft darker shading tone; hard-ish edges; no gradients. One artist's hand across all panels.
+Composition/framing: in each panel the illustration fills the top ~82%; a flush bottom strip (~18%, flat off-white) carries the caption in a small clean sans-serif, dark grey, one or two lines, horizontally centred, comfortably inside the strip. Captions are the only text on the sheet.
+Lighting/mood: flat even light, calm and instructional.
+Color palette: muted low-saturation earthy tones — brick / terracotta red, sage and olive green, warm greys, cream. No high-saturation colour.
+Materials/textures: flat colour only. No crosshatching, no hatching, no stippling, no pencil or engraving texture, no individual hair or fur strands, no paper grain, no heavy volumetric shading, no colour gradients, no glossy highlights, no painterly brush texture. Walls, floors and fabrics are one flat colour with at most a few simple flat shapes on top, never a rendered pattern.
+
+Panel 1 (top-left) is the STYLE KEY — describe its finish exactly and make panels 2-8 match its line weight, shading restraint and palette: A person in workout clothes standing at an indoor climbing wall, one hand on a hold, looking over their shoulder with a flat resigned expression at a small wall-mounted line chart that climbs then runs flat. Medium shot. Terracotta and sage palette, cream background, one potted plant beside the wall.
+Panel 2 (top-middle): A TV newsroom — a presenter in a blazer gestures at a large screen showing a line graph of case numbers rising then going flat, small figure "22,609" on the screen. Wide shot, presenter in profile.
+Panel 3 (top-right): A public-health official at a plain podium, pointing calmly to a freestanding bar chart whose bars rise then level to the same height. Front view, mild confident expression.
+Panel 4 (middle-left): Two lawyers in an office at a small table, both looking down at a paper chart with a curve that rises then flattens. Close-ish shot, one raising an eyebrow. A single window in the cream wall.
+Panel 5 (middle-middle): A person in pyjamas standing on a bathroom scale, arms crossed, frowning down at it; a wall calendar and a flat-lined weight chart taped beside it. Medium shot from a slight side angle.
+Panel 6 (middle-right): A demographer at a whiteboard drawing a world-population curve that rises, goes flat, then dips; pointer in hand, explaining. Three-quarter view, one globe on the desk.
+Panel 7 (bottom-left): An older analyst at a desk looking at a monitor showing a population curve that has levelled off and turned downward; hand on chin, thoughtful. Over-the-shoulder shot.
+Panel 8 (bottom-middle): A language student at a desk piled with textbooks and flashcards, looking up at a small progress chart on the wall that climbs then goes flat; slightly frustrated expression. Medium shot.
+Panel 9 (bottom-right): intentionally blank warm-cream panel, no illustration, no caption.
+
+Text (verbatim): render each caption exactly once, in its own panel's bottom strip, spelled exactly as given, target word in bold:
+Panel 1: "my skills have plateaued"
+Panel 2: "the number of new infections has since plateaued"
+Panel 3: "The number of new infections has plateaued."
+Panel 4: "Divorce rates might reach a plateau soon."
+Panel 5: "This is the diet plateau."
+Panel 6: "the global population that would plateau then decrease"
+Panel 7: "the population would have passed plateauing and gone into decline"
+Panel 8: "tips for overcoming language learning plateaus"
+Panel 9: (no text)
+
+Constraints: nine equal panels; captions rendered exactly once each in the correct panel; the word plateaued / plateau / plateauing / plateaus shown in bold within its caption; panel 9 blank cream. Keep every caption inside its off-white strip, not overlapping the art.
+Avoid: panel numbers, title text, watermark, signature, extra borders, drop shadows between panels, photorealistic real faces, gore, crosshatching, hatching, stippling, pencil or engraving texture, hair/fur strands, paper grain, heavy volumetric rendering, colour gradients, glossy highlights, painterly brush texture, rendered wallpaper or fabric patterns, busy furnished backgrounds, high-saturation colour, garbled or duplicated lettering, paragraphs of text.

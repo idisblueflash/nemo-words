@@ -1,0 +1,41 @@
+$imagegen
+Use case: illustration-story
+Asset type: one square image, a clean 3x3 grid of nine equal panels, thin uniform white gutters (~1% of width) between panels, no outer border.
+Primary request: A 3x3 sheet of nine panels illustrating nine different attested sentences that all use the word "mantle" in its cloak/wrap-garment sense (a cloth cloak or wrap worn over the shoulders), one sentence per panel, each panel captioned below its illustration.
+Input images: Image 1: style reference for the clean rounded cartoon look — smooth even-weight dark ink outline, simple flat fills with only gentle soft-edged cel-shading, a muted low-saturation earthy palette, and sparse minimal backgrounds over a warm cream ground with generous negative space. Match its line quality, shading restraint, palette and background sparseness — do NOT copy its content, characters, or composition; the object-level negatives in this brief override anything the reference does.
+Generation size: 2304x2304 (each panel is approximately 768x768; valid size for gpt-image-2).
+
+Medium (applies to ALL nine panels identically — one hand, one style, not a style sampler): Clean rounded cartoon / webcomic line art. Smooth, confident dark-brown ink outline of fairly even weight, rounded stroke ends, slightly heavier on the outer silhouette than on interior detail, no ragged sketchy or broken lines. Expressive, exaggerated comic faces with large rounded eyes and clear expressions; loose lively body poses. Fills are simple flat blocks of one colour each in a muted, low-saturation earthy palette (brick/terracotta red, sage and olive green, warm greys, cream, dusty plum), with at most one soft darker cel-shading tone per shape — hard-ish edges, never a smooth gradient or rendered volume. Backgrounds are sparse and minimal: one or two simple flat-colour objects (a fountain rim, a window, a doorway, a bit of grass or path) sitting in a large field of plain warm-cream negative space — never a fully furnished or textured room.
+
+Layout of each panel: the illustration fills the top ~82% of the panel; a flush bottom strip (~18% of the panel height, flat off-white) carries the caption in a small clean sans-serif, dark grey, one or two lines, horizontally centred, comfortably inside the strip with margin on all sides. The target word "mantle" appears in the caption in bold. Captions are the only text anywhere on the sheet — render each one exactly once, in its own panel's strip, spelled exactly as given below, no other lettering anywhere.
+
+Panel 1 (top-left) — THE STYLE KEY, describe and render this one first and most carefully; all eight other panels must match its line weight, shading restraint and palette exactly: A young woman in a modest old-fashioned dress stands in a plain room, holding up an ornate gold-flowered cloak by its shoulders as if about to put it on, a pleased, slightly vain expression, a small hint of a diamond-studded bodice already on her — sparse room, maybe a single mirror shape, warm cream background, no clutter.
+Caption: "put on my gold-flowered **mantle**"
+
+Panel 2 (top-middle): A goddess-like woman (Venus) walking along a path with two smaller companion figures, wrapping a swirling grey-blue mist around all of them like a cloak, dramatic but flat-shaded sky, low ground detail, mid-distance camera.
+Caption: "a **mantle** of dark air"
+
+Panel 3 (top-right): A regal woman (Helen) holding up a richly embroidered golden cloak with a fringed edge, examining it closely, admiring expression, close camera angle on her hands and the cloak's gold embroidery, sparse cream background.
+Caption: "a broidered **mantle**, stiff with gold"
+
+Panel 4 (middle-left): A woman standing near a plain doorway at night, slipping a dark cloak over her shoulders with one hand while tying a bonnet under her chin with the other, calm domestic pose, wide shot showing the doorway and a sliver of night sky.
+Caption: "slipping on her **mantle** and bonnet"
+
+Panel 5 (middle-middle): A pale woman in a bedroom, fastening the clasp of her cloak at her throat while glancing anxiously back over her shoulder toward a simple bed, tense wide-eyed expression, sparse bedroom with just a bed shape and a window.
+Caption: "fastened her **mantle**, glancing back"
+
+Panel 6 (middle-right): Extreme close-up on a woman's two hands, fingers visibly trembling, undoing the small clasp fastenings of a cloak at the collar, her worried face softly visible above, cream background with no other detail.
+Caption: "undid the fastenings of her **mantle**"
+
+Panel 7 (bottom-left): A woman in a bright scarlet cloak standing in an open field, a bull lowering its head and charging toward her from the side, a couple of other cattle grazing flat and small in the background, wide dynamic shot with motion in the bull's pose.
+Caption: "scarlet colour of Miss Ashton's **mantle**"
+
+Panel 8 (bottom-middle): A young woman seated on a low stone ledge by a simple fountain, wrapped and folded snugly in a plaid-patterned cloak, her long hair loose and falling over one shoulder, wistful downward gaze, sparse fountain shape and plain cream background.
+Caption: "folded in her plaided **mantle**"
+
+Panel 9 (bottom-right): A pale, still female figure standing beside a fountain at dusk, wearing a plain whitish-grey cloak that falls to the ground, ghostly calm expression, minimal grass and fountain-rim details, distant camera angle emphasising her solitary stillness.
+Caption: "dressed in a white **mantle**"
+
+Constraints: no panel numbers, no title text, no watermark, no signature, no extra borders, no drop shadows between panels, no photorealistic real people's faces, no gore. Each caption string renders exactly once, only inside its own panel's bottom strip, spelled exactly as given, target word bold.
+
+Avoid: crosshatching, hatching lines, stippling, pencil or engraving texture, individual fur/hair strands, paper grain or aged-paper texture, heavy volumetric rendering, colour gradients, glossy highlights, painterly brush texture, rendered wallpaper or fabric patterns, busy furnished backgrounds, high-saturation colour, garbled or duplicated lettering, paragraphs of text.

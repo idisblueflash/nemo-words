@@ -1,0 +1,29 @@
+$imagegen
+Use case: illustration-story
+Asset type: one square image, 2304x2304, a clean 3x3 grid of nine equal panels (each 768x768) separated by thin uniform white gutters about 1% of the width; no outer border.
+Primary request: Nine restagings of one scene - a prince riding a large elephant, being presented as a qualifying, marriageable bachelor - drawn as one artist's nine sketches in a single fixed style.
+
+Input images: Image 1: style reference for line looseness, line-weight variation, flat limited low-saturation palette, and sparse flat backgrounds with white space ONLY - do NOT copy its content, characters, or composition, and do NOT copy its crosshatch shading, fur modelling, gradients, or rendered background objects; the object-level negatives in this brief override anything the reference does.
+
+Scene/backdrop: an open palace courtyard or town square with pale flagstones; a few flat simple shapes only - one archway, one hanging banner, a distant flat rooftop line - lots of empty pale background. Same setting in every panel.
+Subject: A young prince in a short embroidered coat and a small crown, seated on the back of a big grey elephant with curved white tusks and a decorated red saddle-cloth. Beside or below them, a royal matchmaker or herald gestures toward the prince, presenting him; sometimes a small cluster of onlookers or a woman of the court considers him. Expressive, slightly exaggerated comic faces - the prince proud and hopeful, the herald mid-announcement. Same prince, same elephant, same herald in all nine panels.
+Style/medium: Hand-drawn brush-pen comic line art with light gouache colour blocks. Thick India-ink brush outline with visible tapered strokes, a slight wobble, and the occasional broken line; interior detail lines much thinner. Over the line art, soft flat gouache fills - slightly chalky, low-saturation, naturalistic, a few washes breaking gently past the ink edge. Panel 1 is the style key: describe the elephant there with the boldest, most confident brush contour on the sheet and the most saturated colour block (the warm red saddle-cloth); the other eight panels must match panel 1's line weight and flat-fill treatment exactly.
+Composition/framing: The elephant is the mnemonic hook - in every panel it sits in the foreground, carries the boldest contour and the most saturated gouache block, and the eye lands on it first. Vary camera angle and distance panel to panel. Any panel can be cropped square on its own.
+Lighting/mood: flat even daylight, gentle warm low contrast, no drop shadows, no strong cast shadows.
+Color palette: elephant grey, warm saddle-cloth red, pale sandstone flagstones, muted teal banner, soft ivory background, dull gold crown.
+Materials/textures: plain flat shapes. No crosshatching, no hatching lines, no stippling, no pencil texture, no fur strands, no paper grain, no volumetric shading, no gradients, no drop shadows. Banner and saddle-cloth are one flat colour with at most a couple of simple flat shapes on top, never a rendered pattern.
+
+Panel-by-panel staging (row-major):
+1. Wide establishing eye-level view: elephant standing square in the courtyard centre, prince upright on top, herald standing at lower left with arm raised presenting him.
+2. Low hero angle looking up at the elephant's head and tusks, prince leaning forward with a proud grin, crown catching the light.
+3. Over-the-shoulder from behind a court woman in the foreground who studies the prince as the elephant approaches head-on.
+4. Top-down view: elephant and prince from above, herald and a small ring of onlookers around the animal on the flagstones.
+5. Tight close-up of the prince's face and upper body against the elephant's grey neck, hand on his chest, earnest expression.
+6. Three-quarter mid shot: elephant mid-stride walking left to right, prince waving, herald trotting alongside mid-announcement.
+7. The moment before: prince being helped up onto the kneeling elephant by the herald, one leg over the saddle-cloth.
+8. The moment after: elephant halted before a raised dais where the court woman stands, prince bowing from the saddle.
+9. Distant wide shot: small elephant and prince crossing the empty square toward an archway, herald leading with a banner, much white space.
+
+Text (verbatim): none
+Constraints: no panel labels, numbers, captions, watermarks, or title text. A short correctly-spelled diegetic word on the banner is optional. Every concrete noun from the sentence - elephant, prince, marriageable-bachelor presentation - visible in every panel. Nine panels in one image. Consistent framing so any panel crops out square.
+Avoid: watermark, signature, artist logo, extra borders, drop shadows between panels, photorealistic real faces, gore, paragraphs of text, garbled lettering, crosshatch, stipple, pencil texture, fur detail, gradients, volumetric render, glossy 3D, busy furnished backgrounds, high-contrast cel shading, flat even-weight vector contour.

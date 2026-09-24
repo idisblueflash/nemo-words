@@ -1,0 +1,40 @@
+$imagegen
+
+Use case: educational mnemonic illustration
+Asset type: one square image, 2304x2304 px, a clean 3x3 grid of nine equal square panels separated by thin uniform white gutters (about 1% of width). No outer border, no page margin.
+
+Primary request: nine hand-drawn takes on ONE single scene, restaged nine different ways, so an English learner remembers the word part "-gen-" (Greek, meaning race, kind, birth, origin). The scene, from this sentence, is the same in every panel: "The gentle midwife recorded each newborn's true origin." A calm, kind-faced midwife in a plain apron cradles a swaddled newborn baby in one arm and, with the other hand, writes in a large open ledger/record book that rests on a small table; a quill or pen in hand, an ink pot beside the book. Same midwife, same swaddled newborn, same ledger, same moment, nine stagings.
+
+Input images: Image 1: style reference for line looseness, line-weight variation, flat limited low-saturation palette, and sparse flat backgrounds with white space ONLY -- do NOT copy its content, characters, or composition, and do NOT copy its crosshatch shading, fur modelling, gradients, or rendered background objects; the object-level negatives in this brief override anything the reference does.
+
+Mnemonic hook element: the SWADDLED NEWBORN BABY in the midwife's arm (the birth/origin). In every one of the nine panels the baby sits in the foreground, drawn with the boldest, most confident tapered brush-pen contour on the sheet and wrapped in the single most saturated gouache block on the sheet (a warm saturated coral-orange swaddling blanket). The eye must land on the baby first in every panel, whatever the camera angle. Everything else on the sheet is quieter in line weight and more desaturated.
+
+Style/medium: brush-pen comic line art with light gouache colour blocks. Thick uneven India-ink brush outline with visibly TAPERED strokes that swell and thin, and the occasional broken or lifted line on the outer silhouettes; interior detail lines much thinner and sparse. This must read as hand-drawn with a real brush, NOT as a smooth even-weight digital cartoon outline. Expressive, slightly exaggerated comic faces and poses. Fills are FLAT gouache: each shape is ONE single flat colour, hard-edged, with at most one extra flat darker shape for shadow -- no more than 2 value steps per shape. Slightly chalky, low-saturation. Absolutely no soft-edged shading, no airbrushed gradients, no blended tones, no glossy or specular highlights -- the blanket is flat coral-orange fill and nothing else. One artist's hand across all nine panels.
+
+Panel 1 (top-left) is the STYLE KEY -- describe its finish exactly and make panels 2-9 match its line weight and flat-fill treatment: wide establishing shot, slightly low angle. The midwife stands centre-left, coral-swaddled newborn cradled in her left arm in the foreground, her right hand writing in the big open ledger on a waist-high table at right; ink pot on the table. Flat pale-grey background wall with a single tall window shape, generous white space above. Palette: muted slate blue apron, warm grey wall, soft brown table, off-white ledger pages, the blanket in saturated coral-orange.
+
+Panel 2 (top-middle): tight close-up on the swaddled newborn's face and the midwife's hands holding it in sharp foreground; the ledger and midwife's face are simple and soft in the far background. Low horizon, lots of white space.
+
+Panel 3 (top-right): over-the-shoulder from behind the midwife, looking past her shoulder down at the open ledger page where a short line of handwriting and a name are visible, the coral baby bright in the crook of her arm in the near foreground.
+
+Panel 4 (middle-left): top-down view. The small table with the open ledger, ink pot and quill seen from above, the midwife's arms entering frame cradling the coral newborn over the book. Baby still the boldest shape from above.
+
+Panel 5 (middle-middle): low hero angle looking up at the midwife holding the coral newborn high in the foreground, her face tender, the ledger and table small below and behind. Big white space above.
+
+Panel 6 (middle-right): side-on two-shot. Midwife seated on a plain stool at left, newborn on her lap in the coral blanket (centre), leaning to write in the ledger propped on a table at right. Flat background, one framed rectangle on the wall.
+
+Panel 7 (bottom-left): wide shot from across the room. The midwife small but centred, coral newborn and open ledger both clearly readable, a speech bubble from the midwife reading "Born today." Keep the blanket the most saturated block despite its size.
+
+Panel 8 (bottom-middle): medium shot, the moment after -- the midwife setting the quill down in the ink pot, the ledger entry finished, still cradling the coral newborn against her shoulder, a soft satisfied smile.
+
+Panel 9 (bottom-right): close two-shot of the midwife's face and the newborn's face side by side, both large and calm, the coral blanket filling the bottom-foreground still boldest-outlined and most saturated, one corner of the ledger visible at the edge.
+
+Constraints: nine equal panels, same midwife, same newborn, same ledger, same story beat, restaged. No panel labels, numbers, captions, titles, or watermarks. Diegetic text only: the single "Born today." speech bubble in panel 7 and a short faint line of handwriting on the ledger page in panel 3 -- short and correctly spelled. Each panel self-contained and readable alone; consistent framing so any panel can be cropped out square.
+
+Color palette: muted low-saturation -- slate blue, warm grey, soft brown, off-white, dull ochre. The swaddling blanket alone carries a saturated warm coral-orange. No high-saturation colour anywhere else.
+
+CRITICAL FLATNESS RULE: the coral blanket, the midwife's hair, her apron, every face and hand, and every wall must be filled with ONE completely flat uniform colour edge to edge -- zero shading, zero darkening toward edges, zero soft airbrushed roundness, zero highlight. The previous attempt wrongly rendered the blanket and hair with soft volumetric gradient shading and modelled cheeks -- do NOT do that. If a shadow is needed it is a single hard-edged flat darker shape, not a blend. Hair is a flat grey silhouette shape with a few thin brush lines on top, not a soft rendered mass.
+
+Materials/textures: flat gouache colour only. No crosshatching, no hatching lines, no stippling, no pencil texture, no engraving texture, no individual hair strands, no paper grain or aged-paper texture, no volumetric shading, no soft-edged shadows, no gradients, no colour blends, no glossy highlights, no drop shadows between panels. Faces and hands are flat colour with no cheek-shading or modelling. Walls, tables, aprons and clothing are one flat colour with at most a few simple flat shapes on top, never a rendered pattern. Backgrounds sparse -- a couple of flat shapes and white space, never a furnished room. Panels 2 through 9 must match panel 1's brush-line weight variation and 2-step flat-fill treatment exactly.
+
+Avoid: watermark, signature, artist logo, extra borders, drop shadows, photorealistic real people's faces, gore, blood, paragraphs of text, garbled lettering, panel numbers.

@@ -1,0 +1,29 @@
+$imagegen
+Use case: illustration-story
+Asset type: one square image, 2304x2304, a clean 3x3 grid of nine equal square panels with thin uniform white gutters (about 1% of width), no outer border. Every panel must be croppable on its own as a square.
+Primary request: Nine restagings of one scene - a red fire truck racing to an emergency and the visibly urgent, alarmed state it creates in the people and street around it - drawn as one artist's nine sketches in a single fixed style.
+
+Input images: Image 1: style reference for line looseness, line-weight variation, flat limited low-saturation palette, and sparse flat backgrounds with white space ONLY - do NOT copy its content, characters, or composition, and do NOT copy its crosshatch shading, fur modelling, gradients, or rendered background objects; the object-level negatives in this brief override anything the reference does.
+
+Scene/backdrop: a city street during a daytime emergency. Sparse backdrop only: a couple of flat building silhouettes, a curb, maybe a plain street sign, lots of white space. No furnished detail, no rendered windows or brickwork.
+Subject: a bright red fire truck with a silver ladder and a flashing light bar, mid-response. Around it, ordinary people reacting to the urgency - a pedestrian jumping back with wide eyes and raised hands, a driver braking, a child covering their ears, a shopkeeper leaning out a doorway. The fire truck is the mnemonic hook element: in every panel it sits in the foreground, drawn with the boldest most confident brush-pen contour on the sheet and carrying the single most saturated colour block (its red body). Everything else is quieter and lower-contrast.
+Style/medium: brush-pen comic line art with light gouache colour blocks. Thick India-ink brush outline with visible tapered strokes and the occasional broken line; interior detail lines much thinner. Expressive, slightly exaggerated comic faces and poses. Over the line art, soft flat gouache fills: at most 3 flat value steps per shape, hard edges, one flat colour per area, slightly chalky and low-saturation. No gradients, no rendered volume, no wash bleed, no outlining every fill.
+Composition/framing: panel 1 is the style key - render it first and in most detail, and make the other eight match its line weight and flat-fill treatment exactly. Vary staging between panels: camera angle and distance, poses and expressions, placement of the truck and the people, and the moment of the action (truck approaching / passing / just past).
+CRITICAL STYLE NOTE: absolutely flat cel fills only. Do NOT blur the fire truck or any object for motion - convey speed with a few clean straight brush-pen streak lines only. No soft-focus, no motion blur, no airbrushed gradient on the truck body or on faces. Every shape is filled with one flat colour plus at most 2 additional hard-edged flat shade shapes. Match panel 1's flat treatment in all nine.
+
+Panel-by-panel staging (row-major):
+1. Wide establishing shot: fire truck speeding down the middle of the street left-to-right, a pedestrian on the curb lurching backward with wide eyes and raised hands.
+2. Low hero angle looking up at the front grille of the fire truck as it bears down, headlights and light bar prominent, small figures scattering at the edges.
+3. Over-the-shoulder from behind a braking car driver, hands tight on the wheel, the fire truck filling the windshield ahead.
+4. Top-down view: the fire truck as a long red shape cutting through the street, people frozen mid-step around it like scattered marks.
+5. Tight close-up on a child's alarmed face with hands clamped over the ears, the red truck body a bold blur behind.
+6. Side-on tracking shot of the whole fire truck at speed, ladder and hoses visible, a dog pulling its owner away in the foreground.
+7. The moment just after: fire truck receding down the street, a shopkeeper leaning out a doorway staring after it, hand on the frame.
+8. Three-quarter front view of the fire truck stopped hard at an intersection, firefighter half-out of the cab, bystanders backed against a wall.
+9. Close view from street level between two pedestrians' legs: the fire truck's spinning wheel and red fender rushing past, motion lines.
+Lighting/mood: flat daytime light, no strong shadows, urgent and tense. A few simple motion lines for speed, no rendered glow.
+Color palette: saturated fire-engine red (hook, most saturated on the sheet), muted grey street, off-white sky, dull slate-blue clothing, a little chalky ochre. Everything except the truck kept low-saturation.
+Materials/textures: plain flat shapes. No crosshatching, no hatching lines, no stippling, no pencil texture, no paper grain or aged-paper texture, no volumetric shading, no gradients, no drop shadows. Buildings, road and clothing are each one flat colour with at most a few simple flat shapes on top, never a rendered pattern.
+Text (verbatim): none. No panel labels, numbers, captions, watermarks, or title text. Short diegetic text only if a scene needs it (e.g. a plain street sign), correctly spelled.
+Constraints: nine clearly distinct panels; same fire truck, same story beat restaged; the fire truck is foreground, boldest contour, most saturated block in every panel; every panel self-contained and square-croppable; panel 1 sets line weight and flat-fill treatment for the rest.
+Avoid: watermark, signature, artist logo, extra borders, drop shadows between panels, photorealistic faces, gore, paragraphs of text, garbled lettering, crosshatching, hatching, stippling, pencil texture, soft gradients, glossy highlights, volumetric shading, busy furnished backgrounds, high-saturation colour outside the fire truck.

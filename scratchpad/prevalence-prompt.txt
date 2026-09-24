@@ -1,0 +1,38 @@
+$imagegen
+Use case: scientific-educational
+Asset type: one square image, 2304x2304, a clean 3x3 grid of nine equal panels illustrating nine uses of the English word "prevalence"; final deliverable used as a vocabulary study sheet
+Primary request: Produce a single 3x3 sheet of nine cartoon panels, one attested example sentence per panel, each panel with a small illustration on top and a short caption strip below, all drawn by one hand in one consistent style.
+
+Input images: Image 1: style reference for the clean rounded cartoon look — smooth even-weight dark ink outline, simple flat fills with only gentle soft-edged cel-shading, a muted low-saturation earthy palette, and sparse minimal backgrounds over a warm cream ground with generous negative space. Match its line quality, shading restraint, palette and background sparseness — do NOT copy its content, characters, or composition; the object-level negatives in this brief override anything the reference does.
+
+Scene/backdrop: Every panel sits over plain warm-cream negative space with at most one or two simple objects. Nine different situations, all showing the same meaning of "prevalence": how widespread or common something is across a population or place.
+Subject: Expressive cartoon people with large rounded eyes and clear expressions, loose lively poses.
+Style/medium: Clean rounded cartoon / webcomic line art. Smooth confident dark-brown ink outline of fairly even weight, rounded stroke ends, slightly heavier on the outer silhouette than interior detail; no sketchy or broken lines. Fills are flat blocks of one colour each with at most one soft darker cel-shading tone; hard-ish edges. Muted low-saturation earthy palette: brick/terracotta red, sage and olive green, warm greys, cream.
+Composition/framing: 3x3 grid, thin uniform white gutters about 1% of width, no outer border. In each panel the illustration fills the top ~82%; a flush flat off-white bottom strip ~18% carries the caption in a small clean sans-serif, dark grey, one or two lines, horizontally centred, comfortably inside the strip. The word "prevalence" appears in each caption in bold. Vary camera distance and angle across the nine panels.
+Lighting/mood: Even flat daylight, calm and clear, no dramatic shadows.
+Color palette: terracotta red, sage green, olive, warm grey, cream.
+Materials/textures: flat colour only.
+
+Panel 1 (top-left) — STYLE KEY, describe most carefully; all other panels must match its line weight, shading restraint and palette exactly: A cartoon doctor in a terracotta cardigan stands beside a large map of Brazil on an easel, holding a clipboard and pointing at the map with a calm informative expression. One potted sage plant in the corner. Cream background. Caption strip text: "the prevalence of Asperger's Syndrome may reach 0.5%"
+Panel 2 (top-centre) — A cartoon student at a desk frowning in concentration over an open textbook, three labelled flashcards floating above the page. Medium close-up. Caption strip text: "concepts like prevalence, incidence, and case fatality ratio"
+Panel 3 (top-right) — A cartoon person scrolling a phone, a tall stack of speech-bubble cards beside them each showing the names "Tom" and "Mary", surprised expression. Wide shot. Caption strip text: "the prevalence of sentences with 'Tom' and 'Mary'"
+Panel 4 (middle-left) — A cartoon traveller with a backpack standing next to a globe, small "ENGLISH" signboards dotted around the globe, cheerful. Caption strip text: "the prevalence of English as a global lingua franca"
+Panel 5 (middle-centre) — Two cartoon friends talking warmly in front of a map of Algeria pinned to a wall, speech bubbles between them. Medium shot from a slight angle. Caption strip text: "the Kabyle dialect's prevalence in Algeria"
+Panel 6 (middle-right) — A cartoon researcher in an olive coat placing coloured pins on a large world map, holding a clipboard, focused expression. High angle. Caption strip text: "the prevalence of HIV in Haiti and Vietnam"
+Panel 7 (bottom-left) — A cartoon doctor gently examining an older patient's ear with an otoscope, a simple bar chart on the wall behind. Close-up. Caption strip text: "the prevalence of hearing loss was 1.6 percent"
+Panel 8 (bottom-centre) — A cartoon scientist watching an apple fall from a small tree while two planets orbit overhead, amazed expression, arms raised. Wide shot. Caption strip text: "the universal prevalence of the law of gravitation"
+Panel 9 (bottom-right) — A cartoon person covering their ears amid a small crowd of scowling, frowning faces, uneasy expression. Medium shot. Caption strip text: "the prevalence of anger and resentment is hard to ignore"
+
+Text (verbatim): render each of these exactly once, in its own panel's bottom strip, spelled exactly as given, with the word "prevalence" in bold:
+Panel 1: "the prevalence of Asperger's Syndrome may reach 0.5%"
+Panel 2: "concepts like prevalence, incidence, and case fatality ratio"
+Panel 3: "the prevalence of sentences with 'Tom' and 'Mary'"
+Panel 4: "the prevalence of English as a global lingua franca"
+Panel 5: "the Kabyle dialect's prevalence in Algeria"
+Panel 6: "the prevalence of HIV in Haiti and Vietnam"
+Panel 7: "the prevalence of hearing loss was 1.6 percent"
+Panel 8: "the universal prevalence of the law of gravitation"
+Panel 9: "the prevalence of anger and resentment is hard to ignore"
+
+Constraints: nine panels in a clean 3x3 grid; each caption rendered exactly once in its own panel strip; "prevalence" bold in every caption; captions are the only text on the sheet; one consistent art style across all nine.
+Avoid: panel numbers, title text, watermark, signature, extra borders, drop shadows between panels, photorealistic real people's faces, gore, crosshatching, hatching, stippling, pencil or engraving texture, individual hair or fur strands, paper grain, heavy volumetric shading, colour gradients, glossy highlights, painterly brush texture, rendered wallpaper or fabric patterns, busy furnished backgrounds, high-saturation colour, garbled or duplicated lettering, paragraphs of text.

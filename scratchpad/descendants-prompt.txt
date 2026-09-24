@@ -1,0 +1,37 @@
+$imagegen
+Use case: illustration-story
+Asset type: one square teaching sheet, 2304x2304 px, a clean 3x3 grid of nine equal panels, thin uniform white gutters about 1% of width, no outer border. Each panel about 768x768.
+Primary request: A 3x3 vocabulary sheet for the word "descendants" (people or animals descended from earlier ancestors), nine different attested example sentences, one scene per panel, each panel captioned in a bottom strip.
+
+Input images: Image 1: style reference for the clean rounded cartoon look — smooth even-weight dark ink outline, simple flat fills with only gentle soft-edged cel-shading, a muted low-saturation earthy palette, and sparse minimal backgrounds over a warm cream ground with generous negative space. Match its line quality, shading restraint, palette and background sparseness — do NOT copy its content, characters, or composition; the object-level negatives in this brief override anything the reference does.
+
+Style/medium: Clean rounded cartoon / webcomic line art with muted flat colour. Smooth confident dark-brown ink outline of fairly even weight, rounded stroke ends, slightly heavier on the outer silhouette than on interior detail; no ragged or broken sketch lines. Expressive exaggerated comic faces with large rounded eyes and big clear expressions; loose lively poses. Fills are flat blocks of one colour each with at most one soft darker shading tone; hard-ish edges. Muted low-saturation earthy palette: brick/terracotta red, sage and olive green, warm greys, cream. Backgrounds sparse and minimal: one or two simple objects in a large field of plain warm-cream negative space, never a furnished room.
+
+Composition/framing: In every panel the illustration fills the top ~82%; a flush bottom strip ~18% of flat off-white carries the caption in a small clean sans-serif, dark grey, one or two lines, horizontally centred, comfortably inside the strip. Vary camera distance and angle across the nine panels so they read as distinct at a glance.
+
+Color palette: terracotta red, sage green, olive, warm grey, cream.
+
+Panel-by-panel (row-major, panel 1 = top-left, panel 3 = top-right, panel 9 = bottom-right):
+1. STYLE KEY PANEL — render first and most carefully; all other panels must match its line weight, shading restraint and palette exactly. A friendly domestic dog sitting on cream ground, and beside it a larger grey wolf standing; the dog looks up at the wolf. One small tuft of grass. Medium shot.
+2. Several small birds perched on a bare branch in the foreground, and behind them the simple silhouette of a long-tailed dinosaur standing in cream negative space. Wide shot.
+3. A parent kneeling to hand a small green potted seedling to a child, both smiling warmly, a round blue-green globe of the Earth resting on the ground nearby. Medium shot.
+4. A modern smiling Australian family of three standing together; behind them, faint and small, the outline of an old convict figure in striped clothing with a ball and chain. Full-figure shot.
+5. A group of plainly dressed settlers with bundles and a walking stick standing on a low hill; a small wooden sailing ship drawn simply on the horizon behind them. Wide shot.
+6. Two people at a cafe table leaning in conversation, one gesturing with a raised hand; a small marble bust of a Roman man (Julius Caesar) on the table between them. Close-medium shot.
+7. An elderly woman sitting alone in a simple chair, hands folded, calm wistful expression; a bare little family-tree drawing on the wall with no names on its branches. Medium shot.
+8. A gardener in a sun hat trimming a hedge outside a resort, smiling; behind, the simple stepped silhouette of a Mayan stone pyramid. Wide shot.
+9. A young couple sitting on a bench looking up thoughtfully; above them a soft thought bubble containing two simple stylised future figures. Medium shot.
+
+Text (verbatim): render each caption exactly once, in its own panel's bottom strip, spelled exactly as given, with the word descendants in bold.
+Panel 1: "Dogs are **descendants** of wolves."
+Panel 2: "Birds are **descendants** of dinosaurs."
+Panel 3: "Leave our **descendants** a clean green earth."
+Panel 4: "Many Australians are **descendants** of criminals."
+Panel 5: "The settlers were **descendants** of the crew."
+Panel 6: "**Descendants** of Julius Caesar still alive?"
+Panel 7: "She died without **descendants**."
+Panel 8: "The gardeners were Mayan **descendants**."
+Panel 9: "What will our **descendants** be like?"
+
+Constraints: one medium and one hand across all nine panels; captions are the only text on the sheet; each caption rendered exactly once in its own strip; keep the word descendants verbatim and bold.
+Avoid: panel numbers, title text, watermark, signature, extra borders, drop shadows between panels, photorealistic real people's faces, gore, crosshatching, hatching, stippling, pencil or engraving texture, individual hair or fur strands, paper grain, heavy volumetric shading, colour gradients, glossy highlights, painterly brush texture, rendered wallpaper or fabric patterns, busy furnished backgrounds, high-saturation colour, garbled or duplicated lettering, paragraphs of text.

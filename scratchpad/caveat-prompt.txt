@@ -1,0 +1,26 @@
+$imagegen
+Use case: illustration-story
+Asset type: one square image, 2304x2304, a clean 3x3 grid of nine equal square panels (each ~768x768), thin uniform white gutters about 1% of the width between panels, no outer border. Any panel can be cropped out square on its own.
+Primary request: Nine restagings of one scene - a woman named Kay drawing a chalk letter "V" at the bottom edge of a paper proposal document, as a single warning mark.
+
+Input images: Image 1: style reference for line looseness, line-weight variation, flat limited low-saturation palette, and sparse flat backgrounds with white space ONLY - do NOT copy its content, characters, or composition, and do NOT copy its crosshatch shading, fur modelling, gradients, or rendered background objects; the object-level negatives in this brief override anything the reference does.
+
+Scene/backdrop: an office or meeting-table setting kept extremely sparse - at most a couple of flat shapes (a table edge, one chair back, a plain wall). A large white sheet of paper labelled "PROPOSAL" in short clean capitals lies on the table. Kay holds a stick of white chalk and has drawn a bold chalk "V" at the foot (bottom margin) of the proposal page. The chalk "V" is the one warning.
+
+Subject: Kay - a woman with an expressive, slightly exaggerated comic face, focused and cautionary expression, sometimes one eyebrow raised, sometimes pointing at the "V". Her hand clearly grips the chalk and contacts the paper. In some panels a second colleague looks on with concern.
+
+Style/medium: hand-drawn brush-pen comic line art with light gouache colour blocks. The outline MUST look like it was drawn with a real India-ink brush: strokes swell and taper along their length, line weight is visibly uneven, and several contours are deliberately broken or skip a gap - NOT a smooth uniform-width digital/vector/animation-cel outline. Interior detail lines much thinner. Over the line art, soft flat gouache fills: slightly chalky, low-saturation, naturalistic, hard edges, at most 3 flat value steps per shape, one flat colour per area, no outlining every fill. Every one of the nine panels must match panel 1's line weight and flat-fill treatment exactly - one artist's nine sketches, not a style sampler.
+
+Composition/framing: panel 1 is the style key - a medium shot, Kay seen from the front-side at the table, chalk in hand, the proposal page flat before her, her freshly drawn chalk "V" large and bold at the page foot, plain wall behind with generous white space. The chalk "V" gets the compositional emphasis in every panel: foreground placement, the boldest most confident brush-pen contour on the sheet, and the most saturated gouache block on the sheet (a warm chalk-white against a muted red or amber accent). The eye must land on the "V" first in every panel.
+What varies between the nine panels: camera angle and distance (wide establishing, low hero angle, over-the-shoulder, top-down onto the page, tight close-up on the chalk tip meeting the paper, eye-level two-shot), Kay's pose gesture and expression, where the proposal page and chalk sit, and the moment chosen (reaching for the chalk / mid-stroke drawing the V / done and tapping the mark / holding the page up to show the V). Same character, same props, same story beat, restaged nine ways, each tellable apart at a glance.
+
+Lighting/mood: flat even daylight, no cast shadows, no rendered volume. Cautionary, deliberate mood.
+
+Color palette: chalk white, warm paper cream, muted brick red or amber accent on the "V", desaturated slate blue for Kay's clothing, warm grey for furniture.
+
+Materials/textures: name objects plainly - paper sheet, chalk stick, table, chair, wall. Do NOT render texture, grain, or weave on any of them. Flat colour only.
+
+Text (verbatim): "PROPOSAL" on the paper, once, short clean capitals. No other text.
+
+Constraints: exactly nine panels in a 3x3 grid; thin white gutters; no outer border. The chalk "V" appears in every panel as the visual focus. Each panel self-contained and readable alone. Consistent framing so any panel crops out square.
+Avoid: panel labels, numbers, captions, watermarks, signature, artist logo, title text, extra borders, drop shadows between or within panels, photorealistic faces, gore. No crosshatching, no hatching lines, no stippling, no pencil texture, no paper grain or aged-paper texture, no volumetric shading, no gradients, no glossy highlights, no wash bleed, no soft shading on hair, no background vignette or gradient, no smooth even-weight vector/cel outlines. Walls, tables, and fabric are one flat colour with at most a few simple flat shapes on top, never a rendered pattern. No high-saturation colour; at most ~3 flat value steps per shape.

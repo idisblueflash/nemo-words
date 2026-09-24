@@ -1,0 +1,31 @@
+$imagegen
+Use case: illustration-story
+Asset type: one square image, 2304x2304, a clean 3x3 grid of nine equal square panels (each 768x768), thin uniform white gutters about 1% of width, no outer border. Nine sketches by one artist of the same scene, restaged.
+Primary request: Nine brush-pen comic panels of the same scene - a tax clerk lining up manila folders in a long row in strict alphabetical order along an office counter - restaged nine ways.
+
+Input images: Image 1: style reference for line looseness, line-weight variation, flat limited low-saturation palette, and sparse flat backgrounds with white space ONLY - do NOT copy its content, characters, or composition, and do NOT copy its crosshatch shading, fur modelling, gradients, or rendered background objects; the object-level negatives in this brief override anything the reference does.
+
+Scene/backdrop: a plain office. A long flat counter or open filing drawer. On it, a straight row of tan manila folders standing on edge, each folder showing a single bold letter tab - A, B, C, D... - in correct sequence, left to right. A wall calendar or a small sign reading "TAX" behind. Backgrounds sparse: one or two flat shapes only (a window rectangle, a door), generous white space, never a furnished room.
+Subject: a tax clerk - middle-aged, wire glasses, buttoned cardigan or shirt with sleeve garters, expressive slightly exaggerated comic face - concentrating hard, using both hands to slot folders into place. In every panel the clerk and the alphabetized row of lettered folders are both present.
+Style/medium: hand-drawn brush-pen comic line art. Thick India-ink brush outline with visible tapered strokes and the occasional broken line; interior detail lines much thinner. Over the line art, soft flat gouache colour blocks: slightly chalky, low-saturation, at most 3 flat value steps per shape, hard edges, one flat colour per area, no outlining every fill.
+Composition/framing: each panel self-contained, consistent framing so any panel crops square. The row of lettered manila folders is the mnemonic hook: it sits in the foreground of every panel, drawn with the boldest most confident brush contour on the sheet and carrying the single most saturated gouache block (a warm ochre-tan) so the eye lands on it first.
+Lighting/mood: flat even daylight, no cast shadows, no drop shadows, no glow. Diligent, orderly, faintly comic mood.
+Color palette: manila ochre-tan (folders, most saturated), muted slate-blue (clerk's cardigan), warm grey (counter), off-white walls, black ink line. No bright or high-saturation colour.
+Materials/textures: plain flat surfaces. NO crosshatching, NO hatching lines, NO stippling, NO pencil texture, NO paper grain or aged-paper texture, NO individual fibre or weave detail, NO volumetric shading, NO gradients, NO glossy highlights, NO drop shadows. Any wall, floor or calendar is one flat colour with at most a few simple flat shapes on top, never a rendered pattern.
+
+Panel 1 is the style key - render it first and in most detail: a three-quarter medium view, clerk standing at the counter mid-motion sliding a folder labelled "F" into the gap between "E" and "G", the full A-to-K row fanning across the foreground in bold ochre-tan, mouth set in concentration, one flat window rectangle behind, lots of white space. The other eight panels must match panel 1's line weight and flat-fill treatment exactly.
+
+The nine stagings (same clerk, same lettered folders, same story beat - restaged):
+1. Three-quarter medium view, clerk sliding folder "F" between "E" and "G", full row fanned across foreground, window rectangle behind.
+2. Wide establishing shot, clerk small at the far end of a very long counter, the alphabetized folder row stretching the whole width of the panel toward the viewer.
+3. Low hero angle from counter height looking up, a wall of upright lettered folders towering in the foreground, clerk's determined face peering over the top.
+4. Top-down bird's-eye view of the open drawer, clerk's two hands entering frame from below, folders in a neat A-B-C-D-E line, one folder lifted out of sequence.
+5. Tight close-up on the clerk's hand pinching a single folder tab lettered "M", neighbouring "L" and "N" tabs blurred-simple at the edges, clerk's eye and glasses just visible top corner.
+6. Over-the-shoulder from behind the clerk, we see the back of the cardigan and, past it, the long lit row of folders and a small "TAX" sign on the wall.
+7. Clerk crouched at the low end of the drawer, tongue-out concentration, aligning the last folder "Z" flush with the others, the completed row receding behind.
+8. Clerk mid-stride carrying an armful of loose folders toward the counter, a half-finished alphabetized row waiting, gap where the next letters go.
+9. Clerk standing back with arms crossed and a satisfied grin, the finished perfectly even A-to-Z row of ochre-tan folders spanning the foreground, one flat door shape behind.
+
+Text (verbatim): "TAX" on a small wall sign; single capital letters on folder tabs in correct alphabetical sequence.
+Constraints: nine panels, 3x3, thin white gutters, no outer border. No panel labels, numbers, captions, watermarks, or title text. The lettered manila folder row appears in every panel as the boldest-contour, most-saturated element. Keep any diegetic text short and correctly spelled. Every panel readable on its own and croppable square.
+Avoid: watermark, signature, artist logo, extra borders, drop shadows between panels, crosshatching, hatching, stippling, pencil texture, paper grain, volumetric shading, gradients, glossy highlights, photorealistic real faces, gore, paragraphs of text, garbled lettering, busy furnished texture-rendered backgrounds.

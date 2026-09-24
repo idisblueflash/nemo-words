@@ -1,0 +1,29 @@
+$imagegen
+Use case: illustration-story
+Asset type: ONE square image, 2304x2304, a clean 3x3 grid of nine equal square panels separated by thin uniform white gutters (~1% of width). No outer border, no drop shadows between panels.
+
+Scene to illustrate (the SAME scene restaged nine ways): A cook in a kitchen doorway calls out "Stew's ready!" over a big steaming cooking pot of stew on a stove; a servant, having heard the call, hurries off through a grand hallway; behind him the boss's big house / manor with the wealthy master. Same characters, same props, same story beat in every panel - only the staging changes.
+
+MNEMONIC HOOK ELEMENT: the big black cooking pot of stew, steam curling up from it. In every one of the nine panels this pot of stew gets the compositional emphasis - foreground or clearly prominent placement, the boldest and most confident brush-pen contour on the sheet, and the single most saturated gouache colour block on the sheet (a warm reddish-brown stew, an ochre/orange stove-fire glow). The eye must land on the stew pot first in every panel.
+
+HOUSE STYLE (identical in all nine panels - one artist's nine sketches, not a style sampler):
+Brush-pen comic line art with light gouache colour blocks. Thick India-ink brush outline with visible tapered strokes, slight wobble, and the occasional broken line on the outer contours; interior detail lines much thinner. Over the line art, soft flat gouache colour blocks: slightly chalky, low-saturation, naturalistic fills, a few gentle washes allowed to break slightly past the ink edge. Gentle warm low contrast. Expressive, slightly exaggerated comic faces and poses. Sparse flat backgrounds - a couple of flat shapes and generous white space, never a furnished room.
+
+PANEL 1 IS THE STYLE KEY: render it first and most carefully - medium shot, the cook leaning out of the kitchen doorway mid-shout with one hand cupped to mouth, the big steaming stew pot on the stove in the immediate foreground, the servant turning to run in the mid-ground, a hint of the grand house beyond. Establish the brush line weight and the flat-fill treatment here; the other eight panels must match panel 1's line weight and flat gouache treatment exactly.
+
+Nine stagings (row-major), same scene each time:
+1. Medium shot: cook leaning out kitchen doorway mid-shout, hand cupped to mouth; steaming stew pot foreground on stove; servant turning to run; grand house hinted beyond.
+2. Wide establishing shot: whole scene - kitchen at left with the stew pot, long hallway centre, the boss's big manor house at right with the master on the steps.
+3. Low hero angle looking up at the servant sprinting toward camera down the hall, the glowing stew pot large in the near foreground.
+4. Over-the-shoulder from behind the servant: we see past him to the cook and the big stew pot on the stove, steam rising.
+5. Top-down view: the black stew pot dead centre from above, ladle in it, cook's arm reaching in from one side, servant's running feet crossing a corner.
+6. Tight close-up: the bubbling stew pot filling most of the frame, steam curling; cook's shouting face small in the upper corner.
+7. The servant arriving before the boss - a portly well-dressed master in a big armchair in his grand house; the servant bows, holding a covered bowl; the stew pot still visible steaming on a side table, most saturated block on the sheet.
+8. The "before" moment: cook lifting the heavy lid off the stew pot, big burst of steam, mouth just opening to shout; servant still lounging in the hall, about to react.
+9. The "after" moment: empty-handed cook wiping brow by the now-quiet pot; servant far down the hallway near the manor door, mid-stride, seen small; wide gentle framing.
+
+Input images: Image 1: style reference for line looseness, line-weight variation, flat limited low-saturation palette, and sparse flat backgrounds with white space ONLY - do NOT copy its content, characters, or composition, and do NOT copy its crosshatch shading, fur modelling, gradients, or rendered background objects; the object-level negatives in this brief override anything the reference does.
+
+Constraints: no panel labels, numbers, captions, watermarks, or title text. Short diegetic text only if natural (e.g. a small speech bubble "Stew's ready!"). Each panel fully self-contained and readable alone; consistent framing so any panel can be cropped out square.
+
+Avoid: no crosshatching, no hatching lines, no stippling, no pencil texture, no paper grain or aged-paper texture, no individual fur/wood-grain strands, no volumetric shading, no gradients, no drop shadows, no glossy 3D render, no flat even-weight vector contour, no high-contrast black-on-bright cel fills. No watermark, signature, artist logo, extra borders, photorealistic real people's faces, gore, or paragraphs of text or garbled lettering. Backgrounds stay sparse - flat shapes and white space, not a furnished room or rendered wallpaper/pattern.

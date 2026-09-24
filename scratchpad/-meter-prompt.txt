@@ -1,0 +1,31 @@
+$imagegen
+Use case: illustration-story
+Asset type: one square image, a clean 3x3 grid of nine equal panels, thin uniform white gutters (~1% of width) between panels, no outer border, no panel labels or numbers.
+Generation size: 2304x2304 (each panel lands on 768x768).
+Primary request: Illustrate this mnemonic sentence for the word-part "-meter" nine different ways, one per grid panel: "Try the mitt on; er, she measures your hand." A customer is trying on a thick mitt (a glove-like hand covering) while a shopkeeper/tailor kneels or leans in close, wrapping a measuring tape around the customer's hand and wrist to size it. Every panel must show: the mitt on or being put onto the hand, the measuring tape (a flat ribbon of tape, marked with tick lines, wrapped around the hand/wrist or held taut by the tailor), and the two characters (customer + tailor) in the act of fitting.
+
+Input images: Image 1: style reference for line looseness, line-weight variation, flat limited low-saturation palette, and sparse flat backgrounds with white space ONLY — do NOT copy its content, characters, or composition, and do NOT copy its crosshatch shading, fur modelling, gradients, or rendered background objects; the object-level negatives in this brief override anything the reference does.
+
+Style/medium: Brush-pen comic line art with light gouache colour blocks, held identically across all nine panels. Panel 1 sets the style key: thick India-ink brush outline with visible tapered strokes and the occasional broken line; interior detail lines much thinner; bold, confident outer contours against thinner interior detail; a little looseness, never a clean even-weight vector contour. Expressive, slightly exaggerated comic faces and poses. Fills are cel-shaded flat gouache colour blocks: at most 3 flat value steps per shape, hard edges, one flat chalky low-saturation colour per area, no gradients, no rendered volume, no wash bleed, no outlining every fill. All eight remaining panels must match panel 1's line weight and flat-fill treatment exactly.
+
+Mnemonic hook element: the measuring tape wrapped around the hand (the "-meter" measuring act) is the hook. In every panel it gets the compositional emphasis — foreground placement, the boldest and most confident brush-pen contour on the sheet, and the single most saturated gouache colour block (a warm yellow-orange tape against the otherwise muted palette) — so the eye lands on the tape first regardless of staging.
+
+Composition/framing across the nine panels — vary camera angle and distance, pose/gesture/expression, prop placement, the moment chosen (before/during/after the fitting), and background depth, while keeping the same two characters, the mitt, and the measuring tape as the constant story beats:
+1. Wide establishing shot of a small tailor shop interior, customer standing at a counter holding up one hand, tailor reaching for the mitt on a shelf, tape draped over the tailor's shoulder. Sparse background: one counter shape, one shelf shape.
+2. Low hero angle from tabletop height looking up at the customer's arm extended forward, mitt half-on, tailor's hands entering frame from the side already looping the tape around the wrist.
+3. Over-the-shoulder shot from behind the tailor, looking past their shoulder at the customer's hand; tailor's hands pulling the tape snug around the mitted hand, tape ticks visible.
+4. Tight close-up on just the hand: mitt fully on, tape wrapped twice around the wrist in a bold loop, tailor's fingertips pinching the tape end, customer's face blurred/small in the soft background.
+5. Top-down bird's-eye view of a small round table: customer's mitted hand resting flat on the table, tailor's hand laying the tape straight along the fingers to measure length, a spool of tape sitting beside them.
+6. Three-quarter mid shot, customer wincing comically as the mitt is tugged snug onto their fingers by the tailor, who holds the tape ready in their other hand, mouth open mid "er".
+7. Side profile close shot, customer admiring the mitt now fully worn, tailor finishing wrapping the tape around the cuff of the mitt and marking a spot with a pencil.
+8. Wide shot from the shop doorway, customer holding the mitted hand high and proud, tailor standing back with the tape now coiled loosely in hand, a small "Fittings" sign visible on the wall.
+9. Dynamic diagonal close shot, customer's hand thrust toward camera wearing the mitt, tailor's hands both gripping the taut tape mid-wrap around the widest part of the hand, motion lines suggesting the quick snug pull.
+
+Scene/backdrop: a small, sparsely furnished tailor or glove shop — a counter, a shelf, maybe one hanging mitt display, no rendered wallpaper pattern or furnished clutter.
+Subject: a customer (any simple, friendly comic design) and a tailor/shopkeeper (apron, simple face), the mitt (a thick padded glove), and the yellow-orange measuring tape.
+Lighting: soft, even daylight through a shop window, warm neutral tone, no dramatic shadows, no gradients.
+Color palette: muted warm neutrals for the shop (dusty cream walls, soft brown counter), soft blue-grey or olive for the characters' clothing, and one saturated warm yellow-orange reserved for the measuring tape as the hook color.
+Materials/textures: keep flat — no woven fabric texture, no wood grain, no paper grain; name shapes plainly (counter, shelf, tape, mitt) without texture description.
+Text (verbatim): none required; if a shop sign appears, it may read "Fittings" in short, correctly spelled letters — no other text.
+Constraints: nine panels each fully self-contained and readable alone; consistent framing so any single panel can be cropped out square; no panel labels, numbers, captions, watermark, or title text; diegetic text limited to the optional short shop sign.
+Avoid: watermark, signature, artist logo, extra outer borders, drop shadows between panels, crosshatching, hatching lines, stippling, pencil texture, individual fur strands, paper grain or aged-paper texture, volumetric shading, gradients, photorealistic real people's faces, gore, paragraphs of text or garbled lettering, rendered wallpaper/rug/fabric patterns.

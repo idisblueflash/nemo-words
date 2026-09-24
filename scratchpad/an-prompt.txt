@@ -1,0 +1,37 @@
+$imagegen
+Use case: illustration-story
+Asset type: single square PNG, generate at 2304x2304 (each of the nine panels lands on 768x768)
+
+ASSET
+One square image, 2304x2304. A clean 3x3 grid of nine equal square panels (each 768x768), separated by thin uniform white gutters about 1% of the width. No outer border, no drop shadows between panels, no panel numbers, labels, captions, titles, or watermarks.
+
+SCENE (same for all nine panels — one story, restaged nine ways)
+Illustrate this sentence literally: "Ann opened her purse and found it without a coin." A woman named Ann holds her handbag/purse open with both hands and looks into it; it is completely empty — not a single coin. Her face shows dismay and disbelief. Same woman, same purse, same moment in every panel.
+
+MNEMONIC HOOK ELEMENT — must dominate every panel
+Ann's OPEN PURSE held up with its mouth gaping toward the viewer, plainly EMPTY — no coin inside. This purse gets the compositional emphasis in all nine panels: foreground placement, the boldest and most confident brush-pen contour on the sheet, and the most saturated gouache colour block on the sheet (a warm mustard-yellow or tan leather purse). The emptiness must be legible instantly — dark hollow interior, nothing in it. In a few panels a single coin may be shown falling away, rolling off, or lying on the ground far from the purse to stress "without a coin". The eye should land on the empty purse first, every time.
+
+HOUSE STYLE (identical across all nine panels — nine sketches by one hand)
+Brush-pen comic line art with light gouache colour blocks. Hand-drawn brush-pen linework with clear line-weight variation: bold confident tapered outer contours with visible tooth and a slight wobble, occasional broken lines; much thinner interior detail lines. Expressive, slightly exaggerated comic faces and poses. Over the line art, soft flat gouache colour blocks: slightly chalky, low-saturation, naturalistic fills that here and there wash gently past the ink edge. Muted, warm, low-contrast palette. No gradients, no rendered volume, no outlining every fill.
+Fills are simple: at most 3 flat value steps per shape, soft edges.
+NEGATIVES (object-level): no crosshatching, no hatching lines, no stippling, no pencil texture, no individual hair strands, no paper grain or aged-paper texture, no volumetric shading, no gradients, no drop shadows, no glossy 3D render, no flat hard-edged vector cel fills with every area outlined, no high-contrast black ink on bright fills. Backgrounds sparse: a couple of flat shapes and lots of white space, never a furnished room or a rendered pattern. Clothing, walls, floors are one flat colour with at most a couple of simple flat shapes on top.
+No photorealistic real people's faces, no gore, no text paragraphs or garbled lettering. Diegetic text only if needed (a short shop sign, a coin's face) — keep it short and correctly spelled.
+
+PANEL 1 IS THE STYLE KEY: medium close-up, Ann seen from the front at waist height, both hands spreading the mustard-yellow purse wide open toward the camera, dark empty interior facing us, her eyebrows up and mouth open in a small gasp. Plain off-white background with one pale flat shape behind her. Render this panel first and most carefully; the other eight panels must match its exact line weight, palette, and flat-fill treatment.
+
+THE NINE STAGINGS (row-major)
+1. Medium close-up, front view at waist height, Ann holding the purse open wide toward the camera, gasping. (style key)
+2. Wide establishing shot: Ann standing alone on a bare shop floor, small in frame, purse held open at her side, a shopkeeper behind a counter waiting; one flat "SHOP" sign shape.
+3. Low hero angle looking up at Ann, she tips the open purse mouth-down and shakes it, nothing falls out.
+4. Over-the-shoulder from behind Ann, we look down into the gaping empty purse she holds in front of her, her face turned in profile, frowning.
+5. Top-down flat-lay: the open empty purse on a table seen from directly above, Ann's two hands framing it, one lone coin lying on the table well outside the purse.
+6. Tight extreme close-up of just the purse's open mouth filling the panel, dark hollow inside, Ann's fingertips gripping the rim.
+7. Wide shot at a market stall: Ann holds the open purse up, palm-up empty other hand shrugging, a vendor gesturing at fruit; sparse flat stall shapes.
+8. Three-quarter view, Ann sitting on a bench, purse open across her lap facing up and empty, shoulders slumped, one coin rolling away down the pavement.
+9. Medium shot, Ann turning the open purse fully inside-out with both hands, lining showing, disbelieving half-smile; plain background.
+
+CONSTRAINTS
+Each panel fully self-contained and readable alone. Consistent framing so any panel can be cropped out square. No panel labels, numbers, captions, watermarks, or title text.
+
+INPUT IMAGES
+Image 1: style reference for line looseness, line-weight variation, flat limited low-saturation palette, and sparse flat backgrounds with white space ONLY — do NOT copy its content, characters, or composition, and do NOT copy its crosshatch shading, fur modelling, gradients, or rendered background objects; the object-level negatives in this brief override anything the reference does.

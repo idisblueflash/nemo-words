@@ -1,0 +1,42 @@
+$imagegen
+Use case: illustration-story
+Asset type: one square teaching sheet, a clean 3x3 grid of nine equal panels with thin uniform white gutters (about 1% of width), no outer border. Final size 2304x2304 (each panel about 768x768).
+Primary request: Nine one-panel cartoon scenes, all illustrating the same sense of the word "bias" - an unfair inclination or prejudice that slants someone's judgment - each panel captioned in a flush bottom strip.
+
+Input images: Image 1: style reference for the clean rounded cartoon look - smooth even-weight dark ink outline, simple flat fills with only gentle soft-edged cel-shading, a muted low-saturation earthy palette, and sparse minimal backgrounds over a warm cream ground with generous negative space. Match its line quality, shading restraint, palette and background sparseness - do NOT copy its content, characters, or composition; the object-level negatives in this brief override anything the reference does.
+
+Style/medium: Clean rounded cartoon / webcomic line art. Smooth confident dark-brown ink outline of fairly even weight, rounded stroke ends, slightly heavier on the outer silhouette than on interior detail; no sketchy or broken lines. Fills are flat blocks of one colour each with at most one soft darker shading tone; hard-ish edges; no gradients. Expressive exaggerated comic faces with large rounded eyes and big clear expressions; loose lively body poses. Muted low-saturation earthy palette: brick/terracotta red, sage and olive green, warm greys, cream. Backgrounds sparse and minimal - one or two simple objects in a large field of plain warm-cream negative space, never a fully furnished room. Every panel is the same hand - nine sketches by one artist.
+
+Composition/framing: Even 3x3 grid. In each panel the illustration fills the top ~82%; a flush bottom strip (~18%, flat off-white) carries the caption in a small clean sans-serif, dark grey, one or two lines, horizontally centred, comfortably inside the strip - not touching the art or edges. Vary camera distance and angle across the nine so they read as distinct at a glance. The target word appears in each caption in BOLD. Captions are the only text on the sheet.
+
+Panel 1 is the style key - render it first and in most detail; the other eight must match its line weight, shading restraint and palette exactly.
+
+Panel-by-panel (row-major, panel 1 = top-left, panel 9 = bottom-right):
+1. Style key. Medium shot: three contest judges in a row at a long table on a small stage, holding up scorecards, exchanging a sly knowing sidelong glance and a smirk while one nervous performer stands to the side. One potted plant beside the stage; rest is cream space.
+2. Wide shot: two uniformed police officers on a street corner eyeing a hunched man walking past, arms crossed, suspicious frowns. A single street lamp; cream background.
+3. Close action shot: a football referee on a green pitch blowing his whistle and pointing hard one direction, grinning unfairly while a player throws up his hands in protest.
+4. Medium shot: a stern judge in robes on a tall courthouse bench leaning down toward a small crowd of ordinary people below, wagging a finger; the people look swayed and uneasy. Simple columned doorway behind.
+5. Medium shot: an English teacher at a chalkboard gesturing dismissively toward two foreign students at their desks who look hurt and excluded. Just the board and two desks over cream.
+6. Close shot: a young man named Rodrigo at a laptop, leaning back with a stung, frustrated expression, one hand raised at the screen which shows a plain rejection notice. Small desk lamp only.
+7. Medium shot: a survey-taker with a clipboard on a doorstep leaning in and asking a loaded question, eyebrows raised leadingly; the resident frowns, uncertain. One doormat, cream space.
+8. Medium shot: a family of three on a small couch watching a boxy television that shows a news anchor; the TV screen slants and the family looks skeptical, one person pointing at it. Just the couch and TV.
+9. Close two-shot: two people face to face in a heated conversation, one jabbing a finger and scowling with clear favouritism, the other recoiling with an offended look.
+
+Text (verbatim) - render each caption exactly once, in its own panel's bottom strip, spelled exactly as given:
+Panel 1: "the judges were obviously biased"
+Panel 2: "Are the police biased against people who commit crimes?"
+Panel 3: "he was not just incompetent, he was biased"
+Panel 4: "Corrupt courts are biasing the public mind."
+Panel 5: "The English teacher's biased views"
+Panel 6: "Rodrigo experienced bias and unfair treatment"
+Panel 7: "A single biased question"
+Panel 8: "the trash media only report biased information"
+Panel 9: "Why are you so biased towards your people?"
+In every caption the word bias / biased / biasing is BOLD.
+
+Lighting/mood: flat even daylight, no dramatic shadows.
+Color palette: warm cream ground, terracotta red, sage/olive green, warm grey, muted blue-grey accents.
+Materials/textures: flat colour only.
+
+Constraints: exactly nine panels; each caption rendered exactly once in its own strip; target word bold in each caption; keep captions inside the off-white strip.
+Avoid: panel numbers, title text, watermark, signature, extra borders, drop shadows between panels, photorealistic real people's faces, gore, crosshatching, hatching, stippling, pencil or engraving texture, individual hair or fur strands, paper grain, heavy volumetric shading, colour gradients, glossy highlights, painterly brush texture, rendered wallpaper or fabric patterns, busy furnished backgrounds, high-saturation colour, garbled or duplicated lettering, paragraphs of text.

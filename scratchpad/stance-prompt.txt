@@ -1,0 +1,40 @@
+$imagegen
+Use case: illustration-story
+Asset type: one square PNG, a mnemonic candidate sheet, 3x3 grid of nine panels, generated at 2304x2304
+
+TASK: One square image — a clean 3x3 grid of nine equal panels illustrating a single sentence nine different ways. Thin uniform white gutters (~1% of width). No outer border.
+
+GENERATION SIZE: 2304x2304 (each panel lands on 768x768).
+
+THE SENTENCE TO ILLUSTRATE (same scene in every panel):
+"Last chance arrives, feet wide, she ignores coach's shouts."
+Scene: a female athlete at a competition taking her final attempt. She stands with her feet planted wide apart in a braced, wide stance. A coach at the edge is shouting and gesturing at her; she stares straight ahead and ignores him. A scoreboard or sign nearby reads "LAST CHANCE" or "FINAL ATTEMPT".
+
+MNEMONIC HOOK ELEMENT (compositional emphasis in EVERY panel):
+Her WIDE-PLANTED FEET / braced wide stance — legs spread far apart, weight low, boots or track shoes gripping the ground. In every panel this wide stance sits in the foreground, drawn with the boldest, most confident tapered brush-pen contour on the sheet, and filled with the single most saturated gouache block on the sheet (a strong ochre-gold or burnt-orange). The eye must land on her planted feet and spread legs first, whatever the camera angle.
+
+WHAT STAYS THE SAME: same young woman athlete (dark ponytail, athletic top, shorts), same shouting coach (older, cap, clipboard or towel), same "LAST CHANCE" board, same wide braced stance, same beat — her final attempt, she ignores the coach.
+
+WHAT VARIES BETWEEN THE NINE PANELS (staging only):
+1. Wide establishing shot, side-on: full arena, she is small but her wide stance is dead centre foreground, coach shouting from the left, "LAST CHANCE" board behind. THIS PANEL IS THE STYLE KEY — render it first and match all others to its line weight and flat fills.
+2. Low hero angle looking up at her from ground level between her spread feet; feet huge in foreground, coach tiny and shouting in the background.
+3. Over-the-coach's-shoulder: back of the yelling coach's head and raised arm in near foreground, she faces us beyond, feet planted wide, staring past him.
+4. Top-down bird's-eye: her wide-set feet make a broad V on the ground, chalk lines around them, coach's shadow and open mouth at frame edge.
+5. Tight close-up on the boots/shoes and lower legs only, spread wide and braced on the track; motion of the coach's pointing hand blurred at the edge.
+6. Three-quarter front view, mid-distance: she is mid-inhale before the attempt, jaw set, hands loose; coach leaning in from the right mid-shout.
+7. Behind her, looking downfield at what she is about to attempt (a bar, a throwing circle); her wide stance and back fill the foreground, coach's shout as a small speech bubble "LISTEN!" off to one side.
+8. Dutch-tilt medium shot, the moment just after the coach throws his cap down in frustration; she unmoved, feet wide, eyes forward.
+9. Close two-shot: coach's shouting face on the left, her calm profile on the right, her wide-planted feet visible at the bottom of frame between them.
+
+HOUSE STYLE (identical in all nine panels — one artist's nine sketches, not a style sampler):
+Brush-pen comic line art with light gouache colour blocks. Thick India-ink brush outline with visible tapered strokes and the occasional broken line; interior detail lines much thinner. Clear line-weight variation: bold confident outer contours, thin interior detail. A little looseness, never a clean even-weight vector contour. Expressive, slightly exaggerated comic faces and poses. Over the line art, soft flat gouache colour blocks: slightly chalky, low-saturation, naturalistic fills — at most 3 flat value steps per shape, hard edges, one flat colour per area. The hook element (wide stance / feet) carries the most saturated block and boldest contour.
+
+OBJECT-LEVEL NEGATIVES (hard requirements — these are the priority, override the reference and any default comic-book rendering):
+FLAT ONLY. Every shape is filled with ONE flat colour, hard edge, at most 2 value steps. No smooth shading on skin, legs, arms, or muscles — no muscle modelling, no rounded highlights on limbs, legs are a single flat skin-tone shape with a simple flat shadow shape at most. No gradient sky — sky is ONE flat pale blue shape or plain white. No crosshatching, no hatching lines, no stippling, no pencil texture, no engraving texture, no paper grain or aged-paper texture. No individual hair strands — hair is one flat black shape. No volumetric or rendered shading, no soft gradients, no glossy highlights, no drop shadows between or within panels, no ambient occlusion. No rendered, fully-furnished backgrounds — backgrounds are a couple of flat shapes (a horizon line, a flat block for the stand, the board) with generous white space. Stadium crowd is ONE flat silhouette band, no dots for heads, no rendered faces. Low saturation throughout except the hook element. Track/ground is one flat colour with at most a few simple flat line marks. The whole sheet must look like flat cel-shaded brush-pen art, NOT a rendered graphic novel.
+
+TEXT: No panel labels, numbers, captions, watermarks, signature, artist logo, or title text. Diegetic text only: the "LAST CHANCE" / "FINAL ATTEMPT" board, and in panel 7 a short speech bubble "LISTEN!". Keep all lettering short and correctly spelled.
+
+AVOID: watermark, signature, artist logo, extra borders, drop shadows, photorealistic real people's faces, gore, paragraphs of text, garbled lettering.
+
+INPUT IMAGES:
+Image 1: style reference for line looseness, line-weight variation, flat limited low-saturation palette, and sparse flat backgrounds with white space ONLY — do NOT copy its content, characters, or composition, and do NOT copy its crosshatch shading, fur modelling, gradients, or rendered background objects; the object-level negatives in this brief override anything the reference does.

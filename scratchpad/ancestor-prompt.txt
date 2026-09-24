@@ -1,0 +1,95 @@
+$imagegen
+Use case: illustration-story
+Asset type: mnemonic candidate sheet, one square PNG 2304x2304
+
+Asset: ONE square image, 2304x2304, a clean 3x3 grid of nine equal square panels
+(each ~768x768). Thin uniform white gutters about 1% of width between panels. No
+outer border, no drop shadows between panels, no panel labels, numbers, captions,
+titles, watermarks, or signature.
+
+The nine panels are nine stagings of ONE single scene from this sentence:
+"Ann assesses the potter her family's craft descends from."
+A woman named Ann stands in a pottery workshop closely examining (assessing,
+judging, inspecting) an old potter who works a spinning potter's wheel shaping a
+clay pot. Ann is the descendant; the potter is the ancestor her family's craft
+descends from. A simple hand-lettered wooden sign reading "ANN" or a family tree
+sketch pinned to the wall may appear small and in-world where it helps; keep any
+lettering short and correctly spelled.
+
+MNEMONIC HOOK ELEMENT: the potter at the spinning potter's wheel with the wet clay
+pot rising between the potter's hands. In EVERY panel this potter-at-the-wheel sits
+in the foreground / focal position, drawn with the boldest, most confident tapered
+brush-pen contour on the sheet and filled with the single most saturated gouache
+block on the sheet (a warm terracotta / clay orange-brown). The eye must land on
+the potter's wheel first in every panel.
+
+Recurring elements that must stay consistent across all nine panels: Ann (a woman
+in a plain buttoned coat, hair tied back, holding a small notebook or clipboard,
+brow furrowed in appraisal), the old potter (apron, sleeves rolled, weathered
+face, hands wet with clay), the kick/spinning potter's wheel, the rising clay pot,
+a shelf of finished pots behind, a hanging apron or a small wall-pinned family-tree
+sketch.
+
+What VARIES between the nine panels: camera angle and distance, poses, gestures,
+expressions, arrangement of the pots and wheel, and the moment chosen. Suggested
+nine stagings:
+1. STYLE KEY PANEL. Wide eye-level establishing shot of the whole workshop: potter
+   seated at the wheel centre-foreground shaping the pot, Ann standing at his
+   shoulder leaning in with her notebook, shelf of pots along the back wall. Full
+   figures. This panel sets the exact line weight and flat-fill treatment every
+   other panel must match.
+2. Low hero angle looking up at the potter at the wheel; the clay pot and the
+   potter's hands loom large in frame; Ann small in the background peering over.
+3. Over-Ann's-shoulder view: we see her notebook and pencil in the near foreground,
+   the potter and spinning wheel framed beyond, clay flying off in flat flecks.
+4. Top-down view straight onto the wheel: concentric circles of the wheel, the pot
+   centred, four hands (Ann's pointing finger entering frame, the potter's cupped
+   hands on the clay).
+5. Tight close-up of the potter's clay-covered hands cradling the tall wet pot;
+   Ann's eye and raised eyebrow visible at the edge of frame, assessing.
+6. Ann crouched beside the wheel comparing a finished pot in her hands against the
+   one on the wheel, holding them side by side; potter mid-kick.
+7. Three-quarter view from the workshop doorway: Ann just entering, the potter
+   already at work at the wheel deeper in the room, a wall-pinned family-tree
+   sketch near the door.
+8. The "after" moment: the wheel stopped, the finished pot set on the bench between
+   them, Ann nodding and writing in her notebook, the potter wiping his hands on
+   his apron.
+9. Two-shot profile, both figures facing the wheel between them: potter's hands on
+   the turning pot, Ann's finger raised as she asks a question, shelf of pots
+   behind as a flat silhouette.
+
+HOUSE STYLE (apply identically to all nine panels - this is the single most
+important requirement, override the reference image wherever it conflicts):
+Loose HAND-DRAWN brush-pen comic line art. Every outline is a thick India-ink brush
+stroke with obvious taper (thick-to-thin) and frequent BROKEN, skipped segments
+where the brush lifts - never a smooth continuous even-weight line. Interior detail
+lines are much thinner and sparse. Bodies and hands are drawn as simple flat comic
+shapes with almost no interior modelling. Faces are flat, cartoonish, a few
+confident lines - no rendered cheeks or noses.
+Colour is applied as SOLID FLAT gouache fills only: one single flat colour per
+region, hard edges, ZERO shading within a shape, no more than 2 flat value steps
+anywhere on the sheet. Think screen-print / cel animation paint, not painting.
+The potter-at-the-wheel hook carries the one most saturated fill (warm terracotta)
+and the single boldest, thickest brush contour on the sheet.
+
+NEGATIVES (hard - reject all of these): NO soft shading, NO gradient, NO
+airbrushing, NO blended colour, NO round rendered volume on hands or faces, NO
+highlight or shine, NO ambient occlusion, NO glow, NO drop shadow, NO crosshatch,
+NO hatching, NO stippling, NO pencil or ink texture, NO paper grain, NO clay speckle
+texture, NO individual hair strands, NO outline around every colour fill. NO smooth
+uniform vector-weight linework - the line MUST look like a real inked brush with dry
+broken strokes. Backgrounds are near-empty: one or two flat shapes plus large areas
+of plain off-white paper - NOT a furnished room, NO wood grain, NO wall texture,
+shelves are a single flat bar with a few flat pot silhouettes. No photorealism, no
+real person's face, no borders, no title text, no garbled lettering.
+
+Colour palette: warm terracotta / clay orange-brown (the hook pot and wheel),
+muted putty grey and cream (Ann's coat, walls), soft slate blue accents, dull
+ochre wood, off-white paper. Everything low-saturation except the hook.
+
+Input images: Image 1: style reference for line looseness, line-weight variation,
+flat limited low-saturation palette, and sparse flat backgrounds with white space
+ONLY -- do NOT copy its content, characters, or composition, and do NOT copy its
+crosshatch shading, fur modelling, gradients, or rendered background objects; the
+object-level negatives in this brief override anything the reference does.

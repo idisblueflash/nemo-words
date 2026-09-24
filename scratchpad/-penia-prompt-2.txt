@@ -1,0 +1,105 @@
+$imagegen
+Use case: illustration-story
+
+ASSET
+One square image, 2304x2304. A clean 3x3 grid of nine equal square panels
+(each 768x768), separated by thin uniform white gutters about 1% of the
+image width. No outer border, no drop shadow between panels, no page edge.
+
+MEDIUM - READ FIRST, THIS OVERRIDES EVERYTHING
+Hand-inked brush-pen comic line art. Every outline is a thick India-ink
+brush stroke with visible taper - thick where the brush presses, thin
+where it lifts - and the occasional deliberately broken or skipped
+contour. Interior detail lines (folds, facial features, shelf edges) are
+drawn with a much thinner nib. NEVER a smooth even-weight digital vector
+outline. Faces and poses are loose and slightly exaggerated, like quick
+comic sketches, NOT a polished animation still.
+Colour is flat gouache blocks laid under the ink: chalky, low-saturation,
+ONE flat colour per area, hard edges, at most 3 flat value steps in the
+whole panel. Hair is ONE flat brown shape with maybe one darker flat
+lock - no strand detail, no sheen. Skin is ONE flat tone - no blush
+gradient, no cheek shading.
+
+OBJECT-LEVEL NEGATIVES (hard constraints - the first pass failed these)
+NO soft shading, NO airbrush, NO gradient anywhere (hair, skin, walls,
+plates), NO glossy or specular highlights, NO ambient-occlusion shadow,
+NO drop shadows, NO rendered volume, NO 3D modelling, NO cel-anime
+polish. NO crosshatching, NO hatching, NO stippling, NO pencil texture,
+NO paper grain, NO wood-grain lines, NO fabric weave, NO rendered
+patterns. Walls are a single flat cream fill. Do not outline every fill.
+Backgrounds stay sparse: one or two flat shapes (a window rectangle, an
+open cupboard as flat rectangles, an empty shelf) and lots of plain
+white/cream space - never a furnished, textured room.
+
+SCENE TO ILLUSTRATE (same scene restaged nine ways)
+The mnemonic sentence: "One pea a day, Nia lacks food." A thin young girl
+named Nia sits at a nearly bare wooden table. On the table is a single
+round green pea on an otherwise empty white plate - her whole meal for
+the day. Cupboards and bowls are empty; she looks hungry and weak. Every
+panel must show: Nia, the one green pea, the empty white plate, the bare
+table, and an empty cupboard or empty bowl.
+
+THE MNEMONIC HOOK ELEMENT
+The single green pea. In every panel the pea gets the compositional
+emphasis: foreground placement, the boldest, thickest brush contour on
+the sheet, and the single most saturated gouache block on the sheet (a
+clear mid-green - everything else is muted). It is tiny but must be the
+first thing the eye lands on - oversized visual weight, e.g. Nia staring
+right at it, pointing, or holding it up.
+
+PANEL 1 IS THE STYLE KEY - RENDER IT FIRST
+Panel 1 (top-left): eye-level medium shot. Nia sits square at the bare
+table, both hands flat on the wood, staring down at the single green pea
+on the white plate. Behind her an empty cupboard drawn as two flat
+rectangles with bare shelf lines. Flat cream wall, generous white space.
+Thick tapered brush outline on Nia and the plate, thicker still on the
+pea; thin nib lines for her face and the shelves; flat chalky fills, no
+shading at all. The other eight panels must match panel 1's brush-line
+weight, its broken-contour looseness, and its flat no-shading fills
+EXACTLY.
+
+THE NINE STAGINGS (row-major; same girl, same pea, same plate, same bare
+table, same story beat - only the staging changes)
+1. Eye-level medium shot: Nia sits square at the table, hands flat on the
+   wood, staring down at the single pea on the white plate. Empty
+   cupboard behind.
+2. Tight close-up: the single green pea on the white plate fills the
+   lower foreground, huge; Nia's hungry face small and simple behind it.
+3. Low hero angle looking up: Nia holds the one pea pinched between
+   finger and thumb above her head, squinting at it against a pale
+   window.
+4. Wide establishing shot: the whole bare kitchen - Nia tiny at the far
+   table, one pea on the plate, empty open cupboard, empty bowl on the
+   floor, huge empty room, lots of white space.
+5. Over-the-shoulder from behind Nia: we look past her thin shoulder and
+   messy hair down at the plate with its one green pea and nothing else.
+6. Top-down flat lay: the round table from directly above - white plate
+   dead centre, single green pea on it, an empty bowl and an upturned
+   empty cup beside it, Nia's two hands entering from the bottom edge.
+7. Side profile, seated: Nia in profile lifts a fork with the single pea
+   speared on the tip toward her open mouth, eyes wide, thin frame.
+8. Three-quarter view, standing: Nia on tiptoe pulling open a bare
+   cupboard with one hand, other hand cupping the single pea at her
+   chest, dismayed.
+9. After the meal: the empty white plate with a tiny green smear where
+   the pea was, fork set down; Nia slumped back in the chair, one hand on
+   her stomach, a wall calendar behind marked with a small green dot on
+   one day.
+
+TEXT
+No panel labels, numbers, captions, watermarks, signatures, or titles.
+Diegetic text only: the panel 9 calendar may show a short month name or a
+single green dot - short, correctly spelled. No speech bubbles.
+
+INPUT IMAGES
+Image 1: style reference for line looseness, line-weight variation, flat
+limited low-saturation palette, and sparse flat backgrounds with white
+space ONLY - do NOT copy its content, characters, or composition, and do
+NOT copy its crosshatch shading, fur modelling, gradients, or rendered
+background objects; the object-level negatives in this brief override
+anything the reference does.
+
+AVOID
+watermark, signature, artist logo, extra borders, drop shadows between
+panels, soft shading, gradients, glossy highlights, cel-anime polish,
+photorealistic faces, gore, paragraphs of text, garbled lettering.

@@ -1,0 +1,56 @@
+$imagegen
+Use case: illustration-story
+Asset type: 3x3 mnemonic candidate sheet, one square PNG, generate at 2304x2304 (each panel ~768x768)
+
+TASK: One square image — a clean 3x3 grid of nine equal panels illustrating ONE sentence nine ways.
+
+SENTENCE TO ILLUSTRATE (every concrete noun must be visible in every panel):
+"Nick shuts the gate, cancelling the stampede's momentum."
+- Nick: a young man in a check shirt and boots.
+- the gate: a wooden farm gate — THE MNEMONIC HOOK ELEMENT.
+- the stampede: a herd of brown cattle rushing forward, dust rising.
+- cancelling the momentum: the herd pulled up short, braking, piling against the shut gate.
+
+ASSET TYPE & SIZE:
+- One square image, 2304x2304, rendered as a 3x3 grid of nine equal square panels (each ~768x768).
+- Thin uniform white gutters between panels (~1% of width). No outer border. No drop shadows between panels.
+
+HOUSE STYLE (identical in all nine panels — one artist's nine sketches, not a style sampler):
+- Brush-pen comic line art with light gouache colour blocks.
+- Thick India-ink brush outer contour with visible tapered strokes and the occasional broken line; interior detail lines much thinner. A little wobble — never a clean even-weight vector contour.
+- Expressive, slightly exaggerated comic faces and poses.
+- Over the line art, soft flat gouache colour blocks: slightly chalky, LOW saturation, naturalistic fills. Washes may break gently past the ink edge here and there. No outlining every fill.
+- Gentle, warm, LOW contrast.
+- Backgrounds sparse: a couple of flat shapes (a hill line, a barn silhouette, a fence) and lots of white space. Never a furnished, detailed landscape.
+
+OBJECT-LEVEL NEGATIVES (obey literally):
+- No crosshatching, no hatching lines, no stippling, no pencil texture, no individual cattle-hair or fur strands, no paper grain or aged-paper texture, no volumetric shading, no gradients, no drop shadows, no glossy 3D render.
+- Grass / dirt / sky are one flat colour each with at most a few simple flat shapes on top, never a rendered texture.
+- No photorealistic faces.
+
+MNEMONIC HOOK — the wooden farm gate:
+In EVERY panel the gate gets the compositional emphasis: foreground placement, the boldest and most confident brush-pen contour on the sheet, and the most saturated gouache block on the sheet (a warm ochre/amber wood). The eye must land on the gate first in every panel.
+
+PANEL 1 IS THE STYLE KEY — render it first and in most detail; the other eight must match its line weight and flat-fill treatment exactly:
+Panel 1: medium shot, side view — Nick swinging the wooden gate shut with both hands, body braced, the lead cattle a few feet away skidding to a stop, dust puffs at their hooves. Gate large in foreground.
+
+THE NINE STAGINGS (same characters, same props, same story beat — restaged):
+1. Medium side view: Nick braces and swings the gate shut, lead cattle skidding to a stop, dust at hooves.
+2. Low hero angle from just behind the gate: the shut gate towers, Nick's hand on the latch, cattle faces bunched and stalled beyond the bars.
+3. Wide establishing shot: long fence line across a bare hill, tiny barn, the single gate mid-frame shut, the herd braking into a clump behind it.
+4. Over-the-shoulder from behind Nick: his silhouette and arm, the gate latching, the wall of cattle noses stopping short in front.
+5. Top-down view: the gate as a bar across a dirt gap in the fence, cattle backed up in a fan shape on one side, Nick a small figure pushing it closed.
+6. Tight close-up: Nick's hands dropping the iron latch loop over the gatepost, wood grain implied by a couple of flat strokes only, a blurred brown cattle shape behind.
+7. Front view, cattle's POV distance: the gate shut square to camera, Nick leaning on the top rail exhaling, herd stopped and milling in the near foreground.
+8. Three-quarter action moment BEFORE: gate half-open, Nick lunging to grab it, dust cloud and horns bearing down — tension.
+9. Three-quarter moment AFTER: gate firmly shut and still, cattle already calm and grazing, Nick sitting on the gate's top rail wiping his brow.
+
+CONSTRAINTS:
+- No panel labels, numbers, captions, watermarks, signatures, artist logo, or title text.
+- Diegetic text only if natural (e.g. a small "NICK'S FARM" board on the barn) — short, correctly spelled.
+- Each panel fully self-contained and readable on its own; consistent framing so any panel can be cropped out square.
+
+AVOID: watermark, signature, artist logo, extra borders, drop shadows between panels, photorealistic real people's faces, gore, paragraphs of text, garbled lettering.
+
+Input images:
+Image 1: style reference for line looseness, line-weight variation, flat limited low-saturation palette, and sparse flat backgrounds with white space ONLY — do NOT copy its content, characters, or composition, and do NOT copy its crosshatch shading, fur modelling, gradients, or rendered background objects; the object-level negatives in this brief override anything the reference does.

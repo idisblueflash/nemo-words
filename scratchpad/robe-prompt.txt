@@ -1,0 +1,92 @@
+$imagegen
+Use case: illustration-story
+Asset type: one square 2304x2304 image, a 3x3 grid mnemonic sheet
+
+TASK: One single square image — a clean 3x3 grid of nine equal panels illustrating ONE
+scene nine ways. Thin uniform white gutters (~1% of width) between panels. No outer
+border, no drop shadows between panels.
+
+GENERATION SIZE: 2304x2304 (each panel lands ~768x768).
+
+THE SCENE (identical in all nine panels, only the staging changes):
+"From the wardrobe, the judge grabs her robe." A woman judge stands at a tall wooden
+wardrobe (freestanding closet, double doors open) and pulls out her long black
+ceremonial judge's robe. Every panel must show: the open wooden wardrobe, the judge
+(middle-aged woman, expressive slightly-exaggerated comic face), and the long flowing
+black robe being grabbed/held/pulled. Optional supporting props from a judge's context
+kept minimal: a wooden gavel, a small framed law certificate on the wall.
+
+MNEMONIC HOOK ELEMENT — the long black judge's ROBE. In every panel the robe gets the
+compositional emphasis: foreground placement, the boldest and most confident brush-pen
+contour on the sheet, and the most saturated flat colour block on the sheet (a deep
+near-black charcoal with one flat mid-grey shadow step). The eye must land on the robe
+first in every panel. The wardrobe is second in emphasis. Keep the "wardrobe" clearly
+readable since it carries the sound of the word.
+
+HOUSE STYLE (apply identically to all nine panels — one artist's nine sketches):
+Brush-pen comic line art with light gouache colour blocks. Thick India-ink brush outer
+contour with visible tapered strokes and the occasional broken line; interior detail
+lines much thinner. Expressive, slightly exaggerated comic faces and poses. Over the
+line art, soft flat gouache colour blocks: slightly chalky, low-saturation, naturalistic
+fills. Cel-shaded: at most 3 flat value steps per shape, hard edges, one flat colour per
+area. Limited palette: warm wood brown for the wardrobe, deep charcoal near-black for the
+robe, muted cream/olive for the judge's clothing and the walls, small accent of dark red.
+Sparse flat backgrounds — a couple of flat shapes and generous white space, never a
+furnished room.
+
+OBJECT-LEVEL NEGATIVES (hard): No crosshatching, no hatching lines, no stippling, no
+pencil texture, no engraving texture, no individual fabric threads or wood-grain
+striations, no paper grain or aged-paper texture, no volumetric/rendered shading, no
+soft gradients, no glossy highlights, no drop shadows, no wash bleed. CRITICAL: the
+black robe is filled with ONE flat near-black shape plus AT MOST ONE flat mid-grey
+shadow shape with a hard edge — absolutely no soft/blended fold shading, no smooth
+tonal transitions, no sheen along the folds, no airbrushed depth on the fabric. Faces
+and skin are one flat cream tone with at most one flat shadow shape, hard-edged, never
+blended or airbrushed. Wardrobe wood is one flat brown with at most a couple of simple
+flat plank shapes on top, never a rendered grain. Walls/floor are one flat colour each.
+Panel 1 sets the flat-fill treatment; every other panel must match it exactly.
+
+WHAT VARIES BETWEEN THE NINE PANELS (same characters, same props, same story beat,
+restaged): camera angle and distance, the judge's pose/gesture/expression, where the
+robe and wardrobe sit in frame, the moment chosen (reaching in / mid-pull / robe already
+in hand / swinging it on), and background depth.
+
+PANEL 1 IS THE STYLE KEY — render it first and most carefully; the other eight must
+match its line weight and flat-fill treatment exactly:
+1. Medium wide, eye level, straight on: judge stands facing the open wardrobe, both
+   hands lifting the black robe off its hanger, robe hanging full-length in the centre
+   foreground. Neutral concentration on her face. Bare wall behind, small framed
+   certificate top-right.
+2. Low hero angle looking up: judge holds the robe aloft in one fist like a banner, chin
+   up, triumphant grin; wardrobe looms behind her.
+3. Over-the-shoulder from inside the wardrobe looking out: we see rows of empty hangers
+   in the foreground and the judge's hand reaching in to seize the black robe, her
+   surprised face framed between the doors.
+4. Top-down: judge crouched, robe pooled in a black heap on the floor as she gathers it
+   up, wardrobe doors open at the top of frame.
+5. Tight close-up: the judge's hands gripping a fistful of the black robe fabric, gavel
+   tucked under one arm, only her determined mouth and jaw visible at frame top.
+6. Wide establishing, side profile: full wardrobe on the left, judge mid-stride pulling
+   the robe out so it streams horizontally behind her toward the right edge.
+7. Three-quarter back view: judge swinging the robe around her shoulders, arms spread,
+   the robe billowing; wardrobe half-closed behind.
+8. Medium, slight Dutch tilt: judge yanks the robe and a hanger flies off, comic wide
+   eyes and open mouth, other clothes still hanging in the wardrobe.
+9. Close-medium, eye level: judge now fully robed, tugging the front closed with both
+   hands, calm satisfied expression, open empty wardrobe directly behind her.
+
+CONSTRAINTS: No panel labels, numbers, captions, watermarks, signatures, artist logo, or
+title text. Diegetic text only if it occurs naturally (e.g. a short word on the framed
+certificate) — keep it short and correctly spelled; none is required. No speech bubbles
+needed. Each panel fully self-contained and readable on its own, consistent framing so
+any panel can be cropped out square.
+
+AVOID: watermark, signature, artist logo, extra borders, drop shadows between panels,
+photorealistic real people's faces, gore, paragraphs of text, garbled lettering.
+
+INPUT IMAGES:
+Image 1: style reference for line looseness, line-weight variation, flat limited
+low-saturation palette, and sparse flat backgrounds with white space ONLY — do NOT copy
+its content, characters, or composition, and do NOT copy its crosshatch shading, fur
+modelling, gradients, or rendered background objects; the object-level negatives in this
+brief override anything the reference does.
