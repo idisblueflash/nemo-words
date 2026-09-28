@@ -36,11 +36,19 @@
 // image, then story, then IPA. Like the Image column, this is sync-time
 // composition only — the .txt Back column itself never gains it.
 //
+// Gloss (ADR-0018): an optional fifth `Gloss` column carries a one-clause
+// plain-English meaning (~60 chars, no etymology). If present, it's composed
+// onto the Back as a small muted italic line between the story and the IPA, so
+// on review the story is checked against the meaning it encodes and then the
+// transcription confirms the pronunciation. Sync-time composition only, like
+// Image and IPA. Word-part rows (`medical-word-parts`) don't use it — their
+// Back already states the morpheme's meaning.
+//
 // Deck / Tags overrides (ADR-0016): medical-word-parts.txt was merged into
 // reading-room-terms.txt so there's one file to keep in sync, but its rows
 // still belong to a different Anki deck and a different tag than ordinary
-// vocabulary rows. An optional fifth `Deck` column overrides the file's
-// `#deck` header for just that row, and an optional sixth `Tags` column
+// vocabulary rows. An optional sixth `Deck` column overrides the file's
+// `#deck` header for just that row, and an optional seventh `Tags` column
 // (space-separated) replaces the file's `#tags` header for just that row.
 // Both are per-row overrides, not additive — empty means "use the header
 // default". `Tags` only affects notes created by this run (addNote); an
@@ -83,17 +91,18 @@ function parseFile(text) {
     if (!line.trim()) continue;
     if (line.indexOf("\t") === -1) continue; // malformed row, skip
     // Split on every tab: Front, Back, an optional third Image column, an
-    // optional fourth IPA column, and optional fifth Deck / sixth Tags
-    // override columns. A story sentence never contains a literal tab, so
-    // this is safe.
+    // optional fourth IPA column, an optional fifth Gloss column, and
+    // optional sixth Deck / seventh Tags override columns. A story sentence
+    // never contains a literal tab, so this is safe.
     const parts = line.split("\t");
     rows.push({
       front: parts[0],
       back: parts[1] || "",
       image: (parts[2] || "").trim(),
       ipa: (parts[3] || "").trim(),
-      deck: (parts[4] || "").trim(),
-      tags: (parts[5] || "").trim(),
+      gloss: (parts[4] || "").trim(),
+      deck: (parts[5] || "").trim(),
+      tags: (parts[6] || "").trim(),
     });
   }
 
@@ -154,9 +163,10 @@ function escapeQueryValue(value) {
 
 // Uploads the row's image (if any) into the collection and returns the Back
 // HTML to push, in review order: the <img> (if attached), then the plain-text
-// story, then a trailing muted `/ipa/` line (if given). A declared-but-missing
-// image file is a row-level failure so the caller logs it and moves on rather
-// than silently dropping the image.
+// story, then a muted italic gloss line (if given), then a trailing muted
+// `/ipa/` line (if given). A declared-but-missing image file is a row-level
+// failure so the caller logs it and moves on rather than silently dropping
+// the image.
 async function composeBack(row, ctx) {
   const pieces = [];
 
@@ -175,6 +185,8 @@ async function composeBack(row, ctx) {
   }
 
   if (row.back) pieces.push(row.back);
+
+  if (row.gloss) pieces.push(`<small style="opacity:0.75"><i>${row.gloss}</i></small>`);
 
   if (row.ipa) pieces.push(`<small style="opacity:0.6">/${row.ipa}/</small>`);
 

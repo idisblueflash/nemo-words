@@ -35,7 +35,13 @@ actually agreed to.
 
    For a **word built from classical morphemes** (medical or general), route to
    `_etta_mology` instead — it decomposes and cards the parts, and there's no
-   sound/story axis for those.
+   sound/story axis for those. A word *part itself* can still get its own dedicated
+   sound/story mnemonic when it's foundational enough to be worth it (reused across
+   many downstream words, e.g. `val-`) — same explain → `_nemo` brainstorm → human
+   pick → save pipeline, but the pick lands in the part's existing word-part row
+   (`🎭 sentence<hr>` prepended ahead of the origin/meaning/examples block, per
+   `build-word-part-anki`'s format) rather than a separate whole-word card
+   (ADR-0017). `/new-word-card` handles this branch directly — see that command.
 3. **Get the story.** A human always picks this — never an agent, and never a
    specialist's own top recommendation adopted automatically.
 
@@ -89,28 +95,34 @@ forks propose words; their output is not user consent.)
 ## The Anki card shape
 
 `anki/reading-room-terms.txt` — header default `#deck:00 Reading Room::Terms`, columns
-`Front\tBack\tImage\tIPA\tDeck\tTags`. `Front` is the word; `Back` is **the 🎭 story
+`Front\tBack\tImage\tIPA\tGloss\tDeck\tTags`. `Front` is the word; `Back` is **the 🎭 story
 sentence as plain text** — nothing else; `Image` is an optional mnemonic-image basename
-(ADR-0012); `IPA` is an optional stress-marked transcription (ADR-0015); `Deck`/`Tags`
+(ADR-0012); `IPA` is an optional stress-marked transcription (ADR-0015); `Gloss` is an
+optional one-clause plain-English meaning, 60 chars max (ADR-0018); `Deck`/`Tags`
 are optional per-row overrides of the file's `#deck`/`#tags` header (ADR-0016) — used
 only by `_etta_mology`'s word-part rows (see below), empty for ordinary vocabulary:
 
 ```
-trial	The court tried a dull case, weighing his guilt.	trial.png	ˈtraɪəl
+trial	The court tried a dull case, weighing his guilt.	trial.png	ˈtraɪəl	a formal court hearing of a case
 ```
 
 No `<b>`/`<br>`, no `🎭` prefix, no `say`/`def`/🔊/📖, no `Anchors:` line in `Back`. The
 `Image` column holds a bare filename under `images/mnemonic/` (or is empty);
 `anki-sync.js` uploads it as `nemo-<file>`. The `IPA` column holds a plain IPA string,
 syllables dot-separated, stress marked (e.g. `ˈɑm.ə.nəs`) — copy it verbatim from the
-`syllabification` array already collected in step 3 for `_logan` (join with `.`).
+`syllabification` array already collected in step 3 for `_logan` (join with `.`). The
+`Gloss` column holds one short clause of plain English — **60 characters max**, no
+etymology, no usage notes, no examples (e.g. `to baffle, or to mix two things up`);
+author it fresh at save time rather than pasting the log's much longer `sense` field.
 `anki-sync.js` composes the pushed `Back` in review order — image first, then the
-story, then a small muted `/ipa/` line last — so the picture reads first and the
-transcription confirms the pronunciation right after the story. The `.txt` `Back`
-column itself never holds HTML — both compositions happen at sync time. A word with no
+story, then a small muted italic gloss, then a small muted `/ipa/` line last — so the
+picture reads first, the gloss confirms the meaning the story encodes, and the
+transcription confirms the pronunciation. The `.txt` `Back`
+column itself never holds HTML — all three compositions happen at sync time. A word with no
 story yet has an empty
-`Back` (or simply no row). The definition and sound/meaning axes stay build-time
-scaffolding (step 2), never carded; the structured record (full `syllabification`,
+`Back` (or simply no row). The full definition and the sound/meaning axes stay build-time
+scaffolding (step 2) — the `Gloss` is a deliberately tiny exception, a meaning *check*
+rather than the explanation; the structured record (full `syllabification`,
 `anchor_unit`, `keyword`, `pivot_words`, `technique`) lives in `data/mnemonics/log.jsonl`
 — `IPA` on the card is a display-only derivative of it, kept in sync by hand at save time.
 
@@ -118,7 +130,13 @@ scaffolding (step 2), never carded; the structured record (full `syllabification
 `Deck` = `00 Reading Room::01 Medical Terms` and `Tags` = `medical-word-parts` — their
 `Back` is the richer `<i>Origin</i><br>meaning<br><span class="examples">...</span>`
 HTML `build-word-part-anki` writes (see that skill), not a plain story sentence; they
-have no `IPA` (no sound/story axis) but can still carry an `Image`.
+have no `IPA` or `Gloss` column (no dedicated sound/story axis, and their `Back` already
+states the meaning) but can still carry an `Image`.
+A minority do carry a hand-added 🎭 mnemonic sentence in `Back` — when one exists, it
+comes first, ahead of the origin/meaning/examples block, separated by `<hr>` and with
+no `mnemonic:` label: `🎭 sentence<hr><i>Origin</i><br>meaning<br><span
+class="examples">...</span>` (see `build-word-part-anki`'s SKILL.md for the exact
+format).
 
 ## Explaining several words at once
 

@@ -47,7 +47,7 @@ brainstorming + a human pick, or the human composing their own).
 
 1. **Find the word's row** in `anki/reading-room-terms.txt` by exact `Front` match.
    Word-part rows and whole-word rows share this one file now (ADR-0016), distinguished
-   by the row's sixth `Tags` column.
+   by the row's seventh `Tags` column.
 
    **Before writing, check whether the matched row's `Tags` column is
    `medical-word-parts`.** If so, it's `_etta_mology`'s territory (a classical
@@ -59,10 +59,10 @@ brainstorming + a human pick, or the human composing their own).
 
 2. **Write the `Back` field** to the story text, verbatim (apply only a tiny grammar fix
    the user asked for — e.g. "need" → "needs"). The row is
-   `Front\tBack\tImage\tIPA\tDeck\tTags`, tab-separated — leave `Deck`/`Tags` empty for
-   an ordinary vocabulary row (they default to the file header):
+   `Front\tBack\tImage\tIPA\tGloss\tDeck\tTags`, tab-separated — leave `Deck`/`Tags`
+   empty for an ordinary vocabulary row (they default to the file header):
    ```
-   <word>	<story sentence, plain text>	<image basename or empty>	<IPA or empty>
+   <word>	<story sentence, plain text>	<image basename or empty>	<IPA or empty>	<gloss or empty>
    ```
    No `<b>`/`<br>`, no `🎭` prefix, nothing but the sentence in `Back`. The third
    `Image` column (ADR-0012) is an optional basename under `images/mnemonic/`
@@ -71,7 +71,22 @@ brainstorming + a human pick, or the human composing their own).
    stress-marked transcription, syllables dot-separated (e.g. `ˈɑm.ə.nəs`) — fill it
    from the word's `syllabification` array (word-workflow.md step 3 collects this
    alongside the story candidates; join the array with `.`), so it's never
-   re-derived by hand. The `<img>` tag and the `/ipa/` line are both composed by
+   re-derived by hand.
+
+   The fifth `Gloss` column (ADR-0018) is a one-clause plain-English meaning that gives
+   the reviewer something to check their *meaning* recall against, the way `IPA` does for
+   pronunciation. **Hard rules, enforced here at save time:**
+   - **60 characters max.** Over that, cut it — don't card it long. It's a reminder, not
+     a dictionary entry.
+   - **One clause, no etymology, no usage notes, no examples.** `confound` →
+     `to baffle, or to mix two things up`.
+   - **Author it fresh; do not paste `log.jsonl`'s `sense` field.** `sense` runs ~95
+     chars on average and carries etymology and bookkeeping — it's the source material,
+     not the gloss.
+   - **Leave it empty** for a word-part row (its `Back` already states the meaning), or
+     when no short gloss fits cleanly.
+
+   The `<img>` tag, the gloss line and the `/ipa/` line are all composed by
    `anki-sync.js` at sync time; never put HTML in the `.txt`. If no
    row exists for the word, **append one**. If a row exists, patch it in place — don't
    duplicate it. If the old row still carries the legacy multi-segment HTML back
@@ -100,5 +115,8 @@ brainstorming + a human pick, or the human composing their own).
 - Doesn't brainstorm or pick a story — the caller must already have decided it.
 - Doesn't run for `_etta_mology`-path words — they have no story; their Anki rows share
   `anki/reading-room-terms.txt` (ADR-0016) but are tagged `medical-word-parts` and carry
-  a different `Back` shape entirely (see step 1's hard stop).
+  a different `Back` shape entirely (see step 1's hard stop). A word part *can* still
+  get its own deliberate mnemonic — that's `/new-word-card`'s word-part branch
+  (ADR-0017), which writes the pick directly into the row's `🎭 sentence<hr>...`
+  section per `build-word-part-anki`'s format instead of calling this skill.
 - Doesn't push, open a PR, or share anything further without explicit go-ahead.

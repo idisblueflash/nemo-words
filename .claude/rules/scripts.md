@@ -16,8 +16,10 @@ have a story?" check — use it before re-brainstorming or re-explaining. Pair i
 `grep -i "^<word>\b" anki/reading-room-terms.txt` for the carded story sentence (the
 card's `Back` column is the story, plain text; an optional 3rd `Image` column names a
 mnemonic image under `images/mnemonic/` that `anki-sync.js` attaches at sync
-time — see ADR-0012 — and an optional 4th `IPA` column carries a stress-marked
-transcription that `anki-sync.js` appends the same way — see ADR-0015).
+time — see ADR-0012 — an optional 4th `IPA` column carries a stress-marked
+transcription that `anki-sync.js` appends the same way — see ADR-0015 — and an optional
+5th `Gloss` column carries a one-clause plain-English meaning, 60 chars max, composed in
+between the story and the IPA — see ADR-0018).
 
 ## Classifying a word (medical vs. general)
 
@@ -70,7 +72,8 @@ can't reach Anki, the file write still stands — log the connection error to
 `anki/sync.log` and re-run later.
 
 Regression coverage: `test/anki-sync-cross-deck-duplicate.test.js`,
-`test/anki-sync-image-field.test.js`, `test/anki-sync-ipa-field.test.js`, and
+`test/anki-sync-image-field.test.js`, `test/anki-sync-ipa-field.test.js`,
+`test/anki-sync-gloss-field.test.js`, and
 `test/anki-sync-deck-tags-override.test.js` run the real script end-to-end against a
 mock AnkiConnect (no live Anki needed) — `node --test` picks them all up.
 

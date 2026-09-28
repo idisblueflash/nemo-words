@@ -46,16 +46,17 @@ just that row:
 #deck:00 Reading Room::Terms
 #tags:reading-room-terms
 #media-dir:images/mnemonic
-#columns:Front	Back	Image	IPA	Deck	Tags
+#columns:Front	Back	Image	IPA	Gloss	Deck	Tags
 ```
 
 One row **per morpheme/stem** (not per whole term), tab-separated — `Deck` fixed to
-`00 Reading Room::01 Medical Terms` and `Tags` fixed to `medical-word-parts`; `IPA` is
-always empty (no sound/story axis for these); `Image` is optional, same as any row:
+`00 Reading Room::01 Medical Terms` and `Tags` fixed to `medical-word-parts`; `IPA` and
+`Gloss` are always empty (no sound/story axis for these, and the `Back` already states
+the meaning); `Image` is optional, same as any row:
 
 ```
-haem-	<i>Greek</i><br>blood<br><span class="examples">e.g. haemoglobin, hematology, hemolysis</span>			00 Reading Room::01 Medical Terms	medical-word-parts
--limus	<i>INN stem</i><br>mTOR/calcineurin-pathway immunosuppressant<br><span class="examples">e.g. tacrolimus, sirolimus, everolimus</span>			00 Reading Room::01 Medical Terms	medical-word-parts
+haem-	<i>Greek</i><br>blood<br><span class="examples">e.g. haemoglobin, hematology, hemolysis</span>				00 Reading Room::01 Medical Terms	medical-word-parts
+-limus	<i>INN stem</i><br>mTOR/calcineurin-pathway immunosuppressant<br><span class="examples">e.g. tacrolimus, sirolimus, everolimus</span>				00 Reading Room::01 Medical Terms	medical-word-parts
 ```
 
 - **Front** — the canonical part form, no combining vowel (`glob`, not `globo`;
@@ -73,6 +74,17 @@ haem-	<i>Greek</i><br>blood<br><span class="examples">e.g. haemoglobin, hematolo
   - **examples** — `e.g. term1, term2`, wrapped in the `examples` span.
   The `<br>` (not a literal newline — those can't sit inside a tab-separated field)
   is what produces each visual line break once `#html:true` renders it.
+  - **mnemonic (optional)** — a row that carries a 🎭 memory sentence prepends it
+    before the origin/meaning/examples block, separated by `<hr>`, no label:
+    `🎭 sentence<hr><i>Origin</i><br>meaning<br><span class="examples">...</span>`.
+    Reviewing the mnemonic first (right after the image, if any) reads better than
+    burying it below the definition. Multiple candidate sentences join with `<br>`
+    before the `<hr>` (`🎭 one.<br>🎭 two.<hr><i>Origin</i>...`). Not every row has
+    one — most word parts have no story axis at all (see this repo's CLAUDE.md); add
+    a mnemonic section only when one already exists for that part, or when
+    `/new-word-card`'s word-part branch (ADR-0017) deliberately builds one for a
+    foundational part — that pipeline writes a single picked sentence here, replacing
+    rather than accumulating alongside any earlier hand-added one.
 - **Image, IPA, Deck, Tags** — always `Image` empty or a bare filename under
   `images/mnemonic/`; `IPA` always empty; `Deck` always
   `00 Reading Room::01 Medical Terms`; `Tags` always `medical-word-parts` — every
@@ -91,8 +103,9 @@ For each morpheme/stem in the breakdown you were given:
    `Front` matches (exact match on canonical form) and whose `Tags` column is
    `medical-word-parts`.
 2. **Row exists** → patch its `<span class="examples">` list to add the new term,
-   deduped against what's already there. Leave the origin/meaning lines alone unless
-   the user is explicitly correcting them.
+   deduped against what's already there. Leave the origin/meaning lines — and any
+   existing `🎭 ...<hr>` mnemonic section ahead of them — alone unless the user is
+   explicitly correcting them.
 3. **Row doesn't exist** → append a new row: `Part<TAB><i>Origin</i><br>meaning<br><span
    class="examples">e.g. term1, term2</span><TAB><TAB><TAB>00 Reading Room::01 Medical
    Terms<TAB>medical-word-parts` — i.e. `Front`, `Back`, empty `Image`, empty `IPA`,
@@ -119,16 +132,16 @@ Given the breakdown for *hypothermia* (`hypo-`/Greek/"below, deficient",
 these three parts:
 
 ```
-hypo-	<i>Greek</i><br>below, deficient<br><span class="examples">e.g. hypothermia, hypoglycemia</span>			00 Reading Room::01 Medical Terms	medical-word-parts
-therm	<i>Greek</i><br>heat<br><span class="examples">e.g. hypothermia, thermometer</span>			00 Reading Room::01 Medical Terms	medical-word-parts
--ia	<i>Greek</i><br>condition of<br><span class="examples">e.g. anemia, hypothermia</span>			00 Reading Room::01 Medical Terms	medical-word-parts
+hypo-	<i>Greek</i><br>below, deficient<br><span class="examples">e.g. hypothermia, hypoglycemia</span>				00 Reading Room::01 Medical Terms	medical-word-parts
+therm	<i>Greek</i><br>heat<br><span class="examples">e.g. hypothermia, thermometer</span>				00 Reading Room::01 Medical Terms	medical-word-parts
+-ia	<i>Greek</i><br>condition of<br><span class="examples">e.g. anemia, hypothermia</span>				00 Reading Room::01 Medical Terms	medical-word-parts
 ```
 
 If `-ia` already existed as a row, patch just its `Back` field (leaving `Image`/`Deck`/
 `Tags` alone) instead of adding a duplicate:
 
 ```
--ia	<i>Greek</i><br>condition of<br><span class="examples">e.g. anemia, hypothermia</span>			00 Reading Room::01 Medical Terms	medical-word-parts
+-ia	<i>Greek</i><br>condition of<br><span class="examples">e.g. anemia, hypothermia</span>				00 Reading Room::01 Medical Terms	medical-word-parts
 ```
 
 Given an INN breakdown for *tacrolimus* (`tacro-`/eponymous prefix/no confirmed
@@ -137,5 +150,5 @@ immunosuppressant"), only the stem gets a row — the prefix is skipped per rule
 above:
 
 ```
--limus	<i>INN stem</i><br>mTOR/calcineurin-pathway immunosuppressant<br><span class="examples">e.g. tacrolimus, sirolimus, everolimus</span>			00 Reading Room::01 Medical Terms	medical-word-parts
+-limus	<i>INN stem</i><br>mTOR/calcineurin-pathway immunosuppressant<br><span class="examples">e.g. tacrolimus, sirolimus, everolimus</span>				00 Reading Room::01 Medical Terms	medical-word-parts
 ```

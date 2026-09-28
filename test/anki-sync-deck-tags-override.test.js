@@ -1,7 +1,8 @@
 // Coverage for the per-row Deck / Tags override columns in scripts/anki-sync.js
 // (ADR-0016), added when anki/medical-word-parts.txt was merged into
-// anki/reading-room-terms.txt. A row's optional fifth `Deck` column and sixth
-// `Tags` column override the file's `#deck`/`#tags` header for that row only,
+// anki/reading-room-terms.txt. A row's optional sixth `Deck` column and seventh
+// `Tags` column (fifth and sixth before ADR-0018 inserted `Gloss` ahead of them)
+// override the file's `#deck`/`#tags` header for that row only,
 // so one file can still route rows to two different decks/tags — e.g. plain
 // vocabulary rows stay on the header's deck/tags, former word-part rows route
 // to the medical deck with the medical tag.
@@ -87,9 +88,9 @@ test.beforeEach(async () => {
       "#deck:00 Reading Room::Terms",
       "#notetype:Basic",
       "#tags:reading-room-terms",
-      "#columns:Front\tBack\tImage\tIPA\tDeck\tTags",
-      "cracks\tOld sidewalk tracks reveal a web of thin cracks.\t\t\t\t",
-      "para-\t<i>Greek</i><br>beside, alongside\t\t\t00 Reading Room::01 Medical Terms\tmedical-word-parts",
+      "#columns:Front\tBack\tImage\tIPA\tGloss\tDeck\tTags",
+      "cracks\tOld sidewalk tracks reveal a web of thin cracks.\t\t\t\t\t",
+      "para-\t<i>Greek</i><br>beside, alongside\t\t\t\t00 Reading Room::01 Medical Terms\tmedical-word-parts",
     ].join("\n") + "\n"
   );
 });
