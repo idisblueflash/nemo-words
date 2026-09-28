@@ -487,3 +487,4 @@
 2026-09-27T10:57:41Z	term=defect	status=added	sync=ok
 2026-09-28T01:15:11Z	term=defect	status=patched(image)	sync=ok
 2026-09-28T02:31:17Z term=confound file=patched(gloss) sync=updated adr=0018
+2026-09-28T02:49:47Z	task=gloss-backfill	rows=280	file=patched(gloss)	sync=updated	adr=0018	note=onset/pound duplicate rows flip-flop one note each run
