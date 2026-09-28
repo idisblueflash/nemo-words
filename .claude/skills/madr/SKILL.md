@@ -31,7 +31,31 @@ and an eyeballed read of a dozen files doesn't.
    `node <skill-dir>/scripts/adr-index.js next <dir>` — don't guess or count
    files by hand, existing files may be gappy if one was ever removed.
 
-## Creating a new record — interview protocol
+## Creating a new record — two modes
+
+**Interview mode** is the default: the user just says "log a new ADR" with
+no substantive context behind it. Ask one question at a time (protocol
+below) and wait for each answer before moving on.
+
+**Auto-fill mode** applies when the invocation already carries enough
+context to answer most fields without asking — e.g. the user points at a
+prior message, a trial report, an agent's recommendation, or says something
+like "based on X's finding, save a decision" or "auto-fill the questions."
+In that case, don't run the question-by-question interview and don't show
+the assembled draft for confirmation either: draft every field you can
+support from what's actually in front of you (the referenced report, the
+conversation, git config for deciders, today's date), leave a field
+blank/omit-optional only if genuinely nothing supports it, save the file
+straight away, and then report what you saved (path + a short summary of
+the Decision Outcome) so the user can review it after the fact instead of
+before. This is the one place in the skill that skips the "show before
+writing" rule — everywhere else in this doc, that rule still applies. If a
+required field (Title, Context and Problem Statement, Considered Options,
+Decision Outcome) has no real source material behind it, ask about just
+that field rather than guessing — auto-fill means "skip asking for what's
+already known," not "invent what isn't."
+
+### Interview-mode protocol
 
 Ask these in order, **one question per turn**, waiting for the user's answer
 before moving to the next. Don't front-load the whole template — that
@@ -132,7 +156,8 @@ Story) entirely if the user had nothing for them — don't leave placeholder
 headers with no content.
 
 Show the assembled draft to the user before writing it, and only save once
-they confirm or correct it. After saving, run
+they confirm or correct it — except in auto-fill mode, which saves directly
+and reports afterward instead (see above). After saving, run
 `node <skill-dir>/scripts/adr-index.js validate <dir>` to confirm the new
 file is well-formed before reporting success.
 
@@ -166,7 +191,11 @@ malformed filenames, `superseded` records missing their link).
 ## Rules
 
 - Never write a record from assumptions — every field comes from what the
-  user actually said this session, not from inferring "the obvious choice."
+  user actually said this session or from the concrete context they pointed
+  you at (a report, an agent's finding), never from inferring "the obvious
+  choice." This holds in auto-fill mode too: auto-fill skips *asking*
+  questions whose answers are already on the record, it doesn't license
+  guessing ones that aren't.
 - Never edit the substantive sections of an already-saved record. The only
   legitimate edit to an existing file is a front-matter status change to
   `deprecated`/`superseded` plus its corresponding link, done as part of a
