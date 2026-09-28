@@ -441,3 +441,49 @@
 2026-09-09T08:40:50Z term=negate file=added sync=added
 2026-09-09T08:41:21Z term=negate file=patched(story) sync=updated
 2026-09-09T09:39:39Z term=steroid file=patched sync=updated story-finalized
+2026-09-10T08:38:24Z term=period file=added sync above
+2026-09-10T09:09:06Z term=biases file=added sync=added
+2026-09-10T09:28:40Z term=synonym file=added sync=added
+2026-09-10T09:44:20Z term=apparatus file=added sync=added
+2026-09-11T02:16:55Z term=literature file=patched sync=updated
+2026-09-11T02:24:51Z term=engine file=added sync=added
+2026-09-11T03:52:32Z term=literature file=patched sync=image-attached
+2026-09-11T03:52:32Z term=engine file=patched sync=image-attached
+2026-09-12T01:55:52Z term=lass file=patched sync=updated
+2026-09-12T02:01:35Z term=period file=patched sync=updated
+2026-09-12T02:10:32Z term=engine file=unchanged sync=updated image=engine.png
+2026-09-16T01:33:57Z	term=rigged	file=added	sync=ok
+2026-09-16T01:42:24Z term=spilled action=added sync=ok
+2026-09-16T01:55:55Z	term=spilled	image=spilled.png	file=patched	sync=updated
+2026-09-16T02:10:03Z	term=malignancy	file=patched(story finalized)	sync=updated
+2026-09-16T02:17:58Z	term=malignancy	file=patched(story corrected to candidate 1)	sync=updated
+2026-09-16T03:09:14Z	term=malignancy	image=malignancy.png	file=patched	sync=updated
+2026-09-17T00:43:38Z term=optimal file=patched sync=updated
+2026-09-18T01:56:43Z term=sweep file=added sync=added
+2026-09-18T01:58:50Z term=tacit file=added sync=ok
+2026-09-18T02:10:40Z term=evicted file=added sync=ok
+2026-09-18T02:18:50Z term=sweep image=sweep.png file=patched sync=updated
+2026-09-18T02:50:56Z term=trait file=added sync=added
+2026-09-18T02:55:51Z term=legitimate file=added sync=added
+2026-09-18T03:05:20Z term=fidelity file=added sync=added
+2026-09-18T03:42:41Z term=fidelity image=fidelity.png file=patched sync=updated
+2026-09-18T07:23:02Z	term=para-	file=added	sync=added
+2026-09-18T07:23:02Z	term=-meter	file=added	sync=added
+2026-09-18T07:24:52Z term=elastic file=added sync=added
+2026-09-18T07:48:59Z	-meter	patched (added speedometer, barometer examples)	synced updated
+2026-09-18T08:10:02Z term=trivial file=added sync=added
+2026-09-21T07:21:38Z	term=para-	action=cleanup	reason=removed duplicate whole-word story card (belonged only to medical-word-parts.txt); deleted merged Anki note, re-synced clean word-part note
+2026-09-25T03:09:37Z term=corpus status=patched sync=updated
+2026-09-25T03:15:50Z term=stampede file=added sync=ok
+2026-09-25T03:32:04Z	term=parchment	status=patched	sync=ok
+2026-09-26T00:00:00Z	term=pale	status=patched(re-brainstormed story)	sync=updated
+2026-09-26T00:05:00Z	term=pale	image=pale.png	file=patched	sync=updated
+2026-09-26T02:18:07Z	term=prevalence	pre-:patched(added example)/synced-updated	val-:added/synced-added	-ence:added/synced-added
+2026-09-27T01:20:53Z convalesce: con- (existing row, unchanged — sense mismatch flagged, not patched); val- (existing row, unchanged, convalesce already in examples); -esce (new row, added; sync: added)
+2026-09-27T01:48:37Z term=prevalence file=patched sync=updated (story replaced via re-brainstorm)
+2026-09-27T01:51:22Z	term=transfusion (decomposition)	fus-: unchanged (already present, already lists transfusion)	-ion: unchanged (already present, already lists transfusion)	trans-: added	sync trans-: added
+2026-09-27T02:26:26Z term=rev status=added sync=ok
+2026-09-27T07:54:55Z	term=herd	status=added	sync=ok
+2026-09-27T10:57:41Z	term=defect	status=added	sync=ok
+2026-09-28T01:15:11Z	term=defect	status=patched(image)	sync=ok
+2026-09-28T02:31:17Z term=confound file=patched(gloss) sync=updated adr=0018
