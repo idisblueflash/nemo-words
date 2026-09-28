@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(nemo-words ipa-lookup *)",
+      "Bash(scripts/corpus-search.sh *)",
+      "Bash(node scripts/find-mnemonic.js *)",
+      "Bash(scripts/anki-sync-terms.sh *)"
+    ]
+  }
+}
