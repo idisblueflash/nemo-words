@@ -122,59 +122,22 @@ or proceed on the word alone.
    `images/mnemonic/<word>.grid.png` (create the directory with
    `mkdir -p`; lowercase the word, keep it as-is otherwise). If a file is
    already there, append `-2`, `-3`, … rather than overwriting.
-4. **Style-QA the sheet against the anchor image before you report it.**
-   Open the grid you just saved **and `docs/mnemonics/style-anchor.png`
-   together**, and judge one question: *does this sheet look like it came
-   from the same hand as the anchor?* Compare on:
-   - **line character** — tapered brush/pencil contour with visible tooth
-     and a slight wobble, occasional broken strokes. NOT uniform bold
-     digital ink, NOT a clean even-weight vector contour.
-   - **colour handling** — soft, slightly chalky low-saturation fills;
-     gentle washes that break past the ink edge here and there. NOT hard
-     flat cel fills with every area outlined, NOT high-saturation.
-   - **contrast** — gentle and warm. NOT high-contrast black ink on flat
-     bright fills.
-   - **backgrounds** — sparse, a few flat shapes, lots of white space.
-
-   The named **reject states** (the things the anchor is *not*): flat
-   vector illustration, uniform bold digital ink, high-contrast cel
-   shading, glossy 3D render, crosshatch/stipple/pencil texture,
-   volumetric modelling, busy furnished backgrounds. These are failure
-   labels, not positive targets — do not chase "flatter / crisper /
-   cleaner", that is the direction the model drifts on its own.
-
-   **Reroll rule — conservative.** A sheet that is *close* to the anchor
-   is **kept as-is**, not rerolled. Regenerate **once** only on a clear,
-   describable failure: garbled scene, wrong or missing hook element, or
-   texture the anchor plainly does not have (obvious crosshatching, an
-   obvious flat-vector look, photoreal faces). Second passes reliably
-   drift toward flat-vector — so a borderline first pass is better kept
-   than "improved".
-
-   On the reroll pass: re-attach the anchor, harden the object-level
-   negatives, and add "keep the hand-media feel — soft washes, toothy
-   tapered line, gentle contrast; do NOT clean up, sharpen, or flatten the
-   line." Then **hand back both passes** in your report (both grid paths),
-   describe how each reads against the anchor, and let the caller/human
-   decide which is on-style — do not self-declare one "the deliverable".
-5. **Report and stop.** End your turn with a structured report — this is
+4. **Report and stop.** End your turn with a structured report — this is
    your whole output, the caller works from it:
    - the **word**;
    - the **mnemonic sentence** you illustrated (verbatim), and its source
      (user-supplied, or `find-mnemonic.js`);
    - the **hook element** you gave the compositional emphasis;
-   - the **grid path(s)** — `images/mnemonic/<word>.grid.png`, plus
-     the `-2` variant if you rerolled (report **both**, don't pick one);
+   - the **grid path** — `images/mnemonic/<word>.grid.png`;
    - a **numbered list 1–9** (row-major) of the nine stagings, one line
-     each, so the caller can describe them without opening the file;
-   - the **style-QA result** — for each grid you're handing back, how it
-     reads against the anchor ("same hand — kept", or "rerolled because
-     <clear failure>; pass 2 reads <how> vs the anchor"). If you rerolled,
-     do not assert which pass wins — that's the human's call.
+     each, so the caller can describe them without opening the file.
 
    Do **not** `SendUserFile` the grid, do **not** wait for a pick, do
-   **not** crop. If you were invoked directly by a user (not via the
-   skill) they can still act on your report — the crop command is
+   **not** crop. Style consistency is checked downstream (ComfyUI), not
+   here — do not open the grid for a same-hand comparison against the
+   anchor, and do not regenerate on your own judgment. If you were invoked
+   directly by a user (not via the skill) they can still act on your
+   report — the crop command is
    `scripts/crop-grid-cell.sh images/mnemonic/<word>.grid.png <cell>
    images/mnemonic/<word>.png`.
 
@@ -193,15 +156,13 @@ flat palette, and sparse backgrounds *only*; the written object-level
 negatives below (no hatching, no gradients, no volumetric shading, no
 rendered backgrounds) override anything the anchor itself does wrong.
 
-**Style-QA (step 4) is a direct A/B comparison against this anchor image**
-— "same hand?" — not a checklist of adjectives (see ADR-0010). The
-house-style criteria below still describe the target; the anchor is how
-you *check* a sheet against them. Do not chase a sheet that looks
-"cleaner" or "flatter" than the anchor — that is the model's drift
-direction, not an improvement, and "promote the cleaner sheet to be the
-new anchor" is explicitly wrong. If the anchor itself ever needs
-replacing, that's a deliberate human-reviewed swap toward *more*
-hand-media character, never a silent one.
+Style QA against this anchor now happens downstream, in ComfyUI, not in
+this agent (see ADR-0010 for the original rationale). Do not open the
+finished grid to compare it against the anchor and do not self-reroll on
+a style judgment call — attach the anchor at generation time and report
+the sheet as produced. If the anchor itself ever needs replacing, that's
+a deliberate human-reviewed swap toward *more* hand-media character,
+never a silent one.
 
 ## House style
 
@@ -275,11 +236,9 @@ than overwriting the earlier one. Still single-turn: generate, report, stop.
   nothing, ask for it and wait.
 - One imagegen call per sheet. Nine separate calls is wrong and wasteful.
 - Always attach `docs/mnemonics/style-anchor.png` as a style-reference
-  image, and always style-QA the finished sheet by comparing it directly
-  against that anchor ("same hand?") before reporting — not against a
-  checklist of adjectives (ADR-0010). Reroll only on a clear failure;
-  a borderline pass is kept, because rerolls drift toward flat-vector.
-  When you do reroll, hand back both passes and let the human pick.
+  image at generation time. Do not self-QA the finished sheet against the
+  anchor and do not reroll on your own judgment — style consistency is
+  checked downstream in ComfyUI, not here.
 - Default to the house style (brush-pen comic line art, light gouache
   colour blocks, hook element carrying the boldest contour and most
   saturated block) unless the user asks otherwise for that word.
