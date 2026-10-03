@@ -63,6 +63,24 @@ scripts/anki-sync-terms.sh "ubiquitous"   # sync one row
 scripts/anki-sync-terms.sh                # sync every row
 ```
 
+### Removing a card
+
+The sync is an upsert with no prune, so deleting a row from `anki/*.txt` leaves its note
+alive in the live collection. `--delete` is the explicit cleanup verb for that (e.g.
+folding a word-part row into its whole-word card, ADR-0019):
+
+```bash
+scripts/anki-sync-terms.sh --delete "omin-"                    # search every deck the file uses
+scripts/anki-sync-terms.sh --delete "omin-" --deck "00 Reading Room::01 Medical Terms"
+```
+
+Remove the row from the `.txt` **first** — `--delete` refuses a `Front` that's still a
+row in the file, so it can only ever remove something already un-carded. With no
+`--deck` it searches the `#deck` header plus every deck named by a row-level `Deck`
+override; "already absent" is success, so a re-run is safe. It is otherwise
+destructive — the note's review history goes with it, recoverable only via Anki's own
+in-app undo. Covered by `test/anki-sync-delete.test.js`.
+
 Deck/notetype/tags/columns are read from the target file's own `#` header lines each
 run, not hardcoded — a row's optional `Deck`/`Tags` columns override those headers for
 just that row (ADR-0016), which is how word-part rows route to the medical deck/tag
@@ -73,7 +91,8 @@ can't reach Anki, the file write still stands — log the connection error to
 
 Regression coverage: `test/anki-sync-cross-deck-duplicate.test.js`,
 `test/anki-sync-image-field.test.js`, `test/anki-sync-ipa-field.test.js`,
-`test/anki-sync-gloss-field.test.js`, and
+`test/anki-sync-gloss-field.test.js`,
+`test/anki-sync-delete.test.js`, and
 `test/anki-sync-deck-tags-override.test.js` run the real script end-to-end against a
 mock AnkiConnect (no live Anki needed) — `node --test` picks them all up.
 

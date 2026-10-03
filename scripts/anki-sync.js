@@ -9,6 +9,9 @@
 // Usage:
 //   node scripts/anki-sync.js                       # sync every row in the file
 //   node scripts/anki-sync.js <front>                # sync just the row with this exact Front
+//   node scripts/anki-sync.js --delete <front>       # remove a note the file no longer carries
+//   node scripts/anki-sync.js --delete <front> --deck <deck>
+//                                                     # ...scoped to one deck
 //   ANKI_FILE=<name>.txt node scripts/anki-sync.js [<front>]
 //                                                     # sync a different anki/ file
 //                                                     # (defaults to reading-room-terms.txt)
@@ -53,6 +56,18 @@
 // Both are per-row overrides, not additive — empty means "use the header
 // default". `Tags` only affects notes created by this run (addNote); an
 // existing note's tags are left alone on update, same as before.
+//
+// Deleting a note (`--delete <front>`): the sync above is an upsert, so
+// deleting a row from an anki/*.txt file leaves its note behind in the live
+// collection forever — the file is no longer the whole truth about the deck.
+// `--delete` is the explicit cleanup verb for that case (e.g. folding a
+// word-part row into its whole-word card). It is deliberately NOT a prune:
+// nothing is inferred from the file's contents, one Front is named on the
+// command line, and the run REFUSES if that Front is still a row in the file,
+// so it can only ever remove something already un-carded. With no `--deck` it
+// searches the header deck plus every deck named by a row-level Deck override;
+// deleting a note is irreversible from here (Anki's own undo still applies in
+// the app), so it reports every note it removes and which deck it came from.
 
 const fs = require("fs");
 const path = require("path");
@@ -61,13 +76,45 @@ const REPO_ROOT = path.join(__dirname, "..");
 const FILE = path.join(REPO_ROOT, "anki", process.env.ANKI_FILE || "reading-room-terms.txt");
 const ANKI_CONNECT_URL = process.env.ANKI_CONNECT_URL || "http://127.0.0.1:8765";
 
-function usageAndExit() {
+function usageAndExit(message) {
+  if (message) console.error(message);
   console.error("Usage: node scripts/anki-sync.js [<front>]");
+  console.error("       node scripts/anki-sync.js --delete <front> [--deck <deck>]");
   process.exit(1);
 }
 
-if (process.argv.length > 3) usageAndExit();
-const frontFilter = process.argv[2];
+// Returns { frontFilter, deleteFront, deck }. `frontFilter` undefined means
+// "sync every row"; `deleteFront` set switches the run to delete mode, where
+// `deck` optionally scopes the search to one deck.
+function parseArgs(argv) {
+  const args = argv.slice(2);
+  let frontFilter;
+  let deleteFront = null;
+  let deck = null;
+
+  for (let i = 0; i < args.length; i++) {
+    const arg = args[i];
+    if (arg === "--delete" || arg === "--deck") {
+      const value = args[++i];
+      if (value === undefined) usageAndExit(`${arg} needs a value`);
+      if (arg === "--delete") deleteFront = value;
+      else deck = value;
+      continue;
+    }
+    if (arg.startsWith("--")) usageAndExit(`Unknown option ${arg}`);
+    if (frontFilter !== undefined) usageAndExit("Only one <front> may be given");
+    frontFilter = arg;
+  }
+
+  if (deck !== null && deleteFront === null) usageAndExit("--deck is only valid with --delete");
+  if (deleteFront !== null && frontFilter !== undefined) {
+    usageAndExit("--delete takes the Front itself; don't also pass a positional <front>");
+  }
+
+  return { frontFilter, deleteFront, deck };
+}
+
+const { frontFilter, deleteFront, deck: deleteDeck } = parseArgs(process.argv);
 
 // -- File parsing -----------------------------------------------------------
 
@@ -233,9 +280,47 @@ async function syncRow(row, ctx) {
   console.log(`Added "${row.front}"`);
 }
 
+// Removes the note(s) with this exact Front from the live collection. Guarded
+// on the file: a Front that's still carded here is a mistake, not a cleanup, so
+// it refuses rather than deleting a note the next sync would just re-add.
+// Finding nothing is success (the run is idempotent — re-running after the note
+// is gone is fine).
+async function deleteNote(front, ctx) {
+  if (ctx.rows.some((r) => r.front === front)) {
+    console.error(
+      `"${front}" is still a row in ${FILE} — remove the row first. ` +
+        `--delete only removes notes the file no longer carries.`
+    );
+    process.exit(1);
+  }
+
+  const decks = deleteDeck
+    ? [deleteDeck]
+    : [...new Set([ctx.deckName, ...ctx.rows.map((r) => r.deck).filter(Boolean)])];
+
+  let deleted = 0;
+  for (const deck of decks) {
+    const query = `deck:"${escapeQueryValue(deck)}" ${ctx.frontField}:"${escapeQueryValue(front)}"`;
+    const noteIds = await invoke("findNotes", { query });
+    if (noteIds.length === 0) continue;
+    await invoke("deleteNotes", { notes: noteIds });
+    deleted += noteIds.length;
+    console.log(`Deleted "${front}" from "${deck}" (${noteIds.length} note(s))`);
+  }
+
+  if (deleted === 0) {
+    console.log(`No note with Front "${front}" in ${decks.map((d) => `"${d}"`).join(", ")}`);
+  }
+}
+
 async function main() {
   const text = fs.readFileSync(FILE, "utf8");
   const ctx = parseFile(text);
+
+  if (deleteFront !== null) {
+    await deleteNote(deleteFront, ctx);
+    return;
+  }
 
   let rows = ctx.rows;
   if (frontFilter !== undefined) {
