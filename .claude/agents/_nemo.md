@@ -235,6 +235,14 @@ Every candidate you produce must satisfy ALL of:
    per morpheme. If the word already has a morpheme breakdown on hand (e.g. from
    `_etta_mology`), use it to sanity-check the chunk order, but don't split a natural,
    easy-to-recall anchor apart just to hit one-anchor-per-morpheme.
+
+   **Lead with the first anchor.** The word's opening chunk is the recall hook, so its
+   anchor should be the sentence's first word (a leading "The"/"A" is fine) — don't put a
+   role, title or adjective in front of it. If the anchor is a name that needs a role, move
+   the role into an appositive after it: "Landlord Reg lays down a strict house rule"
+   buries the hook behind "Landlord"; **"Reg, the landlord, lays down a strict house
+   rule"** opens on /ɹɛɡ/ and keeps the rest of the word's rhythm intact (Reg-*the*-LAY ≈
+   REG-yə-LAY).
 3. **Real semantic content, not a pure sound-alike.** The sentence must depict a scene where
    the word's actual meaning is happening — the same way the concede example's
    seeds-planting scene literally depicts giving in. A clever sound match with no meaning
