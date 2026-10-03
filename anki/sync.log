@@ -334,7 +334,7 @@
 2026-08-18T13:16:49Z	term=cryptic	file=updated	sync=updated
 2026-08-18T13:18:04Z	term=ominous	file=updated	sync=updated
 2026-08-19T00:36:29Z term=plasma file=patched sync=ok
-2026-08-19T00:45:48Z	term=bulge	file=patched	sync=updated
+2026-08-19T00:45:48Z term=bulge file=patched sync=updated
 2026-08-19T01:03:35Z	term=inert	data.json=patched	anki=synced
 2026-08-19T01:25:04Z	term=paucity	file=patched	sync=updated
 2026-08-19T02:01:11Z	term=regional	file=patched	sync=updated
@@ -488,3 +488,62 @@
 2026-09-28T01:15:11Z	term=defect	status=patched(image)	sync=ok
 2026-09-28T02:31:17Z term=confound file=patched(gloss) sync=updated adr=0018
 2026-09-28T02:49:47Z	task=gloss-backfill	rows=280	file=patched(gloss)	sync=updated	adr=0018	note=onset/pound duplicate rows flip-flop one note each run
+2026-09-28T11:16:42Z	term=inflate	file=added	sync=added(note created)
+2026-09-28T11:38:41Z	term=contest	file=added	sync=added(note created)
+2026-09-28T11:58:37Z	term=inflate	file=patched(image)	sync=updated
+2026-09-28T13:55:08Z	term=contest	file=patched(image)	sync=updated
+2026-09-28T14:07:36Z	term=appeal	file=added	sync=added
+2026-09-29T02:05:11Z	term=intervention	file=added	sync=added
+2026-09-29T02:11:42Z	term=appeal	file=unchanged(image already set)	sync=unchanged(verified img+gloss+ipa live)
+2026-09-29T02:17:26Z	term=episode	file=patched(legacy Back replaced with story; IPA backfilled)	sync=updated
+2026-09-29T02:23:51Z	term=exotic	file=added	sync=added
+2026-09-29T02:28:16Z	term=intervention	file=patched(image)	sync=updated
+2026-09-29T02:49:51Z	term=anomaly	file=added	sync=added
+2026-09-29T04:46:47Z	term=anomaly	file=patched(image)	sync=updated
+2026-09-29T02:47:00Z	term=exotic	file=patched(Image=exotic.png)	sync=updated
+2026-09-30T02:16:39Z	term=rung	file=added	sync=added
+2026-09-30T02:23:43Z	term=hypernym	file=added	sync=added
+2026-09-30T02:29:07Z	term=rung	file=patched(Image=rung.png)	sync=updated
+2026-09-30T02:30:29Z	term=polysemy	file=added	sync=added
+2026-09-30T05:57:00Z	term=idiosyncratic	file=added	sync=added
+2026-09-30T05:57:49Z	term=hypernym	file=patched(Image=hypernym.png)	sync=updated
+2026-09-30T05:58:41Z	term=polysemy	file=patched(Image=polysemy.png)	sync=updated
+2026-09-30T06:28:13Z	term=saturation	file=added	sync=added
+2026-09-30T06:32:28Z term=merely file=added sync=added(anki-connect ok)
+2026-09-30T06:50:21Z term=aisle file=added sync=added
+2026-09-30T06:50:46Z term=merely file=patched(Image=merely.png) sync=updated(anki-connect ok)
+2026-09-30T12:01:27Z term=aisle file=patched(image) sync=updated
+2026-09-30T12:02:20Z term=concocted file=added sync=added(anki-sync.js)
+2026-09-30T14:13:31Z	term=idiosyncratic	file=patched(image)	sync=updated
+2026-09-30T14:19:12Z term=flux file=added sync=added(anki-sync.js)
+2026-09-30T15:01:28Z term=spontaneous file=added sync=added
+2026-09-30T15:02:58Z term=flux file=patched(image) sync=updated
+2026-09-30T15:04:42Z term=concocted file=patched(image) sync=updated
+2026-10-01T00:30:15Z term=spontaneous file=patched(image) sync=updated
+2026-10-01T00:54:07Z term=corncob file=added sync=added
+2026-10-01T01:04:25Z term=bulge file=patched sync=updated
+2026-10-01T01:05:34Z term=cottage file=added sync=added
+2026-10-01T01:24:43Z term=cottage file=patched sync=updated image=cottage.png
+2026-10-01T01:25:13Z term=bulge file=patched sync=updated image=bulge.png
+2026-10-01T01:58:59Z term=corncob file=patched(image) sync=updated
+2026-10-02T02:07:14Z term=devious file=added sync=added
+2026-10-02T02:07:28Z term=cocked file=added sync=added
+2026-10-02T02:12:12Z term=peculiar file=added sync=added
+2026-10-02T02:13:33Z term=devious file=patched(image) sync=updated image=devious.png
+2026-10-02T02:14:13Z term=cocked file=patched(image) sync=updated
+2026-10-02T02:44:15Z term=peculiar file=patched sync=updated
+2026-10-02T02:45:03Z term=pound file=patched(story,ipa; removed legacy duplicate row) sync=updated
+2026-10-02T02:50:45Z term=cramped file=added sync=added
+2026-10-02T02:51:38Z term=pound file=patched(image) sync=updated
+2026-10-02T07:20:26Z term=cramped file=patched(image) sync=updated
+2026-10-03T00:34:47Z term=devastating file=added sync=added
+2026-10-03T00:35:02Z term=dose file=patched (legacy back -> story) sync=updated
+2026-10-03T00:37:19Z term=overreach file=added sync=added
+2026-10-03T00:47:00Z term=overreach file=patched (image) sync=updated
+2026-10-03T00:48:18Z term=dose file=patched(image) sync=updated
+2026-10-03T00:57:28Z term=overreach file=patched (image -> comic 2x2) sync=updated
+2026-10-03T00:58:35Z term=dose file=patched(image->dose.comic.png) sync=updated
+2026-10-03T01:12:41Z term=elastic file=patched(story: The lass -> A lass) sync=updated
+2026-10-03T01:16:46Z term=elastic file=patched(story: A lass -> The lass, reverted) sync=updated
+2026-10-03T01:18:18Z intra- | intra-: added | sync: added
+2026-10-03T01:24:27Z term=regulation file=patched(story: Landlord Reg -> Reg, the landlord,) sync=updated
