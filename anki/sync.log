@@ -547,3 +547,7 @@
 2026-10-03T01:16:46Z term=elastic file=patched(story: A lass -> The lass, reverted) sync=updated
 2026-10-03T01:18:18Z intra- | intra-: added | sync: added
 2026-10-03T01:24:27Z term=regulation file=patched(story: Landlord Reg -> Reg, the landlord,) sync=updated
+2026-10-03T01:47:02Z term=weathered file=patched(story: desert-weather cowboy -> wind/feathered scarecrow; IPA added) sync=updated
+2026-10-03T01:54:59Z term=weathered file=patched(image: weathered.png, grid cell 9) sync=updated
+2026-10-03T01:57:05Z term=weathered file=patched(image: weathered.png -> weathered.comic.png, cells 1,4,3,9) sync=updated
+2026-10-03T01:57:37Z term=weathered file=unchanged(comic recomposed: cells 6,1,3,9) sync=updated
