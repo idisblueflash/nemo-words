@@ -118,18 +118,28 @@ the other.
 
 ## 6. When Vivian's grid comes back, wait for the human pick, then crop
 
-Show the grid. Stop and wait for Flash to give you a cell number 1–9 (or ask for a
-different word/sentence if none of the nine land). Do not crop anything until he gives
-that number — this is the same human-picks-the-image gate as the
-`vivian-mnemonic-images` skill's normal flow.
+Show the grid. Stop and wait for Flash to give you a cell number 1–9 — or 3–4 cells
+in story order for a comic (ADR-0020) — or ask for a different word/sentence if none
+of the nine land. Do not crop anything until he gives his pick — this is the same
+human-picks-the-image gate as the `vivian-mnemonic-images` skill's normal flow. When
+the word's meaning is a sequence or consequence (*overreach*, *backfire*), say so and
+suggest which 3–4 cells would tell it as a comic.
 
-Once he picks a cell:
+Once he picks one cell:
 
 ```bash
 scripts/crop-grid-cell.sh <grid-path> <cell-number> images/mnemonic/<word>.png
 ```
 
+If he picks 3 or 4 cells, compose them 2×2 in the order given instead (ADR-0021/0022):
+
+```bash
+scripts/compose-comic.sh <grid-path> images/mnemonic/<word>.comic.png <cell> <cell> <cell> [<cell>]
+```
+
+Two cells, or five or more, isn't a comic — ask which he means.
+
 Then attach it to the card as a default step (skip only if Flash opts out or the word
 has no card): set the `Image` column of the word's row in
-`anki/reading-room-terms.txt` to `<word>.png` and run
+`anki/reading-room-terms.txt` to `<word>.png` (or `<word>.comic.png`) and run
 `ANKI_FILE=reading-room-terms.txt node scripts/anki-sync.js "<word>"`.

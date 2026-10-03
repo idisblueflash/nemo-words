@@ -47,7 +47,10 @@ To make mnemonic images for one or more vocabulary words, invoke the
 to render a 3×3 candidate grid, then handles the pick-and-crop back half
 in the main thread: shows each grid, takes a cell number 1–9, and crops
 the final asset with `scripts/crop-grid-cell.sh` into
-`images/mnemonic/<word>.png`.
+`images/mnemonic/<word>.png`. Picking 3–4 cells instead means a comic: they're
+composed 2×2, in the order given, with `scripts/compose-comic.sh` into
+`images/mnemonic/<word>.comic.png` (ADR-0020/0021/0022), and that file is what
+goes in the card's `Image` column.
 
 Picking a cell counts as choosing that image, so attaching it to the Anki
 card is a **default step, not a separate request**: right after the crop,

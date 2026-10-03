@@ -1,6 +1,6 @@
 ---
 name: vivian-mnemonic-images
-description: Orchestrate mnemonic-image creation for one or more vocabulary words with the _vivian subagent. Dispatches a fire-and-forget _vivian per word to produce a 3×3 candidate grid, then handles the pick-and-crop back half in the main thread — showing each grid, taking the user's cell number 1–9, and cropping the final asset with scripts/crop-grid-cell.sh, then attaching it to the word's Anki card (Image column + anki-sync.js) as a default step. Use when the user says "have _vivian illustrate <word>", "make a mnemonic image for <word(s)>", "delegate _vivian for these words", or wants image variations to choose from. Keeps _vivian single-turn so no subagent is ever resumed.
+description: Orchestrate mnemonic-image creation for one or more vocabulary words with the _vivian subagent. Dispatches a fire-and-forget _vivian per word to produce a 3×3 candidate grid, then handles the pick-and-crop back half in the main thread — showing each grid, taking the user's cell number 1–9 (or 3–4 cells for a comic, composed 2×2 with scripts/compose-comic.sh), and cropping the final asset with scripts/crop-grid-cell.sh, then attaching it to the word's Anki card (Image column + anki-sync.js) as a default step. Use when the user says "have _vivian illustrate <word>", "make a mnemonic image for <word(s)>", "delegate _vivian for these words", or wants image variations to choose from. Keeps _vivian single-turn so no subagent is ever resumed.
 ---
 
 You are orchestrating mnemonic-image creation. The work splits in two:
@@ -53,7 +53,7 @@ When an _vivian reports back:
    `display: "render"` and a caption naming the word.
 2. Relay the mnemonic sentence and the nine-staging list.
 3. Ask for a cell number 1–9 (row-major: 1 = top-left, 3 = top-right,
-   9 = bottom-right).
+   9 = bottom-right) — or 3–4 cells in story order for a comic (ADR-0020).
 
 Handle each word independently — don't wait for all grids before showing
 the first.
@@ -72,9 +72,21 @@ The script assumes a 3×3 grid (its default) and divides evenly; trust it,
 don't re-crop by eye. The `<word>` may start with `-` (e.g. `-rrha`) —
 the path argument handles that fine.
 
-Then `SendUserFile` each final `images/mnemonic/<word>.png`
-(`display: "render"`) and give the user a summary table: word, cell, final
-path.
+**Several cells for one word (3 or 4, e.g. "1, 7, 8, 9") means a comic**
+(ADR-0020) — compose them 2×2 instead of cropping one, in the order given
+(ADR-0021/0022: 4 fill Z-order; with 3 the third is centred on the bottom row):
+
+```
+scripts/compose-comic.sh images/mnemonic/<word>.grid.png \
+  images/mnemonic/<word>.comic.png <cell> <cell> <cell> [<cell>]
+```
+
+Two cells, or five or more, isn't a comic — ask which single cell (or which
+3–4) the user means rather than guessing.
+
+Then `SendUserFile` each final `images/mnemonic/<word>.png` (or
+`<word>.comic.png`) with `display: "render"` and give the user a summary
+table: word, cell(s), final path.
 
 ## Step 4 — attach the image to the Anki card (default, no separate ask)
 
@@ -82,7 +94,8 @@ Cropping a cell *is* the user picking that image, so attaching it to the
 card follows automatically — don't wait for a separate "sync it" request.
 For each word just cropped, if it has a row in `anki/reading-room-terms.txt`:
 
-1. Set that row's `Image` column to the bare filename `<word>.png` (add the
+1. Set that row's `Image` column to the bare filename `<word>.png` — or
+   `<word>.comic.png` for a comic (add the
    third tab-separated field, or patch it if already present) — this applies
    the same whether the row is an ordinary vocabulary card or one of
    `_etta_mology`'s word-part rows (`Tags` = `medical-word-parts`, ADR-0016);
