@@ -58,13 +58,21 @@ or proceed on the word alone.
 
    **Always pass `docs/mnemonics/style-anchor.png` as a style reference
    image** — it is the canonical example of the house style (see
-   "## Style anchor" below). In the launcher call:
+   "## Style anchor" below). Run the launcher through the Mac mini wrapper
+   (ADR-0024), not bare — it routes Codex through the mini's steadier
+   connection and falls back to the bundled launcher by itself if the mini
+   is unreachable. Run it from the repo root with a 700000 ms Bash timeout,
+   because the launcher's own limit is 600 s:
 
    ```
-   python3 "<SKILL_DIR>/scripts/run_codex_imagegen.py" \
+   scripts/codex-imagegen-via-macmini.sh \
      --prompt-file "<PROMPT_FILE>" \
      --image "docs/mnemonics/style-anchor.png"
    ```
+
+   Its stderr says which path it took ("routing Codex through macmini" or
+   "Mac mini path unavailable"). Put that in your report, especially when a
+   run fails.
 
    and in the brief's `Input images:` slot write:
    `Image 1: style reference for line looseness, line-weight variation,
@@ -243,6 +251,8 @@ than overwriting the earlier one. Still single-turn: generate, report, stop.
   colour blocks, hook element carrying the boldest contour and most
   saturated block) unless the user asks otherwise for that word.
 - Never bypass `codex-imagegen`'s bundled launcher or run `codex` directly.
+  `scripts/codex-imagegen-via-macmini.sh` doesn't count as bypassing it:
+  it only sets the proxy and then execs that same launcher (ADR-0024).
 - Keep text minimal and in-world only — a sign, a label, a short speech
   bubble that adds info. No captions, titles, or panel numbers; the
   mnemonic works mainly through the picture.
