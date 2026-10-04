@@ -143,3 +143,14 @@ Concretely:
 * Diagnostic wrapper used for the measurements: session scratchpad `diag_imagegen.py`
   (launcher plus `--json` event capture, optional `--https-only`)
 * ADR-0008 / ADR-0009 (house style and the `_vivian` grid this affects)
+
+## Notes
+
+* **2026-10-04: A and C applied to the launcher; mixed result.** `run_codex_imagegen.py` now
+  defaults to `--timeout 600` and passes the HTTPS-only `chatgpt_https` provider override.
+  `_vivian` had failed the `devastating` grid three times on the old launcher (300 s, 2304 and
+  1536 sheets). With the patched launcher and the same 1536 brief, the first run timed out at
+  600 s with no PNG. A plain retry a few minutes later succeeded in 9m05s (Codex returned a
+  1254×1254 sheet, ~418 px panels). So A+B+C don't reliably beat the cutoff yet, but a run can
+  now finish when the tunnel cooperates. The status stays `proposed` until more runs are in;
+  D is still the untested lever.

@@ -551,3 +551,6 @@
 2026-10-03T01:54:59Z term=weathered file=patched(image: weathered.png, grid cell 9) sync=updated
 2026-10-03T01:57:05Z term=weathered file=patched(image: weathered.png -> weathered.comic.png, cells 1,4,3,9) sync=updated
 2026-10-03T01:57:37Z term=weathered file=unchanged(comic recomposed: cells 6,1,3,9) sync=updated
+2026-10-04T01:23:26Z term=rattles file=added sync=ok(added)
+2026-10-04T01:46:56Z term=shattered file=added sync=ok(added)
+2026-10-04T02:38:06Z term=devastating file=patched(image: devastating.comic.png, cells 2,3,5,9) sync=updated

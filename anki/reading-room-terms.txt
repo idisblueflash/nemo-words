@@ -405,6 +405,8 @@ devious	Dee flashes a V at us, sneakily pocketing our wallets.	devious.png	ˈdi.
 cocked	Carl knocked, and the cat tilted its head.	cocked.png	ˈkɑkt	tilted at an angle, or (of a gun) ready to fire
 peculiar	The queue of familiar faces all wore odd, wrong smiles.	peculiar.png	pə.ˈkjul.jɚ	strange or odd, in a slightly unsettling way
 cramped	A crow camped in my tent; no room to move.	cramped.png	ˈkɹæmpt	too small, with no room to move
-devastating	Dev stating "Mom's gone" leaves the whole family shattered.		ˈdɛv.ə.ˌsteɪ.tɪŋ	causing terrible damage or deep shock and grief
+devastating	Dev stating "Mom's gone" leaves the whole family shattered.	devastating.comic.png	ˈdɛv.ə.ˌsteɪ.tɪŋ	causing terrible damage or deep shock and grief
 overreach	Hanging over a peach tree, he stretches too far, falls.	overreach.comic.png	ˌoʊ.vɚ.ˈritʃ	to grab beyond your power or ability, and fail
-intra-	🎭 In the gym, we play inside our own school walls.<hr><i>Latin</i><br>within, inside<br><span class="examples">e.g. intravenous, intramuscular, intracranial, intramural</span>				00 Reading Room::01 Medical Terms	medical-word-parts
+intra-	🎭 In the gym, we play inside our own school walls.<hr><i>Latin</i><br>within, inside<br><span class="examples">e.g. intravenous, intramuscular, intracranial, intramural</span>	intra-.png			00 Reading Room::01 Medical Terms	medical-word-parts
+rattles	Rat battles Cat at chess; Cat looks shaken.	rattles.comic.png	ˈɹæ.təlz	to shake, or to make someone nervous
+shattered	Shh, a battered phone drops; its screen breaks into pieces.		ˈʃæ.tɚd	broken into pieces; or crushed by shock or grief
