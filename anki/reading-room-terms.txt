@@ -411,3 +411,4 @@ intra-	🎭 In the gym, we play inside our own school walls.<hr><i>Latin</i><br>
 rattles	Rat battles Cat at chess; Cat looks shaken.	rattles.comic.png	ˈɹæ.təlz	to shake, or to make someone nervous
 shattered	Shh, a battered phone drops; its screen breaks into pieces.		ˈʃæ.tɚd	broken into pieces; or crushed by shock or grief
 ornament	Warn the cat: that glass ball only decorates the tree.	ornament.png	ˈɔɹ.nə.mənt	a small decoration, pretty rather than useful
+stray	Bus tray clattering, a homeless dog wanders the street.	stray.comic.png	ˈstɹeɪ	lost with no home; or to wander off the path
