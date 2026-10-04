@@ -135,3 +135,14 @@ Concretely:
 * ADR-0023: the tunnel cutoff this works around. Its HTTPS-only transport and 600 s timeout
   stay in place. This ADR adopts its rejected option E, for a different reason.
 * ADR-0008 / ADR-0009: house style and the `_vivian` grid this affects
+* investigation-004: the paired local-vs-Mac-mini A/B trial behind the note below
+
+## Notes
+
+* **2026-10-04: paired A/B trial, Mac mini 2/2 vs local 0/2.** The `shattered` brief ran on
+  both routes at the same moment, in 3 rounds. Through the Mac mini it rendered in 117 s and
+  139 s. Locally it timed out at 600 s, and was still unfinished after about 435 s when the trial
+  ended. One round is void because the Mac slept. The sleep dropped the SSH tunnel, and the
+  wrapper rebuilt it on the next run. Today's tally on this brief is Mac mini 3/3 and local 0/4.
+  The status stays `proposed`: it's one day and one brief, and the next trial should run under
+  `caffeinate -i`. Details: `docs/investigations/investigation-004-codex-imagegen-macmini-vs-local-ab-trial.md`.
