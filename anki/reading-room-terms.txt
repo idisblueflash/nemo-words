@@ -410,3 +410,4 @@ overreach	Hanging over a peach tree, he stretches too far, falls.	overreach.comi
 intra-	🎭 In the gym, we play inside our own school walls.<hr><i>Latin</i><br>within, inside<br><span class="examples">e.g. intravenous, intramuscular, intracranial, intramural</span>	intra-.png			00 Reading Room::01 Medical Terms	medical-word-parts
 rattles	Rat battles Cat at chess; Cat looks shaken.	rattles.comic.png	ˈɹæ.təlz	to shake, or to make someone nervous
 shattered	Shh, a battered phone drops; its screen breaks into pieces.		ˈʃæ.tɚd	broken into pieces; or crushed by shock or grief
+ornament	Warn the cat: that glass ball only decorates the tree.	ornament.png	ˈɔɹ.nə.mənt	a small decoration, pretty rather than useful
