@@ -417,3 +417,4 @@ crest	Crew, get some rest: you've reached the ridge's top.	crest.comic.png	ˈkɹ
 stray	Bus tray clattering, a homeless dog wanders the street.	stray.comic.png	ˈstɹeɪ	lost with no home; or to wander off the path
 toss	Tom's boss smiles, then lightly throws him the keys.	toss.png	ˈtɔs	to throw something lightly and casually
 snubbing	Snow hits the pub; the king coldly ignores my wave.	snubbing.png	ˈsnʌb.ɪŋ	to coldly ignore someone on purpose
+ruffled	Rough roller coaster messed up her hair; she looked flustered.	ruffled.comic.png	ˈrʌf.əld	messed up, no longer smooth; or flustered
