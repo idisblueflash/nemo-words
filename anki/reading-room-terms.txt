@@ -222,7 +222,7 @@ substance	A submarine in fighting stance leaked black substance across the deck.
 parch	Peacocks march across a parched creek bed.			to dry out completely with heat
 stance	Last chance arrives, feet wide, she ignores coach's shouts.	stance.png	ˈstæns	how you stand, or where you stand on an issue
 studio	Photographers eat stew between cuts of a video in their studio.			a room where art or media is made
-stew	Stu simmers beef and potatoes together in one pot.	stew.png	ˈstu	meat and vegetables simmered together
+stew	Stu simmers vegan beef and potatoes together in one pot.	stew.png	ˈstu	meat and vegetables simmered together
 streak	He skipped ten stones straight across the creek.			a long line, or a run of the same thing
 vain	He flexes his veins, vain about his muscles.			too proud of your own looks
 inert	In a lead shirt, the sample refuses to react.	inert.png	ɪ.ˈnɝt	inactive; refusing to react
