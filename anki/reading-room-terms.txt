@@ -409,6 +409,11 @@ devastating	Dev stating "Mom's gone" leaves the whole family shattered.	devastat
 overreach	Hanging over a peach tree, he stretches too far, falls.	overreach.comic.png	ˌoʊ.vɚ.ˈritʃ	to grab beyond your power or ability, and fail
 intra-	🎭 In the gym, we play inside our own school walls.<hr><i>Latin</i><br>within, inside<br><span class="examples">e.g. intravenous, intramuscular, intracranial, intramural</span>	intra-.png			00 Reading Room::01 Medical Terms	medical-word-parts
 rattles	Rat battles Cat at chess; Cat looks shaken.	rattles.comic.png	ˈɹæ.təlz	to shake, or to make someone nervous
-shattered	Shh, a battered phone drops; its screen breaks into pieces.		ˈʃæ.tɚd	broken into pieces; or crushed by shock or grief
+shattered	Shh, a battered phone drops; its screen breaks into pieces.	shattered.png	ˈʃæ.tɚd	broken into pieces; or crushed by shock or grief
 ornament	Warn the cat: that glass ball only decorates the tree.	ornament.png	ˈɔɹ.nə.mənt	a small decoration, pretty rather than useful
+-cy	🎭 See the calm street flip into an urgent state.<hr><i>Latin -cia / Greek -kia, -keia (via French -cie)</i><br>state, quality, or condition of (forms abstract nouns; -ant/-ent adjectives give -ancy/-ency)<br><span class="examples">e.g. urgency, privacy, accuracy, malignancy, democracy</span>	-cy.comic.png			00 Reading Room::01 Medical Terms	medical-word-parts
+ridge	A fridge stands alone on the long narrow mountain crest.	ridge.png	ˈɹɪdʒ	a long narrow hilltop or mountain crest
+crest	Crew, get some rest: you've reached the ridge's top.	crest.comic.png	ˈkɹɛst	the top of a hill, ridge, or wave
 stray	Bus tray clattering, a homeless dog wanders the street.	stray.comic.png	ˈstɹeɪ	lost with no home; or to wander off the path
+toss	Tom's boss smiles, then lightly throws him the keys.	toss.png	ˈtɔs	to throw something lightly and casually
+snubbing	Snow hits the pub; the king coldly ignores my wave.	snubbing.png	ˈsnʌb.ɪŋ	to coldly ignore someone on purpose
