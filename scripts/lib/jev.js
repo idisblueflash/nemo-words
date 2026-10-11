@@ -9,12 +9,13 @@
 //
 // Configuration (`config(env)`):
 //   - NEMO_JEV_ENV_FILE set: that env file alone supplies TYPESAFE_API_KEY,
-//     TYPESAFE_BASE_URL, TYPESAFE_DEFAULT_MODEL and any HTTP(S)_PROXY (the
-//     seam tests use to point at a mock; the caller's own shell is ignored).
+//     TYPESAFE_BASE_URL and TYPESAFE_DEFAULT_MODEL (the seam tests use to point
+//     at a mock; the caller's own shell supplies none of those). Proxy
+//     variables come from the caller's env, which the file's own may override.
 //   - otherwise: the process env, then the repo root's gitignored `.env`.
-// Under Dagu the caller's environment never reaches a step, so in practice the
-// key — and a proxy, which Jev needs from a CN address (HTTP 451 otherwise,
-// see SP-037) — come from `.env`. No key = not configured = unreachable.
+// Under Dagu the caller's environment reaches a step only as DAG params:
+// card.js/dags/card.yaml forward the proxy variables (Jev needs one from a CN
+// address, HTTP 451 otherwise, see SP-037); the key comes from `.env`. No key = not configured = unreachable.
 
 const fs = require("fs");
 const path = require("path");
@@ -36,7 +37,11 @@ function config(env = process.env) {
   const apiKey = (vars.TYPESAFE_API_KEY || "").trim();
   if (!apiKey) return null;
   const proxyEnv = {};
-  for (const k of PROXY_VARS) if (vars[k]) proxyEnv[k] = vars[k];
+  const callerVars = definedOnly(env);
+  for (const k of PROXY_VARS) {
+    const v = vars[k] || callerVars[k];
+    if (v) proxyEnv[k] = v;
+  }
   return {
     apiKey,
     baseURL: (vars.TYPESAFE_BASE_URL || DEFAULT_BASE_URL).trim().replace(/\/+$/, ""),
