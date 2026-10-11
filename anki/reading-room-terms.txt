@@ -107,7 +107,7 @@ recurrent	His fever recurs, making him grunt in pain again.			happening again an
 relapse	After years in remission, a quiet lapse brought her illness back.			to fall back into illness after improving
 remission	The tumor's mission paused; scans still needed every few months.			a period when a disease eases off
 vein	The vain model's blue veins pulsed, sending blood toward her heart.			a vessel carrying blood back to the heart
-faint	Fence paint under the sun has a weak color.			weak and barely there; or to pass out
+faint	Faye, a saint, lights a candle that barely glows.	faint.comic.png	ˈfeɪnt	weak and barely there; or to pass out
 dose	A doe sips from the nurse's measured spoonful of medicine.	dose.comic.png	ˈdoʊs	one measured amount of medicine
 eligibility	The bouncer checks your bill to see if you qualify.			meeting the conditions to qualify
 adjacent	Jason slept right on the other side, we shared one thin wall.			right next to
@@ -316,14 +316,14 @@ hydro-	🎭 Firefighters flood the yard using the water hydrant.<br>🎭 The hyd
 cyt-	🎭 The professor cites the cell as the basic unit.<hr><i>Greek</i><br>cell (from kytos, "hollow vessel, container")<br><span class="examples">e.g. cytotoxic, cytoplasm, leukocyte, cytokine</span>				00 Reading Room::01 Medical Terms	medical-word-parts
 tox-	🎭 The fox ate poison bait and grew sick from toxins.<br>🎭 Rocks near the spill leached poison into the stream.<br>🎭 The socks smelled of poison after the toxic spill.<hr><i>Greek</i><br>poison (from toxikon pharmakon, "poison for the bow", ult. from toxon "bow")<br><span class="examples">e.g. cytotoxic, toxin, toxicology</span>				00 Reading Room::01 Medical Terms	medical-word-parts
 phleb-	🎭 The nurse flubbed the vein, spilling blood everywhere.<br>🎭 Flo pressed a cotton ball over the punctured vein.<br>🎭 The flabby vein bulged before the needle slid in.<hr><i>Greek</i><br>vein<br><span class="examples">e.g. phlebotomy, phlebitis</span>				00 Reading Room::01 Medical Terms	medical-word-parts
--tomy	🎭 Tommy sliced the rope with one clean cut.<br>🎭 The surgeon's tummy incision was one precise cut.<br>🎭 Tommy's scalpel made a swift, careful cutting motion.<hr><i>Greek</i><br>cutting, incision<br><span class="examples">e.g. phlebotomy, lobotomy, tracheotomy, anatomy</span>				00 Reading Room::01 Medical Terms	medical-word-parts
+-tomy	🎭 "Scalpel to me," the surgeon says, cutting the skin.<hr><i>Greek</i><br>cutting, incision<br><span class="examples">e.g. phlebotomy, lobotomy, tracheotomy, anatomy</span>	-tomy.comic.png			00 Reading Room::01 Medical Terms	medical-word-parts
 auto-	🎭 The auto drove itself down the empty highway.<br>🎭 Otto fixed his own car all by himself.<br>🎭 The auto-pilot flew the plane without any pilot.<hr><i>Greek</i><br>self<br><span class="examples">e.g. autologous, autoimmune, autopsy, autonomous</span>				00 Reading Room::01 Medical Terms	medical-word-parts
 -log-	🎭 Balancing a log against weights, the scale showed equal proportion.<hr><i>Greek</i><br>relation, proportion (from logos, "word/reason/ratio")<br><span class="examples">e.g. autologous, homologous, analogous</span>	-log-.png			00 Reading Room::01 Medical Terms	medical-word-parts
 -ous	🎭 The bus overflows, full of cheering people.<hr><i>Latin</i><br>having the quality of, full of<br><span class="examples">e.g. autologous, nervous, dangerous, autonomous, homogeneous, heterogeneous</span>				00 Reading Room::01 Medical Terms	medical-word-parts
 -logy	🎭 She logged every star while studying astronomy.<br>🎭 The logger studied tree rings to learn their age.<br>🎭 His logbook recorded each experiment he studied closely.<hr><i>Greek</i><br>study of<br><span class="examples">e.g. hematology, biology, cardiology, oncology</span>				00 Reading Room::01 Medical Terms	medical-word-parts
 lob-	🎭 The tennis player lobbed the ball in a round arc.<br>🎭 A soft lob arced over the net's rounded curve.<br>🎭 The surgeon removed the lung's rounded lobe carefully.<hr><i>Greek</i><br>lobe (a rounded part that sticks out — hanging for the earlobe, bulging for lung/liver/brain)<br><span class="examples">e.g. lobotomy, lobectomy</span>				00 Reading Room::01 Medical Terms	medical-word-parts
 -tain	🎭 The cowboy managed to hold and contain the runaway train.<br>🎭 Rain filled the tank, and the lid had to contain it.<br>🎭 The chain could barely retain the struggling bull.<hr><i>Latin</i><br>to hold (from tenēre)<br><span class="examples">e.g. pertain, contain, retain, maintain, sustain</span>				00 Reading Room::01 Medical Terms	medical-word-parts
-per-	🎭 Purse strings yank straight through each brass loop.<hr><i>Latin</i><br>through<br><span class="examples">e.g. pertain, permeate, perforate</span>	per-.png			00 Reading Room::01 Medical Terms	medical-word-parts
+per-	🎭 Purple arrow punches through the paper target.<hr><i>Latin</i><br>through<br><span class="examples">e.g. pertain, permeate, perforate</span>	per-.png			00 Reading Room::01 Medical Terms	medical-word-parts
 con-	🎭 Neighbors congregate together on the porch every evening.<br>🎭 Old friends reconnect, holding hands together after years apart.<br>🎭 The jury reached consensus, agreeing together on the verdict.<hr><i>Latin</i><br>with, together<br><span class="examples">e.g. contain, connect, congregate, consensus, preconceive</span><hr>🎭 Fire races along the canal, burning everything completely.<hr><i>Latin</i> (intensive)<br>thoroughly, completely<br><span class="examples">e.g. convalesce, condemn, confound, conflate</span>	con-.png			00 Reading Room::01 Medical Terms	medical-word-parts
 re-	🎭 She returns the library book, promising to borrow it again.<br>🎭 His migraines recur again, striking back every single month.<br>🎭 The refractory fever kept coming back despite every medicine again.<hr><i>Latin</i><br>back, again<br><span class="examples">e.g. retain, return, recur, refractory</span>				00 Reading Room::01 Medical Terms	medical-word-parts
 manu-	🎭 A blind man reads you Braille with trembling hands.<hr><i>Latin</i><br>hand<br><span class="examples">e.g. maintain, manual, manufacture</span>	manu-.png			00 Reading Room::01 Medical Terms	medical-word-parts
@@ -418,3 +418,15 @@ stray	Bus tray clattering, a homeless dog wanders the street.	stray.comic.png	ˈ
 toss	Tom's boss smiles, then lightly throws him the keys.	toss.png	ˈtɔs	to throw something lightly and casually
 snubbing	Snow hits the pub; the king coldly ignores my wave.	snubbing.png	ˈsnʌb.ɪŋ	to coldly ignore someone on purpose
 ruffled	Rough roller coaster messed up her hair; she looked flustered.	ruffled.comic.png	ˈrʌf.əld	messed up, no longer smooth; or flustered
+coaster	Cup on the toaster? She slides a mat beneath it.	coaster.comic.png	ˈkoʊ.stɚ	a small mat set under a drink to protect the table
+simmers	Sim ladles hers, gently bubbling, never quite boiling.	simmers.png	ˈsɪm.ɚz	cooks gently, just below a boil
+ladles	Lay noodles in, then scoop soup into bowls.	ladles.comic.png	ˈleɪ.dəlz	a big long-handled spoon for scooping soup
+flustered	Flipping the mustard, the waiter fumbles, red-faced and nervous.	flustered.png	ˈflʌs.tɚd	nervous and mixed up, from rush or surprise
+odd	I nod at the strange man wearing a spaghetti hat.	odd.comic.png	ˈɑd	strange or unusual; not what you'd expect
+wore	War ended; the king strutted out dressed in pajamas.	wore.comic.png	ˈwɔɹ	had clothes or things on your body (past of wear)
+worn	Warn the driver: that tire's tread is rubbed bald.	worn.png	ˈwɔɹn	thinned or damaged by long use; also, very tired
+surgeon	Power surge! An OR goes dark; she operates by headlamp.	surgeon.png	ˈsɝ.dʒən	a doctor who operates on patients
+scalpel	The bald scalp gleams; the surgeon's thin blade cuts precisely.	scalpel.png	ˈskæl.pəl	a surgeon's small, very sharp knife
+pajamas	Jolly llamas, snug in matching sleepwear, nod off.	pajamas.png	pə.ˈdʒɑ.məz	loose shirt-and-pants set you sleep in
+strutted	Dust rutted the farm road; a peacock swaggered, tail fanned.	strutted.comic.png	ˈstɹʌ.tɪd	walked proudly and stiffly, showing off
+ultimately	Cult baker Lee burned loaves; in the end, perfect bread.		ˈʌl.tə.mət.li	in the end; as the final result
