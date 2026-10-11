@@ -3,6 +3,20 @@ id: US-028
 type: story
 parent: E01
 status: ready
+qa_status: bug
+bugs:
+  - ac: 2
+    summary: "headword gate only knows regular inflections, so an irregular form of the word (sang, ran, dying, lying, children) passes and gets carded"
+    command: "node scripts/card.js sing  (harness: fake define primarySense=music, compose-stories returns one candidate 'She sang music at the fair.'; mock AnkiConnect); also directly: node scripts/check-story.js sing music 'She sang music.' - <keywords.tsv> -> exit 0"
+    expected: "picked story does not contain the word or any inflection of it; 'sang' is the past tense of 'sing', so the candidate is rejected (headword: sang)"
+    actual: "check-story exits 0; card.js prints 'carded sing (added) / story: She sang music at the fair.', writes the row and syncs it to Anki. Same pass for run/ran, die/dying, lie/lying, child/children"
+    found: 2026-10-11
+  - ac: 5
+    summary: "classical-morpheme words the classifier misses (photograph, telephone, adjoining) are routed general and get a story card"
+    command: "NEMO_MNEMONIC_LOG=/dev/null node scripts/route.js photograph  -> 'general' exit 0; end-to-end node scripts/card.js photograph with harness fakes (dict photograph=fˈoʊtəɡɹæf) and mock AnkiConnect"
+    expected: "no card is made and the command says the word belongs to the word-part path (_etta_mology)"
+    actual: "route prints 'general' (classify-word.js verdict 'no match'); card.js prints 'carded photograph (added)', writes the row and syncs it. telephone and adjoining also route 'general'. Root cause is classify-word.js recall; nephrectomy/atorvastatin/microscope/biology are stopped correctly"
+    found: 2026-10-11
 ---
 # US-028 One word in, a story card out
 
