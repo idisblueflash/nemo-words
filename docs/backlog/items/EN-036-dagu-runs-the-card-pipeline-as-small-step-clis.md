@@ -2,7 +2,8 @@
 id: EN-036
 type: enabler
 parent: E01
-status: ready
+status: done
+qa_status: passing
 ---
 # EN-036 Dagu runs the card pipeline as small step CLIs
 
