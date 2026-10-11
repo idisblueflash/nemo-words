@@ -87,6 +87,6 @@ here).
   actual error rather than retrying blindly or working around it with
   `--force`/`--no-verify`-style flags.
 - This agent does not touch `docs/user-stories/US-025.md`'s ACs or status
-  — that belongs to `_qa`. If you notice the packaging behavior has
+  — that belongs to `backlog:qa`. If you notice the packaging behavior has
   drifted from what US-025 documents, report it rather than silently
   re-documenting it yourself.

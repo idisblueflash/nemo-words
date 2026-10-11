@@ -151,12 +151,21 @@ local Tatoeba English corpus (2M sentences, encoded with CWB/`cqp`) via
 `scripts/corpus-search.sh` and prints an aligned concordance. Reporting only — it never
 writes Anki or the mnemonic log.
 
+## Building backlog items
+
+Planning and building go through the `backlog` plugin (`backlog@blueflash`): stories live in
+`docs/backlog/items/`, and `/backlog:implement <ID>` builds a `ready` one in its own worktree
+with the plugin's `teddy` / `qa` / `buzz` agents, then opens a PR. `/backlog:next` says what to
+do next. The stack, test commands and bug-numbering rule those agents need are in
+`.claude/rules/build.md`.
+
 ## Rules
 
 | Read... | ...when you're about to |
 |---|---|
 | [`.claude/rules/word-workflow.md`](.claude/rules/word-workflow.md) | handle an "explain \<word\>" request (the main loop) |
 | [`.claude/rules/scripts.md`](.claude/rules/scripts.md) | run `anki-sync.js`, `find-mnemonic.js`, `classify-word.js`, or a `dictionaries/` CLI |
+| [`.claude/rules/build.md`](.claude/rules/build.md) | implement, QA or bug-fix a backlog item (`/backlog:implement`) |
 
 ## Prerequisites for the word agents
 
