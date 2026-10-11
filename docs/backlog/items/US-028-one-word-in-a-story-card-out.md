@@ -5,12 +5,6 @@ parent: E01
 status: ready
 qa_status: bug
 bugs:
-  - ac: 2
-    summary: "headword gate only knows regular inflections, so an irregular form of the word (sang, ran, dying, lying, children) passes and gets carded"
-    command: "node scripts/card.js sing  (harness: fake define primarySense=music, compose-stories returns one candidate 'She sang music at the fair.'; mock AnkiConnect); also directly: node scripts/check-story.js sing music 'She sang music.' - <keywords.tsv> -> exit 0"
-    expected: "picked story does not contain the word or any inflection of it; 'sang' is the past tense of 'sing', so the candidate is rejected (headword: sang)"
-    actual: "check-story exits 0; card.js prints 'carded sing (added) / story: She sang music at the fair.', writes the row and syncs it to Anki. Same pass for run/ran, die/dying, lie/lying, child/children"
-    found: 2026-10-11
   - ac: 5
     summary: "classical-morpheme words the classifier misses (photograph, telephone, adjoining) are routed general and get a story card"
     command: "NEMO_MNEMONIC_LOG=/dev/null node scripts/route.js photograph  -> 'general' exit 0; end-to-end node scripts/card.js photograph with harness fakes (dict photograph=fˈoʊtəɡɹæf) and mock AnkiConnect"
