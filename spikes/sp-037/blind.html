@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blind Story Check</title>
+<style>
+  :root {
+    --bg: #f7f5f0; --card: #ffffff; --ink: #1d1c1a; --muted: #6b6760; --line: #e2ddd3;
+    --pick: #2f6f5e; --pick-bg: #e3f1ec; --same: #7a5c1e; --same-bg: #f6ecd6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #161614; --card: #22211e; --ink: #ece8df; --muted: #a09a8e; --line: #3a3833;
+      --pick: #7fd1b6; --pick-bg: #1f3a32; --same: #e2c27a; --same-bg: #3a3020;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #161614; --card: #22211e; --ink: #ece8df; --muted: #a09a8e; --line: #3a3833;
+    --pick: #7fd1b6; --pick-bg: #1f3a32; --same: #e2c27a; --same-bg: #3a3020;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, sans-serif; }
+  main { max-width: 820px; margin: 0 auto; padding: 24px 16px 64px; }
+  h1 { font-size: 1.4rem; margin: 0 0 4px; }
+  .intro { color: var(--muted); margin: 0 0 16px; }
+  .progress { position: sticky; top: 0; background: var(--bg); padding: 10px 0; z-index: 1; border-bottom: 1px solid var(--line); margin-bottom: 16px; font-size: .95rem; }
+  .bar { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; margin-top: 6px; }
+  .bar > div { height: 100%; background: var(--pick); width: 0; transition: width .2s; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin-bottom: 14px; }
+  .word { font-size: 1.25rem; font-weight: 650; }
+  .ipa { color: var(--muted); margin-left: 8px; }
+  .sense { color: var(--muted); margin: 2px 0 12px; font-size: .95rem; }
+  .options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 560px) { .options { grid-template-columns: 1fr; } }
+  button { font: inherit; color: inherit; text-align: left; cursor: pointer; background: transparent; border: 1.5px solid var(--line); border-radius: 8px; padding: 12px; }
+  button:hover { border-color: var(--muted); }
+  button .label { display: block; font-size: .75rem; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  button.chosen { border-color: var(--pick); background: var(--pick-bg); }
+  .same { margin-top: 10px; text-align: center; width: 100%; padding: 8px; font-size: .9rem; color: var(--muted); }
+  .same.chosen { border-color: var(--same); background: var(--same-bg); color: var(--ink); }
+  .result { background: var(--card); border: 2px solid var(--pick); border-radius: 10px; padding: 16px; margin-bottom: 16px; }
+  .result h2 { margin: 0 0 8px; font-size: 1.15rem; }
+  .result table { border-collapse: collapse; }
+  .result td { padding: 2px 16px 2px 0; }
+  .err { color: #c0392b; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Blind story check</h1>
+  <p class="intro">For each word, pick the story you'd rather have on the card. One is your logged story and one is Jev's pick, in random order. Choose "About the same" if neither is better. Answers save as you go, and you can change them. Results appear once all words are answered.</p>
+  <div class="progress"><span id="count">Loading…</span><div class="bar"><div id="fill"></div></div></div>
+  <div id="result"></div>
+  <div id="cards"></div>
+</main>
+<script>
+let S = null;
+
+function el(tag, attrs = {}, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) k === "class" ? (e.className = v) : e.setAttribute(k, v);
+  for (const k of kids) e.append(k);
+  return e;
+}
+
+async function choose(word, side) {
+  const r = await fetch("/api/choice", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ word, side }) });
+  const data = await r.json();
+  if (!r.ok) { document.getElementById("count").innerHTML = `<span class="err">Not saved: ${data.error}</span>`; return; }
+  S = data; render();
+}
+
+function render() {
+  const t = S.tally;
+  document.getElementById("count").textContent = `${t.answered} of ${t.total} answered`;
+  document.getElementById("fill").style.width = `${t.total ? (100 * t.answered) / t.total : 0}%`;
+
+  const res = document.getElementById("result");
+  res.replaceChildren();
+  if (t.complete) {
+    const pct = (x) => `${Math.round(x * 100)}%`;
+    res.append(el("div", { class: "result" },
+      el("h2", {}, t.go ? "Go: Jev's picks are acceptable" : "No-go: you mostly keep your own"),
+      el("table", {},
+        el("tr", {}, el("td", {}, "Jev's pick chosen"), el("td", {}, String(t.jev))),
+        el("tr", {}, el("td", {}, "About the same"), el("td", {}, String(t.same))),
+        el("tr", {}, el("td", {}, "Your story kept"), el("td", {}, String(t.flash))),
+        el("tr", {}, el("td", {}, "Jev acceptable"), el("td", {}, `${pct(t.jevOkRate)} (bar ≥ ${pct(S.bar)})`))),
+    ));
+  }
+
+  const cards = document.getElementById("cards");
+  cards.replaceChildren(...S.pairs.map((p) => {
+    const chosen = S.choices[p.word];
+    const opt = (side, label) => {
+      const b = el("button", { class: chosen === side ? "chosen" : "" }, el("span", { class: "label" }, label), p[side]);
+      b.onclick = () => choose(p.word, side);
+      return b;
+    };
+    const same = el("button", { class: "same" + (chosen === "same" ? " chosen" : "") }, "About the same");
+    same.onclick = () => choose(p.word, "same");
+    return el("div", { class: "card" },
+      el("div", {}, el("span", { class: "word" }, p.word), el("span", { class: "ipa" }, p.ipa ? `/${p.ipa}/` : "")),
+      el("div", { class: "sense" }, p.sense),
+      el("div", { class: "options" }, opt("left", "A"), opt("right", "B")),
+      same);
+  }));
+}
+
+fetch("/api/state").then((r) => r.json()).then((d) => { S = d; render(); })
+  .catch((e) => { document.getElementById("count").innerHTML = `<span class="err">Couldn't load: ${e.message}</span>`; });
+</script>
+</body>
+</html>
