@@ -1,29 +1,44 @@
 ---
 description: Implement a user story end-to-end in an isolated worktree — _teddy implements, _qa verifies against the ACs, and _buzz files/fixes any bug _qa flags, looping until the story is done.
-argument-hint: <path-to-user-story.md>
+argument-hint: <backlog item ID or path, e.g. US-039>
 ---
 
-You are orchestrating the full implement→verify→fix loop for one user story,
-given as `$ARGUMENTS` (a path under `docs/user-stories/`, e.g.
-`docs/user-stories/US-004.md`). Run the steps below in order, in this main
-session — don't delegate the orchestration itself to a subagent, only the
-individual phases (_teddy / _qa / _buzz).
+You are orchestrating the full implement→verify→fix loop for one backlog item
+(a story, spike or enabler managed by the `backlog` plugin), given as
+`$ARGUMENTS` — either its ID (e.g. `US-039`) or a path to its file under
+`docs/backlog/items/` (e.g.
+`docs/backlog/items/US-039-auto-made-card-is-logged-with-its-runner-ups.md`).
+Run the steps below in order, in this main session — don't delegate the
+orchestration itself to a subagent, only the individual phases
+(_teddy / _qa / _buzz).
+
+Status lives in two places the `backlog` plugin keeps in step: the item's
+own `status:` frontmatter and its line in `docs/backlog/BACKLOG.md`
+(`... · <epic> · <status>`). Whenever this command changes a status, change
+both. Valid story statuses are `idea → refined → ready → in-progress → done`
+(plus `dropped`) — see the plugin's `reference/format.md`.
 
 ## 0. Resolve the story
 
-- Normalize `$ARGUMENTS` to a path relative to the repo root (resolve it
-  against the repo root if given as absolute or relative-to-cwd) — the rest
-  of this command assumes a repo-relative path that still resolves once
-  you're inside the worktree. If it doesn't exist, stop and report the bad
-  path.
-- Derive a slug from the filename without extension (e.g. `US-004` from
-  `docs/user-stories/US-004.md`). You'll use it for the branch/worktree name
-  and in status updates.
+- Resolve `$ARGUMENTS` to a repo-relative path: an ID resolves to the single
+  `docs/backlog/items/<ID>-*.md` match; a path is normalized against the repo
+  root. The rest of this command assumes a repo-relative path that still
+  resolves once you're inside the worktree. If nothing (or more than one
+  file) matches, stop and report it.
+- Legacy stories under `docs/user-stories/` (US-001…US-027, tracked in
+  `FEAT-*.md`) are all done and frozen — this command no longer handles
+  them. If given one, stop and say so.
+- The item's `status` should be `ready`. If it's `idea` or `refined`, stop
+  and suggest `/backlog:refine <ID>` first — there are no settled ACs to
+  implement yet. If it's already `in-progress`, that's a resumed run; see
+  step 1's existing-worktree case.
+- Take the ID (e.g. `US-039`) from the frontmatter `id:` and the title from
+  the `# <ID> <title>` heading. You'll use the ID for the branch/worktree
+  name, commit messages, status updates and the PR title.
 
 ## 1. Branch + worktree
 
-Call `EnterWorktree` with `name` set to a lowercase, hyphenated form of the
-slug (e.g. `us-004`). This creates a new git worktree on a new branch and
+Call `EnterWorktree` with `name` set to the lowercase ID (e.g. `us-039`). This creates a new git worktree on a new branch and
 switches the session into it. All following steps run inside that worktree —
 the normalized story file path is the same relative path inside it.
 
@@ -32,6 +47,10 @@ run of this command on the same story), don't guess — report it to the user
 and ask whether to resume in the existing worktree (`EnterWorktree` with
 `path`) or use a new name (e.g. suffix `-2`).
 
+Once inside the worktree, mark the item `status: in-progress` (frontmatter +
+`BACKLOG.md` line) and commit just that change (`<ID>: start`). Skip this if
+it's already `in-progress` from a resumed run.
+
 ## 2. Implement — dispatch `_teddy`
 
 Dispatch the `_teddy` subagent (Agent tool, `subagent_type: "_teddy"`) with
@@ -39,7 +58,7 @@ the story file path. Wait for it to finish and report which ACs are covered,
 what files it created/changed, and that its test suite passes.
 
 Commit `_teddy`'s work now, before moving on — implementation + tests, one
-commit, message naming the story slug. This checkpoint protects the work if
+commit, message naming the story ID. This checkpoint protects the work if
 `_qa` or `_buzz` fails or the session is interrupted later.
 
 ## 3. Verify — dispatch `_qa`
@@ -87,33 +106,25 @@ If `qa_status: bug` (any entries under `bugs:`):
 If `qa_status: passing` with no open `bugs:` entries (either on the first
 pass or after `_buzz` resolved everything):
 
-1. Edit the story file's frontmatter to add `status: done` (alongside the
-   existing `qa_status: passing`) — this is the "story implemented and
-   verified" flag, distinct from `_qa`'s own `qa_status` field.
-2. Sync the parent feature file: search `docs/user-stories/FEAT-*.md` for a
-   `[[<slug>]]` reference (e.g. `[[US-007]]`). Every story belongs to some
-   feature file, so if none references the slug, stop and report this to
-   the user rather than silently proceeding — the story is either missing
-   its feature-file entry (needs adding) or the search missed it. Once
-   found:
-   - Flip that line's checkbox from `[ ]` to `[x]` wherever it appears in
-     the Must/Should/Could-have lists.
-   - If the slug also appears in the "Ordering" section's parallel-functions
-     diagram (the fenced code block under "Parallel functions"), prepend
-     `:done ` immediately before the `[[<slug>]]` reference on that line,
-     matching the existing style of already-done entries in that block —
-     don't touch entries for other stories on the same line.
+1. Set the item's `status: done` (replacing `in-progress`; `_qa`'s
+   `qa_status: passing` stays alongside it — `status` is the backlog's
+   lifecycle field, `qa_status` is `_qa`'s verdict).
+2. Set the item's line in `docs/backlog/BACKLOG.md` to `done` too (the last
+   `· <status>` segment). If the item has no line there, stop and report it
+   rather than silently proceeding — the backlog is out of step and needs a
+   `/backlog:review`. Don't re-rank or touch any other line; ranking is
+   `/backlog:review`'s job.
 3. Commit this final state: the `status: done` frontmatter edit, the
-   `FEAT-*.md` sync from step 2 (if any), plus anything from step 4.a not
+   `BACKLOG.md` line from step 2, plus anything from step 4.a not
    already committed by `_buzz` (bug reports, fixes — `_buzz` commits its
    own work per its workflow, but confirm with `git status` rather than
-   assuming). Write a commit message naming the story (slug + title).
+   assuming). Write a commit message naming the story (ID + title).
 4. **Push and open a PR**, right away, as part of this same invocation —
    this does not need separate explicit go-ahead, unlike other push/PR
    actions elsewhere in this repo's agents. Push the branch, then
-   `gh pr create` with title = story slug/title and a body summarizing
+   `gh pr create` with title = story ID + title and a body summarizing
    which ACs `_teddy` covered and confirming `_qa`'s clean pass.
-5. Report to the user: branch name, worktree path, story slug/title,
+5. Report to the user: branch name, worktree path, story ID/title,
    AC summary from `_teddy`, confirmation of the `status: done` flag, and
    the PR URL.
 6. Leave the worktree in place (don't call `ExitWorktree` yet) so the user
@@ -125,7 +136,7 @@ This is a separate, later invocation/message, not a continuation of step 4
 — the user reviews the PR on GitHub (or however they like) in the
 meantime, and this command does not poll or wait for that.
 
-When the user explicitly asks to merge (e.g. "merge PR `<slug>`", "merge
+When the user explicitly asks to merge (e.g. "merge PR `<ID>`", "merge
 it", "it's ready, merge and clean up"):
 
 1. Check the PR's current state (`gh pr view`). If it isn't merged yet,
@@ -144,6 +155,9 @@ worktree stays until the user actually says to clean it up.
 - Never skip `_qa` after `_teddy` — even if `_teddy`'s own tests are green,
   `_qa` is the black-box check against the ACs.
 - Never mark `status: done` while any `bugs:` entry is open.
+- Only ever change the item's `status` field and its `BACKLOG.md` status
+  segment — never its ACs, its rank, or other items. Refining and re-ranking
+  belong to `/backlog:refine` and `/backlog:review`.
 - If `_teddy` reports an ambiguity or AC conflict, stop and report it to the
   user before dispatching `_qa` — there's nothing to verify yet.
 - Never call `ExitWorktree` except in step 5, after an explicit user

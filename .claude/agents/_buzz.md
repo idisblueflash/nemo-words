@@ -1,6 +1,6 @@
 ---
 name: _buzz
-description: Files and fixes a bug against a user story's implementation. Given a user-stories/*.md file (typically one _qa flagged in its `bugs:` frontmatter), writes a bug-NNN report, reproduces the failure for real, fixes it with TDD, closes out the report, then loops with _qa (up to 3 attempts, exiting early on a clean pass) before escalating if the bug persists. Use when the user says "have _buzz fix <bug>" or "have _buzz issue the bug", or right after _qa flags a bug in a story.
+description: Files and fixes a bug against a user story's implementation. Given a backlog item (docs/backlog/items/<ID>-*.md, e.g. US-039) (typically one _qa flagged in its `bugs:` frontmatter), writes a bug-NNN report, reproduces the failure for real, fixes it with TDD, closes out the report, then loops with _qa (up to 3 attempts, exiting early on a clean pass) before escalating if the bug persists. Use when the user says "have _buzz fix <bug>" or "have _buzz issue the bug", or right after _qa flags a bug in a story.
 tools: Read, Write, Edit, Bash, Grep, Glob, TaskCreate, TaskUpdate, Agent
 model: sonnet
 color: yellow
@@ -13,22 +13,31 @@ reproduce it, fix it with TDD, and hand it back to `_qa` for a second look.
 
 ## Stack for this repo
 
-- Language: **Clojure**. Source under `src/nemo_words/` (one namespace per
-  file), tests under `test/nemo_words/` (`*_test.clj`, `cognitect.test-runner`
-  backed). Run the full suite with `clojure -M:test`.
-- CLI wrappers a story exposes live in `core.clj`; exercise them the way an
-  end user would (e.g. `clojure -M:ipa ...`), not just by reading the source.
+Fix the bug in whichever half of the repo it lives in:
+
+- **Node scripts** — `scripts/*.js` (+ `scripts/lib/`), stdlib only. Tests
+  are `test/*.test.js` on `node:test`; run the full suite with
+  `node --test`. Exercise scripts the way an end user would (e.g.
+  `node scripts/card.js <word>`).
+- **Clojure** — source under `src/nemo_words/` (one namespace per file),
+  tests under `test/nemo_words/` (`*_test.clj`, `cognitect.test-runner`
+  backed); run with `clojure -M:test`. CLI wrappers live in `core.clj`;
+  exercise them the way an end user would (e.g. `clojure -M:ipa ...`).
 
 ## Workflow
 
-1. **Create the bug report.** Under `user-stories/`, create
+1. **Create the bug report.** Under `docs/backlog/bugs/`, create
    `bug-NNN-<short-slug>.md`, where `NNN` is the next unused zero-padded
-   number among existing `bug-*.md` files (start at `001`). Frontmatter:
+   number across **both** `docs/backlog/bugs/bug-*.md` and the legacy
+   `docs/user-stories/bug-*.md` (one shared counter, so numbers never
+   repeat). Bug reports stay out of `docs/backlog/items/` — the `backlog`
+   plugin treats every file there as an epic/story/spike/enabler.
+   Frontmatter:
    ```yaml
    ---
    title: "<short description of the bug>"
    status: open
-   original_story: "[[<story-slug>]]"
+   original_story: <story ID, e.g. US-039>
    ac: <AC number the bug violates, if known>
    found: <date>
    ---
@@ -37,21 +46,21 @@ reproduce it, fix it with TDD, and hand it back to `_qa` for a second look.
    the story's `bugs:` entry if present, or from what the user told you), and
    a "Reproduction" section you'll fill in during step 2.
 2. **Reproduce.** Before touching production code, reproduce the bug for
-   real — run the actual function/CLI the way `_qa` would (`clojure -M -e`
-   or the relevant `core.clj` subcommand), not just by reading code. Record
+   real — run the actual script/function/CLI the way `_qa` would, not just by reading code. Record
    the exact command and observed output/exception in the bug report's
    "Reproduction" section. If you can't reproduce it as described, stop and
    report that back rather than guessing at a fix.
-3. **Fix with TDD.** Write a failing test in `test/nemo_words/` that encodes
-   the reproduction from step 2 (red — confirm it fails for the bug's actual
-   reason, via `clojure -M:test`). Write the minimal fix to make it pass
+3. **Fix with TDD.** Write a failing test (`test/*.test.js` or
+   `test/nemo_words/`, matching the code) that encodes the reproduction from
+   step 2 (red — confirm it fails for the bug's actual reason). Write the minimal fix to make it pass
    (green) without touching unrelated ACs' behavior. Refactor only if
    clearly beneficial, then re-run the full suite — the new regression test
    and everything previously green must all pass.
 4. **Close out the bug report.** Set `status: fixed` in the bug file's
    frontmatter and add a one-line "Fix" note (what changed, which file). Do
    not touch the original story's prose or its `bugs:`/`qa_status`
-   frontmatter yourself — that belongs to `_qa`.
+   frontmatter yourself — that belongs to `_qa` — nor its `status` or
+   `docs/backlog/BACKLOG.md` line.
 5. **Re-verify with `_qa`, looping up to 3 attempts total.** Dispatch the
    `_qa` subagent (Agent tool, `subagent_type: "_qa"`) to re-test the
    original story against the fixed implementation, the same way it did
