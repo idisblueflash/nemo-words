@@ -2,8 +2,9 @@
 id: SP-037
 type: spike
 parent: E01
-status: ready
+status: done
 timebox: 1d
+qa_status: passing
 ---
 # SP-037 Does Jev pick the story Flash would?
 
@@ -84,3 +85,12 @@ Given  Jev can't answer a question for a candidate (error or unusable answer)
 - [ ] Fresh candidates follow today's `_nemo.md`, while some logged stories predate its later rules. Assumed acceptable; the report's failed-gate list shows how much it matters.
 - [ ] A Noul pass cut-off of 0.5 is a starting point; the saved probabilities let the report try others.
 - [ ] `TYPESAFE_API_KEY` goes in `.env` at the repo root (Flash is adding it).
+
+## Result
+**No-go** for auto story pick (see `spikes/sp-037/report.md`). Seed 37, 20 of 20 words judged: Flash's story ranked 1st for 0% (chance 16.7%) and was in the top 2 for 10% (chance 33.3%), against a 40% / 65% bar. Re-ranking at gate cut-offs 0.3 and 0.4 doesn't change the verdict (at most 10% 1st, 20% top 2). 14 of Flash's 20 stories failed a gate: 3 hard gates in code (inflate and saturation over 10 words, merely's pivot order) and 10 Jev's same-root-anchor, whose probabilities sit near 0.5 for every candidate (Flash's mean 0.47, fresh 0.53). That gate looks noisy, so part of the miss may be judge noise rather than real disagreement.
+
+Notes for US-038:
+- Node's `fetch` ignores `HTTP(S)_PROXY`, and Jev answers HTTP 451 from a CN address. `run.js` calls `http.setGlobalProxyFromEnv()`, but `judge-story.js` still needs `NODE_USE_ENV_PROXY=1`.
+- `judge-story` exits 2 for bad input as well as for a Jev failure.
+- `--pass-at` isn't validated (`abc` renders a "NaN" report).
+- A story that fails a Jev gate can still count as top 2 (fus-); decide whether that should count as agreeing with Flash.
