@@ -11,11 +11,52 @@ const { runCli, ipaKey, stripStress } = require("./card-lib");
 const { lookupGa } = require("./ipa");
 const { readChunkKeywords } = require("./compose-stories");
 
-// Every regular inflection of `base` (plural/3sg, past, -ing, comparative,
-// superlative), with the usual e-drop, y->i and final-consonant doubling.
+// Irregular inflected forms (past, participle, plural, comparative ...) by base
+// word — the suffix rules below can't derive these. A curated list of common
+// English irregulars; a word not listed here gets only the regular forms.
+const IRREGULAR = {
+  be: ["am", "is", "are", "was", "were", "been", "being"],
+  have: ["has", "had", "having"], do: ["does", "did", "done", "doing"],
+  go: ["goes", "went", "gone", "going"], say: ["said"], make: ["made"],
+  take: ["took", "taken"], come: ["came"], see: ["saw", "seen"], know: ["knew", "known"],
+  get: ["got", "gotten"], give: ["gave", "given"], find: ["found"], think: ["thought"],
+  tell: ["told"], become: ["became"], leave: ["left"], feel: ["felt"], bring: ["brought"],
+  begin: ["began", "begun"], keep: ["kept"], hold: ["held"], write: ["wrote", "written"],
+  stand: ["stood"], hear: ["heard"], mean: ["meant"], meet: ["met"],
+  run: ["ran"], pay: ["paid"], sit: ["sat"], speak: ["spoke", "spoken"], lie: ["lay", "lain"],
+  lead: ["led"], grow: ["grew", "grown"], lose: ["lost"], fall: ["fell", "fallen"],
+  send: ["sent"], build: ["built"], understand: ["understood"], draw: ["drew", "drawn"],
+  break: ["broke", "broken"], spend: ["spent"], rise: ["rose", "risen"], drive: ["drove", "driven"],
+  buy: ["bought"], wear: ["wore", "worn"], choose: ["chose", "chosen"], seek: ["sought"],
+  throw: ["threw", "thrown"], catch: ["caught"], deal: ["dealt"], win: ["won"], forget: ["forgot", "forgotten"],
+  sell: ["sold"], fight: ["fought"], teach: ["taught"], eat: ["ate", "eaten"], sing: ["sang", "sung"],
+  drink: ["drank", "drunk"], swim: ["swam", "swum"], ring: ["rang", "rung"], sink: ["sank", "sunk"],
+  fly: ["flew", "flown"], hide: ["hid", "hidden"], shake: ["shook", "shaken"], steal: ["stole", "stolen"],
+  sleep: ["slept"], sweep: ["swept"], wake: ["woke", "woken"], bite: ["bit", "bitten"], blow: ["blew", "blown"],
+  freeze: ["froze", "frozen"], hang: ["hung"], lend: ["lent"], ride: ["rode", "ridden"],
+  shine: ["shone"], shoot: ["shot"], slide: ["slid"], spin: ["spun"], stick: ["stuck"], sting: ["stung"],
+  strike: ["struck", "stricken"], swing: ["swung"], tear: ["tore", "torn"], wind: ["wound"], bend: ["bent"],
+  bind: ["bound"], bleed: ["bled"], breed: ["bred"], creep: ["crept"], dig: ["dug"],
+  feed: ["fed"], flee: ["fled"], fling: ["flung"], forgive: ["forgave", "forgiven"], lay: ["laid"],
+  light: ["lit"], sew: ["sewn"], show: ["shown"], slay: ["slew", "slain"], spit: ["spat"],
+  swear: ["swore", "sworn"], weep: ["wept"],
+  die: ["dying"], tie: ["tying"], vie: ["vying"],
+  child: ["children"], man: ["men"], woman: ["women"], person: ["people"], foot: ["feet"],
+  tooth: ["teeth"], goose: ["geese"], mouse: ["mice"], louse: ["lice"], ox: ["oxen"],
+  leaf: ["leaves"], life: ["lives"], wife: ["wives"], knife: ["knives"], wolf: ["wolves"],
+  half: ["halves"], self: ["selves"], shelf: ["shelves"], thief: ["thieves"], calf: ["calves"],
+  loaf: ["loaves"], elf: ["elves"], hoof: ["hooves"], scarf: ["scarves"],
+  good: ["better", "best"], bad: ["worse", "worst"],
+};
+
+// Every inflection of `base` (plural/3sg, past, -ing, comparative,
+// superlative): the irregular table plus the regular rules, with the usual
+// e-drop, y->i and final-consonant doubling.
 function inflections(base) {
   const b = base.toLowerCase();
   const forms = new Set([b, `${b}s`, `${b}es`, `${b}ed`, `${b}ing`, `${b}er`, `${b}est`]);
+  for (const f of IRREGULAR[b] || []) forms.add(f);
+  if (b.endsWith("ie")) forms.add(`${b.slice(0, -2)}ying`); // die -> dying, lie -> lying
   if (b.endsWith("e")) {
     const stem = b.slice(0, -1);
     for (const s of ["d", "r", "st"]) forms.add(b + s);
