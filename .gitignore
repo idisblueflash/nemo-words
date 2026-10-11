@@ -7,7 +7,6 @@
 .clj-kondo/.cache/
 .clerk/
 resources/data/kaikki-en.jsonl
-/scripts/
 .vmark/
 .DS_Store
 images/mnemonic/
@@ -30,3 +29,6 @@ dictionaries/open-words/vendor/
 **/tatoeba/*.vrt
 **/tatoeba/cwb/
 **/tatoeba/*.db
+
+# local secrets (TYPESAFE_API_KEY etc.)
+.env
