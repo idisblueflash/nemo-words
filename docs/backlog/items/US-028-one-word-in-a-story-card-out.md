@@ -3,7 +3,20 @@ id: US-028
 type: story
 parent: E01
 status: done
-qa_status: passing
+qa_status: bug
+bugs:
+  - ac: 5
+    summary: "INN drug stem -profen (ibuprofen, ketoprofen) is not recognised; card.js makes a story card instead of routing to _etta_mology"
+    command: "node scripts/card.js ibuprofen   (isolated via test/helpers/card-harness.js: throwaway ANKI_FILE, mock AnkiConnect, fake claude/nemo-words/word-freq); also: NEMO_MNEMONIC_LOG=/dev/null node scripts/route.js ibuprofen; node scripts/classify-word.js ibuprofen"
+    expected: "no card is made; output says the word belongs to the word-part path (_etta_mology)"
+    actual: "exit 0, 'carded ibuprofen (added) ... synced to Anki'; row written and note added. route.js prints 'general'; classify-word.js says 'Verdict: no match' (same for ketoprofen, naproxen)"
+    found: 2026-10-11
+  - ac: 5
+    summary: "Latin compounds other than ad-/con- + join (e.g. conduct = con- + duct) are not recognised; card.js makes a story card"
+    command: "node scripts/card.js conduct   (isolated via test/helpers/card-harness.js as above); also: NEMO_MNEMONIC_LOG=/dev/null node scripts/route.js conduct"
+    expected: "no card is made; output says the word belongs to the word-part path (_etta_mology)"
+    actual: "exit 0, 'carded conduct (added) ... synced to Anki'; route.js prints 'general' (subject and conjoin route to word-part correctly)"
+    found: 2026-10-11
 ---
 # US-028 One word in, a story card out
 
