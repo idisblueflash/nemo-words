@@ -3,6 +3,7 @@ id: US-039
 type: story
 parent: E01
 status: ready
+qa_status: passing
 ---
 # US-039 The auto-made card is logged with its runner-ups
 
