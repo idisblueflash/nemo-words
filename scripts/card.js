@@ -27,9 +27,11 @@ const FORWARDED_ENV = [
   "ANKI_CONNECT_URL",
   "ANKI_SYNC_LOG",
   "NEMO_MNEMONIC_LOG",
+  "NEMO_ALTERNATES_LOG",
   "NEMO_CLAUDE_BIN",
   "NEMO_WORDS_BIN",
   "NEMO_WORD_FREQ_BIN",
+  "NEMO_JEV_ENV_FILE",
 ];
 const dagPath = path.join(repoRoot, "dags", "card.yaml");
 

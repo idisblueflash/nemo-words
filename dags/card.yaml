@@ -21,9 +21,11 @@ params:
   - ANKI_CONNECT_URL: ""   # default http://127.0.0.1:8765
   - ANKI_SYNC_LOG: ""      # default anki/sync.log
   - NEMO_MNEMONIC_LOG: ""  # default data/mnemonics/log.jsonl
+  - NEMO_ALTERNATES_LOG: "" # default data/mnemonics/alternates.jsonl
   - NEMO_CLAUDE_BIN: ""    # default `claude`
   - NEMO_WORDS_BIN: ""     # default `nemo-words`
   - NEMO_WORD_FREQ_BIN: "" # default scripts/word-freq.js
+  - NEMO_JEV_ENV_FILE: ""  # env file with Jev's TYPESAFE_API_KEY etc. (default: the repo's .env)
 # Pinned rather than inherited from the global base.yaml: each step's stdout
 # and stderr must land in separate logs, both so a run can be inspected step
 # by step and so `${<step>.stdout}` hands the next step stdout only.
@@ -151,11 +153,48 @@ steps:
         expected: "0"
     run: node scripts/write-row.js "$(cat "${normalize.stdout}")" "$(cut -f1 "${story.stdout}")" "$(cat "${syllabify.stdout}")" "$(cat "${gloss.stdout}")"
 
-  - id: sync   # exit 1: sync failed; the row stays written, logged to the sync log
+  # --- US-039: log the auto-made card. Only an auto-pick is logged: on the
+  # logged-story path the story already has its (human-picked) log row, so
+  # both steps are skipped there.
+  - id: tag_technique
+    name: tag-technique   # Jev: p per _logan technique tag; exit 2: Jev failed
     depends: [write_row]
     preconditions:
       - condition: "${write_row.exit_code}"
         expected: "0"
+      - condition: "test \"$(cut -f3 '${story.stdout}')\" = picked"
+    run: node scripts/tag-technique.js "$(cat "${normalize.stdout}")" "$(cut -f1 "${story.stdout}")" "$(cut -f2 "${story.stdout}")" "${find_keywords.stdout}"
+    # Jev failing (unreachable, no key, an error) must not fail the run: the
+    # card is already written, and log-card logs the row without tags.
+    continue_on:
+      exit_code: [1, 2]
+      mark_success: true
+
+  # Any tag-technique exit but 0 hands log-card `-` for the tags file: it then
+  # logs `technique: []` and notes the missing tags in the run report.
+  - id: log_card
+    name: log-card   # exit 1: the row failed validation, nothing logged
+    depends: [tag_technique]
+    run: >-
+      TAGS='${tag_technique.stdout}'; [ "${tag_technique.exit_code}" = 0 ] || TAGS=-;
+      node scripts/log-card.js "$(cat "${normalize.stdout}")" "${story.stdout}"
+      "${compose_stories.stdout}" "${check_stories.stdout}" "$TAGS"
+      "${define.stdout}" "${syllabify.stdout}" "${chunk.stdout}" "${find_keywords.stdout}"
+    # Skipped on the logged-story path; sync still has to run after it.
+    continue_on:
+      exit_code: [1]
+      mark_success: true
+      skipped: true
+
+  # Gated on write-row alone (not log-card), so a card is synced whether or
+  # not it got logged. A skipped step reports exit code 0, so the file check
+  # makes sure write-row really ran (single-quoted: see `story`).
+  - id: sync   # exit 1: sync failed; the row stays written, logged to the sync log
+    depends: [log_card]
+    preconditions:
+      - condition: "${write_row.exit_code}"
+        expected: "0"
+      - condition: "test -s '${write_row.stdout}'"
     run: node scripts/sync.js "$(cut -f2 "${write_row.stdout}")" "$(cut -f1 "${write_row.stdout}")"
 
   # Last step: its stdout is what card.js prints on success. Every step's
@@ -170,4 +209,5 @@ steps:
       node scripts/report.js "${write_row.stdout}" "${story.stdout}" "${syllabify.stdout}" "${gloss.stdout}"
       '${normalize.stderr}' '${route.stderr}' '${ipa.stderr}' '${syllabify.stderr}' '${define.stderr}'
       '${gloss.stderr}' '${chunk.stderr}' '${find_keywords.stderr}' '${compose_stories.stderr}'
-      '${check_stories.stderr}' '${pick_story.stderr}' '${story.stderr}' '${write_row.stderr}' '${sync.stderr}'
+      '${check_stories.stderr}' '${pick_story.stderr}' '${story.stderr}' '${write_row.stderr}'
+      '${tag_technique.stderr}' '${log_card.stderr}' '${sync.stderr}'

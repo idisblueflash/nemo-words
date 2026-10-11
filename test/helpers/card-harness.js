@@ -6,9 +6,13 @@
 //     executables (written to a temp dir) that answer from a JSON fixture;
 //   - AnkiConnect is an in-process mock HTTP server (or a closed port, for
 //     "Anki is not running");
+//   - Jev (TypeSafe's systemOne API, US-039's tag-technique) is an in-process
+//     mock HTTP server too, reached through a throwaway env file
+//     (NEMO_JEV_ENV_FILE) holding a fake key and the mock's base URL — so the
+//     repo's real `.env` key is never read and the network never reached;
 //   - the card file is a throwaway `anki/<unique>.test.txt` (anki-sync.js
-//     only accepts a filename under anki/), and the sync log and mnemonic log
-//     live in the temp dir.
+//     only accepts a filename under anki/), and the sync log, mnemonic log
+//     and alternates log live in the temp dir.
 //
 // This file sits under test/ so `node --test` loads it as a (test-less) file;
 // it only defines functions, so that's harmless.
@@ -111,8 +115,31 @@ function createMockAnkiConnect() {
   return { server, notes, calls };
 }
 
-// fixture: { dict, freqs, claude: { define, gloss, "compose-stories" } }
+// Mock Jev: `POST /v1/systemone` answers every `noul` question with the
+// fixture's probability for that question name (`fixture.jev[name]`, default
+// 0.1). Records each request so tests can assert what Jev was asked.
+function createMockJev(fixture) {
+  const calls = [];
+  const server = http.createServer((req, res) => {
+    let body = "";
+    req.on("data", (c) => (body += c));
+    req.on("end", () => {
+      const parsed = JSON.parse(body || "{}");
+      calls.push({ method: req.method, path: req.url, auth: req.headers.authorization, body: parsed });
+      const answers = {};
+      for (const name of Object.keys(parsed.questions || {})) {
+        answers[name] = { noul: name in (fixture.jev || {}) ? fixture.jev[name] : 0.1 };
+      }
+      res.writeHead(200, { "Content-Type": "application/json" });
+      res.end(JSON.stringify({ answers, model: "jev-mock" }));
+    });
+  });
+  return { server, calls };
+}
+
+// fixture: { dict, freqs, claude: { define, gloss, "compose-stories" }, jev: { <tag>: p } }
 // options: { rows: [tsv row strings], log: [jsonl objects], anki: "up" | "down",
+//            jev: "up" | "down" | "unconfigured" (no API key),
 //            root: repo copy to run from (default: this repo), cwd: where to run }
 async function createHarness(fixture, options = {}) {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "nemo-card-test-"));
@@ -148,8 +175,24 @@ async function createHarness(fixture, options = {}) {
   const port = mock.server.address().port;
   if (options.anki === "down") await new Promise((r) => mock.server.close(r));
 
+  const alternatesLog = path.join(tmp, "alternates.jsonl");
+  const jev = createMockJev(fixture);
+  await new Promise((r) => jev.server.listen(0, "127.0.0.1", r));
+  const jevPort = jev.server.address().port;
+  if (options.jev === "down") await new Promise((r) => jev.server.close(r));
+  const jevEnvFile = path.join(tmp, "jev.env");
+  fs.writeFileSync(
+    jevEnvFile,
+    options.jev === "unconfigured" ? "" : `TYPESAFE_API_KEY=test-key\nTYPESAFE_BASE_URL=http://127.0.0.1:${jevPort}\n`
+  );
+
   const env = {
     ...process.env,
+    // A step's own fetch must reach the local mocks directly, never via a proxy.
+    HTTP_PROXY: "",
+    HTTPS_PROXY: "",
+    http_proxy: "",
+    https_proxy: "",
     // card.js runs the pipeline under Dagu: a throwaway DAGU_HOME keeps test
     // runs out of Flash's real Dagu history. (The fakes find fixture.json and
     // claude-calls.jsonl next to themselves, since Dagu forwards only the
@@ -162,6 +205,8 @@ async function createHarness(fixture, options = {}) {
     ANKI_CONNECT_URL: `http://127.0.0.1:${port}`,
     ANKI_SYNC_LOG: syncLog,
     NEMO_MNEMONIC_LOG: mnemonicLog,
+    NEMO_ALTERNATES_LOG: alternatesLog,
+    NEMO_JEV_ENV_FILE: jevEnvFile,
   };
 
   // Runs a script under scripts/ with stdin closed (so a step that tried to
@@ -186,8 +231,12 @@ async function createHarness(fixture, options = {}) {
     tmp,
     daguHome,
     mock,
+    jev,
     ankiFilePath,
     syncLog,
+    mnemonicLog,
+    alternatesLog,
+    jevEnvFile,
     runScript,
     runCard: (word) => runScript("card.js", [word]),
     readAnkiFile: () => fs.readFileSync(ankiFilePath, "utf8"),
@@ -196,10 +245,14 @@ async function createHarness(fixture, options = {}) {
       fs.writeFileSync(p, text);
       return p;
     },
+    // A JSON-lines file as an array of objects ([] when it doesn't exist).
+    readJsonl: (file) =>
+      fs.existsSync(file) ? fs.readFileSync(file, "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l)) : [],
     claudeCalls: () =>
       fs.readFileSync(claudeLog, "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l)),
     async cleanup() {
       if (options.anki !== "down") await new Promise((r) => mock.server.close(r));
+      if (options.jev !== "down") await new Promise((r) => jev.server.close(r));
       fs.rmSync(ankiFilePath, { force: true });
       fs.rmSync(tmp, { recursive: true, force: true });
     },
@@ -236,7 +289,18 @@ function germaneFixture(stories) {
         ]
       ),
     },
+    // Jev's p per technique tag (US-039's tag-technique); unlisted tags get
+    // the mock's default 0.1. story-chain tops the list but is ruled out in
+    // code (the pick has only 2 pivot words), so the logged tags are
+    // keyword-method + scene-depicts-meaning (second tag kept at p ≥ 0.5).
+    jev: { "story-chain": 0.95, "keyword-method": 0.91, "scene-depicts-meaning": 0.62, homophone: 0.4 },
   };
 }
 
-module.exports = { createHarness, germaneFixture, TERMS_HEADER, repoRoot };
+// Today's local date, YYYY-MM-DD (the `date` a new log row gets).
+function today() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
+module.exports = { createHarness, germaneFixture, today, TERMS_HEADER, repoRoot };

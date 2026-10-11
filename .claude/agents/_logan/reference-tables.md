@@ -30,6 +30,13 @@ Goals of the method:
 | `technique`       | string[]    | `["homophone", "absurd-image"]`                       | one or two values from the table below; `[]` if not tagged yet |
 | `recall_check`    | number/null | `null`                                                | filled on later review, 1–5 (`null` until then) |
 | `date`            | string      | `"2026-09-06"`                                        | date the row was created |
+| `picked_by`       | string      | `"flash"`                                             | who picked the story: `flash` (a human pick — every row `_logan` writes) or `auto` (the card pipeline's auto-pick, written by `scripts/log-card.js`, US-039). A row without it counts as `flash` |
+
+An auto-picked row's runner-up candidates are kept beside it, one line per
+word, in `data/mnemonics/alternates.jsonl` (US-039):
+`{"word","chosen","picked_by","date","alternates":[{"sentence","pivot_words","reject_reasons"}]}`
+— `chosen` is the picked sentence; a runner-up with no `reject_reasons` passed
+every hard gate.
 
 Example line:
 

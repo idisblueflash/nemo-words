@@ -29,7 +29,9 @@ test.after(() => fs.rmSync(tmpRoot, { recursive: true, force: true }));
 
 const STEPS = [
   "normalize", "route", "ipa", "syllabify", "define", "gloss", "chunk", "find-keywords",
-  "compose-stories", "check-stories", "pick-story", "story", "write-row", "sync", "report",
+  "compose-stories", "check-stories", "pick-story", "story", "write-row",
+  "tag-technique", "log-card", // US-039: the auto-made card is logged
+  "sync", "report",
 ];
 
 // Runs a command and resolves to { code, stdout, stderr } whatever the exit code.
@@ -162,10 +164,14 @@ test("AC3: a step that exits 2 fails the run, later steps never run, and its std
 });
 
 // A copy of the pipeline (dags/ + scripts/ code, no data) under tmpRoot/<name>,
-// standing in for a fresh clone.
+// standing in for a fresh clone. US-039: _logan's reference tables come along,
+// since tag-technique and log-card read the controlled vocabularies from them.
 function clonePipeline(name) {
   const clone = path.join(tmpRoot, name);
   fs.mkdirSync(path.join(clone, "scripts"), { recursive: true });
+  const tables = path.join(".claude", "agents", "_logan", "reference-tables.md");
+  fs.mkdirSync(path.dirname(path.join(clone, tables)), { recursive: true });
+  fs.copyFileSync(path.join(repoRoot, tables), path.join(clone, tables));
   fs.cpSync(path.join(repoRoot, "dags"), path.join(clone, "dags"), { recursive: true });
   fs.cpSync(path.join(repoRoot, "scripts", "lib"), path.join(clone, "scripts", "lib"), { recursive: true });
   for (const f of fs.readdirSync(path.join(repoRoot, "scripts"))) {
