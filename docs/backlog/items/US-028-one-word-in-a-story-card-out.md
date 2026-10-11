@@ -92,15 +92,15 @@ Given  no candidate story passes the hard gates
   | `write-row` | `update-anki-story` §2 | code |
   | `sync` | `anki-sync.js`, `update-anki-story` §3–4 | code (wraps) |
 
-- **Contracts for the CLIs with new logic** (JSON on stdin → JSON on stdout; exit codes per EN-036):
-  - `syllabify`: `{word, ipa}` → `{syllables}`, stress from CMU. e.g. `trial` → `["ˈtraɪ","əl"]`. A g2p-flagged IPA passes through with `flagged: true`.
-  - `define`: `{word}` → `{definition, senses[], primarySense}`, primarySense = one word.
-  - `gloss`: `{word, primarySense, definition}` → `{gloss}`; fails if longer than 60 characters.
-  - `chunk`: `{syllables}` → `[{ipa, anchorUnits[]}]`, anchorUnits from `_logan`'s controlled vocabulary.
-  - `find-keywords`: `{chunks}` → per chunk, keyword with an exact GA IPA match and the highest frequency above the threshold, or none. e.g. germane /dʒərˈmeɪn/ → `main` for /meɪn/.
-  - `compose-stories`: `{word, primarySense, chunks with keywords}` → 5 × `{sentence, pivot_words}`, two-clause shape (anchors first, meaning second).
-  - `check-story`: `{word, sentence, pivot_words, primarySense, chunks}` → `{pass, reasons[]}`. e.g. for `concede`, "The conceded point…" fails on headword.
-  - `pick-story`: candidates with check results → the first passing one, or exit "no-pick" with every candidate's reasons.
+- **Contracts for the CLIs with new logic** (Node scripts in `scripts/`; plain output per EN-036's step contract: result on stdout, one record per line, tab-separated fields, comma-separated lists; notes on stderr; exit 0 ok / 1 stopped with reasons on stdout / 2 error):
+  - `syllabify <ipa>` → syllables joined with `.`, stress from CMU. e.g. `syllabify ˈtraɪəl` → `ˈtraɪ.əl`. A g2p-flagged IPA passes through with a stderr warning.
+  - `define <word>` → line 1: primarySense (one word); line 2: definition; line 3: all senses, comma-separated.
+  - `gloss <word> <primarySense> <definition>` → one line, ≤60 characters; exit 1 if longer.
+  - `chunk <syllables>` → one line per chunk: `ipa	anchorUnits` (comma-separated, from `_logan`'s controlled vocabulary).
+  - `find-keywords <syllables>` → one line per chunk: `ipa	keyword	frequency`, keyword = exact GA IPA match with the highest frequency above the threshold, or `-` when none. e.g. `find-keywords ˈdʒɝ.ˈmeɪn` → `dʒɝ	-` / `meɪn	main	…`.
+  - `compose-stories <word> <primarySense> <chunk-keywords-file>` → 5 lines: `sentence	pivot,pivot`, two-clause shape (anchors first, meaning second). Strips tabs/newlines from model text.
+  - `check-story <word> <primarySense> <sentence> <pivots> <chunk-keywords-file>` → exit 0, no output, on pass; exit 1 with one reason per line (e.g. `headword: conceded`) on fail.
+  - `pick-story <candidates-file> <checks-file>` → the first passing `sentence	pivots` line, or exit 1 with every candidate's reasons.
 - **Rules:**
   - Hard gates (`check-story`): no headword or inflection (case-insensitive, whole word); 10 words or fewer; primarySense word (or its inflection) present; pivots appear in chunk order; each keyword's GA IPA equals its chunk's IPA.
   - A chunk with no exact-IPA keyword stays unanchored and is taught by the IPA line, never by a near match.
