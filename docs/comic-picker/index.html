@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comic Picker</title>
+<style>
+  :root {
+    --bg: #f6f3ee; --panel: #fffdf9; --ink: #1f1d1a; --muted: #6f6a62;
+    --line: #e2ddd4; --accent: #d9542b; --accent-ink: #fff; --ok: #2f7d4f; --err: #b3261e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1917; --panel: #24221f; --ink: #ece8e1; --muted: #a39d93;
+      --line: #3a3732; --accent: #ef6a3f; --accent-ink: #1a1917; --ok: #6cc38f; --err: #ff8a80;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  header { display: flex; align-items: center; gap: 12px; padding: 14px 20px;
+           border-bottom: 1px solid var(--line); background: var(--panel); }
+  header h1 { font-size: 17px; margin: 0; }
+  header select { font: inherit; padding: 4px 8px; border-radius: 6px;
+                  border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+  header .hint { color: var(--muted); font-size: 13px; margin-left: auto; }
+  main { display: grid; grid-template-columns: minmax(260px, 380px) minmax(0, 1fr); gap: 20px; padding: 20px; }
+  @media (max-width: 860px) { main { grid-template-columns: 1fr; } }
+  .grids { display: flex; flex-direction: column; gap: 20px; }
+  /* One grid per row, as wide as the column but never taller than the
+     viewport (minus header + card chrome), so a whole 3×3 fits on screen. */
+  .grid-card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px;
+               width: 100%; }
+  .grid-card h2 { font-size: 14px; margin: 0 0 8px; display: flex; gap: 8px; align-items: baseline; }
+  .grid-card h2 .tag { background: var(--ink); color: var(--panel); border-radius: 4px; padding: 0 6px; }
+  .grid-card h2 .name { color: var(--muted); font-weight: 400; font-size: 12px; }
+  .sheet { position: relative; }
+  .sheet img { display: block; width: 100%; border-radius: 4px; }
+  .cells { position: absolute; inset: 0; display: grid; grid-template: repeat(3, 1fr) / repeat(3, 1fr); }
+  .cell { position: relative; border: 0; background: transparent; cursor: pointer; padding: 0;
+          outline: 1px dashed rgba(0,0,0,.12); }
+  .cell:hover { background: rgba(255,255,255,.18); outline: 2px solid var(--accent); }
+  .cell .num { position: absolute; left: 6px; top: 6px; font-size: 11px; color: #fff;
+               background: rgba(0,0,0,.45); border-radius: 3px; padding: 0 4px; }
+  .cell.picked { outline: 4px solid var(--accent); outline-offset: -4px; cursor: not-allowed;
+                 background: rgba(20,18,16,.55); }
+  .cell.picked:hover { background: rgba(20,18,16,.55); }
+  .cell .lock { position: absolute; inset: 0; display: grid; place-items: center; color: #fff;
+                font-weight: 700; font-size: 11px; letter-spacing: .04em; text-shadow: 0 1px 2px #000; }
+  .cell .lock svg { width: 20px; height: 20px; display: block; margin: 0 auto 4px; }
+  .cell .order { position: absolute; right: 6px; top: 6px; width: 22px; height: 22px; border-radius: 50%;
+                 background: var(--accent); color: var(--accent-ink); font-weight: 700;
+                 display: grid; place-items: center; font-size: 12px; }
+  aside { position: sticky; top: 20px; align-self: start; background: var(--panel);
+          border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
+  aside h2 { font-size: 14px; margin: 0 0 10px; }
+  .story { margin: 0 0 12px; padding: 10px 12px; border-left: 3px solid var(--accent);
+           background: var(--bg); border-radius: 4px; font-size: 16px; font-style: italic; }
+  .story .label { display: block; font-style: normal; font-size: 11px; text-transform: uppercase;
+                  letter-spacing: .06em; color: var(--muted); margin-bottom: 2px; }
+  .story.none { font-style: normal; color: var(--muted); font-size: 13px; }
+  .story .meaning-label { margin-top: 8px; }
+  .story .meaning { display: block; font-style: normal; font-size: 14px; color: var(--ink); }
+  canvas { cursor: pointer; width: 100%; max-width: calc(100vh - 300px); margin: 0 auto; height: auto; display: block; background: #fff; border-radius: 4px;
+           border: 1px solid var(--line); }
+  .empty { aspect-ratio: 1; max-width: calc(100vh - 300px); margin: 0 auto; display: grid; place-items: center; color: var(--muted);
+           border: 1px dashed var(--line); border-radius: 4px; text-align: center; padding: 20px; }
+  .seq { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; min-height: 30px; }
+  .chip { display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--line);
+          border-radius: 999px; padding: 2px 4px 2px 10px; font-size: 13px; }
+  .chip button { border: 0; background: none; color: var(--muted); cursor: pointer; font-size: 14px; }
+  .row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .row label { color: var(--muted); font-size: 13px; }
+  button.primary { font: inherit; font-weight: 600; padding: 8px 16px; border-radius: 8px; border: 0;
+                   background: var(--accent); color: var(--accent-ink); cursor: pointer; margin-left: auto; }
+  button.primary:disabled { opacity: .4; cursor: not-allowed; }
+  button.ghost { font: inherit; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line);
+                 background: none; color: var(--ink); cursor: pointer; }
+  .status { margin-top: 10px; font-size: 13px; white-space: pre-wrap; }
+  .status.ok { color: var(--ok); } .status.err { color: var(--err); }
+  .saved { margin-top: 12px; }
+  .saved img { width: 25%; min-width: 120px; display: block; border: 1px solid var(--line); border-radius: 4px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Comic Picker</h1>
+  <select id="word"></select>
+  <span class="hint">Click 3–4 cells in story order · picked cells lock · click a panel in the preview to remove it</span>
+</header>
+<main>
+  <section class="grids" id="grids"></section>
+  <aside>
+    <div class="story none" id="story">No story found for this word.</div>
+    <h2>Comic preview</h2>
+    <div id="preview"><div class="empty">Pick cells on the left; the 2×2 comic builds here as you go.</div></div>
+    <div class="seq" id="seq"></div>
+    <div class="row">
+      <button class="ghost" id="clear">Clear</button>
+      <label><input type="checkbox" id="attach" checked> Attach to Anki card</label>
+      <button class="primary" id="confirm" disabled>Confirm</button>
+    </div>
+    <div class="status" id="status"></div>
+    <div class="saved" id="saved"></div>
+  </aside>
+</main>
+<script>
+// Geometry mirrors scripts/compose-comic.sh: shave 4px, 3px black border,
+// 12px gutters and margin, a 3rd-of-3 panel centred on the bottom row.
+const SHAVE = 4, BORDER = 3, GAP = 12;
+const $ = (id) => document.getElementById(id);
+let state = { word: null, grids: [], images: {}, picks: [], hasCard: false };
+
+const LOCK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
+let slotsDrawn = [], panelDrawn = 0;
+const letter = (i) => String.fromCharCode(65 + i);
+const labelOf = (p) => `${letter(state.grids.indexOf(p.grid))}${p.cell}`;
+
+async function loadWords() {
+  const { groups, initial } = await (await fetch('/api/words')).json();
+  const fromUrl = new URLSearchParams(location.search).get('word');
+  $('word').innerHTML = groups.map((g) =>
+    `<optgroup label="${g.date}">${g.words.map((w) => `<option>${w}</option>`).join('')}</optgroup>`).join('');
+  const pick = fromUrl || initial || groups[0]?.words[0];
+  if (pick) { $('word').value = pick; loadWord(pick); }
+}
+
+async function loadWord(word) {
+  const data = await (await fetch(`/api/grids?word=${encodeURIComponent(word)}`)).json();
+  state = { word, grids: data.grids, images: {}, picks: [], hasCard: data.hasCard };
+  history.replaceState(null, '', `?word=${encodeURIComponent(word)}`);
+  $('attach').checked = data.hasCard;
+  $('attach').disabled = !data.hasCard;
+  $('attach').parentElement.title = data.hasCard ? '' : 'This word has no row in reading-room-terms.txt';
+  $('story').className = data.story ? 'story' : 'story none';
+  const esc = (s) => s.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]);
+  $('story').innerHTML = (data.story ? `<span class="label">Story</span>${esc(data.story)}` : 'No story found for this word.')
+    + (data.meaning ? `<span class="label meaning-label">Meaning</span><span class="meaning">${esc(data.meaning)}</span>` : '');
+  $('status').textContent = '';
+  $('saved').innerHTML = data.existing ? `<div class="status">Current comic on disk:</div><img src="/img/${data.existing}?t=${Date.now()}">` : '';
+  await Promise.all(data.grids.map((g) => new Promise((ok) => {
+    const img = new Image();
+    img.onload = () => { state.images[g] = img; ok(); };
+    img.src = `/img/${g}`;
+  })));
+  renderGrids();
+  render();
+}
+
+function renderGrids() {
+  $('grids').innerHTML = state.grids.map((g, gi) => `
+    <div class="grid-card">
+      <h2><span class="tag">${letter(gi)}</span> grid ${letter(gi)} <span class="name">${g}</span></h2>
+      <div class="sheet">
+        <img src="/img/${g}" alt="${g}">
+        <div class="cells">${[1,2,3,4,5,6,7,8,9].map((n) =>
+          `<button class="cell" data-grid="${g}" data-cell="${n}"><span class="num">${n}</span></button>`).join('')}
+        </div>
+      </div>
+    </div>`).join('');
+  document.querySelectorAll('.cell').forEach((b) => b.addEventListener('click', () => toggle(b.dataset.grid, +b.dataset.cell)));
+}
+
+function toggle(grid, cell) {
+  const i = state.picks.findIndex((p) => p.grid === grid && p.cell === cell);
+  if (i >= 0) { setStatus(`${labelOf(state.picks[i])} is already panel ${i + 1} — click it in the preview to remove it.`); return; }
+  if (state.picks.length < 4) state.picks.push({ grid, cell });
+  else { setStatus('A comic holds at most 4 panels — remove one first.', 'err'); return; }
+  setStatus('');
+  render();
+}
+
+function render() {
+  document.querySelectorAll('.cell').forEach((b) => {
+    const i = state.picks.findIndex((p) => p.grid === b.dataset.grid && p.cell === +b.dataset.cell);
+    b.classList.toggle('picked', i >= 0);
+    b.querySelector('.order')?.remove();
+    b.querySelector('.lock')?.remove();
+    b.title = i >= 0 ? `Locked as panel ${i + 1}` : '';
+    if (i >= 0) b.insertAdjacentHTML('beforeend', `<span class="order">${i + 1}</span><span class="lock">${LOCK_SVG}PANEL ${i + 1}</span>`);
+  });
+  $('seq').innerHTML = state.picks.map((p, i) =>
+    `<span class="chip">${i + 1}. ${labelOf(p)}<button data-i="${i}" title="remove">×</button></span>`).join('');
+  $('seq').querySelectorAll('button').forEach((b) => b.addEventListener('click', () => { state.picks.splice(+b.dataset.i, 1); render(); }));
+  const n = state.picks.length;
+  $('confirm').disabled = n < 3;
+  $('confirm').textContent = n < 3 ? `Confirm (${n}/3+)` : `Confirm ${n}-panel comic`;
+  drawPreview();
+}
+
+function drawPreview() {
+  if (!state.picks.length) {
+    $('preview').innerHTML = '<div class="empty">Pick cells on the left; the 2×2 comic builds here as you go.</div>';
+    return;
+  }
+  const first = state.images[state.picks[0].grid];
+  const cw = Math.floor(first.naturalWidth / 3);
+  const panel = cw - 2 * SHAVE + 2 * BORDER;
+  const size = 2 * panel + 3 * GAP;
+  let canvas = $('preview').querySelector('canvas');
+  if (!canvas) { $('preview').innerHTML = '<canvas></canvas>'; canvas = $('preview').querySelector('canvas'); }
+  canvas.width = canvas.height = size;
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, size, size);
+  const three = state.picks.length === 3;
+  const slots = [[GAP, GAP], [GAP * 2 + panel, GAP],
+    three ? [(size - panel) / 2, GAP * 2 + panel] : [GAP, GAP * 2 + panel], [GAP * 2 + panel, GAP * 2 + panel]];
+  slotsDrawn = slots.slice(0, state.picks.length); panelDrawn = panel;
+  if (!canvas.dataset.bound) { canvas.dataset.bound = 1; canvas.addEventListener('click', removeFromPreview); }
+  state.picks.forEach((p, i) => {
+    const img = state.images[p.grid];
+    const w = Math.floor(img.naturalWidth / 3), h = Math.floor(img.naturalHeight / 3);
+    const sx = ((p.cell - 1) % 3) * w + SHAVE, sy = Math.floor((p.cell - 1) / 3) * h + SHAVE;
+    const [x, y] = slots[i];
+    ctx.fillStyle = '#000'; ctx.fillRect(x, y, panel, panel);
+    ctx.drawImage(img, sx, sy, w - 2 * SHAVE, h - 2 * SHAVE, x + BORDER, y + BORDER, panel - 2 * BORDER, panel - 2 * BORDER);
+  });
+  if (state.picks.length < 3) {
+    ctx.fillStyle = 'rgba(0,0,0,.35)'; ctx.font = `${Math.round(panel / 10)}px sans-serif`; ctx.textAlign = 'center';
+    for (let i = state.picks.length; i < 4; i++) {
+      const [x, y] = slots[i];
+      ctx.fillText(i === 3 ? '(optional)' : `panel ${i + 1}`, x + panel / 2, y + panel / 2);
+    }
+  }
+}
+
+// Map a click on the scaled canvas back to comic pixels, then to a panel.
+function removeFromPreview(e) {
+  const c = e.currentTarget, r = c.getBoundingClientRect();
+  const x = (e.clientX - r.left) * (c.width / r.width), y = (e.clientY - r.top) * (c.height / r.height);
+  const i = slotsDrawn.findIndex(([sx, sy]) => x >= sx && x < sx + panelDrawn && y >= sy && y < sy + panelDrawn);
+  if (i < 0) return;
+  const [removed] = state.picks.splice(i, 1);
+  setStatus(`Removed ${labelOf(removed)} (was panel ${i + 1}).`);
+  render();
+}
+
+function setStatus(text, kind = '') { $('status').textContent = text; $('status').className = `status ${kind}`; }
+
+$('word').addEventListener('change', (e) => loadWord(e.target.value));
+$('clear').addEventListener('click', () => { state.picks = []; setStatus(''); render(); });
+$('confirm').addEventListener('click', async () => {
+  $('confirm').disabled = true;
+  setStatus('Composing…');
+  const res = await fetch('/api/confirm', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ word: state.word, cells: state.picks, attach: $('attach').checked && state.hasCard }),
+  });
+  const r = await res.json();
+  if (!res.ok) { setStatus(r.error, 'err'); $('confirm').disabled = false; return; }
+  const order = state.picks.map(labelOf).join(' → ');
+  let msg = `Saved images/mnemonic/${r.file}  (${order})`;
+  if (r.attached) msg += `\nAttached to the "${state.word}" card · Anki sync: ${r.sync}`;
+  else if (r.note) msg += `\nNot attached: ${r.note}`;
+  setStatus(msg, r.sync && r.sync !== 'ok' ? 'err' : 'ok');
+  $('saved').innerHTML = `<img src="/img/${r.file}?t=${Date.now()}" alt="saved comic">`;
+  $('confirm').disabled = false;
+});
+
+loadWords();
+</script>
+</body>
+</html>

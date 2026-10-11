@@ -15,18 +15,18 @@ const { execFileSync, spawnSync } = require("node:child_process");
 const SCRIPT = path.join(__dirname, "..", "scripts", "compose-comic.sh");
 const COLOURS = ["red", "orange", "yellow", "green", "cyan", "blue", "purple", "pink", "gray"];
 
-function makeGrid(dir) {
-  const cells = COLOURS.map((c, i) => {
-    const p = path.join(dir, `in${i}.png`);
+function makeGrid(dir, colours = COLOURS, name = "grid.png") {
+  const cells = colours.map((c, i) => {
+    const p = path.join(dir, `${name}.in${i}.png`);
     execFileSync("magick", ["-size", "100x100", `xc:${c}`, p]);
     return p;
   });
   const rows = [0, 1, 2].map((r) => {
-    const p = path.join(dir, `row${r}.png`);
+    const p = path.join(dir, `${name}.row${r}.png`);
     execFileSync("magick", [...cells.slice(r * 3, r * 3 + 3), "+append", p]);
     return p;
   });
-  const grid = path.join(dir, "grid.png");
+  const grid = path.join(dir, name);
   execFileSync("magick", [...rows, "-append", grid]);
   return grid;
 }
@@ -70,6 +70,16 @@ test("compose-comic", async (t) => {
     assert.equal(pixel(out, 171, 61), srgb("cyan"));
     assert.equal(pixel(out, 116, 171), srgb("gray")); // centre of bottom row
     assert.equal(pixel(out, 30, 171), srgb("white")); // left of it is blank
+  });
+
+  await t.test("a PATH:N cell is taken from a different grid", () => {
+    const other = makeGrid(dir, [...COLOURS].reverse(), "other.png"); // cell 1 = gray, 9 = red
+    const out = path.join(dir, "mixed.png");
+    execFileSync(SCRIPT, [grid, out, "2", `${other}:1`, "3", `${other}:9`]);
+    assert.equal(pixel(out, 61, 61), srgb("orange")); // cell 2 of INPUT
+    assert.equal(pixel(out, 171, 61), srgb("gray")); // cell 1 of other
+    assert.equal(pixel(out, 61, 171), srgb("yellow")); // cell 3 of INPUT
+    assert.equal(pixel(out, 171, 171), srgb("red")); // cell 9 of other
   });
 
   await t.test("refuses fewer than 3 or more than 4 cells", () => {

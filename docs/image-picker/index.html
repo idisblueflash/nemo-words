@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Image Picker</title>
+<style>
+  :root {
+    --bg: #f6f3ee; --panel: #fffdf9; --ink: #1f1d1a; --muted: #6f6a62;
+    --line: #e2ddd4; --accent: #d9542b; --accent-ink: #fff; --ok: #2f7d4f; --err: #b3261e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1917; --panel: #24221f; --ink: #ece8e1; --muted: #a39d93;
+      --line: #3a3732; --accent: #ef6a3f; --accent-ink: #1a1917; --ok: #6cc38f; --err: #ff8a80;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  header { display: flex; align-items: center; gap: 12px; padding: 14px 20px; flex-wrap: wrap;
+           border-bottom: 1px solid var(--line); background: var(--panel); }
+  header h1 { font-size: 17px; margin: 0; }
+  header select { font: inherit; padding: 4px 8px; border-radius: 6px;
+                  border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+  header .hint { color: var(--muted); font-size: 13px; margin-left: auto; }
+  main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; padding: 20px; }
+  @media (max-width: 860px) { main { grid-template-columns: 1fr; } }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
+  .card h2 { font-size: 14px; margin: 0 0 10px; }
+  .card h2 .name { color: var(--muted); font-weight: 400; font-size: 12px; }
+
+  /* The grid: a 3×3 of buttons over the sheet. A row with a candidate dims its
+     other two cells; the next row still to pick gets a subtle accent rail. */
+  .sheet { position: relative; max-width: calc(100vh - 140px); margin: 0 auto; }
+  .sheet img { display: block; width: 100%; border-radius: 4px; }
+  .cells { position: absolute; inset: 0; display: grid; grid-template: repeat(3, 1fr) / repeat(3, 1fr); }
+  .cell { position: relative; border: 0; background: transparent; cursor: pointer; padding: 0;
+          outline: 1px dashed rgba(0,0,0,.12); transition: background .15s; }
+  .cell:hover { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .cell .num { position: absolute; left: 6px; top: 6px; font-size: 11px; color: #fff;
+               background: rgba(0,0,0,.45); border-radius: 3px; padding: 0 4px; }
+  .cell.dim { background: rgba(20,18,16,.62); }
+  .cell.dim:hover { background: rgba(20,18,16,.4); }
+  .cell.cand { outline: 4px solid var(--accent); outline-offset: -4px; }
+  .cell.next { box-shadow: inset 0 0 0 2px rgba(217,84,43,.35); }
+  .cell .badge { position: absolute; right: 6px; top: 6px; border-radius: 999px; padding: 1px 8px;
+                 background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 11px; }
+
+  aside { position: sticky; top: 20px; align-self: start; display: flex; flex-direction: column; gap: 14px; }
+  .story { margin: 0; padding: 10px 12px; border-left: 3px solid var(--accent);
+           background: var(--bg); border-radius: 4px; font-size: 16px; font-style: italic; }
+  .story .label { display: block; font-style: normal; font-size: 11px; text-transform: uppercase;
+                  letter-spacing: .06em; color: var(--muted); margin-bottom: 2px; }
+  .story.none { font-style: normal; color: var(--muted); font-size: 13px; }
+  .story .meaning-label { margin-top: 8px; }
+  .story .meaning { display: block; font-style: normal; font-size: 14px; color: var(--ink); }
+
+  .cands { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .slot { position: relative; aspect-ratio: 1; border-radius: 6px; border: 1px dashed var(--line);
+          display: grid; place-items: center; color: var(--muted); font-size: 13px; padding: 0;
+          background: var(--bg); font: inherit; overflow: hidden; }
+  .slot.filled { border: 1px solid var(--line); cursor: pointer; background: #fff; }
+  .slot canvas { width: 100%; height: 100%; display: block; }
+  .slot .tag { position: absolute; left: 6px; top: 6px; font-size: 11px; color: #fff;
+               background: rgba(0,0,0,.5); border-radius: 3px; padding: 0 5px; }
+  .slot.final { outline: 4px solid var(--accent); outline-offset: -4px; }
+  .slot.final .tag { background: var(--accent); color: var(--accent-ink); font-weight: 700; }
+  .slot.dim::after { content: ""; position: absolute; inset: 0; background: rgba(20,18,16,.62); }
+  .slot.dim:hover::after { background: rgba(20,18,16,.4); }
+  .slot .x { position: absolute; right: 4px; top: 4px; z-index: 1; border: 0; border-radius: 50%;
+             width: 22px; height: 22px; background: rgba(0,0,0,.55); color: #fff; cursor: pointer;
+             font-size: 13px; line-height: 22px; padding: 0; }
+  .sub { color: var(--muted); font-size: 13px; margin: -4px 0 0; }
+
+  .final-view canvas { width: 100%; max-width: 360px; display: block; margin: 0 auto;
+                       border-radius: 4px; border: 1px solid var(--line); background: #fff; }
+  .final-view .empty { aspect-ratio: 1; max-width: 360px; margin: 0 auto; display: grid; place-items: center;
+                       color: var(--muted); border: 1px dashed var(--line); border-radius: 4px;
+                       text-align: center; padding: 20px; font-size: 13px; }
+  .row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+  .row label { color: var(--muted); font-size: 13px; }
+  button.primary { font: inherit; font-weight: 600; padding: 8px 16px; border-radius: 8px; border: 0;
+                   background: var(--accent); color: var(--accent-ink); cursor: pointer; margin-left: auto; }
+  button.primary:disabled { opacity: .4; cursor: not-allowed; }
+  button.ghost { font: inherit; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line);
+                 background: none; color: var(--ink); cursor: pointer; }
+  .status { margin-top: 10px; font-size: 13px; white-space: pre-wrap; }
+  .status.ok { color: var(--ok); } .status.err { color: var(--err); }
+  .saved { display: flex; gap: 10px; align-items: flex-start; margin-top: 10px; }
+  .saved img { width: 120px; display: block; border: 1px solid var(--line); border-radius: 4px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Image Picker</h1>
+  <select id="word"></select>
+  <select id="grid" title="Grid"></select>
+  <span class="hint">Pick one candidate per row · then pick the final one from the three · Output</span>
+</header>
+<main>
+  <section class="card">
+    <h2>Grid <span class="name" id="gridName"></span></h2>
+    <div class="sheet" id="sheet"></div>
+  </section>
+  <aside>
+    <div class="story none" id="story">No story found for this word.</div>
+    <section class="card">
+      <h2>Candidates</h2>
+      <p class="sub" id="candHint">Click one image in each row of the grid.</p>
+      <div class="cands" id="cands" style="margin-top:10px"></div>
+    </section>
+    <section class="card">
+      <h2>Final</h2>
+      <div class="final-view" id="finalView"></div>
+      <div class="row">
+        <button class="ghost" id="clear">Start over</button>
+        <label><input type="checkbox" id="attach" checked> Attach to Anki card</label>
+        <button class="primary" id="confirm" disabled>Output</button>
+      </div>
+      <div class="status" id="status"></div>
+      <div class="saved" id="saved"></div>
+    </section>
+  </aside>
+</main>
+<script>
+// Crop geometry mirrors scripts/crop-grid-cell.sh: equal cells, floor(W/3).
+const $ = (id) => document.getElementById(id);
+// cands[r] = cell number (1–9) picked in row r, or null; final = row index or null.
+let state = { word: null, grids: [], grid: null, img: null, cands: [null, null, null], final: null, hasCard: false, existing: null };
+
+const rowOf = (cell) => Math.floor((cell - 1) / 3);
+const esc = (s) => s.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]);
+
+async function loadWords() {
+  const { groups, initial } = await (await fetch('/api/words')).json();
+  const fromUrl = new URLSearchParams(location.search).get('word');
+  $('word').innerHTML = groups.map((g) =>
+    `<optgroup label="${g.date}">${g.words.map((w) => `<option>${esc(w)}</option>`).join('')}</optgroup>`).join('');
+  const pick = fromUrl || initial || groups[0]?.words[0];
+  if (pick) { $('word').value = pick; loadWord(pick); }
+}
+
+async function loadWord(word) {
+  const data = await (await fetch(`/api/grids?word=${encodeURIComponent(word)}`)).json();
+  Object.assign(state, { word, grids: data.grids, hasCard: data.hasCard, existing: data.existing });
+  history.replaceState(null, '', `?word=${encodeURIComponent(word)}`);
+  $('attach').checked = data.hasCard;
+  $('attach').disabled = !data.hasCard;
+  $('attach').parentElement.title = data.hasCard ? '' : 'This word has no row in reading-room-terms.txt';
+  $('story').className = data.story ? 'story' : 'story none';
+  $('story').innerHTML = (data.story ? `<span class="label">Story</span>${esc(data.story)}` : 'No story found for this word.')
+    + (data.meaning ? `<span class="label meaning-label">Meaning</span><span class="meaning">${esc(data.meaning)}</span>` : '');
+  $('grid').innerHTML = data.grids.map((g) => `<option>${esc(g)}</option>`).join('');
+  $('grid').style.display = data.grids.length > 1 ? '' : 'none';
+  showSaved(data.existing, 'Current image on disk (Output replaces it):');
+  setStatus('');
+  await loadGrid(data.grids[0]);
+}
+
+async function loadGrid(grid) {
+  state.grid = grid;
+  state.cands = [null, null, null];
+  state.final = null;
+  $('grid').value = grid;
+  $('gridName').textContent = grid;
+  state.img = await new Promise((ok) => { const i = new Image(); i.onload = () => ok(i); i.src = `/img/${grid}`; });
+  $('sheet').innerHTML = `<img src="/img/${grid}" alt="${esc(grid)}"><div class="cells">${
+    [1,2,3,4,5,6,7,8,9].map((n) => `<button class="cell" data-cell="${n}"><span class="num">${n}</span></button>`).join('')}</div>`;
+  $('sheet').querySelectorAll('.cell').forEach((b) => b.addEventListener('click', () => pickCell(+b.dataset.cell)));
+  render();
+}
+
+// Clicking a cell makes it its row's candidate; clicking the candidate again clears the row.
+function pickCell(cell) {
+  const r = rowOf(cell);
+  if (state.cands[r] === cell) {
+    state.cands[r] = null;
+    if (state.final === r) state.final = null;
+  } else {
+    state.cands[r] = cell;
+  }
+  setStatus('');
+  render();
+}
+
+function pickFinal(r) {
+  if (state.cands[r] == null) return;
+  state.final = state.final === r ? null : r;
+  render();
+}
+
+function render() {
+  const next = state.cands.findIndex((c) => c == null);
+  $('sheet').querySelectorAll('.cell').forEach((b) => {
+    const cell = +b.dataset.cell, r = rowOf(cell), cand = state.cands[r];
+    b.classList.toggle('cand', cand === cell);
+    b.classList.toggle('dim', cand != null && cand !== cell);
+    b.classList.toggle('next', r === next);
+    b.querySelector('.badge')?.remove();
+    if (cand === cell) b.insertAdjacentHTML('beforeend', `<span class="badge">${state.final === r ? 'FINAL' : `row ${r + 1}`}</span>`);
+    b.title = cand === cell ? 'Candidate for this row — click again to clear' : `Make cell ${cell} the row ${r + 1} candidate`;
+  });
+
+  $('cands').innerHTML = state.cands.map((c, r) => c == null
+    ? `<div class="slot">Row ${r + 1}</div>`
+    : `<div class="slot filled ${state.final === r ? 'final' : state.final != null ? 'dim' : ''}" data-r="${r}" title="Pick as final">
+         <canvas></canvas><span class="tag">${state.final === r ? 'FINAL · ' : ''}row ${r + 1} · cell ${c}</span>
+         <button class="x" data-r="${r}" title="Clear this row">×</button></div>`).join('');
+  $('cands').querySelectorAll('.slot.filled').forEach((s) => {
+    const r = +s.dataset.r;
+    drawCell(s.querySelector('canvas'), state.cands[r]);
+    s.addEventListener('click', () => pickFinal(r));
+  });
+  $('cands').querySelectorAll('.x').forEach((b) => b.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const r = +b.dataset.r;
+    state.cands[r] = null;
+    if (state.final === r) state.final = null;
+    render();
+  }));
+
+  const filled = state.cands.filter((c) => c != null).length;
+  $('candHint').textContent = state.final != null ? 'Click another candidate to switch, or the final one again to unpick.'
+    : filled === 0 ? 'Click one image in each row of the grid.'
+    : filled < 3 ? `Row ${next + 1} next — or pick the final from what's here.`
+    : 'Now click the one you want as the final image.';
+
+  if (state.final == null) {
+    $('finalView').innerHTML = '<div class="empty">Click a candidate above to make it the final image.</div>';
+  } else {
+    $('finalView').innerHTML = '<canvas></canvas>';
+    drawCell($('finalView').querySelector('canvas'), state.cands[state.final]);
+  }
+  const cell = state.final != null ? state.cands[state.final] : null;
+  $('confirm').disabled = cell == null;
+  $('confirm').textContent = cell == null ? 'Output' : `Output cell ${cell} → ${state.word}.png`;
+}
+
+function drawCell(canvas, cell) {
+  const img = state.img, w = Math.floor(img.naturalWidth / 3), h = Math.floor(img.naturalHeight / 3);
+  canvas.width = w; canvas.height = h;
+  canvas.getContext('2d').drawImage(img, ((cell - 1) % 3) * w, rowOf(cell) * h, w, h, 0, 0, w, h);
+}
+
+function showSaved(file, label) {
+  $('saved').innerHTML = file ? `<img src="/img/${encodeURIComponent(file)}?t=${Date.now()}" alt="${esc(file)}"><div class="status">${esc(label)}</div>` : '';
+}
+
+function setStatus(text, kind = '') { $('status').textContent = text; $('status').className = `status ${kind}`; }
+
+$('word').addEventListener('change', (e) => loadWord(e.target.value));
+$('grid').addEventListener('change', (e) => loadGrid(e.target.value));
+$('clear').addEventListener('click', () => { state.cands = [null, null, null]; state.final = null; setStatus(''); render(); });
+$('confirm').addEventListener('click', async () => {
+  const cell = state.cands[state.final];
+  $('confirm').disabled = true;
+  setStatus('Cropping…');
+  const res = await fetch('/api/confirm', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ word: state.word, grid: state.grid, cell, attach: $('attach').checked && state.hasCard }),
+  });
+  const r = await res.json();
+  $('confirm').disabled = false;
+  if (!res.ok) { setStatus(r.error, 'err'); return; }
+  let msg = `Saved images/mnemonic/${r.file}  (cell ${cell} of ${state.grid})`;
+  if (r.attached) msg += `\nAttached to the "${state.word}" card · Anki sync: ${r.sync}`;
+  else if (r.note) msg += `\nNot attached: ${r.note}`;
+  setStatus(msg, r.sync && r.sync !== 'ok' ? 'err' : 'ok');
+  showSaved(r.file, 'Saved.');
+});
+
+loadWords();
+</script>
+</body>
+</html>

@@ -52,6 +52,20 @@ composed 2×2, in the order given, with `scripts/compose-comic.sh` into
 `images/mnemonic/<word>.comic.png` (ADR-0020/0021/0022), and that file is what
 goes in the card's `Image` column.
 
+For the comic pick there's also a clickable picker: `node scripts/comic-picker.js <word>`
+(→ `http://localhost:8788`). It shows every `images/mnemonic/<word>*.grid.png` as a
+clickable 3×3 on the left (so a follow-up grid for a missing beat, e.g.
+`<word>.noodles.grid.png`, can be mixed in) and the 2×2 comic redrawing live on the
+right. **Confirm** runs `compose-comic.sh` (which accepts `PATH:N` cells from other
+grids) and, unless unticked, attaches the comic to the card the same way.
+
+For a single-image pick there's the matching `node scripts/image-picker.js <word>`
+(→ `http://localhost:8789`): click one candidate per grid row (the row's other two cells
+dim), then click one of the three candidates as the final (the other two dim).
+**Output** runs `crop-grid-cell.sh` to `images/mnemonic/<word>.png` and, unless
+unticked, attaches it to the card the same way. Both pickers share their server
+plumbing in `scripts/picker-common.js`.
+
 Picking a cell counts as choosing that image, so attaching it to the Anki
 card is a **default step, not a separate request**: right after the crop,
 set the `Image` column of the word's row in `anki/reading-room-terms.txt`
