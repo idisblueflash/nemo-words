@@ -1161,5 +1161,196 @@
       "type": "stem",
       "meaning": "peptide"
     }
-  ]
+  ],
+  "compounds": {
+    "_comment": "General-English classical compounds (bug-007). A word is a word-part when an initial form is followed by a final form that ends the word (photo+graph, tele+phone), or a short Latin prefix is followed by a bound Latin root (ad+join). Single forms never match alone.",
+    "initial": [
+      {
+        "part": "photo-",
+        "origin": "G",
+        "type": "cf-initial",
+        "meaning": "light"
+      },
+      {
+        "part": "tele-",
+        "origin": "G",
+        "type": "cf-initial",
+        "meaning": "far"
+      },
+      {
+        "part": "bio-",
+        "origin": "G",
+        "type": "cf-initial",
+        "meaning": "life"
+      },
+      {
+        "part": "geo-",
+        "origin": "G",
+        "type": "cf-initial",
+        "meaning": "earth"
+      },
+      {
+        "part": "auto-",
+        "origin": "G",
+        "type": "cf-initial",
+        "meaning": "self"
+      },
+      {
+        "part": "thermo-",
+        "origin": "G",
+        "type": "cf-initial",
+        "meaning": "heat"
+      },
+      {
+        "part": "hydro-",
+        "origin": "G",
+        "type": "cf-initial",
+        "meaning": "water"
+      },
+      {
+        "part": "chrono-",
+        "origin": "G",
+        "type": "cf-initial",
+        "meaning": "time"
+      },
+      {
+        "part": "psycho-",
+        "origin": "G",
+        "type": "cf-initial",
+        "meaning": "mind"
+      },
+      {
+        "part": "aero-",
+        "origin": "G",
+        "type": "cf-initial",
+        "meaning": "air"
+      },
+      {
+        "part": "phono-",
+        "origin": "G",
+        "type": "cf-initial",
+        "meaning": "sound"
+      },
+      {
+        "part": "morpho-",
+        "origin": "G",
+        "type": "cf-initial",
+        "meaning": "form"
+      },
+      {
+        "part": "anthropo-",
+        "origin": "G",
+        "type": "cf-initial",
+        "meaning": "human"
+      }
+    ],
+    "final": [
+      {
+        "part": "-graph",
+        "origin": "G",
+        "type": "cf-final",
+        "meaning": "write/record"
+      },
+      {
+        "part": "-phone",
+        "origin": "G",
+        "type": "cf-final",
+        "meaning": "sound"
+      },
+      {
+        "part": "-meter",
+        "origin": "G",
+        "type": "cf-final",
+        "meaning": "measure"
+      },
+      {
+        "part": "-metry",
+        "origin": "G",
+        "type": "cf-final",
+        "meaning": "measuring"
+      },
+      {
+        "part": "-scope",
+        "origin": "G",
+        "type": "cf-final",
+        "meaning": "view"
+      },
+      {
+        "part": "-logue",
+        "origin": "G",
+        "type": "cf-final",
+        "meaning": "speech"
+      },
+      {
+        "part": "-sphere",
+        "origin": "G",
+        "type": "cf-final",
+        "meaning": "ball"
+      },
+      {
+        "part": "-cracy",
+        "origin": "G",
+        "type": "cf-final",
+        "meaning": "rule"
+      },
+      {
+        "part": "-nomy",
+        "origin": "G",
+        "type": "cf-final",
+        "meaning": "law"
+      },
+      {
+        "part": "-phobia",
+        "origin": "G",
+        "type": "cf-final",
+        "meaning": "fear"
+      }
+    ],
+    "shortPrefixes": [
+      {
+        "part": "ad-",
+        "origin": "L",
+        "type": "short-prefix",
+        "meaning": "toward"
+      },
+      {
+        "part": "con-",
+        "origin": "L",
+        "type": "short-prefix",
+        "meaning": "together"
+      },
+      {
+        "part": "sub-",
+        "origin": "L",
+        "type": "short-prefix",
+        "meaning": "under"
+      },
+      {
+        "part": "ob-",
+        "origin": "L",
+        "type": "short-prefix",
+        "meaning": "against"
+      },
+      {
+        "part": "dis-",
+        "origin": "L",
+        "type": "short-prefix",
+        "meaning": "apart"
+      },
+      {
+        "part": "trans-",
+        "origin": "L",
+        "type": "short-prefix",
+        "meaning": "across"
+      }
+    ],
+    "latinRoots": [
+      {
+        "part": "join",
+        "origin": "L",
+        "type": "latin-root",
+        "meaning": "unite (iungere)"
+      }
+    ]
+  }
 }

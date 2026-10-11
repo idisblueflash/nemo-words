@@ -8,7 +8,7 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const { createHarness, germaneFixture } = require("./helpers/card-harness");
 
-for (const word of ["nephrectomy", "atorvastatin"]) {
+for (const word of ["nephrectomy", "atorvastatin", "photograph", "telephone", "adjoining"]) {
   test(`AC5: card.js makes no card for "${word}" and names the _etta_mology path`, async () => {
     const h = await createHarness(germaneFixture());
     const before = h.readAnkiFile();

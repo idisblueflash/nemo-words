@@ -42,6 +42,45 @@ function bareForm(part) {
   return part.replace(/^-/, "").replace(/-$/, "").replace(/\/o$/, "");
 }
 
+function loadCompounds() {
+  const raw = JSON.parse(fs.readFileSync(REFERENCE_PATH, "utf8"));
+  return raw.compounds || { initial: [], final: [], shortPrefixes: [], latinRoots: [] };
+}
+
+const MAX_ENDING = 3; // inflection/derivation left after a final form or root: -s, -ic, -ing, -er ...
+
+// Two-morpheme classical compounds that a single-part match misses (bug-007).
+// A lone combining form never counts (photon, graphite, advice stay out); it
+// takes an initial form + a final form that closes the word (photo+graph,
+// tele+phone), or a short Latin prefix + a bound root (ad+join+ing).
+function compoundMatches(norm, parts, compounds) {
+  const initials = [
+    ...compounds.initial,
+    ...parts.filter((p) => p.type === "prefix" && !p.weak && bareForm(p.part).length >= MIN_PART_LENGTH),
+  ];
+  const found = [];
+  for (const init of initials) {
+    const ib = bareForm(init.part);
+    if (!norm.startsWith(ib)) continue;
+    for (const fin of compounds.final) {
+      const fb = bareForm(fin.part);
+      const at = norm.indexOf(fb, ib.length);
+      if (at >= ib.length && norm.length - (at + fb.length) <= MAX_ENDING) found.push(init, fin);
+    }
+  }
+  for (const pre of compounds.shortPrefixes) {
+    const pb = bareForm(pre.part);
+    if (!norm.startsWith(pb)) continue;
+    for (const root of compounds.latinRoots) {
+      const rb = bareForm(root.part);
+      if (norm.startsWith(rb, pb.length) && norm.length - (pb.length + rb.length) <= MAX_ENDING + 1) {
+        found.push(pre, root);
+      }
+    }
+  }
+  return [...new Set(found)];
+}
+
 function classify(word) {
   const norm = normalize(word);
   const parts = loadParts();
@@ -57,6 +96,10 @@ function classify(word) {
     else if (entry.type === "root") hit = norm.includes(bare);
 
     if (hit) matches.push(entry);
+  }
+
+  for (const m of compoundMatches(norm, parts, loadCompounds())) {
+    if (!matches.includes(m)) matches.push(m);
   }
 
   const strong = matches.filter((m) => !m.weak);
