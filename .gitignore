@@ -30,3 +30,6 @@ dictionaries/open-words/vendor/
 **/tatoeba/*.vrt
 **/tatoeba/cwb/
 **/tatoeba/*.db
+
+# local secrets (TYPESAFE_API_KEY etc.)
+.env
