@@ -106,18 +106,33 @@ node dictionaries/lewis-short/search.js <part>    # Latin (Lewis & Short) headwo
 python3 dictionaries/open-words/search.py <part>  # Latin: identify headword + grammatical form
 ```
 
-## Running the card pipeline (Dagu, EN-036)
+## Running the card pipeline (Dagu, EN-036 / US-028)
 
 ```bash
 node scripts/card.js <word>
 ```
 
+The one-word command: one general-English word in, a synced story card out, with nothing
+asked along the way (US-028). Steps, in order: `normalize` → `route` → `ipa` →
+`syllabify` → `define` → `gloss` → `chunk` → `find-keywords` → `compose-stories` →
+`check-stories` → `pick-story` → `story` → `write-row` → `sync` → `report`. When `route`
+finds a logged story for the word (`data/mnemonics/log.jsonl`), the four drafting steps
+are skipped and the logged story is carded. Stops (exit 1) to expect: `already carded …
+current story: …`, the word-part path (`_etta_mology`), `couldn't be routed
+automatically`, `no-pick: …` with every candidate's reasons, and `sync failed … re-run
+later` (the row stays written; the failure is in `anki/sync.log`).
+
+Env overrides `ANKI_FILE`, `ANKI_CONNECT_URL`, `ANKI_SYNC_LOG`, `NEMO_MNEMONIC_LOG`,
+`NEMO_CLAUDE_BIN`, `NEMO_WORDS_BIN`, `NEMO_WORD_FREQ_BIN` work as usual: Dagu doesn't
+pass the caller's environment to steps, so `card.js` forwards the set ones as DAG params
+(declared in `dags/card.yaml`, exported to every step).
+
 This starts `dags/card.yaml` under Dagu by path, so it needs `dagu` on PATH (`brew install dagu`).
 Don't copy the DAG into Dagu's config folder, and don't start it by name: the global
 `dags_dir` points at another project. Exit codes and output:
 
-- `0`: succeeded. The last step's result goes to stdout.
-- `1`: a step stopped cleanly. Prints `stopped at <step>: <reasons>`.
+- `0`: succeeded (the last step ran). The last step's result, the run report, goes to stdout.
+- `1`: a step stopped cleanly. Prints `stopped at <step>: <reasons>` (reasons joined by `; `).
 - `2`: a step failed or crashed, or Dagu is missing or can't run the DAG. Prints
   `failed at <step>:` plus that step's stderr, on stderr.
 
@@ -126,13 +141,16 @@ stderr also names the run and gives the command to inspect it,
 status and its own separate stdout and stderr logs.
 
 Step CLIs follow the step contract in
-`docs/backlog/items/EN-036-dagu-runs-the-card-pipeline-as-small-step-clis.md`. Each step
-takes the previous step's result as a file path (`${<step>.stdout}` in the DAG) and
-should `require("./lib/step-contract")` so a crash exits 2, not 1. The current steps
-are throwaway stubs (`stub-step-one.js` / `stub-step-two.js`) until US-028 replaces them.
-The magic words `__stop__`, `__fail__` and `__crash__` exercise the stop, fail and crash
-paths. Covered by `test/card-pipeline.test.js` (real Dagu, throwaway `DAGU_HOME`) and
-`test/stub-steps.test.js`.
+`docs/backlog/items/EN-036-dagu-runs-the-card-pipeline-as-small-step-clis.md`. Steps
+get earlier results as file paths (`${<step>.stdout}` in the DAG; a plain value is read
+out with `"$(cat …)"`), and should `require("./lib/step-contract")` so a crash exits 2,
+not 1. Dagu step ids must match `^[a-zA-Z][a-zA-Z0-9_]*$`, so hyphenated steps use an
+underscore `id` plus a hyphenated `name` (what `dagu status` and `stopped at` show).
+Covered by `test/card-pipeline.test.js` (EN-036's ACs, real Dagu, throwaway
+`DAGU_HOME`), `test/card-ac*.test.js` + `test/card-logged-story.test.js` (US-028's ACs
+end to end through `card.js`), and `test/card-steps.test.js` /
+`test/card-dag-steps.test.js` (the step CLIs). All run against fake `claude` /
+`nemo-words` / `word-freq` and a mock AnkiConnect (`test/helpers/card-harness.js`).
 
 ## IPA / rhyme / frequency
 

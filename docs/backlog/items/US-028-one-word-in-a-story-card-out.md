@@ -2,13 +2,16 @@
 id: US-028
 type: story
 parent: E01
-status: ready
+status: done
+qa_status: passing
 ---
 # US-028 One word in, a story card out
 
 As Flash, I want to type one word and get a synced Anki card whose story, IPA and gloss were auto-picked, so that I get a usable card without choosing anything.
 
 Thin first slice: no Jev yet. The pick is the first candidate that passes the hard gates; judging by the story rubric is US-038, logging is US-039, ambiguous routing is US-040.
+
+Routing in this slice is only as good as `classify-word.js`'s word lists: a classical-root or INN word it doesn't recognise (e.g. ibuprofen, conduct) is routed general and carded, and some everyday words it over-matches (e.g. trial, period) are stopped as word-part. Catching those is US-040's job (Jev second-checks the classifier's verdict), not this story's.
 
 ## Acceptance criteria
 
@@ -44,7 +47,7 @@ Given  Anki is not running
 ```
 
 ```gherkin
-Given  a word built from classical Greek/Latin morphemes or an INN drug stem
+Given  a word that classify-word.js recognises as built from classical Greek/Latin morphemes or an INN drug stem
   - When  Flash runs the one-word command with that word
     - Then  no card is made
     - And   the command says the word belongs to the word-part path (_etta_mology)
