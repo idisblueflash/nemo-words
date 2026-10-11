@@ -6,5 +6,16 @@
       "Bash(node scripts/find-mnemonic.js *)",
       "Bash(scripts/anki-sync-terms.sh *)"
     ]
+  },
+  "extraKnownMarketplaces": {
+    "blueflash": {
+      "source": {
+        "source": "github",
+        "repo": "idisblueflash/claude-plugin-marketplace"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "backlog@blueflash": true
   }
 }

@@ -93,8 +93,8 @@ comment's thread on GitHub.
 3. **On accept**: apply the change (Edit/Write), run this repo's test
    suite (`clojure -M:test`) if the change touches `src/`, commit it with a
    message referencing the PR comment/thread, and push. For anything beyond
-   a small, well-scoped fix — hand it to the user to decide whether `_teddy`
-   or `_buzz` should take it instead of doing it yourself.
+   a small, well-scoped fix — hand it to the user to decide whether `backlog:teddy`
+   or `backlog:buzz` should take it instead of doing it yourself.
 4. **Resolve the thread only after the accepted fix is committed and
    pushed** (or, for a "reject"/"won't fix" verdict, only if the user
    explicitly says to resolve it anyway):
