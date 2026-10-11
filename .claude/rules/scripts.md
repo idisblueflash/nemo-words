@@ -106,6 +106,34 @@ node dictionaries/lewis-short/search.js <part>    # Latin (Lewis & Short) headwo
 python3 dictionaries/open-words/search.py <part>  # Latin: identify headword + grammatical form
 ```
 
+## Running the card pipeline (Dagu, EN-036)
+
+```bash
+node scripts/card.js <word>
+```
+
+This starts `dags/card.yaml` under Dagu by path, so it needs `dagu` on PATH (`brew install dagu`).
+Don't copy the DAG into Dagu's config folder, and don't start it by name: the global
+`dags_dir` points at another project. Exit codes and output:
+
+- `0`: succeeded. The last step's result goes to stdout.
+- `1`: a step stopped cleanly. Prints `stopped at <step>: <reasons>`.
+- `2`: a step failed or crashed, or Dagu is missing or can't run the DAG. Prints
+  `failed at <step>:` plus that step's stderr, on stderr.
+
+stderr also names the run and gives the command to inspect it,
+`dagu status --run-id <id> <path>/dags/card.yaml`. That command shows each step's
+status and its own separate stdout and stderr logs.
+
+Step CLIs follow the step contract in
+`docs/backlog/items/EN-036-dagu-runs-the-card-pipeline-as-small-step-clis.md`. Each step
+takes the previous step's result as a file path (`${<step>.stdout}` in the DAG) and
+should `require("./lib/step-contract")` so a crash exits 2, not 1. The current steps
+are throwaway stubs (`stub-step-one.js` / `stub-step-two.js`) until US-028 replaces them.
+The magic words `__stop__`, `__fail__` and `__crash__` exercise the stop, fail and crash
+paths. Covered by `test/card-pipeline.test.js` (real Dagu, throwaway `DAGU_HOME`) and
+`test/stub-steps.test.js`.
+
 ## IPA / rhyme / frequency
 
 Not in `scripts/` — see `CLAUDE.md` "Ad-hoc IPA/rhyme lookups" for the `nemo-words` CLI,

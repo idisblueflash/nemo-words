@@ -1,0 +1,30 @@
+# EN-036: the card pipeline. Always start it by path (the global Dagu
+# dags_dir points at another project), via `node scripts/card.js <word>`.
+# The two stub steps are throwaway; US-028 replaces them with its real CLIs.
+#
+# A step's result reaches the next step as the path to its stdout log,
+# `${<step>.stdout}`, not as an `output:` variable: Dagu escapes tabs when it
+# substitutes a variable into a command line, which breaks TSV records.
+working_dir: ..   # repo root (relative paths resolve against this file's folder)
+params:
+  - WORD: ""
+# Pinned rather than inherited from the global base.yaml: each step's stdout
+# and stderr must land in separate logs, both so a run can be inspected step
+# by step and so `${<step>.stdout}` hands the next step stdout only.
+log_output: separate
+# Exit 1 is a clean stop, not a failure: the stopping step is marked
+# succeeded, and every later step's precondition on the previous step's exit
+# code skips it (skips cascade). scripts/card.js reports this as "stopped".
+defaults:
+  continue_on:
+    exit_code: [1]
+    mark_success: true
+steps:
+  - id: one
+    run: node scripts/stub-step-one.js "${WORD}"
+  - id: two
+    depends: [one]
+    preconditions:
+      - condition: "${one.exit_code}"
+        expected: "0"
+    run: node scripts/stub-step-two.js "${one.stdout}"

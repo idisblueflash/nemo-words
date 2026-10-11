@@ -13,7 +13,7 @@
 6. [E06](items/E06-failing-cards-get-a-new-story-automatically.md) Cards that keep failing in Anki get a new story automatically · active
 
 ## Stories (ranked)
-1. [EN-036](items/EN-036-dagu-runs-the-card-pipeline-as-small-step-clis.md) Dagu runs the card pipeline as small step CLIs · E01 · ready
+1. [EN-036](items/EN-036-dagu-runs-the-card-pipeline-as-small-step-clis.md) Dagu runs the card pipeline as small step CLIs · E01 · done
 2. [SP-037](items/SP-037-does-jev-pick-the-story-flash-would.md) Does Jev pick the story Flash would? · E01 · ready
 3. [US-028](items/US-028-one-word-in-a-story-card-out.md) One word in, a story card out · E01 · ready
 4. [US-038](items/US-038-jev-picks-the-best-story-by-the-rubric.md) Jev picks the best story by the story rubric · E01 · idea
