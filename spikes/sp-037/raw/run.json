@@ -1,0 +1,1583 @@
+{
+  "seed": 37,
+  "n": 20,
+  "words": [
+    {
+      "word": "inward",
+      "sense": "toward the inside or the center, rather than toward the outside — moving in, not out",
+      "syllables": [
+        "ˈɪn",
+        "wɚd"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "The inn's parrot squawks one word, and guests hurry inside.",
+          "pivot_words": [
+            "inn",
+            "word",
+            "inside"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "The inn's sign says one word, so we walk inside.",
+          "pivot_words": [
+            "inn",
+            "word",
+            "inside"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "The inn's secret word lets everyone squeeze inside.",
+          "pivot_words": [
+            "inn",
+            "word",
+            "inside"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "The inn's drill whirred, then the whole crew retreated inside.",
+          "pivot_words": [
+            "inn",
+            "whirred",
+            "inside"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "The inn's fan whirred, so we all moved inside.",
+          "pivot_words": [
+            "inn",
+            "whirred",
+            "inside"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Stepping in, she wrote one word, then looked deep inside.",
+          "pivot_words": [
+            "in",
+            "word",
+            "inside"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "regulation",
+      "sense": "an official rule made by a government or organization stating what people or companies must or must not do; also the act of controlling something by such rules (dominant sense confirmed against the Tatoeba corpus — \"the regulation was abolished\", \"promulgate a regulation\", \"federal/government regulation\"). Secondary senses: \"regulation time\" (official/standard) and self-control (emotional regulation).",
+      "syllables": [
+        "ɹˌɛɡ",
+        "jə",
+        "lˈeɪ",
+        "ʃən"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Reg, you lay bricks; inspectors shun any broken safety rule.",
+          "pivot_words": [
+            "Reg",
+            "you",
+            "lay",
+            "shun",
+            "rule"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Reg, the landlord, lays down a strict house rule.",
+          "pivot_words": [
+            "Reg",
+            "lay",
+            "rule"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Reg, you lay tracks; passengers shun the new platform rule.",
+          "pivot_words": [
+            "Reg",
+            "you",
+            "lay",
+            "shun",
+            "rule"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Reg, you lay low; neighbors shun rule-breakers.",
+          "pivot_words": [
+            "Reg",
+            "you",
+            "lay",
+            "shun",
+            "rule"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Reg, you lay planks, then shun the posted dock rule.",
+          "pivot_words": [
+            "Reg",
+            "you",
+            "lay",
+            "shun",
+            "rule"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Reg, you lay eggs; hens shun the new coop rule.",
+          "pivot_words": [
+            "Reg",
+            "you",
+            "lay",
+            "shun",
+            "rule"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "inflate",
+      "sense": "to fill something with air or gas so that it swells up (a balloon, tyre, raft); figuratively, to make a number, price, or reputation bigger than it honestly should be",
+      "syllables": [
+        "ɪn",
+        "ˈfleɪt"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Inn owner Flay ate, then puffed his prices way up",
+          "pivot_words": [
+            "Inn",
+            "Flay",
+            "ate",
+            "puffed"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Inn chef Flay ate, then pumped air into rafts",
+          "pivot_words": [
+            "Inn",
+            "Flay",
+            "ate",
+            "air"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Inn guest Flay ate, then blew air into balloons",
+          "pivot_words": [
+            "Inn",
+            "Flay",
+            "ate",
+            "air"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Inn cook Flay ate, then pumped air in the tyre",
+          "pivot_words": [
+            "Inn",
+            "Flay",
+            "ate",
+            "air"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Inn clown Flay ate, then blew air into balloons",
+          "pivot_words": [
+            "Inn",
+            "Flay",
+            "ate",
+            "air"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "In the yard, a float at the gate swells with air.",
+          "pivot_words": [
+            "in",
+            "float",
+            "gate",
+            "swells",
+            "air"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "merely",
+      "sense": "only that and nothing more; downplays something as smaller/simpler/less important than assumed",
+      "syllables": [
+        "ˈmɪɹ",
+        "li"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Meera lugs Lee's giant chest, holding only socks",
+          "pivot_words": [
+            "Meera",
+            "Lee",
+            "only"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Meera, Lee beside her, ordered a feast, got only toast",
+          "pivot_words": [
+            "Meera",
+            "Lee",
+            "only"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Meera tells Lee the big wound is only a scratch",
+          "pivot_words": [
+            "Meera",
+            "Lee",
+            "only"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Meera and Lee brace for a storm; it's only drizzle",
+          "pivot_words": [
+            "Meera",
+            "Lee",
+            "only"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Meera hides from Lee's ghost, which is only a bedsheet",
+          "pivot_words": [
+            "Meera",
+            "Lee",
+            "only"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "The framed mirror crashes, just an ornament to Lee.",
+          "pivot_words": [
+            "mirror",
+            "Lee",
+            "ornament"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "saturation",
+      "sense": "the point at which something is completely filled or soaked and can absorb no more; extended to market saturation, colour intensity, and blood-oxygen saturation",
+      "syllables": [
+        "ˌsætʃ",
+        "ɚ",
+        "ˈeɪ",
+        "ʃən"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Satch, her patient, dunks a sponge until it's soaked, full.",
+          "pivot_words": [
+            "Satch",
+            "her",
+            "patient",
+            "soaked"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Satch shares a nation's towel, soaked through, holding no more.",
+          "pivot_words": [
+            "Satch",
+            "shares",
+            "nation",
+            "soaked"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "The satchel of rations soaked up rain until not one drop more would fit.",
+          "pivot_words": [
+            "satchel",
+            "rations",
+            "soaked"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Sat there on vacation, sponge soaked, absorbing no more.",
+          "pivot_words": [
+            "Sat",
+            "there",
+            "vacation",
+            "soaked"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Satchel here at the station sits soaked, absorbing no more.",
+          "pivot_words": [
+            "satchel",
+            "here",
+            "station",
+            "soaked"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Sat Cher at the station, coat soaked, absorbing no more.",
+          "pivot_words": [
+            "Sat",
+            "Cher",
+            "station",
+            "soaked"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "intervention",
+      "sense": "deliberately stepping into a situation that is going badly in order to change its course; Latin inter- \"between\" + venire \"to come\"",
+      "syllables": [
+        "ɪn",
+        "tɚ",
+        "ˈvɛn",
+        "ʃən"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Enter Venn and Shaun, stepping in between brawlers.",
+          "pivot_words": [
+            "Enter",
+            "Venn",
+            "Shaun"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Enter Venn, shunned yet stepping in to stop the fight.",
+          "pivot_words": [
+            "Enter",
+            "Venn",
+            "shunned"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Enter the Venn diagram class, Sean stepping in to stop the fight.",
+          "pivot_words": [
+            "Enter",
+            "Venn",
+            "Sean"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Enter Venn, Shaun's hockey ref, stepping between the brawling players.",
+          "pivot_words": [
+            "Enter",
+            "Venn",
+            "Shaun"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "The printer vents smoke, so the tech steps in.",
+          "pivot_words": [
+            "printer",
+            "vents",
+            "smoke",
+            "tech",
+            "steps in"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Enter Venn and Shaun, stepping in to rescue the failing play.",
+          "pivot_words": [
+            "Enter",
+            "Venn",
+            "Shaun"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "era",
+      "sense": "a long, distinct, named period of history (the Victorian era, the era of atomic energy)",
+      "syllables": [
+        "ˈɛɹ",
+        "ə"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Air a tapestry depicting the entire Medieval period.",
+          "pivot_words": [
+            "air",
+            "a",
+            "period"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Aaron carves a timeline, each stretch its own period.",
+          "pivot_words": [
+            "Aaron",
+            "period"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Air a scrapbook, its pages spanning the Jazz period.",
+          "pivot_words": [
+            "air",
+            "a",
+            "period"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Air a quilt, each patch a period of history.",
+          "pivot_words": [
+            "air",
+            "a",
+            "period"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Err a bit, naming the wrong Victorian period.",
+          "pivot_words": [
+            "err",
+            "a",
+            "period"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Air a classroom; the chalkboard timeline shows one long period.",
+          "pivot_words": [
+            "air",
+            "a",
+            "period"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "fus-",
+      "sense": "Latin root, \"to pour\" (from fundere, past participle fusus)",
+      "syllables": [
+        "ˈfjuz"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Few clouds ooze drizzle, then storm clouds pour rain.",
+          "pivot_words": [
+            "few",
+            "ooze",
+            "pour"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Few pancakes ooze syrup until Dad pours more.",
+          "pivot_words": [
+            "few",
+            "ooze",
+            "pours"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Few wax drips ooze, then Gran pours molten wax.",
+          "pivot_words": [
+            "few",
+            "ooze",
+            "pours"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Few zoos pour hot cocoa for visitors.",
+          "pivot_words": [
+            "few",
+            "zoos",
+            "pour"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Nephews giggle as uncle pours grape juice.",
+          "pivot_words": [
+            "nephews",
+            "pours"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Few drops ooze, so Dad pours the jug out.",
+          "pivot_words": [
+            "few",
+            "ooze",
+            "pours"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "lass",
+      "sense": "a girl or young woman (chiefly Scottish/Northern English/dialect; often a sweetheart)",
+      "syllables": [
+        "ˈlæs"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Alas, the piper sighs, watching his sweetheart girl sail away.",
+          "pivot_words": [
+            "alas",
+            "girl"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Alas, my kite snags; a moor girl untangles it.",
+          "pivot_words": [
+            "alas",
+            "girl"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Alas, the kilted dancer trips; a Scottish girl catches him.",
+          "pivot_words": [
+            "alas",
+            "girl"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Class ends; a Highland girl blushes, reading her sweetheart's note.",
+          "pivot_words": [
+            "class",
+            "girl"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Liv taps the glass; a girl peeks out.",
+          "pivot_words": [
+            "Liv",
+            "glass",
+            "girl"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Glass clinks; the young Scottish girl toasts her sweetheart.",
+          "pivot_words": [
+            "glass",
+            "girl"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "trivial",
+      "sense": "of little importance or value; minor, insignificant",
+      "syllables": [
+        "ˈtrɪv",
+        "i",
+        "əl"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Chris, Evie and Al shrug at one minor typo.",
+          "pivot_words": [
+            "Chris",
+            "Evie",
+            "Al",
+            "minor"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Trip, Evie and Al spill crumbs, a minor mess.",
+          "pivot_words": [
+            "Trip",
+            "Evie",
+            "Al",
+            "minor"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Trish, Evie and Al ignore the minor crack.",
+          "pivot_words": [
+            "Trish",
+            "Evie",
+            "Al",
+            "minor"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Trev, Evie and Al laugh off a minor bruise.",
+          "pivot_words": [
+            "Trev",
+            "Evie",
+            "Al",
+            "minor"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "The trick charmed our jovial judge — a minor act.",
+          "pivot_words": [
+            "trick",
+            "jovial",
+            "minor"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Tris, Eve and Al notice one minor scratch.",
+          "pivot_words": [
+            "Tris",
+            "Eve",
+            "Al",
+            "minor"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "manu-",
+      "sense": "Latin root meaning \"hand\" (e.g. maintain, manual, manufacture)",
+      "syllables": [
+        "ˈmæn",
+        "juː"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Manny pets a ewe, then holds up both hands.",
+          "pivot_words": [
+            "Manny",
+            "ewe",
+            "hands"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Manny, you scrub dishes with your bare hands.",
+          "pivot_words": [
+            "Manny",
+            "you",
+            "hands"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Manny, you juggle three oranges in one hand.",
+          "pivot_words": [
+            "Manny",
+            "you",
+            "hand"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Man, you hold the baby in one hand.",
+          "pivot_words": [
+            "man",
+            "you",
+            "hand"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Man, you clap so loudly your hands sting.",
+          "pivot_words": [
+            "man",
+            "you",
+            "hands"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "A blind man reads you Braille with trembling hands.",
+          "pivot_words": [
+            "man",
+            "you",
+            "hands"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "flux",
+      "sense": "continuous change; a state where conditions keep shifting and nothing is settled — overwhelmingly used in the fixed phrase \"in flux\" (corpus-confirmed: 6 of 10 Tatoeba hits). Secondary senses: physics (rate of flow through a surface), metallurgy/soldering (substance that helps metal fuse).",
+      "syllables": [
+        "ˈflʌks"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Fluffy ducks swap ponds hourly, their home always changing.",
+          "pivot_words": [
+            "fluffy",
+            "ducks",
+            "changing"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Fluffy bucks graze, the herd's membership constantly changing.",
+          "pivot_words": [
+            "fluffy",
+            "bucks",
+            "changing"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Fluff-stuffed trucks roll in, the delivery plans constantly changing.",
+          "pivot_words": [
+            "fluff",
+            "trucks",
+            "changing"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Fluffing his tux, the groom keeps changing outfits.",
+          "pivot_words": [
+            "fluffing",
+            "tux",
+            "changing"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Fluffy ducks dive and surface, the pond constantly changing.",
+          "pivot_words": [
+            "fluffy",
+            "ducks",
+            "changing"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Flew south, fed ducks; seasons keep changing.",
+          "pivot_words": [
+            "flew",
+            "ducks",
+            "changing"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "worn",
+      "sense": "adjective; thinned, faded, or damaged by long use (worn tires, worn steps). Also past participle of \"wear\", and \"worn out\" = exhausted (the corpus's most frequent use).",
+      "syllables": [
+        "ˈwɔɹn"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Warn the guests, the stair carpet has faded threadbare.",
+          "pivot_words": [
+            "warn",
+            "faded"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Warning Dad, Mom holds up his faded, see-through jeans.",
+          "pivot_words": [
+            "warning",
+            "faded"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "A warning sign hangs on the pier, faded and peeling.",
+          "pivot_words": [
+            "warning",
+            "faded"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Warn the sailors: the sail has faded to thin rags.",
+          "pivot_words": [
+            "warn",
+            "faded"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Warn the driver: that tire's tread is rubbed bald.",
+          "pivot_words": [
+            "warn",
+            "driver",
+            "tire",
+            "tread",
+            "rubbed",
+            "bald"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Warn the hikers: the trail marker's paint has faded.",
+          "pivot_words": [
+            "warn",
+            "faded"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "contest",
+      "sense": "a competition — people or teams going up against each other to win (dominant sense, 19/20 corpus hits); as a verb (kən.ˈtɛst) to formally challenge or dispute something, e.g. contest a will, contest an election result",
+      "syllables": [
+        "ˈkɑn",
+        "tɛst"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Khan aces the test, then wins the gold.",
+          "pivot_words": [
+            "Khan",
+            "test",
+            "wins"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Khan takes a driving test, then races rivals to win.",
+          "pivot_words": [
+            "Khan",
+            "test",
+            "win"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Con, the swimmer, tests the water, then wins the race.",
+          "pivot_words": [
+            "Con",
+            "tests",
+            "wins"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "The con aces a spelling test to compete on TV.",
+          "pivot_words": [
+            "con",
+            "spelling test",
+            "compete",
+            "TV"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "The con aces a taste test, then wins first prize.",
+          "pivot_words": [
+            "con",
+            "test",
+            "wins"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Khan bakes a test cake, then wins the bake-off.",
+          "pivot_words": [
+            "Khan",
+            "test",
+            "wins"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "cocked",
+      "sense": "(1, dominant) tilted or turned up at an angle — a head, eye, ear, eyebrow, or hat (e.g. 'cocked her head'); (2) of a gun, with the hammer pulled back, ready to fire (cf. 'half-cocked')",
+      "syllables": [
+        "ˈkɑkt"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Carl knocked, and the cat tilted its head.",
+          "pivot_words": [
+            "Carl",
+            "knocked",
+            "tilted"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Shocked, Grandpa tilted one eyebrow upward.",
+          "pivot_words": [
+            "shocked",
+            "tilted"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "The door locked; Mom tilted her ear closer.",
+          "pivot_words": [
+            "locked",
+            "tilted"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "The sailor docked, then tilted his hat.",
+          "pivot_words": [
+            "docked",
+            "tilted"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Someone knocked; the puppy tilted its head.",
+          "pivot_words": [
+            "knocked",
+            "tilted"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Rocked by the news, she tilted her head.",
+          "pivot_words": [
+            "rocked",
+            "tilted"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "shattered",
+      "sense": "broken suddenly into many small sharp pieces (glass, a vase, a screen shattered into pieces), the dominant corpus sense; figuratively, crushed by shock or grief, or hopes/confidence destroyed at a stroke. The story locks the physical sense.",
+      "syllables": [
+        "ˈʃæ",
+        "tɚd"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Shaq tags Ted's phone; the screen breaks into pieces.",
+          "pivot_words": [
+            "Shaq",
+            "Ted",
+            "screen",
+            "breaks",
+            "pieces"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Shaq taps Ted's windshield; the glass breaks into pieces.",
+          "pivot_words": [
+            "Shaq",
+            "Ted",
+            "glass",
+            "breaks",
+            "pieces"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Shaq and Ted clink glasses; one breaks into pieces.",
+          "pivot_words": [
+            "Shaq",
+            "Ted",
+            "glasses",
+            "breaks",
+            "pieces"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Shaq tossed Ted a vase; it broke into pieces.",
+          "pivot_words": [
+            "Shaq",
+            "Ted",
+            "broke",
+            "pieces"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Shh, a battered phone drops; its screen breaks into pieces.",
+          "pivot_words": [
+            "Shh",
+            "battered",
+            "phone",
+            "screen",
+            "pieces"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Shaq bumped Ted's mirror, and it broke into pieces.",
+          "pivot_words": [
+            "Shaq",
+            "Ted",
+            "mirror",
+            "broke",
+            "pieces"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "weathered",
+      "sense": "(adj.) worn, faded, or cracked by long exposure to sun, wind, and rain, e.g. weathered wood or a weathered face. The minority verb sense is \"came safely through a hardship\" (weathered the storm). Tatoeba corpus: about 8 of 11 hits use the adjective sense.",
+      "syllables": [
+        "ˈwɛð",
+        "ɚd"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Whether Ed sweeps, the porch stays gray, cracked from sun.",
+          "pivot_words": [
+            "whether",
+            "Ed",
+            "gray",
+            "cracked"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Whether Ed paints, sun and rain crack the fence.",
+          "pivot_words": [
+            "whether",
+            "Ed",
+            "crack"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Wet leather boots, faded and cracked by years of sun.",
+          "pivot_words": [
+            "wet",
+            "leather",
+            "faded",
+            "cracked"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Wet, tethered sailboat's faded paint cracks in the sun.",
+          "pivot_words": [
+            "wet",
+            "tethered",
+            "faded",
+            "cracks"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Wet feathered ducks perch on a sun-cracked, faded dock.",
+          "pivot_words": [
+            "wet",
+            "feathered",
+            "faded",
+            "cracked"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Wind ruffled the feathered scarecrow's hat, worn and faded.",
+          "pivot_words": [
+            "wind",
+            "feathered",
+            "scarecrow",
+            "hat",
+            "worn",
+            "faded"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "jerk",
+      "sense": "A rude, selfish person who acts inconsiderately toward others.",
+      "syllables": [
+        "ˈdʒɝk"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Jane lurks, rudely grabbing the last slice of pizza.",
+          "pivot_words": [
+            "Jane",
+            "lurks"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "He smirks, snubbing me rudely.",
+          "pivot_words": [
+            "smirk",
+            "rudely"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Jim shirks, so rude, leaving others to wash dishes.",
+          "pivot_words": [
+            "Jim",
+            "shirks"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Joe perks up, then rudely hogs the whole armrest.",
+          "pivot_words": [
+            "Joe",
+            "perks"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Jen lurks by the buffet, rudely hoarding all the cake.",
+          "pivot_words": [
+            "Jen",
+            "lurks"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Jay smirks, then rudely shoves ahead in the queue.",
+          "pivot_words": [
+            "Jay",
+            "smirks"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "rationing",
+      "sense": "giving people only a fixed, limited amount of something because there isn't enough to go around — everyone gets a controlled share instead of taking freely",
+      "syllables": [
+        "ˈɹæʃ",
+        "ə",
+        "nɪŋ"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Rash on thinning bread: Dad cuts each person one share.",
+          "pivot_words": [
+            "Rash",
+            "on",
+            "thinning",
+            "share"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "The rat, with caution, doles out equal grain.",
+          "pivot_words": [
+            "rat",
+            "caution",
+            "equal",
+            "grain"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Rash Ann, grinning, hands each hungry kid one limited share.",
+          "pivot_words": [
+            "Rash",
+            "Ann",
+            "grinning",
+            "limited share"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Rash, a ninny, grabs extra; the captain allows one share.",
+          "pivot_words": [
+            "Rash",
+            "ninny",
+            "share"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Rash inning over, coach gives each player one limited cup.",
+          "pivot_words": [
+            "Rash",
+            "inning",
+            "limited"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Rash Annie sings, then gives everyone one small share.",
+          "pivot_words": [
+            "Rash",
+            "Annie",
+            "sings",
+            "share"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    },
+    {
+      "word": "ominous",
+      "sense": "warning that something bad is coming — a sign, look, or atmosphere that threatens; from Latin omen, ominis, \"a sign/omen\" (merged from the former omin- word-part row)",
+      "syllables": [
+        "ˈɑm",
+        "ə",
+        "nəs"
+      ],
+      "unjudged": "Jev call failed: APIError 451: 451 {\"title\":\"Typesafe is not available in your region.\",\"status\":451}",
+      "candidates": [
+        {
+          "sentence": "Tom, on us, hears drums, a sign of attack.",
+          "pivot_words": [
+            "Tom",
+            "on us",
+            "sign"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Ommen watches Venus over almond trees, warning of a storm.",
+          "pivot_words": [
+            "Ommen",
+            "Venus",
+            "almond",
+            "warning",
+            "storm"
+          ],
+          "source": "flash",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Tom, on us, sees a black cat: sign of bad luck.",
+          "pivot_words": [
+            "Tom",
+            "on us",
+            "sign"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Mom, on us, hears thunder, a sign of storms.",
+          "pivot_words": [
+            "Mom",
+            "on us",
+            "sign"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Tom, on us, spots black clouds: a sign of storm.",
+          "pivot_words": [
+            "Tom",
+            "on us",
+            "sign"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        },
+        {
+          "sentence": "Mom, on us, sees the sky darken: sign of trouble.",
+          "pivot_words": [
+            "Mom",
+            "on us",
+            "sign"
+          ],
+          "source": "fresh",
+          "hardFails": null,
+          "answers": null
+        }
+      ]
+    }
+  ]
+}

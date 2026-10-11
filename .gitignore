@@ -33,3 +33,6 @@ dictionaries/open-words/vendor/
 
 # local secrets (TYPESAFE_API_KEY etc.)
 .env
+
+# spike-local npm installs (spikes/*/package.json)
+spikes/*/node_modules/
