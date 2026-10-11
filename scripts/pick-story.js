@@ -10,6 +10,7 @@
 // `no-pick: …` line, then `sentence\treasons` for every candidate. There is
 // no redraft round.
 
+if (require.main === module) require("./lib/step-contract"); // a crash exits 2, never 1
 const fs = require("fs");
 const { runCli } = require("./card-lib");
 

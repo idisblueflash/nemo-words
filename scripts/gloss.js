@@ -6,6 +6,7 @@
 // English, 60 characters max. Exit 1 if the model's gloss is longer; there is
 // no redraft round.
 
+if (require.main === module) require("./lib/step-contract"); // a crash exits 2, never 1
 const { runCli, claude, flatten } = require("./card-lib");
 
 const MAX_GLOSS = 60;

@@ -8,6 +8,7 @@
 //   chunk dʒɚ.ˈmeɪn -> dʒɚ	first-syllable,rime,onset,nucleus
 //                      meɪn	stressed-syllable,rime,onset,nucleus,coda
 
+if (require.main === module) require("./lib/step-contract"); // a crash exits 2, never 1
 const { runCli, stripStress } = require("./card-lib");
 const { syllables } = require("./syllabify");
 

@@ -20,7 +20,6 @@ const http = require("node:http");
 const { spawn } = require("node:child_process");
 
 const repoRoot = path.join(__dirname, "..", "..");
-const scriptsDir = path.join(repoRoot, "scripts");
 
 const TERMS_HEADER = [
   "#separator:tab",
@@ -35,7 +34,7 @@ const TERMS_HEADER = [
 // Fake `nemo-words`: supports `ipa-lookup --word <w>` and `ipa-lookup --ga <frag>`,
 // printing `word\tRP\tGA` like the real CLI (nothing on no hit).
 const FAKE_NEMO_WORDS = `#!/usr/bin/env node
-const fx = JSON.parse(require("fs").readFileSync(process.env.NEMO_FAKE_FIXTURE, "utf8"));
+const fx = JSON.parse(require("fs").readFileSync(require("path").join(__dirname, "fixture.json"), "utf8"));
 const dict = fx.dict || {};
 const [sub, flag, value] = process.argv.slice(2);
 if (sub !== "ipa-lookup") process.exit(2);
@@ -48,7 +47,7 @@ for (const [w, ga] of Object.entries(dict)) {
 
 // Fake \`word-freq.js\`: \`word\\tfreq\` per arg, \`(not found)\` when absent.
 const FAKE_WORD_FREQ = `#!/usr/bin/env node
-const fx = JSON.parse(require("fs").readFileSync(process.env.NEMO_FAKE_FIXTURE, "utf8"));
+const fx = JSON.parse(require("fs").readFileSync(require("path").join(__dirname, "fixture.json"), "utf8"));
 const freqs = fx.freqs || {};
 for (const w of process.argv.slice(2)) {
   console.log(w + "\\t" + (w in freqs ? Number(freqs[w]).toExponential(4) : "(not found)"));
@@ -59,12 +58,12 @@ for (const w of process.argv.slice(2)) {
 // Records every prompt it sees so tests can assert how often the model ran.
 const FAKE_CLAUDE = `#!/usr/bin/env node
 const fs = require("fs");
-const fx = JSON.parse(fs.readFileSync(process.env.NEMO_FAKE_FIXTURE, "utf8"));
+const fx = JSON.parse(fs.readFileSync(require("path").join(__dirname, "fixture.json"), "utf8"));
 const args = process.argv.slice(2);
 const prompt = args[args.indexOf("-p") + 1] || "";
 const m = /^Step: (\\S+)/m.exec(prompt);
 const step = m ? m[1] : "?";
-fs.appendFileSync(process.env.NEMO_FAKE_CLAUDE_LOG, JSON.stringify({ step, prompt }) + "\\n");
+fs.appendFileSync(require("path").join(__dirname, "claude-calls.jsonl"), JSON.stringify({ step, prompt }) + "\\n");
 if (!(fx.claude && step in fx.claude)) { console.error("fake claude: no answer for " + step); process.exit(3); }
 process.stdout.write(fx.claude[step]);
 `;
@@ -113,10 +112,16 @@ function createMockAnkiConnect() {
 }
 
 // fixture: { dict, freqs, claude: { define, gloss, "compose-stories" } }
-// options: { rows: [tsv row strings], log: [jsonl objects], anki: "up" | "down" }
+// options: { rows: [tsv row strings], log: [jsonl objects], anki: "up" | "down",
+//            root: repo copy to run from (default: this repo), cwd: where to run }
 async function createHarness(fixture, options = {}) {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "nemo-card-test-"));
   const fixturePath = path.join(tmp, "fixture.json");
+  const daguHome = path.join(tmp, "dagu home"); // the space mirrors macOS's "Application Support"
+  fs.mkdirSync(daguHome);
+  // options.root: run against a copy of the repo (a "fresh clone") instead
+  const root = options.root || repoRoot;
+  const scripts = path.join(root, "scripts");
   fs.writeFileSync(fixturePath, JSON.stringify(fixture));
   const bins = {
     claude: path.join(tmp, "fake-claude"),
@@ -128,7 +133,8 @@ async function createHarness(fixture, options = {}) {
   writeExecutable(bins.wordFreq, FAKE_WORD_FREQ);
 
   const ankiFileName = `card-pipeline-${process.pid}-${path.basename(tmp)}.test.txt`;
-  const ankiFilePath = path.join(repoRoot, "anki", ankiFileName);
+  fs.mkdirSync(path.join(root, "anki"), { recursive: true });
+  const ankiFilePath = path.join(root, "anki", ankiFileName);
   fs.writeFileSync(ankiFilePath, [...TERMS_HEADER, ...(options.rows || [])].join("\n") + "\n");
 
   const mnemonicLog = path.join(tmp, "log.jsonl");
@@ -144,8 +150,11 @@ async function createHarness(fixture, options = {}) {
 
   const env = {
     ...process.env,
-    NEMO_FAKE_FIXTURE: fixturePath,
-    NEMO_FAKE_CLAUDE_LOG: claudeLog,
+    // card.js runs the pipeline under Dagu: a throwaway DAGU_HOME keeps test
+    // runs out of Flash's real Dagu history. (The fakes find fixture.json and
+    // claude-calls.jsonl next to themselves, since Dagu forwards only the
+    // pipeline's declared overrides to steps, not test-only env vars.)
+    DAGU_HOME: daguHome,
     NEMO_CLAUDE_BIN: bins.claude,
     NEMO_WORDS_BIN: bins.nemoWords,
     NEMO_WORD_FREQ_BIN: bins.wordFreq,
@@ -159,8 +168,9 @@ async function createHarness(fixture, options = {}) {
   // prompt would get EOF instead of hanging), collecting stdout/stderr/code.
   function runScript(script, args) {
     return new Promise((resolve) => {
-      const child = spawn(process.execPath, [path.join(scriptsDir, script), ...args], {
+      const child = spawn(process.execPath, [path.join(scripts, script), ...args], {
         env,
+        cwd: options.cwd || root,
         stdio: ["ignore", "pipe", "pipe"],
       });
       let stdout = "";
@@ -174,6 +184,7 @@ async function createHarness(fixture, options = {}) {
   return {
     env,
     tmp,
+    daguHome,
     mock,
     ankiFilePath,
     syncLog,

@@ -7,6 +7,7 @@
 // then the meaning. Prints one line per candidate: `sentence\tpivot,pivot`.
 // The chunk-keywords file is find-keywords' output.
 
+if (require.main === module) require("./lib/step-contract"); // a crash exits 2, never 1
 const fs = require("fs");
 const { runCli, claude, flatten, extractJson } = require("./card-lib");
 

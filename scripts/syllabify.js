@@ -9,6 +9,7 @@
 // Consonants between two vowels go to the later syllable as far as English
 // allows them to start a syllable (maximal legal onset).
 
+if (require.main === module) require("./lib/step-contract"); // a crash exits 2, never 1
 const { runCli } = require("./card-lib");
 
 const MULTI = ["aɪ", "aʊ", "ɔɪ", "eɪ", "oʊ", "tʃ", "dʒ"];

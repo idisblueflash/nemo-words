@@ -9,6 +9,7 @@
 // Prints `ok`. If the sync fails (e.g. Anki isn't running) the row already
 // written stays written: exit 1 with the reason and a re-run hint.
 
+if (require.main === module) require("./lib/step-contract"); // a crash exits 2, never 1
 const fs = require("fs");
 const path = require("path");
 const { spawnSync } = require("child_process");

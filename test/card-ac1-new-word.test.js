@@ -15,6 +15,8 @@ test("AC1: card.js turns a new general word into a synced story card", async () 
   try {
     const run = await h.runCard("germane");
     assert.equal(run.code, 0, `stdout:\n${run.stdout}\nstderr:\n${run.stderr}`);
+    // It ran as the Dagu pipeline (EN-036), inspectable afterwards.
+    assert.match(run.stderr, /\(inspect: dagu status --run-id \S+ .*dags\/card\.yaml\)/);
 
     // A new note in the Terms deck…
     const adds = h.mock.calls.filter((c) => c.action === "addNote");

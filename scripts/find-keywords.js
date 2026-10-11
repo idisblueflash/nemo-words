@@ -13,6 +13,7 @@
 // filtered to exact matches; frequency from scripts/word-freq.js (Google
 // Ngram). NEMO_WORD_FREQ_BIN overrides the frequency tool (tests inject a fake).
 
+if (require.main === module) require("./lib/step-contract"); // a crash exits 2, never 1
 const path = require("path");
 const { runCli, runTool, nemoWords, ipaKey } = require("./card-lib");
 const { chunk } = require("./chunk");

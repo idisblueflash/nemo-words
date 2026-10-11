@@ -5,6 +5,7 @@
 // multi-word input. Prints the word as typed (case kept; Front matching later
 // is case-insensitive). Exit 1 with a reason on rejection.
 
+if (require.main === module) require("./lib/step-contract"); // a crash exits 2, never 1
 const { runCli } = require("./card-lib");
 
 function normalizeWord(input) {

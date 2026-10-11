@@ -6,6 +6,7 @@
 // When the dictionary lists several GA variants, the first is used.
 // Exit 1 (`no-ipa: <word>`) when the dictionary has no entry.
 
+if (require.main === module) require("./lib/step-contract"); // a crash exits 2, never 1
 const { runCli, nemoWords } = require("./card-lib");
 
 // Picks the exact word's row out of `word\tRP\tGA[,GA…]` lookup output.

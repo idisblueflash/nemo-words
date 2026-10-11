@@ -6,6 +6,7 @@
 // "Before you return" gates and sense lock). Exit 0 with no output on pass;
 // exit 1 with one reason per line on fail (e.g. `headword: conceded`).
 
+if (require.main === module) require("./lib/step-contract"); // a crash exits 2, never 1
 const fs = require("fs");
 const { runCli, ipaKey, stripStress } = require("./card-lib");
 const { lookupGa } = require("./ipa");

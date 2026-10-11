@@ -16,6 +16,7 @@
 //   ambiguous — the classifier can't place it (weak suffix match only);
 //   routing those is US-040. A `no match` verdict routes general.
 
+if (require.main === module) require("./lib/step-contract"); // a crash exits 2, never 1
 const fs = require("fs");
 const path = require("path");
 const { runCli, cardFilePath, cardRows, findCardRow, alreadyCarded, flatten, REPO_ROOT } = require("./card-lib");

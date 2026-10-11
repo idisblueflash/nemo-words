@@ -10,6 +10,7 @@
 //     place — its Front casing, Image and Deck/Tags columns are kept;
 //   - a row that already has a story: exit 1, the file is left untouched.
 
+if (require.main === module) require("./lib/step-contract"); // a crash exits 2, never 1
 const fs = require("fs");
 const { runCli, cardFilePath, cardRows, findCardRow, alreadyCarded } = require("./card-lib");
 

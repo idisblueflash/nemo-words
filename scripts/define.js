@@ -7,6 +7,7 @@
 //   line 2: definition
 //   line 3: all senses, comma-separated
 
+if (require.main === module) require("./lib/step-contract"); // a crash exits 2, never 1
 const { runCli, claude, flatten, extractJson } = require("./card-lib");
 
 function definePrompt(word) {
