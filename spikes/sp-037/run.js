@@ -123,6 +123,10 @@ async function main(argv) {
 }
 
 if (require.main === module) {
+  // Node's fetch (which the TypeSafe SDK uses) ignores HTTP(S)_PROXY by
+  // default, so without this Jev is reached directly and answers 451 for a
+  // blocked region. Route it through the shell's proxy, as curl already is.
+  require("node:http").setGlobalProxyFromEnv();
   main(process.argv.slice(2)).catch((err) => {
     process.stderr.write(`sp-037: ${err.stack || err.message}\n`);
     process.exitCode = 2;
