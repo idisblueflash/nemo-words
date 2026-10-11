@@ -2,7 +2,7 @@
 id: US-028
 type: story
 parent: E01
-status: in-progress
+status: done
 qa_status: passing
 ---
 # US-028 One word in, a story card out
