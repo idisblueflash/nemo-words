@@ -17,7 +17,7 @@
 2. [SP-037](items/SP-037-does-jev-pick-the-story-flash-would.md) Does Jev pick the story Flash would? · E01 · done
 3. [US-028](items/US-028-one-word-in-a-story-card-out.md) One word in, a story card out · E01 · done
 4. [US-038](items/US-038-jev-picks-the-best-story-by-the-rubric.md) Jev picks the best story by the story rubric · E01 · idea
-5. [US-039](items/US-039-auto-made-card-is-logged-with-its-runner-ups.md) The auto-made card is logged with its runner-ups · E01 · ready
+5. [US-039](items/US-039-auto-made-card-is-logged-with-its-runner-ups.md) The auto-made card is logged with its runner-ups · E01 · done
 6. [US-040](items/US-040-ambiguous-words-get-routed-without-me.md) Ambiguous words get routed without me · E01 · idea
 7. [SP-029](items/SP-029-does-an-auto-image-pick-agree-with-flash.md) Does an auto image pick agree with Flash's picks? · E01 · idea
 8. [US-030](items/US-030-card-arrives-with-an-auto-picked-image.md) The card arrives with an auto-picked image · E01 · idea
