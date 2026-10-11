@@ -1,0 +1,12 @@
+{
+  "name": "sp-037-jev-story-judge",
+  "private": true,
+  "version": "0.0.0",
+  "description": "SP-037 throwaway spike: does Jev pick the story Flash would?",
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "dependencies": {
+    "@typesafe-ai/sdk": "^0.6.0"
+  }
+}
