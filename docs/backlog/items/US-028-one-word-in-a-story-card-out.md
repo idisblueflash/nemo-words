@@ -3,14 +3,7 @@ id: US-028
 type: story
 parent: E01
 status: ready
-qa_status: bug
-bugs:
-  - ac: 5
-    summary: "classical-morpheme words the classifier misses (photograph, telephone, adjoining) are routed general and get a story card"
-    command: "NEMO_MNEMONIC_LOG=/dev/null node scripts/route.js photograph  -> 'general' exit 0; end-to-end node scripts/card.js photograph with harness fakes (dict photograph=fˈoʊtəɡɹæf) and mock AnkiConnect"
-    expected: "no card is made and the command says the word belongs to the word-part path (_etta_mology)"
-    actual: "route prints 'general' (classify-word.js verdict 'no match'); card.js prints 'carded photograph (added)', writes the row and syncs it. telephone and adjoining also route 'general'. Root cause is classify-word.js recall; nephrectomy/atorvastatin/microscope/biology are stopped correctly"
-    found: 2026-10-11
+qa_status: passing
 ---
 # US-028 One word in, a story card out
 
