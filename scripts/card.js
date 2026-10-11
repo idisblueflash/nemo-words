@@ -67,7 +67,7 @@ function readLog(file) {
 }
 
 function main() {
-  const word = process.argv[2];
+  const word = process.argv[2] ?? ""; // no argument must not become the text "undefined"
   const runId = `card-${Date.now()}-${crypto.randomBytes(3).toString("hex")}`;
   // Dagu doesn't pass this process's environment on to steps, so the
   // overrides the steps honour travel as DAG params (exported to every step).
