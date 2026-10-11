@@ -370,9 +370,8 @@ judgment call themselves:
 | Meaning-carry | meaning is bolted on beside the anchor | present but a bit of a stretch | the anchor's own image literally depicts the locked sense word |
 | Vividness | generic/flat, close to restating the definition | some concrete detail | one sharp, drawable scene |
 
-Sum to a score out of 9. This is decision support, not a decision — it sits beside the
-sentence so the requester can weigh it themselves; it never collapses into a silent
-"winner" and it doesn't replace the one-line personal pick at the end of the output.
+Sum to a score out of 9. It sits beside the sentence so the requester can weigh it
+themselves, and it doesn't replace the one-line personal pick at the end of the output.
 
 ## Output format
 
