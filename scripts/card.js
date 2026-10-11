@@ -27,9 +27,18 @@ const FORWARDED_ENV = [
   "ANKI_CONNECT_URL",
   "ANKI_SYNC_LOG",
   "NEMO_MNEMONIC_LOG",
+  "NEMO_ALTERNATES_LOG",
   "NEMO_CLAUDE_BIN",
   "NEMO_WORDS_BIN",
   "NEMO_WORD_FREQ_BIN",
+  "NEMO_JEV_ENV_FILE",
+  // Jev (tag-technique) is region-blocked (HTTP 451) without the caller's proxy.
+  "HTTP_PROXY",
+  "HTTPS_PROXY",
+  "NO_PROXY",
+  "http_proxy",
+  "https_proxy",
+  "no_proxy",
 ];
 const dagPath = path.join(repoRoot, "dags", "card.yaml");
 

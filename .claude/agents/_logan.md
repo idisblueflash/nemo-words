@@ -46,7 +46,10 @@ if the new project keeps it elsewhere.
    - `pivot_words` — the words from `sentence` the user marked as doing
      the memory work (ask which, if they didn't say);
    - `date` — today (`date +%F`);
-   - `recall_check` — always `null` on a new row.
+   - `recall_check` — always `null` on a new row;
+   - `picked_by` — always `"flash"` on a row you log: you only ever log a
+     story the user chose (`"auto"` is written by the card pipeline's
+     `log-card` step, never by you).
    Everything else (`syllabification`, `anchor_unit`, `keyword`, `sense`,
    `sentence`) comes verbatim from the user. **Do not fill, guess, or
    "improve" any of it yourself.**
@@ -55,8 +58,9 @@ if the new project keeps it elsewhere.
    for `technique` / `pivot_words`) — an incomplete row is fine, an
    invented one is not.
 4. **Validate** the `anchor_unit` value and each `technique` value
-   against the reference tables. Flag anything off-vocabulary and stop
-   until the user resolves it.
+   against the reference tables, and `picked_by` against its two values
+   (`auto` | `flash`). Flag anything off-vocabulary and stop until the user
+   resolves it.
 5. **Show the user the full row** as a readable key/value block. Only
    after they confirm, append the compact JSON line to
    `data/mnemonics/log.jsonl`.
