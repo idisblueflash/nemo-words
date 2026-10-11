@@ -1,14 +1,16 @@
 #!/usr/bin/env node
-// EN-036: one-command entry for the card pipeline.
+// EN-036 / US-028: "the one-word command" — one word in, a synced story card
+// out (dags/card.yaml).
 //
 // Usage: node scripts/card.js <word>
 //
 // Starts dags/card.yaml *by path* (the global Dagu dags_dir points at another
 // project) under a fresh run id, reads `dagu status --run-id`, and maps it:
-//   succeeded              -> the last step's stdout, exit 0
+//   last step ran          -> the last step's stdout (the run report), exit 0
 //   a step exited 1        -> `stopped at <step>: <reasons>` on stdout, exit 1
 //                             (Dagu itself calls this run "Succeeded", with the
-//                             later steps skipped)
+//                             later steps skipped; the stopper is the last
+//                             step that ran)
 //   a step exited 2/crashed-> `failed at <step>:` + its stderr on stderr, exit 2
 // The run id and the command to inspect each step's own stdout/stderr logs
 // are printed on stderr. If Dagu is missing or can't run the DAG: exit 2.
@@ -19,6 +21,16 @@ const crypto = require("node:crypto");
 const { spawnSync } = require("node:child_process");
 
 const repoRoot = path.join(__dirname, "..");
+// Env overrides the step CLIs honour; dags/card.yaml declares each as a param.
+const FORWARDED_ENV = [
+  "ANKI_FILE",
+  "ANKI_CONNECT_URL",
+  "ANKI_SYNC_LOG",
+  "NEMO_MNEMONIC_LOG",
+  "NEMO_CLAUDE_BIN",
+  "NEMO_WORDS_BIN",
+  "NEMO_WORD_FREQ_BIN",
+];
 const dagPath = path.join(repoRoot, "dags", "card.yaml");
 
 function fail(message) {
@@ -55,9 +67,12 @@ function readLog(file) {
 }
 
 function main() {
-  const word = process.argv[2];
+  const word = process.argv[2] ?? ""; // no argument must not become the text "undefined"
   const runId = `card-${Date.now()}-${crypto.randomBytes(3).toString("hex")}`;
-  const start = dagu(["start", "-q", "--run-id", runId, dagPath, "--", `WORD=${word}`]);
+  // Dagu doesn't pass this process's environment on to steps, so the
+  // overrides the steps honour travel as DAG params (exported to every step).
+  const overrides = FORWARDED_ENV.filter((k) => process.env[k]).map((k) => `${k}=${process.env[k]}`);
+  const start = dagu(["start", "-q", "--run-id", runId, dagPath, "--", `WORD=${word}`, ...overrides]);
   const status = dagu(["status", "--run-id", runId, dagPath]);
   const steps = parseStatus(status.stdout);
   if (status.status !== 0 || steps.length === 0) {
@@ -71,9 +86,13 @@ function main() {
     process.exit(2);
   }
 
-  const firstSkipped = steps.findIndex((s) => s.status === "skipped");
-  if (firstSkipped > 0) {
-    const stopper = steps[firstSkipped - 1];
+  // Stopped = the last step never ran. Skips alone don't mean a stop: the
+  // DAG skips a whole branch on purpose (the logged-story path skips the
+  // drafting steps) and still reaches its last step. The stopper is the last
+  // step that did run, since everything after an exit-1 step is skipped.
+  if (steps[steps.length - 1].status === "skipped") {
+    const stopper = [...steps].reverse().find((s) => s.status !== "skipped");
+    if (!stopper) fail("dagu skipped every step of the pipeline");
     const reasons = readLog(stopper.stdout).split("\n").filter(Boolean);
     process.stdout.write(`stopped at ${stopper.id}: ${reasons.join("; ")}\n`);
     process.exit(1);

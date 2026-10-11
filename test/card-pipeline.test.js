@@ -1,15 +1,17 @@
 // EN-036: Dagu runs the card pipeline as small step CLIs.
 //
 // End-to-end coverage for `scripts/card.js <word>` -> `dags/card.yaml` ->
-// the two throwaway stub steps (`scripts/stub-step-one.js`,
-// `scripts/stub-step-two.js`). These really invoke Dagu, so they need the
-// `dagu` binary on PATH. Every run uses a throwaway DAGU_HOME so test runs
-// never land in Flash's real Dagu history.
+// US-028's real step CLIs (which replaced EN-036's throwaway stubs). These
+// really invoke Dagu, so they need the `dagu` binary on PATH. The US-028 card
+// harness supplies fake `claude` / `nemo-words` / `word-freq` executables, a
+// mock AnkiConnect, a throwaway card file, and a throwaway DAGU_HOME (with a
+// space in it, like Dagu's real macOS home), so runs never touch live Anki,
+// the real card file, or Flash's real Dagu history.
 //
-// The stubs take magic words to exercise the non-happy paths:
-//   __stop__   step one exits 1 with reasons on stdout (clean stop)
-//   __fail__   step one exits 2 with a message on stderr
-//   __crash__  step one throws (an uncaught exception -> exit 2)
+// The non-happy paths are driven by real inputs:
+//   "ice cream"                       normalize exits 1 (not one word): a clean stop
+//   a fixture with no `define` answer define exits 2 (the model call errors)
+//   a copy of the pipeline whose ipa step throws: an uncaught crash
 
 const test = require("node:test");
 const assert = require("node:assert/strict");
@@ -18,27 +20,22 @@ const os = require("node:os");
 const path = require("node:path");
 const { execFile } = require("node:child_process");
 const { promisify } = require("node:util");
+const { createHarness, germaneFixture, repoRoot } = require("./helpers/card-harness");
 
 const execFileAsync = promisify(execFile);
 
-const repoRoot = path.join(__dirname, "..");
-const cardJs = path.join(repoRoot, "scripts", "card.js");
-
-// The space mirrors Dagu's real macOS home ("Application Support"), so log
-// paths handed between steps must survive quoting.
 const tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), "card-pipeline-"));
-const daguHome = path.join(tmpRoot, "dagu home");
-fs.mkdirSync(daguHome);
 test.after(() => fs.rmSync(tmpRoot, { recursive: true, force: true }));
+
+const STEPS = [
+  "normalize", "route", "ipa", "syllabify", "define", "gloss", "chunk", "find-keywords",
+  "compose-stories", "check-stories", "pick-story", "story", "write-row", "sync", "report",
+];
 
 // Runs a command and resolves to { code, stdout, stderr } whatever the exit code.
 async function run(file, args, opts = {}) {
   try {
-    const { stdout, stderr } = await execFileAsync(file, args, {
-      env: { ...process.env, DAGU_HOME: daguHome, ...opts.env },
-      cwd: opts.cwd || repoRoot,
-      timeout: 60000,
-    });
+    const { stdout, stderr } = await execFileAsync(file, args, { env: opts.env, cwd: opts.cwd || repoRoot, timeout: 60000 });
     return { code: 0, stdout, stderr };
   } catch (err) {
     if (typeof err.code !== "number") throw err;
@@ -46,18 +43,14 @@ async function run(file, args, opts = {}) {
   }
 }
 
-function card(word, opts) {
-  return run(process.execPath, [cardJs, word], opts);
-}
-
 // Runs the inspect command card.js printed on stderr (what Flash would run to
 // look at the run) and returns each step as Dagu recorded it:
-// { one: { status, stdout, stderr }, ... }, stdout/stderr being the contents
-// of that step's own log files (absent when Dagu lists no such log).
-async function inspect(res) {
+// { <step>: { status, stdout, stderr }, ... }, stdout/stderr being the
+// contents of that step's own log files (absent when Dagu lists no such log).
+async function inspect(h, res) {
   const m = /\(inspect: dagu status --run-id (\S+) (.+)\)$/m.exec(res.stderr);
   assert.ok(m, `no inspect hint in stderr: ${res.stderr}`);
-  const status = await run("dagu", ["status", "--run-id", m[1], m[2]]);
+  const status = await run("dagu", ["status", "--run-id", m[1], m[2]], { env: { ...h.env, COLUMNS: "10000" } });
   assert.equal(status.code, 0, status.stderr);
   const steps = {};
   let current = null;
@@ -67,65 +60,180 @@ async function inspect(res) {
     const log = /[├└]─(stdout|stderr): (.+)$/.exec(line);
     if (log && current) steps[current][log[1]] = fs.readFileSync(log[2], "utf8");
   }
+  assert.deepEqual(Object.keys(steps), STEPS);
   return steps;
 }
 
-test("AC1: step two receives step one's stdout and the run ends as succeeded", async () => {
-  const res = await card("naïve");
-  assert.equal(res.code, 0, `stderr: ${res.stderr}`);
-  // step one prints `naïve\tNAÏVE`; step two echoes the record it received and appends its own field
-  assert.equal(res.stdout, "naïve\tNAÏVE\tchecked\n");
+async function withHarness(fixture, options, body) {
+  const h = await createHarness(fixture, options);
+  try {
+    return await body(h);
+  } finally {
+    await h.cleanup();
+  }
+}
+
+const after = (step) => STEPS.slice(STEPS.indexOf(step) + 1);
+
+test("AC1: each step receives the previous steps' stdout, and the run ends as succeeded", async () => {
+  await withHarness(germaneFixture(), {}, async (h) => {
+    const res = await h.runCard("germane");
+    assert.equal(res.code, 0, `stdout: ${res.stdout}\nstderr: ${res.stderr}`);
+    // card.js prints the last step's stdout: the run report
+    assert.match(res.stdout, /^carded germane \(added\)\nstory: The main point stays relevant to the talk\.\n/);
+
+    const steps = await inspect(h, res);
+    for (const s of STEPS) assert.equal(steps[s].status, "succeeded", s);
+    // ipa's stdout (Unicode IPA) is exactly what syllabify worked from…
+    assert.equal(steps.ipa.stdout, "dʒɚmˈeɪn\n");
+    assert.equal(steps.syllabify.stdout, "dʒɚ.ˈmeɪn\n");
+    // …and TSV records cross steps byte-exact: pick-story read compose-stories'
+    // candidates file and printed its first passing `sentence<TAB>pivots` line
+    assert.match(steps["compose-stories"].stdout, /^The main point stays relevant to the talk\.\tmain,relevant\n/);
+    assert.equal(steps["pick-story"].stdout, "The main point stays relevant to the talk.\tmain,relevant\n");
+    assert.equal(steps.story.stdout, "The main point stays relevant to the talk.\tmain,relevant\tpicked\n");
+  });
+});
+
+test("AC1: the caller's env overrides reach the steps through Dagu (fakes, card file, sync log)", async () => {
+  await withHarness(germaneFixture(), {}, async (h) => {
+    const res = await h.runCard("germane");
+    assert.equal(res.code, 0, res.stderr);
+    assert.equal(h.claudeCalls().length, 3); // NEMO_CLAUDE_BIN: define, gloss, compose-stories
+    assert.equal(h.mock.calls.filter((c) => c.action === "addNote").length, 1); // ANKI_CONNECT_URL
+    assert.match(h.readAnkiFile(), /^germane\t/m); // ANKI_FILE
+    assert.match(fs.readFileSync(h.syncLog, "utf8"), /term=germane file=added sync=ok/); // ANKI_SYNC_LOG
+  });
 });
 
 test("AC2: a step that exits 1 stops the run cleanly, later steps never run, and its reason is shown", async () => {
-  const res = await card("__stop__");
-  assert.equal(res.code, 1, `stderr: ${res.stderr}`);
-  assert.equal(res.stdout, "stopped at one: __stop__ is a test word; nothing to look up\n");
-  const steps = await inspect(res);
-  assert.equal(steps.one.status, "succeeded");
-  assert.equal(steps.two.status, "skipped");
+  await withHarness(germaneFixture(), {}, async (h) => {
+    const res = await h.runCard("ice cream");
+    assert.equal(res.code, 1, `stderr: ${res.stderr}`);
+    assert.equal(res.stdout, 'stopped at normalize: not one word: "ice cream"\n');
+    const steps = await inspect(h, res);
+    assert.equal(steps.normalize.status, "succeeded");
+    for (const s of after("normalize")) assert.deepEqual(steps[s], { status: "skipped" }, s);
+    assert.deepEqual(h.claudeCalls(), []);
+  });
+});
+
+test("AC2: a stop with several reasons shows them all, joined by `; `", async () => {
+  await withHarness(germaneFixture(), { anki: "down" }, async (h) => {
+    const res = await h.runCard("germane");
+    assert.equal(res.code, 1, `stderr: ${res.stderr}`);
+    assert.match(
+      res.stdout,
+      /^stopped at sync: sync failed: .*AnkiConnect.*; the row is written; re-run later: node scripts\/sync\.js "germane"\n$/
+    );
+    const steps = await inspect(h, res);
+    assert.equal(steps.sync.status, "succeeded");
+    assert.deepEqual(steps.report, { status: "skipped" });
+  });
+});
+
+test("AC2: skipping a branch on purpose is not a stop — the logged-story path still ends as succeeded", async () => {
+  const logged = "Jermaine's main point stayed relevant.";
+  await withHarness(germaneFixture(), { log: [{ word: "germane", sentence: logged, pivot_words: ["main"] }] }, async (h) => {
+    const res = await h.runCard("germane");
+    assert.equal(res.code, 0, `stdout: ${res.stdout}\nstderr: ${res.stderr}`);
+    const steps = await inspect(h, res);
+    for (const s of ["find-keywords", "compose-stories", "check-stories", "pick-story"]) {
+      assert.deepEqual(steps[s], { status: "skipped" }, s);
+    }
+    for (const s of ["story", "write-row", "sync", "report"]) assert.equal(steps[s].status, "succeeded", s);
+  });
 });
 
 test("AC3: a step that exits 2 fails the run, later steps never run, and its stderr is shown", async () => {
-  const res = await card("__fail__");
-  assert.equal(res.code, 2, `stderr: ${res.stderr}`);
-  assert.equal(res.stdout, "");
-  assert.match(res.stderr, /failed at one:\nstub-step-one: __fail__ asked for an error\n/);
-  const steps = await inspect(res);
-  assert.equal(steps.one.status, "failed");
-  assert.equal(steps.two.status, "aborted");
+  const fixture = germaneFixture();
+  delete fixture.claude.define; // the fake model has no answer -> define errors out
+  await withHarness(fixture, {}, async (h) => {
+    const res = await h.runCard("germane");
+    assert.equal(res.code, 2, `stderr: ${res.stderr}`);
+    assert.equal(res.stdout, "");
+    assert.match(res.stderr, /failed at define:\nerror: .*fake claude: no answer for define/);
+    const steps = await inspect(h, res);
+    assert.equal(steps.define.status, "failed");
+    for (const s of after("define")) assert.ok(!["succeeded", "running"].includes(steps[s].status), `${s}: ${steps[s].status}`);
+    for (const s of after("define")) assert.ok(!steps[s].stdout, `${s} wrote stdout`);
+    assert.doesNotMatch(h.readAnkiFile(), /^germane\t/m);
+  });
 });
 
+// A copy of the pipeline (dags/ + scripts/ code, no data) under tmpRoot/<name>,
+// standing in for a fresh clone.
+function clonePipeline(name) {
+  const clone = path.join(tmpRoot, name);
+  fs.mkdirSync(path.join(clone, "scripts"), { recursive: true });
+  fs.cpSync(path.join(repoRoot, "dags"), path.join(clone, "dags"), { recursive: true });
+  fs.cpSync(path.join(repoRoot, "scripts", "lib"), path.join(clone, "scripts", "lib"), { recursive: true });
+  for (const f of fs.readdirSync(path.join(repoRoot, "scripts"))) {
+    if (/\.(js|json)$/.test(f)) fs.copyFileSync(path.join(repoRoot, "scripts", f), path.join(clone, "scripts", f));
+  }
+  return clone;
+}
+
 test("AC3: a step that crashes fails the run (not a stop), later steps never run, and its stderr is shown", async () => {
-  const res = await card("__crash__");
-  assert.equal(res.code, 2, `stderr: ${res.stderr}`);
-  assert.equal(res.stdout, "");
-  assert.match(res.stderr, /failed at one:\n[\s\S]*Error: __crash__ asked for a crash/);
-  const steps = await inspect(res);
-  assert.equal(steps.one.status, "failed");
-  assert.equal(steps.two.status, "aborted");
+  const clone = clonePipeline("crashing clone");
+  fs.writeFileSync(
+    path.join(clone, "scripts", "ipa.js"),
+    'require("./lib/step-contract");\nthrow new Error("ipa asked for a crash");\n'
+  );
+  await withHarness(germaneFixture(), { root: clone }, async (h) => {
+    const res = await h.runCard("germane");
+    assert.equal(res.code, 2, `stderr: ${res.stderr}`);
+    assert.equal(res.stdout, "");
+    assert.match(res.stderr, /failed at ipa:\n[\s\S]*Error: ipa asked for a crash/);
+    const steps = await inspect(h, res);
+    assert.equal(steps.ipa.status, "failed");
+    for (const s of after("ipa")) assert.ok(!["succeeded", "running"].includes(steps[s].status), `${s}: ${steps[s].status}`);
+  });
 });
 
 test("AC4: after a succeeded run, each step's stdout and stderr can be read on its own", async () => {
-  const steps = await inspect(await card("naïve"));
-  assert.equal(steps.one.stdout, "naïve\tNAÏVE\n");
-  assert.equal(steps.one.stderr, "stub-step-one: looked up naïve\n");
-  assert.equal(steps.two.stdout, "naïve\tNAÏVE\tchecked\n");
-  assert.equal(steps.two.stderr, "stub-step-two: checked 1 record(s)\n");
+  await withHarness(germaneFixture(), {}, async (h) => {
+    const steps = await inspect(h, await h.runCard("germane"));
+    assert.equal(steps.normalize.stdout, "germane\n");
+    assert.equal(steps.route.stdout, "general\n");
+    assert.equal(steps.define.stdout.split("\n")[0], "relevant");
+    assert.equal(steps.gloss.stdout, "relevant to the matter at hand\n");
+    assert.equal(steps["write-row"].stdout, "added\tgermane\n");
+    assert.equal(steps.sync.stdout, "ok\n");
+    // stderr is its own log, never mixed into stdout: no step had anything to say
+    for (const s of STEPS) assert.ok(!steps[s].stderr, `${s} stderr: ${steps[s].stderr}`);
+  });
 });
 
 test("AC4: after a stopped run, the stopping step's stdout (its reasons) can be read on its own", async () => {
-  const steps = await inspect(await card("__stop__"));
-  assert.equal(steps.one.stdout, "__stop__ is a test word\nnothing to look up\n");
-  assert.ok(!steps.one.stderr, "a stop writes nothing to stderr");
-  assert.deepEqual(steps.two, { status: "skipped" }, "the skipped step has no logs");
+  await withHarness(germaneFixture(), {}, async (h) => {
+    const steps = await inspect(h, await h.runCard("famous"));
+    assert.equal(steps.route.stdout, "ambiguous: famous couldn't be routed automatically (classifier verdict: ambiguous)\n");
+    assert.ok(!steps.route.stderr, "a stop writes nothing to stderr");
+    assert.deepEqual(steps.ipa, { status: "skipped" }, "a skipped step has no logs");
+  });
 });
 
 test("AC4: after a failed run, the failing step's stderr can be read on its own", async () => {
-  const steps = await inspect(await card("__fail__"));
-  assert.ok(!steps.one.stdout, "a failure writes nothing to stdout");
-  assert.equal(steps.one.stderr, "stub-step-one: __fail__ asked for an error\n");
-  assert.deepEqual(steps.two, { status: "aborted" }, "the aborted step has no logs");
+  const fixture = germaneFixture();
+  delete fixture.claude.define;
+  await withHarness(fixture, {}, async (h) => {
+    const steps = await inspect(h, await h.runCard("germane"));
+    assert.ok(!steps.define.stdout, "a failure writes nothing to stdout");
+    assert.match(steps.define.stderr, /^error: .*fake claude: no answer for define/);
+    assert.ok(!steps.gloss.stdout && !steps.gloss.stderr, "a step that never ran has no logs");
+  });
+});
+
+test("AC3 edge: a pipeline Dagu cannot even start ends as failed (exit 2), never as stopped", async () => {
+  const clone = clonePipeline("broken clone");
+  fs.writeFileSync(path.join(clone, "dags", "card.yaml"), "steps: [this is: not: valid\n");
+  await withHarness(germaneFixture(), { root: clone }, async (h) => {
+    const res = await h.runCard("germane");
+    assert.equal(res.code, 2, `stderr: ${res.stderr}`);
+    assert.equal(res.stdout, "");
+    assert.match(res.stderr, /card: dagu could not run the pipeline/);
+  });
 });
 
 // Every file under dir, recursively, as paths relative to it.
@@ -133,47 +241,27 @@ function listFiles(dir) {
   return fs.readdirSync(dir, { recursive: true }).filter((f) => fs.statSync(path.join(dir, f)).isFile());
 }
 
-// A copy of just the pipeline files under tmpRoot/<name>, standing in for a fresh clone.
-function clonePipeline(name) {
-  const clone = path.join(tmpRoot, name);
-  fs.mkdirSync(path.join(clone, "scripts", "lib"), { recursive: true });
-  fs.cpSync(path.join(repoRoot, "dags"), path.join(clone, "dags"), { recursive: true });
-  for (const f of ["card.js", "stub-step-one.js", "stub-step-two.js", path.join("lib", "step-contract.js")]) {
-    fs.copyFileSync(path.join(repoRoot, "scripts", f), path.join(clone, "scripts", f));
-  }
-  return clone;
-}
-
-test("AC3 edge: a pipeline Dagu cannot even start ends as failed (exit 2), never as stopped", async () => {
-  const clone = clonePipeline("broken clone");
-  fs.writeFileSync(path.join(clone, "dags", "card.yaml"), "steps: [this is: not: valid\n");
-  const res = await run(process.execPath, [path.join(clone, "scripts", "card.js"), "naïve"]);
-  assert.equal(res.code, 2, `stderr: ${res.stderr}`);
-  assert.equal(res.stdout, "");
-  assert.match(res.stderr, /card: dagu could not run the pipeline/);
-});
-
 test("AC5: a fresh clone runs with one command, from any directory, with nothing copied into Dagu's config folder", async () => {
-  // a fresh "clone": just the pipeline files, somewhere else entirely
+  // a fresh "clone": just the pipeline files, somewhere else entirely, run
+  // from an unrelated directory; the harness gives it a fresh, empty DAGU_HOME
   const clone = clonePipeline("fresh clone");
-  // a fresh Dagu install: an empty home, so nothing pre-placed can help
-  const freshHome = path.join(tmpRoot, "fresh dagu home");
-  fs.mkdirSync(freshHome);
-
-  const res = await run(process.execPath, [path.join(clone, "scripts", "card.js"), "naïve"], {
-    cwd: os.tmpdir(),
-    env: { DAGU_HOME: freshHome },
+  await withHarness(germaneFixture(), { root: clone, cwd: os.tmpdir() }, async (h) => {
+    assert.deepEqual(fs.readdirSync(h.daguHome), [], "Dagu home starts empty");
+    const res = await h.runCard("germane");
+    assert.equal(res.code, 0, `stderr: ${res.stderr}`);
+    assert.match(res.stdout, /^carded germane \(added\)$/m);
+    assert.match(h.readAnkiFile(), /^germane\tThe main point stays relevant to the talk\.\t/m); // the clone's own card file
+    const daguFiles = listFiles(h.daguHome);
+    assert.ok(daguFiles.length > 0, "dagu did use the fresh home");
+    const pipelineFiles = new Set(["card.yaml", ...fs.readdirSync(path.join(clone, "scripts"))]);
+    assert.deepEqual(daguFiles.filter((f) => pipelineFiles.has(path.basename(f))), []);
   });
-
-  assert.equal(res.code, 0, `stderr: ${res.stderr}`);
-  assert.equal(res.stdout, "naïve\tNAÏVE\tchecked\n");
-  const daguFiles = listFiles(freshHome);
-  assert.ok(daguFiles.length > 0, "dagu did use the fresh home");
-  assert.deepEqual(daguFiles.filter((f) => /card\.ya?ml$/.test(f) || /stub-step/.test(f)), []);
 });
 
 test("AC5 edge: with Dagu not installed, card.js exits 2 with an install hint, not a raw spawn error", async () => {
-  const res = await run(process.execPath, [cardJs, "naïve"], { env: { PATH: "/nonexistent" } });
+  const res = await run(process.execPath, [path.join(repoRoot, "scripts", "card.js"), "germane"], {
+    env: { ...process.env, PATH: "/nonexistent" },
+  });
   assert.equal(res.code, 2);
   assert.equal(res.stdout, "");
   assert.match(res.stderr, /install Dagu/);
