@@ -94,3 +94,10 @@ Notes for US-038:
 - `judge-story` exits 2 for bad input as well as for a Jev failure.
 - `--pass-at` isn't validated (`abc` renders a "NaN" report).
 - A story that fails a Jev gate can still count as top 2 (fus-); decide whether that should count as agreeing with Flash.
+
+## Follow-up: blind check (would Flash accept Jev's pick?)
+The no-go measured agreement with Flash's *old* picks. A second question was whether Flash would accept what Jev picks now. `node spikes/sp-037/blind.js` showed each word's logged story beside Jev's top pick, unlabelled, with Flash's story on the left for exactly half the words. The bar was fixed before Flash answered: go if Jev's pick is chosen or rated "about the same" on ≥ 50% of words.
+
+**Go: 17 of 20 (85%).** Flash chose Jev's pick 15 times, rated 2 about the same (trivial, shattered) and kept his own 3 times (intervention, manu-, flux). Answers are in `spikes/sp-037/raw/blind-choices.json`.
+
+Reading: Jev disagrees with Flash's logged stories mostly because fresh candidates written to today's `_nemo.md` beat the older stories, not because Jev picks badly. That supports US-038 going ahead with Jev picking and Flash able to swap (US-031). Caveats: 20 words; only partly blind (Flash wrote one of the two, and some Jev picks were quoted earlier); only Jev's top pick was compared, not the other fresh candidates.
