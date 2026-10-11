@@ -1,0 +1,173 @@
+# The card pipeline (EN-036 + US-028): one word in, a synced story card out.
+# Always start it by path (the global Dagu dags_dir points at another
+# project), via `node scripts/card.js <word>`. Each step is one small CLI in
+# scripts/ following the EN-036 step contract (stdout = result, TSV; stderr =
+# notes; exit 0 ok / 1 stopped with reasons / 2 error).
+#
+# A step's result reaches later steps as the path to its stdout log,
+# `${<step>.stdout}`, not as an `output:` variable: Dagu escapes tabs when it
+# substitutes a variable into a command line, which breaks TSV records. Steps
+# that take a plain value read it out of that file with the shell
+# (`"$(cat …)"`, `"$(sed -n 2p …)"`, `"$(cut -f1 …)"`).
+working_dir: ..   # repo root (relative paths resolve against this file's folder)
+# Dagu does not hand the caller's environment to steps (only a few basics
+# such as PATH/HOME get through), and an `env:` entry naming an unset
+# variable stays a literal `${VAR}`. So the overrides the steps honour are
+# params instead (params are exported to every step as env vars); card.js
+# forwards whichever ones are set in its own environment. Empty = default.
+params:
+  - WORD: ""
+  - ANKI_FILE: ""          # card file under anki/ (default reading-room-terms.txt)
+  - ANKI_CONNECT_URL: ""   # default http://127.0.0.1:8765
+  - ANKI_SYNC_LOG: ""      # default anki/sync.log
+  - NEMO_MNEMONIC_LOG: ""  # default data/mnemonics/log.jsonl
+  - NEMO_CLAUDE_BIN: ""    # default `claude`
+  - NEMO_WORDS_BIN: ""     # default `nemo-words`
+  - NEMO_WORD_FREQ_BIN: "" # default scripts/word-freq.js
+# Pinned rather than inherited from the global base.yaml: each step's stdout
+# and stderr must land in separate logs, both so a run can be inspected step
+# by step and so `${<step>.stdout}` hands the next step stdout only.
+log_output: separate
+# Exit 1 is a clean stop, not a failure: the stopping step is marked
+# succeeded, and the next step's precondition on its exit code skips it; a
+# skipped step skips everything that depends on it (skips cascade).
+# scripts/card.js reports a run whose last step was skipped as "stopped".
+defaults:
+  continue_on:
+    exit_code: [1]
+    mark_success: true
+steps:
+  - id: normalize
+    run: node scripts/normalize.js "${WORD}"
+
+  - id: route   # exit 1: already carded / word-part / ambiguous
+    depends: [normalize]
+    preconditions:
+      - condition: "${normalize.exit_code}"
+        expected: "0"
+    run: node scripts/route.js "$(cat "${normalize.stdout}")"
+
+  - id: ipa
+    depends: [route]
+    preconditions:
+      - condition: "${route.exit_code}"
+        expected: "0"
+    run: node scripts/ipa.js "$(cat "${normalize.stdout}")"
+
+  - id: syllabify
+    depends: [ipa]
+    preconditions:
+      - condition: "${ipa.exit_code}"
+        expected: "0"
+    run: node scripts/syllabify.js "$(cat "${ipa.stdout}")"
+
+  - id: define
+    depends: [syllabify]
+    preconditions:
+      - condition: "${syllabify.exit_code}"
+        expected: "0"
+    run: node scripts/define.js "$(cat "${normalize.stdout}")"
+
+  - id: gloss
+    depends: [define]
+    preconditions:
+      - condition: "${define.exit_code}"
+        expected: "0"
+    run: node scripts/gloss.js "$(cat "${normalize.stdout}")" "$(sed -n 1p "${define.stdout}")" "$(sed -n 2p "${define.stdout}")"
+
+  - id: chunk
+    depends: [gloss]
+    preconditions:
+      - condition: "${gloss.exit_code}"
+        expected: "0"
+    run: node scripts/chunk.js "$(cat "${syllabify.stdout}")"
+
+  # --- Drafting a story: skipped as a whole when route found a logged story
+  # (`general\t<sentence>\t<pivots>`): a logged story was a human pick and
+  # wins, so only the card gets written (no model call).
+  - id: find_keywords
+    name: find-keywords
+    depends: [chunk]
+    preconditions:
+      - condition: "${chunk.exit_code}"
+        expected: "0"
+      - condition: 'test -z "$(cut -s -f2 "${route.stdout}")"'
+    run: node scripts/find-keywords.js "$(cat "${syllabify.stdout}")" "$(cat "${normalize.stdout}")"
+
+  - id: compose_stories
+    name: compose-stories
+    depends: [find_keywords]
+    preconditions:
+      - condition: "${find_keywords.exit_code}"
+        expected: "0"
+    run: node scripts/compose-stories.js "$(cat "${normalize.stdout}")" "$(sed -n 1p "${define.stdout}")" "${find_keywords.stdout}"
+
+  - id: check_stories
+    name: check-stories   # the hard gates per candidate -> the checks file
+    depends: [compose_stories]
+    preconditions:
+      - condition: "${compose_stories.exit_code}"
+        expected: "0"
+    run: node scripts/check-stories.js "$(cat "${normalize.stdout}")" "$(sed -n 1p "${define.stdout}")" "${compose_stories.stdout}" "${find_keywords.stdout}"
+
+  - id: pick_story
+    name: pick-story   # exit 1: no-pick, with every candidate's reasons; no redraft
+    depends: [check_stories]
+    preconditions:
+      - condition: "${check_stories.exit_code}"
+        expected: "0"
+    run: node scripts/pick-story.js "${compose_stories.stdout}" "${check_stories.stdout}"
+    # Skipped on the logged-story path; let `story` still decide for itself.
+    continue_on:
+      exit_code: [1]
+      mark_success: true
+      skipped: true
+
+  # --- Where the two paths meet. Two Dagu quirks shape this step:
+  #   - a skipped step reports exit code 0, so the exit-code check alone
+  #     can't tell "picked" from "skipped" (it does catch a no-pick stop);
+  #   - a step skipped because its dependency was skipped leaves
+  #     `${<step>.stdout}` unresolved (the literal text), which inside a
+  #     double-quoted shell word is a "bad substitution" error. So these
+  #     paths are single-quoted: an unresolved one is just a missing file.
+  # The file checks then decide: chunk really ran (non-empty stdout), and
+  # there is a story to card (pick-story printed one, or route found a logged
+  # one). Any earlier stop fails one of these, so `story` is skipped and the
+  # stop cascades on.
+  - id: story
+    depends: [pick_story]
+    preconditions:
+      - condition: "${pick_story.exit_code}"
+        expected: "0"
+      - condition: "test -s '${chunk.stdout}'"
+      - condition: "test -s '${pick_story.stdout}' || test -n \"$(cut -s -f2 '${route.stdout}')\""
+    run: node scripts/story.js '${route.stdout}' '${pick_story.stdout}'
+
+  - id: write_row
+    name: write-row   # exit 1: the word got carded meanwhile (row left untouched)
+    depends: [story]
+    preconditions:
+      - condition: "${story.exit_code}"
+        expected: "0"
+    run: node scripts/write-row.js "$(cat "${normalize.stdout}")" "$(cut -f1 "${story.stdout}")" "$(cat "${syllabify.stdout}")" "$(cat "${gloss.stdout}")"
+
+  - id: sync   # exit 1: sync failed; the row stays written, logged to the sync log
+    depends: [write_row]
+    preconditions:
+      - condition: "${write_row.exit_code}"
+        expected: "0"
+    run: node scripts/sync.js "$(cut -f2 "${write_row.stdout}")" "$(cut -f1 "${write_row.stdout}")"
+
+  # Last step: its stdout is what card.js prints on success. Every step's
+  # stderr log goes along as `note:` lines; single-quoted, since the skipped
+  # draft steps' paths stay unresolved (see `story`).
+  - id: report
+    depends: [sync]
+    preconditions:
+      - condition: "${sync.exit_code}"
+        expected: "0"
+    run: >-
+      node scripts/report.js "${write_row.stdout}" "${story.stdout}" "${syllabify.stdout}" "${gloss.stdout}"
+      '${normalize.stderr}' '${route.stderr}' '${ipa.stderr}' '${syllabify.stderr}' '${define.stderr}'
+      '${gloss.stderr}' '${chunk.stderr}' '${find_keywords.stderr}' '${compose_stories.stderr}'
+      '${check_stories.stderr}' '${pick_story.stderr}' '${story.stderr}' '${write_row.stderr}' '${sync.stderr}'

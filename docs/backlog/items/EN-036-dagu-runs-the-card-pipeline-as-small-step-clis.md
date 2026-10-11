@@ -2,7 +2,8 @@
 id: EN-036
 type: enabler
 parent: E01
-status: ready
+status: done
+qa_status: passing
 ---
 # EN-036 Dagu runs the card pipeline as small step CLIs
 
@@ -67,6 +68,15 @@ Verified against Dagu 2.18.2 with a throwaway probe workflow (2026-10-11).
   - The two stub steps are throwaway; US-028 replaces them with its real CLIs.
 - **Edge cases:** Dagu not installed → `card.js` exits 2 with "install Dagu", not a raw spawn error; the global `dags_dir` points at another project (`~/Projects/sumomo/workflows`), so the pipeline is always started by path, never by name; concurrent runs are safe because status is read by run id.
 
+## Built (2026-10-11)
+- `dags/card.yaml`, `scripts/card.js`, throwaway stubs `scripts/stub-step-one.js` / `scripts/stub-step-two.js`, and `scripts/lib/step-contract.js`. Tests: `test/card-pipeline.test.js` (end to end through real Dagu, throwaway `DAGU_HOME`) and `test/stub-steps.test.js`.
+- Stub switch for the non-happy paths: magic words. `__stop__` makes step one exit 1 with two reasons, `__fail__` makes it exit 2 with a stderr message, `__crash__` makes it throw.
+- Found during the build, which changes the sketch above:
+  - **A step's result goes to the next step as `${<step>.stdout}` (the path of its stdout log), not as an `output:` variable.** Dagu escapes tabs when it substitutes a variable straight into a command line, so `"${ONE}"` reached step two as `naïve\tNAÏVE` with a literal backslash-t. The log path is byte-exact, works for multi-line results, and fits the contract's "multi-line inputs are passed as a file path". So a step that takes the previous step's result takes a file path.
+  - **`log_output: separate` is pinned in `card.yaml`**, not inherited from the global `base.yaml`. Both the step-by-step inspection (AC 4) and `${<step>.stdout}` need stdout and stderr kept apart.
+  - **A crash must exit 2, not 1.** Node exits 1 on an uncaught exception, which the contract reserves for "stopped". Every step CLI should `require("./lib/step-contract")`, which turns any uncaught exception into stack-on-stderr plus exit 2. US-028's real CLIs need this too.
+  - `card.js` also exits 2 (never 1) when Dagu can't run the DAG at all, e.g. invalid YAML.
+
 ## Open questions
-- [ ] Where the per-run scratch files live: assumed a folder keyed by run id under Dagu's log directory, or under `scratchpad/` if Dagu doesn't expose its run directory to steps. Settle during build.
-- [ ] Whether a `dags/` folder at the repo root is the right home, or `scripts/dags/`. Assumed `dags/`.
+- [x] Where the per-run scratch files live. **Settled: `$DAG_RUN_WORK_DIR`.** Dagu exports it to every step: a per-run folder under Dagu's data dir (`…/dagu/data/dag-run-work/<dag>/<id>/root`), so no `scratchpad/` fallback is needed. The stub steps didn't need one, because step-to-step results travel as `${<step>.stdout}` paths (see Built). A US-028 step that writes an extra file should put it there and print the path.
+- [x] Whether a `dags/` folder at the repo root is the right home, or `scripts/dags/`. **Settled: `dags/`.** The repo's `.gitignore` ignores `/scripts/` (tracked scripts are force-added), so a top-level `dags/` is tracked normally. The DAG also isn't a script.
