@@ -2,7 +2,7 @@
 id: US-028
 type: story
 parent: E01
-status: done
+status: in-progress
 qa_status: bug
 bugs:
   - ac: 5
