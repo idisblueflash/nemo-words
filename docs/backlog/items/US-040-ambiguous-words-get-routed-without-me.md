@@ -2,8 +2,7 @@
 id: US-040
 type: story
 parent: E01
-status: done
-qa_status: passing
+status: in-progress
 ---
 # US-040 Ambiguous words get routed without me
 
@@ -53,6 +52,35 @@ Given  the judgment service is unavailable
     - And   the command says routing failed because the judgment service was down, and that it can be re-run
 ```
 
+```gherkin
+Given  a labelled set of words: the US-028 QA misses (ibuprofen, ketoprofen, naproxen, conduct as word-part; trial, pathway, period, roster, episode, recurrent, adherence, substance, premise, trivial, exotic, apparently, apprenticeship as general), every whole-word row in the card file as general, and every example word on the card file's word-part rows as word-part
+  - When  Flash runs the routing accuracy check
+    - Then  each word is put to Jev with the same question judge-route asks, and its p word-part is recorded
+    - And   the report shows, for each label, how many words the 0.3 / 0.7 cut-offs route right, route wrong and leave unsure
+    - And   it lists every misrouted word with its p, and every word left out because it carries both labels
+```
+
+```gherkin
+Given  Jev can't answer for some words during the routing accuracy check (error or unusable answer)
+  - When  the check runs
+    - Then  those words are reported as unjudged instead of being guessed
+    - And   the counts are over the judged words only, with the number of unjudged words shown
+```
+
+```gherkin
+Given  the routing accuracy check has been run against the real Jev, not a mock
+  - When  Flash opens its saved report in the repo
+    - Then  it shows the real Jev results for the whole labelled set
+    - And   it ends by saying whether the 0.3 / 0.7 cut-offs hold, or which cut-offs the results support instead
+```
+
+```gherkin
+Given  a word typed with capital letters (e.g. WARY or Wary)
+  - When  Flash runs the one-word command with that word
+    - Then  the word is lowercased before any other step
+    - And   the card's front, the route and the judgment call all use the lowercase word
+```
+
 ## Logic sketch
 - **Approach:** a new Jev step `judge-route` runs right after `route` in `dags/card.yaml`; its stdout replaces `route`'s as the route that later steps read. `route` no longer stops on an ambiguous verdict: it prints `ambiguous\t<matched parts>` and exits 0. Any other route line passes through `judge-route` unchanged, with no Jev call.
 - **Entities** (names shared with US-028):
@@ -71,6 +99,8 @@ Given  the judgment service is unavailable
   - Only `ambiguous` verdicts are judged. `medical` and `no match` route as before (overruling `medical` is US-042).
   - A logged story skips the judgment: `route` checks the mnemonic log before the classifier verdict, so a logged word routes `general` with its story and Jev is not called. Today the 7 logged ambiguous words (ominous, wary, …) would stop even though Flash already gave each a story.
   - The run report shows routedBy and pWordPart whenever a judgment was made.
+- **Accuracy check (added after the first build):** `node scripts/route-accuracy.js` builds the labelled set from the card file (`anki/reading-room-terms.txt`: rows without the `medical-word-parts` tag → general; the `e.g. …` example words on tagged rows → word-part) plus the fixed US-028 miss list, asks Jev each word with judge-route's own question (shared code, not a copy), and writes a Markdown report (`docs/backlog/reports/US-040-route-accuracy.md`). Tests run it against the mock Jev; the saved report comes from one real-Jev run. Word-part `Front`s themselves (e.g. `fus-`) are not words and stay out of the set.
+- **Lowercasing (added after the first build):** `normalize` lowercases the word it prints, so every later step sees the lowercase form.
 - **Edge cases:** an already-carded word still stops first, with no judgment; Jev failing stops before `write-row`, so nothing is written; re-running is safe (no side effects).
 
 ## Open questions
