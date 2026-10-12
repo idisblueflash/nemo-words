@@ -17,7 +17,7 @@ test("US-040 AC1: card.js cards an ambiguous word Jev judges general, and the re
 
     // Carded the same way as any general-English word.
     assert.match(run.stdout, /^carded wary \(added\)$/m);
-    assert.match(h.readAnkiFile(), /^wary\tThe weary hiker stays careful near the cliff\.\t\tˈwɛ\.ɹi\tcautious about possible danger$/m);
+    assert.match(h.readAnkiFile(), /^wary\tThe weary hiker stays careful near the cliff, re safety\.\t\tˈwɛ\.ɹi\tcautious about possible danger$/m);
     assert.equal(h.mock.calls.filter((c) => c.action === "addNote").length, 1);
 
     // The run report says the route was a judgment call, and how confident.

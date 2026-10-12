@@ -11,7 +11,7 @@ const os = require("node:os");
 const path = require("node:path");
 const { createHarness } = require("./helpers/card-harness");
 
-const ROWS = ["wary\tThe weary hiker stays careful near the cliff."];
+const ROWS = ["wary\tThe weary hiker stays careful near the cliff, re safety."];
 
 test("US-040 AC13: a directory as the report path stops (exit 1) before any Jev call and says it can't be written", async () => {
   const h = await createHarness({}, { rows: ROWS });

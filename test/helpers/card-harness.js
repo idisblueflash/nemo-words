@@ -310,13 +310,13 @@ function germaneFixture(stories) {
 }
 
 // US-040: "wary" — the classifier calls it ambiguous (a weak -ary match only).
-// GA wˈɛɹi, syllables ˈwɛ.ɹi, neither chunk with a common exact match, so the
-// story is unanchored. `jev` sets Jev's answers by question name: `word_part`
+// GA wˈɛɹi, syllables ˈwɛ.ɹi. The ɹi chunk is anchored by "re" (US-041: a card
+// needs at least one anchored chunk); the wɛ chunk has no common exact match. `jev` sets Jev's answers by question name: `word_part`
 // is judge-route's p that the word belongs on the word-part path.
 function waryFixture(jev = {}) {
   return {
-    dict: { wary: "wˈɛɹi" },
-    freqs: {},
+    dict: { wary: "wˈɛɹi", re: "ɹˈi" },
+    freqs: { re: 3e-5 },
     claude: {
       define: JSON.stringify({
         primarySense: "careful",
@@ -325,7 +325,7 @@ function waryFixture(jev = {}) {
       }),
       gloss: "cautious about possible danger",
       "compose-stories": JSON.stringify([
-        { sentence: "The weary hiker stays careful near the cliff.", pivots: ["weary", "careful"] },
+        { sentence: "The weary hiker stays careful near the cliff, re safety.", pivots: ["weary", "careful"] },
       ]),
     },
     jev,
