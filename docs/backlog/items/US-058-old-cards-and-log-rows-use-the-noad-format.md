@@ -3,7 +3,7 @@ id: US-058
 type: story
 parent: E07
 status: idea
-depends_on: [US-057]
+depends_on: [US-053]
 ---
 # US-058 Old cards and log rows use the NOAD format
 

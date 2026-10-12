@@ -54,7 +54,7 @@ you, and delivers the finished card into Anki (live sync or an importable deck f
    fail on real words. The exact-IPA keyword rule left 14 of 40 sample words with no
    anchor, while Flash's own cards used rhymes, names and split chunks. Lesson: each
    step of the story workflow needs its own research on real data before its rules are
-   set, so the story is built more accurately.)*
+   set, so the story is built more accurately. US-046 then confirmed it: a rhyme rule measured on real words anchored about 10 of the 14 no-anchor words, and Flash accepted the extra rhymes found while building (stew→two, vapor→way).)*
 4. Generating one card is cheap and fast enough to do for every new word. · hypothesis
 5. Users keep reviewing in Anki; the app only generates the card material and delivers
    it via live sync or an importable deck file. · hypothesis
