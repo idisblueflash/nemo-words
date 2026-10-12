@@ -3,14 +3,7 @@ id: SP-052
 type: spike
 parent: E07
 status: in-progress
-qa_status: bug
-bugs:
-  - ac: 3
-    summary: "A space inside a NOAD IPA (percent: 'pər ˈsɛnt') stays in the syllable, so the syllable 'pər ' gets no exact anchor although NOAD 'per' /pər/ (freq 1.58e-4) matches"
-    command: "node spikes/sp-052/run.js; grep -P '^percent\\t' dictionaries/noad/data/sp-052-detail.tsv; node spikes/sp-052/syllabify-noad.js 'pər ˈsɛnt'"
-    expected: "Syllable pər is anchored with the most frequent NOAD word whose IPA equals it exactly (per), so NOAD gives percent 2/2"
-    actual: "noad_syllables 'pər .ˈsɛnt', noad_anchors 'pər =- sɛnt=sent', 1/2; syllabify-noad returns 'pər .ˈsɛnt' (ipaKey('pər ') = 'pəɹ ' ≠ 'pəɹ'). 122 lower-case NOAD headwords carry a space in their IPA"
-    found: 2026-10-12
+qa_status: passing
 timebox: 1d
 ---
 # SP-052 Does NOAD find as many exact sound anchors as CMU?
