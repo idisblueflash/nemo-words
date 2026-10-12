@@ -2,7 +2,7 @@
 id: US-040
 type: story
 parent: E01
-status: in-progress
+status: done
 qa_status: passing
 ---
 # US-040 Ambiguous words get routed without me
