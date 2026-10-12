@@ -2,7 +2,7 @@
 id: US-051
 type: story
 parent: E02
-status: in-progress
+status: done
 qa_status: passing
 depends_on: [US-041]
 ---
