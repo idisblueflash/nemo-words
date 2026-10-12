@@ -22,8 +22,8 @@ A source's row counts every word from that source (a word in two sources is in b
 |---|---|---|---|---|---|---|---|
 | card | 332 | 287/332 (86.4%) | 314/332 (94.6%) | 290/684 (42.4%) | 293/723 (40.5%) | 179/332 (53.9%) | 189/332 (56.9%) |
 | log | 127 | 110/127 (86.6%) | 124/127 (97.6%) | 96/251 (38.2%) | 110/277 (39.7%) | 63/127 (49.6%) | 76/127 (59.8%) |
-| sample | 200 | 200/200 (100.0%) | 200/200 (100.0%) | 231/513 (45.0%) | 222/514 (43.2%) | 147/200 (73.5%) | 141/200 (70.5%) |
-| total | 532 | 487/532 (91.5%) | 514/532 (96.6%) | 521/1197 (43.5%) | 515/1237 (41.6%) | 326/532 (61.3%) | 330/532 (62.0%) |
+| sample | 200 | 200/200 (100.0%) | 200/200 (100.0%) | 232/513 (45.2%) | 222/514 (43.2%) | 147/200 (73.5%) | 141/200 (70.5%) |
+| total | 532 | 487/532 (91.5%) | 514/532 (96.6%) | 522/1197 (43.6%) | 515/1237 (41.6%) | 326/532 (61.3%) | 330/532 (62.0%) |
 
 ## Anchored with NOAD only
 
@@ -129,7 +129,7 @@ A source's row counts every word from that source (a word in two sources is in b
 
 ## Same IPA, split differently
 
-13 of 351 words with the same IPA in both dictionaries are split differently (IPA compared without stress marks, with NOAD ər = CMU ɚ/ɝ and NOAD ə = CMU ʌ).
+13 of 352 words with the same IPA in both dictionaries are split differently (IPA compared without stress marks, with NOAD ər = CMU ɚ/ɝ and NOAD ə = CMU ʌ).
 
 - pathway
 - garage
@@ -235,8 +235,8 @@ Inflections are left out as keywords on both sides (NOAD has no inflection entri
 
 ər before a vowel: 11 of 487 words with a NOAD IPA in the set (11 spots); across NOAD's lower-case headwords with a US IPA: 1805 of 60087 (3.0%).
 
-- onset rule (ˈɪn.tə.rəst): NOAD anchors 324 words, 522 syllables.
-- nucleus rule (ˈɪn.tər.əst): NOAD anchors 326 words, 521 syllables.
+- onset rule (ˈɪn.tə.rəst): NOAD anchors 324 words, 523 syllables.
+- nucleus rule (ˈɪn.tər.əst): NOAD anchors 326 words, 522 syllables.
 
 Words whose anchored-syllable count changes with the rule: 9 (recurrent, moderate, literal, thoroughfare, pleasurable, inquiring, trajectory, intrauterine, mackerel).
 

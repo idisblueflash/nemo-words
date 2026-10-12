@@ -42,10 +42,11 @@ function headwordsWithIpa(index) {
 
 // Canonical NOAD format (E07): a bracketed (optional) sound is kept and only
 // the brackets go, except (h) before w, which is dropped with its brackets.
+// A space ("pər ˈsɛnt") only separates the entry's parts, not a sound: dropped.
 //   ˈɪnt(ə)rəst -> ˈɪntərəst     (h)wɪtʃ -> wɪtʃ
 function canonicalNoad(raw) {
   return String(raw)
-    .trim()
+    .replace(/\s+/g, "")
     .replace(/\(h\)(?=[ˈˌ]?w)/g, "")
     .replace(/[()]/g, "");
 }
