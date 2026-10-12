@@ -2,7 +2,8 @@
 id: US-046
 type: story
 parent: E01
-status: ready
+status: done
+qa_status: passing
 depends_on: [US-041]
 ---
 # US-046 Words with no exact-sound match get a rhyme anchor
@@ -11,7 +12,7 @@ As Flash, I want a word whose chunks have no exact-sound keyword to still get an
 
 **Scope (split from US-041, 2026-10-12):** on a 40-word sample, 16 words had no exact-IPA keyword on any chunk and now stop at `no-anchor` (US-041). Flash's own cards for them used rhymes (`anchor_unit: rime`), proper names or chunk splits. Fall back to one of these only when no exact match exists, keeping word-workflow.md's "perfect IPA match" rule for the chunks that have one.
 
-**Split (refine, 2026-10-12):** Flash's anchors for the 14 no-anchor words in the saved measurement are of three types: a rhyme of the stressed syllable (drown→crown, latch→catch, crest→rest), a proper name (stew→Stu, critique→Chris) and a split or shifted chunk (vapor→vape/per, stampede→stamp/peed, bulge→bulb/judge). This story does only the rhyme. Names are US-049; split or shifted chunks are US-050. A probe of the rhyme rule below gave an anchor for about 10 of the 14 (drown→down, latch→catch, cocked→locked, crest→best, cramped→stamped, flux→trucks, stampede /pid/→need, critique /tik/→speak); stew, vapor and bulge stay no-anchor.
+**Split (refine, 2026-10-12):** Flash's anchors for the 14 no-anchor words in the saved measurement are of three types: a rhyme of the stressed syllable (drown→crown, latch→catch, crest→rest), a proper name (stew→Stu, critique→Chris) and a split or shifted chunk (vapor→vape/per, stampede→stamp/peed, bulge→bulb/judge). This story does only the rhyme. Names are US-049; split or shifted chunks are US-050. A probe of the rhyme rule below gave an anchor for about 10 of the 14 (drown→down, latch→catch, cocked→locked, crest→best, cramped→stamped, flux→trucks, stampede /pid/→need, critique /tik/→speak); bulge stays no-anchor. Built rule on real data (implement, 2026-10-12): stew /stu/→two and vapor /veɪ/→way also get a rhyme; Flash accepted both as anchors.
 
 ## Acceptance criteria
 
@@ -43,7 +44,7 @@ Given  a word with an unstressed syllable that has no exact-sound word (critique
 ```
 
 ```gherkin
-Given  a word with no exact-sound word and no common rhyme for its stressed syllable (stew, vapor, bulge)
+Given  a word with no exact-sound word and no common rhyme for its stressed syllable (bulge)
   - When  Flash runs the one-word command
     - Then  it still stops with "no sound anchor found", as before
 ```
@@ -63,7 +64,7 @@ Given  a word with no exact-sound word and no common rhyme for its stressed syll
   - `log-card`: when the stressed chunk's keyword is a rhyme, `anchor_unit` is `rime`; otherwise the rule is unchanged. `keyword` is unchanged: the anchored chunks' keywords joined with " / " (AC1).
   - `compose-stories`: the prompt line for a rhyme chunk is `/dɹaʊn/ -> "down" (rhymes)`.
 - **Edge cases:**
-  - A stressed syllable with no coda (stew /stu/, vapor /veɪ/) has a vowel-only rime. The rules still apply; the probe found bad words here, which the onset rule and FunctionWords mostly remove. The AC5 fixtures give no rhyme, so the run stops.
+  - A stressed syllable with no coda (stew /stu/, vapor /veɪ/) has a vowel-only rime. The rules still apply; the probe found bad words here, which the onset rule and FunctionWords mostly remove. On real data they give stew→two and vapor→way, which Flash accepted (2026-10-12).
   - The rime lookup can return hundreds of words (/ʌs/). All go to `word-freq` in one call, so it stays one call per word.
   - A word with primary and secondary stress (`ˈ`, `ˌ`): only the primary-stressed chunk gets a rhyme.
 

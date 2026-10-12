@@ -126,7 +126,18 @@ When `route` finds a logged story for the word (`data/mnemonics/log.jsonl`), the
 and judging steps are skipped and the logged story is carded. Stops (exit 1) to expect:
 `already carded … current story: …`, the word-part path (`_etta_mology`), `couldn't be routed
 automatically`, `no-pick: …` with every candidate's reasons, and `sync failed … re-run
-later` (the row stays written; the failure is in `anki/sync.log`).
+later` (the row stays written; the failure is in `anki/sync.log`), and `no sound anchor found`
+(US-041/US-046, below).
+
+`find-keywords` gives each chunk the most frequent common word with exactly its GA IPA
+(US-041). When the stressed chunk (`ˈ`; a one-chunk word's only chunk) has none, it falls
+back to a rhyme (US-046, `scripts/lib/rhyme.js`): the most frequent one-syllable word with
+the same rime, a non-empty onset, a frequency of at least 5e-7, not the headword and not a
+function word (drown → `down`, critique's `tik` → `speak`). Other chunks never get a rhyme.
+A rhyme line has a 4th column, `ipa\tkeyword\tfreq\trime`. `compose-stories` marks it
+`(rhymes)` in the prompt, `check-stories` compares rimes for it instead of the whole sound,
+and `log-card` logs `anchor_unit: rime`. A word with no exact keyword on any chunk and no
+rhyme for the stressed chunk (e.g. `bulge`) stops with `no sound anchor found`.
 
 An `ambiguous` classifier verdict (weak suffix matches only, e.g. `wary`'s `-ary`) doesn't
 stop `route`: `judge-route` (US-040) asks Jev whether the word is built from classical

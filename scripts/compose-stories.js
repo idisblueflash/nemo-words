@@ -13,21 +13,27 @@ const { runCli, claude, flatten, extractJson } = require("./card-lib");
 
 const CANDIDATES = 5;
 
-// find-keywords output -> [{ ipa, keyword|null }] in chunk order.
+// find-keywords output -> [{ ipa, keyword|null }] in chunk order; a rhyme
+// keyword (US-046, fourth column `rime`) also gets `match: "rime"`.
 function readChunkKeywords(text) {
   return text
     .split("\n")
     .filter((l) => l.trim())
     .map((l) => {
-      const [ipa, keyword] = l.split("\t");
-      return { ipa, keyword: keyword && keyword !== "-" ? keyword : null };
+      const [ipa, keyword, , match] = l.split("\t");
+      const c = { ipa, keyword: keyword && keyword !== "-" ? keyword : null };
+      if (c.keyword && match === "rime") c.match = "rime";
+      return c;
     });
 }
 
+function anchorText(c) {
+  if (!c.keyword) return "(no anchor; leave this sound out)";
+  return c.match === "rime" ? `"${c.keyword}" (rhymes)` : `"${c.keyword}"`;
+}
+
 function composePrompt(word, primarySense, chunks) {
-  const anchors = chunks
-    .map((c, i) => `  ${i + 1}. /${c.ipa}/ -> ${c.keyword ? `"${c.keyword}"` : "(no anchor; leave this sound out)"}`)
-    .join("\n");
+  const anchors = chunks.map((c, i) => `  ${i + 1}. /${c.ipa}/ -> ${anchorText(c)}`).join("\n");
   return [
     "Step: compose-stories",
     `Write ${CANDIDATES} different one-sentence mnemonic stories for the English word "${word}" (main sense: ${primarySense}).`,

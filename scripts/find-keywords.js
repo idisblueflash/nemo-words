@@ -10,6 +10,10 @@
 // US-041: when *no* chunk gets a keyword, there is nothing to build a story
 // on: exit 1 (a clean stop) with `no sound anchor found` and then the same
 // `ipa\t-` lines, so the run stops before any story is drafted.
+// US-046: when the stressed chunk (a one-chunk word's only chunk) has no exact
+// keyword, it falls back to the most frequent common one-syllable rhyme
+// (scripts/lib/rhyme.js), printed as `ipa\tkeyword\tfrequency\trime`. Other
+// chunks never get a rhyme.
 // The optional [word] is the headword itself, never offered as its own anchor.
 //
 // Candidates come from `nemo-words ipa-lookup --ga <chunk>` (substring search)
@@ -20,12 +24,12 @@ if (require.main === module) require("./lib/step-contract"); // a crash exits 2,
 const path = require("path");
 const { runCli, runTool, nemoWords, ipaKey } = require("./card-lib");
 const { chunk } = require("./chunk");
+const { rhymeFor, rhymeCandidates, rimeOf, FREQ_THRESHOLD } = require("./lib/rhyme");
 
-// Keyword frequency cutoff (mean Ngram share, 2015–2019). Tuned on known words:
-// "main" 1.3e-4, "mane" 1.8e-6, "pickle" 9.7e-7 and "veer" 6.1e-7 pass;
-// "beck" 4.5e-7, "urbane" 4.2e-7 (_nemo's own example of a too-rare peg) and
-// "germaine" 3.3e-9 don't.
-const FREQ_THRESHOLD = 5e-7;
+// FREQ_THRESHOLD (5e-7, in lib/rhyme.js) is the keyword frequency cutoff (mean
+// Ngram share, 2015–2019). Tuned on known words: "main" 1.3e-4, "mane"
+// 1.8e-6, "pickle" 9.7e-7 and "veer" 6.1e-7 pass; "beck" 4.5e-7, "urbane"
+// 4.2e-7 (_nemo's own example of a too-rare peg) and "germaine" 3.3e-9 don't.
 
 // Words in `word\tRP\tGA[,GA…]` lookup output with a GA variant equal to `chunkIpa`.
 function exactMatches(stdout, chunkIpa) {
@@ -69,11 +73,24 @@ function findKeywords(syllableString, word) {
   const candidates = chunks.map((c) => exactMatches(nemoWords(["ipa-lookup", "--ga", c.ipa]), c.ipa));
   const freqs = wordFreqs([...new Set(candidates.flat())]);
   const exclude = word ? [word.toLowerCase()] : [];
-  return chunks.map((c, i) => ({ ipa: c.ipa, ...(pickKeyword(candidates[i], freqs, { exclude }) || { keyword: null }) }));
+  const keywords = chunks.map((c, i) => ({ ipa: c.ipa, ...(pickKeyword(candidates[i], freqs, { exclude }) || { keyword: null }) }));
+  // US-046: only the stressed chunk (a one-chunk word's only chunk), and only
+  // when it has no exact keyword, falls back to a rhyme.
+  const s = chunks.findIndex((c) => chunks.length === 1 || c.anchorUnits.includes("stressed-syllable"));
+  if (s !== -1 && !keywords[s].keyword) {
+    const chunkIpa = chunks[s].ipa;
+    const lookupLines = nemoWords(["ipa-lookup", "--ga", rimeOf(chunkIpa)]);
+    const rhymeFreqs = wordFreqs(rhymeCandidates({ chunkIpa, lookupLines, exclude }));
+    const rhyme = rhymeFor({ chunkIpa, lookupLines, freqs: rhymeFreqs, exclude });
+    if (rhyme) keywords[s] = { ipa: chunkIpa, ...rhyme, match: "rime" };
+  }
+  return keywords;
 }
 
+// exact `ipa\tkeyword\tfreq`, rhyme `ipa\tkeyword\tfreq\trime`, none `ipa\t-`.
 function formatKeywordLine(k) {
-  return k.keyword ? `${k.ipa}\t${k.keyword}\t${k.frequency.toExponential(4)}` : `${k.ipa}\t-`;
+  if (!k.keyword) return `${k.ipa}\t-`;
+  return [k.ipa, k.keyword, k.frequency.toExponential(4), ...(k.match === "rime" ? ["rime"] : [])].join("\t");
 }
 
 if (require.main === module) {

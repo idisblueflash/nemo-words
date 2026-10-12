@@ -11,6 +11,7 @@ const fs = require("fs");
 const { runCli, ipaKey, stripStress } = require("./card-lib");
 const { lookupGa } = require("./ipa");
 const { readChunkKeywords } = require("./compose-stories");
+const { rimeOf } = require("./lib/rhyme");
 
 // Irregular inflected forms (past, participle, plural, comparative ...) by base
 // word — the suffix rules below can't derive these. A curated list of common
@@ -94,7 +95,12 @@ function anchorReasons(toks, chunks, lookupGa) {
   for (const c of chunks.filter((x) => x.keyword)) {
     const kw = c.keyword.toLowerCase();
     const ga = lookupGa(kw);
-    if (!ga || ipaKey(ga) !== ipaKey(c.ipa)) {
+    if (c.match === "rime") {
+      // US-046: a rhyme anchor needs the chunk's rime, not its whole sound
+      if (!ga || rimeOf(ga) !== rimeOf(c.ipa)) {
+        reasons.push(`anchor-ipa: ${kw} /${ga ? stripStress(ga) : "?"}/ does not rhyme with /${c.ipa}/`);
+      }
+    } else if (!ga || ipaKey(ga) !== ipaKey(c.ipa)) {
       reasons.push(`anchor-ipa: ${kw} /${ga ? stripStress(ga) : "?"}/ is not /${c.ipa}/`);
     }
     const pos = toks.indexOf(kw);
