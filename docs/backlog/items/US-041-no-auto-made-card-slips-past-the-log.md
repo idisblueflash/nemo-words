@@ -2,7 +2,7 @@
 id: US-041
 type: story
 parent: E01
-status: ready
+status: in-progress
 depends_on: [US-039]
 ---
 
