@@ -93,6 +93,10 @@ function buildRow({ word, storyText, defineText, syllablesText, chunkText, keywo
 // except the picked sentence, in draft order, each with check-stories' reject
 // reasons for it (`-` = passed every hard gate -> []). US-031 offers only the
 // ones with no reasons.
+// US-041: a runner-up is any candidate whose *sentence* differs from the
+// picked one (exact string compare). Pivot words don't count: a candidate
+// repeating the picked sentence with other pivots is the same story, so it is
+// dropped. Duplicates among the runner-ups themselves are kept as drafted.
 function runnerUps(candidatesText, checksText, pickedSentence) {
   const checks = lines(checksText);
   return lines(candidatesText)

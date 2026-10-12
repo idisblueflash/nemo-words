@@ -1,10 +1,10 @@
 ---
-id: US-046
+id: US-047
 type: story
 parent: E01
 status: idea
 ---
-# US-046 The accuracy check refuses arguments it can't use
+# US-047 The accuracy check refuses arguments it can't use
 
 As Flash, I want the routing accuracy check to refuse an argument it can't use before it asks Jev anything, so that a typo never costs me a whole paid Jev run or leaves a stray report file behind.
 
