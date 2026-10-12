@@ -61,7 +61,7 @@ Given  a word with a logged story
 - **Approach:** a new Jev step `judge-stories` between `check-stories` and `pick-story` in `dags/card.yaml`, promoting SP-037's `judge-story` minus the same-root-anchor gate; `pick-story` changes from first-passing to a scored pick. Stdlib only: the spike's SDK calls become `scripts/lib/jev.js` calls, as `tag-technique` does. The pipeline is a parallel feature beside the agent workflow, so it owns its rubric: `_nemo.md` is a reference only, never read at run time.
 - **Entities** (names shared with US-028 and US-039):
   - StoryCandidate: sentence, pivot_words, rejectReasons[] (unchanged)
-  - Judgment (new, per candidate that passed the hard gates): nouls (question id → p of pass), gateResults (vividness, scene-coherence, animal-harm → pass/fail + failing question), axisScores (anchor, meaning, vivid → 1–3), total (3–9)
+  - Judgment (new, per candidate that passed the hard gates): nouls (question id → p of pass), gateResults (vividness, scene-coherence, animal-harm → pass/fail + failing question), axisScores (anchor, meaning, vivid → 1–3), total (3–9); Jev's score can land between levels, so both are kept as decimals, never rounded, and shown to at most 2 places (Flash, 2026-10-12)
   - StoryRubric (new, `scripts/story-rubric.json`): per gate a summary question plus split-out questions; per axis a label and three level texts
   - AlternatesEntry runner-ups: rejectReasons now also carry failed judgment gates
 - **States:** adds `checked → judged → picked | no-pick`; a Jev failure goes `checked → unjudged → picked` (first-passing fallback) or `no-pick`.
