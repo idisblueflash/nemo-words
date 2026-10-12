@@ -2,8 +2,7 @@
 id: US-040
 type: story
 parent: E01
-status: done
-qa_status: passing
+status: in-progress
 ---
 # US-040 Ambiguous words get routed without me
 
@@ -101,6 +100,13 @@ Given  a saved routing accuracy report in the repo
   - When  Flash runs the check with no report path and Jev can't answer for any word
     - Then  the saved report is left as it was
     - And   the command exits non-zero and says nothing was judged
+```
+
+```gherkin
+Given  a report path that can't be written (e.g. a directory)
+  - When  Flash runs the routing accuracy check with that path
+    - Then  the command fails before any word is put to Jev
+    - And   it says the report path can't be written
 ```
 
 ## Logic sketch
