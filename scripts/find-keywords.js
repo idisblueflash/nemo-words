@@ -103,4 +103,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { exactMatches, pickKeyword, ipaKey, findKeywords, FREQ_THRESHOLD };
+module.exports = { exactMatches, pickKeyword, ipaKey, findKeywords, wordFreqs, FREQ_THRESHOLD };
