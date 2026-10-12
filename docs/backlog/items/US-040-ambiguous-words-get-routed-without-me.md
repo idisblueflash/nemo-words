@@ -110,6 +110,13 @@ Given  a report path that can't be written (e.g. a directory)
     - And   it says the report path can't be written
 ```
 
+```gherkin
+Given  a saved routing accuracy report in the repo
+  - When  Flash runs the check with an empty report path ("")
+    - Then  the command fails before any word is put to Jev and says the report path is empty
+    - And   the saved report is left as it was
+```
+
 ## Logic sketch
 - **Approach:** a new Jev step `judge-route` runs right after `route` in `dags/card.yaml`; its stdout replaces `route`'s as the route that later steps read. `route` no longer stops on an ambiguous verdict: it prints `ambiguous\t<matched parts>` and exits 0. Any other route line passes through `judge-route` unchanged, with no Jev call.
 - **Entities** (names shared with US-028):
