@@ -2,7 +2,7 @@
 id: US-046
 type: story
 parent: E01
-status: ready
+status: in-progress
 depends_on: [US-041]
 ---
 # US-046 Words with no exact-sound match get a rhyme anchor
