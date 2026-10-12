@@ -20,7 +20,7 @@ const os = require("node:os");
 const path = require("node:path");
 const { execFile } = require("node:child_process");
 const { promisify } = require("node:util");
-const { createHarness, germaneFixture, repoRoot } = require("./helpers/card-harness");
+const { createHarness, clonePipeline: cloneInto, germaneFixture, repoRoot } = require("./helpers/card-harness");
 
 const execFileAsync = promisify(execFile);
 
@@ -168,19 +168,7 @@ test("AC3: a step that exits 2 fails the run, later steps never run, and its std
 // A copy of the pipeline (dags/ + scripts/ code, no data) under tmpRoot/<name>,
 // standing in for a fresh clone. US-039: _logan's reference tables come along,
 // since tag-technique and log-card read the controlled vocabularies from them.
-function clonePipeline(name) {
-  const clone = path.join(tmpRoot, name);
-  fs.mkdirSync(path.join(clone, "scripts"), { recursive: true });
-  const tables = path.join(".claude", "agents", "_logan", "reference-tables.md");
-  fs.mkdirSync(path.dirname(path.join(clone, tables)), { recursive: true });
-  fs.copyFileSync(path.join(repoRoot, tables), path.join(clone, tables));
-  fs.cpSync(path.join(repoRoot, "dags"), path.join(clone, "dags"), { recursive: true });
-  fs.cpSync(path.join(repoRoot, "scripts", "lib"), path.join(clone, "scripts", "lib"), { recursive: true });
-  for (const f of fs.readdirSync(path.join(repoRoot, "scripts"))) {
-    if (/\.(js|json)$/.test(f)) fs.copyFileSync(path.join(repoRoot, "scripts", f), path.join(clone, "scripts", f));
-  }
-  return clone;
-}
+const clonePipeline = (name) => cloneInto(path.join(tmpRoot, name));
 
 test("AC3: a step that crashes fails the run (not a stop), later steps never run, and its stderr is shown", async () => {
   const clone = clonePipeline("crashing clone");

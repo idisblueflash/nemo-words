@@ -4,7 +4,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const jev = require("../scripts/lib/jev");
-const { loadRubric, nouls, buildQuestions, toJudgment, formatLine } = require("../scripts/judge-stories");
+const { loadRubric, rubricProblem, nouls, buildQuestions, toJudgment, formatLine } = require("../scripts/judge-stories");
 const { pickStory } = require("../scripts/pick-story");
 
 const rubric = loadRubric();
@@ -20,17 +20,9 @@ function answers({ p = 0.9, level = 1, overrides = {} } = {}) {
 
 test("story-rubric.json: every gate has a summary and ≥ 1 split-out question, every axis a label and 3 levels", () => {
   assert.deepEqual(Object.keys(rubric.gates), ["vividness", "scene-coherence", "animal-harm"]);
-  for (const [gate, g] of Object.entries(rubric.gates)) {
-    assert.equal(typeof g.summary, "string", gate);
-    assert.ok(g.summary.trim(), gate);
-    assert.ok(Object.keys(g.questions).length >= 1, gate);
-    for (const text of Object.values(g.questions)) assert.ok(typeof text === "string" && text.trim(), gate);
-  }
   assert.deepEqual(Object.keys(rubric.axes), ["anchor", "meaning", "vivid"]);
-  for (const [axis, a] of Object.entries(rubric.axes)) {
-    assert.ok(typeof a.label === "string" && a.label.trim(), axis);
-    assert.equal(a.levels.length, 3, axis);
-  }
+  // US-048: the same shape check judge-stories runs before any Jev call.
+  assert.equal(rubricProblem(rubric), null);
 });
 
 test("jev.score: the SDK's score question shape (levels as criteria indexed from 0)", () => {
@@ -205,7 +197,8 @@ test("judge-stories: a malformed story-rubric.json throws (the CLI then exits 2 
   const bad = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "rubric-")), "story-rubric.json");
   fs.writeFileSync(bad, "{ not json");
   try {
-    assert.throws(() => loadRubric(bad), SyntaxError);
+    // US-048 AC1: a RubricError naming the file, not a bare SyntaxError.
+    assert.throws(() => loadRubric(bad), /^RubricError: can't read .*story-rubric\.json \(.*JSON.*\)$/);
   } finally {
     fs.rmSync(path.dirname(bad), { recursive: true, force: true });
   }

@@ -356,10 +356,25 @@ function waryFixture(jev = {}) {
   };
 }
 
+// A copy of the pipeline (dags/ + scripts/ code, no data) at `clone`, for a
+// test that breaks one of its files (pass it to createHarness as `root`).
+function clonePipeline(clone) {
+  fs.mkdirSync(path.join(clone, "scripts"), { recursive: true });
+  const tables = path.join(".claude", "agents", "_logan", "reference-tables.md");
+  fs.mkdirSync(path.dirname(path.join(clone, tables)), { recursive: true });
+  fs.copyFileSync(path.join(repoRoot, tables), path.join(clone, tables));
+  fs.cpSync(path.join(repoRoot, "dags"), path.join(clone, "dags"), { recursive: true });
+  fs.cpSync(path.join(repoRoot, "scripts", "lib"), path.join(clone, "scripts", "lib"), { recursive: true });
+  for (const f of fs.readdirSync(path.join(repoRoot, "scripts"))) {
+    if (/\.(js|json)$/.test(f)) fs.copyFileSync(path.join(repoRoot, "scripts", f), path.join(clone, "scripts", f));
+  }
+  return clone;
+}
+
 // Today's local date, YYYY-MM-DD (the `date` a new log row gets).
 function today() {
   const d = new Date();
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 }
 
-module.exports = { createHarness, germaneFixture, waryFixture, today, TERMS_HEADER, repoRoot };
+module.exports = { createHarness, clonePipeline, germaneFixture, waryFixture, today, TERMS_HEADER, repoRoot };
