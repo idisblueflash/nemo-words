@@ -16,7 +16,7 @@
 ## Stories (ranked)
 1. [US-038](items/US-038-jev-picks-the-best-story-by-the-rubric.md) Jev picks the best story by the story rubric · E01 · idea
 2. [US-041](items/US-041-no-auto-made-card-slips-past-the-log.md) No auto-made card slips past the log · E01 · idea
-3. [US-040](items/US-040-ambiguous-words-get-routed-without-me.md) Ambiguous words get routed without me · E01 · ready
+3. [US-040](items/US-040-ambiguous-words-get-routed-without-me.md) Ambiguous words get routed without me · E01 · in-progress
 4. [US-042](items/US-042-plain-words-mistaken-for-word-parts-still-get-a-card.md) Plain words mistaken for word parts still get a card · E01 · idea
 5. [US-043](items/US-043-the-story-uses-the-words-real-sense.md) The story uses the word's real sense · E01 · idea
 6. [US-044](items/US-044-abstract-words-get-a-concrete-scene.md) Abstract words get a concrete scene · E01 · idea
