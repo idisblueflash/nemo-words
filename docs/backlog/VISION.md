@@ -50,6 +50,11 @@ you, and delivers the finished card into Anki (live sync or an importable deck f
    test. Image pick is untested (SP-029).)*
 3. AI-drafted stories and images are good enough to learn from, and the app can improve
    them. · hypothesis
+   *(Review 2026-10-12: building US-041 showed that a rule written from intuition can
+   fail on real words. The exact-IPA keyword rule left 14 of 40 sample words with no
+   anchor, while Flash's own cards used rhymes, names and split chunks. Lesson: each
+   step of the story workflow needs its own research on real data before its rules are
+   set, so the story is built more accurately.)*
 4. Generating one card is cheap and fast enough to do for every new word. · hypothesis
 5. Users keep reviewing in Anki; the app only generates the card material and delivers
    it via live sync or an importable deck file. · hypothesis

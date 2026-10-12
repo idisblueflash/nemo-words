@@ -44,7 +44,13 @@ take the next number above the highest in **both** folders, not just `docs/backl
 US-001…US-027 under `docs/user-stories/` (tracked in `FEAT-*.md`) are done and frozen.
 Don't build, QA or fix against them; only `docs/backlog/items/` is in scope.
 
-## Before building
+## Before refining (and building)
 
-For an item whose design rests on claims about the real data (`resources/data/`), have
-`_david` investigate it first. `_david` is a local agent, not part of the plugin.
+Each step of the story workflow needs research on real data before its rules are set
+(review, 2026-10-12: US-041's exact-IPA rule, written from intuition, left 14 of 40
+sample words with no anchor). So before `/backlog:refine` sets an item to `ready`, if
+the item adds or changes a step's rules (`chunk`, `find-keywords`, `compose-stories`,
+`check-stories`, `pick-story`, …) or rests on claims about the real data
+(`resources/data/`, `data/mnemonics/log.jsonl`, Flash's own cards), have `_david`
+investigate it first, and draft the ACs from what it measures. `_david` is a local
+agent, not part of the plugin.

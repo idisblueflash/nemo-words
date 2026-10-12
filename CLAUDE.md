@@ -1,5 +1,11 @@
 # nemo-words
 
+## How to answer Flash
+
+Write answers to Flash about 80% of the way to ASD-STE100 (Simplified Technical English):
+short sentences, active voice, one idea per sentence, simple words. Keep technical names
+(IPA, file names, IDs, commands) as they are.
+
 ## Dependency graph (DGML)
 
 To visualize `src/nemo_words/` as a DGML dependency graph (nodes per
@@ -157,7 +163,8 @@ Planning and building go through the `backlog` plugin (`backlog@blueflash`): sto
 `docs/backlog/items/`, and `/backlog:implement <ID>` builds a `ready` one in its own worktree
 with the plugin's `teddy` / `qa` / `buzz` agents, then opens a PR. `/backlog:next` says what to
 do next. The stack, test commands and bug-numbering rule those agents need are in
-`.claude/rules/build.md`.
+`.claude/rules/build.md`. Before `/backlog:refine` sets an item that changes a story
+step's rules to `ready`, have `_david` measure it on real data first (see `build.md`).
 
 ## Rules
 
@@ -165,7 +172,7 @@ do next. The stack, test commands and bug-numbering rule those agents need are i
 |---|---|
 | [`.claude/rules/word-workflow.md`](.claude/rules/word-workflow.md) | handle an "explain \<word\>" request (the main loop) |
 | [`.claude/rules/scripts.md`](.claude/rules/scripts.md) | run `anki-sync.js`, `find-mnemonic.js`, `classify-word.js`, or a `dictionaries/` CLI |
-| [`.claude/rules/build.md`](.claude/rules/build.md) | implement, QA or bug-fix a backlog item (`/backlog:implement`) |
+| [`.claude/rules/build.md`](.claude/rules/build.md) | refine, implement, QA or bug-fix a backlog item (`/backlog:refine`, `/backlog:implement`) |
 
 ## Prerequisites for the word agents
 
