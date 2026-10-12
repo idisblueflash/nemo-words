@@ -2,7 +2,7 @@
 id: SP-052
 type: spike
 parent: E07
-status: in-progress
+status: done
 qa_status: passing
 timebox: 1d
 ---
