@@ -1,11 +1,11 @@
 ---
-id: US-047
+id: US-048
 type: story
 parent: E01
 status: ready
 depends_on: [US-038]
 ---
-# US-047 A broken story rubric is named in the report
+# US-048 A broken story rubric is named in the report
 
 As Flash, I want the run report to say plainly when the story rubric file is broken, so that I notice the scored pick has stopped working instead of getting first-passing picks without knowing it.
 
