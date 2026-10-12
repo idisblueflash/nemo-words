@@ -142,11 +142,21 @@ function score(judged, cut) {
   return { cut, wrong, unsure, cost: WRONG_COST * wrong + UNSURE_COST * unsure };
 }
 
-function cutOffs(judged) {
+// Each label decides one cut-off: general the lower, word-part the upper.
+const DECIDES = { general: "generalMax", "word-part": "wordPartMin" };
+const SIDE = { generalMax: "lower", wordPartMin: "upper" };
+const GRID = { generalMax: "0.05–0.5", wordPartMin: "0.5–0.95" };
+const otherCut = (cut) => (cut === "generalMax" ? "wordPartMin" : "generalMax");
+
+// `fixed` (generalMax | wordPartMin): a cut-off held at its current value
+// because the label that decides it has no judged words; only the other is searched.
+function cutOffs(judged, fixed) {
   const pairs = [];
   for (let lo = 5; lo <= 50; lo += 5) {
     for (let hi = 50; hi <= 95; hi += 5) {
-      if (lo < hi) pairs.push(score(judged, { generalMax: lo / 100, wordPartMin: hi / 100 }));
+      const cut = { generalMax: lo / 100, wordPartMin: hi / 100 };
+      if (fixed) cut[fixed] = CURRENT[fixed];
+      if (cut.generalMax < cut.wordPartMin) pairs.push(score(judged, cut));
     }
   }
   const current = score(judged, CURRENT);
@@ -175,6 +185,7 @@ function report({ results, bothLabels, cardFile }) {
   );
   out.push(`## Counts (${fmtCut(CURRENT)} cut-offs)`, "");
   out.push(...countsTable(judged), "");
+  for (const label of noJudged(judged)) out.push(`The ${label} label has no judged words.`, "");
   const ambiguous = judged.filter((r) => r.classifier === "ambiguous");
   out.push(
     `Of which the classifier calls ambiguous (the only words judge-route judges in the card pipeline): ${ambiguous.length}.`,
@@ -215,22 +226,40 @@ const wordTable = (rows) => [
 
 const NONE_JUDGED = "no words were judged: Jev couldn't answer for any word";
 
+// Labels with no judged words.
+const noJudged = (judged) => LABELS.filter((label) => !judged.some((r) => r.label === label));
+
 // The report's last section: the cut-offs rule, the scores, and the conclusion
-// — or, with no judged words, no conclusion at all.
+// (a report is only written with at least one judged word). When one label has
+// no judged words, the cut-off it decides is held at its current value, only
+// the other is searched, and the conclusion speaks only to that other one.
 function cutOffsSection(judged) {
-  if (!judged.length) {
-    return ["## Cut-offs", "", `**Conclusion:** no conclusion on the ${fmtCut(CURRENT)} cut-offs: ${NONE_JUDGED}.`, ""];
-  }
-  const { current, best, holds } = cutOffs(judged);
+  const [missing] = noJudged(judged);
+  const fixed = missing && DECIDES[missing];
+  const other = fixed && otherCut(fixed);
+  const { current, best, holds } = cutOffs(judged, fixed);
   const line = (p) => `| ${fmtCut(p.cut)} | ${p.wrong} | ${p.unsure} | ${p.cost} |`;
   const out = ["## Cut-offs", ""];
+  const searched = fixed
+    ? `the ${SIDE[fixed]} cut-off is held at ${CURRENT[fixed]} (the ${missing} label has no judged words) and every ${SIDE[other]} one on a 0.05 grid (${GRID[other]}) is scored`
+    : "every lower / upper pair on a 0.05 grid (lower 0.05–0.5, upper 0.5–0.95) is scored";
   out.push(
-    `Rule: over all ${judged.length} judged words, a wrong route costs ${WRONG_COST} and an unsure one ${UNSURE_COST}; every lower / upper pair on a 0.05 grid (lower 0.05–0.5, upper 0.5–0.95) is scored, and ${fmtCut(CURRENT)} hold when none scores lower.`,
+    `Rule: over all ${judged.length} judged words, a wrong route costs ${WRONG_COST} and an unsure one ${UNSURE_COST}; ${searched}, and ${fmtCut(CURRENT)} hold when none scores lower.`,
     ""
   );
   out.push("| Cut-offs | Routed wrong | Unsure | Cost |", "|---|---|---|---|", line(current));
   if (!holds) out.push(line(best));
   out.push("");
+  if (fixed) {
+    const verdict = holds
+      ? `the ${CURRENT[other]} ${SIDE[other]} cut-off holds: no other ${SIDE[other]} cut-off scores lower (cost ${current.cost})`
+      : `the ${CURRENT[other]} ${SIDE[other]} cut-off doesn't hold; the results support ${best.cut[other]} instead (cost ${best.cost} against ${current.cost})`;
+    out.push(
+      `**Conclusion:** no conclusion on the ${CURRENT[fixed]} ${SIDE[fixed]} cut-off (the ${missing} label has no judged words); ${verdict}.`,
+      ""
+    );
+    return out;
+  }
   out.push(
     holds
       ? `**Conclusion:** the ${fmtCut(CURRENT)} cut-offs hold: no other cut-offs score lower (cost ${current.cost}).`
@@ -247,10 +276,14 @@ async function main(argv) {
   const cardFile = cardFilePath();
   const { words, bothLabels } = labelledSet(fs.readFileSync(cardFile, "utf8"));
   const results = await judgeAll(words);
-  fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-  fs.writeFileSync(reportPath, report({ results, bothLabels, cardFile: path.relative(REPO_ROOT, cardFile) }));
-  process.stdout.write(`wrote ${reportPath}\n`);
   const judged = results.filter((r) => !r.unjudged);
+  // With nothing judged there's nothing to report: no file is written, so a
+  // saved report (the default path's real-Jev run) is never overwritten.
+  if (judged.length) {
+    fs.mkdirSync(path.dirname(reportPath), { recursive: true });
+    fs.writeFileSync(reportPath, report({ results, bothLabels, cardFile: path.relative(REPO_ROOT, cardFile) }));
+    process.stdout.write(`wrote ${reportPath}\n`);
+  }
   process.stdout.write(`unjudged: ${results.length - judged.length}\n`);
   for (const label of LABELS) {
     const c = counts(judged, label);
@@ -258,7 +291,7 @@ async function main(argv) {
   }
   if (!judged.length) {
     // A clean stop (exit 1, the step contract's convention); 2 is for crashes.
-    process.stderr.write(`stopped: ${NONE_JUDGED}; no conclusion on the cut-offs\n`);
+    process.stderr.write(`stopped: ${NONE_JUDGED}; no conclusion on the ${fmtCut(CURRENT)} cut-offs; no report written\n`);
     process.exitCode = 1;
   }
 }

@@ -4,6 +4,10 @@
 // when the check runs, then the report says no words were judged and draws no
 // conclusion on the cut-offs, and the command exits non-zero (1: a clean stop,
 // per the step contract; 2 is for crashes).
+//
+// With nothing judged no report file is written, even to an explicit path
+// (AC12: a saved report must never be overwritten by an empty run), so what
+// the check reports is its own output: the counts on stdout, the stop on stderr.
 
 const test = require("node:test");
 const assert = require("node:assert/strict");
@@ -17,21 +21,21 @@ for (const jev of ["down", "unconfigured"]) {
       const reportPath = `${h.tmp}/report.md`;
       const run = await h.runScript("route-accuracy.js", [reportPath]);
       assert.equal(run.code, 1, `stdout:\n${run.stdout}\nstderr:\n${run.stderr}`);
-      const report = fs.readFileSync(reportPath, "utf8");
 
       // Every word unjudged: 14 general (wary + 13 misses) + 4 word-part misses.
-      assert.match(report, /^- Judged: 0 words\b/m);
-      assert.match(report, /^- Unjudged: 18 words\b/m);
-      assert.match(report, /no words were judged/i);
+      assert.match(run.stdout, /^unjudged: 18$/m);
+      assert.match(run.stdout, /^general: 0 judged\b/m);
+      assert.match(run.stdout, /^word-part: 0 judged\b/m);
 
-      // No conclusion on the cut-offs either way.
-      assert.doesNotMatch(report, /cut-offs hold/);
-      assert.doesNotMatch(report, /cut-offs don't hold/);
-      assert.doesNotMatch(report, /results support/);
-      assert.match(report, /no conclusion on the 0\.3 \/ 0\.7 cut-offs/i);
-
-      // The stop is said on stderr too.
+      // Says no words were judged, and draws no conclusion on the cut-offs either way.
+      const out = run.stdout + run.stderr;
       assert.match(run.stderr, /no words were judged/i);
+      assert.match(run.stderr, /no conclusion on the 0\.3 \/ 0\.7 cut-offs/i);
+      assert.doesNotMatch(out, /cut-offs hold|cut-offs don't hold|results support/);
+
+      // No report is written, even to the path given.
+      assert.equal(fs.existsSync(reportPath), false);
+      assert.doesNotMatch(run.stdout, /^wrote /m);
     } finally {
       await h.cleanup();
     }
