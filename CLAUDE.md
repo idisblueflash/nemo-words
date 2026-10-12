@@ -1,10 +1,21 @@
 # nemo-words
 
-## How to answer Flash
+## How to write to Flash
 
-Write answers to Flash about 80% of the way to ASD-STE100 (Simplified Technical English):
-short sentences, active voice, one idea per sentence, simple words. Keep technical names
-(IPA, file names, IDs, commands) as they are.
+Write all text to Flash about 80% of the way to ASD-STE100 (Simplified Technical
+English). This includes answers, questions, choice labels, and summaries of
+subagent reports. Use short sentences, active voice, one idea per sentence and
+simple words. Keep technical names (IPA, file names, IDs, commands) as they are.
+
+Specifically:
+- Use each word only as its normal part of speech. Write "makes a card for",
+  not "cards".
+- Write noun stacks out in full. Write "a rule that allows names as anchors",
+  not "name rule".
+- Complete each comparison. Write "0 more than today", not "0 more".
+- Rewrite subagent findings in plain words. Do not copy them as they are.
+- Cut words that add nothing, but keep words that show the structure:
+  "that", "because", "than <what>", and the subject of each sentence.
 
 ## Dependency graph (DGML)
 
