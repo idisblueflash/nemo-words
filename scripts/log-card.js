@@ -54,10 +54,12 @@ function parseTags(text) {
   });
 }
 
-// chunks: [{ anchorUnits, keyword|null }] in syllable order.
+// chunks: [{ anchorUnits, keyword|null, match? }] in syllable order.
+// US-046: a rhyme on the stressed chunk (find-keywords' `rime`) is a `rime` anchor.
 function anchorUnit(chunks) {
+  const stressed = chunks.length === 1 ? chunks[0] : chunks.find((c) => c.anchorUnits.includes("stressed-syllable"));
+  if (stressed && stressed.keyword && stressed.match === "rime") return "rime";
   if (chunks.length === 1) return "whole-word";
-  const stressed = chunks.find((c) => c.anchorUnits.includes("stressed-syllable"));
   if (stressed && stressed.keyword) return "stressed-syllable";
   const first = chunks.find((c) => c.keyword);
   return first ? first.anchorUnits[0] || "" : "";
@@ -73,7 +75,7 @@ function buildRow({ word, storyText, defineText, syllablesText, chunkText, keywo
   const keywords = readChunkKeywords(keywordsText);
   const chunks = lines(chunkText).map((l, i) => {
     const [, units] = l.split("\t");
-    return { anchorUnits: list(units), keyword: keywords[i] ? keywords[i].keyword : null };
+    return { anchorUnits: list(units), keyword: keywords[i] ? keywords[i].keyword : null, match: keywords[i] && keywords[i].match };
   });
   const defineLines = String(defineText || "").split("\n");
   return {
