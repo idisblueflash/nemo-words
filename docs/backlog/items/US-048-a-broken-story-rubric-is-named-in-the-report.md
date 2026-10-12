@@ -3,6 +3,7 @@ id: US-048
 type: story
 parent: E01
 status: in-progress
+qa_status: passing
 depends_on: [US-038]
 ---
 # US-048 A broken story rubric is named in the report
