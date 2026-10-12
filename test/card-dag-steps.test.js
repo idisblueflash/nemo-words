@@ -97,6 +97,7 @@ test("report CLI: prints the carded word, story, gloss and IPA, plus every step'
       code: 0,
       stdout: [
         "carded germane (added)",
+        "story arm", // US-051: a picked story is a story-arm card
         "story: The main point stays relevant.",
         "gloss: relevant to the matter at hand",
         "ipa:   dʒɚ.ˈmeɪn",

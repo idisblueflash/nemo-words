@@ -36,8 +36,11 @@ test("AC1: card.js turns a new general word into a synced story card", async () 
         `<br><small style="opacity:0.6">/dʒɚ.ˈmeɪn/</small>`
     );
 
-    // The row in the card file is the same card.
-    assert.match(h.readAnkiFile(), new RegExp(`^germane\t${story.replace(/\./g, "\\.")}\t\tdʒɚ\\.ˈmeɪn\t${gloss}$`, "m"));
+    // The row in the card file is the same card (US-051: tagged as a story-arm card).
+    assert.match(
+      h.readAnkiFile(),
+      new RegExp(`^germane\t${story.replace(/\./g, "\\.")}\t\tdʒɚ\\.ˈmeɪn\t${gloss}\t\treading-room-terms retention-story$`, "m")
+    );
 
     // The report names what was carded.
     assert.match(run.stdout, /carded germane/);

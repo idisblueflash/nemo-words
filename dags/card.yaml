@@ -26,6 +26,7 @@ params:
   - NEMO_WORDS_BIN: ""     # default `nemo-words`
   - NEMO_WORD_FREQ_BIN: "" # default scripts/word-freq.js
   - NEMO_JEV_ENV_FILE: ""  # env file with Jev's TYPESAFE_API_KEY etc. (default: the repo's .env)
+  - NEMO_ARM: ""           # US-051: control|story forces draw-arm's arm (default: the draw)
   # Proxy for Jev (tag-technique): without it Jev answers HTTP 451 from a CN address.
   - HTTP_PROXY: ""
   - HTTPS_PROXY: ""
@@ -113,12 +114,25 @@ steps:
       - condition: 'test -z "$(cut -s -f2 "${judge_route.stdout}")"'
     run: node scripts/find-keywords.js "$(cat "${syllabify.stdout}")" "$(cat "${normalize.stdout}")"
 
-  - id: compose_stories
-    name: compose-stories
+  # US-051: the retention experiment's draw, only for a word that would get a
+  # story card today (anchored, no logged story). `control` skips the drafting
+  # steps; `story` (the drafting path as before) gets tagged as a story-arm card.
+  # The control arm rejoins at `story`, which then cards the definition.
+  - id: draw_arm
+    name: draw-arm   # exit 2: bad NEMO_ARM, or the card file can't be read for counting
     depends: [find_keywords]
     preconditions:
       - condition: "${find_keywords.exit_code}"
         expected: "0"
+    run: node scripts/draw-arm.js
+
+  - id: compose_stories
+    name: compose-stories
+    depends: [draw_arm]
+    preconditions:
+      - condition: "${draw_arm.exit_code}"
+        expected: "0"
+      - condition: "test \"$(cat '${draw_arm.stdout}')\" = story"
     run: node scripts/compose-stories.js "$(cat "${normalize.stdout}")" "$(sed -n 1p "${define.stdout}")" "${find_keywords.stdout}"
 
   - id: check_stories
@@ -168,25 +182,28 @@ steps:
   #     double-quoted shell word is a "bad substitution" error. So these
   #     paths are single-quoted: an unresolved one is just a missing file.
   # The file checks then decide: chunk really ran (non-empty stdout), and
-  # there is a story to card (pick-story printed one, or route found a logged
-  # one). Any earlier stop fails one of these, so `story` is skipped and the
-  # stop cascades on.
+  # there is a back to card (pick-story printed a story, route found a logged
+  # one, or draw-arm put the word in the control arm: US-051, the definition).
+  # Any earlier stop fails one of these, so `story` is skipped and the stop
+  # cascades on.
   - id: story
     depends: [pick_story]
     preconditions:
       - condition: "${pick_story.exit_code}"
         expected: "0"
       - condition: "test -s '${chunk.stdout}'"
-      - condition: "test -s '${pick_story.stdout}' || test -n \"$(cut -s -f2 '${judge_route.stdout}')\""
-    run: node scripts/story.js '${judge_route.stdout}' '${pick_story.stdout}'
+      - condition: "test -s '${pick_story.stdout}' || test -n \"$(cut -s -f2 '${judge_route.stdout}')\" || test \"$(cat '${draw_arm.stdout}' 2>/dev/null)\" = control"
+    run: node scripts/story.js '${judge_route.stdout}' '${pick_story.stdout}' '${draw_arm.stdout}' '${define.stdout}'
 
+  # The story's source (field 3: logged | picked | control) sets the row's arm:
+  # control -> the control deck + tag, picked -> the story-arm tag.
   - id: write_row
     name: write-row   # exit 1: the word got carded meanwhile (row left untouched)
     depends: [story]
     preconditions:
       - condition: "${story.exit_code}"
         expected: "0"
-    run: node scripts/write-row.js "$(cat "${normalize.stdout}")" "$(cut -f1 "${story.stdout}")" "$(cat "${syllabify.stdout}")" "$(cat "${gloss.stdout}")"
+    run: node scripts/write-row.js "$(cat "${normalize.stdout}")" "$(cut -f1 "${story.stdout}")" "$(cat "${syllabify.stdout}")" "$(cat "${gloss.stdout}")" "$(cut -f3 "${story.stdout}")"
 
   # --- US-039: log the auto-made card. Only an auto-pick is logged: on the
   # logged-story path the story already has its (human-picked) log row, so

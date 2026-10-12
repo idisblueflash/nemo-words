@@ -17,8 +17,8 @@ test("AC4: with Anki down, card.js writes the row, reports the failed sync, and 
     const run = await h.runCard("germane");
     assert.equal(run.code, 1, `stdout:\n${run.stdout}\nstderr:\n${run.stderr}`);
 
-    // Row written.
-    assert.match(h.readAnkiFile(), /^germane\tThe main point stays relevant to the talk\.\t\tdʒɚ\.ˈmeɪn\trelevant to the matter at hand$/m);
+    // Row written (US-051: a drawn story-arm word's row carries the story-arm tag).
+    assert.match(h.readAnkiFile(), /^germane\tThe main point stays relevant to the talk\.\t\tdʒɚ\.ˈmeɪn\trelevant to the matter at hand\t\treading-room-terms retention-story$/m);
 
     // Reported: sync failed, re-run later.
     assert.match(run.stdout, /sync failed/);

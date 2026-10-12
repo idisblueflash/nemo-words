@@ -175,6 +175,8 @@ function createMockJev(fixture) {
 // fixture: { dict, freqs, claude: { define, gloss, "compose-stories" }, jev: { <tag>: p },
 //            judge: { <sentence>: { <question name>: p | level } } }
 // options: { rows: [tsv row strings], log: [jsonl objects], anki: "up" | "down",
+//            arm: NEMO_ARM for the run (US-051), default "story" so the story
+//            path tests never land in the control arm by chance; null = unset (a real draw),
 //            jev: "up" | "down" | "unconfigured" (no API key),
 //            root: repo copy to run from (default: this repo), cwd: where to run }
 async function createHarness(fixture, options = {}) {
@@ -244,6 +246,10 @@ async function createHarness(fixture, options = {}) {
     NEMO_ALTERNATES_LOG: alternatesLog,
     NEMO_JEV_ENV_FILE: jevEnvFile,
   };
+  // US-051: the story/control draw. Pinned to the story arm unless a test asks.
+  const arm = options.arm === undefined ? "story" : options.arm;
+  if (arm === null) delete env.NEMO_ARM;
+  else env.NEMO_ARM = arm;
 
   // Runs a script under scripts/ with stdin closed (so a step that tried to
   // prompt would get EOF instead of hanging), collecting stdout/stderr/code.

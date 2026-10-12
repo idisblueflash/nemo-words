@@ -29,6 +29,7 @@ test.after(() => fs.rmSync(tmpRoot, { recursive: true, force: true }));
 
 const STEPS = [
   "normalize", "route", "judge-route", "ipa", "syllabify", "define", "gloss", "chunk", "find-keywords",
+  "draw-arm", // US-051: the story/control draw (the harness pins the story arm)
   "compose-stories", "check-stories",
   "judge-stories", // US-038: Jev judges the stories against the rubric
   "pick-story", "story", "write-row",
@@ -84,7 +85,8 @@ test("AC1: each step receives the previous steps' stdout, and the run ends as su
     const res = await h.runCard("germane");
     assert.equal(res.code, 0, `stdout: ${res.stdout}\nstderr: ${res.stderr}`);
     // card.js prints the last step's stdout: the run report
-    assert.match(res.stdout, /^carded germane \(added\)\nstory: The main point stays relevant to the talk\.\n/);
+    // (US-051: a drawn story-arm word's report names its arm)
+    assert.match(res.stdout, /^carded germane \(added\)\nstory arm\nstory: The main point stays relevant to the talk\.\n/);
 
     const steps = await inspect(h, res);
     for (const s of STEPS) assert.equal(steps[s].status, "succeeded", s);
