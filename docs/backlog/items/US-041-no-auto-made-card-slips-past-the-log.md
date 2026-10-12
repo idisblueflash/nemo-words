@@ -3,6 +3,7 @@ id: US-041
 type: story
 parent: E01
 status: in-progress
+qa_status: passing
 depends_on: [US-039]
 ---
 
