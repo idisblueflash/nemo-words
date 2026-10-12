@@ -6,8 +6,10 @@ const assert = require("node:assert/strict");
 
 const { normalizeWord } = require("../scripts/normalize");
 
-test("normalize: trims and keeps a single word as typed", () => {
-  assert.deepEqual(normalizeWord("  Quebec \n"), { ok: true, word: "Quebec" });
+// US-040 AC9 changed this: the word is lowercased, no longer kept as typed.
+test("normalize: trims and lowercases a single word", () => {
+  assert.deepEqual(normalizeWord("  Quebec \n"), { ok: true, word: "quebec" });
+  assert.deepEqual(normalizeWord("WARY"), { ok: true, word: "wary" });
 });
 
 test("normalize: rejects empty and multi-word input with a reason", () => {

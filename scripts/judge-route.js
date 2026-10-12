@@ -50,9 +50,10 @@ async function judgeRoute({ word, matchedParts }, opts = {}) {
   return { verdict: verdictFor(pWordPart), pWordPart };
 }
 
-function verdictFor(pWordPart) {
-  if (pWordPart >= WORD_PART_MIN) return "word-part";
-  if (pWordPart <= GENERAL_MAX) return "general";
+// The cut-offs are parameters only so route-accuracy.js can try others.
+function verdictFor(pWordPart, { generalMax = GENERAL_MAX, wordPartMin = WORD_PART_MIN } = {}) {
+  if (pWordPart >= wordPartMin) return "word-part";
+  if (pWordPart <= generalMax) return "general";
   return "unsure";
 }
 
@@ -85,4 +86,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { routeQuestion, judgeRoute, verdictFor };
+module.exports = { routeQuestion, judgeRoute, verdictFor, GENERAL_MAX, WORD_PART_MIN };

@@ -113,14 +113,28 @@ node scripts/card.js <word>
 ```
 
 The one-word command: one general-English word in, a synced story card out, with nothing
-asked along the way (US-028). Steps, in order: `normalize` → `route` → `ipa` →
-`syllabify` → `define` → `gloss` → `chunk` → `find-keywords` → `compose-stories` →
-`check-stories` → `pick-story` → `story` → `write-row` → `sync` → `report`. When `route`
-finds a logged story for the word (`data/mnemonics/log.jsonl`), the four drafting steps
-are skipped and the logged story is carded. Stops (exit 1) to expect: `already carded …
-current story: …`, the word-part path (`_etta_mology`), `couldn't be routed
+asked along the way (US-028). Steps, in order: `normalize` → `route` → `judge-route` →
+`ipa` → `syllabify` → `define` → `gloss` → `chunk` → `find-keywords` → `compose-stories` →
+`check-stories` → `pick-story` → `story` → `write-row` → `sync` → `report`. `normalize`
+lowercases the word, so `WARY` or `Wary` is carded, routed and judged as `wary`. When
+`route` finds a logged story for the word (`data/mnemonics/log.jsonl`), the four drafting
+steps are skipped and the logged story is carded. Stops (exit 1) to expect: `already
+carded … current story: …`, the word-part path (`_etta_mology`), `couldn't be routed
 automatically`, `no-pick: …` with every candidate's reasons, and `sync failed … re-run
 later` (the row stays written; the failure is in `anki/sync.log`).
+
+An `ambiguous` classifier verdict (weak suffix matches only, e.g. `wary`'s `-ary`) doesn't
+stop `route`: `judge-route` (US-040) asks Jev whether the word is built from classical
+Greek/Latin morphemes or an INN stem, and routes by its p word-part. At 0.3 or below it's
+carded as general, and the run report notes `judgment call → general (p word-part 0.12)`.
+At 0.7 or above it stops on the word-part path, `— judgment call, p 0.84`. In between it
+stops as `couldn't be routed automatically — judgment call unsure, p 0.55`. A logged
+story, a `medical` verdict and a no-match word skip the judgment, with no Jev call. If
+Jev is unavailable (no key, unreachable, an error or an unusable answer), the run fails
+(exit 2) at `judge-route` with `routing failed: judgment service unavailable (…); re-run
+later`, and nothing is written. Jev needs `TYPESAFE_API_KEY` in the repo's gitignored
+`.env` (or the env file `NEMO_JEV_ENV_FILE` names), and from a CN address a proxy
+(`HTTPS_PROXY` etc., forwarded by `card.js`); without one it answers HTTP 451.
 
 Env overrides `ANKI_FILE`, `ANKI_CONNECT_URL`, `ANKI_SYNC_LOG`, `NEMO_MNEMONIC_LOG`,
 `NEMO_CLAUDE_BIN`, `NEMO_WORDS_BIN`, `NEMO_WORD_FREQ_BIN` work as usual: Dagu doesn't
@@ -151,6 +165,23 @@ Covered by `test/card-pipeline.test.js` (EN-036's ACs, real Dagu, throwaway
 end to end through `card.js`), and `test/card-steps.test.js` /
 `test/card-dag-steps.test.js` (the step CLIs). All run against fake `claude` /
 `nemo-words` / `word-freq` and a mock AnkiConnect (`test/helpers/card-harness.js`).
+`test/card-us040-*.test.js` cover `judge-route` and the lowercasing against a mock Jev.
+
+### Checking Jev's routing accuracy (US-040)
+
+```bash
+node scripts/route-accuracy.js [report-path]
+```
+
+Puts a labelled set of words to Jev with `judge-route`'s own question and cut-offs, and
+writes a Markdown report, by default `docs/backlog/reports/US-040-route-accuracy.md`. The
+set is US-028's QA misses, every whole-word row of the card file as general, and every
+`e.g. …` example word on its word-part rows as word-part. A word with both labels is left
+out and listed. The report gives right / wrong / unsure counts per label at 0.3 / 0.7,
+every misrouted word with its p, the words Jev couldn't answer (unjudged, not counted),
+and ends with a conclusion on whether the cut-offs hold. It makes one real Jev call per
+word (about 500, roughly a minute), with the same `.env` key and proxy needs as
+`judge-route`. Covered by `test/card-us040-ac6`–`ac8` against a mock Jev.
 
 ## IPA / rhyme / frequency
 
