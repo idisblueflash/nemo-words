@@ -115,9 +115,14 @@ node scripts/card.js <word>
 The one-word command: one general-English word in, a synced story card out, with nothing
 asked along the way (US-028). Steps, in order: `normalize` → `route` → `ipa` →
 `syllabify` → `define` → `gloss` → `chunk` → `find-keywords` → `compose-stories` →
-`check-stories` → `pick-story` → `story` → `write-row` → `sync` → `report`. When `route`
-finds a logged story for the word (`data/mnemonics/log.jsonl`), the four drafting steps
-are skipped and the logged story is carded. Stops (exit 1) to expect: `already carded …
+`check-stories` → `judge-stories` → `pick-story` → `story` → `write-row` → `sync` →
+`report`. `judge-stories` (US-038) has Jev judge each story that passed the hard gates
+against `scripts/story-rubric.json` (judgment gates + three 1–3 score axes); `pick-story`
+cards the story that passed every gate with the best total (ties: shorter, then
+alphabetical) and notes `pick: total N (…)` in the report. If Jev fails, the first story
+that passed the hard gates is carded and the report says it wasn't judged. When `route`
+finds a logged story for the word (`data/mnemonics/log.jsonl`), the drafting and judging
+steps are skipped and the logged story is carded. Stops (exit 1) to expect: `already carded …
 current story: …`, the word-part path (`_etta_mology`), `couldn't be routed
 automatically`, `no-pick: …` with every candidate's reasons, and `sync failed … re-run
 later` (the row stays written; the failure is in `anki/sync.log`).
@@ -149,7 +154,8 @@ underscore `id` plus a hyphenated `name` (what `dagu status` and `stopped at` sh
 Covered by `test/card-pipeline.test.js` (EN-036's ACs, real Dagu, throwaway
 `DAGU_HOME`), `test/card-ac*.test.js` + `test/card-logged-story.test.js` (US-028's ACs
 end to end through `card.js`), and `test/card-steps.test.js` /
-`test/card-dag-steps.test.js` (the step CLIs). All run against fake `claude` /
+`test/card-dag-steps.test.js` (the step CLIs), and `test/card-us038-*.test.js` (US-038's
+scored pick; mock Jev answers story-judging calls from `fixture.judge`). All run against fake `claude` /
 `nemo-words` / `word-freq` and a mock AnkiConnect (`test/helpers/card-harness.js`).
 
 ## IPA / rhyme / frequency

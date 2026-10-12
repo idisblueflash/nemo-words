@@ -115,9 +115,16 @@ function createMockAnkiConnect() {
   return { server, notes, calls };
 }
 
-// Mock Jev: `POST /v1/systemone` answers every `noul` question with the
-// fixture's probability for that question name (`fixture.jev[name]`, default
-// 0.1). Records each request so tests can assert what Jev was asked.
+// Mock Jev: `POST /v1/systemone`. Records each request so tests can assert
+// what Jev was asked.
+//   - A story-judging request (US-038's judge-stories: it holds `score`
+//     questions) is answered from `fixture.judge[<state.sentence>][name]`:
+//     a p for a noul question, a 0–2 level for a score question. Unlisted
+//     questions pass: noul 0.9, score 1 (axis score 2).
+//   - Any other request (US-039's tag-technique) gets the fixture's p per
+//     question name (`fixture.jev[name]`, default 0.1).
+const isJudgeCall = (body) => Object.values((body && body.questions) || {}).some((q) => q.type === "score");
+
 function createMockJev(fixture) {
   const calls = [];
   const server = http.createServer((req, res) => {
@@ -127,17 +134,34 @@ function createMockJev(fixture) {
       const parsed = JSON.parse(body || "{}");
       calls.push({ method: req.method, path: req.url, auth: req.headers.authorization, body: parsed });
       const answers = {};
-      for (const name of Object.keys(parsed.questions || {})) {
-        answers[name] = { noul: name in (fixture.jev || {}) ? fixture.jev[name] : 0.1 };
+      if (isJudgeCall(parsed)) {
+        const given = (fixture.judge || {})[parsed.state && parsed.state.sentence] || {};
+        for (const [name, q] of Object.entries(parsed.questions)) {
+          const v = name in given ? given[name] : q.type === "score" ? 1 : 0.9;
+          answers[name] =
+            q.type === "score"
+              ? { type: "score", score: v, confidence: 0.8, legend: {}, probabilities: {} }
+              : { type: "noul", noul: v };
+        }
+      } else {
+        for (const name of Object.keys(parsed.questions || {})) {
+          answers[name] = { noul: name in (fixture.jev || {}) ? fixture.jev[name] : 0.1 };
+        }
       }
       res.writeHead(200, { "Content-Type": "application/json" });
       res.end(JSON.stringify({ answers, model: "jev-mock" }));
     });
   });
-  return { server, calls };
+  return {
+    server,
+    calls,
+    judgeCalls: () => calls.filter((c) => isJudgeCall(c.body)),
+    tagCalls: () => calls.filter((c) => !isJudgeCall(c.body)),
+  };
 }
 
-// fixture: { dict, freqs, claude: { define, gloss, "compose-stories" }, jev: { <tag>: p } }
+// fixture: { dict, freqs, claude: { define, gloss, "compose-stories" }, jev: { <tag>: p },
+//            judge: { <sentence>: { <question name>: p | level } } }
 // options: { rows: [tsv row strings], log: [jsonl objects], anki: "up" | "down",
 //            jev: "up" | "down" | "unconfigured" (no API key),
 //            root: repo copy to run from (default: this repo), cwd: where to run }

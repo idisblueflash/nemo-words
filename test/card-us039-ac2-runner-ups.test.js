@@ -13,11 +13,15 @@ test("US-039 AC2: card.js writes one alternates entry: every other candidate, wi
   const picked = "The main point stays relevant to the talk.";
   const stories = [
     { sentence: "The germane point stays relevant.", pivots: ["main", "relevant"] }, // fails: headword, no anchor
-    { sentence: picked, pivots: ["main", "relevant"] }, // first to pass -> the auto-pick
-    { sentence: "Main facts stay relevant.", pivots: ["main", "relevant"] }, // passes too, but isn't first
+    { sentence: picked, pivots: ["main", "relevant"] }, // best rubric total -> the auto-pick
+    { sentence: "Main facts stay relevant.", pivots: ["main", "relevant"] }, // passes too, lower total
     { sentence: "The main road is long.", pivots: ["main"] }, // fails: no sense word
   ];
-  const h = await createHarness(germaneFixture(stories));
+  const fixture = germaneFixture(stories);
+  // US-038 picks by rubric total (ties -> the shorter story), so the pick's
+  // Jev scores are set higher than the other passing story's defaults (6).
+  fixture.judge = { [picked]: { anchor: 2, meaning: 2, vivid: 2 } };
+  const h = await createHarness(fixture);
   try {
     const run = await h.runCard("germane");
     assert.equal(run.code, 0, `stdout:\n${run.stdout}\nstderr:\n${run.stderr}`);
