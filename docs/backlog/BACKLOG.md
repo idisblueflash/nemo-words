@@ -16,7 +16,7 @@
 ## Stories (ranked)
 1. [US-051](items/US-051-definition-only-control-cards-go-into-their-own-deck.md) Definition-only control cards go into their own deck · E02 · idea
 2. [US-033](items/US-033-see-how-many-auto-picked-cards-i-kept.md) See how many auto-picked cards I kept · E01 · idea
-3. [US-048](items/US-048-a-broken-story-rubric-is-named-in-the-report.md) A broken story rubric is named in the report · E01 · in-progress
+3. [US-048](items/US-048-a-broken-story-rubric-is-named-in-the-report.md) A broken story rubric is named in the report · E01 · done
 4. [US-046](items/US-046-words-with-no-exact-sound-match-get-a-rhyme-anchor.md) Words with no exact-sound match get a rhyme anchor · E01 · ready
 5. [US-049](items/US-049-proper-names-as-sound-anchors.md) Proper names as sound anchors · E01 · idea
 6. [US-050](items/US-050-split-or-shifted-chunks-as-sound-anchors.md) Split or shifted chunks as sound anchors · E01 · idea
