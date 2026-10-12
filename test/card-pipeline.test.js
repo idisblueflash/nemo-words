@@ -28,7 +28,7 @@ const tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), "card-pipeline-"));
 test.after(() => fs.rmSync(tmpRoot, { recursive: true, force: true }));
 
 const STEPS = [
-  "normalize", "route", "ipa", "syllabify", "define", "gloss", "chunk", "find-keywords",
+  "normalize", "route", "judge-route", "ipa", "syllabify", "define", "gloss", "chunk", "find-keywords",
   "compose-stories", "check-stories", "pick-story", "story", "write-row",
   "tag-technique", "log-card", // US-039: the auto-made card is logged
   "sync", "report",
@@ -213,8 +213,9 @@ test("AC4: after a succeeded run, each step's stdout and stderr can be read on i
 
 test("AC4: after a stopped run, the stopping step's stdout (its reasons) can be read on its own", async () => {
   await withHarness(germaneFixture(), {}, async (h) => {
-    const steps = await inspect(h, await h.runCard("famous"));
-    assert.equal(steps.route.stdout, "ambiguous: famous couldn't be routed automatically (classifier verdict: ambiguous)\n");
+    // (US-040: an ambiguous word no longer stops at route, so a word-part word drives the stop.)
+    const steps = await inspect(h, await h.runCard("nephrectomy"));
+    assert.equal(steps.route.stdout, "word-part: nephrectomy belongs to the word-part path (_etta_mology), not a story card\n");
     assert.ok(!steps.route.stderr, "a stop writes nothing to stderr");
     assert.deepEqual(steps.ipa, { status: "skipped" }, "a skipped step has no logs");
   });

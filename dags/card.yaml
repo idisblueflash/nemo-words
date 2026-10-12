@@ -49,17 +49,27 @@ steps:
   - id: normalize
     run: node scripts/normalize.js "${WORD}"
 
-  - id: route   # exit 1: already carded / word-part / ambiguous
+  - id: route   # exit 1: already carded / word-part; ambiguous goes on to judge-route
     depends: [normalize]
     preconditions:
       - condition: "${normalize.exit_code}"
         expected: "0"
     run: node scripts/route.js "$(cat "${normalize.stdout}")"
 
-  - id: ipa
+  # US-040: its stdout replaces route's as the route every later step reads.
+  # Only an `ambiguous` route is judged (Jev); any other passes through as is.
+  - id: judge_route
+    name: judge-route
     depends: [route]
     preconditions:
       - condition: "${route.exit_code}"
+        expected: "0"
+    run: node scripts/judge-route.js "${route.stdout}" "$(cat "${normalize.stdout}")"
+
+  - id: ipa
+    depends: [judge_route]
+    preconditions:
+      - condition: "${judge_route.exit_code}"
         expected: "0"
     run: node scripts/ipa.js "$(cat "${normalize.stdout}")"
 
@@ -91,7 +101,7 @@ steps:
         expected: "0"
     run: node scripts/chunk.js "$(cat "${syllabify.stdout}")"
 
-  # --- Drafting a story: skipped as a whole when route found a logged story
+  # --- Drafting a story: skipped as a whole when route found a logged story (read via judge-route)
   # (`general\t<sentence>\t<pivots>`): a logged story was a human pick and
   # wins, so only the card gets written (no model call).
   - id: find_keywords
@@ -100,7 +110,7 @@ steps:
     preconditions:
       - condition: "${chunk.exit_code}"
         expected: "0"
-      - condition: 'test -z "$(cut -s -f2 "${route.stdout}")"'
+      - condition: 'test -z "$(cut -s -f2 "${judge_route.stdout}")"'
     run: node scripts/find-keywords.js "$(cat "${syllabify.stdout}")" "$(cat "${normalize.stdout}")"
 
   - id: compose_stories
@@ -149,8 +159,8 @@ steps:
       - condition: "${pick_story.exit_code}"
         expected: "0"
       - condition: "test -s '${chunk.stdout}'"
-      - condition: "test -s '${pick_story.stdout}' || test -n \"$(cut -s -f2 '${route.stdout}')\""
-    run: node scripts/story.js '${route.stdout}' '${pick_story.stdout}'
+      - condition: "test -s '${pick_story.stdout}' || test -n \"$(cut -s -f2 '${judge_route.stdout}')\""
+    run: node scripts/story.js '${judge_route.stdout}' '${pick_story.stdout}'
 
   - id: write_row
     name: write-row   # exit 1: the word got carded meanwhile (row left untouched)
@@ -214,7 +224,7 @@ steps:
         expected: "0"
     run: >-
       node scripts/report.js "${write_row.stdout}" "${story.stdout}" "${syllabify.stdout}" "${gloss.stdout}"
-      '${normalize.stderr}' '${route.stderr}' '${ipa.stderr}' '${syllabify.stderr}' '${define.stderr}'
+      '${normalize.stderr}' '${route.stderr}' '${judge_route.stderr}' '${ipa.stderr}' '${syllabify.stderr}' '${define.stderr}'
       '${gloss.stderr}' '${chunk.stderr}' '${find_keywords.stderr}' '${compose_stories.stderr}'
       '${check_stories.stderr}' '${pick_story.stderr}' '${story.stderr}' '${write_row.stderr}'
       '${tag_technique.stderr}' '${log_card.stderr}' '${sync.stderr}'

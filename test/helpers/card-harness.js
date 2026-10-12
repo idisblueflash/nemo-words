@@ -117,7 +117,10 @@ function createMockAnkiConnect() {
 
 // Mock Jev: `POST /v1/systemone` answers every `noul` question with the
 // fixture's probability for that question name (`fixture.jev[name]`, default
-// 0.1). Records each request so tests can assert what Jev was asked.
+// 0.1) — or, when the request's `state.word` is a key of `fixture.jevByWord`
+// (US-040's route-accuracy check), with that word's value for every question;
+// the value "http-500" makes the mock answer HTTP 500 instead. Records each
+// request so tests can assert what Jev was asked.
 function createMockJev(fixture) {
   const calls = [];
   const server = http.createServer((req, res) => {
@@ -126,9 +129,18 @@ function createMockJev(fixture) {
     req.on("end", () => {
       const parsed = JSON.parse(body || "{}");
       calls.push({ method: req.method, path: req.url, auth: req.headers.authorization, body: parsed });
+      const byWord = fixture.jevByWord || {};
+      const word = parsed.state && parsed.state.word;
+      const perWord = Object.prototype.hasOwnProperty.call(byWord, word);
+      if (perWord && byWord[word] === "http-500") {
+        res.writeHead(500, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ error: "mock Jev: internal error" }));
+        return;
+      }
       const answers = {};
       for (const name of Object.keys(parsed.questions || {})) {
-        answers[name] = { noul: name in (fixture.jev || {}) ? fixture.jev[name] : 0.1 };
+        if (perWord) answers[name] = { noul: byWord[word] };
+        else answers[name] = { noul: name in (fixture.jev || {}) ? fixture.jev[name] : 0.1 };
       }
       res.writeHead(200, { "Content-Type": "application/json" });
       res.end(JSON.stringify({ answers, model: "jev-mock" }));
@@ -297,10 +309,33 @@ function germaneFixture(stories) {
   };
 }
 
+// US-040: "wary" — the classifier calls it ambiguous (a weak -ary match only).
+// GA wˈɛɹi, syllables ˈwɛ.ɹi, neither chunk with a common exact match, so the
+// story is unanchored. `jev` sets Jev's answers by question name: `word_part`
+// is judge-route's p that the word belongs on the word-part path.
+function waryFixture(jev = {}) {
+  return {
+    dict: { wary: "wˈɛɹi" },
+    freqs: {},
+    claude: {
+      define: JSON.stringify({
+        primarySense: "careful",
+        definition: "careful and cautious about possible dangers or problems",
+        senses: ["careful", "cautious"],
+      }),
+      gloss: "cautious about possible danger",
+      "compose-stories": JSON.stringify([
+        { sentence: "The weary hiker stays careful near the cliff.", pivots: ["weary", "careful"] },
+      ]),
+    },
+    jev,
+  };
+}
+
 // Today's local date, YYYY-MM-DD (the `date` a new log row gets).
 function today() {
   const d = new Date();
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 }
 
-module.exports = { createHarness, germaneFixture, today, TERMS_HEADER, repoRoot };
+module.exports = { createHarness, germaneFixture, waryFixture, today, TERMS_HEADER, repoRoot };

@@ -13,8 +13,10 @@
 //   A row with an empty Back counts as "no story" and is routed on.
 //   word-part — scripts/classify-word.js says `medical` (a classical
 //   Greek/Latin morpheme or INN drug stem): that's _etta_mology's path.
-//   ambiguous — the classifier can't place it (weak suffix match only);
-//   routing those is US-040. A `no match` verdict routes general.
+// A `no match` verdict routes general. An `ambiguous` verdict (the classifier
+// can't place it: weak suffix matches only) is not a stop: route prints
+// `ambiguous\t<matched parts>` (comma-separated) and exits 0, and the next
+// step, judge-route (US-040), settles it with a Jev judgment call.
 
 if (require.main === module) require("./lib/step-contract"); // a crash exits 2, never 1
 const fs = require("fs");
@@ -25,14 +27,16 @@ const { classify } = require("./classify-word");
 function routeWord(word, { rows = [], log = [] } = {}) {
   const row = findCardRow(rows, word);
   if (row && row.back) return { route: "already-carded", story: row.back };
-  const { verdict } = classify(word);
+  const { verdict, matches } = classify(word);
   if (verdict === "medical") return { route: "word-part" };
-  if (verdict === "ambiguous") return { route: "ambiguous" };
+  // A logged story is checked before an ambiguous verdict, so it skips the
+  // judgment call (US-040); a `medical` verdict still stops (overruling it is US-042).
   const entry = log.find((r) => String(r.word || "").toLowerCase() === word.toLowerCase() && r.sentence);
   if (entry) {
     const pivots = Array.isArray(entry.pivot_words) ? entry.pivot_words : [];
     return { route: "general", logged: { sentence: flatten(entry.sentence), pivots: pivots.map(flatten) } };
   }
+  if (verdict === "ambiguous") return { route: "ambiguous", matchedParts: matches.map((m) => m.part) };
   return { route: "general" };
 }
 
@@ -54,7 +58,6 @@ function readLog(file) {
 function stopReason(word, r) {
   if (r.route === "already-carded") return alreadyCarded(word, r.story);
   if (r.route === "word-part") return `word-part: ${word} belongs to the word-part path (_etta_mology), not a story card`;
-  if (r.route === "ambiguous") return `ambiguous: ${word} couldn't be routed automatically (classifier verdict: ambiguous)`;
   return null;
 }
 
@@ -67,6 +70,7 @@ if (require.main === module) {
     });
     const reason = stopReason(word, r);
     if (reason) return { stop: [reason] };
+    if (r.route === "ambiguous") return { lines: [`ambiguous\t${r.matchedParts.join(",")}`] };
     return { lines: [r.logged ? `${r.route}\t${r.logged.sentence}\t${r.logged.pivots.join(",")}` : r.route] };
   });
 }
