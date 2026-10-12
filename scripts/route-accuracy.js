@@ -213,8 +213,14 @@ const wordTable = (rows) => [
   ...rows.map((r) => `| ${r.word} | ${r.label} | ${r.pWordPart} | ${r.verdict} | ${r.classifier} |`),
 ];
 
-// The report's last section: the cut-offs rule, the scores, and the conclusion.
+const NONE_JUDGED = "no words were judged: Jev couldn't answer for any word";
+
+// The report's last section: the cut-offs rule, the scores, and the conclusion
+// — or, with no judged words, no conclusion at all.
 function cutOffsSection(judged) {
+  if (!judged.length) {
+    return ["## Cut-offs", "", `**Conclusion:** no conclusion on the ${fmtCut(CURRENT)} cut-offs: ${NONE_JUDGED}.`, ""];
+  }
   const { current, best, holds } = cutOffs(judged);
   const line = (p) => `| ${fmtCut(p.cut)} | ${p.wrong} | ${p.unsure} | ${p.cost} |`;
   const out = ["## Cut-offs", ""];
@@ -249,6 +255,11 @@ async function main(argv) {
   for (const label of LABELS) {
     const c = counts(judged, label);
     process.stdout.write(`${label}: ${c.judged} judged, ${c.right} right, ${c.wrong} wrong, ${c.unsure} unsure\n`);
+  }
+  if (!judged.length) {
+    // A clean stop (exit 1, the step contract's convention); 2 is for crashes.
+    process.stderr.write(`stopped: ${NONE_JUDGED}; no conclusion on the cut-offs\n`);
+    process.exitCode = 1;
   }
 }
 

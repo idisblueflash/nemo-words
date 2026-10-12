@@ -181,7 +181,10 @@ out and listed. The report gives right / wrong / unsure counts per label at 0.3 
 every misrouted word with its p, the words Jev couldn't answer (unjudged, not counted),
 and ends with a conclusion on whether the cut-offs hold. It makes one real Jev call per
 word (about 500, roughly a minute), with the same `.env` key and proxy needs as
-`judge-route`. Covered by `test/card-us040-ac6`–`ac8` against a mock Jev.
+`judge-route`. Exit codes: `0` when at least one word was judged; `1` (a clean stop) when
+Jev couldn't answer for any word: the report is still written, says no words were
+judged and draws no conclusion on the cut-offs; `2` on a crash. Covered by
+`test/card-us040-ac6`–`ac8` and `ac10` against a mock Jev.
 
 ## IPA / rhyme / frequency
 
