@@ -113,19 +113,33 @@ node scripts/card.js <word>
 ```
 
 The one-word command: one general-English word in, a synced story card out, with nothing
-asked along the way (US-028). Steps, in order: `normalize` → `route` → `ipa` →
-`syllabify` → `define` → `gloss` → `chunk` → `find-keywords` → `compose-stories` →
+asked along the way (US-028). Steps, in order: `normalize` → `route` → `judge-route` →
+`ipa` → `syllabify` → `define` → `gloss` → `chunk` → `find-keywords` → `compose-stories` →
 `check-stories` → `judge-stories` → `pick-story` → `story` → `write-row` → `sync` →
-`report`. `judge-stories` (US-038) has Jev judge each story that passed the hard gates
-against `scripts/story-rubric.json` (judgment gates + three 1–3 score axes); `pick-story`
-cards the story that passed every gate with the best total (ties: shorter, then
-alphabetical) and notes `pick: total N (…)` in the report. If Jev fails, the first story
-that passed the hard gates is carded and the report says it wasn't judged. When `route`
-finds a logged story for the word (`data/mnemonics/log.jsonl`), the drafting and judging
-steps are skipped and the logged story is carded. Stops (exit 1) to expect: `already carded …
-current story: …`, the word-part path (`_etta_mology`), `couldn't be routed
+`report`. `normalize` lowercases the word, so `WARY` or `Wary` is carded, routed and
+judged as `wary`. `judge-stories` (US-038) has Jev judge each story that passed the hard
+gates against `scripts/story-rubric.json` (judgment gates + three 1–3 score axes, kept as
+decimals); `pick-story` cards the story that passed every gate with the best total (ties:
+shorter, then alphabetical) and notes `pick: total N (…)` in the report. If Jev fails, the
+first story that passed the hard gates is carded and the report says it wasn't judged.
+When `route` finds a logged story for the word (`data/mnemonics/log.jsonl`), the drafting
+and judging steps are skipped and the logged story is carded. Stops (exit 1) to expect:
+`already carded … current story: …`, the word-part path (`_etta_mology`), `couldn't be routed
 automatically`, `no-pick: …` with every candidate's reasons, and `sync failed … re-run
 later` (the row stays written; the failure is in `anki/sync.log`).
+
+An `ambiguous` classifier verdict (weak suffix matches only, e.g. `wary`'s `-ary`) doesn't
+stop `route`: `judge-route` (US-040) asks Jev whether the word is built from classical
+Greek/Latin morphemes or an INN stem, and routes by its p word-part. At 0.3 or below it's
+carded as general, and the run report notes `judgment call → general (p word-part 0.12)`.
+At 0.7 or above it stops on the word-part path, `— judgment call, p 0.84`. In between it
+stops as `couldn't be routed automatically — judgment call unsure, p 0.55`. A logged
+story, a `medical` verdict and a no-match word skip the judgment, with no Jev call. If
+Jev is unavailable (no key, unreachable, an error or an unusable answer), the run fails
+(exit 2) at `judge-route` with `routing failed: judgment service unavailable (…); re-run
+later`, and nothing is written. Jev needs `TYPESAFE_API_KEY` in the repo's gitignored
+`.env` (or the env file `NEMO_JEV_ENV_FILE` names), and from a CN address a proxy
+(`HTTPS_PROXY` etc., forwarded by `card.js`); without one it answers HTTP 451.
 
 Env overrides `ANKI_FILE`, `ANKI_CONNECT_URL`, `ANKI_SYNC_LOG`, `NEMO_MNEMONIC_LOG`,
 `NEMO_CLAUDE_BIN`, `NEMO_WORDS_BIN`, `NEMO_WORD_FREQ_BIN` work as usual: Dagu doesn't
@@ -157,6 +171,40 @@ end to end through `card.js`), and `test/card-steps.test.js` /
 `test/card-dag-steps.test.js` (the step CLIs), and `test/card-us038-*.test.js` (US-038's
 scored pick; mock Jev answers story-judging calls from `fixture.judge`). All run against fake `claude` /
 `nemo-words` / `word-freq` and a mock AnkiConnect (`test/helpers/card-harness.js`).
+`test/card-us040-*.test.js` cover `judge-route` and the lowercasing against a mock Jev.
+
+### Checking Jev's routing accuracy (US-040)
+
+```bash
+node scripts/route-accuracy.js [report-path]
+```
+
+Puts a labelled set of words to Jev with `judge-route`'s own question and cut-offs, and
+writes a Markdown report, by default `docs/backlog/reports/US-040-route-accuracy.md`. The
+set is US-028's QA misses, every whole-word row of the card file as general, and every
+`e.g. …` example word on its word-part rows as word-part. A word with both labels is left
+out and listed. The report gives right / wrong / unsure counts per label at 0.3 / 0.7,
+every misrouted word with its p, the words Jev couldn't answer (unjudged, not counted),
+and ends with a conclusion on whether the cut-offs hold. It makes one real Jev call per
+word (about 500, roughly a minute), with the same `.env` key and proxy needs as
+`judge-route`. When every word of one label is unjudged, the report says that label has
+no judged words and draws no conclusion on the cut-off it decides (general decides the
+lower 0.3, word-part the upper 0.7): that cut-off is held at its current value and only
+the other is searched and concluded on. With no argument the default path is used; an
+argument that's given but empty or only whitespace (`""`) is refused, not treated as the
+default, so a stray empty variable can't overwrite the saved report. Before any word goes to Jev, the report path
+(given or default) is checked without creating or touching anything: it must not be a
+directory, an existing file must be writable, and for a new file the nearest existing
+folder above it must be a writable folder (missing folders are still created when the
+report is written). Exit codes: `0` when at least one word was judged
+(including the one-label case); `1` (a clean stop) when the report path is empty —
+stderr says `report path is empty`, and Jev is never called — or when it can't be
+written — stderr says `report path can't be written: <path> (<why>)`, and Jev is never
+called — or when Jev couldn't answer for any word:
+**no report is written**, to the default path or a given one, so the saved real-Jev
+report is never overwritten by an empty run; stderr says no words were judged and that
+there is no conclusion on the cut-offs; `2` on a crash. Covered by
+`test/card-us040-ac6`–`ac8` and `ac10`–`ac14` against a mock Jev.
 
 ## IPA / rhyme / frequency
 

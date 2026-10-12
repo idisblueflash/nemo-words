@@ -16,21 +16,22 @@
 ## Stories (ranked)
 1. [US-038](items/US-038-jev-picks-the-best-story-by-the-rubric.md) Jev picks the best story by the story rubric · E01 · done
 2. [US-048](items/US-048-a-broken-story-rubric-is-named-in-the-report.md) A broken story rubric is named in the report · E01 · ready
-3. [US-041](items/US-041-no-auto-made-card-slips-past-the-log.md) No auto-made card slips past the log · E01 · ready
+3. [US-041](items/US-041-no-auto-made-card-slips-past-the-log.md) No auto-made card slips past the log · E01 · done
 4. [US-046](items/US-046-words-with-no-exact-sound-match-get-a-rhyme-anchor.md) Words with no exact-sound match get a rhyme anchor · E01 · idea
-5. [US-040](items/US-040-ambiguous-words-get-routed-without-me.md) Ambiguous words get routed without me · E01 · ready
+5. [US-040](items/US-040-ambiguous-words-get-routed-without-me.md) Ambiguous words get routed without me · E01 · done
 6. [US-042](items/US-042-plain-words-mistaken-for-word-parts-still-get-a-card.md) Plain words mistaken for word parts still get a card · E01 · idea
 7. [US-043](items/US-043-the-story-uses-the-words-real-sense.md) The story uses the word's real sense · E01 · idea
 8. [US-044](items/US-044-abstract-words-get-a-concrete-scene.md) Abstract words get a concrete scene · E01 · idea
 9. [US-045](items/US-045-each-chunk-gets-the-keyword-that-fits-the-story.md) Each chunk gets the keyword that fits the story · E01 · idea
-10. [SP-029](items/SP-029-does-an-auto-image-pick-agree-with-flash.md) Does an auto image pick agree with Flash's picks? · E01 · idea
-11. [US-030](items/US-030-card-arrives-with-an-auto-picked-image.md) The card arrives with an auto-picked image · E01 · idea
-12. [US-031](items/US-031-swap-the-auto-picked-story-for-an-alternate.md) Swap the auto-picked story for an alternate · E01 · idea
-13. [US-032](items/US-032-swap-the-auto-picked-image-for-another-cell.md) Swap the auto-picked image for another cell · E01 · idea
-14. [US-033](items/US-033-see-how-many-auto-picked-cards-i-kept.md) See how many auto-picked cards I kept · E01 · idea
-15. [US-034](items/US-034-see-what-each-card-costs-to-make.md) See what each card costs to make · E01 · idea
-16. [US-035](items/US-035-sequence-words-get-an-auto-comic.md) Sequence words get an auto comic · E01 · idea
-17. [EN-036](items/EN-036-dagu-runs-the-card-pipeline-as-small-step-clis.md) Dagu runs the card pipeline as small step CLIs · E01 · done
-18. [SP-037](items/SP-037-does-jev-pick-the-story-flash-would.md) Does Jev pick the story Flash would? · E01 · done
-19. [US-028](items/US-028-one-word-in-a-story-card-out.md) One word in, a story card out · E01 · done
-20. [US-039](items/US-039-auto-made-card-is-logged-with-its-runner-ups.md) The auto-made card is logged with its runner-ups · E01 · done
+10. [US-047](items/US-047-the-accuracy-check-refuses-arguments-it-cant-use.md) The accuracy check refuses arguments it can't use · E01 · idea
+11. [SP-029](items/SP-029-does-an-auto-image-pick-agree-with-flash.md) Does an auto image pick agree with Flash's picks? · E01 · idea
+12. [US-030](items/US-030-card-arrives-with-an-auto-picked-image.md) The card arrives with an auto-picked image · E01 · idea
+13. [US-031](items/US-031-swap-the-auto-picked-story-for-an-alternate.md) Swap the auto-picked story for an alternate · E01 · idea
+14. [US-032](items/US-032-swap-the-auto-picked-image-for-another-cell.md) Swap the auto-picked image for another cell · E01 · idea
+15. [US-033](items/US-033-see-how-many-auto-picked-cards-i-kept.md) See how many auto-picked cards I kept · E01 · idea
+16. [US-034](items/US-034-see-what-each-card-costs-to-make.md) See what each card costs to make · E01 · idea
+17. [US-035](items/US-035-sequence-words-get-an-auto-comic.md) Sequence words get an auto comic · E01 · idea
+18. [EN-036](items/EN-036-dagu-runs-the-card-pipeline-as-small-step-clis.md) Dagu runs the card pipeline as small step CLIs · E01 · done
+19. [SP-037](items/SP-037-does-jev-pick-the-story-flash-would.md) Does Jev pick the story Flash would? · E01 · done
+20. [US-028](items/US-028-one-word-in-a-story-card-out.md) One word in, a story card out · E01 · done
+21. [US-039](items/US-039-auto-made-card-is-logged-with-its-runner-ups.md) The auto-made card is logged with its runner-ups · E01 · done

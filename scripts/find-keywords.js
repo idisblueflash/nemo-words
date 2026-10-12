@@ -7,6 +7,9 @@
 // chunk's IPA *exactly* (no near matches). Prints one line per chunk:
 //   `ipa\tkeyword\tfrequency`, or `ipa\t-` when no common exact match exists
 //   (that chunk stays unanchored and is taught by the card's IPA line).
+// US-041: when *no* chunk gets a keyword, there is nothing to build a story
+// on: exit 1 (a clean stop) with `no sound anchor found` and then the same
+// `ipa\t-` lines, so the run stops before any story is drafted.
 // The optional [word] is the headword itself, never offered as its own anchor.
 //
 // Candidates come from `nemo-words ipa-lookup --ga <chunk>` (substring search)
@@ -76,7 +79,10 @@ function formatKeywordLine(k) {
 if (require.main === module) {
   runCli(([syllableString, word]) => {
     if (!syllableString) throw new Error("usage: find-keywords <syllables> [word]");
-    return { lines: findKeywords(syllableString, word).map(formatKeywordLine) };
+    const keywords = findKeywords(syllableString, word);
+    const lines = keywords.map(formatKeywordLine);
+    if (!keywords.some((k) => k.keyword)) return { stop: ["no sound anchor found", ...lines] };
+    return { lines };
   });
 }
 

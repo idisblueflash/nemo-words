@@ -75,6 +75,19 @@ function readLog(file) {
   return file ? fs.readFileSync(file, "utf8") : "";
 }
 
+// A step's log that may never have been written (a skipped step): "" then.
+function readLogIfAny(file) {
+  return file && fs.existsSync(file) ? fs.readFileSync(file, "utf8") : "";
+}
+
+// US-041: a stop at `sync` skips `report`, so the log notes it would have
+// carried (log-card's stderr: missing technique tags, or "not logged: …")
+// ride on the stop message instead, after sync's own reasons.
+function syncStopNotes(steps) {
+  const logCard = steps.find((s) => s.id === "log-card" || s.id === "log_card");
+  return logCard ? readLogIfAny(logCard.stderr).split("\n").filter((l) => l.trim()) : [];
+}
+
 function main() {
   const word = process.argv[2] ?? ""; // no argument must not become the text "undefined"
   const runId = `card-${Date.now()}-${crypto.randomBytes(3).toString("hex")}`;
@@ -103,6 +116,7 @@ function main() {
     const stopper = [...steps].reverse().find((s) => s.status !== "skipped");
     if (!stopper) fail("dagu skipped every step of the pipeline");
     const reasons = readLog(stopper.stdout).split("\n").filter(Boolean);
+    if (stopper.id === "sync") reasons.push(...syncStopNotes(steps));
     process.stdout.write(`stopped at ${stopper.id}: ${reasons.join("; ")}\n`);
     process.exit(1);
   }

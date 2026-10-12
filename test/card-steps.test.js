@@ -6,8 +6,10 @@ const assert = require("node:assert/strict");
 
 const { normalizeWord } = require("../scripts/normalize");
 
-test("normalize: trims and keeps a single word as typed", () => {
-  assert.deepEqual(normalizeWord("  Quebec \n"), { ok: true, word: "Quebec" });
+// US-040 AC9 changed this: the word is lowercased, no longer kept as typed.
+test("normalize: trims and lowercases a single word", () => {
+  assert.deepEqual(normalizeWord("  Quebec \n"), { ok: true, word: "quebec" });
+  assert.deepEqual(normalizeWord("WARY"), { ok: true, word: "wary" });
 });
 
 test("normalize: rejects empty and multi-word input with a reason", () => {
@@ -52,16 +54,16 @@ test("route CLI: word-part exits 1 naming the _etta_mology path", async () => {
   }
 });
 
-test("route: a classifier `ambiguous` verdict stops as ambiguous", () => {
-  assert.deepEqual(routeWord("famous", { rows: [], log: [] }), { route: "ambiguous" });
+// US-040 changed this: an ambiguous verdict is no longer a stop; judge-route settles it.
+test("route: a classifier `ambiguous` verdict routes ambiguous, with its matched weak parts", () => {
+  assert.deepEqual(routeWord("famous", { rows: [], log: [] }), { route: "ambiguous", matchedParts: ["-ous"] });
 });
 
-test("route CLI: ambiguous exits 1 saying it couldn't be routed automatically", async () => {
+test("route CLI: ambiguous exits 0 printing `ambiguous\\t<matched parts>` for judge-route", async () => {
   const h = await createHarness(germaneFixture());
   try {
     const r = await h.runScript("route.js", ["famous"]);
-    assert.equal(r.code, 1);
-    assert.equal(r.stdout, "ambiguous: famous couldn't be routed automatically (classifier verdict: ambiguous)\n");
+    assert.deepEqual(r, { code: 0, stdout: "ambiguous\t-ous\n", stderr: "" });
   } finally {
     await h.cleanup();
   }
