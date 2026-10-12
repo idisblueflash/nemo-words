@@ -2,7 +2,7 @@
 id: US-038
 type: story
 parent: E01
-status: ready
+status: in-progress
 ---
 # US-038 Jev picks the best story by the story rubric
 

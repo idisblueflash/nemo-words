@@ -14,7 +14,7 @@
 6. [E06](items/E06-failing-cards-get-a-new-story-automatically.md) Cards that keep failing in Anki get a new story automatically · active
 
 ## Stories (ranked)
-1. [US-038](items/US-038-jev-picks-the-best-story-by-the-rubric.md) Jev picks the best story by the story rubric · E01 · ready
+1. [US-038](items/US-038-jev-picks-the-best-story-by-the-rubric.md) Jev picks the best story by the story rubric · E01 · in-progress
 2. [US-041](items/US-041-no-auto-made-card-slips-past-the-log.md) No auto-made card slips past the log · E01 · ready
 3. [US-046](items/US-046-words-with-no-exact-sound-match-get-a-rhyme-anchor.md) Words with no exact-sound match get a rhyme anchor · E01 · idea
 4. [US-040](items/US-040-ambiguous-words-get-routed-without-me.md) Ambiguous words get routed without me · E01 · ready
