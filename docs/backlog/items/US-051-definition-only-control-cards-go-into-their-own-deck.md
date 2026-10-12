@@ -2,7 +2,7 @@
 id: US-051
 type: story
 parent: E02
-status: ready
+status: in-progress
 depends_on: [US-041]
 ---
 # US-051 Definition-only control cards go into their own deck
