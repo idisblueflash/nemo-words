@@ -2,8 +2,7 @@
 id: US-040
 type: story
 parent: E01
-status: done
-qa_status: passing
+status: in-progress
 ---
 # US-040 Ambiguous words get routed without me
 
@@ -87,6 +86,20 @@ Given  Jev can't answer for any word during the routing accuracy check
   - When  the check runs
     - Then  the report says no words were judged and draws no conclusion on the cut-offs
     - And   the command exits non-zero
+```
+
+```gherkin
+Given  Jev can't answer for every word of one label during the routing accuracy check
+  - When  the check runs
+    - Then  the report says that label has no judged words
+    - And   it draws no conclusion on the cut-off that label decides
+```
+
+```gherkin
+Given  a saved routing accuracy report in the repo
+  - When  Flash runs the check with no report path and Jev can't answer for any word
+    - Then  the saved report is left as it was
+    - And   the command exits non-zero and says nothing was judged
 ```
 
 ## Logic sketch
