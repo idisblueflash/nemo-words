@@ -36,7 +36,7 @@ test("US-040 AC6: route-accuracy.js asks Jev judge-route's question per labelled
       // Unlisted words get 0.1 (general).
       jevByWord: { trial: 0.8, ibuprofen: 0.2, ketoprofen: 0.95, naproxen: 0.7, conduct: 0.55, adjoining: 0.9, adhere: 0.5 },
     },
-    { rows: ["wary\tThe weary hiker stays careful near the cliff.", WORD_PART_ROW] }
+    { rows: ["wary\tThe weary hiker stays careful near the cliff, re safety.", WORD_PART_ROW] }
   );
   try {
     const reportPath = `${h.tmp}/report.md`;

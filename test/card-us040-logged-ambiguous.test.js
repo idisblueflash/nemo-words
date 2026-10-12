@@ -20,7 +20,7 @@ test("route: a logged medical-verdict word still routes word-part (overruling `m
 });
 
 test("US-040: card.js cards a logged ambiguous word's logged story with no judgment call", async () => {
-  const logged = "The weary hiker stays careful near the cliff.";
+  const logged = "The weary hiker stays careful near the cliff, re safety.";
   const h = await createHarness(waryFixture({ word_part: 0.84 }), {
     log: [{ word: "wary", sentence: logged, pivot_words: ["weary", "careful"] }],
   });

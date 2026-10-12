@@ -16,7 +16,7 @@ const { createHarness } = require("./helpers/card-harness");
 
 for (const jev of ["down", "unconfigured"]) {
   test(`US-040 AC10: route-accuracy.js with Jev ${jev} reports no words judged, no cut-off conclusion, exit 1`, async () => {
-    const h = await createHarness({}, { jev, rows: ["wary\tThe weary hiker stays careful near the cliff."] });
+    const h = await createHarness({}, { jev, rows: ["wary\tThe weary hiker stays careful near the cliff, re safety."] });
     try {
       const reportPath = `${h.tmp}/report.md`;
       const run = await h.runScript("route-accuracy.js", [reportPath]);

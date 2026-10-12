@@ -14,7 +14,7 @@ test("US-040 AC7: route-accuracy.js reports words Jev errors on or answers unusa
   const h = await createHarness(
     // trial: an HTTP error; ibuprofen: an unusable answer; every other word 0.1 (general).
     { jevByWord: { trial: "http-500", ibuprofen: "high" } },
-    { rows: ["wary\tThe weary hiker stays careful near the cliff."] }
+    { rows: ["wary\tThe weary hiker stays careful near the cliff, re safety."] }
   );
   try {
     const reportPath = `${h.tmp}/report.md`;

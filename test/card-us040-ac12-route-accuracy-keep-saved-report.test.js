@@ -28,7 +28,7 @@ function cloneWithSavedReport() {
 test("US-040 AC12: with no report path and nothing judged, the saved report is left as it was; exit 1, says nothing was judged", async () => {
   const clone = cloneWithSavedReport();
   const saved = fs.readFileSync(path.join(clone, REPORT), "utf8");
-  const h = await createHarness({}, { root: clone, jev: "down", rows: ["wary\tThe weary hiker stays careful near the cliff."] });
+  const h = await createHarness({}, { root: clone, jev: "down", rows: ["wary\tThe weary hiker stays careful near the cliff, re safety."] });
   try {
     const run = await h.runScript("route-accuracy.js", []);
     assert.equal(run.code, 1, `stdout:\n${run.stdout}\nstderr:\n${run.stderr}`);

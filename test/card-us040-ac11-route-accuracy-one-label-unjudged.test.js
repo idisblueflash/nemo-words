@@ -25,7 +25,7 @@ function answers(pGeneral, pWordPart) {
 }
 
 async function runCheck(jevByWord) {
-  const h = await createHarness({ jevByWord }, { rows: ["wary\tThe weary hiker stays careful near the cliff."] });
+  const h = await createHarness({ jevByWord }, { rows: ["wary\tThe weary hiker stays careful near the cliff, re safety."] });
   try {
     const reportPath = `${h.tmp}/report.md`;
     const run = await h.runScript("route-accuracy.js", [reportPath]);
