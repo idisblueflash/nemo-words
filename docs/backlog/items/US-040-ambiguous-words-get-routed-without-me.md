@@ -2,8 +2,7 @@
 id: US-040
 type: story
 parent: E01
-status: done
-qa_status: passing
+status: in-progress
 ---
 # US-040 Ambiguous words get routed without me
 
@@ -80,6 +79,13 @@ Given  a word typed with capital letters (e.g. WARY or Wary)
   - When  Flash runs the one-word command with that word
     - Then  the word is lowercased before any other step
     - And   the card's front, the route and the judgment call all use the lowercase word
+```
+
+```gherkin
+Given  Jev can't answer for any word during the routing accuracy check
+  - When  the check runs
+    - Then  the report says no words were judged and draws no conclusion on the cut-offs
+    - And   the command exits non-zero
 ```
 
 ## Logic sketch
