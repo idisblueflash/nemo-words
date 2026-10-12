@@ -184,12 +184,18 @@ word (about 500, roughly a minute), with the same `.env` key and proxy needs as
 `judge-route`. When every word of one label is unjudged, the report says that label has
 no judged words and draws no conclusion on the cut-off it decides (general decides the
 lower 0.3, word-part the upper 0.7): that cut-off is held at its current value and only
-the other is searched and concluded on. Exit codes: `0` when at least one word was judged
-(including the one-label case); `1` (a clean stop) when Jev couldn't answer for any word:
+the other is searched and concluded on. Before any word goes to Jev, the report path
+(given or default) is checked without creating or touching anything: it must not be a
+directory, an existing file must be writable, and for a new file the nearest existing
+folder above it must be a writable folder (missing folders are still created when the
+report is written). Exit codes: `0` when at least one word was judged
+(including the one-label case); `1` (a clean stop) when the report path can't be
+written — stderr says `report path can't be written: <path> (<why>)`, and Jev is never
+called — or when Jev couldn't answer for any word:
 **no report is written**, to the default path or a given one, so the saved real-Jev
 report is never overwritten by an empty run; stderr says no words were judged and that
 there is no conclusion on the cut-offs; `2` on a crash. Covered by
-`test/card-us040-ac6`–`ac8` and `ac10`–`ac12` against a mock Jev.
+`test/card-us040-ac6`–`ac8` and `ac10`–`ac13` against a mock Jev.
 
 ## IPA / rhyme / frequency
 

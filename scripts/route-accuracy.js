@@ -271,8 +271,54 @@ function cutOffsSection(judged) {
 
 const cell = (text) => String(text).replace(/\|/g, "\\|");
 
+// Why `reportPath` can't be written, or null when it can — checked without
+// creating, opening or truncating anything (a run with nothing judged must
+// leave no file behind, AC12). An existing path must be a writable file; a
+// missing one needs its nearest existing ancestor to be a writable folder
+// (the missing folders below it are created when the report is written).
+function unwritableReason(reportPath) {
+  const stat = (p) => {
+    try {
+      return fs.statSync(p);
+    } catch (e) {
+      // ENOTDIR: a file sits higher up the path; walking up reaches it.
+      if (e.code === "ENOENT" || e.code === "ENOTDIR") return null;
+      throw e;
+    }
+  };
+  const writable = (p) => {
+    try {
+      fs.accessSync(p, fs.constants.W_OK);
+      return true;
+    } catch {
+      return false;
+    }
+  };
+  const st = stat(reportPath);
+  if (st) {
+    if (st.isDirectory()) return "it is a directory";
+    return writable(reportPath) ? null : "it is not writable";
+  }
+  let dir = path.dirname(reportPath);
+  let dst = stat(dir);
+  while (!dst && path.dirname(dir) !== dir) {
+    dir = path.dirname(dir);
+    dst = stat(dir);
+  }
+  if (!dst || !dst.isDirectory()) return `${dir} is not a folder`;
+  return writable(dir) ? null : `folder ${dir} is not writable`;
+}
+
 async function main(argv) {
   const reportPath = path.resolve(argv[0] || DEFAULT_REPORT);
+  // Checked before any word is put to Jev, so a bad path costs no Jev calls.
+  // A clean stop (exit 1, the step contract's convention); 2 is for crashes.
+  const unwritable = unwritableReason(reportPath);
+  if (unwritable) {
+    process.stderr.write(`stopped: report path can't be written: ${reportPath} (${unwritable}); no word was put to Jev\n`);
+    process.exitCode = 1;
+    return;
+  }
   const cardFile = cardFilePath();
   const { words, bothLabels } = labelledSet(fs.readFileSync(cardFile, "utf8"));
   const results = await judgeAll(words);
@@ -303,4 +349,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { labelledSet, frontWord, exampleWords, counts, QA_MISSES };
+module.exports = { unwritableReason, labelledSet, frontWord, exampleWords, counts, QA_MISSES };

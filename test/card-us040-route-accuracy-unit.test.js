@@ -1,8 +1,42 @@
-// US-040 unit coverage: how scripts/route-accuracy.js builds its labelled set.
+// US-040 unit coverage: how scripts/route-accuracy.js builds its labelled set,
+// and its report path check (AC13).
 
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const { labelledSet, frontWord, exampleWords } = require("../scripts/route-accuracy");
+const fs = require("node:fs");
+const os = require("node:os");
+const path = require("node:path");
+const { labelledSet, frontWord, exampleWords, unwritableReason } = require("../scripts/route-accuracy");
+
+test("route-accuracy: an existing writable report passes the check and is left as it was", () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "nemo-ra-unit-"));
+  try {
+    const file = path.join(dir, "report.md");
+    fs.writeFileSync(file, "saved report");
+    const before = fs.statSync(file).mtimeMs;
+    assert.equal(unwritableReason(file), null);
+    assert.equal(fs.readFileSync(file, "utf8"), "saved report");
+    assert.equal(fs.statSync(file).mtimeMs, before);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("route-accuracy: a directory, a read-only file and a path under a file fail the check; a new path creates nothing", () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "nemo-ra-unit-"));
+  try {
+    assert.match(unwritableReason(dir), /directory/);
+    const ro = path.join(dir, "ro.md");
+    fs.writeFileSync(ro, "x");
+    fs.chmodSync(ro, 0o444);
+    if (process.getuid && process.getuid() !== 0) assert.match(unwritableReason(ro), /not writable/);
+    assert.match(unwritableReason(path.join(ro, "sub", "report.md")), /not a folder/);
+    assert.equal(unwritableReason(path.join(dir, "a", "b", "report.md")), null);
+    assert.equal(fs.existsSync(path.join(dir, "a")), false);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
 
 const HEADER = "#separator:tab\n#columns:Front\tBack\tImage\tIPA\tGloss\tDeck\tTags\n";
 const wordPartRow = (front, back) => [front, back, "", "", "", "00 Reading Room::01 Medical Terms", "medical-word-parts"].join("\t");
