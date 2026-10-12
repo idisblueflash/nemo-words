@@ -21,14 +21,15 @@
 5. [US-043](items/US-043-the-story-uses-the-words-real-sense.md) The story uses the word's real sense · E01 · idea
 6. [US-044](items/US-044-abstract-words-get-a-concrete-scene.md) Abstract words get a concrete scene · E01 · idea
 7. [US-045](items/US-045-each-chunk-gets-the-keyword-that-fits-the-story.md) Each chunk gets the keyword that fits the story · E01 · idea
-8. [SP-029](items/SP-029-does-an-auto-image-pick-agree-with-flash.md) Does an auto image pick agree with Flash's picks? · E01 · idea
-9. [US-030](items/US-030-card-arrives-with-an-auto-picked-image.md) The card arrives with an auto-picked image · E01 · idea
-10. [US-031](items/US-031-swap-the-auto-picked-story-for-an-alternate.md) Swap the auto-picked story for an alternate · E01 · idea
-11. [US-032](items/US-032-swap-the-auto-picked-image-for-another-cell.md) Swap the auto-picked image for another cell · E01 · idea
-12. [US-033](items/US-033-see-how-many-auto-picked-cards-i-kept.md) See how many auto-picked cards I kept · E01 · idea
-13. [US-034](items/US-034-see-what-each-card-costs-to-make.md) See what each card costs to make · E01 · idea
-14. [US-035](items/US-035-sequence-words-get-an-auto-comic.md) Sequence words get an auto comic · E01 · idea
-15. [EN-036](items/EN-036-dagu-runs-the-card-pipeline-as-small-step-clis.md) Dagu runs the card pipeline as small step CLIs · E01 · done
-16. [SP-037](items/SP-037-does-jev-pick-the-story-flash-would.md) Does Jev pick the story Flash would? · E01 · done
-17. [US-028](items/US-028-one-word-in-a-story-card-out.md) One word in, a story card out · E01 · done
-18. [US-039](items/US-039-auto-made-card-is-logged-with-its-runner-ups.md) The auto-made card is logged with its runner-ups · E01 · done
+8. [US-046](items/US-046-the-accuracy-check-refuses-arguments-it-cant-use.md) The accuracy check refuses arguments it can't use · E01 · idea
+9. [SP-029](items/SP-029-does-an-auto-image-pick-agree-with-flash.md) Does an auto image pick agree with Flash's picks? · E01 · idea
+10. [US-030](items/US-030-card-arrives-with-an-auto-picked-image.md) The card arrives with an auto-picked image · E01 · idea
+11. [US-031](items/US-031-swap-the-auto-picked-story-for-an-alternate.md) Swap the auto-picked story for an alternate · E01 · idea
+12. [US-032](items/US-032-swap-the-auto-picked-image-for-another-cell.md) Swap the auto-picked image for another cell · E01 · idea
+13. [US-033](items/US-033-see-how-many-auto-picked-cards-i-kept.md) See how many auto-picked cards I kept · E01 · idea
+14. [US-034](items/US-034-see-what-each-card-costs-to-make.md) See what each card costs to make · E01 · idea
+15. [US-035](items/US-035-sequence-words-get-an-auto-comic.md) Sequence words get an auto comic · E01 · idea
+16. [EN-036](items/EN-036-dagu-runs-the-card-pipeline-as-small-step-clis.md) Dagu runs the card pipeline as small step CLIs · E01 · done
+17. [SP-037](items/SP-037-does-jev-pick-the-story-flash-would.md) Does Jev pick the story Flash would? · E01 · done
+18. [US-028](items/US-028-one-word-in-a-story-card-out.md) One word in, a story card out · E01 · done
+19. [US-039](items/US-039-auto-made-card-is-logged-with-its-runner-ups.md) The auto-made card is logged with its runner-ups · E01 · done
