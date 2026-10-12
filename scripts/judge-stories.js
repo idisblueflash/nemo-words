@@ -19,9 +19,11 @@
 // reasons plus each failed judgment gate as `<gate>: <first failing
 // question>` (`summary` for the gate's own question), comma-separated. A
 // hard-gate fail isn't sent to Jev: its score fields are `-`.
-// Exit 2 if any Jev call fails or answers unusably (or the rubric can't be
-// read): pick-story then falls back to the first story that passed the hard
-// gates, and stderr says so for the run report.
+// Exit 2 if any Jev call fails or answers unusably: pick-story then falls back
+// to the first story that passed the hard gates, and stderr says so for the
+// run report. US-048: the rubric is read, parsed and shape-checked before any
+// Jev call; a problem takes the same fallback, and the note names the file:
+// `can't read scripts/story-rubric.json (<reason>)`.
 
 if (require.main === module) require("./lib/step-contract"); // a crash exits 2, never 1
 const fs = require("fs");
@@ -34,8 +36,56 @@ const PASS_AT = 0.5;
 
 const lines = (text) => String(text || "").split("\n").filter((l) => l.trim());
 
+// US-048: a rubric that can't be read or parsed is named, by its repo-relative
+// path, in the run report's "not judged" note — not mistaken for a Jev failure.
+class RubricError extends Error {
+  constructor(file, reason) {
+    super(`can't read ${path.relative(path.dirname(__dirname), file)} (${reason})`);
+    this.name = "RubricError";
+  }
+}
+
 function loadRubric(file = RUBRIC_FILE) {
-  return JSON.parse(fs.readFileSync(file, "utf8"));
+  let text;
+  try {
+    text = fs.readFileSync(file, "utf8");
+  } catch (e) {
+    throw new RubricError(file, e.code === "ENOENT" ? "not found" : e.message);
+  }
+  let rubric;
+  try {
+    rubric = JSON.parse(text);
+  } catch (e) {
+    throw new RubricError(file, e.message);
+  }
+  const problem = rubricProblem(rubric);
+  if (problem) throw new RubricError(file, problem);
+  return rubric;
+}
+
+const isObject = (x) => x !== null && typeof x === "object" && !Array.isArray(x);
+const isText = (x) => typeof x === "string" && x.trim() !== "";
+
+// The rubric's shape, checked before any Jev call (and by story-rubric.json's
+// own test): every gate has a summary and ≥ 1 split-out question, every axis a
+// label and 3 levels. Returns the first problem found, or null.
+function rubricProblem(rubric) {
+  if (!isObject(rubric) || !isObject(rubric.gates) || !Object.keys(rubric.gates).length) return "no gates";
+  if (!isObject(rubric.axes) || !Object.keys(rubric.axes).length) return "no axes";
+  for (const [gate, g] of Object.entries(rubric.gates)) {
+    if (!isObject(g) || !isText(g.summary)) return `gate ${gate} has no summary question`;
+    if (!isObject(g.questions) || !Object.keys(g.questions).length) return `gate ${gate} has no split-out questions`;
+    for (const [id, text] of Object.entries(g.questions)) {
+      if (!isText(text)) return `gate ${gate} question ${id} is empty`;
+    }
+  }
+  for (const [axis, a] of Object.entries(rubric.axes)) {
+    if (!isObject(a) || !isText(a.label)) return `axis ${axis} has no label`;
+    const levels = Array.isArray(a.levels) ? a.levels : [];
+    if (levels.length !== 3) return `axis ${axis} has ${levels.length} levels, needs 3`;
+    if (!levels.every(isText)) return `axis ${axis} has an empty level`;
+  }
+  return null;
 }
 
 // [{ name, gate, id, text }] — the gate's summary first, then its split-outs.
@@ -102,13 +152,17 @@ function formatLine(hardReasons, judgment) {
 }
 
 async function judgeStories({ word, sense, candidatesText, checksText, chunks }, opts = {}) {
+  const checks = lines(checksText);
+  const candidates = lines(candidatesText);
+  const hardOf = (i) => (checks[i] || "not checked").trim();
+  // Nothing to judge: the rubric isn't read, so a broken one can't change the no-pick (US-048).
+  if (!candidates.some((_, i) => hardOf(i) === "-")) return candidates.map((_, i) => formatLine(hardOf(i), null));
   const rubric = opts.rubric || loadRubric();
   const questions = buildQuestions(rubric);
-  const checks = lines(checksText);
   const ipaChunks = chunks.map((c) => ({ ipa: c.ipa, keyword: c.keyword }));
   return Promise.all(
-    lines(candidatesText).map(async (line, i) => {
-      const hard = (checks[i] || "not checked").trim();
+    candidates.map(async (line, i) => {
+      const hard = hardOf(i);
       if (hard !== "-") return formatLine(hard, null);
       const [sentence, pivots = ""] = line.split("\t");
       const state = { word, sense, ipa_chunks: ipaChunks, sentence, pivot_words: pivots.split(",").filter(Boolean) };
@@ -142,4 +196,4 @@ if (require.main === module) {
   })();
 }
 
-module.exports = { loadRubric, nouls, buildQuestions, toJudgment, formatLine, judgeStories, PASS_AT };
+module.exports = { RubricError, loadRubric, rubricProblem, nouls, buildQuestions, toJudgment, formatLine, judgeStories, PASS_AT };
