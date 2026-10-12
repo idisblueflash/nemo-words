@@ -42,6 +42,12 @@ you, and delivers the finished card into Anki (live sync or an importable deck f
    [investigation-005](../investigations/investigation-005-mnemonic-vs-definition-retention.md).)*
 2. The app can auto-pick the story and image (no human pick) with good-enough quality,
    and can improve that pick quality over time. · hypothesis
+   *(SP-037: Jev didn't predict Flash's old story picks (no-go), but those old picks were
+   often Claude suggestions accepted blindly, which Flash considers unreliable. The blind
+   check is the better evidence: Flash accepted Jev's pick or rated it about the same on
+   17 of 20 words. Jev's decomposed judgment (one small question per rubric gate and
+   axis) hallucinates less than a single Claude pick. US-033's kept-count is the ongoing
+   test. Image pick is untested (SP-029).)*
 3. AI-drafted stories and images are good enough to learn from, and the app can improve
    them. · hypothesis
 4. Generating one card is cheap and fast enough to do for every new word. · hypothesis
