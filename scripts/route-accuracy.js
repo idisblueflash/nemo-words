@@ -310,9 +310,17 @@ function unwritableReason(reportPath) {
 }
 
 async function main(argv) {
-  const reportPath = path.resolve(argv[0] || DEFAULT_REPORT);
-  // Checked before any word is put to Jev, so a bad path costs no Jev calls.
-  // A clean stop (exit 1, the step contract's convention); 2 is for crashes.
+  // Both checks run before any word is put to Jev, so a bad path costs no Jev
+  // calls. A clean stop (exit 1, the step contract's convention); 2 is for crashes.
+  // No argument means the default path; an argument given but empty (or only
+  // whitespace) is refused rather than quietly falling back to the default,
+  // which would overwrite the saved report (AC14).
+  if (argv.length && !argv[0].trim()) {
+    process.stderr.write("stopped: report path is empty; give a path or none for the default; no word was put to Jev\n");
+    process.exitCode = 1;
+    return;
+  }
+  const reportPath = path.resolve(argv.length ? argv[0] : DEFAULT_REPORT);
   const unwritable = unwritableReason(reportPath);
   if (unwritable) {
     process.stderr.write(`stopped: report path can't be written: ${reportPath} (${unwritable}); no word was put to Jev\n`);
