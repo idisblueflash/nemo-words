@@ -18,7 +18,9 @@
 // It also appends one entry to data/mnemonics/alternates.jsonl (or
 // NEMO_ALTERNATES_LOG): the word, the chosen sentence, `picked_by: "auto"`, the
 // date and the runner-ups — every other compose-stories candidate with its
-// pivot words and check-stories' reject reasons.
+// pivot words and reject reasons. <checks-file> is judge-stories' judgments
+// file when judging ran (its first column is read), else check-stories' checks
+// file.
 //
 // The row is validated before anything is written; on failure: exit 1 with
 // one reason per line on stdout, and nothing written. Prints
@@ -90,9 +92,11 @@ function buildRow({ word, storyText, defineText, syllablesText, chunkText, keywo
 }
 
 // The runner-ups: every candidate (compose-stories' `sentence\tpivots` lines)
-// except the picked sentence, in draft order, each with check-stories' reject
-// reasons for it (`-` = passed every hard gate -> []). US-031 offers only the
-// ones with no reasons.
+// except the picked sentence, in draft order, each with its reject reasons
+// (`-` = passed every gate -> []). The reasons come from the first column of
+// judge-stories' judgments file when judging ran (hard gates plus failed
+// judgment gates, US-038), else from check-stories' checks file (hard gates
+// only). US-031 offers only the ones with no reasons.
 // US-041: a runner-up is any candidate whose *sentence* differs from the
 // picked one (exact string compare). Pivot words don't count: a candidate
 // repeating the picked sentence with other pivots is the same story, so it is
@@ -102,7 +106,7 @@ function runnerUps(candidatesText, checksText, pickedSentence) {
   return lines(candidatesText)
     .map((line, i) => {
       const [sentence, pivots = ""] = line.split("\t");
-      const check = (checks[i] || "").trim();
+      const check = (checks[i] || "").split("\t")[0].trim();
       return { sentence, pivot_words: list(pivots), reject_reasons: check === "-" ? [] : list(check) };
     })
     .filter((c) => c.sentence !== pickedSentence);

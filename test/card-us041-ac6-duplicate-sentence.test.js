@@ -18,7 +18,11 @@ const stories = [
 ];
 
 test("US-041 AC6: card.js leaves a same-sentence, different-pivots candidate out of the runner-ups and keeps every other sentence", async () => {
-  const h = await createHarness(germaneFixture(stories));
+  const fixture = germaneFixture(stories);
+  // US-038 picks by rubric total (ties -> the shorter story), so the pick's
+  // Jev scores are set higher than the other passing stories' defaults (6).
+  fixture.judge = { [picked]: { anchor: 2, meaning: 2, vivid: 2 } };
+  const h = await createHarness(fixture);
   try {
     const run = await h.runCard("germane");
     assert.equal(run.code, 0, `stdout:\n${run.stdout}\nstderr:\n${run.stderr}`);

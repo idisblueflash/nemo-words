@@ -57,6 +57,14 @@ function definedOnly(env) {
 // A yes/no question (the SDK's `noul()` without criteria).
 const noul = (instructions) => ({ type: "noul", instructions });
 
+// A question scored over an ordered rubric (the SDK's `score()`): `levels`
+// are the descriptions indexed from 0. Jev answers `{ score: <expected
+// level> }`, which may fall between two levels.
+function score(instructions, levels) {
+  if (!Array.isArray(levels) || levels.length < 2) throw new JevError("score levels must be a list of at least two descriptions");
+  return { type: "score", instructions, criteria: levels };
+}
+
 // One systemOne call; resolves to the `answers` object. Any failure — not
 // configured, unreachable, non-2xx, unreadable body — is a JevError.
 async function systemOne({ state, questions }, { config: cfg = config(), fetch: doFetch } = {}) {
@@ -91,4 +99,4 @@ async function systemOne({ state, questions }, { config: cfg = config(), fetch: 
   return body.answers;
 }
 
-module.exports = { config, systemOne, noul, JevError };
+module.exports = { config, systemOne, noul, score, JevError };

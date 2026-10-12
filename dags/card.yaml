@@ -129,13 +129,31 @@ steps:
         expected: "0"
     run: node scripts/check-stories.js "$(cat "${normalize.stdout}")" "$(sed -n 1p "${define.stdout}")" "${compose_stories.stdout}" "${find_keywords.stdout}"
 
-  - id: pick_story
-    name: pick-story   # exit 1: no-pick, with every candidate's reasons; no redraft
+  # US-038: Jev judges every candidate that passed the hard gates against
+  # scripts/story-rubric.json -> the judgments file.
+  - id: judge_stories
+    name: judge-stories   # Jev; exit 2: Jev failed, pick-story falls back
     depends: [check_stories]
     preconditions:
       - condition: "${check_stories.exit_code}"
         expected: "0"
-    run: node scripts/pick-story.js "${compose_stories.stdout}" "${check_stories.stdout}"
+    run: node scripts/judge-stories.js "$(cat "${normalize.stdout}")" "$(sed -n 1p "${define.stdout}")" "${compose_stories.stdout}" "${check_stories.stdout}" "${find_keywords.stdout}"
+    # Jev failing must not stop the run: the pick falls back to the first
+    # story that passed the hard gates, and the report says it wasn't judged.
+    continue_on:
+      exit_code: [2]
+      mark_success: true
+
+  # Any judge-stories exit but 0 hands pick-story `-` for the judgments file.
+  - id: pick_story
+    name: pick-story   # exit 1: no-pick, with every candidate's reasons; no redraft
+    depends: [judge_stories]
+    preconditions:
+      - condition: "${check_stories.exit_code}"
+        expected: "0"
+    run: >-
+      JUDGED='${judge_stories.stdout}'; [ "${judge_stories.exit_code}" = 0 ] || JUDGED=-;
+      node scripts/pick-story.js "${compose_stories.stdout}" "${check_stories.stdout}" "$JUDGED"
     # Skipped on the logged-story path; let `story` still decide for itself.
     continue_on:
       exit_code: [1]
@@ -189,13 +207,16 @@ steps:
 
   # Any tag-technique exit but 0 hands log-card `-` for the tags file: it then
   # logs `technique: []` and notes the missing tags in the run report.
+  # Runner-ups' reject reasons come from the judgments file when judge-stories
+  # succeeded (failed judgment gates included), the checks file otherwise.
   - id: log_card
     name: log-card   # exit 1: the row failed validation, nothing logged
     depends: [tag_technique]
     run: >-
       TAGS='${tag_technique.stdout}'; [ "${tag_technique.exit_code}" = 0 ] || TAGS=-;
+      REASONS='${judge_stories.stdout}'; [ "${judge_stories.exit_code}" = 0 ] || REASONS='${check_stories.stdout}';
       node scripts/log-card.js "$(cat "${normalize.stdout}")" "${story.stdout}"
-      "${compose_stories.stdout}" "${check_stories.stdout}" "$TAGS"
+      "${compose_stories.stdout}" "$REASONS" "$TAGS"
       "${define.stdout}" "${syllabify.stdout}" "${chunk.stdout}" "${find_keywords.stdout}"
     # Skipped on the logged-story path; sync still has to run after it.
     continue_on:
@@ -226,5 +247,5 @@ steps:
       node scripts/report.js "${write_row.stdout}" "${story.stdout}" "${syllabify.stdout}" "${gloss.stdout}"
       '${normalize.stderr}' '${route.stderr}' '${judge_route.stderr}' '${ipa.stderr}' '${syllabify.stderr}' '${define.stderr}'
       '${gloss.stderr}' '${chunk.stderr}' '${find_keywords.stderr}' '${compose_stories.stderr}'
-      '${check_stories.stderr}' '${pick_story.stderr}' '${story.stderr}' '${write_row.stderr}'
+      '${check_stories.stderr}' '${judge_stories.stderr}' '${pick_story.stderr}' '${story.stderr}' '${write_row.stderr}'
       '${tag_technique.stderr}' '${log_card.stderr}' '${sync.stderr}'

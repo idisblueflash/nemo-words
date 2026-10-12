@@ -35,9 +35,11 @@ test("US-039 AC1: card.js logs the new card's auto-picked story as one validated
       picked_by: "auto",
     });
 
-    // Jev was asked once, one yes/no question per controlled technique tag.
-    assert.equal(h.jev.calls.length, 1);
-    assert.equal(Object.keys(h.jev.calls[0].body.questions).length, 14);
+    // Jev was asked once for tags, one yes/no question per controlled
+    // technique tag. (US-038's story-judging calls are counted apart.)
+    const tagCalls = h.jev.tagCalls();
+    assert.equal(tagCalls.length, 1);
+    assert.equal(Object.keys(tagCalls[0].body.questions).length, 14);
   } finally {
     await h.cleanup();
   }

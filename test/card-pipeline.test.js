@@ -29,7 +29,9 @@ test.after(() => fs.rmSync(tmpRoot, { recursive: true, force: true }));
 
 const STEPS = [
   "normalize", "route", "judge-route", "ipa", "syllabify", "define", "gloss", "chunk", "find-keywords",
-  "compose-stories", "check-stories", "pick-story", "story", "write-row",
+  "compose-stories", "check-stories",
+  "judge-stories", // US-038: Jev judges the stories against the rubric
+  "pick-story", "story", "write-row",
   "tag-technique", "log-card", // US-039: the auto-made card is logged
   "sync", "report",
 ];
@@ -140,7 +142,7 @@ test("AC2: skipping a branch on purpose is not a stop — the logged-story path 
     const res = await h.runCard("germane");
     assert.equal(res.code, 0, `stdout: ${res.stdout}\nstderr: ${res.stderr}`);
     const steps = await inspect(h, res);
-    for (const s of ["find-keywords", "compose-stories", "check-stories", "pick-story"]) {
+    for (const s of ["find-keywords", "compose-stories", "check-stories", "judge-stories", "pick-story"]) {
       assert.deepEqual(steps[s], { status: "skipped" }, s);
     }
     for (const s of ["story", "write-row", "sync", "report"]) assert.equal(steps[s].status, "succeeded", s);
@@ -206,8 +208,11 @@ test("AC4: after a succeeded run, each step's stdout and stderr can be read on i
     assert.equal(steps.gloss.stdout, "relevant to the matter at hand\n");
     assert.equal(steps["write-row"].stdout, "added\tgermane\n");
     assert.equal(steps.sync.stdout, "ok\n");
-    // stderr is its own log, never mixed into stdout: no step had anything to say
-    for (const s of STEPS) assert.ok(!steps[s].stderr, `${s} stderr: ${steps[s].stderr}`);
+    // stderr is its own log, never mixed into stdout: no step had anything to
+    // say but pick-story, whose pick note feeds the run report (US-038)
+    assert.equal(steps["pick-story"].stderr, "pick: total 6 (anchor 2, meaning 2, vivid 2)\n");
+    assert.ok(!steps["pick-story"].stdout.includes("pick: total"));
+    for (const s of STEPS.filter((x) => x !== "pick-story")) assert.ok(!steps[s].stderr, `${s} stderr: ${steps[s].stderr}`);
   });
 });
 

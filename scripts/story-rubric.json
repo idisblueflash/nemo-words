@@ -1,0 +1,54 @@
+{
+  "_comment": "US-038: the card pipeline's own story rubric, read by scripts/judge-stories.js (Jev). Seeded from .claude/agents/_nemo.md's judgment gates and score table at build time; _nemo.md is never read at run time. Every question is worded so that yes = pass. A gate passes only when its summary and every split-out question pass (p >= 0.5). Axis levels are indexed 0-2; an axis score is the level + 1.",
+  "gates": {
+    "vividness": {
+      "summary": "Could this sentence be drawn as one concrete scene, a specific moment rather than a generic, flat image or a restatement of the definition in other words?",
+      "questions": {
+        "specific-moment": "Does the sentence show one specific moment, not a generic situation?",
+        "beyond-definition": "Is the sentence more than a restatement of the word's definition?",
+        "single-picture": "Could the sentence be drawn as a single picture?"
+      }
+    },
+    "scene-coherence": {
+      "summary": "Could every location and object in this sentence physically be in the same place at the same time? (An attic, indoors under a roof, and a creek, outdoors, can't be the same scene.)",
+      "questions": {
+        "one-setting": "Does the whole sentence happen in one setting, not two places stitched together?",
+        "objects-together": "Is every object in the sentence physically there at the same time?"
+      }
+    },
+    "animal-harm": {
+      "summary": "Is the scene free of any animal being harmed, eaten, hunted or otherwise mistreated? (Animal imagery itself is fine: an octopus or a fox can appear in a scene.)",
+      "questions": {
+        "not-hurt": "Is no animal hurt or injured in the scene?",
+        "not-eaten": "Is no animal eaten, cooked or hunted in the scene?",
+        "not-mistreated": "Is no animal mistreated or made to suffer in the scene?"
+      }
+    }
+  },
+  "axes": {
+    "anchor": {
+      "label": "Anchor fidelity",
+      "levels": [
+        "the sound anchor is a loose or partial sound match for its IPA chunk",
+        "the sound anchor matches most of its IPA chunk",
+        "the sound anchor matches its IPA chunk exactly"
+      ]
+    },
+    "meaning": {
+      "label": "Meaning-carry",
+      "levels": [
+        "the meaning is bolted on beside the anchor",
+        "the meaning is present but a bit of a stretch",
+        "the anchor's own image literally depicts the sense word"
+      ]
+    },
+    "vivid": {
+      "label": "Vividness",
+      "levels": [
+        "generic or flat, close to restating the definition",
+        "some concrete detail",
+        "one sharp, drawable scene"
+      ]
+    }
+  }
+}
