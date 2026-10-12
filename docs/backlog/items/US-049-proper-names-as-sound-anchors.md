@@ -2,7 +2,7 @@
 id: US-049
 type: story
 parent: E01
-status: idea
+status: dropped
 ---
 # US-049 Proper names as sound anchors
 
@@ -127,3 +127,10 @@ keywords can be pictured. The test is a separate question from names (it may bel
 **Bearing on the story.** Its premise ("more words get a card instead of stopping at no sound
 anchor found") is refuted on this sample: 0 of 127 words are rescued. The only name-beats-rhyme
 case is stew → Stu.
+
+## Decision (2026-10-13): dropped
+
+Flash dropped this story after `_david`'s findings.
+- A rule that allows names as anchors makes a card for 0 more words than today (0 of 127).
+- Flash finds a letter such as "k" easier to picture than a name such as "Kay". A letter can sit anywhere in the scene. A name helps only when Flash knows a person with that name, and a list of common names gives him strangers.
+- Letters and parts of words stay as exact keywords.

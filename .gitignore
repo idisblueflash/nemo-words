@@ -19,6 +19,10 @@ dictionaries/lsj/data/
 dictionaries/lsj/vendor/
 dictionaries/open-words/vendor/
 
+# NOAD extract from the Mac's own dictionary — copyrighted, local only (E07,
+# Claudepot 39feb3d3). Rebuilt by dictionaries/noad/extract.py; never commit.
+dictionaries/noad/data/
+
 # data/ holds both tracked, hand/agent-curated data (e.g. data/mnemonics/) and
 # large corpora rebuilt from source (below) — only the latter is ignored.
 #
