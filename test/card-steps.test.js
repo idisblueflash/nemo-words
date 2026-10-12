@@ -52,16 +52,16 @@ test("route CLI: word-part exits 1 naming the _etta_mology path", async () => {
   }
 });
 
-test("route: a classifier `ambiguous` verdict stops as ambiguous", () => {
-  assert.deepEqual(routeWord("famous", { rows: [], log: [] }), { route: "ambiguous" });
+// US-040 changed this: an ambiguous verdict is no longer a stop; judge-route settles it.
+test("route: a classifier `ambiguous` verdict routes ambiguous, with its matched weak parts", () => {
+  assert.deepEqual(routeWord("famous", { rows: [], log: [] }), { route: "ambiguous", matchedParts: ["-ous"] });
 });
 
-test("route CLI: ambiguous exits 1 saying it couldn't be routed automatically", async () => {
+test("route CLI: ambiguous exits 0 printing `ambiguous\\t<matched parts>` for judge-route", async () => {
   const h = await createHarness(germaneFixture());
   try {
     const r = await h.runScript("route.js", ["famous"]);
-    assert.equal(r.code, 1);
-    assert.equal(r.stdout, "ambiguous: famous couldn't be routed automatically (classifier verdict: ambiguous)\n");
+    assert.deepEqual(r, { code: 0, stdout: "ambiguous\t-ous\n", stderr: "" });
   } finally {
     await h.cleanup();
   }
