@@ -2,7 +2,8 @@
 id: SP-052
 type: spike
 parent: E07
-status: ready
+status: done
+qa_status: passing
 timebox: 1d
 ---
 # SP-052 Does NOAD find as many exact sound anchors as CMU?
