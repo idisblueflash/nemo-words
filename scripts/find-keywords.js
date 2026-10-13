@@ -14,6 +14,12 @@
 // keyword, it falls back to the most frequent common one-syllable rhyme
 // (scripts/lib/rhyme.js), printed as `ipa\tkeyword\tfrequency\trime`. Other
 // chunks never get a rhyme.
+// US-050 (ADR-0025): before both of those, a stressed chunk that ends in a
+// short vowel (/ɪ ɛ æ ʌ ʊ/) is tried as a closed chunk, with the next chunk's
+// first consonant (penalty: /pɛ/ -> /pɛn/, "pen"; scripts/lib/closed-chunk.js).
+// A closed keyword wins over the open chunk's exact keyword and over a rhyme,
+// and is printed as an exact line with the closed IPA: `pɛn\tpen\tfrequency`.
+// The next chunk keeps the consonant, so no other line changes.
 // The optional [word] is the headword itself, never offered as its own anchor.
 //
 // Candidates come from `nemo-words ipa-lookup --ga <chunk>` (substring search)
@@ -25,6 +31,7 @@ const path = require("path");
 const { runCli, runTool, nemoWords, ipaKey } = require("./card-lib");
 const { chunk } = require("./chunk");
 const { rhymeFor, rhymeCandidates, rimeOf, FREQ_THRESHOLD } = require("./lib/rhyme");
+const { closedChunk, canBeClosedKeyword } = require("./lib/closed-chunk");
 
 // FREQ_THRESHOLD (5e-7, in lib/rhyme.js) is the keyword frequency cutoff (mean
 // Ngram share, 2015–2019). Tuned on known words: "main" 1.3e-4, "mane"
@@ -68,16 +75,33 @@ function wordFreqs(words) {
   return freqs;
 }
 
+// US-050: the most frequent common word with exactly the closed chunk's GA IPA
+// that can be a closed keyword (lib/closed-chunk.js).
+// -> { keyword, frequency } or null.
+function closedKeywordFor(closedIpa, headword) {
+  // (the headword counts as its own inflection, so it is never a candidate)
+  const candidates = exactMatches(nemoWords(["ipa-lookup", "--ga", closedIpa]), closedIpa).filter((w) =>
+    canBeClosedKeyword(w, headword)
+  );
+  return pickKeyword(candidates, wordFreqs(candidates));
+}
+
 function findKeywords(syllableString, word) {
   const chunks = chunk(syllableString);
   const candidates = chunks.map((c) => exactMatches(nemoWords(["ipa-lookup", "--ga", c.ipa]), c.ipa));
   const freqs = wordFreqs([...new Set(candidates.flat())]);
-  const exclude = word ? [word.toLowerCase()] : [];
+  const headword = word ? word.toLowerCase() : null;
+  const exclude = headword ? [headword] : [];
   const keywords = chunks.map((c, i) => ({ ipa: c.ipa, ...(pickKeyword(candidates[i], freqs, { exclude }) || { keyword: null }) }));
   // US-046: only the stressed chunk (a one-chunk word's only chunk), and only
   // when it has no exact keyword, falls back to a rhyme.
   const s = chunks.findIndex((c) => chunks.length === 1 || c.anchorUnits.includes("stressed-syllable"));
-  if (s !== -1 && !keywords[s].keyword) {
+  // US-050: the closed chunk's keyword wins over the stressed chunk's exact
+  // keyword and over a rhyme. Its line is an exact line with the closed IPA.
+  const closed = closedChunk(syllableString);
+  const closedKeyword = closed && closedKeywordFor(closed.ipa, headword);
+  if (closedKeyword) keywords[closed.index] = { ipa: closed.ipa, ...closedKeyword };
+  else if (s !== -1 && !keywords[s].keyword) {
     const chunkIpa = chunks[s].ipa;
     const lookupLines = nemoWords(["ipa-lookup", "--ga", rimeOf(chunkIpa)]);
     const rhymeFreqs = wordFreqs(rhymeCandidates({ chunkIpa, lookupLines, exclude }));
