@@ -9,7 +9,7 @@
 if (require.main === module) require("./lib/step-contract"); // a crash exits 2, never 1
 const fs = require("fs");
 const { runCli, ipaKey, stripStress } = require("./card-lib");
-const { lookupGa } = require("./ipa");
+const { lookupGaForms } = require("./ipa");
 const { readChunkKeywords } = require("./compose-stories");
 const { rimeOf } = require("./lib/rhyme");
 
@@ -94,13 +94,17 @@ function anchorReasons(toks, chunks, lookupGa) {
   let prev = null;
   for (const c of chunks.filter((x) => x.keyword)) {
     const kw = c.keyword.toLowerCase();
-    const ga = lookupGa(kw);
+    // lookupGa may give one form or several, comma-joined (`lˈæst,lˈæs`):
+    // find-keywords accepts any form, so this gate does too (bug-014).
+    const gaAll = lookupGa(kw);
+    const forms = gaAll ? gaAll.split(",").map((v) => v.trim()).filter(Boolean) : [];
+    const ga = forms[0];
     if (c.match === "rime") {
       // US-046: a rhyme anchor needs the chunk's rime, not its whole sound
-      if (!ga || rimeOf(ga) !== rimeOf(c.ipa)) {
+      if (!forms.some((v) => rimeOf(v) === rimeOf(c.ipa))) {
         reasons.push(`anchor-ipa: ${kw} /${ga ? stripStress(ga) : "?"}/ does not rhyme with /${c.ipa}/`);
       }
-    } else if (!ga || ipaKey(ga) !== ipaKey(c.ipa)) {
+    } else if (!forms.some((v) => ipaKey(v) === ipaKey(c.ipa))) {
       reasons.push(`anchor-ipa: ${kw} /${ga ? stripStress(ga) : "?"}/ is not /${c.ipa}/`);
     }
     const pos = toks.indexOf(kw);
@@ -138,7 +142,7 @@ if (require.main === module) {
       sentence,
       pivots: (pivots || "").split(",").filter(Boolean),
       chunks,
-      lookupGa,
+      lookupGa: lookupGaForms,
     });
     return reasons.length ? { stop: reasons } : { lines: [] };
   });

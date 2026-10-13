@@ -135,9 +135,28 @@ back to a rhyme (US-046, `scripts/lib/rhyme.js`): the most frequent one-syllable
 the same rime, a non-empty onset, a frequency of at least 5e-7, not the headword and not a
 function word (drown → `down`, critique's `tik` → `speak`). Other chunks never get a rhyme.
 A rhyme line has a 4th column, `ipa\tkeyword\tfreq\trime`. `compose-stories` marks it
-`(rhymes)` in the prompt, `check-stories` compares rimes for it instead of the whole sound,
+`(rhymes)` in the prompt, `check-stories` compares rimes for it instead of the whole sound
+(for any of the keyword's GA forms, as `find-keywords` does: `last` is `lˈæst,lˈæs`),
 and `log-card` logs `anchor_unit: rime`. A word with no exact keyword on any chunk and no
 rhyme for the stressed chunk (e.g. `bulge`) stops with `no sound anchor found`.
+
+Before both of those, `find-keywords` tries the stressed chunk as a **closed chunk**
+(US-050, ADR-0025, `scripts/lib/closed-chunk.js`). The rule applies to the chunk with the
+primary stress (`ˈ`) of a word with 2 or more chunks, when that chunk ends in /ɪ ɛ æ ʌ ʊ/
+and the next chunk starts with a consonant. The closed chunk is the stressed chunk plus that
+one consonant sound (/tʃ/ and /dʒ/ are one sound): penalty `ˈpɛ.nəl.ti` → /pɛn/. The closed
+keyword is the most frequent word with exactly the closed chunk's GA IPA, a frequency of at
+least 5e-7, 3 or more letters, that is not the headword, not a function word, and not a word
+that the headword is an inflection of (sweating: not `sweat`). A closed keyword wins over the
+open chunk's exact keyword (era: `air`, not `eh`) and over a rhyme (penalty: `pen`, not
+`ye`). Its line is an exact line, 3 columns, with the closed IPA (`pɛn\tpen\tfreq`), so the
+later steps treat it as an exact keyword and `log-card` logs `anchor_unit: stressed-syllable`.
+The next chunk keeps the consonant (elastic: /læs/ `last`, and /stɪk/ is still `stick`), so
+the number and order of the lines, and every other chunk's line, stay the same. `syllabify`
+and `chunk` do not change: the card's IPA line and the log's syllables still show
+`ˈpɛ.nəl.ti`. With no closed keyword (levee, aloe, dozen, paper, cottage), the stressed chunk
+gets the result above: the exact keyword, then the rhyme, then none. Covered by
+`test/card-us050-*.test.js`.
 
 `draw-arm` (US-051, E02's retention experiment) puts an anchored word with no logged story
 in one of two arms. The **story arm** runs the rest of the pipeline as before; its row's

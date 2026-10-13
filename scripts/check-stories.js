@@ -12,7 +12,7 @@ const fs = require("fs");
 const { runCli } = require("./card-lib");
 const { checkStory } = require("./check-story");
 const { readChunkKeywords } = require("./compose-stories");
-const { lookupGa } = require("./ipa");
+const { lookupGaForms: lookupGa } = require("./ipa"); // every GA form (bug-014)
 
 function checkStories({ word, primarySense, candidatesText, chunks, lookupGa }) {
   return candidatesText
