@@ -5,6 +5,7 @@ parent: E07
 status: done
 qa_status: passing
 timebox: 1d
+concepts: [C-003, C-005, C-018, C-021, C-022, C-023, C-024]
 ---
 # SP-052 Does NOAD find as many exact sound anchors as CMU?
 

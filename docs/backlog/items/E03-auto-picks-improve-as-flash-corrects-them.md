@@ -3,6 +3,7 @@ id: E03
 type: epic
 status: active
 persona: Flash
+concepts: [C-004, C-017]
 ---
 # E03 Auto-picked stories and images get better the more Flash corrects them
 

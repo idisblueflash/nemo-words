@@ -3,6 +3,7 @@ id: US-032
 type: story
 parent: E01
 status: idea
+concepts: [C-004]
 ---
 # US-032 Swap the auto-picked image for another cell
 

@@ -4,6 +4,7 @@ type: story
 parent: E01
 status: done
 qa_status: passing
+concepts: [C-002, C-007, C-009, C-015, C-018, C-020]
 ---
 # US-040 Ambiguous words get routed without me
 

@@ -3,6 +3,7 @@ id: US-054
 type: story
 parent: E07
 status: idea
+concepts: [C-003, C-023, C-024]
 ---
 # US-054 Search NOAD words by onset, rime or coda
 

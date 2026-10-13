@@ -3,6 +3,7 @@ id: US-050
 type: story
 parent: E01
 status: idea
+concepts: [C-003, C-005, C-011]
 ---
 # US-050 Split or shifted chunks as sound anchors
 

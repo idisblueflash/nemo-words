@@ -3,6 +3,7 @@ id: E07
 type: epic
 status: active
 persona: Flash
+concepts: [C-003, C-018, C-022, C-023, C-024]
 ---
 # E07 Flash's cards get their sounds and meanings from one US dictionary
 

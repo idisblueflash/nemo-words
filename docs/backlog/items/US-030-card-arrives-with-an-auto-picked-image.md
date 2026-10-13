@@ -3,6 +3,7 @@ id: US-030
 type: story
 parent: E01
 status: idea
+concepts: [C-002, C-004]
 ---
 # US-030 The card arrives with an auto-picked image
 

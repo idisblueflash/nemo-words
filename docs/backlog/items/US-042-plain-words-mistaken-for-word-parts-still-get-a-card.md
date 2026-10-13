@@ -3,6 +3,7 @@ id: US-042
 type: story
 parent: E01
 status: idea
+concepts: [C-002, C-009]
 ---
 # US-042 Plain words mistaken for word parts still get a card
 

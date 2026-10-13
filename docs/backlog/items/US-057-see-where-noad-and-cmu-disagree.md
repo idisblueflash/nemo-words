@@ -3,6 +3,7 @@ id: US-057
 type: story
 parent: E07
 status: idea
+concepts: [C-006, C-018, C-023, C-024]
 ---
 # US-057 See where NOAD and CMU disagree
 

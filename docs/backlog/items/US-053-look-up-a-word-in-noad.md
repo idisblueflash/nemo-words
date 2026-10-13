@@ -3,6 +3,7 @@ id: US-053
 type: story
 parent: E07
 status: idea
+concepts: [C-022, C-023, C-024]
 ---
 # US-053 Look up a word in NOAD
 

@@ -4,6 +4,7 @@ type: story
 parent: E01
 status: done
 qa_status: passing
+concepts: [C-001, C-002, C-004, C-005, C-006, C-010, C-013, C-015, C-021, C-024]
 ---
 # US-039 The auto-made card is logged with its runner-ups
 

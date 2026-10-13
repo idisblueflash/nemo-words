@@ -3,6 +3,7 @@ id: US-047
 type: story
 parent: E01
 status: idea
+concepts: [C-002, C-009]
 ---
 # US-047 The accuracy check refuses arguments it can't use
 

@@ -3,6 +3,7 @@ id: US-055
 type: story
 parent: E07
 status: idea
+concepts: [C-003, C-023]
 ---
 # US-055 Regular inflections can be sound anchors too
 

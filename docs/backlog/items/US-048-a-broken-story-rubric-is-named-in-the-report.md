@@ -5,6 +5,7 @@ parent: E01
 status: done
 qa_status: passing
 depends_on: [US-038]
+concepts: [C-001, C-002, C-007, C-008, C-012, C-020]
 ---
 # US-048 A broken story rubric is named in the report
 

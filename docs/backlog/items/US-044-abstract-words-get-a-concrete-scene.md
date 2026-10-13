@@ -3,6 +3,7 @@ id: US-044
 type: story
 parent: E01
 status: idea
+concepts: [C-001, C-002, C-014]
 ---
 # US-044 Abstract words get a concrete scene
 

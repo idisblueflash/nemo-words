@@ -3,6 +3,7 @@ id: US-056
 type: story
 parent: E07
 status: idea
+concepts: [C-023]
 ---
 # US-056 Words NOAD lacks fall back to the old tools
 

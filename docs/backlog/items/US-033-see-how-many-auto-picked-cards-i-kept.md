@@ -4,6 +4,7 @@ type: story
 parent: E01
 status: ready
 depends_on: [US-039]
+concepts: [C-004, C-006, C-016, C-017, C-020]
 ---
 # US-033 See how many auto-picked cards I kept
 
@@ -80,66 +81,3 @@ Given  Anki isn't running
 - [ ] A one-word typo fix counts as an override. If that proves too strict, a later story could add "lightly edited".
 - [ ] `/prepare-words` auto-saved cards aren't counted: they have no `picked_by: "auto"`.
 - [ ] No `_david` run: the real log has no auto-picked rows yet (0 of 160), so there's nothing to measure. This command is the measurement.
-
-## Acceptance criteria
-
-```gherkin
-Given  25 auto-made cards, with the newest 20 all reviewed in Anki at least once
-  - When  Flash runs the kept-count command
-    - Then  it looks only at the newest 20 auto-made words
-    - And   it prints how many were kept and how many were overridden, with the kept rate as a percent
-    - And   it says whether the rate meets E01's 70% target
-```
-
-```gherkin
-Given  an auto-made card whose story Flash rewrote in the Anki app
-  - When  Flash runs the kept-count command
-    - Then  that word counts as overridden
-    - And   it is listed by name with its auto-picked story and the story on the card now
-```
-
-```gherkin
-Given  some of the newest 20 auto-made cards have never been reviewed
-  - When  Flash runs the kept-count command
-    - Then  those words are listed as not yet reviewed
-    - And   they are left out of the kept rate
-```
-
-```gherkin
-Given  an auto-made word whose card is no longer in Anki
-  - When  Flash runs the kept-count command
-    - Then  the word is listed as missing
-    - And   it is left out of the kept rate
-```
-
-```gherkin
-Given  the mnemonic log has no auto-made cards, or none of them has been reviewed
-  - When  Flash runs the kept-count command
-    - Then  it says there is nothing to count yet and prints no rate
-```
-
-```gherkin
-Given  Anki is not running
-  - When  Flash runs the kept-count command
-    - Then  it stops and says Anki can't be reached
-    - And   it prints no count
-```
-
-## Logic sketch
-- **Approach:** one read-only script, `node scripts/kept-count.js`. It reads the mnemonic log, asks AnkiConnect about each card, and prints a report. It writes nothing.
-- **Entities:**
-  - LogRow (existing): only `word`, `sentence` and `picked_by` are used.
-  - KeptEntry: `word`, `autoStory`, `cardStory`, `reviewed`, verdict `kept` | `overridden` | `unreviewed` | `missing`.
-- **Rules:**
-  - Auto-made words are the rows with `picked_by: auto`. The log is append-only, so line order is time order. Take the newest 20 distinct words by the line of their auto row; a word with several auto rows uses its newest one. A later Flash row for the same word does not remove it from the window: the live card decides.
-  - Find the card the way `anki-sync.js` does: deck plus exact `Front` match, using a row's `Deck` override when it has one.
-  - Story on the card: take `Back`, remove the `<img>`, the gloss `<small>` and the IPA line, strip the remaining HTML and normalise whitespace. `kept` means this equals the auto-picked sentence (whitespace-normalised, case-sensitive). Otherwise `overridden`.
-  - Reviewed means Anki's review count for the card is above 0. A card with no review is `unreviewed`.
-  - Rate = kept ÷ (kept + overridden), rounded to a whole percent. The target is met at 70% or more. `unreviewed` and `missing` words are listed but not counted.
-  - Exit codes: `0` when a report is printed (including "nothing to count yet"); `1` when Anki can't be reached (clean stop, no count); `2` on a crash.
-- **Edge cases:** fewer than 20 auto-made words → use all of them and say how many; empty log or no auto rows → "nothing to count yet"; `ANKI_CONNECT_URL` overrides the Anki address as elsewhere.
-
-## Open questions
-- [ ] Exact match means a small typo fix counts as overridden. Assumed good enough for a first version.
-- [ ] The window is the last 20 auto-made words, not the last 20 reviewed ones.
-- [ ] On 2026-10-12 the log has 160 rows and none with `picked_by: auto`, so the first real run will say "nothing to count yet". No `_david` run was needed: there is no auto-pick data to measure yet.

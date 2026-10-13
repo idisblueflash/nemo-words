@@ -4,6 +4,7 @@ type: spike
 parent: E01
 status: idea
 timebox: 1d
+concepts: [C-002]
 ---
 # SP-029 Does an auto image pick agree with Flash's picks?
 

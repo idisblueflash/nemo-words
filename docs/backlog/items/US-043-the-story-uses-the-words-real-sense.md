@@ -3,6 +3,7 @@ id: US-043
 type: story
 parent: E01
 status: idea
+concepts: [C-001, C-002, C-014]
 ---
 # US-043 The story uses the word's real sense
 

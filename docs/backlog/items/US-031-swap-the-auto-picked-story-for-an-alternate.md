@@ -3,6 +3,7 @@ id: US-031
 type: story
 parent: E01
 status: idea
+concepts: [C-001, C-004, C-010]
 ---
 # US-031 Swap the auto-picked story for an alternate
 
