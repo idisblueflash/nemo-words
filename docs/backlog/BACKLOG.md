@@ -16,7 +16,7 @@
 
 ## Stories (ranked)
 1. [US-051](items/US-051-definition-only-control-cards-go-into-their-own-deck.md) Definition-only control cards go into their own deck · E02 · done
-2. [US-033](items/US-033-see-how-many-auto-picked-cards-i-kept.md) See how many auto-picked cards I kept · E01 · ready
+2. [US-033](items/US-033-see-how-many-auto-picked-cards-i-kept.md) See how many auto-picked cards I kept · E01 · done
 3. [SP-052](items/SP-052-does-noad-find-as-many-exact-sound-anchors-as-cmu.md) Does NOAD find as many exact sound anchors as CMU? · E07 · done
 4. [US-050](items/US-050-split-or-shifted-chunks-as-sound-anchors.md) Split or shifted chunks as sound anchors · E01 · idea
 5. [US-042](items/US-042-plain-words-mistaken-for-word-parts-still-get-a-card.md) Plain words mistaken for word parts still get a card · E01 · idea

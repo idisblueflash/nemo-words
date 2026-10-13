@@ -230,6 +230,46 @@ report is never overwritten by an empty run; stderr says no words were judged an
 there is no conclusion on the cut-offs; `2` on a crash. Covered by
 `test/card-us040-ac6`–`ac8` and `ac10`–`ac14` against a mock Jev.
 
+### Counting the auto-picked cards Flash kept (US-033)
+
+```bash
+node scripts/kept-count.js
+```
+
+Reads every `picked_by: "auto"` row of the mnemonic log (the latest row per word), looks
+up each word's live card through AnkiConnect, and reports how many auto-picked stories
+are still on their cards. Read-only: it writes nothing to Anki or to disk. Each word gets
+a kept verdict: `kept` (the story now equals the auto-picked sentence), `overridden` (any
+difference, even one typo fix), `removed` (no note; counts as overridden, shown as
+`card removed`), or `not-met` (every card of the note has 0 reviews). The window is the
+20 most recently auto-picked words that aren't `not-met`:
+
+```
+kept 15 of 20 (75%)
+meets E01's 70% target
+not met yet: 3
+overridden:
+- wary
+    auto-picked: <the auto-picked sentence>
+    now: <the story on the card now>
+- drown (card removed)
+    auto-picked: <the auto-picked sentence>
+    now: (card removed)
+```
+
+Line 2 is `below E01's 70% target` under 14 kept, and `N more needed for a verdict` (no
+verdict) while fewer than 20 words are reviewed. The card is found with `anki-sync.js`'s
+own query (`noteQuery`: the row's `Deck` override or the file's `#deck`, plus the exact
+`Front`), and the story now is read out of the live `Back` with `storyFromBack`, the
+reverse of `composeBack` — both live in `anki-sync.js`. It drops the image, gloss and IPA
+pieces and what Anki's editor adds (`<div>`, `&nbsp;`), so those aren't false overrides.
+Exit codes: `0` report printed; `1` (clean stop) `no reviewed auto-picked cards yet` —
+also for an empty log or one with no auto rows; `2` `can't reach Anki; re-run with Anki
+open`, or `can't read the mnemonic log: …` (missing file, or a line that isn't JSON), with
+no count on stdout. Honours `NEMO_MNEMONIC_LOG`, `ANKI_CONNECT_URL` and `ANKI_FILE`.
+Covered by `test/kept-count-us033-*.test.js` against a mock AnkiConnect
+(`test/helpers/kept-count-harness.js`).
+
 ## IPA / rhyme / frequency
 
 Not in `scripts/` — see `CLAUDE.md` "Ad-hoc IPA/rhyme lookups" for the `nemo-words` CLI,

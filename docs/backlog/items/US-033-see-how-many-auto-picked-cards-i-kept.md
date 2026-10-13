@@ -2,7 +2,8 @@
 id: US-033
 type: story
 parent: E01
-status: ready
+status: done
+qa_status: passing
 depends_on: [US-039]
 concepts: [C-004, C-006, C-016, C-017, C-020]
 ---
