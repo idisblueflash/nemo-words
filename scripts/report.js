@@ -8,6 +8,9 @@
 // results are appended as `note: <step>: <line>` lines (as the old in-process
 // runner did), so a step's warning shows in the run report. Logs that don't
 // exist (skipped steps) are ignored.
+// US-051: a drawn word's report names its arm — `story arm` above a picked
+// story, or `control arm: definition-only card` plus the definition in place
+// of a story.
 
 if (require.main === module) require("./lib/step-contract"); // a crash exits 2, never 1
 const fs = require("fs");
@@ -19,9 +22,17 @@ const firstLine = (file) => fs.readFileSync(file, "utf8").split("\n").find((l) =
 function report({ writeRow, story, syllables, gloss, notes = [] }) {
   const [status, front] = writeRow.split("\t");
   const [sentence, , source] = story.split("\t");
+  // US-051: the arm line. A control-arm card's back is the definition, not a
+  // story; a picked story is only ever drafted for a story-arm word; a logged
+  // story had no draw, so no arm line.
+  const storyLine = `story: ${sentence}${source === "logged" ? "  (logged story, kept as picked)" : ""}`;
+  const back = {
+    control: ["control arm: definition-only card", `definition: ${sentence}`],
+    picked: ["story arm", storyLine],
+  }[source] || [storyLine];
   return [
     `carded ${front} (${status})`,
-    `story: ${sentence}${source === "logged" ? "  (logged story, kept as picked)" : ""}`,
+    ...back,
     `gloss: ${gloss}`,
     `ipa:   ${syllables}`,
     "synced to Anki",

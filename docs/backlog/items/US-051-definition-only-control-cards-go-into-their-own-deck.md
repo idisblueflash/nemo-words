@@ -2,7 +2,8 @@
 id: US-051
 type: story
 parent: E02
-status: ready
+status: done
+qa_status: passing
 depends_on: [US-041]
 concepts: [C-001, C-006, C-009, C-016, C-018, C-019, C-020]
 ---

@@ -114,7 +114,7 @@ node scripts/card.js <word>
 
 The one-word command: one general-English word in, a synced story card out, with nothing
 asked along the way (US-028). Steps, in order: `normalize` → `route` → `judge-route` →
-`ipa` → `syllabify` → `define` → `gloss` → `chunk` → `find-keywords` → `compose-stories` →
+`ipa` → `syllabify` → `define` → `gloss` → `chunk` → `find-keywords` → `draw-arm` → `compose-stories` →
 `check-stories` → `judge-stories` → `pick-story` → `story` → `write-row` → `sync` →
 `report`. `normalize` lowercases the word, so `WARY` or `Wary` is carded, routed and
 judged as `wary`. `judge-stories` (US-038) has Jev judge each story that passed the hard
@@ -139,6 +139,19 @@ A rhyme line has a 4th column, `ipa\tkeyword\tfreq\trime`. `compose-stories` mar
 and `log-card` logs `anchor_unit: rime`. A word with no exact keyword on any chunk and no
 rhyme for the stressed chunk (e.g. `bulge`) stops with `no sound anchor found`.
 
+`draw-arm` (US-051, E02's retention experiment) puts an anchored word with no logged story
+in one of two arms. The **story arm** runs the rest of the pipeline as before; its row's
+Tags column is `reading-room-terms retention-story` (the `#tags` header repeated, plus the
+arm tag), and the report says `story arm`. The **control arm** skips drafting, judging and
+logging: its card's Back is `define`'s definition sentence (plus the gloss and IPA as usual,
+no image), in deck `00 Reading Room::03 Control Definitions`, tagged `retention-control`, and
+the report says `control arm: definition-only card`. The arm counts are the card file's
+carded rows per tag. When one arm has 3 or more cards more than the other, the word goes to
+the smaller arm; otherwise it's 50/50. `NEMO_ARM=control|story` forces the arm (any other
+value: exit 2). Logged-story, no-anchor and word-part words are never drawn and get no arm
+tag. Covered by `test/card-us051-*.test.js`; the test harness pins `NEMO_ARM=story` unless
+a test asks otherwise.
+
 An `ambiguous` classifier verdict (weak suffix matches only, e.g. `wary`'s `-ary`) doesn't
 stop `route`: `judge-route` (US-040) asks Jev whether the word is built from classical
 Greek/Latin morphemes or an INN stem, and routes by its p word-part. At 0.3 or below it's
@@ -153,7 +166,7 @@ later`, and nothing is written. Jev needs `TYPESAFE_API_KEY` in the repo's gitig
 (`HTTPS_PROXY` etc., forwarded by `card.js`); without one it answers HTTP 451.
 
 Env overrides `ANKI_FILE`, `ANKI_CONNECT_URL`, `ANKI_SYNC_LOG`, `NEMO_MNEMONIC_LOG`,
-`NEMO_CLAUDE_BIN`, `NEMO_WORDS_BIN`, `NEMO_WORD_FREQ_BIN` work as usual: Dagu doesn't
+`NEMO_CLAUDE_BIN`, `NEMO_WORDS_BIN`, `NEMO_WORD_FREQ_BIN`, `NEMO_ARM` work as usual: Dagu doesn't
 pass the caller's environment to steps, so `card.js` forwards the set ones as DAG params
 (declared in `dags/card.yaml`, exported to every step).
 

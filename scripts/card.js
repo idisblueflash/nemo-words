@@ -32,6 +32,7 @@ const FORWARDED_ENV = [
   "NEMO_WORDS_BIN",
   "NEMO_WORD_FREQ_BIN",
   "NEMO_JEV_ENV_FILE",
+  "NEMO_ARM", // US-051: forces draw-arm's arm
   // Jev (tag-technique) is region-blocked (HTTP 451) without the caller's proxy.
   "HTTP_PROXY",
   "HTTPS_PROXY",
