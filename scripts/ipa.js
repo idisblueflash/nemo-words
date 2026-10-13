@@ -19,6 +19,21 @@ function gaFromLookup(stdout, word) {
   return null;
 }
 
+// Every GA form of the exact word, comma-joined as the dictionary lists them
+// (`lˈæst,lˈæs`), or null. check-stories accepts a keyword on any of them.
+function gaFormsFromLookup(stdout, word) {
+  const want = word.toLowerCase();
+  for (const line of stdout.split("\n")) {
+    const [w, , ga] = line.split("\t");
+    if (w && w.toLowerCase() === want && ga) return ga.split(",").map((x) => x.trim()).filter(Boolean).join(",");
+  }
+  return null;
+}
+
+function lookupGaForms(word) {
+  return gaFormsFromLookup(nemoWords(["ipa-lookup", "--word", word.toLowerCase()]), word);
+}
+
 function lookupGa(word) {
   return gaFromLookup(nemoWords(["ipa-lookup", "--word", word.toLowerCase()]), word);
 }
@@ -31,4 +46,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { gaFromLookup, lookupGa };
+module.exports = { gaFromLookup, gaFormsFromLookup, lookupGa, lookupGaForms };

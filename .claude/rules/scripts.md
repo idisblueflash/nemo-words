@@ -135,7 +135,8 @@ back to a rhyme (US-046, `scripts/lib/rhyme.js`): the most frequent one-syllable
 the same rime, a non-empty onset, a frequency of at least 5e-7, not the headword and not a
 function word (drown → `down`, critique's `tik` → `speak`). Other chunks never get a rhyme.
 A rhyme line has a 4th column, `ipa\tkeyword\tfreq\trime`. `compose-stories` marks it
-`(rhymes)` in the prompt, `check-stories` compares rimes for it instead of the whole sound,
+`(rhymes)` in the prompt, `check-stories` compares rimes for it instead of the whole sound
+(for any of the keyword's GA forms, as `find-keywords` does: `last` is `lˈæst,lˈæs`),
 and `log-card` logs `anchor_unit: rime`. A word with no exact keyword on any chunk and no
 rhyme for the stressed chunk (e.g. `bulge`) stops with `no sound anchor found`.
 
