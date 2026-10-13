@@ -18,7 +18,7 @@
 1. [US-051](items/US-051-definition-only-control-cards-go-into-their-own-deck.md) Definition-only control cards go into their own deck · E02 · done
 2. [US-033](items/US-033-see-how-many-auto-picked-cards-i-kept.md) See how many auto-picked cards I kept · E01 · done
 3. [SP-052](items/SP-052-does-noad-find-as-many-exact-sound-anchors-as-cmu.md) Does NOAD find as many exact sound anchors as CMU? · E07 · done
-4. [US-050](items/US-050-a-stressed-short-vowel-chunk-takes-the-next-consonant.md) A stressed short-vowel chunk takes the next consonant · E01 · ready
+4. [US-050](items/US-050-a-stressed-short-vowel-chunk-takes-the-next-consonant.md) A stressed short-vowel chunk takes the next consonant · E01 · in-progress
 5. [US-060](items/US-060-the-rhyme-rule-refuses-ye-yeah-des-and-huh.md) The rhyme rule refuses ye, yeah, des and huh · E01 · idea
 6. [US-059](items/US-059-one-word-as-the-sound-anchor-for-two-chunks.md) One word as the sound anchor for two chunks · E01 · idea
 7. [US-061](items/US-061-the-story-drafter-picks-an-anchor-for-words-that-still-stop.md) The story drafter picks an anchor for words that still stop · E01 · idea
