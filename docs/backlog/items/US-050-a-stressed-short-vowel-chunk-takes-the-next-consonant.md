@@ -3,14 +3,7 @@ id: US-050
 type: story
 parent: E01
 status: in-progress
-qa_status: bug
-bugs:
-  - ac: 1
-    summary: "A closed keyword that matches the closed chunk only through its second GA form (elastic: last, lˈæst,lˈæs) always fails check-stories' anchor-ipa gate, so the word gets no card; before this story elastic was carded on the rhyme yeah"
-    command: "node scripts/card.js elastic (real nemo-words and word-freq data; fake claude answering compose-stories with 'The last stick was a stretchy band.'; mock AnkiConnect and Jev via test/helpers/card-harness.js). Step-level: node scripts/check-story.js elastic stretchy 'The last stick was a stretchy band.' 'last,stick,stretchy' <file with the lines of: node scripts/find-keywords.js 'ɪ.ˈlæ.stɪk' elastic>"
-    expected: "For a word whose stressed syllable plus the next consonant is exactly a common word (elastic: /læs/ is last), the one-word command makes the card, with the story built on that word"
-    actual: "exit 1, 'stopped at pick-story: no-pick: none of 1 candidates passed every gate; ... anchor-ipa: last /læst/ is not /læs/'; no row, no note, no log row. The reason does not depend on the sentence, so no story on 'last' can pass"
-    found: 2026-10-14
+qa_status: passing
 concepts: [C-003, C-005, C-006, C-007, C-011, C-020, C-024, C-025, C-026]
 ---
 # US-050 A stressed short-vowel chunk takes the next consonant
