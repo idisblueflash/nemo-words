@@ -11,7 +11,7 @@ concepts: [C-003, C-005, C-018, C-021, C-022, C-023, C-024]
 
 **Why now:** Tests E07's main bet before anything is built, and unblocks US-053. If NOAD finds clearly fewer anchors than CMU, the epic stops here. `_david` runs it.
 **Method:** A prototype extracts NOAD from the Mac's own `Body.data`, splits each word into syllables, and finds each syllable's exact anchor once with NOAD only and once with CMU only, the same way the card pipeline's `find-keywords` step does today. NOAD gets its own syllabifier, because its stress marks already set syllable boundaries and it writes the r-coloured vowel as `ər`.
-**Done when:** For the card file's words, the mnemonic log's words and a word sample, we have the anchor count per word from NOAD (canonical format: keep a bracketed sound, drop only the brackets, except `(h)` before `w`) and from CMU, plus the share of headwords with US IPA in each, and a go / no-go for E07. **Go** if NOAD anchors at least 95% as many words as CMU over the whole word set; otherwise no-go. The bar is fixed before the run.
+**Done when:** For the card file's words, the mnemonic log's words and a word sample, we have the anchor count per word from NOAD (canonical format: keep a bracketed sound, drop only the brackets, except `(h)` before `w`) and from CMU, plus the share of dictionary entries with US IPA in each, and a go / no-go for E07. **Go** if NOAD anchors at least 95% as many words as CMU over the whole word set; otherwise no-go. The bar is fixed before the run.
 
 ## Acceptance criteria
 
@@ -65,7 +65,7 @@ Given  a word is in only one dictionary, or NOAD's entry has no US IPA
 - **Rules:**
   - Canonical NOAD format: keep the sound and drop the brackets, but drop `(h)` before `w`.
   - When NOAD gives more than one US IPA, the first one is used.
-  - NOAD keyword candidates are single lowercase a–z headwords, and derivatives that have their own IPA.
+  - NOAD keyword candidates are single lowercase a–z dictionary entries, and derivatives that have their own IPA.
   - Frequency comes from `scripts/word-freq.js`, cut-off `5e-7` (`FREQ_THRESHOLD` in `find-keywords.js`).
   - The 200-word sample is drawn from words in both dictionaries with a frequency at or above the cut-off. The seed is printed in the report.
   - Inflections (e.g. *cats*, *walked*) are left out as keywords on both sides, because NOAD has no inflection entries yet (US-055 adds them). The report counts how many CMU anchors were inflections.
