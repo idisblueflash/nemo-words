@@ -2,7 +2,7 @@
 id: US-050
 type: story
 parent: E01
-status: in-progress
+status: done
 qa_status: passing
 concepts: [C-003, C-005, C-006, C-007, C-011, C-020, C-024, C-025, C-026]
 ---
