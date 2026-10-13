@@ -114,7 +114,12 @@ function parseArgs(argv) {
   return { frontFilter, deleteFront, deck };
 }
 
-const { frontFilter, deleteFront, deck: deleteDeck } = parseArgs(process.argv);
+// Set from the command line when run as a script (see the bottom of the file);
+// left at "sync every row" when another script requires this one for its
+// helpers (scripts/kept-count.js, US-033).
+let frontFilter;
+let deleteFront = null;
+let deleteDeck = null;
 
 // -- File parsing -----------------------------------------------------------
 
@@ -206,7 +211,17 @@ function escapeQueryValue(value) {
   return value.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
 }
 
+// The search that finds a word's note: its deck plus an exact Front match.
+// Every lookup goes through this one (sync, --delete, and kept-count.js), so
+// they can't drift apart.
+function noteQuery(deckName, frontField, front) {
+  return `deck:"${escapeQueryValue(deckName)}" ${frontField}:"${escapeQueryValue(front)}"`;
+}
+
 // -- Sync ---------------------------------------------------------------
+
+// composeBack joins its pieces with this; storyFromBack splits on it.
+const BACK_SEPARATOR = "<br>";
 
 // Uploads the row's image (if any) into the collection and returns the Back
 // HTML to push, in review order: the <img> (if attached), then the plain-text
@@ -237,7 +252,38 @@ async function composeBack(row, ctx) {
 
   if (row.ipa) pieces.push(`<small style="opacity:0.6">/${row.ipa}/</small>`);
 
-  return pieces.join("<br>");
+  return pieces.join(BACK_SEPARATOR);
+}
+
+// The reverse of composeBack: the story sentence out of a live Back field
+// (US-033). Splits on the separator and drops the pieces composeBack adds
+// around the story — the <img> (image) and the <small> lines (gloss, IPA).
+// Anki's own editor rewrites a Back it saves, so its marks are cleaned away
+// too: `<br/>` and `<div>` count as the separator, any other tag is stripped,
+// HTML entities (`&nbsp;` …) are decoded, and whitespace is trimmed and
+// collapsed.
+const BACK_BREAK = /<br\s*\/?>|<\/?div\b[^>]*>/gi; // BACK_SEPARATOR, as Anki may rewrite it
+const ENTITIES = { nbsp: " ", lt: "<", gt: ">", quot: '"', apos: "'", amp: "&" };
+
+function decodeEntities(text) {
+  return text.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (whole, name) => {
+    if (name[0] !== "#") {
+      const known = name.toLowerCase();
+      return Object.prototype.hasOwnProperty.call(ENTITIES, known) ? ENTITIES[known] : whole;
+    }
+    const code = /^#x/i.test(name) ? parseInt(name.slice(2), 16) : parseInt(name.slice(1), 10);
+    if (code === 0xa0) return " ";
+    return code > 0 && code <= 0x10ffff ? String.fromCodePoint(code) : whole;
+  });
+}
+
+function storyFromBack(back) {
+  const story = String(back || "")
+    .split(BACK_BREAK)
+    .filter((piece) => !/^\s*<small\b/i.test(piece))
+    .map((piece) => piece.replace(/<[^>]*>/g, ""))
+    .join(" ");
+  return decodeEntities(story).replace(/\s+/g, " ").trim();
 }
 
 async function syncRow(row, ctx) {
@@ -245,7 +291,7 @@ async function syncRow(row, ctx) {
   const deckName = row.deck || ctx.deckName;
   const tags = row.tags ? row.tags.split(/\s+/).filter(Boolean) : ctx.tags;
   const back = await composeBack(row, ctx);
-  const query = `deck:"${escapeQueryValue(deckName)}" ${frontField}:"${escapeQueryValue(row.front)}"`;
+  const query = noteQuery(deckName, frontField, row.front);
   const noteIds = await invoke("findNotes", { query });
 
   if (noteIds.length > 0) {
@@ -300,7 +346,7 @@ async function deleteNote(front, ctx) {
 
   let deleted = 0;
   for (const deck of decks) {
-    const query = `deck:"${escapeQueryValue(deck)}" ${ctx.frontField}:"${escapeQueryValue(front)}"`;
+    const query = noteQuery(deck, ctx.frontField, front);
     const noteIds = await invoke("findNotes", { query });
     if (noteIds.length === 0) continue;
     await invoke("deleteNotes", { notes: noteIds });
@@ -352,13 +398,18 @@ async function main() {
   if (hadFailure) process.exit(1);
 }
 
-main().catch((e) => {
-  if (e instanceof ConnectionError) {
-    console.error(
-      `Could not reach AnkiConnect at ${ANKI_CONNECT_URL} — make sure Anki is open with the AnkiConnect add-on installed.`
-    );
+if (require.main === module) {
+  ({ frontFilter, deleteFront, deck: deleteDeck } = parseArgs(process.argv));
+  main().catch((e) => {
+    if (e instanceof ConnectionError) {
+      console.error(
+        `Could not reach AnkiConnect at ${ANKI_CONNECT_URL} — make sure Anki is open with the AnkiConnect add-on installed.`
+      );
+      process.exit(1);
+    }
+    console.error(`Failed: ${e.message}`);
     process.exit(1);
-  }
-  console.error(`Failed: ${e.message}`);
-  process.exit(1);
-});
+  });
+}
+
+module.exports = { FILE, parseFile, invoke, noteQuery, storyFromBack, ConnectionError, ActionError };
