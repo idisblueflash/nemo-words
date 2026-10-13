@@ -1,6 +1,6 @@
 ---
 title: "An unchanged story that holds a literal < or > counts as overridden"
-status: open
+status: fixed
 original_story: US-033
 ac: 8
 found: 2026-10-13
@@ -31,3 +31,4 @@ Observed, exit 0:
         now: Tom's <cat> won't run.
 
 ## Fix
+`scripts/kept-count.js`: `judge` now cleans the log sentence with a new `plainStory` (whitespace only), and keeps `storyFromBack` for the live Back alone. Covered by `test/kept-count-us033-ac8-literal-angle-bracket.test.js`.

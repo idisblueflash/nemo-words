@@ -282,10 +282,14 @@ own query (`noteQuery`: the row's `Deck` override or the file's `#deck`, plus th
 `Front`), and the story now is read out of the live `Back` with `storyFromBack`, the
 reverse of `composeBack` — both live in `anki-sync.js`. It drops the image, gloss and IPA
 pieces and what Anki's editor adds (`<div>`, `&nbsp;`), so those aren't false overrides.
+The log sentence is plain text, so only its whitespace is cleaned: a literal `<` or `>` in
+it is story text, never a tag.
 Exit codes: `0` report printed; `1` (clean stop) `no reviewed auto-picked cards yet` —
 also for an empty log or one with no auto rows; `2` `can't reach Anki; re-run with Anki
 open`, or `can't read the mnemonic log: …` (missing file, or a line that isn't JSON), with
 no count on stdout. Honours `NEMO_MNEMONIC_LOG`, `ANKI_CONNECT_URL` and `ANKI_FILE`.
+It takes no options. `--help` / `-h` print a usage text (exit 0); any other argument fails
+with `unknown argument: <arg>` plus the usage text (exit 2). Either way nothing is read.
 Covered by `test/kept-count-us033-*.test.js` against a mock AnkiConnect
 (`test/helpers/kept-count-harness.js`).
 
