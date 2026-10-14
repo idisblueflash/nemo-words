@@ -114,5 +114,5 @@ Given  Flash runs the kept-count command with an argument
 - [ ] Only the story is compared. When US-030 lands, the auto-picked image should join the check.
 - [ ] A one-word typo fix counts as an override. If that proves too strict, a later story could add "lightly edited".
 - [ ] `/prepare-words` auto-saved cards aren't counted: they have no `picked_by: "auto"`.
-- [ ] Scenarios 8–11 were added on 2026-10-13, after the story was `done`, from `qa`'s exploratory testing. Scenarios 9 and 10 already pass. Scenarios 8 and 11 fail and are tracked as bug-012 and bug-013 in `docs/backlog/bugs/`; the story stays `done`.
+- [x] Scenarios 8–11 were added on 2026-10-13, after the story was `done`, from `qa`'s exploratory testing. Scenarios 9 and 10 already pass. Scenarios 8 and 11 failed and were fixed on 2026-10-14 as bug-012 and bug-013 in `docs/backlog/bugs/`; the story stays `done`.
 - [ ] No `_david` run: the real log has no auto-picked rows yet (0 of 160), so there's nothing to measure. This command is the measurement.

@@ -1,6 +1,6 @@
 ---
 title: "kept-count ignores every argument, so --help and a mistyped option print the normal report"
-status: open
+status: fixed
 original_story: US-033
 ac: 11
 found: 2026-10-13
@@ -27,3 +27,4 @@ Observed for both, exit 0, stderr empty, and Anki was queried (`findNotes`, `not
         now: …
 
 ## Fix
+`scripts/kept-count.js`: `main` checks its arguments before it reads anything. `--help` / `-h` print the usage text (exit 0); any other argument throws `unknown argument: <arg>` plus the usage text (exit 2). Covered by `test/kept-count-us033-ac11-arguments.test.js`.

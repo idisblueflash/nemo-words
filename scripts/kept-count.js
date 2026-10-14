@@ -5,6 +5,8 @@
 //
 // Usage:
 //   node scripts/kept-count.js
+//   node scripts/kept-count.js --help
+// It takes no options: any other argument is refused, not ignored.
 //
 // An auto-picked word is one whose mnemonic-log row says `picked_by: "auto"`
 // (the card pipeline picked its story, US-039). For each one this reads the
@@ -77,8 +79,12 @@ function autoPicks(rows) {
   return [...latest.values()].sort((a, b) => (a.date === b.date ? b.order - a.order : a.date < b.date ? 1 : -1));
 }
 
-// The story as it reads on a card. Used on both sides of the comparison.
+// The story as it reads on a card, out of the live Back (HTML).
 const cleanStory = (text) => anki.storyFromBack(text);
+
+// The auto-picked sentence as it reads on a card. The log holds plain text, so
+// a `<` or `>` in it is story text, never a tag: only whitespace is cleaned.
+const plainStory = (text) => String(text || "").replace(/\s+/g, " ").trim();
 
 // One auto-pick + its live card -> `{ ...pick, verdict, storyNow }`.
 // No live card (`null`) is `removed`: Flash deleted it, which overrides the pick.
@@ -86,7 +92,7 @@ function judge(pick, liveCard) {
   if (!liveCard) return { ...pick, verdict: "removed" };
   if (liveCard.reviews === 0) return { ...pick, verdict: "not-met" };
   const storyNow = cleanStory(liveCard.back);
-  return { ...pick, storyNow, verdict: storyNow === cleanStory(pick.sentence) ? "kept" : "overridden" };
+  return { ...pick, storyNow, verdict: storyNow === plainStory(pick.sentence) ? "kept" : "overridden" };
 }
 
 // Judged words, newest first -> the KeptReport. The window is the reviewed
@@ -150,7 +156,19 @@ async function liveCard(word, ctx) {
 const NONE_REVIEWED = "no reviewed auto-picked cards yet";
 const ANKI_UNREACHABLE = "can't reach Anki; re-run with Anki open";
 
-async function main() {
+const USAGE = [
+  "usage: node scripts/kept-count.js",
+  "Reports how many auto-picked stories are still on their Anki cards,",
+  "over the 20 most recently auto-picked reviewed words. Takes no options.",
+];
+
+async function main(argv = []) {
+  // before anything is read: a mistyped option must not look like a report
+  if (argv.length) {
+    if (argv.every((a) => a === "--help" || a === "-h")) return { lines: USAGE };
+    const unknown = argv.find((a) => a !== "--help" && a !== "-h");
+    throw new Error([`unknown argument: ${unknown}`, ...USAGE].join("\n"));
+  }
   const picks = autoPicks(readLog(mnemonicLogPath()));
   const ctx = anki.parseFile(fs.readFileSync(anki.FILE, "utf8"));
   const judged = [];
@@ -172,4 +190,4 @@ async function main() {
 
 if (require.main === module) runCli(main);
 
-module.exports = { autoPicks, cleanStory, judge, buildReport, reportLines, WINDOW, TARGET_PERCENT };
+module.exports = { autoPicks, cleanStory, plainStory, judge, buildReport, reportLines, WINDOW, TARGET_PERCENT };
