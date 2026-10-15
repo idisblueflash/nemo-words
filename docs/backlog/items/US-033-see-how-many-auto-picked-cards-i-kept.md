@@ -3,7 +3,14 @@ id: US-033
 type: story
 parent: E01
 status: done
-qa_status: passing
+qa_status: bug
+bugs:
+  - ac: 8
+    summary: "An unchanged card that anki-sync.js wrote itself holds the story's < and > raw, not as entities; kept-count strips a tag-like piece (<cat>, or '< 5 >') from that Back and counts the word as overridden"
+    command: "NEMO_MNEMONIC_LOG=<temp log> ANKI_CONNECT_URL=<mock> node scripts/kept-count.js  # log row: {\"word\":\"zzqaone\",\"sentence\":\"Tom's <cat> won't run.\",\"date\":\"2026-10-09\",\"picked_by\":\"auto\"}; mock note Back, exactly as anki-sync.js addNote pushed it: \"Tom's <cat> won't run.\", 1 card with reviews"
+    expected: "kept 1 of 1 (100%): the story has a literal < and >, and nobody changed the card"
+    actual: "kept 0 of 1 (0%); overridden: zzqaone, auto-picked: Tom's <cat> won't run. / now: Tom's won't run. (the same happens for 'He wrote 3 < 5 > 2 on the wall.' -> now: 'He wrote 3 2 on the wall.'). A Back that holds &lt;cat&gt; as entities counts as kept."
+    found: 2026-10-14
 depends_on: [US-039]
 concepts: [C-004, C-006, C-016, C-017, C-020]
 ---
