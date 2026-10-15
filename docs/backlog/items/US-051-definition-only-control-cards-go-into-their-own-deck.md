@@ -5,7 +5,7 @@ parent: E02
 status: done
 qa_status: passing
 depends_on: [US-041]
-concepts: [C-001, C-006, C-009, C-016, C-018, C-019, C-020]
+concepts: [C-001, C-006, C-009, C-016, C-018, C-019, C-020, C-028, C-029]
 ---
 # US-051 Definition-only control cards go into their own deck
 
