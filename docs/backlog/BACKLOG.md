@@ -20,7 +20,7 @@
 3. [SP-052](items/SP-052-does-noad-find-as-many-exact-sound-anchors-as-cmu.md) Does NOAD find as many exact sound anchors as CMU? · E07 · done
 4. [US-050](items/US-050-a-stressed-short-vowel-chunk-takes-the-next-consonant.md) A stressed short-vowel chunk takes the next consonant · E01 · done
 5. [US-060](items/US-060-the-rhyme-rule-refuses-ye-yeah-des-and-huh.md) The rhyme rule refuses ye, yeah, des and huh · E01 · idea
-6. [SP-029](items/SP-029-does-an-auto-image-pick-agree-with-flash.md) Does an auto image pick agree with Flash's picks? · E01 · idea
+6. [SP-029](items/SP-029-does-an-auto-image-pick-agree-with-flash.md) Does an auto image pick agree with Flash's picks? · E01 · ready
 7. [US-059](items/US-059-one-word-as-the-sound-anchor-for-two-chunks.md) One word as the sound anchor for two chunks · E01 · idea
 8. [US-061](items/US-061-the-story-drafter-picks-an-anchor-for-words-that-still-stop.md) The story drafter picks an anchor for words that still stop · E01 · idea
 9. [US-042](items/US-042-plain-words-mistaken-for-word-parts-still-get-a-card.md) Plain words mistaken for word parts still get a card · E01 · idea
