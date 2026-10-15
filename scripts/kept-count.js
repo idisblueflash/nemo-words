@@ -86,13 +86,27 @@ const cleanStory = (text) => anki.storyFromBack(text);
 // a `<` or `>` in it is story text, never a tag: only whitespace is cleaned.
 const plainStory = (text) => String(text || "").replace(/\s+/g, " ").trim();
 
+// The story piece of a Back exactly as anki-sync.js composeBack writes it: the
+// pieces split on its "<br>" separator, minus the <img> and <small> pieces, and
+// nothing stripped or decoded. composeBack pushes the story raw, so a literal
+// `<cat>` or `< 5 >` is still in the Back as typed (bug-012, round 2).
+const rawStory = (back) =>
+  plainStory(
+    String(back || "")
+      .split("<br>")
+      .filter((piece) => !/^\s*<(img|small)\b/i.test(piece))
+      .join(" ")
+  );
+
 // One auto-pick + its live card -> `{ ...pick, verdict, storyNow }`.
 // No live card (`null`) is `removed`: Flash deleted it, which overrides the pick.
 function judge(pick, liveCard) {
   if (!liveCard) return { ...pick, verdict: "removed" };
   if (liveCard.reviews === 0) return { ...pick, verdict: "not-met" };
   const storyNow = cleanStory(liveCard.back);
-  return { ...pick, storyNow, verdict: storyNow === plainStory(pick.sentence) ? "kept" : "overridden" };
+  const sentence = plainStory(pick.sentence);
+  const kept = storyNow === sentence || rawStory(liveCard.back) === sentence;
+  return { ...pick, storyNow, verdict: kept ? "kept" : "overridden" };
 }
 
 // Judged words, newest first -> the KeptReport. The window is the reviewed

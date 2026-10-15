@@ -37,5 +37,15 @@ Observed, exit 0:
         auto-picked: Tom's <cat> won't run.
         now: Tom's <cat> won't run.
 
+Round 2 (2026-10-15), on `6a6250b`. Reopened from `qa` (found 2026-10-14).
+
+Reported: An unchanged card that anki-sync.js wrote itself holds the story's < and > raw, not as entities; kept-count strips a tag-like piece (<cat>, or '< 5 >') from that Back and counts the word as overridden. Expected: kept 1 of 1 (100%): the story has a literal < and >, and nobody changed the card. Actual: kept 0 of 1 (0%); overridden: auto-picked: Tom's <cat> won't run. / now: Tom's won't run. (the same happens for 'He wrote 3 < 5 > 2 on the wall.' -> now: 'He wrote 3 2 on the wall.'). A Back that holds &lt;cat&gt; as entities counts as kept.
+
+Repro: log row `{"word":"wary","sentence":"Tom's <cat> won't run.","date":"2026-10-01","picked_by":"auto"}`, mock note Back `Tom's <cat> won't run.` (as `composeBack` pushes it), 2 reviews, run with `node scripts/kept-count.js`. Observed: `kept 0 of 1 (0%)`, `now: Tom's won't run.`. The new test failed the same way (the two raw-Back tests red) before the fix.
+
+Cause: `composeBack` in `scripts/anki-sync.js` writes the story raw, but `storyFromBack` strips anything that looks like a tag. Design note: the clean fix is for `composeBack` to escape `<`, `>` and `&` in the story, but that changes every live card on the next sync, so it was not done.
+
 ## Fix
 `scripts/kept-count.js`: `judge` now cleans the log sentence with a new `plainStory` (whitespace only), and keeps `storyFromBack` for the live Back alone. Covered by `test/kept-count-us033-ac8-literal-angle-bracket.test.js`.
+
+Round 2: `scripts/kept-count.js` `judge` also compares the log sentence with `rawStory(back)`, the story piece of the Back split only on `<br>` with the `<img>` and `<small>` pieces dropped and nothing stripped. The word is kept when either reading matches. `storyFromBack` and `anki-sync.js` are unchanged. Covered by three new tests in `test/kept-count-us033-ac8-literal-angle-bracket.test.js`.
