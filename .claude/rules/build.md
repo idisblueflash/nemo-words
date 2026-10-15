@@ -53,4 +53,6 @@ the item adds or changes a step's rules (`chunk`, `find-keywords`, `compose-stor
 `check-stories`, `pick-story`, …) or rests on claims about the real data
 (`resources/data/`, `data/mnemonics/log.jsonl`, Flash's own cards), have `_david`
 investigate it first, and draft the ACs from what it measures. `_david` is a local
-agent, not part of the plugin.
+agent, not part of the plugin. While it works, `_david` claims the item with a
+`claimed:` frontmatter field (the plugin's "Claims" rule, backlog 0.10.0+), so
+`/backlog:next` in another session won't send Flash to refine or research it again.
