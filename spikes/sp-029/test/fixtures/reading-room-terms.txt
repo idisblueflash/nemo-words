@@ -1,0 +1,14 @@
+#separator:tab
+#html:true
+#notetype:Basic
+#deck:00 Reading Room::Terms
+#tags:reading-room-terms
+#columns:Front	Back	Image	IPA	Gloss	Deck	Tags
+alpha	Card back of alpha, lightness 999.	alpha.png
+beta	Beta story, lightness 45.	beta.png
+gamma	Card back of gamma, lightness 999.	gamma.png
+eps	Eps story, lightness 120.	eps.comic.png
+zeta		zeta.png
+eta	Eta story from the card, lightness 150.	eta.png
+theta	Card back of theta, lightness 999.	theta.png
+-delta-	<i>Latin</i><br>delta part, lightness 30	-delta-.png			00 Reading Room::01 Medical Terms	medical-word-parts
