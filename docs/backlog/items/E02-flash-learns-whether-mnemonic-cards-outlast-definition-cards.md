@@ -3,7 +3,7 @@ id: E02
 type: epic
 status: active
 persona: Flash
-concepts: [C-016]
+concepts: [C-016, C-028, C-029]
 ---
 # E02 Flash learns whether mnemonic cards outlast definition cards
 

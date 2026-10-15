@@ -12,6 +12,7 @@ concepts: [C-003, C-005, C-018, C-021, C-022, C-023, C-024]
 **Why now:** Tests E07's main bet before anything is built, and unblocks US-053. If NOAD finds clearly fewer anchors than CMU, the epic stops here. `_david` runs it.
 **Method:** A prototype extracts NOAD from the Mac's own `Body.data`, splits each word into syllables, and finds each syllable's exact anchor once with NOAD only and once with CMU only, the same way the card pipeline's `find-keywords` step does today. NOAD gets its own syllabifier, because its stress marks already set syllable boundaries and it writes the r-coloured vowel as `ər`.
 **Done when:** For the card file's words, the mnemonic log's words and a word sample, we have the anchor count per word from NOAD (canonical format: keep a bracketed sound, drop only the brackets, except `(h)` before `w`) and from CMU, plus the share of dictionary entries with US IPA in each, and a go / no-go for E07. **Go** if NOAD anchors at least 95% as many words as CMU over the whole word set; otherwise no-go. The bar is fixed before the run.
+**Result:** **Go** for E07. NOAD anchors 326 words and CMU anchors 330 (98.8% of CMU's; the bar is at least 95%). See [spikes/sp-052/report.md](../../../spikes/sp-052/report.md).
 
 ## Acceptance criteria
 

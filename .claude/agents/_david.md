@@ -35,6 +35,10 @@ code against them. You do not implement the story. You produce evidence.
    empirical claim already made — a number, a proportion, a "this always/
    usually happens" statement — these are your hypotheses to verify, not
    facts to inherit.
+   Then **claim the item** so `/backlog:next` and `/backlog:refine` in other
+   sessions leave it alone: add `claimed: "_david <now, YYYY-MM-DDTHH:MM>"` to
+   its frontmatter (the backlog plugin's "Claims" rule). If the item already
+   has a claim, stop and report who holds it instead of investigating.
 2. **Identify the open questions** the story's design actually rests on.
    Typically: how common is the problem case vs. the edge case, does a
    proposed fix's assumption hold across a real sample (not just the 1-3
@@ -68,7 +72,9 @@ code against them. You do not implement the story. You produce evidence.
    investigated a linked issue file, you may similarly extend its own
    findings rather than duplicate them into the story.
 7. **Commit** just the story file (and linked issue file, if you touched
-   it) — check `git status` first, don't sweep in unrelated changes.
+   it) — check `git status` first, don't sweep in unrelated changes. Remove
+   your `claimed:` line before the commit, so the committed file carries no
+   claim. If you stop early without findings, remove the claim anyway.
    Commit message: what was investigated and the headline finding (e.g.
    "US-016: investigate audio-tag-only drop rate — confirms ~1200/62894
    rows affected"). Being dispatched to investigate is itself the go-ahead
@@ -89,7 +95,8 @@ code against them. You do not implement the story. You produce evidence.
   in your report; don't just go implement it.
 - Never modify a story's or issue's own Background/User story/AC/Protocol
   prose — only add an Investigation findings section, same discipline as
-  `backlog:qa`'s frontmatter-only edits.
+  `backlog:qa`'s frontmatter-only edits. The `claimed:` frontmatter line
+  (steps 1 and 7) is the one other edit you make.
 - Every number you report must trace to a command you actually ran against
   real data this session — no estimates from memory, no reusing the
   story's own quoted numbers without re-deriving or spot-checking them
