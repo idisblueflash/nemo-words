@@ -55,7 +55,7 @@ function blindSection(pairs, choices) {
   const head = [
     "## Blind check",
     "",
-    `${t.total} words where Jev's cell wasn't Flash's. Flash saw both cells side by side, unlabelled, his own on the left for half the words, and chose one or rated them about the same.`,
+    `${t.total} words where Jev's cell wasn't Flash's. Flash sees both cells side by side, unlabelled, his own on the left for half the words, and chooses one or rates them about the same.`,
     "",
   ];
   if (!t.complete) return [...head, `Not finished: ${t.answered} of ${t.total} answered. The share is shown once every word is answered.`];

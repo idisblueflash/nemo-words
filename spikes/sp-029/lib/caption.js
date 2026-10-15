@@ -45,13 +45,16 @@ function makeCaptioner({ bin = "claude", model = "sonnet", timeout = 300000 } = 
         fs.rmSync(dir, { recursive: true, force: true });
         return reject(new CaptionError(`couldn't cut the cell: ${err.message}`));
       }
-      execFile(bin, args, { cwd: dir, timeout, maxBuffer: 1 << 20 }, (err, stdout, stderr) => {
+      const child = execFile(bin, args, { cwd: dir, timeout, maxBuffer: 1 << 20 }, (err, stdout, stderr) => {
         fs.rmSync(dir, { recursive: true, force: true });
-        if (err) return reject(new CaptionError(`captioner failed: ${err.message.split("\n")[0]} ${oneLine(stderr)}`.trim()));
+        // claude -p says why it failed (e.g. a usage limit) on stdout
+        if (err) return reject(new CaptionError(`captioner failed (exit ${err.code}): ${oneLine(stdout)} ${oneLine(stderr)}`.trim()));
         const text = oneLine(stdout);
         if (!text) return reject(new CaptionError("captioner gave an empty caption"));
         resolve(text);
       });
+      child.stdin.end(); // nothing to read: don't make claude -p wait for stdin
+
     });
 }
 
