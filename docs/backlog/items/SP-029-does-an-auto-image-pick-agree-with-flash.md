@@ -2,7 +2,7 @@
 id: SP-029
 type: spike
 parent: E01
-status: ready
+status: in-progress
 timebox: 1d
 concepts: [C-001, C-002, C-004, C-030]
 ---
