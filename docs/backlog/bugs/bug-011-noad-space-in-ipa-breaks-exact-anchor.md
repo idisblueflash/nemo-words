@@ -8,9 +8,13 @@ found: 2026-10-12
 # bug-011 A space inside a raw NOAD IPA stays in the syllable, so it never exactly matches
 
 ## Bug
-Expected: syllable `pər` of percent (NOAD `pər ˈsɛnt`) is anchored with NOAD `per` /pər/, so percent is 2/2. Actual: the syllable is `pər ` (with the space), which equals no keyword's IPA, so percent is 1/2. 122 lower-case NOAD headwords have a space in their IPA; this hits target words and keyword candidates alike.
+Expected: The syllable `pər` of "percent" (NOAD `pər ˈsɛnt`) gets NOAD `per` /pər/ as its anchor, so 2 of the 2 syllables have an anchor. Scenario 3 of SP-052 says that a syllable gets a common word whose IPA equals the syllable's IPA exactly.
+
+Actual: The syllable is `pər ` with a space at the end. No keyword has that IPA, so only 1 of the 2 syllables has an anchor. 122 lower-case NOAD headwords have a space in their IPA. The space affects target words and keyword candidates in the same way.
 
 ## Reproduction
+Reported: Expected: syllable `pər` of percent (NOAD `pər ˈsɛnt`) is anchored with NOAD `per` /pər/, so percent is 2/2. Actual: the syllable is `pər ` (with the space), which equals no keyword's IPA, so percent is 1/2. 122 lower-case NOAD headwords have a space in their IPA; this hits target words and keyword candidates alike.
+
 Round 1 (2026-10-12), from this worktree with the real NOAD extract:
 
     node spikes/sp-052/run.js
