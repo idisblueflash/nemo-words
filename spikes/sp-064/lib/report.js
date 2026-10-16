@@ -3,8 +3,9 @@
 // Stage 5: tunes the weights on the 20 blind-check words, re-picks every word
 // from its saved scores with those weights, and renders the report for the
 // other 62 words: the rates next to SP-029, chance and the cell-1 rule, the
-// rates per band of each certainty signal, the better signal and its cut-off,
-// the ties, main-or-alternative, and the go / no-go. Always derived from the
+// rates per band of each certainty signal, the better signal, each signal's
+// cut-off, the ties, main-or-alternative, the words whose cell the gate
+// removed, the share of partly cut cells, and the go / no-go. Always derived from the
 // saved run.json, so it can be rebuilt without calling Claude or Jev.
 
 const { AXES, START_WEIGHTS, choose } = require("./pick");
@@ -26,6 +27,7 @@ function repick(w, weights) {
     ...w,
     ...c,
     gateSkipped: p.gateSkipped,
+    gateRemovedFlashCell: !p.gateSkipped && p.gatedOut.includes(w.flashCell),
     exact: c.mainCell === w.flashCell,
     inThree: c.ranking.slice(0, 3).includes(w.flashCell),
     isAlternative: c.alternativeCell === w.flashCell,
@@ -77,8 +79,8 @@ function signalSummary(name, rs, value) {
   const b = bands(rs, value);
   const gap = rate(b.high, "exact") - rate(b.low, "exact");
   const cutoff = b.low.length ? b.v(b.low[b.low.length - 1]) : null;
-  const below = cutoff === null ? [] : rs.filter((r) => b.v(r) <= cutoff);
-  return { name, bands: b, gap, cutoff, below };
+  const atOrBelow = cutoff === null ? [] : rs.filter((r) => b.v(r) <= cutoff);
+  return { name, bands: b, gap, cutoff, atOrBelow };
 }
 
 function summarize(run, { sp029 } = {}) {
@@ -105,6 +107,8 @@ function summarize(run, { sp029 } = {}) {
     main: count(measured, (r) => r.exact),
     alternative: count(measured, (r) => r.isAlternative),
     gateSkipped: [...tuning, ...measured].filter((r) => r.gateSkipped),
+    gateRemoved: { measured: measured.filter((r) => r.gateRemovedFlashCell), tuning: tuning.filter((r) => r.gateRemovedFlashCell) },
+    partlyCutCells: measured.reduce((n, r) => n + r.pick.partlyCut.length, 0),
     unjudged: run.words.filter((w) => w.unjudged),
     margin: signalSummary("margin", measured, (r) => r.margin),
     confidence: signalSummary("weakest confidence", measured, (r) => r.weakestConfidence),
@@ -134,6 +138,12 @@ const of = (n, k) => `${n} of ${k} (${pct(k ? n / k : 0)})`;
 const num = (x) => (x === Infinity ? "∞ (one scored cell)" : String(Math.round(x * 1000) / 1000));
 const points = (x) => `${x >= 0 ? "+" : "−"}${Math.abs(x * 100).toFixed(1)} points`;
 const weightsText = (w) => AXES.map((a) => `${w[a]} × ${AXIS_LABEL[a]}`).join(" + ");
+
+function cutoffLine(label, sig, k) {
+  if (sig.cutoff === null) return `- ${label} cut-off: none (no measured words)`;
+  const n = sig.atOrBelow.length;
+  return `- ${label} cut-off: ≤ ${num(sig.cutoff)}: ${n} of ${k} words (${pct(k ? n / k : 0)}) at or below it`;
+}
 
 function bandTable(sig) {
   const row = (label, rs) => {
@@ -206,15 +216,29 @@ function renderReport(run, opts = {}) {
     ...bandTable(s.confidence),
     "",
     `Better signal: **${better.name}** (exact rate high band − low band: margin ${points(s.margin.gap)}, weakest confidence ${points(s.confidence.gap)}).`,
-    better.cutoff === null
-      ? "Cut-off: none (no measured words)."
-      : `Cut-off: ${better.name} ≤ ${num(better.cutoff)} goes to Flash: ${better.below.length} of ${s.k} words (${pct(s.k ? better.below.length / s.k : 0)}). The cut-off is the top edge of the low band.`,
     "",
-    `### Words below the cut-off (${better.below.length}), for Flash to check`,
+    "Each cut-off is the top edge of that signal's low band, over the measured words:",
     "",
-    ...(better.below.length
-      ? better.below.map((r) => `- ${r.word} (Flash's cell ${r.flashCell}, main ${r.mainCell}, alternative ${r.alternativeCell ?? "—"}, ${better.name} ${num(better.name === "margin" ? (r.margin ?? Infinity) : r.weakestConfidence)})`)
+    cutoffLine("Margin", s.margin, s.k),
+    cutoffLine("Weakest-confidence", s.confidence, s.k),
+    "",
+    `### Words at or below the ${better.name} cut-off (${better.atOrBelow.length}), for Flash to check`,
+    "",
+    ...(better.atOrBelow.length
+      ? better.atOrBelow.map((r) => `- ${r.word} (Flash's cell ${r.flashCell}, main ${r.mainCell}, alternative ${r.alternativeCell ?? "—"}, ${better.name} ${num(better.name === "margin" ? (r.margin ?? Infinity) : r.weakestConfidence)})`)
       : ["None."]),
+    "",
+    `## Words where the gate removed Flash's cell (${s.gateRemoved.measured.length} of ${s.k} measured, ${s.gateRemoved.tuning.length} of ${s.tuning.length} tuning)`,
+    "",
+    "The gate (ADR-0032) put Flash's cell out because its caption marked a must-see item hidden.",
+    "",
+    ...(s.gateRemoved.measured.length + s.gateRemoved.tuning.length
+      ? [...s.gateRemoved.measured, ...s.gateRemoved.tuning].map((r) => `- ${r.word}${r.tuning ? " (tuning)" : ""} (Flash's cell ${r.flashCell}, gated out ${r.pick.gatedOut.join(", ")})`)
+      : ["None."]),
+    "",
+    "## Partly cut must-see items",
+    "",
+    `Cells with a partly cut must-see item: ${of(s.partlyCutCells, 9 * s.k)}, over all 9 cells of the ${s.k} judged measured words. A partly cut item doesn't put a cell out; it gets the lowest must-see clarity.`,
     "",
     `## Words where every cell hid a must-see item (${s.gateSkipped.length})`,
     "",

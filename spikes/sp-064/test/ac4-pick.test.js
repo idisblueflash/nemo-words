@@ -3,7 +3,9 @@
 // SP-064 AC4 — Given the captions, the grid lines and the story of a word,
 // when Jev picks a cell, then a cell with a hidden must-see item is out of
 // the pick; Jev scores each remaining cell on plausible, vivid and must-see
-// clarity, 1–3, from a rubric file; code adds the weighted scores, and the
+// clarity, 1–3, from a rubric file; must-see clarity checks the items with
+// their adjectives (a bare cob, a nametag that reads "Venice"); code adds
+// the weighted scores, and the
 // highest total is the pick (ties: higher plausible, then lower cell); code
 // picks the alternative cell from the totals and the captions, with no
 // second Jev call; and the scores, confidences, totals, margin and weakest
@@ -87,4 +89,28 @@ test("AC4: hidden-item cells are out; Jev scores the rest on three rubric axes i
   assert.equal(p.tie, false);
   // the alternative: next-highest total with a wider shot than the extreme close-up
   assert.equal(p.alternativeCell, 6);
+});
+
+test("AC4: must-see clarity checks the items with their adjectives; a partly cut item or one in the wrong state scores lowest", async () => {
+  const { calls } = await pickRun();
+  const { state, questions } = calls[0].body;
+  // Jev gets the must-see items with their adjectives; the cells' marks are by name
+  assert.deepEqual(state.must_see, [
+    { name: "square", adjectives: ["flat", "gray"] },
+    { name: "moon", adjectives: ["round"] },
+  ]);
+  assert.deepEqual(Object.keys(state.cells.cell_5.must_see), ["square", "moon"]);
+  assert.equal(state.cells.cell_5.promptKey, undefined, "no caption-cache key in Jev's state");
+
+  // the rubric file's clarity levels: the lowest takes a partly cut item or a wrong state
+  const clarity = readJson(path.join(SPIKE, "image-rubric.json")).axes.clarity;
+  assert.match(clarity.levels[0], /partly cut/);
+  assert.match(clarity.levels[0], /adjectives/);
+  assert.match(clarity.levels[0], /bare/);
+  assert.match(clarity.levels[0], /Venice/);
+  for (const level of clarity.levels.slice(1)) assert.match(level, /adjectives/);
+
+  // the clarity question tells Jev to check each item with its adjectives
+  assert.match(questions.cell_5_clarity.instructions, /adjectives/);
+  assert.doesNotMatch(questions.cell_5_plausible.instructions, /with its adjectives/);
 });

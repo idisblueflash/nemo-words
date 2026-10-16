@@ -49,8 +49,8 @@ test("AC7: a Claude error (must-see list or caption) or a Jev error leaves the w
   const { out, calls, byWord, report } = await fullRun(kept, { theta: "http-500" });
 
   assert.match(byWord.theta.unjudged, /Jev answered HTTP 500/);
-  assert.match(byWord.nu.unjudged, /^caption failed for cell 1: claude failed .*session limit/);
-  assert.match(byWord.omega.unjudged, /^must-see list failed: claude failed .*session limit/);
+  assert.match(byWord.nu.unjudged, /^caption failed for cell 1: claude failed \(exit 1\): API Error: 500/);
+  assert.match(byWord.omega.unjudged, /^must-see list failed: claude failed \(exit 1\): API Error: 500/);
   for (const w of ["theta", "nu", "omega"]) assert.equal(byWord[w].pick, undefined, "nothing guessed");
   assert.ok(byWord.gamma.pick);
 

@@ -3,7 +3,9 @@
 // Steps 4–7: the gate, Jev's scores, the weighted pick, the alternative cell
 // and the two certainty signals (C-036 margin, C-037 weakest confidence).
 //
-//   Gate: a cell whose caption marks a must-see item hidden is out. When the
+//   Gate: a cell whose caption marks a must-see item hidden is out. The
+//         caption marks items by name only (ADR-0032); the adjectives count
+//         only toward must-see clarity. When the
 //         gate would leave no cell, all 9 are scored without it (gateSkipped).
 //   Jev:  one systemOne request per grid, the way judge-stories scores
 //         stories (US-038): per scored cell and rubric axis one Score question
@@ -53,6 +55,7 @@ function buildQuestions(rubric, cells) {
         [
           "The state holds a mnemonic story for an English word, its must-see list (the objects a picture of it must show), and descriptions of candidate pictures for it (cells, keyed by id): each cell's objects, shot, angle, action step, extras, which must-see items it shows, and how it differs from the other cells.",
           `Score picture cell_${c}, exactly as described, on the "${a.label}" axis.`,
+          ...(a.check ? [a.check] : []),
         ].join("\n"),
         a.levels,
       );
@@ -64,7 +67,7 @@ function buildQuestions(rubric, cells) {
 function buildState({ word, story, items, captions, lines }, cells) {
   const cellState = {};
   for (const c of cells) {
-    const { mustSee, ...rest } = captions[c];
+    const { mustSee, promptKey, ...rest } = captions[c]; // promptKey is the caption cache's, not Jev's
     cellState[`cell_${c}`] = { ...rest, must_see: mustSee, differs: lines[c - 1] };
   }
   return { word, story, must_see: items, cells: cellState };
@@ -137,7 +140,9 @@ async function pickCell(input, { rubric = loadRubric(), weights = START_WEIGHTS,
   // what the report needs to redo `choose` with the tuned weights
   const shots = Object.fromEntries(g.scored.map((c) => [c, input.captions[c].shot]));
   const steps = Object.fromEntries(g.scored.map((c) => [c, input.captions[c].step]));
-  return { ...g, scores, shots, steps, isSequence: input.isSequence, ...choose(scores, weights, input.captions, input.isSequence), answers };
+  // every cell (scored or not) with a partly cut must-see item, for the report's share
+  const partlyCut = CELLS.filter((c) => Object.values(input.captions[c].mustSee || {}).includes("partly cut"));
+  return { ...g, scores, shots, steps, isSequence: input.isSequence, partlyCut, ...choose(scores, weights, input.captions, input.isSequence), answers };
 }
 
 module.exports = { AXES, START_WEIGHTS, loadRubric, gate, buildQuestions, buildState, toScores, alternative, choose, pickCell };

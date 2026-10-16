@@ -5,7 +5,7 @@
 // apart by the files in its working folder, the only files the real calls
 // are pointed at:
 //   none                    → must-see list (text only); the story is in the prompt
-//   picture.png             → cell caption; the must-see list is in the prompt
+//   picture.png             → cell caption; the must-see item names are in the prompt
 //   cell-1.png … cell-9.png → grid differences
 // A fixture cell is flat gray; the fake reads its gray level back with magick.
 //
@@ -22,6 +22,10 @@
 // Shot: extreme close-up at levels ≥ 200, else medium. Step: before below 90,
 // during below 180, after from 180.
 // Each call is appended to $FAKE_CLAUDE_LOG as JSON (argv, cwd, files, mode).
+//
+// $FAKE_CLAUDE_LIMIT_AFTER=N (needs $FAKE_CLAUDE_LOG): once N calls are in the
+// log, every further call answers as claude -p does at its usage limit
+// (exit 1, the text on stdout); $FAKE_CLAUDE_LIMIT_TEXT overrides that text.
 
 const fs = require("node:fs");
 const path = require("node:path");
@@ -33,8 +37,13 @@ const cwd = process.cwd();
 const files = fs.readdirSync(cwd).sort();
 const mode = files.includes("picture.png") ? "caption" : files.some((f) => /^cell-\d\.png$/.test(f)) ? "differences" : "must-see";
 
-if (process.env.FAKE_CLAUDE_LOG) {
-  fs.appendFileSync(process.env.FAKE_CLAUDE_LOG, JSON.stringify({ argv, cwd, files, mode }) + "\n");
+const log = process.env.FAKE_CLAUDE_LOG;
+const callsBefore = log && fs.existsSync(log) ? fs.readFileSync(log, "utf8").split("\n").filter(Boolean).length : 0;
+if (log) fs.appendFileSync(log, JSON.stringify({ argv, cwd, files, mode }) + "\n");
+
+if (process.env.FAKE_CLAUDE_LIMIT_AFTER !== undefined && callsBefore >= Number(process.env.FAKE_CLAUDE_LIMIT_AFTER)) {
+  process.stdout.write(`${process.env.FAKE_CLAUDE_LIMIT_TEXT || "You've hit your session limit · resets 1:10pm (Asia/Shanghai)"}\n`);
+  process.exit(1);
 }
 
 const level = (file) => Math.round(Number(execFileSync("magick", [path.join(cwd, file), "-format", "%[fx:mean*255]", "info:"]).toString()));
@@ -50,9 +59,15 @@ function listFromPrompt() {
   return m ? JSON.parse(m[1]) : [];
 }
 
+// The caption prompt's item names: a JSON line after "MUST-SEE ITEMS:".
+function namesFromPrompt() {
+  const m = /MUST-SEE ITEMS: (\[.*\])/.exec(prompt);
+  return m ? JSON.parse(m[1]) : [];
+}
+
 if (mode === "must-see") {
   const story = (/STORY: (.*)/.exec(prompt) || [])[1] || "";
-  if (story.includes("claude-fails")) fail("You have hit your session limit");
+  if (story.includes("claude-fails")) fail("API Error: 500 Internal server error");
   if (story.includes("garbled-list")) {
     process.stdout.write("Sure! Here are the objects.\n");
     process.exit(0);
@@ -64,8 +79,8 @@ if (mode === "must-see") {
   }
   out({ items, isSequence: /\bthen\b/.test(story) });
 } else if (mode === "caption") {
-  const names = listFromPrompt().map((i) => i.name);
-  if (names.includes("crash")) fail("You have hit your session limit");
+  const names = namesFromPrompt();
+  if (names.includes("crash")) fail("API Error: 500 Internal server error");
   if (names.includes("garble")) {
     process.stdout.write("a gray square, nothing else\n");
     process.exit(0);
@@ -86,7 +101,7 @@ if (mode === "must-see") {
   });
 } else {
   const names = listFromPrompt().map((i) => i.name);
-  if (names.includes("split")) fail("You have hit your session limit");
+  if (names.includes("split")) fail("API Error: 500 Internal server error");
   const levels = [1, 2, 3, 4, 5, 6, 7, 8, 9].map((c) => level(`cell-${c}.png`));
   const mean = levels.reduce((s, x) => s + x, 0) / 9;
   out({ lines: levels.map((l) => (l > mean ? `lighter than most cells (lightness ${l})` : `darker than most cells (lightness ${l})`)) });

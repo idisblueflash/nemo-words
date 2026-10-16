@@ -5,9 +5,12 @@
 // rate and the in-three rate (Flash's cell among the 3 highest totals), next
 // to SP-029, chance and the always-cell-1 rule; the same rates per band
 // (high / middle / low) of the margin and of the weakest confidence, naming
-// the better signal; that signal's cut-off, the share of words below it, the
-// weights, the tie count, and how often Flash's cell is the main or the
-// alternative cell; and it ends with go or no-go: go only if exact ≥ 45% and
+// the better signal; the weights, the tie count, and how often Flash's cell
+// is the main or the alternative cell; the margin cut-off and the
+// weakest-confidence cut-off from the 62 measured words, and the share of
+// words at or below each; the count and list of the words where the gate
+// removed Flash's cell; the share of cells with a partly cut must-see item;
+// and it ends with go or no-go: go only if exact ≥ 45% and
 // in-three ≥ 70%.
 //
 // Through `run.js --report`, from a saved run.json with known outcomes
@@ -18,7 +21,7 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 
-const { tmpDir, fixtureEnv, runNode, writeJson } = require("./helpers/harness");
+const { tmpDir, fixtureEnv, gridsFile, runNode, readJson, writeJson } = require("./helpers/harness");
 const { syntheticRun, syntheticSp029Run } = require("./helpers/synthetic-run");
 const { startMockJev } = require("./helpers/mock-jev");
 
@@ -44,7 +47,7 @@ test("AC5: exact and in-three rates over the 62 measured words, next to SP-029, 
   assert.match(md, /SP-029 over all its judged words: exact 10 \/ 82 \(12\.2%\), in three 10 \/ 82 \(12\.2%\)/);
 });
 
-test("AC5: rates per band of each signal, the better signal, its cut-off and the share below it", async () => {
+test("AC5: rates per band of each signal, and the better signal", async () => {
   const md = await report(syntheticRun());
   // margin: low band = words 0–20 (margin 0–0.6), all misses; high = 41–61, all exact
   assert.match(md, /### Margin[\s\S]*?\| Low \| 21 \| 0 – 0\.6 \| 0 \/ 21 \(0\.0%\) \| 0 \/ 21 \(0\.0%\) \|/);
@@ -54,9 +57,44 @@ test("AC5: rates per band of each signal, the better signal, its cut-off and the
   assert.match(md, /### Weakest confidence[\s\S]*?\| Low \| 21 \| 0\.685 – 0\.785 \| 21 \/ 21 \(100\.0%\) \|/);
   assert.match(md, /### Weakest confidence[\s\S]*?\| High \| 21 \| 0\.89 – 0\.99 \| 0 \/ 21 \(0\.0%\) \|/);
   assert.match(md, /Better signal: \*\*margin\*\* \(exact rate high band − low band: margin \+100\.0 points, weakest confidence −100\.0 points\)/);
-  assert.match(md, /Cut-off: margin ≤ 0\.6 goes to Flash: 21 of 62 words \(33\.9%\)/);
-  // the words to check are listed for Flash
-  assert.match(md, /Words below the cut-off[\s\S]*- m0 /);
+});
+
+test("AC5: the margin cut-off and the weakest-confidence cut-off, each with the share of words at or below it", async () => {
+  const md = await report(syntheticRun());
+  // each cut-off is the top edge of that signal's low band
+  assert.match(md, /- Margin cut-off: ≤ 0\.6: 21 of 62 words \(33\.9%\) at or below it/);
+  assert.match(md, /- Weakest-confidence cut-off: ≤ 0\.785: 21 of 62 words \(33\.9%\) at or below it/);
+  // the better signal's words at or below its cut-off are listed for Flash
+  assert.match(md, /### Words at or below the margin cut-off \(21\), for Flash to check\n\n- m0 /);
+  assert.doesNotMatch(md, /- m21 \(Flash's cell/);
+});
+
+test("AC5: a word on the cut-off's edge counts as at or below it", async () => {
+  // measured word 21 gets word 20's margin (0.6), but sits in the middle band
+  const run = syntheticRun();
+  run.words.find((w) => w.word === "m21").pick.scores[1].vivid.score = 2.4;
+  const md = await report(run);
+  assert.match(md, /- Margin cut-off: ≤ 0\.6: 22 of 62 words \(35\.5%\) at or below it/);
+});
+
+test("AC5: it counts and lists the words where the gate removed Flash's cell", async () => {
+  const md = await report(syntheticRun());
+  assert.match(md, /## Words where the gate removed Flash's cell \(21 of 62 measured, 0 of 20 tuning\)/);
+  const section = md.split("## Words where the gate removed Flash's cell")[1].split("\n## ")[0];
+  for (let i = 0; i <= 20; i++) assert.match(section, new RegExp(`^- m${i} \\(Flash's cell 9, gated out 4, 5, 6, 7, 8, 9\\)$`, "m"));
+  assert.doesNotMatch(section, /- m21 /);
+
+  // a tuning word's removed cell is counted and listed too, marked as tuning
+  const run = syntheticRun();
+  run.words.find((w) => w.word === "t0").flashCell = 5;
+  const md2 = await report(run);
+  assert.match(md2, /## Words where the gate removed Flash's cell \(21 of 62 measured, 1 of 20 tuning\)/);
+  assert.match(md2, /^- t0 \(tuning\) \(Flash's cell 5, gated out 4, 5, 6, 7, 8, 9\)$/m);
+});
+
+test("AC5: it gives the share of cells with a partly cut must-see item", async () => {
+  const md = await report(syntheticRun());
+  assert.match(md, /Cells with a partly cut must-see item: 62 of 558 \(11\.1%\), over all 9 cells of the 62 judged measured words/);
 });
 
 test("AC5: the weights, the tie count, and how often Flash's cell is the main or the alternative cell", async () => {
@@ -99,6 +137,29 @@ test("AC5: a full run.js writes the report from its own run: tuned on the blind-
   assert.match(md, /\| gamma \| 7 \|/);
   assert.doesNotMatch(md, /\| alpha \| 5 \|/, "a tuning word isn't in the measured table");
   assert.match(lastLines(md, 3), /\*\*(Go|No-go)\*\*/);
+});
+
+test("AC5: a full run.js saves the partly cut cells, and the report finds a measured word whose cell the gate removed", async () => {
+  // kappa (measured): its moon is hidden in cells 1-4 and partly cut in cell 5; Flash's cell 3 is gated out
+  const kept = [
+    { word: "eta", grid: "eta.grid.png", flashCell: 1, story: "Eta story, lightness 150." },
+    { word: "kappa", grid: "alpha.grid.png", flashCell: 3, story: "Kappa waves at the moon, lightness 120." },
+  ];
+  const out = tmpDir();
+  const jev = await startMockJev({}, out);
+  try {
+    const r = await runNode("run.js", [], fixtureEnv(out, { SP064_GRIDS: gridsFile(out, kept), NEMO_JEV_ENV_FILE: jev.envFile }));
+    assert.equal(r.code, 0, r.stderr);
+  } finally {
+    await jev.close();
+  }
+  const run = readJson(path.join(out, "run.json"));
+  assert.deepEqual(run.words.find((w) => w.word === "kappa").pick.partlyCut, [5]);
+  assert.deepEqual(run.words.find((w) => w.word === "eta").pick.partlyCut, []);
+  const md = fs.readFileSync(path.join(out, "report.md"), "utf8");
+  assert.match(md, /## Words where the gate removed Flash's cell \(1 of 1 measured, 0 of 1 tuning\)/);
+  assert.match(md, /^- kappa \(Flash's cell 3, gated out 1, 2, 3, 4\)$/m);
+  assert.match(md, /Cells with a partly cut must-see item: 1 of 9 \(11\.1%\)/);
 });
 
 test("AC5: the weights are fixed on the tuning words, not on the measured words", async () => {

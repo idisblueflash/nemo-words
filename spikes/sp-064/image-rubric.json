@@ -1,5 +1,5 @@
 {
-  "_comment": "SP-064: the image pick's rubric, read by lib/pick.js (Jev), shaped like scripts/story-rubric.json's axes. One Score question per scored cell and axis; Jev answers a level 0-2, and the axis score is that + 1 (decimals kept, as US-038 keeps them). A partly cut must-see item gets the lowest clarity.",
+  "_comment": "SP-064: the image pick's rubric, read by lib/pick.js (Jev), shaped like scripts/story-rubric.json's axes. One Score question per scored cell and axis; Jev answers a level 0-2, and the axis score is that + 1 (decimals kept, as US-038 keeps them). An axis's optional \"check\" is added to its question. Must-see clarity checks the items with their adjectives (ADR-0032): the gate checks names only, so a partly cut item, or one in the wrong state, gets the lowest clarity.",
   "axes": {
     "plausible": {
       "label": "Plausible",
@@ -19,10 +19,11 @@
     },
     "clarity": {
       "label": "Must-see clarity",
+      "check": "Check each must-see item with its adjectives: the item must be shown in the state its adjectives give (a bare cob, a nametag that reads \"Venice\"). The cell's must-see marks say only whether the item itself is visible, partly cut or hidden; they don't check its state.",
       "levels": [
-        "a must-see item is partly cut off by the edge of the picture, or small and hard to make out",
-        "every must-see item is shown in full, but some are small or unclear",
-        "every must-see item is shown in full, large and clear"
+        "a must-see item is partly cut off by the edge of the picture, is not in the state its adjectives give (a cob that isn't bare yet, a nametag that doesn't read \"Venice\"), or is small and hard to make out",
+        "every must-see item is shown in full and in the state its adjectives give, but some are small or unclear",
+        "every must-see item is shown in full, in the state its adjectives give, large and clear"
       ]
     }
   }

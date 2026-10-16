@@ -9,6 +9,10 @@
 //   node spikes/sp-064/run.js                   … and have Jev score each kept word's cells; save raw/run.json; write the report
 //   node spikes/sp-064/run.js --report          rebuild the report from raw/run.json, no calls
 //
+// When Claude answers that its session or usage limit is reached, the run
+// stops (exit 1) before Jev, with no run.json and no report, and says when to
+// run it again; what is cached stays, so the next run continues from there.
+//
 // Every Claude answer is cached under the out dir, so a re-run only calls
 // Claude for what is missing or failed.
 //
@@ -28,7 +32,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 
-const { makeClaude, pool } = require("./lib/claude");
+const { makeClaude, pool, UsageLimitError } = require("./lib/claude");
 const { mustSeeLists } = require("./lib/must-see");
 const { captionGrids } = require("./lib/caption");
 const { compareGrids } = require("./lib/differences");
@@ -135,7 +139,15 @@ async function main(argv) {
     return 0;
   }
   const grids = readJson(cfg.gridsFile);
-  const prepared = await prepare(cfg, grids.kept, argv);
+  let prepared;
+  try {
+    prepared = await prepare(cfg, grids.kept, argv);
+  } catch (err) {
+    if (!(err instanceof UsageLimitError)) throw err;
+    const when = err.resetsAt ? `after ${err.resetsAt}` : "later";
+    process.stderr.write(`sp-064: stopped: ${err.message}\nNo report was written. The cached answers are kept, so the next run continues from there. Run it again ${when}.\n`);
+    return 1;
+  }
   for (const [word, cause] of Object.entries(prepared.failed)) process.stderr.write(`${word}: ${cause}\n`);
   if (["--must-see-only", "--caption-only", "--compare-only"].some((f) => argv.includes(f))) return 0;
   const run = await judge(cfg, grids, prepared);

@@ -15,6 +15,9 @@
 //   i 21–40  even → 2 (exact), odd → 1 (in three, the alternative)
 //   i 41–61  cell 2   exact
 // So with 2, 1, 1: exact 31/62, in three 41/62, main 31, alternative 10.
+// The gate removed Flash's cell 9 for measured words 0-20 (21 words), and
+// for no tuning word. Cell 1 of every word has a partly cut must-see item
+// (cell 1 is scored), so 62 of the measured words' 558 cells are partly cut.
 
 const s = (plausible, vivid, clarity, conf = 0.9) => ({
   plausible: { score: plausible, confidence: conf },
@@ -31,6 +34,7 @@ function pick(v, conf, extra = {}) {
     shots: { 1: "medium", 2: "medium", 3: "medium" },
     steps: { 1: "during", 2: "during", 3: "during" },
     isSequence: false,
+    partlyCut: [1],
     ...extra,
   };
 }
