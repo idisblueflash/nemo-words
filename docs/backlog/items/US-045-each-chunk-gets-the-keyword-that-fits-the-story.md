@@ -3,7 +3,7 @@ id: US-045
 type: story
 parent: E01
 status: idea
-concepts: [C-002, C-003, C-005, C-011]
+concepts: [C-002, C-003, C-005, C-011, C-033]
 ---
 # US-045 Each chunk gets the keyword that fits the story
 

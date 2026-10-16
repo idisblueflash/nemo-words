@@ -3,7 +3,7 @@ id: US-060
 type: story
 parent: E01
 status: refined
-concepts: [C-003, C-005, C-007, C-011, C-026, C-030]
+concepts: [C-003, C-005, C-007, C-011, C-026, C-030, C-032, C-033]
 ---
 # US-060 The rhyme rule refuses ye, yeah, des and huh
 
