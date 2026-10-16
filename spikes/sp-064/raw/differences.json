@@ -1,0 +1,964 @@
+{
+  "appeal.grid.png": [
+    "Eye-level wide shot of the whole frame: one bell on its frame, the ringer pulling the rope, and all four onlookers standing in a row, every face visible.",
+    "Low-angle close shot looking up past the ringer's head and arm at one big bell; the crowd is reduced to small faces along the bottom edge.",
+    "Extreme close-up of the bell and the boy's face alone; the ringer and the rest of the crowd are cut off, so the gathered crowd is hidden.",
+    "Wide shot from behind the crowd, with two woman's heads in the foreground and a hat at the edge, so their faces are hidden; the ringer and a small bell are seen far away.",
+    "Overhead bird's-eye view looking down on the bell, with the ringer and four onlookers circled around it and looking up.",
+    "Wide shot from a low-angle side view with the ringer large in the foreground pulling the rope and the crowd approaching from the left; the bell is cropped at the top.",
+    "Medium shot with the bell swinging at the top, the man in the hat covering his ears at left, and the boy and two women at the bottom; this is the only cell with the loud-noise reaction, and the ringer is absent.",
+    "Tight close-up on the ringer's face and hand on the rope, with the boy peeking over his shoulder; the bell is cropped and the rest of the crowd is cut off.",
+    "Wide shot from behind the crowd, with four backs of heads filling the foreground and the ringer and bell small in the distance; similar to cell 4 but showing the whole crowd and more of the bell."
+  ],
+  "apparatus.grid-2.png": [
+    "Straight-on wide shot of the rat standing small and centered, looking up at the phone, with the whole rig (both flasks, gauge, coil) in frame overhead and the full tail visible.",
+    "Extreme low-angle close-up from behind the rat. Its head and phone fill the lower half, and the flask, gauge and coil loom above, cropped at the edges. Its tail and feet are cut off.",
+    "Close low-angle crop at the rat's shoulder, with the rat huge at lower left, whiskers up and phone in paw. It shows the phone screen clearly but cuts off the left flask and most of the rig, and it has no tail or feet.",
+    "High-angle top-down view looking down at the rat's back with its tail curled. The rig appears only as pipes and a flask at the edges, and the gauge is partly cut off at the top.",
+    "Extreme close-up of just the paw gripping the phone against a flask and pipe fitting. The rat's body and face are cut off, so it hides the rat as tester, and the gauge is not shown.",
+    "Side view of the rat standing on its toes and reaching one paw up to touch the gauge, with the phone held low in the other paw, full tail visible, and rig mostly in frame.",
+    "Rat in profile from slightly low, sitting up and staring up at the phone while the rig stretches overhead. The round flask has bubbles, the gauge is partly cropped at right, and the tail curls at bottom right.",
+    "Mid-stride side shot of the rat walking left to right and looking down at the phone. The full rig is symmetric above and the whole rat is visible, the only cell that shows it in motion.",
+    "Rear three-quarter view of the rat seated and facing right, with the phone held up. The rig is tilted and cropped at the top, so the coil and flask are partly cut off."
+  ],
+  "aisle.grid.png": [
+    "Over-the-shoulder view from behind a backpacked man in a green jacket, looking down a narrow yellow aisle at a woman, an older man and a fourth passenger ahead. It shows the line and the tight aisle, but the plane is mostly seats and a bit of ceiling.",
+    "Close, front-facing shot of one worried man ducking under the overhead bin with his wheeled bag. The cramped aisle is clear, but only a sliver of a second passenger is visible, so there is no line and little sense of the plane.",
+    "Low rear view behind a brown-haired woman, who fills the left foreground, with the line of man, older man and bun-haired woman ahead down the aisle. The line is clear, but the narrow aisle is mostly hidden behind her and the cabin ceiling is visible.",
+    "Straight top-down overhead view of four passengers in single file in a very narrow aisle between seat rows. It shows the line and the tight aisle clearly, but not the plane's overall cabin, and no one's face.",
+    "Tight crop of a striding leg and a black suitcase on the yellow aisle, with a seated man glancing up at left. Passengers are cut off above the legs, there is no line, and almost no plane shows.",
+    "Close shot of a woman in a red sweater turning back and pointing, with a man, a woman with glasses and one more passenger queued behind her. It shows the line, but the aisle is hidden and it has the friendliest moment.",
+    "Front-facing wide view of the line coming toward us: a smiling woman with a suitcase leads, followed by a man, an older man and a woman with a bun. It shows the whole line, the aisle and the cabin with windows and bins, so it is the clearest overall.",
+    "Extreme close-up of one frightened man squeezed between seat backs, with a suitcase at the bottom edge. It is the tightest and most cramped, but there are no other passengers and almost no plane.",
+    "Wide rear view down a long cabin behind an older man with a backpack and suitcase, with a woman and a man far ahead near the front. It shows the most plane, with rows of seats, bins and windows, but the line is small and distant."
+  ],
+  "bulge.grid.png": {
+    "promptKey": "92bc175f7c984532",
+    "lines": [
+      "Wide, level shot of the full bulb man handing a cash stack up to the judge, who reaches down with a smile. The swollen money pocket is at the right edge. No nametag is visible, and the whole bench and gavel show.",
+      "Tighter, slightly low angle on the same handoff. The bulb is cropped at the bottom left, and the judge leans in with both hands on the cash. The pocket is bulging with cash at right, and no nametag shows.",
+      "Extreme close-up of the judge's hand sliding into the swollen, cash-stuffed pocket. It cuts off the judge's face and the bulb man, so there is no briber and no nametag, and the gavel sits at right.",
+      "Medium shot with the big bulb in the foreground at left, both of its arms up giving the cash to a delighted judge. The cash-filled pocket is partly cut off at the right edge, and no nametag shows.",
+      "High overhead shot looking down on the judge, who takes the cash from the bulb. The bulb is seen from above as a round blank top with only its hands visible, so its face is hidden. The pocket sits at right, and there is no nametag.",
+      "Later moment: the judge slams the gavel with a smug grin, one hand in the swollen cash-stuffed pocket. The bulb walks away at far right, small and smirking, and no nametag shows.",
+      "Aftermath, wide: the judge strolls off with the bulging cash pocket while the bulb bows with closed eyes beside the bench. The cash stack is gone from view, and the bulb has no nametag.",
+      "Mid-action: the bulb tosses or throws bills into the air toward the judge, whose bag is open at right to catch them. This is the only shot with cash flying, and the pocket here is a bag. No nametag shows.",
+      "Low-angle close-up of the judge grinning, both hands gripping the cash-stuffed bulging pocket. The bulb is only a small, partly cropped face at top right, and the bench is cut off, with no nametag."
+    ]
+  },
+  "biases.grid.png": [
+    "Low-angle medium shot of the grinning referee, scissors open overhead, with only the red player cheering small at left; cuts off the blue player and the referee's legs, and the tilted horizon is mild.",
+    "Wide, strongly tilted shot with the whole scene small at the top; shows the referee, both players and the goal, but the scissors are tiny and the field slope is similar to cell 9.",
+    "Over the bluff's shoulder from behind, so the brown coat's back hides the cash handoff and part of the scene; the referee's scissors are big and open, and the red and blue players sit at the edges.",
+    "High overhead bird's-eye shot looking down on the referee, both players and the ball, with the red jersey and the goal at the top; the scissors are open but the angle is steep.",
+    "Tight close-up of the referee's face, scissors, card and cash; cuts off the blue player and most of the goal, and shows only a sliver of the red jersey at bottom left.",
+    "Mid-shot with a mildly tilted horizon, showing the referee full-length with the red and blue players framing him; the scissors are open and the jerseys are clearly visible, with the ball far at right.",
+    "Framed from behind the goal net with the ball large in the foreground; everyone including the scissors is tiny and distant, and the net partly obscures the scene.",
+    "Eye-level shot with silhouetted crowd heads in the foreground blocking the referee's lower legs and the field; the scissors are open and the jerseys are visible.",
+    "Wide, strongly slanted field with the tilted horizon and a diagonal line; the referee is small, and it looks like cell 2 but with the ball and goal at bottom right and the players at upper left."
+  ],
+  "cocked.grid.png": [
+    "Full-length side view of the man bent forward mid-knock, fist on the door with the cat seated below; his whole body shows, but no \"Carl\" nametag is visible.",
+    "Tight close-up of the fist mid-knock and the cat's tilted face at the bottom corner; the man is cropped to arm and fist, so there is no nametag.",
+    "Cat dominates the foreground, big and head-tilted, while the man is small, seen from behind and knocking in the background; his back is turned, so no nametag.",
+    "High overhead shot looking down on the man's hair and shoulders and the cat on the mat; fist raised, but his chest is hidden, so no nametag.",
+    "Extreme close-up of the cat's tilted face filling the frame; the man is a small figure from behind at upper right, so no nametag.",
+    "Over-the-shoulder view from behind the man's head and sweater, fist at right and cat small in the distance; his back is to us, so no nametag.",
+    "Cat is front and centre in a straight-on full-body view with a question mark over its head; the man is cropped to a fist and sleeve at top right, so no nametag.",
+    "Dramatic low-angle view with the man leaning in from the right, mouth open and fist pulled back, cat small at left; his torso is partly cropped, so no nametag shows.",
+    "Man kneeling on the floor, smiling, one hand knocking and the other on the floor, with the cat seated at right; his chest is in view, but no nametag shows."
+  ],
+  "confound.grid.png": [
+    "Medium shot from the front at market stalls: the sly con man leans in from the left and fixes TOM and TIM tags on the twins, with the table in the foreground; his grin is in profile and the whole scene is visible.",
+    "Close-up on the con man's face and hands as he holds up loose TIM and TOM tags, with the twins pushed to the edges and half cropped; the tags are not yet on them, so no swap is shown on the twins.",
+    "Over-the-shoulder view from behind the con man, whose face is hidden, so his sly look is lost; he fixes TOM and TIM tags on the twins, and the twins are fully visible.",
+    "High overhead view looking down at a table: the twins lean over it from the top and the con man is seen only from behind (hair and shoulders); the loose TIM and TOM tags lie on the table and the sly face is hidden.",
+    "Close-up on the left twin: the con man's sly grin is visible as he pins on a TIM tag, and the right twin's TOM tag is already on, so the swap is clear; the twins are cropped at the chest.",
+    "Tight shot with the twins on the left and the con man on the right: he holds a loose TOM tag and a TIM tag still on the middle twin, and the left twin is cut off at the edge.",
+    "Wide full-body walk-away moment after the swap: the con man smirks and pockets a coin, while the twins wear swapped TIM and TOM tags behind him, and the market background and awning are visible.",
+    "Symmetrical frontal shot with the con man centred between the twins, holding TOM and TIM tags up with a sly sideways look; both twins stroke their chins in puzzlement, and the tags have not been pinned on yet.",
+    "Adds a woman in a sun hat on the left who points and shouts, which no other cell shows; the con man is seen from behind with his face hidden as he swaps the tags, and the TOM tag is partly cropped."
+  ],
+  "contest.grid.png": {
+    "promptKey": "b2ef36ce3f0f82a7",
+    "lines": [
+      "Straight-on medium shot of the convict smirking and writing at a desk; the TV sits small and distant on a stage behind him, and the check mark is visible, but there's no A+ grade.",
+      "Low-angle shot looking up at the smirking convict, with the pencil in the foreground and a large TV at right; the paper is cropped at the bottom edge, and the check mark shows no A+.",
+      "Over-the-shoulder view from behind, so the convict's face is hidden (no smile visible); it shows the paper and the TV clearly at upper right, and he's writing.",
+      "High overhead shot looking down on the convict hunched over the desk, grinning; the TV is cut off in the top-right corner, so it's barely visible, and the paper shows a check mark but no A+.",
+      "Tight close-up of the sweating, smirking face holding the paper up toward the viewer; the TV is cropped at the right edge, and the striped uniform is mostly cut off. The check mark is large and clear, but there's no A+.",
+      "Side or three-quarter view of the convict walking past a \"LIVE\" sign, holding the paper up while the TV is seen through a doorway; it's the only cell with the LIVE sign, and the stripes are partly visible.",
+      "Wide shot with the convict behind a lit podium under a spotlight, writing; the TV is cropped at the right edge, and the paper lies flat on the podium.",
+      "Triumphant moment with a raised fist and a wide, beaming grin, holding up the paper with the check mark; it's the most celebratory cell, and the TV is partly cropped at the bottom right.",
+      "Medium shot of the convict writing at a cluttered desk with extra loose papers (nothing like this in the other cells); the TV is visible at upper right, and he smirks rather than celebrates."
+    ]
+  },
+  "anomaly.grid.png": [
+    "Eye-level three-quarter view from the left: all four family members, dad knocking, and the cracked orange floor tile at lower right, all visible. The boy points at the tile and the family looks amused.",
+    "Extreme close-up of the knocking fist and ring with motion lines beside a cracked orange wall tile. The family is cut out, so the family of tiles-watchers is hidden.",
+    "Wall tile is a tilted, uncracked orange square. A boy reaches up to knock while dad is cropped at the left edge and mum and girl look on, startled, from the right.",
+    "Top-down view of feet on the floor. A plain, uncracked orange rectangle sits among the tiles. There is no knocking hand and no faces, so the family and the knock are hidden.",
+    "Low, tight view of the floor. A huge cracked orange tile with shake marks fills the bottom while the boy peers down with a shocked look. Dad's knocking hand is small and cropped at the top right.",
+    "Rear view of the family walking toward a closed door. The orange cracked tile is small in the floor foreground. Dad's knocking hand is hidden and faces are not shown.",
+    "Tight crowded shot from below of three faces and dad's knocking hand, beside a cracked, vibrating orange wall tile with strong rattle lines. The shock is intense.",
+    "Like cell 1 but the door is already open, with a garden behind it. Everyone is smiling and the boy points at the floor tile. Dad's hand is on the door edge, not knocking, so the knock moment is over.",
+    "Wide side view down a corridor. The family is tiny at the far left with dad knocking, and a cracked orange wall tile with rattle lines dominates the big tiled wall."
+  ],
+  "corpus.grid.png": [
+    "Wide, eye-level shot: boy stands at left looking up at the whole tall book stack with the brown eaten apple core on top, campus building behind; calm moment before anything happens.",
+    "Extreme low-angle close-up of the boy's startled face at lower left, looking up; the apple core on top is clear but only the upper half of the stack is shown, with the base cut off.",
+    "Boy reaches up toward the apple core from low angle with his back to us; the core is small at the top of a stack cropped at the bottom, and no full base is shown.",
+    "Top-down bird's-eye view: apple core is large on the flat top cover, boy tiny at lower left, but the stack's height is invisible and the books look like a flat pile.",
+    "Extreme close-up of the bare brown apple core on a single book; the stack is almost entirely hidden, so its giant height is lost, and there is no boy.",
+    "Mid-action moment: boy tosses the apple core up in the air, so it is not resting on the stack; the stack top is shown without the core and the base is cropped.",
+    "Boy appears alarmed with arms out as the tall stack wobbles and books fall off, with the core teetering on top; a dramatic, unstable moment unlike the calm shots.",
+    "Wide, calm shot: boy sits reading on the grass at left, ignoring the tall stack with the core on top at right; the core is small and the boy is relaxed.",
+    "Close-up of the smiling boy gesturing toward the apple core on a short stack of books by a 'CAMPUS' sign; the core is clear but only the top few books show, so the stack's height is hidden."
+  ],
+  "defect.grid.png": [
+    "Wide shot of a kneeling person clutching their head over a wrecked drone on grass; the crack in the orange part is small and the drone is mostly intact. No nametag is visible.",
+    "Low-angle shot of the drone mid-air as its orange part snaps off, with the person holding a controller below. Earliest moment, before any crash, and the crack is clearly visible. No nametag.",
+    "Over-the-shoulder view from behind the person's head, with hands raised as the drone tumbles above a road. The orange part is breaking off, and the crack is barely visible. No nametag.",
+    "Top-down view of the drone on the ground with hands reaching in and scattered shards. It is the only overhead shot. The person's face is cut off, and there is no nametag.",
+    "Close-up of the person's worried face holding up the cracked orange part, with the drone and a box behind them. The crack is shown large and clear. No nametag.",
+    "Person ducking and shielding their head as the drone and its orange part fly overhead against the sky. The drone is cropped at the top edge. No nametag.",
+    "Earliest moment: the person happily unboxing a drone from a cardboard box, with the orange part still attached and the drone intact. No crash damage and no nametag.",
+    "Wide shot just after impact on a road, with the drone upside down and the orange part shattered. The person stands in the background holding the controller. No nametag.",
+    "Close-up of a worried person pointing at the cracked orange part on the drone, with a box in the background labeled \"New\". No nametag reading \"Dee\" is visible. The crack is clearly visible."
+  ],
+  "devious.grid.png": [
+    "Close-up, eye-level shot with the V sign thrust at the camera and a smirking face; the wallets are tucked in the pocket, but no nametag is visible and the legs are cut off.",
+    "Full-body side view walking past a lamppost, V sign raised behind at head height; wallets in the pocket, no nametag visible; the only one with the lamppost.",
+    "Low-angle close-up looking up, big V sign and smirk; the wallets sit in the pocket at lower right, no nametag visible, and the lower body is cut off.",
+    "Tighter, more cropped version of cell 1: the V sign fills the left, the face is cut off at the top, and the wallets show in the pocket. No nametag visible.",
+    "Distant full-figure shot from behind a foreground man's head and shoulders, who blocks much of the left; V sign and wallets in the pocket are small, no nametag visible; a park bench at right.",
+    "High-angle top-down view of the full figure from above with V sign pointing up at the camera; wallets in the pocket, shoes visible, no nametag visible.",
+    "Mid-stride side profile, looking back with V sign raised at right, one hand on the wallets in the pocket; no nametag visible; sneakers visible.",
+    "Extreme close-up on the chest pocket stuffed with several wallets and the V-sign fist above it; the face is mostly cut off (only the smirk shows), and no nametag is visible.",
+    "Winking, full-body, caught in the act: fans out several stolen wallets in one hand while flashing V sign with the other, two grabbing hands reaching in from both sides, another wallet in the pocket; no nametag visible."
+  ],
+  "cramped.grid.png": {
+    "promptKey": "1bfaf4cfadef975f",
+    "lines": [
+      "Front-on eye-level view of the whole tent opening, with the huge crow filling the left and the wide-eyed camper tucked in a sleeping bag at right. The tent is cropped at the bottom edge and shows no sunset or camp scenery.",
+      "Wide side shot at sunset with a hilly landscape. The crow's head pokes out of a smaller tent while only the camper's arm and sock stick out on the right. The camper's face is hidden, and the tent looks less full than in the others.",
+      "Tight top-down view looking into the tent, with the crow, the camper in a red beanie, a pillow and a lantern all packed in. Only this cell shows the lantern and the pillow. The tent is seen only from inside, as a cramped frame.",
+      "Extreme close-up of the camper's worried face with the crow's beak and head looming over them. The tent and most of the crow's body are cut off, so the tent looks neither small nor full.",
+      "Low-angle shot of the crow standing tall and spreading its wings over the camper, who peeks out at the bottom right. Only here is the crow's full upright body with both feet shown, and the tent is mostly hidden behind it.",
+      "Very tight close-up from behind the camper's beanie, with the crow's wing and eye filling the frame. The tent is barely visible as a green backdrop and the crow's whole body is cut off.",
+      "The camper leans out of the tent flap holding a flashlight and looks startled, while the crow sits calmly in the right half. Only this cell has the flashlight and a camper who is up and moving, and the tent looks open and roomy.",
+      "High-angle shot looking over the sleeping bag, with the crow perched on top of the camper's bedding and the camper peering from the right. The camper's hands are visible, but the tent is mostly cropped to its inner walls.",
+      "Wide front view of the whole tent with the crow filling it, the camper's face hidden at its side, and an exclamation-mark speech bubble. The grass, rock and trees are shown and nothing is cropped."
+    ]
+  },
+  "dose.grid.png": [
+    "Wide full-body shot: the only one showing the deer's whole body and legs, tongue at a spoon with a little liquid, nurse small at the right holding the bottle.",
+    "Tight medium shot from the deer's side: deer's head fills the left and its body is cut off. The nurse smiles above the spoon, and the bottle is half cropped at the bottom.",
+    "Over-the-shoulder view from behind the nurse, so her face is hidden. The deer looks down at a spoon with liquid, and the bottle sits on a shelf behind.",
+    "High overhead angle looking down: the deer's head is cropped at the top and the nurse's face is hidden under her cap. The spoon with liquid is at its nose and the bottle sits on a box at top right.",
+    "Extreme close-up of the deer's eye and nose with its tongue on the spoon of liquid. The nurse is reduced to a hand and sleeve, and the bottle is blurred behind.",
+    "Side-on medium shot with the deer's eyes closed as it sips. The nurse is in profile at the right, with the bottle and table at the bottom and no deer legs.",
+    "Medium three-quarter shot of the deer with its head lowered at the spoon but not yet licking. The nurse's face is partly cropped in profile, and her hand hides most of the bottle.",
+    "Tightest crop: only the deer's nose, tongue and a big spoon of measured liquid, with the nurse's hand at the edge. The nurse's face and the deer's eyes are cut off, and the bottle is blurred.",
+    "Moment before the sip: the deer lifts its head with eyes closed, and the spoon is held out apart from its nose and looks empty. The nurse smiles, with the bottle on the counter."
+  ],
+  "elastic.grid.png": [
+    "Full-body, front-on, eye-level shot of a grinning young girl with the stick raised in her grabbed hand and the band stretched taut diagonally across her face, with both feet in frame, at the draw before release.",
+    "Dramatic low-angle shot from the ground with a scowling girl looming over the camera, the stick planted at left, the band taut, and her head and feet partly cut off, so she looks less clearly young.",
+    "Over-the-shoulder rear view with the girl's face hidden, her braid and back filling the frame, the stick small at right with motion lines, and the band taut but short, so her youth is hard to read.",
+    "High-angle overhead shot of the girl crouched and smiling, with the stick lying flat on the grass and the band hooked on it and pulled only loosely, so it is less clearly taut or grabbed than in cells 1, 5 and 7.",
+    "Extreme close-up of a smiling face and two fists, with the band taut in a V between hand and stick and a hand gripping the stick, but the girl's body is cropped away and only part of her face shows.",
+    "Waist-up front shot of the smiling girl holding the stick upright, with the band tied on and hanging slack in a loop, so it is not stretched or taut, in the setup moment before the draw.",
+    "Full-body, dynamic side-on shot of the girl leaning back with an angry shout as she pulls the band taut to the stick, mid-draw and more strained than cell 1, with both feet visible.",
+    "Release moment after the shot, with the girl laughing and kicking up a leg and the stick held high, but the band has snapped loose and limp, so it is neither stretched nor taut.",
+    "Close crop on one hand grabbing the base of a stick planted in the ground, with the band running up out of frame, so the girl's face is missing and she is barely visible, and no taut band is shown."
+  ],
+  "essence.grid.png": [
+    "Full-length front view beside a standing mirror and potted plant, eyes closed and hands at her collar. It shows the whole dress and shoes, and the mirror and plant are in no other cell.",
+    "Low-angle, three-quarter view with one hand on her hip and a smug glance up. It cuts off the skirt hem and legs, but shows the belt and dress bodice up close.",
+    "Over-the-shoulder shot from behind, with her back and hair filling the left side and her reflection in the mirror on the right. Her back hides most of the dress, and only the reflection shows the front and belt. Cell 1 also has a mirror but shows her whole body.",
+    "High-angle shot of her mid-twirl with arms out and the skirt flared wide. It shows the full dress and a cast shadow, and it is the only cell in motion.",
+    "Tight close-up of her face and shoulders, with a hand at her collar and a sidelong look. It cuts off the skirt and legs that most cells show, and only the collar and top of the belt are visible.",
+    "Seated on a blue stool with legs crossed and chin on her hand. It shows the shoes and legs, but the stool and her pose partly cover the skirt.",
+    "Front-facing, waist-up to knees, head thrown back laughing with hands behind her back. It cuts off the legs and shoes that cells 1, 4, 6 and 8 show, and the belt is clear.",
+    "Full-length shot of her walking toward the camera, at a distance. It shows the whole dress, shoes and shadow, and she is the smallest figure here.",
+    "Three-quarter side view looking down with eyes closed, hands fastening the belt. It cuts off the legs and shows the belt buckle and the dress's fitted waist closely."
+  ],
+  "evicted.grid.png": [
+    "Medium-wide hallway shot at eye level with Victor looking worried between a bearded mover carrying a box and a second mover. Both movers are burly, and the RENT DUE sign is on the open door. This is the neutral baseline view.",
+    "Dramatic low angle from below, with Victor lifted off the ground and his shoes dangling toward the camera. The movers loom over him, and the RENT DUE sign is on the door at right. Only the bearded mover and part of the second mover are visible, and no box is shown.",
+    "Seen from behind, so Victor's worried face is hidden and only the back of his head is visible. The movers are cropped to partial shoulders at the edges, and a third mover carrying a box is outside the doorway. The RENT DUE sign is on the door at right.",
+    "High overhead angle looking down on Victor, who looks worried, with both movers flanking him. It shows the whole room, including the lamp, boxes and open door with the RENT DUE sign. It is the only top-down view, and the movers' faces are mostly hidden by their caps.",
+    "Tight close-up of Victor's frightened face and shoulders, with the bearded mover and the second mover cropped at the edges. The RENT DUE sign is small in the background. Their burly build is mostly cut off, and there is no box except a faint one behind.",
+    "A mover with his back to the camera dominates the foreground as he tapes the RENT DUE sign to the wall, so the sign is the main subject. Victor is small and half hidden, and the bearded mover is partly visible behind. This is the only picture that shows the sign being posted.",
+    "Eye-level wide shot of the movers walking Victor down the front steps outside. Victor looks sad and resigned rather than frightened. The RENT DUE sign is on the door behind, and the bearded mover carries a box.",
+    "Wide view of an emptied room, with Victor looking downcast and seen from the side as the movers grip him at right. The bearded mover is cropped at the frame edge and the second mover's face is mostly cut off. The RENT DUE sign is small on a distant door, and the cleared room suggests an eviction already underway.",
+    "Outdoor street scene with Victor looking worried, a bearded mover carrying a box and a second mover. A third mover handles an armchair by a moving truck. It shows the most moving activity, and the RENT DUE sign is on the door at far right."
+  ],
+  "engine.grid-2.png": [
+    "Wide, level side view of a row of roughly ten pigeons all pecking at scattered grain, with the whole wagon visible behind them. It is the only calm moment before the pulling starts, and the best view of both the full team and the wagon.",
+    "Extreme close, low side view of one huge lead pigeon straining forward, with the rest of the team shrinking behind it. The wagon is a tiny cut-off sliver at the far right edge, and most of the ten pigeons are hidden.",
+    "Low rear three-quarter view from beside the wagon's big wheel, with about ten pigeons in harness pulling away along the shafts. The wagon is cropped at the left edge, but the team count is clear.",
+    "Straight top-down aerial view of twelve pigeons in a grid on the sand, with the wagon cut off at the top edge. It is the only overhead angle and shows more than ten birds.",
+    "Tight portrait of a single harnessed pigeon glaring at the camera, with a blurry wagon and a few other pigeons behind it. Most of the ten birds are hidden.",
+    "Close side view of just five pigeons with heads down pecking grain, with the wagon behind. It is the same pecking moment as cell 1 but cropped tighter, so five of the ten pigeons are cut off.",
+    "Side view of the team at full stretch, with about six pigeons pulling the wagon past and dust and speed lines flying. It is the only motion shot, and the wagon is cropped at the right edge. Several of the ten pigeons are cut off at the left.",
+    "Tight close-up of two harnessed pigeons walking, with a third partly visible and the wagon blurry at the top. Most of the ten pigeons are missing and the wagon is barely visible.",
+    "Front-on view of seven pigeons spread in a symmetrical line over a hilltop, with the wagon directly behind them. It is the only head-on shot, and three of the ten pigeons are missing."
+  ],
+  "exotic.grid.png": [
+    "Straight-on medium-wide shot of the full robot, mask, vase and figurine on three pedestals, with the robot gesturing toward the couple at right.",
+    "Tilted low angle with the mask looming huge at left and cut off at the edge; the robot's head and arm are visible, but the figurine is partly hidden behind the couple.",
+    "Over-the-shoulder view from behind the two visitors' heads, which block the left and right edges; the robot points left and all three artifacts sit small in the middle.",
+    "High overhead view looking down on the display case, with the robot behind it, arms spread, and all three artifacts laid out in a row that cells 1 and 7 don't show from above.",
+    "Tight close-up on the figurine and vase with the robot's head and waving hand behind; the mask and the visitors are cut out entirely.",
+    "Crowded close shot with a big mask cropped at left, the robot small and cut off at top left with a raised hand, and the couple delighted behind the vase and figurine.",
+    "Similar to cell 1 but pulled in: the robot points right and the woman is cropped at the right edge, with the mask and the pedestals slightly cut at the bottom.",
+    "Couple leans in front, the man hand on chin and the woman pointing, while the robot is small and cropped at far left, so it is the least prominent here.",
+    "Widest, most symmetrical frame with the robot's arms spread both ways and the whole mask, vase and figurine in view as the couple smiles with clasped hands."
+  ],
+  "fidelity.grid.png": [
+    "Wide room shot with a plant and sunlit window; dog curled asleep at left, mug with a visible Dell's tag at right, with more empty floor and wall than any other cell.",
+    "Tight eye-level close-up on a plain wall; the dog's face is low and left, and a large Dell's mug with steam sits to the right. The mug is farther from the dog than in cells 4, 6 and 7, and the frame is tighter than cell 4's.",
+    "High overhead view of the dog curled in a ring on a light floor; the Dell's mug is seen from above at lower right, and the dog's face is mostly tucked away, unlike the side views.",
+    "Eye-level close-up with the dog asleep, eyes shut, and a steaming Dell's mug overlapping its nose; the framing is slightly wider than cells 6 and 7.",
+    "Seen from behind; the dog's back faces the camera and its face is hidden, so it can't be seen napping. The Dell's mug sits on a sunlit floor at upper right.",
+    "Eye-level close-up with the dog asleep, and the Dell's mug right beside its snout. The mug sits lower and further right than in cell 7, with its steam curling up.",
+    "Tightest crop: the dog's paw rests against a large Dell's mug in the foreground, with a steaming cup and the dog's face half-hidden behind it.",
+    "The dog is awake with one eye open and winking, so it isn't napping. The Dell's mug is at lower right, with steam.",
+    "The dog is curled in a tight ball with its nose tucked under its tail, and its face is mostly hidden. The Dell's mug is at right, partly cropped by the frame edge."
+  ],
+  "flustered.grid.png": [
+    "Medium close-up of the waiter, who is leaning back with both hands splayed open, while the mustard bottle tumbles upside-down above his hand and a plate edge shows at the bottom; his red face and sweat are clearly visible.",
+    "Wide shot of the whole restaurant, showing the waiter at full height mid-stumble with the bottle flying high and a seated diner at right; his face is tiny, and this is the only one that shows the lamp and the full room.",
+    "Low angle looking up at the waiter's face and both reaching hands, with a huge bottle overhead streaming mustard in an arc; it cuts off his body, and the bottle is the largest it appears in any cell.",
+    "Extreme close-up of the waiter's wide-eyed, sweating face with one hand gripping the bottle, which squirts mustard upward; his body is cropped out and no tray, plate or room appears.",
+    "Over-the-shoulder shot from behind the seated diner, showing the waiter in the background clutching his chest while the bottle flips through the air at left; his face is small, and the diner's back takes up much of the frame.",
+    "Tight close-up with the bottle held diagonally in one hand, squirting mustard to the upper left while his other hand grabs at it; his face is cropped at the forehead and the bottle is nearer to the camera than in cell 7.",
+    "Side-profile medium shot of the waiter gripping the bottle high in one hand while mustard drips from the nozzle, his other hand reaching down toward a table; it's the earliest moment, before the bottle is lost.",
+    "Full-length shot of the waiter standing in the aftermath, splattered with mustard, with the bottle lying empty on the floor; the only cell where the bottle has landed on the ground and he is not flipping it.",
+    "Top-down view of a plate with the bottle landed in a mustard splat, between a fork and knife; only his hands and a sliver of his red, sweating face are visible at the left edge, so he is mostly cut off."
+  ],
+  "hypernym.grid.png": [
+    "Straight-on medium-wide shot with the whole perch top and post visible, an orange bird singing with wing raised between four grey birds on a hill-and-lake backdrop; no \"category\" sign is visible.",
+    "Low angle looking up the thick tapering post to the perch, so it feels high; the orange bird's wing is raised and three grey birds sit beside it, with only sky and clouds behind; no sign.",
+    "Tight close-up of the singing orange bird with partial grey birds at the edges and the perch cut off at the bottom; the perch's height is lost and no sign is visible.",
+    "Over-the-shoulder view from behind three large grey birds in the foreground, looking at the orange bird with its wing out; the perch is mostly hidden by the birds and there is no sign.",
+    "Top-down bird's-eye view of the round perch with the orange bird facing three grey birds, all looking up; the ground, river and trees far below show the height, but no sign.",
+    "Low-angle medium shot with the orange bird's eyes closed as it sings, one grey bird lifting a wing and a fifth bird partly hidden between them; the perch is cropped at the bottom and shows no sign.",
+    "Extreme wide shot with a tiny perch on a very tall thin pole above the lake and hills, so the height is clearest here, but the birds are tiny specks and no sign is visible.",
+    "Eye-level medium shot of the perch with a wider tabletop, the orange bird singing in the middle-left and two grey birds on each side; the post is cut off and no sign is visible.",
+    "Close low-angle shot with the perch edge cropped, the orange bird looking up with beak open and three grey birds packed beside it; no sign is visible and the post is barely visible."
+  ],
+  "herd.grid.png": [
+    "Wide shot of the scout standing on a rock at left with a hand cupped to his ear, listening, while a dense herd of zebras charges past in the foreground and recedes into dust behind; both scout and herd are visible.",
+    "Low ground-level shot between huge hooves, with the scout small in the distance raising a hand in alarm; only a handful of zebras show, so the herd of hundreds is not conveyed, and he isn't clearly listening.",
+    "Over-the-shoulder close-up from behind the scout's hat and cupped ear, looking out at a packed, dusty herd of striped zebras; the scout's face is hidden, but the listening gesture and the sheer number of zebras are clear.",
+    "High, far-off aerial view of a tiny scout on a rocky ledge at lower left, with rows of zebras filling the right side; it shows the scale of the herd best but the scout's attentiveness is barely readable.",
+    "Tight close-up of the scout's startled face with his hand cupped to his ear, binoculars on his chest, and a zebra's striped back across the bottom; very few zebras show, so the herd is hidden.",
+    "Low hoof-level shot like cell 2, but with the scout in the center, hand to his head and dust billowing; the herd is mostly cut off at the legs, so only hooves show and no hundreds are visible.",
+    "Close-up of the scout crouched behind a boulder at lower left, looking frightened, while a few big zebras gallop past at upper right; the herd is only a few animals, with no sense of hundreds.",
+    "Rear view of the scout standing on a rock and holding his hat, looking at the herd's backs as they run away in rows toward the horizon; his face is hidden, and the many zebras are seen from behind.",
+    "Mid-shot of the scout in the center, braced with eyes shut and one hand out, caught in the dust between a few zebras galloping at both sides; the herd of hundreds is not shown and he is panicking, not listening."
+  ],
+  "idiosyncratic.grid.png": [
+    "Full-body eye-level wide shot of the busker beside his open guitar case on the pavement, with a lamppost and building behind; the hand is small and the case coins are barely visible, and there is no camera or tally mark.",
+    "Dramatic low-angle shot from below against sky and buildings, showing the guitar and the raised ticking hand clearly; the case and coins are cut off, and the face is partly foreshortened.",
+    "High overhead shot looking down on the busker's hair and guitar, with the open case and two coins at the bottom; the face is hidden and the ticking hand is tiny and turned away.",
+    "Tight close-up of the ticking fingers with a small flick line beside them, plus the sweater cuff and guitar soundhole; the face, case and camera are all cropped out.",
+    "Medium close-up in profile, with the busker looking off to the side and the ticking hand raised at left; it shows the strap and guitar neck but not the case or the legs.",
+    "Wide shot at eye level that adds a woman in a scarf at the right foreground, with the busker, the case with coins and the ticking hand at left; the only picture with a second person, and the camera is still not visible.",
+    "Extreme close-up of the smiling face, with the fingers snapping or ticking right beside the cheek; the guitar and case are cropped out, so the face is the focus.",
+    "Medium three-quarter shot of the busker playing, with the ticking hand raised beside the guitar and the case just visible in the bottom-left corner; the pose is similar to cell 2, but the view is level, not from below.",
+    "Extreme close-up on the ticking fingers, with a soft-focus background and strap; the face and case are cut off, and the hand is shown larger and blurrier than in cell 4."
+  ],
+  "inflate.grid.png": [
+    "Medium-wide eye-level shot of the person crouched pumping beside a flat, barely inflated float; gate and yard are both fully visible, and the float is at its earliest stage, still limp and unswollen.",
+    "Dramatic low-angle shot looking up at the person pumping beside a big, swollen float that fills the bottom; the gate is cropped at the top right and the yard is mostly hidden behind the float.",
+    "Tight close-up of the pump handle and hose entering a swollen float; the face is cut off, the gate is only a sliver at top and the yard is almost invisible.",
+    "Over-the-shoulder shot from behind the person, who is pumping; the float is nearly fully round and rests against the gate, which is partly blocked, with little yard visible.",
+    "High overhead view of the person crouched pumping beside an almost fully inflated float on the grass; the gate is reduced to a strip along the top edge, but this shows the most yard.",
+    "Wide standing shot of the person smiling with hands on hips beside the fully inflated float upright against the gate; the gate and yard are clear, and the float is done and seen in full.",
+    "Sunset-lit wide shot with the person walking in carrying a second, deflated float while a fully inflated float leans against the gate; it is the only warm dusk image and the only one with two floats.",
+    "Extreme close-up of the person blowing into the valve by mouth with closed eyes, the swollen float filling the right side; the gate is barely visible and there is no yard, and the manual-pump setup is missing.",
+    "Wide shot of the person shading their eyes and looking up at the fully inflated float against the open gate; it is the latest moment in the action, with the gate and yard in full view and more sky than the others."
+  ],
+  "intervention.grid.png": [
+    "Wide, slightly low-angle shot of a man in mid-lunge across the desk. His hand reaches toward the printer, and smoke rises at the right edge. The whole printer is visible, and so is the toolbox in his other hand.",
+    "Extreme low, worm's-eye angle from under the printer. The tech's big hand reaches into the open paper tray, and smoke rises behind. The printer is only partly in frame as angled slabs, and the toolbox sits beside it.",
+    "Close over-the-shoulder shot from behind a bespectacled tech whose hand is already on the printer's top vents. Smoke billows up from the vents. There is no toolbox, and he is already at the printer, not stepping in.",
+    "Straight top-down overhead view with both hands pressed on the printer's smoking vent grille. Smoke rises up the frame, and the toolbox is at the bottom right. His face is hidden under dark hair, and he is not stepping in.",
+    "Tight close-up of a forearm pulling the plug from the wall outlet, with smoke around the socket. The printer is only a sliver at lower left and the smoke is barely rising from it. The face is cropped out.",
+    "Crouching older tech with gray hair, shielding his face with one hand while opening the printer's side tray. Thick smoke rises from the open tray. He is not stepping in. The toolbox is at the lower right.",
+    "Wide shot of a woman lunging toward the printer with a toolbox. A startled coworker in a blue shirt stands in the background doorway, which no other cell shows. The printer is cropped at the right edge, with smoke at the top right.",
+    "Tight, tilted close-up of a bearded man leaning in with a reaching hand. The printer is cut off at the lower right, mostly hidden by a large smoke cloud. His toolbox is at lower left.",
+    "Front-on view of the printer's paper tray and front panel with a glasses-wearing tech leaning over the top, reaching out. A huge smoke cloud fills the right side, and the printer is fully visible and calm-looking."
+  ],
+  "inward.grid-2.png": [
+    "Wide full-body shot from the front as she walks out of the doorway holding the 'IN' sign. The manhole is open at lower right, her eyes are only side-glancing, and she hasn't started writing or kneeling like 3–9.",
+    "Low, tilted angle from near the floor as she steps toward the manhole with the 'IN' sign held against her body and a pen in her other hand. Her eyes look ahead rather than into the hole, and her foot is big in the foreground.",
+    "Over-the-shoulder view from behind, cropped tight on her hair and shoulder as she writes 'IN'. Her face and eyes are hidden, and the open manhole is small and far away.",
+    "High wide shot of her kneeling and writing 'IN' on the paper. The open manhole sits beside her and her eyes are cast down at the paper, not into the hole.",
+    "Straight top-down view with the huge black hole filling the frame. She leans over it with eyes peering down while the paper with 'IN' sits at lower left and she is still holding the pen.",
+    "Extreme foreground close-up of a hand writing 'IN' with the woman small and distant in the background, kneeling at the hole. Her eyes are barely visible, so this is the strongest view of the writing and the weakest of her.",
+    "Side view of her kneeling and leaning toward the manhole, with the finished 'IN' paper and pen on the floor at left. Her eyes aim at the hole, but her face is small and seen in profile.",
+    "Low, close frontal view with her face near the floor over the hole's edge. Her eyes look wide and deep into the hole, and the 'IN' paper and pen lie at left, writing finished.",
+    "Tight close-up of her face and eyes staring intently into the hole while she writes 'IN' with the pen. This is the only cell that shows the writing and the deep gaze together, with the hole's lid looming at right."
+  ],
+  "jerk.grid.png": [
+    "Full-body side-on view outdoors: the man stands arms crossed, chin raised and smirking, while she reaches out to him mid-stride. Both figures are visible, but his feet are cut off at the bottom.",
+    "Extreme close-up of only the man's smirking, sideways-glancing face, with just her raised fingers at the edge. She is almost entirely cut off, so the snubbed narrator is barely there.",
+    "Over-her-shoulder shot from behind: her hair fills the left side and her hand is raised, while he strolls away with hands in pockets and glances back with a smirk. Her face is hidden, so her reaction is lost.",
+    "Low angle looking up at the man, who flicks his hand dismissively with a smirk, while her worried face sits small in the bottom corner. The condescension is clear, but she is cropped to a partial face.",
+    "High overhead view at a café table: he leans back in a chair with arms crossed and a smug look, and her hand reaches toward him across the table by a coffee cup. The only indoor seated scene, and her face is hidden by her hair.",
+    "Hallway with lockers: she stands stunned and watching, while he walks off with his back mostly turned and a smirk over his shoulder. Both bodies are visible, and this is the clearest walk-away moment with her face showing.",
+    "Tight shot at a doorway: he leans an arm on the frame with a smug smirk, blocking her, while she scowls angrily with a hand on her hip. Her reaction is anger rather than hurt, and he is facing her instead of turned away.",
+    "Close two-shot with his smirking face tilted up and a hand on his chest, while she looks hurt and puzzled beside him. His face and her hurt expression are both easy to read, but there is no walking away and no setting.",
+    "Wide shot from behind her: she is a large dark silhouette in the foreground, and he is tiny in the distance, walking away with hands in pockets and glancing back. His smirk is barely readable and her face is entirely hidden."
+  ],
+  "lass.grid.png": [
+    "Medium side-on shot at table level: the woman's finger touches the glass's upper rim, the tiny girl looks up from inside, and the full glass is in frame. No nametag is visible.",
+    "Low angle looking up, the glass tilted and wide with the finger poised above its rim. The woman's face is large and the tiny girl waves. No nametag is visible.",
+    "High top-down view into the glass from above, the finger pointing near its rim and the tiny girl waving up. The woman is cropped to her head and arm. No nametag is visible.",
+    "Tight close-up with the woman's big face and pointing finger at left, tap lines beside the fingertip, and the tiny girl pressed to the glass. This is the clearest tap moment, with no nametag.",
+    "Over-the-shoulder shot from behind the woman, whose head blocks the left side. Her raised finger is near the glass, and the tiny girl looks up with hands clasped. Her face is hidden, and there is no nametag.",
+    "Wide establishing shot of the whole room: the woman stands back with startled raised hands, away from the table, and the glass is small in the distance. This is the only one showing her full body, but there is no tap and no nametag.",
+    "Medium side shot with the woman leaning in and an open flat hand beside the glass, tap marks near it. The tiny girl looks up with hands together, and there is no nametag.",
+    "Extreme close-up of the woman's smiling face and a hand resting on the table, with the tiny girl waving in the large glass at right. No finger tap and no nametag.",
+    "Inverted view from inside the glass: the tiny girl is in the foreground and the woman is seen through the curved glass, her fingertip pressed on it. This is the only view from inside, and the tap is visible. No nametag."
+  ],
+  "latch.grid.png": [
+    "Extreme close-up of a hand pressing the blue latch on a black bar, with the boy's worried face peeking over the right side. The latch is the main subject, and no pool is visible.",
+    "Wide side shot of the whole boy in red trunks, with the towel on his shoulder, reaching for the latch on the gate. Includes palm tree, pool and his bare feet, but the latch is small.",
+    "Low-angle close-up looking up at his fist gripping a blue latch handle, with a frowning face. Most of the gate is hidden and only a sliver of pool shows.",
+    "Over-the-shoulder close-up from behind, with his big hair filling the left of the frame. The latch is partly cropped at the right edge, and his face and the pool are hidden or mostly hidden.",
+    "Medium shot from the front showing his frowning face, bare torso and drawstring trunks as he works the latch. The latch is clear and the gate and pool are visible. The bottom edge has a stray sliver of another panel.",
+    "Medium side-profile shot with a small click motion mark by the latch, showing his focused face, the towel and a gate with the pool behind. His legs are cropped at the waist.",
+    "Wide shot from a distance, with a long stretch of fence and the palm on the left and the boy small at the gate. The latch is tiny and the pool is large.",
+    "Close-up of a big hand clicking the latch shut, with motion lines, while the boy smiles in the blurry background. The latch is the most clearly flipped shut and the gate bars are visible.",
+    "Wide shot after the action: the boy stands with arms crossed and smiles, away from the gate. The latch is visible and looks closed, and this is the only cell where his hands are off the latch."
+  ],
+  "legitimate.grid.png": [
+    "Medium front-left shot of the guard pressing her thumb on a glowing yellow pad, but the scanner's screen is cut off, so there is no green checkmark or VALID, and no nametag is visible.",
+    "Dramatic low angle looking up at the guard, with the thumb on the scanner pad and a big yellow VALID checkmark screen; her whistle is shown and no nametag is visible.",
+    "Over-the-shoulder view from behind, with her face hidden and only the bun and red shirt visible, so a nametag could not be seen; thumb on the pad under a VALID checkmark, with the lagoon beyond.",
+    "High overhead bird's-eye view looking down on the guard's head and shoulders, with her thumb on the pad and VALID shown; her chest is hidden, so no nametag is visible.",
+    "Extreme close-up of just the thumb on the pad next to the VALID checkmark; the guard's face and body are cut off, so there is no nametag and no guard visible.",
+    "Clean side-profile medium shot of the guard pressing the pad, VALID visible, whistle on show, lagoon behind; no nametag is visible and she is the only person.",
+    "Wide shot that adds a boy in a blue shirt leaning on the rope at left while the guard presses the pad and VALID shows; her chest nametag is not visible.",
+    "Tight close-up of her smiling face and a thumbs-up, with sparkle lines around the VALID screen; the pad is only partly in frame and no nametag is visible.",
+    "Earlier moment: the guard walks toward the scanner with her hand raised and not yet touching it, the pad is unlit, and the screen shows VALID; no nametag is visible."
+  ],
+  "literature.grid-2.png": [
+    "Wide shot of a ranger bending to pick up the can, with the trail sign reading TRAIL on the right; the open guide is held up but its pages are barely legible, and the wrapper and paper are scattered nearby.",
+    "Tight close-up on the ranger's face and hand gripping the can; the notebook is open but the other litter and the sign are cut off, so the scattered look is lost.",
+    "Over-the-shoulder close-up of the open guide with sketches of the can, paper and wrapper being drawn; the three litter pieces sit scattered at the top, and the ranger's face and sign are hidden.",
+    "High overhead angle with the ranger picking up the crumpled paper; the notebook is open but the litter is spread widely, and there is a separate pad with a pencil on the right and no sign.",
+    "Close-up over the shoulder of the ranger holding the can while writing in the open guide, with the sign visible at upper left; the wrapper and paper are not shown, so only one piece of litter is visible.",
+    "Medium crouching shot with the ranger picking up the wrapper while holding the open guide; the can and paper lie scattered in front, and there is no sign.",
+    "Wide shot with the sign reading TRAIL at left, the ranger reaching for crumpled paper, and the can and a second paper ball on the ground; no wrapper, and the guide is held but its pages are not readable.",
+    "Top-down close-up of the open guide with written lines and drawings of the can, paper and wrapper, while the actual litter is scattered above; it is like cell 3 but closer, with the ranger's face and the sign hidden.",
+    "Distant front view of the ranger walking toward the camera and writing in the open guide, with the sign on the right and the can, paper and wrapper left on the ground; the ranger is still upright and has not yet picked anything up."
+  ],
+  "malignancy.grid.png": [
+    "Wide, straight-on view of the whole knee with the bones in full, so the swollen ligament is a small pink bulge with few grey patches. A calm doctor on the right points at it with a hand on his chin.",
+    "Close view with the pale pink bulge filling the frame and the bone ends cropped at the sides. The doctor is small in the lower left corner, looking up thoughtfully.",
+    "Tilted close-up with a large doctor in profile on the right, pointing a finger at the bulge. His head covers the right end of the ligament, and the bulge is pink with grey patches.",
+    "High-angle top-down view with the ligament lying on a blue slab. The worried doctor peers over the slab's top edge, and the whole pink bulge is visible.",
+    "Extreme close-up where the grey-blotched pink bulge fills the frame. The ligament ends are cut off and only the doctor's worried eyes and hand show in the top right corner.",
+    "Mid-shot of a knee joint with the darker, purplish bulge sagging between the bones. The doctor is at upper right with his hand at his chin, looking concerned.",
+    "Side view of the whole leg with skin and soft tissue around the knee, making the pink bulge look small. The doctor at lower right looks alarmed with raised hands and shock lines.",
+    "Symmetrical front view with the bone ends at both sides and a darker, more heavily spotted bulge. The doctor at lower right points up at it, puzzled.",
+    "Most dramatic frame, with the bulge almost charcoal-black and covered in dark blotches. The doctor at lower right is horrified, with both hands up and shock lines."
+  ],
+  "merely.grid.png": [
+    "Wide shot of the intact gilt-framed mirror tilting and about to fall, with the woman standing beside it, shrugging. It is the earliest moment, with no cracks or shards, and no nametag is visible.",
+    "Low angle looking up at the woman with her arms crossed, behind a cracked mirror in the foreground. The mirror is cracking but not yet shattered, and no nametag is visible.",
+    "Close-up of the woman shrugging with her palm up, seen over a heavily cracked mirror. It is tighter than cell 2 and the cracks are worse. Her chest is partly hidden and no nametag is visible.",
+    "Over-the-shoulder view from behind the woman, with her back filling the left side. The framed mirror is mid-crash on the right, with glass shards flying. Her chest is hidden, so no nametag is visible.",
+    "High overhead view of the mirror already shattered into shards and broken frame pieces on the floor, with the woman looking up and shrugging. No nametag is visible.",
+    "Wide side view of the woman walking away from the shattered mirror, with her hand in her pocket. It shows the aftermath, with the frame and shards in the foreground, and no nametag is visible.",
+    "Medium shot of the woman crouching and holding up a shard, with the broken frame on the floor in front of her. It is later than cell 5, and no nametag is visible.",
+    "Low, close view of the frame crashing, with large shards still airborne in the foreground and the woman shrugging behind them. It is more dramatic and earlier in the break than cells 5 to 7, and no nametag is visible.",
+    "Wide side view of the woman walking away from the wreckage, much like cell 6 but framed slightly tighter, with her hand in her pocket. It is the latest moment, and no nametag is visible."
+  ],
+  "odd.grid.png": [
+    "Medium two-shot at eye level, cropped at the waist: the narrator's bow is in progress, eyes closed and smiling, and the strange man stands with the spaghetti hat intact, so the nod and both must-see items are visible.",
+    "Widest full-body shot at eye level, with both figures head to toe on a pavement. The narrator is mid-nod and the man's spaghetti hat is small but visible. Cells 1 and 4 crop the legs and cell 2 shows the setting.",
+    "Low-angle close-up on the strange man's face and spaghetti hat. The narrator is cut off at the left edge, so his nod is only partly visible and his face is mostly hidden.",
+    "Over-the-shoulder shot from behind the narrator, whose large head blocks the left half. His nod is seen only from behind, with no face, while the man and his spaghetti hat stay clear.",
+    "Tight close-up of the strange man's face and the sauce-topped spaghetti hat. The narrator is almost entirely cropped, with only a sliver of hair at the left edge, so the nod is basically hidden.",
+    "High-angle overhead view of both standing on tiles. The narrator's face is hidden, his head bowed and seen from above, and the man's spaghetti hat is seen from above too. Only this cell shows the tiled floor from above.",
+    "Extreme close-up on the narrator's nodding, smiling face, with the strange man small and blurred in the background. The man and his spaghetti hat are barely readable, which is the opposite of cell 3.",
+    "Medium two-shot with the narrator looking up at the man. His eyes are open and wide and he is not nodding, so cell 7 misses the nod that cells 1, 2, 3, 4 and 6 show. The strange man and his spaghetti hat are clear.",
+    "Medium shot at the moment after the nod: the narrator is looking up and smiling, and the strange man is lifting the spaghetti hat off his head with one hand. This is the only cell that shows the hat being raised, and the nod is over."
+  ],
+  "obtained.grid.png": [
+    "Wide daytime shot of a lone grumpy bee with arms crossed beside flowers; no queen and no golden reward in view, and the bee's hands are tucked away, not reaching out.",
+    "Close, low-angle shot of a bee raising a stop-hand beside a big tulip; the queen and reward are both absent, and it is cut off at the legs.",
+    "Over-the-shoulder view from behind a bee holding up a hand, with a small crowned queen in the far left background; no reward is shown and the bee's face is hidden.",
+    "High overhead shot of a bee with arms crossed, ringed by flowers; there is no queen or reward and the bee looks puzzled, not hungry.",
+    "Extreme close-up of a squinting, annoyed bee's face next to a daisy, cropped tight; no queen or reward is visible.",
+    "Sunset, medium-wide side view of the crowned queen on the left giving a golden drop to the bee on the right, whose hands are open and empty before the handoff; queen, bee and reward are all fully visible.",
+    "The bee in the foreground holds the golden drop overhead, so its hands are no longer empty, while the crowned queen smiles in the left background; sunset, low angle, bee cropped at the bottom.",
+    "Wide sunset shot of the queen and bee both holding the shiny golden drop between them, with drooping flowers at the bottom; shows both bees fully, at the moment of handover.",
+    "Tight close-up with the crowned queen blurred and cut off at the left edge; the bee smiles at the golden drop she holds out, and its hands are open and not yet holding it."
+  ],
+  "ominous.grid.png": [
+    "Medium-wide shot from behind and below: woman points up at the sun-like Venus over the almond orchard, with the dark cloud on the right and the mountains and sunset glow showing. Calm, before the storm.",
+    "Extreme close-up of her face from the front, with her glasses, worried upward gaze and pointing finger. The orchard and mountains are hidden, only a few almonds show top-left, and the cloud is a small dark patch on the right.",
+    "Over-the-shoulder view from behind: her head and back fill the foreground, her face is hidden, and she isn't pointing. The Venus point, the big cloud and the almond rows are all visible, and the cloud looks more threatening than in cell 1.",
+    "High-angle, far-off shot looking down on the orchard slope: she is a tiny figure pointing up. Almond trees fill the frame, while Venus sits small in the corner, the cloud is a sliver, and her face can't be seen.",
+    "Low-angle shot from behind: Venus is a huge glowing disc and her raised open hand reaches toward it. Her face is hidden, almond branches frame the sides, and the cloud is on the right, so the planet is exaggerated.",
+    "Medium close-up, three-quarter view: she leans forward, looking up and startled, with big almonds on a branch at left. Venus is small at upper right, and the cloud is thin and distant, so the storm is still minor.",
+    "Peeking from behind a leafy almond trunk with almonds in the foreground. Her face is only partly visible in profile, Venus is small, and the cloud is a thin dark wedge at the right, so she looks hidden and watching rather than pointing.",
+    "Dramatic wide shot: lightning and a huge dark storm cloud dominate the sky as she recoils, both arms up. Venus is at upper left, the wind whips the almond trees, and no other cell shows lightning, so this is the storm's peak.",
+    "Close-up of her face from the front, with a hand shading her eyes as she looks up, in windy foliage. Venus is at upper right and the clouds are dark and overcast, with no mountains or full orchard, and she isn't pointing, unlike cell 2."
+  ],
+  "optimal.grid.png": [
+    "Wide side-on shot of the woman standing and pointing at the dog in its kennel, with the cat (cell 2) and rabbit (cell 3) on either side. She is full-length and no shelter sign shows.",
+    "Low side view of the woman crouching to pet the freed puppy, with the cat and rabbit cut off at the edges. Her face is in profile and the shelter building is only implied by the kennels.",
+    "Over-the-shoulder view from behind the woman, whose head and back fill the lower left. She points at the dog in its kennel between the cat and rabbit, and her face is hidden.",
+    "High-angle overhead shot looking down on the woman's head and shoulders as the puppy runs toward her outstretched hand. The cat and rabbit sit in kennels at the sides, and her face is hidden.",
+    "Extreme close-up of the woman's smiling face on the left, with the dog's fur blurred in the foreground. The cat, rabbit and shelter are not visible, and the dog is only partly shown.",
+    "Close-up of the dog's face between the kennel bars with a hand reaching in from the right. The woman is reduced to a hand, with the cat and rabbit small in the background and no building visible.",
+    "Front-on shot of the woman hugging the dog, her eyes closed, with the cat and rabbit in kennels behind her. It is the moment after choosing, with no shelter sign and no door.",
+    "Side view of the woman crouching to pet the dog as it steps out of its opened kennel door, with the cat and rabbit still in their kennels. The door is a unique detail, and the full-length woman and the whole dog are visible.",
+    "Final moment: the woman walks out carrying the happy dog, with a \"SHELTER\" sign, the cat, the rabbit and an open glass door behind her. It is the only cell that clearly shows the shelter building."
+  ],
+  "ornament.grid.png": [
+    "Medium-wide eye-level shot of the person scolding with a raised finger and an exclamation bubble, the cat seated looking up, and a red ball on a partly cropped tree.",
+    "Close low shot with the cat's head and a huge shiny red ball filling the frame; the person is small and the tree is mostly cut off, with only branches and the pot edge visible.",
+    "Extreme close-up of the ball with the cat's reflection in the glass and the real cat's paw and face at the right edge; the tree is only branches and the person is cropped to a face and finger.",
+    "High-angle overhead view looking down at the person, the seated cat and the ball; the tree is cut off at the right, showing only its branches and pot.",
+    "Over-the-shoulder shot from behind the person's head with a pointing finger; the cat sits calmly by the pot and the ball is small and high, with the tree partly cut off.",
+    "Wide side view of the cat crouched low and ready to pounce, with its tail up against the tree and the person's palm held out in a stop gesture; the ball is small and the tree is cropped.",
+    "Tight close-up of the person's stern face and finger, with the large shiny ball at upper right and the cat cut off below the whiskers; the tree is barely visible.",
+    "Calm medium shot of the person smiling at the seated cat, with a small ball on a partly cropped tree; nothing is cut off and it is the only gentle, non-scolding moment.",
+    "Widest full-scene shot showing the whole small tree, pot and tiny ball, with the person resting their chin on their hands on the left and the cat looking up on the right; it is the only one that shows the entire tree."
+  ],
+  "overreach.grid.png": [
+    "Medium side shot of the man stretching along the branch toward a peach at upper right, before any fall; only a branch is visible, not the trunk or the full tree, so the peach tree is only partly shown.",
+    "Wide shot of the whole peach tree with the man stretching along the branch toward a far peach. It is the only picture showing the full trunk and ground, and it is the earliest moment, before the fall.",
+    "Extreme close-up of just a hand reaching for a peach. The man is mostly cut off, so neither his stretching body nor the tree is shown, and nothing is falling yet.",
+    "Close-up from a low angle with a huge peach in the foreground. The man is stretching and starting to slip, with his mouth open and one hand flung out, and part of the tree is visible.",
+    "High-angle shot from above and behind showing the man hanging head-down over the branch. He is stretching down toward a peach below, which is the only picture with the peach beneath him, and his face is hidden.",
+    "Over-the-shoulder shot from behind showing his back and arm reaching up toward a peach. His face and legs are cut off and the tree is barely shown, so it reads as stretching but not falling.",
+    "Mid-action shot of the man tipping off the branch upside-down with a panicked face. Both arms flail, one peach hangs at upper right, and the trunk is mostly out of frame, so it looks like the start of the fall.",
+    "Wide shot of the man in mid-air, clearly falling, with peaches and leaves tumbling around him and the trunk on the left. It is the most dramatic fall frame and the tree is clearly in view.",
+    "Aftermath shot of the man lying dazed on the grass with stars over his head, a fallen peach beside him, and the tree above. He is neither stretching nor falling, because the fall is already over."
+  ],
+  "pale.grid.png": [
+    "Straight-on medium shot with the veil still mostly down over her face, hands pinching its edge at chin level. The veil is not yet lifted, so it hides the pale cheeks. No nametag is visible.",
+    "Low angle looking up, with both arms raising the veil high overhead. The veil is clearly lifted and the pale cheeks show. Cropped at the chest, so no nametag.",
+    "Over-the-shoulder view from behind and the side, with her face turned back and one hand pulling the veil up. Her bare back is shown, and the cheeks are pale but less prominent. No nametag.",
+    "High-angle view looking down at her, with the veil draped over her head and the pale cheeks visible. Shows the full gown and a bent-knee, crouched pose. No nametag.",
+    "Extreme close-up of the face, with hands lifting the veil at both edges. This shows the flashing white cheeks most clearly, but it is cropped so tightly that no nametag can appear.",
+    "Medium shot, with one hand raised to the veil and the other hand on her chest. The veil is lifted and the cheeks are pale. The chest is exposed, and no nametag is visible on it.",
+    "Strict profile view from the side, with her face turned away and one hand on the veil top. The cheeks are partly visible, and the chest is hidden, so no nametag.",
+    "Symmetrical front medium shot, with both hands raising the veil wide. The lifted veil and pale cheeks are clear, and the chest is fully visible but shows no nametag.",
+    "Wide shot of her seated on the floor in front of a window, with one arm raising the veil high. It is the only full-body, seated view and shows the most room, but there is no nametag."
+  ],
+  "parchment.grid.png": [
+    "Straight-on medium-wide shot of the man arched back with a hand on his hip, whole skin spread flat on the table below him. Shows his full torso and the whole skin, but no nametag is visible.",
+    "Low, looking-up angle on the man bent backward with a hand on his back. The skin is cut off along the bottom edge and only partly visible, so the pressed skin is mostly hidden. No nametag.",
+    "Over-the-shoulder view from behind, with his hand pressing on the skin. His face and chest are hidden, so no nametag or arch is visible, and the angle is steeper than in 7.",
+    "Top-down overhead view of him pressing both palms on the skin. His head is cut off at the top and the arch isn't shown. No nametag.",
+    "Tight close-up of both hands pressed flat on the skin. His face and chest are cut off, so no nametag or arch is visible. Looks like the moment before the stretch in 1 and 6.",
+    "Side profile of him arched back with a hand on his lower back, the skin along the bottom. The arch is clearest here, and the frame cuts off the skin's left end. No nametag is visible.",
+    "Three-quarter side view of him leaning over and pressing both hands on the skin with a focused frown. He isn't arched, and no nametag is visible.",
+    "Tight close-up of his face tilted up with eyes closed, relieved. The skin is only a blurry edge at the bottom. The body is cropped, so the arch and any nametag are hidden.",
+    "Front view of him standing upright and smiling, hands resting on the table beside the skin. He is not arched, and no nametag is visible. Appears to be after the action, in a calm pose."
+  ],
+  "peculiar.grid.png": [
+    "Flat side-on full-length view of all five people beside the QUEUE sign, with their smiles looking mild; it's the only one showing the sign, and the line is only five people long.",
+    "Extreme close-up of only the glasses man's face and huge toothy grin; hides the rest of the queue, the other four faces and the lined-up arrangement.",
+    "Low worm's-eye angle looking up at all five, cropped at the waist; faces and wide grins are clear but there's no sign and no line beyond the five.",
+    "High overhead angle looking down on the five in a diagonal line, with the pole at left; full bodies mostly shown, and all five faces turned up grinning.",
+    "Over-the-shoulder shot from behind the glasses man, whose big back dominates the frame; the other four faces are small and squeezed at right, and the queue is cut off at the lower body.",
+    "Looking down the line from the front, with the glasses man turned back at right and the queue stretching far into the distance; shows many more people than cells 1, 3 and 4, but the faces beyond the first few are tiny.",
+    "Tight crop on three faces only (the old man in the hat, the woman, the boy), with wide wrong-looking grins; cuts off the glasses man and the woman in the scarf, and shows no queue.",
+    "Tight two-person close-up of the bob-haired woman and the scarf woman with creepy wide grins; hides the other three people and any sense of a line.",
+    "Wide high view of the five in front with a very long curving queue snaking away behind them; shows the most people of all nine, though the faces in the back are tiny."
+  ],
+  "period.grid.png": [
+    "Wide side-on shot of the whole pier running to the right, with a tiny figure at the far end shading their eyes; shows the full wooden pier and calm water, but no hourglass.",
+    "Low worm's-eye angle looking up at the pier's end, with the figure standing hands in pockets against empty sky; the water is reduced to a small sliver and the pier is cut off at the left, with no hourglass.",
+    "Over-the-shoulder view from behind, with the head and shoulder filling the left; the pier runs ahead to the end rail, and the water is a thin strip at the far left. No hourglass.",
+    "Straight top-down aerial view with the pier as a horizontal strip and the figure a tiny dot at its end; the water is the most prominent here and the figure is the least visible. No hourglass.",
+    "Tight close-up of the smiling figure resting their chin on a rail; the pier shows only as the rail and the water is a small background patch. The face is the focus and there is no hourglass.",
+    "Rear view of the figure walking away along the centered pier toward the far end, in a symmetrical, mid-stride moment; the water sits on both sides and no hourglass is visible.",
+    "Elevated view from behind and above, with the figure hunched over the end rail looking down at the water; the pier and its pilings are visible below, and there is no hourglass.",
+    "Front-facing, centered shot of the figure walking toward the viewer with hands in pockets and a relaxed smile; it shows the pier and water but cuts off the pier's far end, and has no hourglass.",
+    "Side three-quarter view of the figure standing at the pier's end with arms crossed, looking up; it is the only cell with a distant shoreline, the long pier with its pilings reflected in calm water is fully visible, and there is no hourglass."
+  ],
+  "plumbing.grid.png": [
+    "Eye-level medium shot of a smiling plumber with hands on hips looking up at the sign; whole bracket, plum logo, door, plant and downpipe all visible, daytime.",
+    "Tight close-up on the hanging plum sign and its pipe emblem, with only the plumber's face in the bottom-left corner. The pipes are cut off to a sliver at the bottom right, and the door is not shown.",
+    "Even tighter close-up of the plum sign with a girl's face in profile at lower left. The bracket is cropped and the pipes are only a sliver at the right edge.",
+    "Wide shot from behind a woman with a bag who looks up at the small sign. It shows the most household pipes, with elbows and joints in the lower right, and no plumber.",
+    "High-angle shot looking down on the plumber at the door, with a coiled hose and a short pipe on the right. The plum sign is small and tilted, and the downpipe is mostly cropped.",
+    "Plumber on a ladder-free reach hammers the bracket and holds a pipe wrench, in a close side view. The plum sign is on the right and cropped at the edge, and the downpipe is partly cut off.",
+    "Night scene with a lit lamp above the sign and a dark skyline, showing the plumber with arms crossed. The plum logo glows, and the pipe and door are visible.",
+    "Woman and child pointing up at the sign, in a close crop with the plum large and the long downpipe and plant on the right. The bracket is mostly out of frame.",
+    "Action moment: the sign swings loose with motion lines and falling leaves, and the plumber on a ladder reaches up to catch it. The door is not shown, and the pipes are only a partial strip on the right."
+  ],
+  "polysemy.grid.png": [
+    "Medium shot at eye level in front of a window and plant, with a big smile and the open five-finger palm raised toward the camera. No nametag is visible, and the legs are cut off at the waist.",
+    "Low angle looking up against a plain blue sky, with a calm closed-mouth smile and the large spread palm reaching up. The body is cropped at the bottom and no nametag is visible.",
+    "Over-the-shoulder view past a man's head in the left foreground, with the woman seated at a table and her small palm raised. No nametag is visible, and the palm is smaller and partly turned away.",
+    "High-angle top-down view from above on a wooden floor, with the large palm foreshortened toward the camera and the whole body down to the shoes visible. No nametag is visible.",
+    "Extreme close-up filling the frame with the spread palm, with the face cropped at the right edge. It shows the five fingers more clearly than the others, and there is no nametag and almost no body.",
+    "Seated on a stool with legs crossed, with one palm open and the other hand pointing a finger, and a man's head in the right foreground. No nametag is visible, and the second hand is the only one showing a pointing gesture besides cell 8.",
+    "Full-body side-on walking shot outdoors with trees and sky, with the palm held out toward the camera mid-stride. No nametag is visible, and the gesture is mid-motion.",
+    "Tight close-up with eyes closed and a serene smile, with the open palm at left and the other hand's finger pointing at the chest, close to where a nametag would sit. No nametag is visible, and it is the only closed-eyes frame.",
+    "Wide, distant full-body shot in an empty room with a framed picture, with the arm raised high and the palm tiny at the top. The palm and fingers are barely legible, and no nametag is visible."
+  ],
+  "pound.grid.png": {
+    "promptKey": "5939b8ecb311784b",
+    "lines": [
+      "Straight-on medium-wide shot of the sleeper in bed with the whole door and two fists at right. No nametag is visible, unlike none of the others, since no cell shows one.",
+      "Close, door-dominated view with two big fists mid-impact and a large knob. The sleeper is tiny and far away at the left edge, so this is the most door-heavy cell.",
+      "Low, tilted angle looking up along the door at the fists and knob, with the sleeper small at the lower left. The door fills much more of the frame than in cells 1 and 8.",
+      "High overhead view down on the sleeper and bed. The door is cut to a sliver at the right edge, with the fists half cropped and the door barely readable.",
+      "Over-the-shoulder view from behind the sleeper's head and pillow, so the face is mostly hidden. The door and fists sit in the background at the right.",
+      "Tight close-up of the sleeper's smiling face, the most detailed face of the nine. The door and fists are tiny and partly cut off at the top right.",
+      "Side-on view across the bed, with the door as a vertical strip beside a light switch and knob. The fists are at the right and the sleeper is small at the left.",
+      "Wide room shot with the whole bed and the sleeper small at the left. It is the only cell with ghosted motion-trail fists, which show several repeated punches on the door at right.",
+      "Mid close-up of the sleeper from the foot of the bed, with a large blanket in the foreground. The door is partly cut off at the upper right, with the fists mid-swing and motion lines but no knob."
+    ]
+  },
+  "rev.grid.png": [
+    "Wide, level front view of five laughing riders lined up in a row with small exhaust flames at each bike; the only cell that shows all five riders together, but it is static and the engines are the least dramatic.",
+    "Low, close three-quarter front shot of the bearded rider popping a wheelie with a huge exhaust blast and speed lines; the other riders are small in the corners, and it is the most dynamic engine moment.",
+    "Extreme close-up of a gloved fist twisting the throttle with a burst of spark, and only two small riders are visible low in the corner; no exhaust is shown and most revelers are hidden.",
+    "Over-the-shoulder view from behind a cap-wearing rider, with a big exhaust blast in the foreground and three cheering riders ahead; the engines roar but the shot is mostly his back and head.",
+    "Medium front shot of the blond rider standing on the pegs with a fist raised, cheering, while the cap rider and the bandana woman flank him; the exhaust puffs are small and only three riders show.",
+    "Side-on tracking shot at speed of two riders, the bandana woman and the bearded man, with big overlapping exhaust bursts, motion lines and dust; only two revelers, but the loudest engines.",
+    "Rear three-quarter view of riders speeding away through a spray of gravel and dust, with exhaust flames on three bikes; faces are mostly hidden, so the cheering barely reads.",
+    "Tight, low close-up of four riders with fists raised and arms around each other, laughing, with flames at the exhausts below; the most cheering faces, but the bikes are cropped and the wheels dominate.",
+    "Top-down aerial view of three riders circling with exhaust flames and dust trails; faces are hidden, so no cheering shows, and it is the only overhead angle."
+  ],
+  "rigged.grid-2.png": [
+    "Medium side view of a smirking clerk at a desk, sliding a ballot into the box with a stack of papers on the left; wig, clerk and box all visible, box closed and not shown overfull.",
+    "Low angle from in front of the box, with the box's front hiding the clerk's lower body; a worried clerk pushes ballots in, wig fully visible, box looks plain rather than stuffed.",
+    "Over-the-shoulder view from behind, so the wig dominates and the face is mostly hidden; the box is cropped at the right and bottom and doesn't look stuffed.",
+    "High-angle top-down view with both hands cramming ballots into the slot, loose ballots on the desk (left and right); box mostly visible and the ballots look overstuffed, but the bottom edge is cut off.",
+    "Extreme close-up on a grimacing face with tongue out and ballots in hand; wig cropped at the top, box only a thin strip at the bottom, so the box's fullness is hidden.",
+    "Full-body side view in a room, nervous clerk leaning over the box; whole wig and the entire box shown, but only a few ballots, so it doesn't look stuffed.",
+    "Front view, both hands pressing down on ballots that overflow the slot, so the box reads as full; wig and clerk fully shown, with the box centred and complete.",
+    "Tight profile from the left, with the clerk's face squeezed in and the box cropped at the right; ballots barely poking in, wig partly cut off at the left and top.",
+    "Box lid is propped open, showing the box crammed with loose papers, the best view of the stuffed or fixed box; a sweating clerk holds the lid and the wig is shown, but the box's bottom left is cut off."
+  ],
+  "rung.grid.png": [
+    "Full-body side view from a slightly low angle: she smiles up as she lifts one foot toward the bottom step (yellow) and grips it. The whole girl and the ladder's lower half are visible, with no fence.",
+    "Extreme low angle from just below: smiling face and both hands gripping the yellow bottom step, with the ladder receding upward. Her legs are cut off, so only the shoe tip shows.",
+    "Tight overhead close-up of two hands on the yellow bottom step. Her face and the rest of the ladder are not visible, and only a sliver of shoe shows.",
+    "Back view close-up: her head and shoulders fill the frame as she reaches the bottom step, and her face is hidden. The ladder is cropped, with the legs and ground cut off.",
+    "High overhead top-down view: she looks up at the camera, smiling, with one hand on the yellow bottom step. The ladder is almost entirely out of frame, with only the bottom rung and rails at the base.",
+    "Pure side profile, full body, early in the action: she leans forward with both feet on the ground and a hand just touching the bottom step. This is the earliest moment, before any foot is on the ladder, and the whole ladder is not shown.",
+    "Rear three-quarter full-body view with a fence behind: she is already climbing, one foot on the bottom step and a hand reaching a higher rung. Her face is hidden, and this is a later moment than cells 1 and 5.",
+    "Tight side close-up of her laughing face and one hand on the yellow step. The ladder is cropped and her body is cut off, so it is mostly a face shot.",
+    "Low rear view looking up the ladder: she is high up with a foot on the yellow bottom step and her face hidden. It shows the full ladder run, and her head is cropped near the top."
+  ],
+  "ridge.grid.png": [
+    "Straight-on, mid-distance view of the fridge alone on a long, flat-topped cliff crest, closed door, daytime, with small peaks behind it.",
+    "Close low-angle shot looking up at the fridge towering over a small rocky mound; the crest is cut off, so no long narrow crest shows (as in cell 4).",
+    "Top-down aerial view that shrinks the fridge to a small cube on a long, narrow ridge, so the fridge's doors and shape are barely readable.",
+    "Close, eye-level view of the fridge with its door open, showing empty shelves, on a small rocky mound; the crest is hidden, so no long narrow ridge shows (like cell 2).",
+    "Head-on view along a long, narrow ridge receding to the horizon, with the closed fridge alone in the middle. It shows the crest's length and narrowness better than any other cell.",
+    "Low-angle view from below the cliff face; the fridge is cropped to its upper half behind the edge, and only part of the crest shows.",
+    "Sunset version with an orange sky and sun, showing the small fridge alone on a long cliff crest. It is the only warm-lit, evening shot.",
+    "Snowy peak with the fridge's door open and snow on its roof, on a short summit with no long narrow crest. It is the only wintry shot.",
+    "Wide, far-away shot where the fridge is a tiny speck on a long crest above layered blue mountains; the fridge is hard to see."
+  ],
+  "saturation.grid.png": [
+    "Wide, eye-level view of the satchel on dry-looking ground with only small puddles; it looks the least soaked, with few drips and a muted sky, and the whole bag and strap are in frame.",
+    "Low, close three-quarter view with the satchel sitting in a rain-pocked flooded puddle; the bag is cropped at the left and bottom, and heavy streaks and drops fill the frame.",
+    "High top-down view into the open satchel, showing rations, bottle and a tin (the others don't show the tin) standing in water. The flap is open, so the soaked rations are plainly visible, but there's no sky.",
+    "Eye-level view with a canvas tent filling the background; the satchel is dripping, with a small puddle at its base and only light rain visible.",
+    "Extreme close-up of the flap and buckle with water streaming and dripping off; rations and bottle are cropped at the top, the strap and puddle are cut off, and there's almost no rain or sky.",
+    "Eye-level view with a wooden fence behind the satchel and a rippling puddle in front; the bag is wet and dripping, and the rain is moderate.",
+    "High-angle view with the satchel tipped open and three ration packs spilled out into the puddle, plus a tin and bottle; the bag is the least waterlogged-looking here, there's no sky and the rain is only light.",
+    "Wide eye-level view of the dripping satchel in a puddle with a field and tree line behind it; rations and bottle are visible, the strap is in frame, and rain and ripples are clear.",
+    "Tight, slightly low view with the satchel filling the frame, water pouring off the flap, and the strap partly cut off; it shows the rations and bottle at the top edge and dense rain and ripples around the base."
+  ],
+  "scalpel.grid.png": [
+    "Medium shot from the side with the surgeon's whole head and mask visible, the scalpel touching the bald head and the other hand steadying it; the patient's face is in the lower corner, which no other cell shows.",
+    "Tight close-up of the scalpel tip and a thin red incision line on the gleaming scalp, with the surgeon's face blurred and cut off at the upper right; similar to cell 7 but with no sparkle mark and the cut a bit longer.",
+    "Low-angle view from below the scalp with the raised scalpel held up and unused, no cut yet; the surgeon stares wide-eyed over the dome, like cell 8 but closer, with a plain background and no green circle.",
+    "Top-down view from above the head with the surgeon's face cut off at the top; the blade is touching the scalp and a vertical incision line runs down the middle, and both gloved hands and the patient's closed eyes are visible.",
+    "Wide establishing shot with an operating lamp and the patient lying on a table; the surgeon leans in with the scalpel at the forehead, and it's the only one that shows the whole room and body, so the scalp is small.",
+    "Extreme close-up of the surgeon's intense eyes over the mask, with the blade tip just touching the scalp at the moment before the cut; no incision is visible and the glove is mostly cut off.",
+    "Tight close-up like cell 2 but with a sparkle mark beside the blade, the surgeon's face blurred and half cut off, and a shorter incision curving across the gleaming scalp.",
+    "Low-angle shot with the surgeon wide-eyed and the scalpel raised in a flourish, a faint cut line already on the dome and a green circle behind; the surgeon is fully in view, unlike cell 3.",
+    "Over-the-shoulder view from behind the surgeon's head, whose cap and ear fill the left; the hand holds the blade at the far side of the scalp, and the surgeon's face is hidden, which every other cell shows."
+  ],
+  "shattered.grid.png": {
+    "promptKey": "b291386566324a3a",
+    "lines": [
+      "Medium full-body side shot, eye-level: man mid-lunge with hand reaching toward the phone, which tumbles in the air with the shatter mid-burst; shh finger, screen and phone all visible; table at right like cell 6.",
+      "Wide shot from the floor looking toward a doorway: man tiny in the background with a small shh and reaching hand; phone huge in the foreground, tilted, screen cracked, shards scattering.",
+      "Dramatic low angle from below, tilted: man looms over the phone with his hand reaching out, and the shh finger is clear; phone shown on the left with shattered screen and shards flying; no floor visible.",
+      "Top-down overhead view: man crouched and looking down with shh finger; phone already lying flat on the floor in a sea of shards, the aftermath and not mid-fall; his body is cropped by the frame.",
+      "Over-the-shoulder view from behind the man, who is large and cropped; his hand is open at left and the shh finger is partly hidden; phone is small and distant mid-air, back of the head hides his face.",
+      "Close medium side shot, tighter than cell 1: man leaning in with his arm outstretched, shh finger and one eye visible; phone mid-fall with a cracked screen and a few shards; his legs are cropped.",
+      "Extreme close-up of the face and shh finger at table level; phone at left is cut off by the frame edge, showing the cracked screen as it hits the surface with shards bursting; no body or reaching hand.",
+      "Phone back (camera lens) faces us, tilted at impact with shards exploding; the man is blurred in the background with the shh finger, and the screen is mostly hidden by the angle.",
+      "Wide eye-level shot: man squatting behind, looking at the phone already lying flat on the floor with the screen smashed and shards spread around; the aftermath, the whole room and plant visible."
+    ]
+  },
+  "simmers.grid.png": [
+    "Front-facing medium shot, woman smiling as she holds the ladle above the pot with soup streaming off it, bowl in her other hand; whole pot and gas flame visible, but no nametag shown on her apron.",
+    "Wider three-quarter side view from the left, showing the counter and cabinets; the ladle is just above the pot, the woman is smaller in frame and the pot is pushed to the left; no nametag visible.",
+    "Tight close-up on the pot and a dipped ladle with bubbling soup and steam; the woman is cut off above the chest and her face is missing, and no nametag is visible.",
+    "High overhead top-down view looking into the pot at the ladle and bubbles; her head is cropped at the edge, the face is hidden, and there is no nametag.",
+    "Low front view with the ladle raised to her mouth, soup dripping off it and her eyes wide; the pot is at the bottom with soup lightly bubbling and steam rising; the apron is mostly hidden, so no nametag.",
+    "Over-the-shoulder rear view from the right, with her hair bun and the back of her head filling the frame; she pours soup from the ladle into a bowl, the pot is small in the background, and her chest and any nametag are hidden.",
+    "Right-side profile of the woman pouring ladle-fuls into a bowl, with the full pot below and a flame under it; she is mid-pour with her chest turned away, so no nametag shows.",
+    "Extreme close-up of her face with eyes closed, smelling the steam; the ladle is barely visible at the left, the pot sits at the bottom edge, and the apron is cropped so no nametag shows.",
+    "Wide shot with the woman seated on a chair, sipping from the ladle over a bowl, while the pot steams on the stove behind her at left; it is the latest moment in the action, and the apron shows no nametag."
+  ],
+  "snubbing.grid.png": [
+    "Medium-wide eye-level shot with king in right profile, chin up, and whole snowy pub, chimney and sign visible beside the waving hand; king stays still, with no walking or crossed arms as in 7 or 9.",
+    "Tight low-angle shot looking up at king's chin and fur collar; pub is reduced to a sign and a sliver of wall, and the hand is cut off at the bottom edge, touching his cloak.",
+    "Eye-level, hand large in the foreground reaching toward king, who sits in the right third; pub is cropped to a sign and a lit window with a snowy roof, and king's body is cut off at the right edge.",
+    "Closest crop: king's face and crown fill the frame, with the crown tip cut off at the top; pub is just a small sign and a bit of roof, and the hand is small and cropped at the left.",
+    "High overhead view looking down on king's back and crown, with snowy ground and footprints; the only view that shows the whole pub roof and corner, but his face is mostly hidden.",
+    "Similar to 1 but pulled back to show the king's cloak down to the hem, and the pub is more cropped; hand is raised with motion lines, and king is in profile with eyes closed.",
+    "Close shot of king with arms crossed, medallion visible, haughty and clearly refusing the hand; pub is cropped at the left, and the hand is the smallest and cut off at the edge.",
+    "Wide shot with king walking away, seen from behind and the side with his face turned away; big hand in the foreground, pub sign and snowy mountains behind, and footprints in the snow.",
+    "Widest shot, king is tiny and fully turned away, walking off from behind with his face hidden; the whole snowy pub is visible along with footprints, and the hand is small at lower left."
+  ],
+  "spontaneous.grid.png": [
+    "Wide side-on shot with the whole woman, knee on the bench and one hand on the table, glass raised. The full table and a few spawning fish are in view. Only cell 6 is as complete, and it is lower and more tilted.",
+    "Extreme low angle from beside the table, with the table reduced to a corner edge. The woman's knee-first climb is visible. No spawn or river is shown, so it hides the spawn that cells 1, 3 and 4 show.",
+    "Over-the-shoulder view from behind, looking down at the river. Four fish with clustered orange spawn are clearly visible. Her knee is barely visible and the table is only a sliver at the bottom. The beer is raised in front of the spawn.",
+    "High overhead angle looking down on the table top, with her knee on it. Fish and clustered spawn are in the upper right. It is the best view of the whole table from above, with her back to the camera.",
+    "Tight close-up of the glass and her knee, with her face cropped off at the top. Only two fish and some spawn are visible, and the table is just a strip of planks. It cuts off most of the woman.",
+    "Low-angle wide shot with her leaning far along the table and the glass high. Her leg stretches back to the ground, so her knee is not clearly the lead. The spawn is small and low in the frame, and the table and sky dominate.",
+    "Close-up with the huge glass in the foreground and her smiling face. Her knee is on the table, and two fish with spawn are visible at left. Most of the table is cropped, and it is the most glass-dominant of the nine.",
+    "Frontal wide shot with her standing, one foot planted on the table. It is not knee-first, since she is further along in the action, with one arm out and one arm up. A few fish with spawn are in the background, and the whole table is cut off at the bottom.",
+    "Closer three-quarter view from above, with her kneeling on the table and looking down at the camera. Two fish and some spawn are at lower left, and only a partial table is shown. Her face and glasses are prominent."
+  ],
+  "spilled.grid-2.png": {
+    "promptKey": "dadd675d2d9db948",
+    "lines": [
+      "Medium shot with the person in frame: shocked face, reaching toward the tipped mug as coffee pours out; spoon lies by the mug and the desk is partly covered in coffee, laptop and papers at the edges.",
+      "Extreme close-up of the desk edge: mug cut off at top left, spoon on the desk, coffee flooding over the edge in thick drips, a hand grabbing papers at right; no person's face and the whole desk is not shown.",
+      "High overhead view: mug tipped at top left, spoon lying clear on the desk beside it, and a big coffee puddle spreading across the desk toward the laptop and papers; no person, calm moment after the spill.",
+      "Tight close-up of the mug mouth with coffee pouring out and the spoon flying through the air at top right; desk barely visible and mostly cut off, with a sliver of a face at the bottom edge.",
+      "Over-the-shoulder view from behind the person, who reaches a hand into the coffee; mug and spoon are small and far at the top, the desk is covered in coffee, and the person's head and back hide part of the desk.",
+      "Low, desk-level side view: mug tipped at left, spoon in the middle of a large puddle, and coffee flooding across the desk and dripping off the front edge; no person, with the chair behind.",
+      "Close-up of the mug with a hand holding the spoon at top left, coffee still pouring out of the tipped mug onto a small puddle; the desk is only a sliver and the person is not shown beyond the hand.",
+      "Side view from the end of the desk: person leaning in with an alarmed face and a '!' speech bubble, mug and spoon at the far desk edge with coffee falling to the floor; desk is shown but only a thin stream of coffee, not a flooded surface.",
+      "Wide full-room shot: the whole desk, chair, window and person standing back with raised hands; mug tipped at the far end, coffee flooding the desk and dripping onto a rug below; spoon is too small to see clearly."
+    ]
+  },
+  "stampede.grid.png": [
+    "Eye-level front view of the panicked man mid-stride, with the DOORBUSTERS sign and open glass doors behind a clear crowd of four or five. Only one big sole is stomping, and the pee stain is faint and low-contrast. No visible puddle.",
+    "Extreme low-angle close-up on two big stomping soles with a clear dark wet patch on the pants. The crowd is only partial faces, and the doors, DOORBUSTERS sign and puddle are all cut off.",
+    "Low view from behind the runners with the stained seat in focus. He looks back over his shoulder toward the open doors, with two stomping feet framing the shot. The crowd is seen from behind, the DOORBUSTERS sign is missing and no puddle shows.",
+    "High overhead angle looking down on the man and crowd at the door mat. It is the only top-down view, with doors at the edges, and it cuts off the pants stain, the sign and any puddle. A second panel is cut off at the bottom.",
+    "Extreme low close-up of the huge red shoe with several other stomping shoes around it, so it has the most feet. The wet stain is visible, but the doors, sign, puddle and most of the crowd are cut off. A second panel strip shows at the bottom.",
+    "Side-on tilted shot of the man striding through the open door with the DOORBUSTERS sign and a tight line of shoppers behind him. The stain is clear, there are several stomping feet, and no puddle is visible. A second panel strip shows at the bottom.",
+    "Wide, deep shot inside the store with a long stream of eager shoppers and the DOORBUSTERS sign. The man's stained pants and a big stomping sole are in the foreground, but the doors are barely seen and there is no puddle.",
+    "Low-angle shot from the open doorway with the stained man lunging out as the crowd bursts through behind him. The door frames are prominent, and one sole stomps. The DOORBUSTERS sign is not visible and there is no puddle.",
+    "Later, calmer moment: the man stands still, hunched and looking down, embarrassed at his wet crotch, with both feet planted on the mat. The crowd rushes away behind him, so nothing is stomping, there is no sign, and the wet spot is the only pee shown."
+  ],
+  "steroid.grid-2.png": [
+    "Eye-level full-body side view: doctor lunges in from the left with an arm out, annoyed patient glaring in the chair, red knee and bare foot in front; close to cell 8 but framed slightly tighter.",
+    "Dramatic low, worm's-eye angle from the floor: huge foot and glowing red knee dominate, doctor looms at upper left and patient is small at upper right.",
+    "Over the patient's shoulder: the patient's grey head and back fill the left, so his face and annoyance are hidden. The doctor crouches and reaches in, and the knee is a small red blob mostly blocked by the patient's arm.",
+    "High overhead view looking down: doctor leans in from the left with a raised arm, patient's scowl visible, red knee in the middle, and a curved arrow suggesting a circling motion.",
+    "Extreme close-up of the red, swollen knee with the doctor's hands pressing on it and the patient's scowl in the corner; the doctor's face and most of both bodies are cut off.",
+    "Patient is mid-shout with his arm thrown out, and the doctor recoils with both palms up, backing away. Knee is red but smaller. Wide side view that captures the reaction instead of the exam.",
+    "Calm exam moment: doctor crouches and touches the red knee while the patient sits with arms crossed, scowling. Both faces and the knee are all clearly visible, and it's the only one with actual contact and crossed arms.",
+    "Eye-level full-body front view like cell 1, with the doctor striding in from the left, the patient glaring, and the red knee and foot centred. The camera is a bit wider than cell 1, showing more of the room and the clinic sign.",
+    "Seen from behind the doctor, whose back fills the frame and whose face is hidden. The patient is mostly hidden behind the chair, with only grey hair visible, no face, and just a sliver of red knee."
+  ],
+  "surgeon.grid.png": {
+    "promptKey": "607836ddfb0a86d9",
+    "lines": [
+      "Medium shot from the front-left with the surgeon looking down at the incision; the small yellow lightning bolt by the wall panel is visible, and the headlamp beam is lit. Head tilted more than in cell 8.",
+      "Wide, far-back shot of the whole dark operating room with IV stands, stool and tray. The surgeon is tiny, and the bolt is a small spark at far left. It shows the most room of any cell and the least detail on the face.",
+      "Low-angle close-up looking up at the surgeon's wide-eyed, focused face, with the headlamp glowing at upper right. No lightning bolt is visible, and the room is mostly cut off apart from the edge of the surgical light.",
+      "Over-the-shoulder view from behind and to the left, showing the bun, the headlamp and the instrument tray at upper right. The face is mostly hidden, there is no bolt, and the room is not shown.",
+      "Top-down overhead shot with the surgeon's head bowed and the headlamp casting a bright circle on the drape. Both hands hold instruments and the tray is at left. The face is hidden and there is no bolt.",
+      "Extreme close-up of the eyes, glasses and glowing headlamp. Nothing else is visible: no bolt, no room, no hands.",
+      "Medium shot like cell 1, but the surgeon looks up and away toward the bolt, startled, with small alert marks by the headlamp. This is the reaction moment after the surge, and the bolt is clearly visible at the left.",
+      "Side profile facing left, with a second gloved hand passing an instrument in from the right. The lamp beam is lit and the monitor shows behind. There is no lightning bolt, and the room is mostly dark.",
+      "Front medium shot with the surgeon looking down and working, in a darker room than cell 1, with the IV stand at left and the beam lit. No lightning bolt is visible, and the shot is more centered than cells 1 and 7."
+    ]
+  },
+  "strutted.grid.png": [
+    "Full-body side profile of the peacock striding left to right, with the whole fanned tail, a dust puff behind it and deep ruts in the road. It is the clearest all-in-one view, and its dust is lower and thinner than cells 7 and 8 show.",
+    "Close, low, slightly angled front view that crops the tail edges and cuts off the feet and the road. Only small dust puffs at the feet, and the ruts are barely visible, so the farm road is mostly hidden.",
+    "Top-down aerial view with the tail fanned wide behind the bird, facing the camera. Ruts run diagonally across the whole frame and there are small dust puffs, but no fence or horizon.",
+    "Extreme close-up of the head and neck with a sleepy, proud expression. The tail is cropped to a sliver, and the road, ruts and dust are all missing.",
+    "Rear view from directly behind: the tail is spread in a full symmetrical fan and the bird walks away along ruts. Only small dust puffs at the feet, with a fence at each side.",
+    "Extreme low close-up of the striding legs and talons, cropped at the belly. The thickest dust and the deepest rutted ground are shown, but the tail is mostly cut off and the head is missing.",
+    "Very wide distant shot straight down the road: the peacock is tiny with its tail fanned, under huge dust clouds in the sky. It shows the whole farm road with fences and ruts, but the bird is small and its swagger is hard to read.",
+    "Front-facing, eye-level medium shot of the peacock mid-stride, looking proud, with the tail fanned wide behind it. Dust trails at lower left and the ruts are partly cropped.",
+    "Side view from behind a blurred foreground fence post that covers the left side, with the peacock walking right. Its tail is fanned and a dust puff trails behind. The road is partly hidden and the ruts are faint."
+  ],
+  "sweep.grid.png": [
+    "Side-on, eye-level full-body lunge with the arm reaching toward the broom, which is still untouched; the corner is a flat, shallow wall seam with little depth, and it's the earliest moment alongside cell 6.",
+    "Closer, slightly low side view of a crouched sprint with the hand just short of the broom; her far leg and the corner are partly cropped, so the corner reads shallow and the full body is not shown.",
+    "High rear three-quarter view looking into a deep, clearly receding corner with the floor and both walls visible; she stretches toward the broom, the feet cut off at the bottom-left and the face mostly hidden.",
+    "Steep overhead view with motion arcs showing her lunge toward the broom; the deep corner is visible as a floor-and-wall angle, but the broom is only partly in frame at the top right and her face is hidden.",
+    "Tight close-up cropping her body to the head and arm as her hand grips the broom handle; the corner is a flat wall seam, the swing hasn't started, and the broom is large.",
+    "Medium crouch with her hand just closing on the broom handle, the full body and the corner both visible; it's the grab moment, a step after cell 2 and before cell 7.",
+    "Side view of a full lunge with her arm up on the broom handle, the broom held upright against the corner; the corner is shallow, and it's the moment just after grabbing, with more of her legs than cell 6.",
+    "Extreme close-up with her determined face and fist on the broom, the brush filling the right side; the swing and the corner are mostly cropped out, and her body is cut off.",
+    "High three-quarter view of the swing itself, a wide stance with the broom sweeping across the floor and motion arcs; the deep corner is visible behind her, and it's the latest moment, the only one where she is actually swinging."
+  ],
+  "tacit.grid.png": [
+    "Eye-level medium three-shot at the table: the man's hand pinches the $42 tab while the woman and bearded man sit silent beside him. Hand, tab and both seated people are all visible.",
+    "Tight, low close-up of the man's big hand grabbing the tab, with the two seated people small behind him. The hand is more dominant than in cell 1, and the seated people are cropped smaller.",
+    "Extreme close-up of only the hand pinching the tab beside a glass. No people at all, so the seated, silent diners are missing, unlike cells 1, 2 and 4.",
+    "Over-the-shoulder view from behind the two seated diners (backs and chairs), looking at the man reaching for the tab across the table. This is the only view from behind the seated people, and the hand and tab are small.",
+    "High top-down view of the round table: an arm reaches in from the top to grab the tab, with seated people at the bottom corners. They are partly cropped, and only their hands and heads show.",
+    "The man stands and holds the tab up in the air instead of grabbing it from the table. It is a later or different moment, and the hand is not grabbing.",
+    "Close-up of the woman resting her chin on her fist as a hand from the right edge holds the tab. The man's body is cut off, and the bearded man is missing.",
+    "Wide shot of the man walking away toward the counter with the tab, while the two seated diners watch from the left. It is the latest moment, and the hand is only a tiny grip on the tab.",
+    "Tight two-shot of the man holding up the tab next to the bearded man. The woman is missing, and it is held rather than being grabbed from the table."
+  ],
+  "trivial.grid.png": [
+    "Medium side-on shot with the magician at left holding the red card up at the grinning judge, and the gavel visible; the magician's legs are cut off at the thighs, and no stage is visible.",
+    "Close-up from the magician's point of view: only his hand and card at left, with the judge's big laugh and gavel in clear view; the magician himself is not shown and no stage is visible.",
+    "Tight close-up with the card and hand filling the left and the judge small, laughing and half cropped at the bottom right; the magician and the gavel are missing, and no stage is visible.",
+    "Over-the-judge's-shoulder shot from behind, so the judge's smile is hidden and only the bald head and robe show; the magician smiles and holds the card up at center, and no stage is visible.",
+    "High overhead angle on the bench with the card lying face-up on the desk (the trick already done) and the gavel in view; the judge is a cropped head from behind with no smile visible, the magician is half cropped at upper left, and there is no stage.",
+    "Medium side shot with the magician offering the card while the judge rests his chin on both hands with a delighted, wide-eyed smile; the magician is cut off at the knees and no stage is visible.",
+    "Mid-trick moment with the card tossed in the air above the magician's reaching hands while the judge claps and laughs with a wide-open mouth; no stage is visible.",
+    "The magician leans in with his hand on his chest in a bow, holding the card up, while the judge laughs with his eyes shut and the gavel and bench are in view; his legs are cut off at the knees and no stage is visible.",
+    "Wide establishing shot from a doorway showing the magician's whole body, the full bench and the room, with the judge small and smiling and the card held out; this is the only one that hints at a tiny, minor stage area, though it still reads as a plain floor, and it has the smallest, least detailed faces."
+  ],
+  "toss.grid.png": [
+    "Medium two-shot of the boss mid-toss with keys airborne between the two men; boss smiling, Tom's face and shoulder in view, but no nametag visible.",
+    "Tight close-up of the smiling boss with his hand and the keys just leaving it; Tom and his nametag are out of frame.",
+    "Low angle with Tom reaching up for keys high overhead; boss is smiling but cut off at the bottom left, and no nametag is visible.",
+    "Overhead POV from behind Tom's head, with his hands up and the boss's pointing hand cut off at top; the boss's face is not shown, so no smile, and no nametag.",
+    "Over-Tom's-shoulder shot with the boss smiling in the background and keys airborne at top right; Tom's back hides any nametag.",
+    "Extreme close-up of the keys alone in the air between two reaching hands; no faces, so no smiling boss and no nametag.",
+    "Boss holds the keys up in his hand, not yet thrown, so they are not airborne; he is smiling and Tom reaches in from the right, with no nametag visible.",
+    "Moment after the catch: Tom grins at the keys in his fist, boss smiling behind him; keys are no longer airborne and no nametag shows.",
+    "Widest full-body shot of the office with the boss tossing and the keys small in mid-air; the only view of both men's whole bodies, but Tom's chest is too small to read a nametag."
+  ],
+  "ultimately.grid.png": [
+    "Medium shot of the baker smiling and holding the golden loaf up in both hands beside the brick oven, with the \"LEE\" tag visible and the burned loaves steaming on a tray in the foreground.",
+    "Low-angle shot of the baker hoisting the golden loaf overhead in triumph, with the \"LEE\" tag visible and the black loaves cropped along the bottom edge. No oven.",
+    "High-angle top-down shot of the tray: four burned loaves and one golden loaf, with the baker peeking over the counter and the \"LEE\" tag visible. The baker is the smallest part of the frame.",
+    "Wide side/back view of the baker sliding burned loaves into the brick oven with a peel. The face and the \"LEE\" tag are hidden, and the golden loaf sits at the tray's edge.",
+    "Close shot of the baker grimacing and inspecting a burned loaf, with the \"LEE\" tag visible. The golden loaf is half cut off at the bottom right edge and the other burned loaves sit on the tray.",
+    "Close-up of the baker offering the golden loaf on a peel with a smile, with the \"LEE\" tag visible. Burned loaves are only partly visible in trays at the corners.",
+    "Wide shot of the baker bowing or praying toward the golden loaf on a side table, seen from the side. The face and the \"LEE\" tag are hidden, and burned loaves are in a bin and on a tray.",
+    "Medium shot of the baker tossing a burned loaf toward a bin while cradling the golden loaf, eyes closed and smiling, with the \"LEE\" tag visible. Burned loaves are still on the tray.",
+    "Wide shot of the baker kneeling with arms raised and laughing, with the golden loaf on a table. The \"LEE\" tag is too small to read, and burned loaves are on two trays at the sides."
+  ],
+  "unwinding.grid.png": [
+    "Medium-wide side view of the whole hammock between two trunks, with squiggly snore/dream lines by the head; person's hand rests on belly and the full body fits, unlike the tighter crops. No real thought bubble.",
+    "Low, looking-up angle from the foot end: huge bare feet dominate the foreground, hands behind the head, head small and far away; only one trunk and a bit of sky, no thought bubble.",
+    "Over-the-head view from behind: big dark hair fills the frame and the face is hidden, with feet raised in the distance; hammock is cropped and the relaxed expression is not visible.",
+    "High overhead bird's-eye shot of the whole hammock on grass, arm behind the head, both trunk ends visible; shows the full body and hammock shape but no sky and no thought bubble.",
+    "Extreme close-up of the smiling, eyes-closed face and shoulders; hammock is only orange fabric at the edges, so the hanging setup and the rest of the body are cut off. No thought bubble.",
+    "Medium side view with an arm dangling down to touch the grass and one trunk visible; the hammock is cropped at the right and legs are cut off. Motion swoosh marks are absent, no thought bubble.",
+    "Wide side view of the whole hammock between two trunks, with motion swoosh lines showing it gently swaying; smiling person with hand on belly, feet up, and grass in the foreground. No thought bubble.",
+    "Close side-on crop of the head and torso against sky and cloud, with a single curly wisp floating up from the head that is the closest thing to a drifting thought; legs and most of the hammock are cut off.",
+    "Very wide, distant shot with both trees, sky, clouds and the whole hammock tiny in the middle; the person is small, with feet up, and there are no dream lines or thought bubble."
+  ],
+  "ventilator.grid.png": {
+    "promptKey": "a31d1ceb4a273c2c",
+    "lines": [
+      "Wide shot of the whole room with the nurse walking in through the door at far left; her nametag is too small to read, and the baby is small at right with the hose running to it.",
+      "Medium shot from the machine's side with the nurse looking down at the baby; the \"Venice\" tag is clearly legible and the hose visibly reaches the baby's mask.",
+      "Over-the-shoulder view from behind the nurse's head; her face and nametag are hidden or cut off, but the baby, hose and machine are all visible.",
+      "High overhead angle looking down into the crib; the nametag reads \"Venice\" only partly (it looks like \"Venza\"), and the baby is shown in full with the hose across the swaddle, one of her hands on the machine.",
+      "Tight close-up with the machine filling the left half; the nurse presses a button with her finger and the \"Venice\" tag is clear, but the baby is cropped to the lower right corner.",
+      "Side view with the nurse reaching across to touch the machine's screen; there is no nametag at all, and the baby and hose are fully visible, with the clock and a window behind.",
+      "Front-facing, eye-level shot from the foot of the crib with the nurse behind the crib, a night window behind her and the tag legible; the baby's face with the mask is large and central.",
+      "Close-up from the baby's side with the nurse's face large at upper left; her nametag is cut off at the bottom edge (reads \"Venice\" only in part), the machine is cropped at the right, and the baby and hose fill the foreground.",
+      "Balanced medium shot like cell 2 but wider, with the nurse behind the crib, the \"Venice\" tag clear, the machine at left, the baby fully visible and the window and clock behind."
+    ]
+  },
+  "wore.grid.png": [
+    "Medium shot of the king strutting out of the castle doorway, with a banner, helmet and broken sword on the ground. Crown, pajamas and slippers are all visible. No nametag is visible.",
+    "Wide shot of the king strutting from the castle toward a battlefield with a white flag and wreckage. It shows the most setting of any cell. The king is small and has no visible nametag.",
+    "Low-angle, close view of the king mid-stride, with a huge slipper in the foreground and the castle tower at the left. It cuts off his legs and feet, and no nametag is visible.",
+    "Rear three-quarter view of the king from behind, facing a crowd of shocked soldiers and a white flag. The crown and pajamas show, but his face and chest are hidden, so any nametag is hidden too.",
+    "High overhead angle looking down on the king strutting along a stone corridor. It shows crown, pajamas and slippers, but no nametag and no battlefield.",
+    "Extreme close-up of the smiling bearded face and crown. It cuts off nearly all the pajamas and the body, and no nametag is visible.",
+    "Side profile, full-body shot of the king in mid-stride on the battlefield, with a plain background and debris. It's the clearest strut, and no nametag is visible.",
+    "Close-up of the stepping slipper and striped pajama legs beside a helmet and broken sword. It cuts off the king's head, crown and torso, so it shows no king, crown or nametag.",
+    "Front view of the king waving with one hand on his hip, surrounded by soldiers watching. Soldiers in the foreground partly block the view. It's a posed moment rather than a stride, and no nametag is visible."
+  ],
+  "concocted.grid.png": {
+    "promptKey": "5eee3d94678e0e5f",
+    "lines": [
+      "Medium shot from the front, with the whole tall hat, the pot and a rising steam wisp all in frame. The chef cocks his head and smirks while stirring, with the spoon tip just in the soup. It also shows a hanging pan and shelves, which most others lack.",
+      "Close, low-angle shot. The spoon is lifted out of the pot and dripping soup, and the pot is cut off at the bottom, so the bubbling surface is hidden. The hat's top is nearly touching the edge, and the chef looks sideways with a scheming smirk.",
+      "Over-the-shoulder shot from behind-right. The chef looks back at the viewer with a devious smirk, and the tall hat is fully visible. The pot is cropped at the left, with the spoon stirring and steam rising, so the soup is only partly seen.",
+      "High overhead, top-down angle. The swirling soup fills the lower half, with the spoon stirring, and the chef looks up at the viewer. The hat is tilted and the pot is seen from above, which no other cell shows.",
+      "Extreme close-up on the face and shoulders. The hat top is cropped, and the pot is nearly out of frame except for a sliver of soup at the bottom. The spoon handle is held in the foreground, and the smirk and head cock are the main focus.",
+      "Medium shot with the chef leaning in and the head cocked. He covers his mouth or nose with his hand, as if snickering or sniffing, while stirring with the other hand. The hat is fully visible and the pot is mostly visible, but the soup is barely seen.",
+      "Side profile close-up. The chef sniffs or tastes a spoonful of dripping soup, and the hat is cropped at the top and left. The pot is partly cut off at the left with a long steam wisp, and the spoon is held up instead of stirring.",
+      "Tight shot dominated by the spoon stirring the swirling soup in the foreground. The chef's hat is heavily cropped at the top right, and the pot is only a rim and soup, with no steam. The smirk is visible.",
+      "Front medium shot where the chef holds a paper (a recipe) in his other hand and looks sideways at it, with a window behind. The expression is more skeptical than devious. The tall hat, spoon and pot with steam are all visible, and he is the only one holding a note."
+    ]
+  },
+  "corncob.grid.png": {
+    "promptKey": "832f5ea9d7afac42",
+    "lines": [
+      "Medium-wide eye-level shot of two campers by the fire, with one cob held up on a stick and another tossed mid-air above the fire, and a lake behind. The third camper is missing and no cob is on the ground.",
+      "Low-angle close shot of a bearded man throwing a bare cob and a woman holding a roasted cob on a stick. Only two campers are shown, and there is no tent or lake.",
+      "Over-the-shoulder shot from behind a hatted camper holding a roasted cob on a stick, facing a beanie-wearing woman eating corn, with a tossed cob in the sky. The fire is cut off at the bottom corner, and the foreground camper is seen only from behind.",
+      "Top-down view of the fire ring with three campers cut off at the edges, two roasted cobs on sticks, and a bare cob lying on the ground at lower right. It is the only overhead shot and the only one with the cob already landed.",
+      "First-person view with an outstretched hand about to catch a big bare cob in the foreground. A smiling young camper with a roasted cob is at right, and the fire is low.",
+      "Close-up on a woman chewing on a cob in the left foreground, with a bearded man behind her tossing a cob up. The fire is not visible and the cob she is eating is bare-looking.",
+      "Close-up from a camper's point of view with a big roasted cob on a stick in the foreground, a bare cob in the air and a reaching hand. The bearded man is laughing in the background and a stone-ringed fire fills the bottom.",
+      "Wide shot with a young man mid-toss at left, the bearded man holding a roasted cob and a woman in a folding chair at right, with the tent behind. It shows all three campers and the whole scene, but the cob is small and caught high in the air.",
+      "Wide, low, eye-level shot with all three campers seated around the fire, and a huge bare cob lying in the foreground on the ground after being tossed. The ground cob dominates the frame, and the roasted corn is small, held by the campers."
+    ]
+  },
+  "cottage.grid.png": {
+    "promptKey": "7f4c21d6af794e89",
+    "lines": [
+      "Low rear view of two hikers climbing a slope toward the house, with a fairly large house and no ridge line beyond it; rain falling, and the people are shown from behind.",
+      "Over-the-shoulder close-up of a red-hooded hiker's back that blocks half the frame; the house is large and the people are mostly hidden, with no second person visible and no ridge.",
+      "High aerial view looking down on the house, the path and two tiny hikers, with the sea and the ridge edge visible; the only shot that shows the whole ridge top and the house tiny.",
+      "Close-up of a hiker's face shielding their eyes, with the house tiny in the distance on a ridge; only one person shown, and the moment is before they reach the house.",
+      "Close-up of the two hikers at the door as one grabs the knocker; the house is cut off to a wall and door, with no ridge or landscape visible, and the roof drips.",
+      "Wide, low-angle shot with the house large on the right and the two hikers tiny, far off at the left; the ridge is only a grass slope and the rain is lighter.",
+      "Tight close-up of the two smiling hikers under the eave, now sheltered and showing no sign of being soaked; the house is cropped to a wall and window, with only a sliver of rain at top right.",
+      "Interior doorway view from inside the house, with both hikers smiling in the doorway after arriving and the distant ridge and rain beyond; the house is cut off to the door frame.",
+      "Dynamic mid-shot of the two hikers rushing and slipping on the muddy path toward the door, with the house cut off to a wall and door; faces are alarmed, rain falls, and there is no ridge."
+    ]
+  },
+  "flux.grid.png": {
+    "promptKey": "a1fe5a83a8af6e21",
+    "lines": [
+      "Wide eye-level shot of the whole scene: the woman on the left bank tossing crumbs, two ducks flying overhead and ducks in the foreground, with autumn trees. No signpost and no four-season tree, like all the others.",
+      "Close, low shot with a big duck flapping up out of the water in the left foreground. The woman, holding her paper bag, is cut off at the right edge, and three small ducks fly above. Closer than cell 1 and cell 7.",
+      "Over-the-shoulder view from behind the woman's head and shoulder, looking out at the lake. Ducks swim and crumbs fall, but no ducks fly and her face is hidden. Autumn branch at upper left.",
+      "Top-down overhead view of seven ducks in a ring around the crumbs, with the woman's hand and bag at lower right. No sky, no trees and no flying birds.",
+      "Tight close-up of two open-beaked ducks catching crumbs, with the woman smiling and holding her bag at upper right. A loose line of dark birds flies at the top, and the scene is cropped tight.",
+      "Low-angle shot with the woman crouched at the shoreline, reaching out toward the ducks and smiling down at them. She is the closest and most central here, and no birds fly in the sky.",
+      "Wide shot of a duck splashing down mid-landing in the foreground, with a second duck also landing behind it. The woman is small at the far right and two birds fly above. Shows more water and more of the action than cell 2.",
+      "Shows a clear V-shaped line of seven ducks flying across the sky at the top. A big duck floats in the foreground while the woman, seen from behind at the right, reaches up toward them. Calmest moment, and the flight is the focus.",
+      "Close-up from the ducks' level with only the woman's hand and sleeve at the top, her face cut off. Crumbs fall in the air, one duck flaps its wings and gulps, and no ducks fly overhead."
+    ]
+  },
+  "pajamas.grid.png": {
+    "promptKey": "138622f4404d1877",
+    "lines": [
+      "Wide front view of both llamas sitting upright on the bed edge, heads tilted together, with the moon window visible. Both are fully in frame in matching striped pajamas, but they are awake-looking and calm rather than lying down.",
+      "Extreme close-up of the cream llama's face alone with eyes closed. The brown llama and the matching pajamas are cut off, so the pair is hidden and only a sliver of striped collar shows.",
+      "Top-down view of both llamas lying on the bed with heads on one pillow, asleep, with full striped pajamas and hooves visible. No window and no sitting.",
+      "Standing scene on a rug beside the bed. The cream llama is mid-yawn and the brown one holds a pillow, so neither is asleep. It's the only pre-sleep moment, and the bed is cut off to the side.",
+      "Both llamas sit on the bed edge slumped forward, heads drooping and eyes shut, with 'zzz' marks. This is the clearest nodding-off moment, with both pajama sets visible.",
+      "Over-the-shoulder close shot from behind the cream llama, whose back fills the left side and hides its face. Only the brown llama is smiling and sleepy, so the pair is not fully seen.",
+      "Tight close crop of both llamas sitting, heads leaning together, smiling and eyes closed. Pajama legs fill the bottom, and the bed and window are mostly cut off.",
+      "Front view of both llamas tucked under the pink blanket on pillows, with the moon window above. The blanket hides their pajama bottoms and legs, which cells 3 and 9 show.",
+      "Wide front view of the llamas on the bed, the cream one lying down asleep and the brown one sitting up with eyes closed. Full pajamas and hooves are visible, and the moon window is at upper right."
+    ]
+  },
+  "prevalence.grid.png": {
+    "promptKey": "13de77702ca79e17",
+    "lines": [
+      "Street-level wide shot from the left, with a worried man in profile, the ambulance far off with lights and exhaust, and a crowd of sneezers inside and outside the lens: the most germ-heavy view alongside 8.",
+      "Close, tilted view with the ambulance cropped at the right edge and its lights glaring, only three sneezers in the lens and none outside it, so the flu spread looks small.",
+      "Bus-stop scene with a man in glasses seen from behind, a shelter and bench, and the ambulance rear-on in the distance, with a medium crowd in the lens and several outside.",
+      "High overhead angle looking down on sneezers on the pavement, with a bald man's head in the corner and the ambulance seen from above at the top right, partly cut off at the edge.",
+      "Extreme close-up where the lens fills most of the frame with four big sneezers, and the ambulance is a small cropped shape at the top right: it shows the fewest people overall and the least of the ambulance.",
+      "A doctor in a white coat holds the lens, and the ambulance is parked with its back doors open and a stretcher being loaded, so it is not revving. A slumped patient on a bench sits outside the lens, and only a few sneezers appear in it.",
+      "Close view with the ambulance head-on at the left, large and with headlights and exhaust, so it looks the most like it is revving; the lens shows just three sneezers and few people are outside it.",
+      "Wide, high-ish view of a long street with the ambulance tiny in the distance, a woman seen from behind, and many sneezing pedestrians walking outside the lens, so the flu looks the most widespread.",
+      "Seen from indoors through a doorway with a plant and a red-cross sign, the ambulance is parked with paramedics standing beside it and no exhaust, so it is not revving; the lens shows four sneezers and a few people stand outside."
+    ]
+  },
+  "rationing.grid.png": {
+    "promptKey": "c5c90baff0fa2318",
+    "lines": [
+      "Medium front-on shot of the rat mid-pour, scooping grain into the second bowl with a wary sideways glance. All four equal bowls and the tail are visible, with shelves behind.",
+      "Tight close-up that crops the rat's body and shows only three bowls. It pours grain with a furrowed, careful look, and the fourth bowl and tail are cut off.",
+      "Extreme side angle looking down the table at four bowls receding into the distance. The rat is a huge cropped shape at left, with no scoop, no pour and no apron.",
+      "High, overhead-ish angle with a bow on the rat's head, showing four evenly filled bowls from above. The rat leans over the scoop, and the lower edge has a stray cropped strip.",
+      "Extreme macro on one bowl and part of a second. The rat's snout and paw are cropped as it prods a grain with a finger. The other bowls are cut off, so the even piles can't be compared.",
+      "Rat holds up two bowls and compares them, frowning. Only these two bowls are shown, so the row of equal piles is hidden, and it has no scoop or table.",
+      "Eyes-closed rat wiping its brow with a cloth after finishing, holding the scoop at its side. All four bowls are evenly filled, which makes it the relaxed aftermath, not the pouring.",
+      "Mid-pour like cell 1, but a grey second rat stands at right with paws clasped and watching. The pour, the four equal bowls and the cautious rat are all visible.",
+      "Calm, eyes-closed rat stands upright with its hands on the table and the scoop set down. Four even bowls show, and it's a still moment after the work, with no pouring."
+    ]
+  },
+  "regional.grid-2.png": {
+    "promptKey": "81abc881dc95c340",
+    "lines": [
+      "Wide, eye-level shot of both cooks stirring and holding herbs beside a fire-lit cauldron. The soldier is a small, cropped figure at the right, and there is no steam.",
+      "Close, low-angle shot with the cauldron and sign dominant. The soldier's face is cut off at the right, the stew surface is hidden, and steam rises between the cooks.",
+      "Over-the-shoulder view from behind the soldier's helmet, with steam rising and the stew visible. The soldier's face is hidden, and the bowl is held up in the foreground.",
+      "High overhead angle looking down into the steaming stew with chunks visible. Both cooks are shown from above, and the soldier is cropped to a helmet and bowl in the corner.",
+      "Tight close-up on a ladle lifting chunky stew. The first cook's head is cut off at the top, and the soldier is partly cropped at the right.",
+      "Wide shot with the second cook sprinkling herbs into the pot. The soldier is only partly shown at the right, and the stew is lightly visible.",
+      "Only one cook, on the left, with no second cook. The soldier is large at the right, and the cauldron's stew surface is hidden behind the sign and pot rim.",
+      "Wide action shot of the two cooks carrying the steaming cauldron on a pole, with the soldier walking alongside. It is the only picture where everyone is moving and full-length, with sandals visible.",
+      "Close-up of the soldier sipping from a spoon, with cooks small in the background. The soldier is the focus, and the stew is partly hidden behind the rim."
+    ]
+  },
+  "regulation.grid.png": {
+    "promptKey": "0fd50444518e422e",
+    "lines": [
+      "Wide front-on shot of the stern landlord on the stoop holding up the House Rules sheet and raising a palm at a brown-haired tenant seen from behind; full body and sign visible, no nametag.",
+      "Close-up from over the tenant's dark-haired head as the scowling landlord jabs a finger at the House Rules sheet taped to the door; sign clear, no nametag, landlord cut off at the chest.",
+      "Over-the-shoulder shot from behind the landlord, who is cropped to cap and shoulder, holding the House Rules paper toward a startled woman; his face and stern look are hidden, no nametag.",
+      "Tightest close-up of the landlord's angry face and pointing finger beside the House Rules sheet, with only a sliver of the tenant's head and glasses; his waist is cropped, no nametag.",
+      "High overhead view of the landlord leaning over a table and pressing his hand on the House Rules sheet, which his hand partly covers; his face is hidden under the cap, so he doesn't look stern, and there is no nametag.",
+      "Rear view of the landlord climbing the steps with a rolled-up paper while a woman peeks out the door; his face is hidden and the sign isn't posted or readable, with no nametag.",
+      "Landlord seen from behind and the side as he pins the House Rules sheet to the door, with a brown-haired tenant in the foreground; his face is mostly hidden, so no clear stern look, and no nametag.",
+      "Wide shot of the landlord walking away down the steps after posting the House Rules sign on the door, while a woman watches from the right; his eyes are downcast, and no nametag is visible.",
+      "Medium close-up of the landlord slapping his palm on the House Rules sign with an exclamation bubble, facing a wide-eyed brown-haired tenant; sign clear, no nametag."
+    ]
+  },
+  "synonym.grid.png": {
+    "promptKey": "e34707d4b418a021",
+    "lines": [
+      "Full-length, eye-level side-on shot of the whole room: the sinner stands at left, hand to mouth and looking at the mirror, and the whole mirror stands at right with the twin in a gentle open-handed gesture. The twin's mouth is open, but the sinner's mouth is covered.",
+      "Tilted low-angle shot looking up, with the mirror frame slanted. The sinner is cut off at the legs and the twin at the waist. The twin points a finger up (like cell 7 and cell 8), and the sinner's hand covers their mouth.",
+      "Tight close-up over the sinner's shoulder: we see the back of their head, and their face is hidden, so the sinner is not seen watching. The twin has an open, speaking mouth and open-handed gestures, and the mirror frame is mostly cropped out.",
+      "High-angle overhead view looking down on the sinner's hunched back, with their face hidden and the mirror tilted. The twin is full-length with open arms and a speaking mouth, and this is the only view from above.",
+      "Extreme close-up of two profiles nose to nose, with no mirror and no full bodies. Both mouths are open and speaking, one with a wide grin, each with a 'THE SAME WORDS' bubble below. It shows the mouths most clearly but loses the mirror and the sinner's watching eyes.",
+      "Medium shot from the sinner's side, with their wide eyes fixed on the mirror and their hand on their chest, so the mouth is not covered. The twin shows an open-handed gesture. The mirror is partly cropped at the right edge.",
+      "Medium shot from behind and to the side, with the sinner hunched and a hand over their mouth, glancing at the mirror. The twin gives a thumbs-up or point and is shown from the waist up; the twin's legs are visible at the bottom.",
+      "Close frontal shot of the sinner's worried face, with their hand at their chin and eyes on the mirror. The twin is on the right, pointing a finger up, and the framing is tight so the twin's body is cut at the waist.",
+      "Close medium shot with the sinner on the left grinning and mirroring the twin's open-handed pose, hand on chest. This is the only cell where the sinner's mouth is open and smiling in sync with the twin, so the pair look truly mirrored, not watched."
+    ]
+  },
+  "trait.grid.png": {
+    "promptKey": "93a29b2288756b4a",
+    "lines": [
+      "Full-body wide shot at street level at dusk: the man lunges forward with a loose shoelace while the date waits smiling by the lit doorway, and both are fully visible, unlike the tight crops in 2, 5 and 9.",
+      "Dramatic low-angle shot looking up at the man's huge sole in the foreground, with the date small and worried at right, so his stumble is exaggerated and his legs are foreshortened.",
+      "Indoor hallway shot from behind the date's head and shoulder, with the man falling away from her down the corridor, so his face is hidden and the date is shown only from behind and not waiting at a door.",
+      "High overhead bird's-eye view of the sidewalk: the man sprawls with his untied shoe flung off and his face hidden, the date is seen from above at top right, and a parked car is visible, which no other cell shows.",
+      "Extreme close-up of the man's panicked face and outstretched hand filling the frame, with the date small and blurred behind; his legs and the trip cause are cut off, unlike the full-body cells 1, 6 and 7.",
+      "Wide shot at a doorstep where the man trips over a green garden hose, one leg kicked up in mid-fall, while the date watches delighted from the right. It is the only cell that shows the hose as the cause.",
+      "Side-on full-body shot of the man mid-stumble, bent low with his untied lace trailing, while the date covers a laugh at right against plant pots, with no door or street lamp.",
+      "Wide shot at a café door with a chalkboard sign: the man wobbles with arms flung wide and a loose shoelace while the date laughs openly, hands clasped. Her amusement is clearer than in 1 or 7.",
+      "Close-up of the date's smiling face in the foreground, glancing back over her shoulder, while the man stumbles small and out of focus behind her. She dominates and his trip is barely legible, unlike the other cells."
+    ]
+  },
+  "worn.grid.png": {
+    "promptKey": "e70fffc9fd2dfb06",
+    "lines": [
+      "Medium side-on shot from the car's front-left: the mechanic points and shouts with an exclamation bubble while the driver leans out of the window, and the whole red bald tire is visible with its tread worn smooth.",
+      "Tight close-up on the tire: only a pointing hand and sleeve appear, with no mechanic's face, and the driver is small and distant in the window, so it shows the smooth tread most clearly but cuts off the mechanic.",
+      "Low-angle shot from the front-left: the mechanic points and the driver peers out, and the whole bald tire and the car's front are visible, with no speech bubble and a more dramatic perspective than cell 1.",
+      "Top-down bird's-eye view: the mechanic runs toward the car and the driver leans out, but the tire is a thin red sliver at the front wheel, so the bald tread is barely visible, unlike every other cell.",
+      "Over-the-mechanic's-shoulder shot: the mechanic's cap and back fill the left side, a hand points at the tire, and the driver looks alarmed in the window, with the tire cropped at the bottom and right edges.",
+      "Mechanic rushes alongside the moving car with hands up and an exclamation bubble, and the driver sits at the wheel looking stern rather than scared, which is the only cell where he does not look warned, with the bald tire at the bottom.",
+      "Mechanic crouches and rubs the smooth tread by hand while the driver stands beside him with a hand on his mouth, and the tire is shown at the left edge, so it focuses on checking the tread, not on warning.",
+      "Shot from inside the car over the dashboard: the driver's frightened face fills the left, the mechanic points through the window with an exclamation bubble, and the bald tire is only a cropped red band in the foreground.",
+      "Aftermath: the driver crouches with his head in his hands in distress while the mechanic comforts him, and the bald tire is on the left, so this is the latest moment with no pointing or warning."
+    ]
+  }
+}

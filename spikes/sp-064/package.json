@@ -1,0 +1,9 @@
+{
+  "name": "sp-064-must-see-image-pick",
+  "private": true,
+  "version": "0.0.0",
+  "description": "SP-064 throwaway spike: does Jev agree with Flash's image pick once it checks the must-see objects and the shot?",
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  }
+}

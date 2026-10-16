@@ -1,0 +1,5506 @@
+{
+ "adjectives": {
+  "cache": {
+   "corncob.grid.png": {
+    "1": {
+     "objects": [
+      {
+       "name": "young man camper",
+       "adjectives": [
+        "brown-haired",
+        "laughing",
+        "green-hooded",
+        "seated"
+       ]
+      },
+      {
+       "name": "young woman camper",
+       "adjectives": [
+        "dark-haired",
+        "eyes-closed",
+        "smiling",
+        "maroon-sweatered",
+        "seated"
+       ]
+      },
+      {
+       "name": "corn on a stick",
+       "adjectives": [
+        "roasted",
+        "yellow",
+        "held up"
+       ]
+      },
+      {
+       "name": "corn cob in mid-air",
+       "adjectives": [
+        "yellow",
+        "tossed",
+        "airborne"
+       ]
+      },
+      {
+       "name": "corn cob being eaten",
+       "adjectives": [
+        "roasted",
+        "yellow"
+       ]
+      },
+      {
+       "name": "campfire",
+       "adjectives": [
+        "blazing",
+        "orange"
+       ]
+      },
+      {
+       "name": "fire ring stones",
+       "adjectives": [
+        "gray",
+        "rounded"
+       ]
+      },
+      {
+       "name": "logs",
+       "adjectives": [
+        "charred",
+        "stacked"
+       ]
+      },
+      {
+       "name": "wooden crate",
+       "adjectives": [
+        "brown",
+        "wooden"
+       ]
+      },
+      {
+       "name": "camp chair",
+       "adjectives": [
+        "folding"
+       ]
+      },
+      {
+       "name": "tent",
+       "adjectives": [
+        "small",
+        "tan",
+        "distant"
+       ]
+      },
+      {
+       "name": "lake",
+       "adjectives": [
+        "calm",
+        "blue"
+       ]
+      },
+      {
+       "name": "mountains",
+       "adjectives": [
+        "blue",
+        "distant"
+       ]
+      },
+      {
+       "name": "pine trees",
+       "adjectives": [
+        "dark",
+        "tall"
+       ]
+      },
+      {
+       "name": "clouds",
+       "adjectives": [
+        "orange",
+        "wispy"
+       ]
+      },
+      {
+       "name": "smoke",
+       "adjectives": [
+        "white",
+        "wispy"
+       ]
+      },
+      {
+       "name": "hiking boots",
+       "adjectives": [
+        "brown",
+        "sturdy"
+       ]
+      }
+     ],
+     "shot": "wide",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": true,
+      "background": "A dusk sky with orange clouds, blue mountains, a lake, a small tent and dark pine trees behind the campfire",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "campers": "visible",
+      "corn": "visible",
+      "cob": "visible"
+     }
+    },
+    "2": {
+     "objects": [
+      {
+       "name": "bearded man",
+       "adjectives": [
+        "smiling",
+        "laughing",
+        "bearded",
+        "wearing a cap",
+        "reaching out"
+       ]
+      },
+      {
+       "name": "young woman",
+       "adjectives": [
+        "smiling",
+        "long-haired",
+        "dark-haired",
+        "happy"
+       ]
+      },
+      {
+       "name": "baseball cap",
+       "adjectives": [
+        "olive",
+        "worn"
+       ]
+      },
+      {
+       "name": "green jacket",
+       "adjectives": [
+        "olive green",
+        "hooded"
+       ]
+      },
+      {
+       "name": "maroon hoodie",
+       "adjectives": [
+        "maroon",
+        "red"
+       ]
+      },
+      {
+       "name": "corn cob (flying)",
+       "adjectives": [
+        "yellow",
+        "golden",
+        "airborne",
+        "tossed"
+       ]
+      },
+      {
+       "name": "corn on a stick",
+       "adjectives": [
+        "roasted",
+        "yellow",
+        "charred",
+        "skewered"
+       ]
+      },
+      {
+       "name": "stick",
+       "adjectives": [
+        "wooden",
+        "thin"
+       ]
+      },
+      {
+       "name": "campfire",
+       "adjectives": [
+        "orange",
+        "blazing",
+        "bright"
+       ]
+      },
+      {
+       "name": "pine trees",
+       "adjectives": [
+        "dark",
+        "tall",
+        "silhouetted"
+       ]
+      },
+      {
+       "name": "clouds",
+       "adjectives": [
+        "orange",
+        "sunset-colored"
+       ]
+      },
+      {
+       "name": "sky",
+       "adjectives": [
+        "blue",
+        "dusky"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "low angle",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "Dusk sky with orange clouds and silhouetted pine trees behind a campfire",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "campers": "partly cut",
+      "corn": "visible",
+      "cob": "hidden"
+     }
+    },
+    "3": {
+     "objects": [
+      {
+       "name": "camper in hat (back to viewer)",
+       "adjectives": [
+        "left",
+        "cropped",
+        "brown-haired",
+        "wearing brown jacket",
+        "wearing olive hat"
+       ]
+      },
+      {
+       "name": "smiling camper",
+       "adjectives": [
+        "happy",
+        "long-haired",
+        "dark-haired",
+        "eyes closed",
+        "wearing green beanie",
+        "wearing blue jacket"
+       ]
+      },
+      {
+       "name": "roasted corn on a stick",
+       "adjectives": [
+        "charred",
+        "golden",
+        "roasted"
+       ]
+      },
+      {
+       "name": "corn cob being eaten",
+       "adjectives": [
+        "yellow",
+        "small",
+        "held in both hands"
+       ]
+      },
+      {
+       "name": "corn cob in the air",
+       "adjectives": [
+        "yellow",
+        "tossed",
+        "flying",
+        "full of kernels"
+       ]
+      },
+      {
+       "name": "roasting stick",
+       "adjectives": [
+        "long",
+        "wooden"
+       ]
+      },
+      {
+       "name": "campfire",
+       "adjectives": [
+        "orange",
+        "burning"
+       ]
+      },
+      {
+       "name": "log",
+       "adjectives": [
+        "large",
+        "wooden"
+       ]
+      },
+      {
+       "name": "tent",
+       "adjectives": [
+        "tan",
+        "triangular"
+       ]
+      },
+      {
+       "name": "pine trees",
+       "adjectives": [
+        "tall",
+        "dark"
+       ]
+      },
+      {
+       "name": "mountain",
+       "adjectives": [
+        "distant",
+        "blue-gray"
+       ]
+      },
+      {
+       "name": "lake",
+       "adjectives": [
+        "calm",
+        "blue"
+       ]
+      },
+      {
+       "name": "sky",
+       "adjectives": [
+        "orange",
+        "sunset",
+        "cloudy"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "A campsite at sunset with a tent, pine trees, a lake and mountains under an orange sky",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "campers": "partly cut",
+      "corn": "visible",
+      "cob": "hidden"
+     }
+    },
+    "4": {
+     "objects": [
+      {
+       "name": "camper in green cap and orange jacket",
+       "adjectives": [
+        "leaning",
+        "seated",
+        "holding a stick"
+       ]
+      },
+      {
+       "name": "camper with dark hair bun and red top",
+       "adjectives": [
+        "leaning forward",
+        "seated",
+        "dark-haired"
+       ]
+      },
+      {
+       "name": "camper in green jacket (bottom left)",
+       "adjectives": [
+        "reaching",
+        "seated",
+        "partly visible"
+       ]
+      },
+      {
+       "name": "campfire",
+       "adjectives": [
+        "burning",
+        "orange",
+        "glowing"
+       ]
+      },
+      {
+       "name": "stone ring",
+       "adjectives": [
+        "grey",
+        "round",
+        "rough"
+       ]
+      },
+      {
+       "name": "logs in fire",
+       "adjectives": [
+        "charred",
+        "stacked",
+        "dark"
+       ]
+      },
+      {
+       "name": "corn cob on stick (top)",
+       "adjectives": [
+        "roasted",
+        "golden",
+        "yellow"
+       ]
+      },
+      {
+       "name": "corn cob on stick (left)",
+       "adjectives": [
+        "roasted",
+        "golden",
+        "yellow"
+       ]
+      },
+      {
+       "name": "roasting sticks",
+       "adjectives": [
+        "thin",
+        "wooden",
+        "brown"
+       ]
+      },
+      {
+       "name": "corn cob on ground",
+       "adjectives": [
+        "bare",
+        "golden",
+        "tossed",
+        "sparkling"
+       ]
+      },
+      {
+       "name": "log seats",
+       "adjectives": [
+        "wooden",
+        "brown",
+        "rounded"
+       ]
+      },
+      {
+       "name": "grass tufts",
+       "adjectives": [
+        "green",
+        "small"
+       ]
+      },
+      {
+       "name": "small pebbles",
+       "adjectives": [
+        "small",
+        "grey"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "high angle",
+     "step": "during",
+     "extras": {
+      "floor": true,
+      "background": "dirt ground around a stone-ringed campfire with logs and grass patches",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "campers": "partly cut",
+      "corn": "visible",
+      "cob": "visible"
+     }
+    },
+    "5": {
+     "objects": [
+      {
+       "name": "man",
+       "adjectives": [
+        "smiling",
+        "dark-haired",
+        "happy",
+        "seated",
+        "olive-jacketed"
+       ]
+      },
+      {
+       "name": "hand",
+       "adjectives": [
+        "outstretched",
+        "open",
+        "reaching"
+       ]
+      },
+      {
+       "name": "arm",
+       "adjectives": [
+        "olive-sleeved"
+       ]
+      },
+      {
+       "name": "corn cob",
+       "adjectives": [
+        "flying",
+        "yellow",
+        "kernel-covered",
+        "tossed"
+       ]
+      },
+      {
+       "name": "roasted corn on a stick",
+       "adjectives": [
+        "yellow",
+        "held",
+        "golden"
+       ]
+      },
+      {
+       "name": "campfire",
+       "adjectives": [
+        "blazing",
+        "orange",
+        "burning"
+       ]
+      },
+      {
+       "name": "tent",
+       "adjectives": [
+        "small",
+        "brown"
+       ]
+      },
+      {
+       "name": "pine trees",
+       "adjectives": [
+        "tall",
+        "dark",
+        "silhouetted"
+       ]
+      },
+      {
+       "name": "mountain",
+       "adjectives": [
+        "distant",
+        "blue"
+       ]
+      },
+      {
+       "name": "sky",
+       "adjectives": [
+        "orange",
+        "sunset",
+        "hazy"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "Forest of pine trees and a distant mountain at sunset under an orange sky, with a tent beside a campfire",
+      "morePeople": true,
+      "readableText": ""
+     },
+     "mustSee": {
+      "campers": "partly cut",
+      "corn": "visible",
+      "cob": "hidden"
+     }
+    },
+    "6": {
+     "objects": [
+      {
+       "name": "girl",
+       "adjectives": [
+        "young",
+        "dark-haired",
+        "chubby-cheeked",
+        "hair-in-bun",
+        "maroon-hoodie"
+       ]
+      },
+      {
+       "name": "man",
+       "adjectives": [
+        "bearded",
+        "smiling",
+        "laughing",
+        "cap-wearing",
+        "olive-jacketed"
+       ]
+      },
+      {
+       "name": "corn on the cob",
+       "adjectives": [
+        "yellow",
+        "roasted",
+        "held",
+        "half-eaten"
+       ]
+      },
+      {
+       "name": "tossed corn cob",
+       "adjectives": [
+        "yellow",
+        "airborne",
+        "kernel-covered"
+       ]
+      },
+      {
+       "name": "baseball cap",
+       "adjectives": [
+        "olive",
+        "green"
+       ]
+      },
+      {
+       "name": "hoodie",
+       "adjectives": [
+        "maroon"
+       ]
+      },
+      {
+       "name": "jacket",
+       "adjectives": [
+        "olive green"
+       ]
+      },
+      {
+       "name": "pine trees",
+       "adjectives": [
+        "dark",
+        "tall"
+       ]
+      },
+      {
+       "name": "sky",
+       "adjectives": [
+        "orange",
+        "sunset",
+        "cloudy"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "Pine forest silhouetted against an orange and blue sunset sky",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "campers": "visible",
+      "corn": "visible",
+      "cob": "hidden"
+     }
+    },
+    "7": {
+     "objects": [
+      {
+       "name": "bearded man",
+       "adjectives": [
+        "bearded",
+        "smiling",
+        "seated",
+        "wearing a tan cap",
+        "wearing a rust-orange jacket"
+       ]
+      },
+      {
+       "name": "curly-haired person",
+       "adjectives": [
+        "curly-haired",
+        "smiling",
+        "seated",
+        "wearing an olive hoodie"
+       ]
+      },
+      {
+       "name": "dark-haired person",
+       "adjectives": [
+        "dark-haired",
+        "seated",
+        "wearing a maroon hoodie",
+        "eating"
+       ]
+      },
+      {
+       "name": "corn on the cob held by bearded man",
+       "adjectives": [
+        "roasted",
+        "golden",
+        "small"
+       ]
+      },
+      {
+       "name": "corn on the cob held by curly-haired person",
+       "adjectives": [
+        "roasted",
+        "golden",
+        "small"
+       ]
+      },
+      {
+       "name": "corn on the cob being eaten",
+       "adjectives": [
+        "roasted",
+        "yellow"
+       ]
+      },
+      {
+       "name": "large corn cob on the ground",
+       "adjectives": [
+        "large",
+        "golden",
+        "roasted",
+        "buttery",
+        "black-outlined"
+       ]
+      },
+      {
+       "name": "campfire",
+       "adjectives": [
+        "burning",
+        "glowing",
+        "orange"
+       ]
+      },
+      {
+       "name": "stones around fire",
+       "adjectives": [
+        "grey",
+        "round"
+       ]
+      },
+      {
+       "name": "logs",
+       "adjectives": [
+        "wooden",
+        "brown"
+       ]
+      },
+      {
+       "name": "folding camp chair",
+       "adjectives": [
+        "wooden",
+        "brown"
+       ]
+      },
+      {
+       "name": "tent",
+       "adjectives": [
+        "partly visible",
+        "tan"
+       ]
+      },
+      {
+       "name": "pine trees",
+       "adjectives": [
+        "tall",
+        "dark",
+        "silhouetted"
+       ]
+      },
+      {
+       "name": "mountain",
+       "adjectives": [
+        "distant",
+        "blue",
+        "hazy"
+       ]
+      },
+      {
+       "name": "lake",
+       "adjectives": [
+        "calm",
+        "blue-grey"
+       ]
+      },
+      {
+       "name": "sky",
+       "adjectives": [
+        "orange",
+        "sunset",
+        "cloudy"
+       ]
+      },
+      {
+       "name": "grass tufts and plants",
+       "adjectives": [
+        "green",
+        "scrubby"
+       ]
+      },
+      {
+       "name": "motion lines",
+       "adjectives": [
+        "yellow",
+        "short"
+       ]
+      }
+     ],
+     "shot": "wide",
+     "angle": "high angle",
+     "step": "during",
+     "extras": {
+      "floor": true,
+      "background": "A forest of dark pine trees, a lake and a hazy blue mountain under an orange sunset sky, with a tent at the left edge",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "campers": "visible",
+      "corn": "visible",
+      "cob": "visible"
+     }
+    },
+    "8": {
+     "objects": [
+      {
+       "name": "bearded man",
+       "adjectives": [
+        "smiling",
+        "laughing",
+        "bearded",
+        "wearing cap",
+        "seated"
+       ]
+      },
+      {
+       "name": "cap",
+       "adjectives": [
+        "tan",
+        "brimmed"
+       ]
+      },
+      {
+       "name": "jacket",
+       "adjectives": [
+        "brown",
+        "orange"
+       ]
+      },
+      {
+       "name": "roasted corn on a stick",
+       "adjectives": [
+        "roasted",
+        "charred",
+        "yellow",
+        "held out"
+       ]
+      },
+      {
+       "name": "stick",
+       "adjectives": [
+        "wooden",
+        "brown"
+       ]
+      },
+      {
+       "name": "hand holding stick",
+       "adjectives": [
+        "left foreground",
+        "partly cut"
+       ]
+      },
+      {
+       "name": "hand reaching out",
+       "adjectives": [
+        "open",
+        "right side",
+        "raised"
+       ]
+      },
+      {
+       "name": "sleeve",
+       "adjectives": [
+        "maroon",
+        "partly cut"
+       ]
+      },
+      {
+       "name": "flying corn cob",
+       "adjectives": [
+        "yellow",
+        "tossed",
+        "airborne",
+        "kernels still on it"
+       ]
+      },
+      {
+       "name": "campfire",
+       "adjectives": [
+        "blazing",
+        "orange",
+        "burning"
+       ]
+      },
+      {
+       "name": "logs",
+       "adjectives": [
+        "charred",
+        "burning"
+       ]
+      },
+      {
+       "name": "stone ring",
+       "adjectives": [
+        "gray",
+        "rocky"
+       ]
+      },
+      {
+       "name": "smoke wisps",
+       "adjectives": [
+        "thin",
+        "gray",
+        "curling"
+       ]
+      },
+      {
+       "name": "pine trees",
+       "adjectives": [
+        "dark",
+        "tall",
+        "silhouetted"
+       ]
+      },
+      {
+       "name": "sky",
+       "adjectives": [
+        "orange",
+        "dusky"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "Dusk forest of dark pine trees under an orange sky, with the campfire and stone ring in the foreground",
+      "morePeople": true,
+      "readableText": ""
+     },
+     "mustSee": {
+      "campers": "partly cut",
+      "corn": "visible",
+      "cob": "hidden"
+     }
+    },
+    "9": {
+     "objects": [
+      {
+       "name": "standing young person tossing corn",
+       "adjectives": [
+        "dark-haired",
+        "laughing",
+        "green-jacketed",
+        "mid-motion"
+       ]
+      },
+      {
+       "name": "bearded man",
+       "adjectives": [
+        "laughing",
+        "bearded",
+        "cap-wearing",
+        "orange-hooded",
+        "seated"
+       ]
+      },
+      {
+       "name": "seated person in red hoodie",
+       "adjectives": [
+        "dark-haired",
+        "hair in a bun",
+        "smiling",
+        "red-jacketed",
+        "seated"
+       ]
+      },
+      {
+       "name": "corn cob in the air",
+       "adjectives": [
+        "yellow",
+        "roasted",
+        "flying"
+       ]
+      },
+      {
+       "name": "corn cob on a stick",
+       "adjectives": [
+        "yellow",
+        "roasted",
+        "held"
+       ]
+      },
+      {
+       "name": "campfire",
+       "adjectives": [
+        "burning",
+        "orange",
+        "glowing"
+       ]
+      },
+      {
+       "name": "fire ring stones",
+       "adjectives": [
+        "gray",
+        "round"
+       ]
+      },
+      {
+       "name": "tent",
+       "adjectives": [
+        "tan",
+        "canvas",
+        "triangular"
+       ]
+      },
+      {
+       "name": "pine trees",
+       "adjectives": [
+        "tall",
+        "dark",
+        "evergreen"
+       ]
+      },
+      {
+       "name": "mountains",
+       "adjectives": [
+        "distant",
+        "blue-gray"
+       ]
+      },
+      {
+       "name": "folding camp chair",
+       "adjectives": [
+        "dark",
+        "folding"
+       ]
+      },
+      {
+       "name": "tree stump",
+       "adjectives": [
+        "wooden",
+        "gray"
+       ]
+      },
+      {
+       "name": "logs",
+       "adjectives": [
+        "wooden",
+        "stacked"
+       ]
+      },
+      {
+       "name": "hiking boots",
+       "adjectives": [
+        "brown",
+        "sturdy"
+       ]
+      },
+      {
+       "name": "grass tufts",
+       "adjectives": [
+        "green",
+        "spiky"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": true,
+      "background": "Dusk campsite with an orange sunset sky, silhouetted pine trees, distant mountains and a tent",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "campers": "partly cut",
+      "corn": "visible",
+      "cob": "hidden"
+     }
+    }
+   },
+   "ventilator.grid.png": {
+    "1": {
+     "objects": [
+      {
+       "name": "nurse",
+       "adjectives": [
+        "smiling",
+        "dark-haired",
+        "wearing blue scrubs",
+        "wearing a white cap",
+        "wearing a small nametag",
+        "walking in through the doorway"
+       ]
+      },
+      {
+       "name": "ventilator (breathing machine)",
+       "adjectives": [
+        "orange-red",
+        "boxy",
+        "has a green waveform screen",
+        "has a round gauge",
+        "has a black corrugated bellows",
+        "connected by a tube to the incubator"
+       ]
+      },
+      {
+       "name": "newborn",
+       "adjectives": [
+        "tiny",
+        "swaddled in a white blanket",
+        "wearing a pacifier",
+        "lying in a clear incubator",
+        "connected to the ventilator tubing"
+       ]
+      },
+      {
+       "name": "incubator",
+       "adjectives": [
+        "clear",
+        "plastic",
+        "cut off by the right edge"
+       ]
+      },
+      {
+       "name": "ventilator tube",
+       "adjectives": [
+        "gray",
+        "corrugated",
+        "flexible"
+       ]
+      },
+      {
+       "name": "door",
+       "adjectives": [
+        "wooden",
+        "open"
+       ]
+      },
+      {
+       "name": "wall clock",
+       "adjectives": [
+        "round",
+        "white-faced",
+        "analog",
+        "showing about 1:05"
+       ]
+      },
+      {
+       "name": "window",
+       "adjectives": [
+        "night-time",
+        "framed in gray"
+       ]
+      },
+      {
+       "name": "crescent moon",
+       "adjectives": [
+        "pale",
+        "seen through the window"
+       ]
+      },
+      {
+       "name": "trees",
+       "adjectives": [
+        "dark",
+        "silhouetted"
+       ]
+      },
+      {
+       "name": "metal cart or stand",
+       "adjectives": [
+        "dark gray",
+        "supports the ventilator"
+       ]
+      }
+     ],
+     "shot": "wide",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": true,
+      "background": "A pale green hospital room at night. An open wooden door shows a lit hallway. A wall clock hangs above, and a window shows a night sky with a crescent moon and tree silhouettes.",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "nurse": "hidden",
+      "breathing machine (ventilator)": "visible",
+      "newborn": "partly cut"
+     }
+    },
+    "2": {
+     "objects": [
+      {
+       "name": "nurse",
+       "adjectives": [
+        "smiling",
+        "dark-haired",
+        "wearing a white cap",
+        "wearing blue scrubs",
+        "wearing a nametag",
+        "looking down at the baby"
+       ]
+      },
+      {
+       "name": "nametag",
+       "adjectives": [
+        "white",
+        "reads \"Venice\""
+       ]
+      },
+      {
+       "name": "breathing machine (ventilator)",
+       "adjectives": [
+        "large",
+        "orange-red",
+        "has a green waveform screen",
+        "has a round pressure gauge",
+        "has green and orange lights",
+        "has a black bellows"
+       ]
+      },
+      {
+       "name": "breathing tube",
+       "adjectives": [
+        "gray",
+        "corrugated",
+        "flexible",
+        "connected to the baby's face"
+       ]
+      },
+      {
+       "name": "newborn",
+       "adjectives": [
+        "tiny",
+        "sleeping",
+        "dark-haired",
+        "wrapped in a blanket",
+        "hooked up to the machine"
+       ]
+      },
+      {
+       "name": "incubator (baby bassinet)",
+       "adjectives": [
+        "clear-sided",
+        "white"
+       ]
+      },
+      {
+       "name": "blanket",
+       "adjectives": [
+        "white",
+        "soft"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "high angle",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "a pale green hospital room with wall and ceiling lines and a window or panel at the right edge",
+      "morePeople": false,
+      "readableText": "Venice"
+     },
+     "mustSee": {
+      "nurse": "visible",
+      "breathing machine (ventilator)": "visible",
+      "newborn": "partly cut"
+     }
+    },
+    "3": {
+     "objects": [
+      {
+       "name": "nurse",
+       "adjectives": [
+        "dark-haired",
+        "hair in a bun",
+        "wearing a white nurse's cap",
+        "wearing a light blue scrub top",
+        "seen from behind and the side",
+        "looking down at the baby"
+       ]
+      },
+      {
+       "name": "newborn baby",
+       "adjectives": [
+        "tiny",
+        "swaddled in a blanket",
+        "lying in a bassinet",
+        "has a breathing tube/mask at the mouth",
+        "hooked up to the machine"
+       ]
+      },
+      {
+       "name": "breathing machine (ventilator)",
+       "adjectives": [
+        "red-orange",
+        "has a screen showing a green waveform",
+        "has a dial and green and yellow buttons",
+        "connected by a gray corrugated hose"
+       ]
+      },
+      {
+       "name": "ventilator hose",
+       "adjectives": [
+        "gray",
+        "corrugated",
+        "curved"
+       ]
+      },
+      {
+       "name": "bassinet",
+       "adjectives": [
+        "clear",
+        "transparent-sided",
+        "rectangular"
+       ]
+      },
+      {
+       "name": "wall clock",
+       "adjectives": [
+        "round",
+        "white-faced",
+        "analog",
+        "with black numerals"
+       ]
+      },
+      {
+       "name": "window",
+       "adjectives": [
+        "dark",
+        "framed in gray"
+       ]
+      },
+      {
+       "name": "gray equipment bracket",
+       "adjectives": [
+        "mounted on the wall",
+        "gray",
+        "has the number 6 on it"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "A pale green hospital wall with a round analog clock and a dark window, in an infant care room",
+      "morePeople": false,
+      "readableText": "6"
+     },
+     "mustSee": {
+      "nurse": "partly cut",
+      "breathing machine (ventilator)": "partly cut",
+      "newborn": "visible"
+     }
+    },
+    "4": {
+     "objects": [
+      {
+       "name": "nurse",
+       "adjectives": [
+        "dark-haired",
+        "hair in a bun",
+        "wearing a white nurse cap",
+        "wearing blue scrubs",
+        "leaning over",
+        "looking down",
+        "concerned"
+       ]
+      },
+      {
+       "name": "nametag",
+       "adjectives": [
+        "white",
+        "small",
+        "reads \"Venice\" or similar (text is tiny and hard to read)"
+       ]
+      },
+      {
+       "name": "newborn baby",
+       "adjectives": [
+        "tiny",
+        "swaddled",
+        "wrapped in white blanket",
+        "lying on back",
+        "dark-haired",
+        "hooked up to breathing tube"
+       ]
+      },
+      {
+       "name": "breathing machine (ventilator)",
+       "adjectives": [
+        "red-orange",
+        "boxy",
+        "with a green waveform screen",
+        "with a round dial",
+        "with colored buttons",
+        "on a dark stand"
+       ]
+      },
+      {
+       "name": "ventilator tube",
+       "adjectives": [
+        "corrugated",
+        "gray",
+        "flexible",
+        "connected to the baby's face"
+       ]
+      },
+      {
+       "name": "bassinet",
+       "adjectives": [
+        "clear",
+        "transparent",
+        "rectangular",
+        "rimmed",
+        "holding the baby"
+       ]
+      },
+      {
+       "name": "mattress/bedding",
+       "adjectives": [
+        "white",
+        "soft"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "high angle",
+     "step": "during",
+     "extras": {
+      "floor": true,
+      "background": "beige tiled hospital floor with a pale teal wall corner at the top right",
+      "morePeople": false,
+      "readableText": "Venice (nametag, small and hard to read; may be 'Venice' or 'Vonnz')"
+     },
+     "mustSee": {
+      "nurse": "visible",
+      "breathing machine (ventilator)": "partly cut",
+      "newborn": "visible"
+     }
+    },
+    "5": {
+     "objects": [
+      {
+       "name": "nurse",
+       "adjectives": [
+        "smiling",
+        "dark-haired",
+        "wearing blue scrubs",
+        "wearing a white nurse's cap",
+        "wearing a nametag",
+        "friendly"
+       ]
+      },
+      {
+       "name": "breathing machine (ventilator)",
+       "adjectives": [
+        "large",
+        "red-orange",
+        "has a monitor screen with a wave line",
+        "has a pressure gauge",
+        "has a green button and an orange button",
+        "has a ribbed black bellows"
+       ]
+      },
+      {
+       "name": "newborn",
+       "adjectives": [
+        "tiny",
+        "sleeping",
+        "wrapped in a white blanket",
+        "lying in a clear incubator",
+        "hooked up to the machine"
+       ]
+      },
+      {
+       "name": "nametag",
+       "adjectives": [
+        "white",
+        "reads \"Venice\""
+       ]
+      },
+      {
+       "name": "incubator",
+       "adjectives": [
+        "clear",
+        "transparent"
+       ]
+      },
+      {
+       "name": "breathing tube",
+       "adjectives": [
+        "gray",
+        "ribbed",
+        "flexible",
+        "connected to the baby"
+       ]
+      },
+      {
+       "name": "monitor screen",
+       "adjectives": [
+        "blue-green",
+        "showing a wave line"
+       ]
+      },
+      {
+       "name": "pressure gauge",
+       "adjectives": [
+        "round",
+        "white-faced"
+       ]
+      },
+      {
+       "name": "buttons",
+       "adjectives": [
+        "green",
+        "orange",
+        "being pressed by the nurse"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "plain pale green-gray backdrop",
+      "morePeople": false,
+      "readableText": "Venice"
+     },
+     "mustSee": {
+      "nurse": "partly cut",
+      "breathing machine (ventilator)": "partly cut",
+      "newborn": "visible"
+     }
+    },
+    "6": {
+     "objects": [
+      {
+       "name": "nurse",
+       "adjectives": [
+        "female",
+        "smiling",
+        "dark-haired",
+        "wearing a white cap",
+        "wearing blue scrubs",
+        "focused"
+       ]
+      },
+      {
+       "name": "newborn baby",
+       "adjectives": [
+        "tiny",
+        "swaddled",
+        "sleeping",
+        "connected to tubing"
+       ]
+      },
+      {
+       "name": "ventilator (breathing machine)",
+       "adjectives": [
+        "red-orange",
+        "large",
+        "has a small screen with a wave line",
+        "has a pressure dial"
+       ]
+      },
+      {
+       "name": "breathing tube",
+       "adjectives": [
+        "gray",
+        "corrugated",
+        "flexible"
+       ]
+      },
+      {
+       "name": "clear bassinet",
+       "adjectives": [
+        "transparent",
+        "plastic",
+        "open-topped"
+       ]
+      },
+      {
+       "name": "wall clock",
+       "adjectives": [
+        "round",
+        "white-faced",
+        "analog"
+       ]
+      },
+      {
+       "name": "blanket",
+       "adjectives": [
+        "white",
+        "soft"
+       ]
+      },
+      {
+       "name": "machine stand",
+       "adjectives": [
+        "gray",
+        "metal"
+       ]
+      },
+      {
+       "name": "wall outlet",
+       "adjectives": [
+        "small",
+        "white"
+       ]
+      },
+      {
+       "name": "green and yellow indicator buttons",
+       "adjectives": [
+        "small",
+        "round"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "A pale green hospital or neonatal ward wall with a wall clock, a wall outlet and a wall-mounted fixture",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "nurse": "partly cut",
+      "breathing machine (ventilator)": "partly cut",
+      "newborn": "visible"
+     }
+    },
+    "7": {
+     "objects": [
+      {
+       "name": "nurse",
+       "adjectives": [
+        "smiling",
+        "dark-haired",
+        "wearing blue scrubs",
+        "wearing a white nurse cap",
+        "wearing a nametag",
+        "looking down at the baby"
+       ]
+      },
+      {
+       "name": "newborn baby",
+       "adjectives": [
+        "tiny",
+        "lying in a bassinet",
+        "wrapped in a white blanket",
+        "wearing a breathing mask",
+        "asleep"
+       ]
+      },
+      {
+       "name": "ventilator (breathing machine)",
+       "adjectives": [
+        "orange-red",
+        "large",
+        "has a monitor and a dial gauge",
+        "has green and yellow indicator lights"
+       ]
+      },
+      {
+       "name": "ventilator monitor",
+       "adjectives": [
+        "dark",
+        "showing a green wave line"
+       ]
+      },
+      {
+       "name": "dial gauge",
+       "adjectives": [
+        "round",
+        "white-faced"
+       ]
+      },
+      {
+       "name": "breathing tube",
+       "adjectives": [
+        "gray",
+        "corrugated",
+        "flexible",
+        "connects the machine to the baby's mask"
+       ]
+      },
+      {
+       "name": "breathing mask",
+       "adjectives": [
+        "small",
+        "covering the baby's nose and mouth"
+       ]
+      },
+      {
+       "name": "bassinet",
+       "adjectives": [
+        "clear-sided",
+        "hospital-style",
+        "white"
+       ]
+      },
+      {
+       "name": "nametag",
+       "adjectives": [
+        "white",
+        "reads \"Venice\""
+       ]
+      },
+      {
+       "name": "window",
+       "adjectives": [
+        "showing a night sky",
+        "has a crescent moon"
+       ]
+      },
+      {
+       "name": "door or doorframe",
+       "adjectives": [
+        "brown wooden",
+        "partly visible"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "A hospital room at night with a window showing a dark blue sky, a crescent moon and tree silhouettes. The walls are pale green, with a wooden doorframe on the left and a light switch on the right.",
+      "morePeople": false,
+      "readableText": "Venice"
+     },
+     "mustSee": {
+      "nurse": "visible",
+      "breathing machine (ventilator)": "partly cut",
+      "newborn": "visible"
+     }
+    },
+    "8": {
+     "objects": [
+      {
+       "name": "nurse",
+       "adjectives": [
+        "smiling",
+        "dark-haired",
+        "hair in a bun",
+        "wearing blue scrubs",
+        "looking down",
+        "friendly"
+       ]
+      },
+      {
+       "name": "nametag",
+       "adjectives": [
+        "white",
+        "partly legible",
+        "reads \"Venice\""
+       ]
+      },
+      {
+       "name": "nurse's hand",
+       "adjectives": [
+        "resting on the crib edge"
+       ]
+      },
+      {
+       "name": "newborn",
+       "adjectives": [
+        "tiny",
+        "sleeping",
+        "swaddled",
+        "wrapped in a cream blanket",
+        "lying in the crib"
+       ]
+      },
+      {
+       "name": "incubator/bassinet",
+       "adjectives": [
+        "clear",
+        "transparent",
+        "plastic-walled"
+       ]
+      },
+      {
+       "name": "breathing machine (ventilator)",
+       "adjectives": [
+        "red-orange",
+        "has a green waveform screen",
+        "has a round dial gauge",
+        "has green and yellow buttons"
+       ]
+      },
+      {
+       "name": "breathing tube",
+       "adjectives": [
+        "corrugated",
+        "gray",
+        "flexible",
+        "connected to the baby's face"
+       ]
+      },
+      {
+       "name": "cartoon illustration",
+       "adjectives": [
+        "colorful",
+        "hand-drawn style"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "high angle",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "plain pale green-gray wall",
+      "morePeople": false,
+      "readableText": "Venice"
+     },
+     "mustSee": {
+      "nurse": "visible",
+      "breathing machine (ventilator)": "partly cut",
+      "newborn": "visible"
+     }
+    },
+    "9": {
+     "objects": [
+      {
+       "name": "nurse",
+       "adjectives": [
+        "smiling",
+        "dark-haired",
+        "wearing blue scrubs",
+        "wearing a white nurse cap",
+        "wearing a nametag",
+        "looking down at the baby"
+       ]
+      },
+      {
+       "name": "newborn",
+       "adjectives": [
+        "tiny",
+        "sleeping",
+        "wrapped in a white blanket",
+        "lying in a bassinet",
+        "hooked up to a breathing tube"
+       ]
+      },
+      {
+       "name": "breathing machine (ventilator)",
+       "adjectives": [
+        "large",
+        "orange-red",
+        "has a screen with a green wave",
+        "has a pressure gauge",
+        "has green and yellow lights",
+        "has a black bellows"
+       ]
+      },
+      {
+       "name": "breathing tube",
+       "adjectives": [
+        "corrugated",
+        "gray",
+        "flexible",
+        "connected from the machine to the baby's face"
+       ]
+      },
+      {
+       "name": "clear bassinet",
+       "adjectives": [
+        "transparent",
+        "plastic",
+        "on a gray stand"
+       ]
+      },
+      {
+       "name": "wall clock",
+       "adjectives": [
+        "round",
+        "analog",
+        "white-faced"
+       ]
+      },
+      {
+       "name": "window",
+       "adjectives": [
+        "night-time",
+        "has a crescent moon",
+        "has a dark sky"
+       ]
+      },
+      {
+       "name": "nametag",
+       "adjectives": [
+        "white",
+        "reads Venice"
+       ]
+      },
+      {
+       "name": "wall panel",
+       "adjectives": [
+        "gray",
+        "has switches and outlets"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "high angle",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "A hospital nursery or NICU room with pale green walls, a night-time window showing a crescent moon, a wall clock and a wall panel with switches",
+      "morePeople": false,
+      "readableText": "Venice"
+     },
+     "mustSee": {
+      "nurse": "visible",
+      "breathing machine (ventilator)": "partly cut",
+      "newborn": "visible"
+     }
+    }
+   },
+   "scalpel.grid.png": {
+    "1": {
+     "objects": [
+      {
+       "name": "surgeon",
+       "adjectives": [
+        "focused",
+        "masked",
+        "wide-eyed",
+        "green-clad"
+       ]
+      },
+      {
+       "name": "surgical cap",
+       "adjectives": [
+        "green",
+        "teal"
+       ]
+      },
+      {
+       "name": "surgical mask",
+       "adjectives": [
+        "green",
+        "pale"
+       ]
+      },
+      {
+       "name": "surgical gown",
+       "adjectives": [
+        "green",
+        "scrubs"
+       ]
+      },
+      {
+       "name": "glove",
+       "adjectives": [
+        "white",
+        "latex",
+        "gloved"
+       ]
+      },
+      {
+       "name": "scalpel",
+       "adjectives": [
+        "thin",
+        "blue",
+        "sharp"
+       ]
+      },
+      {
+       "name": "patient",
+       "adjectives": [
+        "bald",
+        "lying down",
+        "eyes closed",
+        "calm"
+       ]
+      },
+      {
+       "name": "scalp",
+       "adjectives": [
+        "bald",
+        "gleaming",
+        "smooth"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "high angle",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "pale green rounded shape on a white backdrop",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "scalp": "partly cut",
+      "surgeon": "partly cut",
+      "blade": "visible"
+     }
+    },
+    "2": {
+     "objects": [
+      {
+       "name": "surgeon",
+       "adjectives": [
+        "wide-eyed",
+        "focused",
+        "masked",
+        "cartoon-style"
+       ]
+      },
+      {
+       "name": "surgical cap",
+       "adjectives": [
+        "green",
+        "teal"
+       ]
+      },
+      {
+       "name": "surgical mask",
+       "adjectives": [
+        "green",
+        "teal"
+       ]
+      },
+      {
+       "name": "gloved hand",
+       "adjectives": [
+        "beige",
+        "large",
+        "latex-gloved"
+       ]
+      },
+      {
+       "name": "scalpel",
+       "adjectives": [
+        "thin",
+        "sharp",
+        "teal-handled",
+        "silver-bladed"
+       ]
+      },
+      {
+       "name": "skin",
+       "adjectives": [
+        "pale",
+        "peach",
+        "rounded",
+        "glossy"
+       ]
+      },
+      {
+       "name": "incision",
+       "adjectives": [
+        "thin",
+        "dark red",
+        "fresh"
+       ]
+      }
+     ],
+     "shot": "close-up",
+     "angle": "high angle",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "blurred green surgical gown and a pale white-grey wall",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "scalp": "hidden",
+      "surgeon": "partly cut",
+      "blade": "visible"
+     }
+    },
+    "3": {
+     "objects": [
+      {
+       "name": "surgeon",
+       "adjectives": [
+        "wide-eyed",
+        "masked",
+        "focused",
+        "green-clad"
+       ]
+      },
+      {
+       "name": "surgical cap",
+       "adjectives": [
+        "green",
+        "teal"
+       ]
+      },
+      {
+       "name": "surgical mask",
+       "adjectives": [
+        "green",
+        "teal"
+       ]
+      },
+      {
+       "name": "scalpel",
+       "adjectives": [
+        "thin",
+        "blue-handled",
+        "raised"
+       ]
+      },
+      {
+       "name": "blade",
+       "adjectives": [
+        "thin",
+        "sharp",
+        "silver"
+       ]
+      },
+      {
+       "name": "gloved hand",
+       "adjectives": [
+        "white",
+        "latex",
+        "raised"
+       ]
+      },
+      {
+       "name": "scalp",
+       "adjectives": [
+        "bald",
+        "gleaming",
+        "rounded",
+        "pink"
+       ]
+      },
+      {
+       "name": "surgical gown",
+       "adjectives": [
+        "green",
+        "teal"
+       ]
+      },
+      {
+       "name": "light beams",
+       "adjectives": [
+        "pale",
+        "faint"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "low angle",
+     "step": "before",
+     "extras": {
+      "floor": false,
+      "background": "plain off-white background with faint pale green light beams",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "scalp": "visible",
+      "surgeon": "visible",
+      "blade": "visible"
+     }
+    },
+    "4": {
+     "objects": [
+      {
+       "name": "surgeon",
+       "adjectives": [
+        "masked",
+        "focused",
+        "green-clad",
+        "gloved"
+       ]
+      },
+      {
+       "name": "patient",
+       "adjectives": [
+        "bald",
+        "eyes closed",
+        "lying down"
+       ]
+      },
+      {
+       "name": "scalp",
+       "adjectives": [
+        "bald",
+        "gleaming",
+        "smooth",
+        "marked with a line"
+       ]
+      },
+      {
+       "name": "scalpel",
+       "adjectives": [
+        "thin",
+        "teal",
+        "sharp"
+       ]
+      },
+      {
+       "name": "surgical gloves",
+       "adjectives": [
+        "cream-colored",
+        "latex"
+       ]
+      },
+      {
+       "name": "surgical mask",
+       "adjectives": [
+        "green"
+       ]
+      },
+      {
+       "name": "surgical cap",
+       "adjectives": [
+        "green"
+       ]
+      },
+      {
+       "name": "surgical drapes",
+       "adjectives": [
+        "blue",
+        "draped"
+       ]
+      },
+      {
+       "name": "ears",
+       "adjectives": [
+        "visible"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "high angle",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "blue surgical drapes covering the patient, with the surgeon's green scrubs at the top",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "scalp": "visible",
+      "surgeon": "partly cut",
+      "blade": "visible"
+     }
+    },
+    "5": {
+     "objects": [
+      {
+       "name": "surgeon",
+       "adjectives": [
+        "masked",
+        "focused",
+        "side-facing",
+        "green-clad"
+       ]
+      },
+      {
+       "name": "surgical cap",
+       "adjectives": [
+        "green",
+        "tied"
+       ]
+      },
+      {
+       "name": "surgical mask",
+       "adjectives": [
+        "green",
+        "pale"
+       ]
+      },
+      {
+       "name": "scalpel",
+       "adjectives": [
+        "thin",
+        "blue",
+        "sharp"
+       ]
+      },
+      {
+       "name": "gloved hands",
+       "adjectives": [
+        "cream-colored",
+        "latex",
+        "steady"
+       ]
+      },
+      {
+       "name": "scalp",
+       "adjectives": [
+        "bald",
+        "gleaming",
+        "peach-colored",
+        "smooth"
+       ]
+      },
+      {
+       "name": "surgical gown",
+       "adjectives": [
+        "green",
+        "loose"
+       ]
+      }
+     ],
+     "shot": "close-up",
+     "angle": "high angle",
+     "step": "before",
+     "extras": {
+      "floor": false,
+      "background": "plain pale off-white/white backdrop",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "scalp": "partly cut",
+      "surgeon": "partly cut",
+      "blade": "visible"
+     }
+    },
+    "6": {
+     "objects": [
+      {
+       "name": "surgeon",
+       "adjectives": [
+        "focused",
+        "masked",
+        "gowned",
+        "green-clad"
+       ]
+      },
+      {
+       "name": "surgical cap",
+       "adjectives": [
+        "green"
+       ]
+      },
+      {
+       "name": "surgical mask",
+       "adjectives": [
+        "green"
+       ]
+      },
+      {
+       "name": "surgical gown",
+       "adjectives": [
+        "green",
+        "long-sleeved"
+       ]
+      },
+      {
+       "name": "gloves",
+       "adjectives": [
+        "light-colored",
+        "latex"
+       ]
+      },
+      {
+       "name": "scalpel",
+       "adjectives": [
+        "thin",
+        "small",
+        "teal"
+       ]
+      },
+      {
+       "name": "patient",
+       "adjectives": [
+        "bald",
+        "reclining",
+        "eyes closed",
+        "calm"
+       ]
+      },
+      {
+       "name": "scalp",
+       "adjectives": [
+        "bald",
+        "gleaming",
+        "pink"
+       ]
+      },
+      {
+       "name": "ear",
+       "adjectives": [
+        "pink"
+       ]
+      },
+      {
+       "name": "surgical light",
+       "adjectives": [
+        "large",
+        "round",
+        "overhead",
+        "multi-lamp"
+       ]
+      },
+      {
+       "name": "operating table",
+       "adjectives": [
+        "blue-draped"
+       ]
+      },
+      {
+       "name": "blue surgical drape",
+       "adjectives": [
+        "blue",
+        "folded"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "plain white or off-white wall with a pale blue panel on the right",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "scalp": "visible",
+      "surgeon": "visible",
+      "blade": "visible"
+     }
+    },
+    "7": {
+     "objects": [
+      {
+       "name": "surgeon",
+       "adjectives": [
+        "intense",
+        "focused",
+        "wide-eyed",
+        "masked",
+        "frowning"
+       ]
+      },
+      {
+       "name": "surgical mask",
+       "adjectives": [
+        "green",
+        "teal"
+       ]
+      },
+      {
+       "name": "surgical cap",
+       "adjectives": [
+        "green",
+        "teal"
+       ]
+      },
+      {
+       "name": "gloved hand",
+       "adjectives": [
+        "pale",
+        "beige",
+        "latex"
+       ]
+      },
+      {
+       "name": "scalpel",
+       "adjectives": [
+        "thin",
+        "sharp",
+        "blue",
+        "pointed"
+       ]
+      },
+      {
+       "name": "rounded skin surface",
+       "adjectives": [
+        "smooth",
+        "bald",
+        "shiny",
+        "peach-colored",
+        "hairless"
+       ]
+      }
+     ],
+     "shot": "close-up",
+     "angle": "high angle",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "none; the surgeon's face and green surgical clothing fill the frame behind the skin surface",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "scalp": "partly cut",
+      "surgeon": "partly cut",
+      "blade": "visible"
+     }
+    },
+    "8": {
+     "objects": [
+      {
+       "name": "surgeon",
+       "adjectives": [
+        "masked",
+        "focused",
+        "green-capped",
+        "furrowed-brow"
+       ]
+      },
+      {
+       "name": "surgical cap",
+       "adjectives": [
+        "green",
+        "teal"
+       ]
+      },
+      {
+       "name": "surgical mask",
+       "adjectives": [
+        "green",
+        "pale"
+       ]
+      },
+      {
+       "name": "gloved hand",
+       "adjectives": [
+        "beige",
+        "large",
+        "partly cropped"
+       ]
+      },
+      {
+       "name": "scalpel",
+       "adjectives": [
+        "blue-handled",
+        "thin-bladed",
+        "small"
+       ]
+      },
+      {
+       "name": "scalp",
+       "adjectives": [
+        "bald",
+        "gleaming",
+        "round",
+        "peach-coloured"
+       ]
+      },
+      {
+       "name": "incision line",
+       "adjectives": [
+        "thin",
+        "dark",
+        "curved"
+       ]
+      },
+      {
+       "name": "sparkle",
+       "adjectives": [
+        "white",
+        "four-pointed",
+        "outlined"
+       ]
+      }
+     ],
+     "shot": "close-up",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "blurred pale white and grey wall behind the surgeon",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "scalp": "partly cut",
+      "surgeon": "partly cut",
+      "blade": "visible"
+     }
+    },
+    "9": {
+     "objects": [
+      {
+       "name": "surgeon",
+       "adjectives": [
+        "wide-eyed",
+        "startled",
+        "masked",
+        "capped",
+        "gowned"
+       ]
+      },
+      {
+       "name": "surgical cap",
+       "adjectives": [
+        "green"
+       ]
+      },
+      {
+       "name": "surgical mask",
+       "adjectives": [
+        "green"
+       ]
+      },
+      {
+       "name": "surgical gown",
+       "adjectives": [
+        "green"
+       ]
+      },
+      {
+       "name": "gloved hand",
+       "adjectives": [
+        "cream-colored",
+        "raised"
+       ]
+      },
+      {
+       "name": "scalpel",
+       "adjectives": [
+        "thin",
+        "blue-handled",
+        "small"
+       ]
+      },
+      {
+       "name": "bald head",
+       "adjectives": [
+        "round",
+        "bald",
+        "gleaming",
+        "peach-colored"
+       ]
+      },
+      {
+       "name": "motion lines",
+       "adjectives": [
+        "small",
+        "dark"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "high angle",
+     "step": "before",
+     "extras": {
+      "floor": false,
+      "background": "pale grey-white with a light green circle behind the surgeon",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "scalp": "visible",
+      "surgeon": "partly cut",
+      "blade": "visible"
+     }
+    }
+   }
+  },
+  "failures": {}
+ },
+ "names": {
+  "cache": {
+   "corncob.grid.png": {
+    "1": {
+     "objects": [
+      {
+       "name": "camper on left",
+       "adjectives": [
+        "smiling",
+        "brown-haired",
+        "cheerful",
+        "seated",
+        "wearing green hoodie"
+       ]
+      },
+      {
+       "name": "camper on right",
+       "adjectives": [
+        "happy",
+        "eyes closed",
+        "dark-haired",
+        "seated",
+        "wearing maroon hoodie"
+       ]
+      },
+      {
+       "name": "corn cob on stick",
+       "adjectives": [
+        "yellow",
+        "held up",
+        "roasted"
+       ]
+      },
+      {
+       "name": "corn cob in mid-air",
+       "adjectives": [
+        "yellow",
+        "floating",
+        "tossed"
+       ]
+      },
+      {
+       "name": "corn cob being eaten",
+       "adjectives": [
+        "yellow",
+        "partly eaten",
+        "held in hand"
+       ]
+      },
+      {
+       "name": "campfire",
+       "adjectives": [
+        "burning",
+        "orange",
+        "bright"
+       ]
+      },
+      {
+       "name": "fire ring stones",
+       "adjectives": [
+        "gray",
+        "rounded"
+       ]
+      },
+      {
+       "name": "logs",
+       "adjectives": [
+        "charred",
+        "wooden"
+       ]
+      },
+      {
+       "name": "wooden crate",
+       "adjectives": [
+        "brown",
+        "wooden"
+       ]
+      },
+      {
+       "name": "tent",
+       "adjectives": [
+        "small",
+        "beige"
+       ]
+      },
+      {
+       "name": "lake",
+       "adjectives": [
+        "calm",
+        "blue"
+       ]
+      },
+      {
+       "name": "mountains",
+       "adjectives": [
+        "distant",
+        "blue",
+        "hazy"
+       ]
+      },
+      {
+       "name": "pine trees",
+       "adjectives": [
+        "tall",
+        "dark green"
+       ]
+      },
+      {
+       "name": "sky",
+       "adjectives": [
+        "orange",
+        "sunset",
+        "cloudy"
+       ]
+      },
+      {
+       "name": "smoke",
+       "adjectives": [
+        "white",
+        "wispy"
+       ]
+      },
+      {
+       "name": "camp chair",
+       "adjectives": [
+        "folding",
+        "dark"
+       ]
+      },
+      {
+       "name": "hiking boots",
+       "adjectives": [
+        "brown",
+        "worn"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": true,
+      "background": "A lake and hazy mountains under an orange sunset sky, with dark pine trees and a small tent.",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "campers": "partly cut",
+      "corn": "visible",
+      "cob": "visible"
+     }
+    },
+    "2": {
+     "objects": [
+      {
+       "name": "man",
+       "adjectives": [
+        "bearded",
+        "laughing",
+        "cap-wearing",
+        "excited",
+        "olive-jacketed"
+       ]
+      },
+      {
+       "name": "woman",
+       "adjectives": [
+        "dark-haired",
+        "smiling",
+        "happy",
+        "maroon-hooded"
+       ]
+      },
+      {
+       "name": "flying corn cob",
+       "adjectives": [
+        "yellow",
+        "buttery",
+        "airborne",
+        "tossed"
+       ]
+      },
+      {
+       "name": "corn on a stick",
+       "adjectives": [
+        "yellow",
+        "grilled",
+        "held"
+       ]
+      },
+      {
+       "name": "campfire",
+       "adjectives": [
+        "orange",
+        "blazing",
+        "bright"
+       ]
+      },
+      {
+       "name": "baseball cap",
+       "adjectives": [
+        "dark",
+        "olive"
+       ]
+      },
+      {
+       "name": "pine trees",
+       "adjectives": [
+        "dark",
+        "tall",
+        "silhouetted"
+       ]
+      },
+      {
+       "name": "sky",
+       "adjectives": [
+        "dusky",
+        "blue",
+        "orange-clouded"
+       ]
+      },
+      {
+       "name": "clouds",
+       "adjectives": [
+        "orange",
+        "sunset-lit"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "low angle",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "Dusk sky with orange clouds and silhouetted pine forest",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "campers": "partly cut",
+      "corn": "visible",
+      "cob": "visible"
+     }
+    },
+    "3": {
+     "objects": [
+      {
+       "name": "camper in foreground (seen from behind)",
+       "adjectives": [
+        "hat-wearing",
+        "brown-haired",
+        "facing away",
+        "jacket-clad"
+       ]
+      },
+      {
+       "name": "smiling camper",
+       "adjectives": [
+        "happy",
+        "long-haired",
+        "beanie-wearing",
+        "seated",
+        "eating"
+       ]
+      },
+      {
+       "name": "roasted corn on stick",
+       "adjectives": [
+        "grilled",
+        "golden",
+        "charred"
+       ]
+      },
+      {
+       "name": "corn cob being eaten",
+       "adjectives": [
+        "small",
+        "yellow",
+        "held in hands"
+       ]
+      },
+      {
+       "name": "corn cob flying through the air",
+       "adjectives": [
+        "yellow",
+        "airborne",
+        "tossed"
+       ]
+      },
+      {
+       "name": "stick",
+       "adjectives": [
+        "long",
+        "wooden"
+       ]
+      },
+      {
+       "name": "campfire",
+       "adjectives": [
+        "orange",
+        "burning",
+        "bright"
+       ]
+      },
+      {
+       "name": "tent",
+       "adjectives": [
+        "tan",
+        "pitched"
+       ]
+      },
+      {
+       "name": "pine trees",
+       "adjectives": [
+        "tall",
+        "dark"
+       ]
+      },
+      {
+       "name": "mountain",
+       "adjectives": [
+        "distant",
+        "blue-gray"
+       ]
+      },
+      {
+       "name": "lake",
+       "adjectives": [
+        "calm",
+        "blue"
+       ]
+      },
+      {
+       "name": "log",
+       "adjectives": [
+        "wooden",
+        "large"
+       ]
+      },
+      {
+       "name": "hat",
+       "adjectives": [
+        "olive",
+        "brimmed"
+       ]
+      },
+      {
+       "name": "beanie",
+       "adjectives": [
+        "green",
+        "knit"
+       ]
+      },
+      {
+       "name": "sky",
+       "adjectives": [
+        "orange",
+        "sunset",
+        "cloudy"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "Sunset campsite with a tent, dark pine trees, a lake, and a mountain under an orange sky",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "campers": "partly cut",
+      "corn": "visible",
+      "cob": "visible"
+     }
+    },
+    "4": {
+     "objects": [
+      {
+       "name": "camper in cap",
+       "adjectives": [
+        "partly visible",
+        "wearing orange jacket",
+        "wearing olive green cap"
+       ]
+      },
+      {
+       "name": "camper with dark hair bun",
+       "adjectives": [
+        "partly visible",
+        "wearing maroon top",
+        "leaning forward"
+       ]
+      },
+      {
+       "name": "camper in green jacket",
+       "adjectives": [
+        "partly visible",
+        "reaching out",
+        "wearing green jacket"
+       ]
+      },
+      {
+       "name": "campfire",
+       "adjectives": [
+        "burning",
+        "orange",
+        "bright"
+       ]
+      },
+      {
+       "name": "stones",
+       "adjectives": [
+        "gray",
+        "round",
+        "arranged in a ring"
+       ]
+      },
+      {
+       "name": "logs",
+       "adjectives": [
+        "burning",
+        "dark",
+        "stacked"
+       ]
+      },
+      {
+       "name": "corn cob on stick (top)",
+       "adjectives": [
+        "yellow",
+        "roasting"
+       ]
+      },
+      {
+       "name": "corn cob on stick (left)",
+       "adjectives": [
+        "yellow",
+        "roasting"
+       ]
+      },
+      {
+       "name": "corn cob on ground",
+       "adjectives": [
+        "yellow",
+        "golden",
+        "sparkling",
+        "lying on the dirt"
+       ]
+      },
+      {
+       "name": "roasting sticks",
+       "adjectives": [
+        "thin",
+        "wooden"
+       ]
+      },
+      {
+       "name": "log seats",
+       "adjectives": [
+        "brown",
+        "wooden"
+       ]
+      },
+      {
+       "name": "grass tufts",
+       "adjectives": [
+        "green",
+        "small"
+       ]
+      },
+      {
+       "name": "dirt ground",
+       "adjectives": [
+        "brown",
+        "dusty"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "high angle",
+     "step": "during",
+     "extras": {
+      "floor": true,
+      "background": "Dirt ground around a stone-ringed campfire, with log seats at the edges and small tufts of grass",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "campers": "partly cut",
+      "corn": "visible",
+      "cob": "visible"
+     }
+    },
+    "5": {
+     "objects": [
+      {
+       "name": "hand",
+       "adjectives": [
+        "outstretched",
+        "open",
+        "reaching"
+       ]
+      },
+      {
+       "name": "sleeve",
+       "adjectives": [
+        "olive green",
+        "long"
+       ]
+      },
+      {
+       "name": "corn cob",
+       "adjectives": [
+        "large",
+        "yellow",
+        "flying",
+        "tossed",
+        "golden"
+       ]
+      },
+      {
+       "name": "motion lines",
+       "adjectives": [
+        "white",
+        "curved"
+       ]
+      },
+      {
+       "name": "young man",
+       "adjectives": [
+        "smiling",
+        "happy",
+        "dark-haired",
+        "laughing",
+        "seated"
+       ]
+      },
+      {
+       "name": "corn cob on stick",
+       "adjectives": [
+        "small",
+        "yellow",
+        "roasting"
+       ]
+      },
+      {
+       "name": "jacket",
+       "adjectives": [
+        "olive green"
+       ]
+      },
+      {
+       "name": "campfire",
+       "adjectives": [
+        "orange",
+        "burning",
+        "bright"
+       ]
+      },
+      {
+       "name": "tent",
+       "adjectives": [
+        "brown",
+        "partly visible"
+       ]
+      },
+      {
+       "name": "pine trees",
+       "adjectives": [
+        "dark",
+        "tall",
+        "silhouetted"
+       ]
+      },
+      {
+       "name": "mountain",
+       "adjectives": [
+        "blue",
+        "distant"
+       ]
+      },
+      {
+       "name": "sky",
+       "adjectives": [
+        "orange",
+        "sunset",
+        "hazy"
+       ]
+      },
+      {
+       "name": "clouds",
+       "adjectives": [
+        "orange",
+        "wispy"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "Forest of dark pine trees and a blue mountain under an orange sunset sky, with a tent beside the campfire",
+      "morePeople": true,
+      "readableText": ""
+     },
+     "mustSee": {
+      "campers": "partly cut",
+      "corn": "visible",
+      "cob": "visible"
+     }
+    },
+    "6": {
+     "objects": [
+      {
+       "name": "young person",
+       "adjectives": [
+        "dark-haired",
+        "hair in a bun",
+        "puffed cheeks",
+        "chewing",
+        "rosy",
+        "side-glancing"
+       ]
+      },
+      {
+       "name": "maroon hoodie",
+       "adjectives": [
+        "maroon",
+        "cozy"
+       ]
+      },
+      {
+       "name": "corn on the cob (held)",
+       "adjectives": [
+        "yellow",
+        "golden",
+        "partly eaten",
+        "buttery"
+       ]
+      },
+      {
+       "name": "man",
+       "adjectives": [
+        "bearded",
+        "smiling",
+        "laughing",
+        "cheerful",
+        "happy"
+       ]
+      },
+      {
+       "name": "baseball cap",
+       "adjectives": [
+        "olive green",
+        "worn"
+       ]
+      },
+      {
+       "name": "olive green jacket",
+       "adjectives": [
+        "olive green",
+        "hooded"
+       ]
+      },
+      {
+       "name": "corn on the cob (thrown)",
+       "adjectives": [
+        "yellow",
+        "airborne",
+        "tossed"
+       ]
+      },
+      {
+       "name": "pine trees",
+       "adjectives": [
+        "dark",
+        "tall",
+        "silhouetted"
+       ]
+      },
+      {
+       "name": "sky",
+       "adjectives": [
+        "orange",
+        "sunset",
+        "pink",
+        "blue at top"
+       ]
+      }
+     ],
+     "shot": "close-up",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "Forest of dark silhouetted pine trees against an orange sunset sky",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "campers": "visible",
+      "corn": "visible",
+      "cob": "visible"
+     }
+    },
+    "7": {
+     "objects": [
+      {
+       "name": "bearded man",
+       "adjectives": [
+        "bearded",
+        "smiling",
+        "relaxed",
+        "seated"
+       ]
+      },
+      {
+       "name": "cap",
+       "adjectives": [
+        "tan",
+        "worn"
+       ]
+      },
+      {
+       "name": "orange jacket",
+       "adjectives": [
+        "rust-orange",
+        "hooded"
+       ]
+      },
+      {
+       "name": "young man",
+       "adjectives": [
+        "curly-haired",
+        "smiling",
+        "happy",
+        "seated"
+       ]
+      },
+      {
+       "name": "green hoodie",
+       "adjectives": [
+        "olive-green"
+       ]
+      },
+      {
+       "name": "woman",
+       "adjectives": [
+        "dark-haired",
+        "seated",
+        "eating"
+       ]
+      },
+      {
+       "name": "maroon hoodie",
+       "adjectives": [
+        "maroon"
+       ]
+      },
+      {
+       "name": "campfire",
+       "adjectives": [
+        "burning",
+        "glowing",
+        "warm"
+       ]
+      },
+      {
+       "name": "fire ring stones",
+       "adjectives": [
+        "gray",
+        "rounded"
+       ]
+      },
+      {
+       "name": "corn on the cob (held)",
+       "adjectives": [
+        "small",
+        "yellow",
+        "grilled"
+       ]
+      },
+      {
+       "name": "large corn cob (foreground)",
+       "adjectives": [
+        "large",
+        "yellow",
+        "golden",
+        "outlined",
+        "buttery"
+       ]
+      },
+      {
+       "name": "log",
+       "adjectives": [
+        "wooden",
+        "weathered"
+       ]
+      },
+      {
+       "name": "folding camp chair",
+       "adjectives": [
+        "wooden",
+        "foldable"
+       ]
+      },
+      {
+       "name": "tent",
+       "adjectives": [
+        "canvas",
+        "partly visible"
+       ]
+      },
+      {
+       "name": "pine trees",
+       "adjectives": [
+        "tall",
+        "dark",
+        "evergreen"
+       ]
+      },
+      {
+       "name": "mountain",
+       "adjectives": [
+        "distant",
+        "blue-gray"
+       ]
+      },
+      {
+       "name": "lake",
+       "adjectives": [
+        "calm",
+        "blue"
+       ]
+      },
+      {
+       "name": "sky",
+       "adjectives": [
+        "orange",
+        "sunset",
+        "cloudy"
+       ]
+      },
+      {
+       "name": "grass and shrubs",
+       "adjectives": [
+        "green",
+        "scruffy"
+       ]
+      },
+      {
+       "name": "dirt ground",
+       "adjectives": [
+        "brown",
+        "dusty"
+       ]
+      },
+      {
+       "name": "small rocks",
+       "adjectives": [
+        "small",
+        "gray"
+       ]
+      }
+     ],
+     "shot": "wide",
+     "angle": "high angle",
+     "step": "during",
+     "extras": {
+      "floor": true,
+      "background": "Pine forest, lake and mountain under an orange sunset sky, with a tent at the left edge",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "campers": "visible",
+      "corn": "visible",
+      "cob": "visible"
+     }
+    },
+    "8": {
+     "objects": [
+      {
+       "name": "man",
+       "adjectives": [
+        "bearded",
+        "smiling",
+        "laughing",
+        "wearing a cap",
+        "wearing a brown jacket",
+        "seated"
+       ]
+      },
+      {
+       "name": "basecap",
+       "adjectives": [
+        "tan",
+        "worn"
+       ]
+      },
+      {
+       "name": "roasted corn on a stick",
+       "adjectives": [
+        "large",
+        "grilled",
+        "charred",
+        "golden yellow",
+        "held in the foreground"
+       ]
+      },
+      {
+       "name": "wooden stick",
+       "adjectives": [
+        "brown",
+        "short"
+       ]
+      },
+      {
+       "name": "hand holding the corn stick",
+       "adjectives": [
+        "left foreground",
+        "bare"
+       ]
+      },
+      {
+       "name": "corn cob in the air",
+       "adjectives": [
+        "golden",
+        "tossed",
+        "small"
+       ]
+      },
+      {
+       "name": "outstretched hand",
+       "adjectives": [
+        "right side",
+        "open",
+        "reaching"
+       ]
+      },
+      {
+       "name": "person in maroon sleeve",
+       "adjectives": [
+        "partly visible",
+        "right edge",
+        "wearing a maroon jacket"
+       ]
+      },
+      {
+       "name": "campfire",
+       "adjectives": [
+        "burning",
+        "orange",
+        "bright"
+       ]
+      },
+      {
+       "name": "log",
+       "adjectives": [
+        "charred",
+        "wooden"
+       ]
+      },
+      {
+       "name": "rocks",
+       "adjectives": [
+        "gray",
+        "round",
+        "arranged in a ring"
+       ]
+      },
+      {
+       "name": "steam wisps",
+       "adjectives": [
+        "thin",
+        "white",
+        "curling"
+       ]
+      },
+      {
+       "name": "pine trees",
+       "adjectives": [
+        "dark green",
+        "tall",
+        "blurred"
+       ]
+      },
+      {
+       "name": "sky",
+       "adjectives": [
+        "orange",
+        "sunset-colored"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "A forest of dark pine trees under an orange dusk sky, with a campfire ringed by rocks in the foreground",
+      "morePeople": true,
+      "readableText": ""
+     },
+     "mustSee": {
+      "campers": "partly cut",
+      "corn": "visible",
+      "cob": "visible"
+     }
+    },
+    "9": {
+     "objects": [
+      {
+       "name": "standing person tossing corn",
+       "adjectives": [
+        "young",
+        "curly-haired",
+        "laughing",
+        "olive-jacketed",
+        "dynamic"
+       ]
+      },
+      {
+       "name": "bearded man with cap",
+       "adjectives": [
+        "bearded",
+        "laughing",
+        "cheerful",
+        "orange-jacketed",
+        "seated"
+       ]
+      },
+      {
+       "name": "seated person with hair bun",
+       "adjectives": [
+        "dark-haired",
+        "smiling",
+        "red-hoodied",
+        "seated"
+       ]
+      },
+      {
+       "name": "corn cob in the air",
+       "adjectives": [
+        "yellow",
+        "flying",
+        "grilled"
+       ]
+      },
+      {
+       "name": "corn cob on stick",
+       "adjectives": [
+        "yellow",
+        "roasted",
+        "held"
+       ]
+      },
+      {
+       "name": "campfire",
+       "adjectives": [
+        "burning",
+        "orange",
+        "glowing"
+       ]
+      },
+      {
+       "name": "fire ring stones",
+       "adjectives": [
+        "grey",
+        "round"
+       ]
+      },
+      {
+       "name": "tent",
+       "adjectives": [
+        "tan",
+        "canvas",
+        "pitched"
+       ]
+      },
+      {
+       "name": "pine trees",
+       "adjectives": [
+        "tall",
+        "dark",
+        "evergreen"
+       ]
+      },
+      {
+       "name": "mountains",
+       "adjectives": [
+        "distant",
+        "blue"
+       ]
+      },
+      {
+       "name": "folding camp chair",
+       "adjectives": [
+        "black",
+        "foldable"
+       ]
+      },
+      {
+       "name": "tree stump",
+       "adjectives": [
+        "wooden",
+        "grey"
+       ]
+      },
+      {
+       "name": "hiking boots",
+       "adjectives": [
+        "brown",
+        "sturdy"
+       ]
+      },
+      {
+       "name": "grass tuft",
+       "adjectives": [
+        "green",
+        "spiky"
+       ]
+      },
+      {
+       "name": "sky",
+       "adjectives": [
+        "orange",
+        "sunset",
+        "cloudy"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": true,
+      "background": "Pine forest, distant mountains, tent and orange sunset sky behind a campfire",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "campers": "partly cut",
+      "corn": "visible",
+      "cob": "visible"
+     }
+    }
+   },
+   "ventilator.grid.png": {
+    "1": {
+     "objects": [
+      {
+       "name": "nurse",
+       "adjectives": [
+        "smiling",
+        "dark-haired",
+        "walking",
+        "wearing blue scrubs",
+        "wearing a white cap",
+        "name-badge wearing"
+       ]
+      },
+      {
+       "name": "newborn",
+       "adjectives": [
+        "small",
+        "sleeping",
+        "swaddled",
+        "wearing a pacifier"
+       ]
+      },
+      {
+       "name": "breathing machine (ventilator)",
+       "adjectives": [
+        "red-orange",
+        "boxed",
+        "with a green waveform screen",
+        "with a round gauge",
+        "with a corrugated bellows"
+       ]
+      },
+      {
+       "name": "incubator / bassinet",
+       "adjectives": [
+        "clear",
+        "transparent",
+        "plastic-hooded"
+       ]
+      },
+      {
+       "name": "breathing tube",
+       "adjectives": [
+        "grey",
+        "corrugated",
+        "curved"
+       ]
+      },
+      {
+       "name": "door",
+       "adjectives": [
+        "wooden",
+        "open"
+       ]
+      },
+      {
+       "name": "wall clock",
+       "adjectives": [
+        "round",
+        "white-faced",
+        "analog"
+       ]
+      },
+      {
+       "name": "window",
+       "adjectives": [
+        "framed",
+        "night-time"
+       ]
+      },
+      {
+       "name": "moon",
+       "adjectives": [
+        "crescent",
+        "white"
+       ]
+      },
+      {
+       "name": "trees",
+       "adjectives": [
+        "dark",
+        "silhouetted"
+       ]
+      },
+      {
+       "name": "machine stand",
+       "adjectives": [
+        "dark grey",
+        "metal"
+       ]
+      },
+      {
+       "name": "wall",
+       "adjectives": [
+        "pale green",
+        "teal"
+       ]
+      }
+     ],
+     "shot": "wide",
+     "angle": "eye level",
+     "step": "before",
+     "extras": {
+      "floor": true,
+      "background": "A hospital nursery room with pale green walls, an open wooden door, a wall clock, and a night-time window showing a crescent moon and dark trees",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "nurse": "visible",
+      "breathing machine (ventilator)": "visible",
+      "newborn": "partly cut"
+     }
+    },
+    "2": {
+     "objects": [
+      {
+       "name": "nurse",
+       "adjectives": [
+        "smiling",
+        "dark-haired",
+        "wearing blue scrubs",
+        "wearing white cap",
+        "friendly"
+       ]
+      },
+      {
+       "name": "ventilator",
+       "adjectives": [
+        "orange-red",
+        "large",
+        "with screen",
+        "with pressure gauge",
+        "with bellows"
+       ]
+      },
+      {
+       "name": "newborn",
+       "adjectives": [
+        "small",
+        "sleeping",
+        "wrapped in blanket",
+        "wearing breathing mask"
+       ]
+      },
+      {
+       "name": "incubator/bassinet",
+       "adjectives": [
+        "clear",
+        "white"
+       ]
+      },
+      {
+       "name": "breathing hose",
+       "adjectives": [
+        "gray",
+        "corrugated",
+        "flexible"
+       ]
+      },
+      {
+       "name": "name tag",
+       "adjectives": [
+        "white",
+        "small"
+       ]
+      },
+      {
+       "name": "monitor screen",
+       "adjectives": [
+        "blue",
+        "showing green waveform"
+       ]
+      },
+      {
+       "name": "pressure gauge",
+       "adjectives": [
+        "round",
+        "white-faced"
+       ]
+      },
+      {
+       "name": "indicator lights",
+       "adjectives": [
+        "green",
+        "orange"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "hospital room with pale green walls",
+      "morePeople": false,
+      "readableText": "Venice"
+     },
+     "mustSee": {
+      "nurse": "visible",
+      "breathing machine (ventilator)": "partly cut",
+      "newborn": "partly cut"
+     }
+    },
+    "3": {
+     "objects": [
+      {
+       "name": "nurse",
+       "adjectives": [
+        "dark-haired",
+        "hair in a bun",
+        "wearing a white cap",
+        "wearing a blue scrub top",
+        "seen from behind and the side",
+        "attentive"
+       ]
+      },
+      {
+       "name": "newborn",
+       "adjectives": [
+        "small",
+        "swaddled",
+        "sleeping",
+        "wearing a breathing mask or tube",
+        "lying in a bassinet"
+       ]
+      },
+      {
+       "name": "bassinet",
+       "adjectives": [
+        "clear",
+        "transparent",
+        "plastic"
+       ]
+      },
+      {
+       "name": "breathing machine (ventilator)",
+       "adjectives": [
+        "red-orange",
+        "large",
+        "has a screen showing a green wave",
+        "has dials",
+        "has a ribbed gray hose"
+       ]
+      },
+      {
+       "name": "hose",
+       "adjectives": [
+        "ribbed",
+        "gray",
+        "corrugated"
+       ]
+      },
+      {
+       "name": "wall clock",
+       "adjectives": [
+        "round",
+        "white",
+        "analog"
+       ]
+      },
+      {
+       "name": "window",
+       "adjectives": [
+        "dark",
+        "framed"
+       ]
+      },
+      {
+       "name": "wall",
+       "adjectives": [
+        "pale green"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "high angle",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "A pale green hospital room wall with a dark window and a round wall clock",
+      "morePeople": false,
+      "readableText": "The clock shows the numbers 1 to 12. The small number 6 appears on a gauge or label above the machine."
+     },
+     "mustSee": {
+      "nurse": "partly cut",
+      "breathing machine (ventilator)": "partly cut",
+      "newborn": "visible"
+     }
+    },
+    "4": {
+     "objects": [
+      {
+       "name": "nurse",
+       "adjectives": [
+        "female",
+        "dark-haired",
+        "wearing a white cap",
+        "wearing blue scrubs",
+        "looking down",
+        "attentive"
+       ]
+      },
+      {
+       "name": "name badge",
+       "adjectives": [
+        "small",
+        "white",
+        "worn on scrubs"
+       ]
+      },
+      {
+       "name": "newborn",
+       "adjectives": [
+        "tiny",
+        "swaddled",
+        "dark-haired",
+        "lying on its back",
+        "wrapped in a white blanket"
+       ]
+      },
+      {
+       "name": "breathing machine (ventilator)",
+       "adjectives": [
+        "red-orange",
+        "boxy",
+        "has a monitor screen",
+        "has a dial gauge",
+        "with colored indicator lights",
+        "on a dark stand"
+       ]
+      },
+      {
+       "name": "breathing tube",
+       "adjectives": [
+        "gray",
+        "corrugated",
+        "flexible",
+        "connected to the newborn's face"
+       ]
+      },
+      {
+       "name": "bassinet",
+       "adjectives": [
+        "clear",
+        "transparent",
+        "rectangular",
+        "open-topped"
+       ]
+      },
+      {
+       "name": "white blanket",
+       "adjectives": [
+        "white",
+        "soft",
+        "wrapped around the baby"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "high angle",
+     "step": "during",
+     "extras": {
+      "floor": true,
+      "background": "beige floor with a teal-green corner at the top right",
+      "morePeople": false,
+      "readableText": "Vonz"
+     },
+     "mustSee": {
+      "nurse": "visible",
+      "breathing machine (ventilator)": "partly cut",
+      "newborn": "visible"
+     }
+    },
+    "5": {
+     "objects": [
+      {
+       "name": "nurse",
+       "adjectives": [
+        "smiling",
+        "dark-haired",
+        "young",
+        "wearing blue scrubs",
+        "wearing white cap",
+        "cartoon"
+       ]
+      },
+      {
+       "name": "ventilator machine",
+       "adjectives": [
+        "red-orange",
+        "large",
+        "with bellows",
+        "with screen",
+        "with gauge"
+       ]
+      },
+      {
+       "name": "monitor screen",
+       "adjectives": [
+        "teal",
+        "showing wave line"
+       ]
+      },
+      {
+       "name": "pressure gauge",
+       "adjectives": [
+        "round",
+        "white"
+       ]
+      },
+      {
+       "name": "green button",
+       "adjectives": [
+        "small",
+        "round"
+       ]
+      },
+      {
+       "name": "yellow button",
+       "adjectives": [
+        "small",
+        "round",
+        "being pressed"
+       ]
+      },
+      {
+       "name": "name tag",
+       "adjectives": [
+        "white",
+        "reads Venice"
+       ]
+      },
+      {
+       "name": "newborn",
+       "adjectives": [
+        "sleeping",
+        "small",
+        "swaddled",
+        "partly cut"
+       ]
+      },
+      {
+       "name": "incubator",
+       "adjectives": [
+        "clear",
+        "transparent"
+       ]
+      },
+      {
+       "name": "breathing tube",
+       "adjectives": [
+        "gray",
+        "corrugated",
+        "flexible"
+       ]
+      },
+      {
+       "name": "nurse cap",
+       "adjectives": [
+        "white",
+        "partly cut"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "pale green-gray wall",
+      "morePeople": false,
+      "readableText": "Venice"
+     },
+     "mustSee": {
+      "nurse": "partly cut",
+      "breathing machine (ventilator)": "partly cut",
+      "newborn": "visible"
+     }
+    },
+    "6": {
+     "objects": [
+      {
+       "name": "nurse",
+       "adjectives": [
+        "smiling",
+        "dark-haired",
+        "wearing a white cap",
+        "wearing blue scrubs",
+        "focused"
+       ]
+      },
+      {
+       "name": "newborn",
+       "adjectives": [
+        "small",
+        "swaddled",
+        "sleeping",
+        "wearing a breathing mask"
+       ]
+      },
+      {
+       "name": "breathing machine (ventilator)",
+       "adjectives": [
+        "red-orange",
+        "large",
+        "with a screen and a gauge"
+       ]
+      },
+      {
+       "name": "bassinet",
+       "adjectives": [
+        "clear",
+        "transparent",
+        "plastic"
+       ]
+      },
+      {
+       "name": "breathing tube",
+       "adjectives": [
+        "corrugated",
+        "gray",
+        "flexible"
+       ]
+      },
+      {
+       "name": "wall clock",
+       "adjectives": [
+        "round",
+        "white",
+        "analog"
+       ]
+      },
+      {
+       "name": "blanket",
+       "adjectives": [
+        "white",
+        "soft"
+       ]
+      },
+      {
+       "name": "machine stand",
+       "adjectives": [
+        "gray",
+        "metal"
+       ]
+      },
+      {
+       "name": "wall outlet",
+       "adjectives": [
+        "small",
+        "white"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "A pale green hospital room wall with a round analog clock, a wall outlet and a wall-mounted fixture.",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "nurse": "visible",
+      "breathing machine (ventilator)": "partly cut",
+      "newborn": "visible"
+     }
+    },
+    "7": {
+     "objects": [
+      {
+       "name": "nurse",
+       "adjectives": [
+        "smiling",
+        "dark-haired",
+        "young",
+        "friendly",
+        "wearing blue scrubs",
+        "wearing a white nurse cap",
+        "wearing a name tag"
+       ]
+      },
+      {
+       "name": "newborn baby",
+       "adjectives": [
+        "sleeping",
+        "small",
+        "swaddled",
+        "lying down",
+        "partly visible"
+       ]
+      },
+      {
+       "name": "breathing machine (ventilator)",
+       "adjectives": [
+        "red-orange",
+        "large",
+        "boxy",
+        "has a screen",
+        "has a dial gauge",
+        "has green and yellow lights"
+       ]
+      },
+      {
+       "name": "breathing tube",
+       "adjectives": [
+        "gray",
+        "corrugated",
+        "flexible",
+        "curved"
+       ]
+      },
+      {
+       "name": "breathing mask",
+       "adjectives": [
+        "small",
+        "covering the baby's nose and mouth"
+       ]
+      },
+      {
+       "name": "bassinet",
+       "adjectives": [
+        "clear",
+        "transparent",
+        "rectangular",
+        "hospital-style"
+       ]
+      },
+      {
+       "name": "blanket",
+       "adjectives": [
+        "white",
+        "soft",
+        "bundled"
+       ]
+      },
+      {
+       "name": "window",
+       "adjectives": [
+        "dark",
+        "showing night sky"
+       ]
+      },
+      {
+       "name": "moon",
+       "adjectives": [
+        "crescent",
+        "white"
+       ]
+      },
+      {
+       "name": "door",
+       "adjectives": [
+        "wooden",
+        "open"
+       ]
+      },
+      {
+       "name": "monitor screen",
+       "adjectives": [
+        "dark blue",
+        "showing a green waveform"
+       ]
+      },
+      {
+       "name": "name tag",
+       "adjectives": [
+        "white",
+        "small"
+       ]
+      },
+      {
+       "name": "wall",
+       "adjectives": [
+        "pale green",
+        "hospital"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "A hospital room at night with a window showing a crescent moon and trees, a doorway, and pale green walls",
+      "morePeople": false,
+      "readableText": "Venice"
+     },
+     "mustSee": {
+      "nurse": "visible",
+      "breathing machine (ventilator)": "partly cut",
+      "newborn": "visible"
+     }
+    },
+    "8": {
+     "objects": [
+      {
+       "name": "nurse",
+       "adjectives": [
+        "smiling",
+        "dark-haired",
+        "gentle",
+        "wearing blue scrubs"
+       ]
+      },
+      {
+       "name": "newborn",
+       "adjectives": [
+        "sleeping",
+        "swaddled",
+        "small"
+       ]
+      },
+      {
+       "name": "breathing machine (ventilator)",
+       "adjectives": [
+        "red-orange",
+        "with screen",
+        "with dial"
+       ]
+      },
+      {
+       "name": "ventilator tubing",
+       "adjectives": [
+        "corrugated",
+        "gray",
+        "flexible"
+       ]
+      },
+      {
+       "name": "bassinet",
+       "adjectives": [
+        "clear",
+        "transparent",
+        "plastic"
+       ]
+      },
+      {
+       "name": "blanket",
+       "adjectives": [
+        "white",
+        "cream",
+        "soft"
+       ]
+      },
+      {
+       "name": "name tag",
+       "adjectives": [
+        "white",
+        "small"
+       ]
+      },
+      {
+       "name": "monitor screen",
+       "adjectives": [
+        "dark",
+        "green waveform"
+       ]
+      },
+      {
+       "name": "pressure gauge",
+       "adjectives": [
+        "round",
+        "white"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "high angle",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "plain pale green-gray wall",
+      "morePeople": false,
+      "readableText": "Venice"
+     },
+     "mustSee": {
+      "nurse": "partly cut",
+      "breathing machine (ventilator)": "partly cut",
+      "newborn": "partly cut"
+     }
+    },
+    "9": {
+     "objects": [
+      {
+       "name": "nurse",
+       "adjectives": [
+        "smiling",
+        "dark-haired",
+        "young",
+        "attentive",
+        "wearing blue scrubs",
+        "wearing a white cap"
+       ]
+      },
+      {
+       "name": "newborn",
+       "adjectives": [
+        "small",
+        "sleeping",
+        "swaddled",
+        "dark-haired"
+       ]
+      },
+      {
+       "name": "breathing machine (ventilator)",
+       "adjectives": [
+        "large",
+        "orange-red",
+        "has a monitor screen",
+        "has a pressure gauge",
+        "has green and yellow lights"
+       ]
+      },
+      {
+       "name": "breathing tube",
+       "adjectives": [
+        "corrugated",
+        "gray",
+        "flexible"
+       ]
+      },
+      {
+       "name": "respiratory mask",
+       "adjectives": [
+        "small",
+        "on the baby's face"
+       ]
+      },
+      {
+       "name": "bassinet",
+       "adjectives": [
+        "clear",
+        "transparent",
+        "hospital-style"
+       ]
+      },
+      {
+       "name": "blanket",
+       "adjectives": [
+        "white",
+        "soft"
+       ]
+      },
+      {
+       "name": "name tag",
+       "adjectives": [
+        "white",
+        "small"
+       ]
+      },
+      {
+       "name": "wall clock",
+       "adjectives": [
+        "round",
+        "analog",
+        "white-faced"
+       ]
+      },
+      {
+       "name": "window",
+       "adjectives": [
+        "dark",
+        "night-time",
+        "framed"
+       ]
+      },
+      {
+       "name": "crescent moon",
+       "adjectives": [
+        "yellow",
+        "seen through the window"
+       ]
+      },
+      {
+       "name": "wall panel with outlets and switches",
+       "adjectives": [
+        "gray",
+        "wall-mounted"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "A pale green hospital nursery at night. A window with a crescent moon is on the left, a round wall clock is at the upper right, and a wall panel with outlets and switches is on the right.",
+      "morePeople": false,
+      "readableText": "Venice"
+     },
+     "mustSee": {
+      "nurse": "visible",
+      "breathing machine (ventilator)": "partly cut",
+      "newborn": "visible"
+     }
+    }
+   },
+   "scalpel.grid.png": {
+    "1": {
+     "objects": [
+      {
+       "name": "surgeon",
+       "adjectives": [
+        "focused",
+        "masked",
+        "wide-eyed",
+        "gloved"
+       ]
+      },
+      {
+       "name": "patient",
+       "adjectives": [
+        "bald",
+        "lying down",
+        "eyes closed",
+        "calm"
+       ]
+      },
+      {
+       "name": "scalpel",
+       "adjectives": [
+        "thin",
+        "teal",
+        "sharp"
+       ]
+      },
+      {
+       "name": "surgical cap",
+       "adjectives": [
+        "green",
+        "tied"
+       ]
+      },
+      {
+       "name": "surgical mask",
+       "adjectives": [
+        "green",
+        "tied"
+       ]
+      },
+      {
+       "name": "surgical gown",
+       "adjectives": [
+        "green",
+        "loose"
+       ]
+      },
+      {
+       "name": "gloves",
+       "adjectives": [
+        "cream-colored",
+        "latex"
+       ]
+      },
+      {
+       "name": "scalp",
+       "adjectives": [
+        "bald",
+        "smooth",
+        "shiny"
+       ]
+      }
+     ],
+     "shot": "close-up",
+     "angle": "high angle",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "plain white with a soft pale green shape behind the surgeon",
+      "morePeople": true,
+      "readableText": ""
+     },
+     "mustSee": {
+      "scalp": "visible",
+      "surgeon": "partly cut",
+      "blade": "visible"
+     }
+    },
+    "2": {
+     "objects": [
+      {
+       "name": "surgeon",
+       "adjectives": [
+        "masked",
+        "wide-eyed",
+        "focused",
+        "intense",
+        "wearing green cap"
+       ]
+      },
+      {
+       "name": "surgical mask",
+       "adjectives": [
+        "green",
+        "pale green"
+       ]
+      },
+      {
+       "name": "surgical cap",
+       "adjectives": [
+        "green",
+        "teal"
+       ]
+      },
+      {
+       "name": "gloved hand",
+       "adjectives": [
+        "large",
+        "beige",
+        "latex-gloved",
+        "in the foreground"
+       ]
+      },
+      {
+       "name": "scalpel",
+       "adjectives": [
+        "sharp",
+        "teal-handled",
+        "silver-bladed",
+        "pointed"
+       ]
+      },
+      {
+       "name": "skin",
+       "adjectives": [
+        "smooth",
+        "peach",
+        "rounded",
+        "glossy"
+       ]
+      },
+      {
+       "name": "incision",
+       "adjectives": [
+        "thin",
+        "red",
+        "fresh",
+        "curved"
+       ]
+      }
+     ],
+     "shot": "close-up",
+     "angle": "eye level",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "blurred pale green and white surgical room",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "scalp": "hidden",
+      "surgeon": "partly cut",
+      "blade": "visible"
+     }
+    },
+    "3": {
+     "objects": [
+      {
+       "name": "surgeon",
+       "adjectives": [
+        "wide-eyed",
+        "masked",
+        "focused",
+        "cartoon-style"
+       ]
+      },
+      {
+       "name": "surgical cap",
+       "adjectives": [
+        "green",
+        "teal"
+       ]
+      },
+      {
+       "name": "surgical mask",
+       "adjectives": [
+        "green",
+        "teal"
+       ]
+      },
+      {
+       "name": "scrubs",
+       "adjectives": [
+        "green"
+       ]
+      },
+      {
+       "name": "gloved hand",
+       "adjectives": [
+        "raised",
+        "latex",
+        "cream-colored"
+       ]
+      },
+      {
+       "name": "scalpel",
+       "adjectives": [
+        "blue",
+        "sharp",
+        "raised"
+       ]
+      },
+      {
+       "name": "bald scalp",
+       "adjectives": [
+        "rounded",
+        "smooth",
+        "pink",
+        "shiny",
+        "large"
+       ]
+      },
+      {
+       "name": "overhead light beams",
+       "adjectives": [
+        "faint",
+        "pale green"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "low angle",
+     "step": "before",
+     "extras": {
+      "floor": false,
+      "background": "plain off-white background with faint pale green light beams at the top",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "scalp": "partly cut",
+      "surgeon": "visible",
+      "blade": "visible"
+     }
+    },
+    "4": {
+     "objects": [
+      {
+       "name": "surgeon",
+       "adjectives": [
+        "masked",
+        "focused",
+        "wearing green scrubs",
+        "cropped at the top edge"
+       ]
+      },
+      {
+       "name": "surgical mask",
+       "adjectives": [
+        "green"
+       ]
+      },
+      {
+       "name": "surgical cap",
+       "adjectives": [
+        "green"
+       ]
+      },
+      {
+       "name": "gloved hands",
+       "adjectives": [
+        "cream-colored",
+        "latex",
+        "two"
+       ]
+      },
+      {
+       "name": "scalpel",
+       "adjectives": [
+        "teal",
+        "thin",
+        "sharp"
+       ]
+      },
+      {
+       "name": "patient",
+       "adjectives": [
+        "bald",
+        "lying down",
+        "eyes closed"
+       ]
+      },
+      {
+       "name": "scalp",
+       "adjectives": [
+        "bald",
+        "shiny",
+        "smooth",
+        "with a thin incision line"
+       ]
+      },
+      {
+       "name": "ear",
+       "adjectives": [
+        "left",
+        "right",
+        "visible on both sides of the head"
+       ]
+      },
+      {
+       "name": "surgical drape",
+       "adjectives": [
+        "blue",
+        "teal",
+        "covering the patient"
+       ]
+      }
+     ],
+     "shot": "close-up",
+     "angle": "high angle",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "Blue-teal surgical drapes surround the patient's head, and the surgeon in green scrubs leans over from the top of the frame. It is a flat, comic-style illustration.",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "scalp": "visible",
+      "surgeon": "partly cut",
+      "blade": "visible"
+     }
+    },
+    "5": {
+     "objects": [
+      {
+       "name": "surgeon",
+       "adjectives": [
+        "masked",
+        "green-clad",
+        "side-facing",
+        "focused",
+        "dark-haired"
+       ]
+      },
+      {
+       "name": "surgical cap",
+       "adjectives": [
+        "green",
+        "teal",
+        "loose-fitting"
+       ]
+      },
+      {
+       "name": "surgical mask",
+       "adjectives": [
+        "green",
+        "pale-green",
+        "tied"
+       ]
+      },
+      {
+       "name": "surgical gown",
+       "adjectives": [
+        "green",
+        "teal"
+       ]
+      },
+      {
+       "name": "gloved hands",
+       "adjectives": [
+        "cream-coloured",
+        "latex",
+        "two"
+       ]
+      },
+      {
+       "name": "scalpel",
+       "adjectives": [
+        "blue",
+        "teal",
+        "thin",
+        "sharp"
+       ]
+      },
+      {
+       "name": "scalp",
+       "adjectives": [
+        "bald",
+        "rounded",
+        "peach",
+        "shiny",
+        "smooth"
+       ]
+      },
+      {
+       "name": "incision line",
+       "adjectives": [
+        "thin",
+        "faint",
+        "marked"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "high angle",
+     "step": "before",
+     "extras": {
+      "floor": false,
+      "background": "plain pale white-grey",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "scalp": "partly cut",
+      "surgeon": "partly cut",
+      "blade": "visible"
+     }
+    },
+    "6": {
+     "objects": [
+      {
+       "name": "surgeon",
+       "adjectives": [
+        "focused",
+        "masked",
+        "green-gowned",
+        "gloved",
+        "concentrated"
+       ]
+      },
+      {
+       "name": "surgical cap",
+       "adjectives": [
+        "green"
+       ]
+      },
+      {
+       "name": "surgical mask",
+       "adjectives": [
+        "green"
+       ]
+      },
+      {
+       "name": "surgical gown",
+       "adjectives": [
+        "green"
+       ]
+      },
+      {
+       "name": "gloves",
+       "adjectives": [
+        "white",
+        "latex"
+       ]
+      },
+      {
+       "name": "scalpel",
+       "adjectives": [
+        "small",
+        "thin",
+        "blue-handled"
+       ]
+      },
+      {
+       "name": "patient",
+       "adjectives": [
+        "bald",
+        "lying down",
+        "eyes closed",
+        "sedated"
+       ]
+      },
+      {
+       "name": "scalp",
+       "adjectives": [
+        "bald",
+        "pink",
+        "shiny"
+       ]
+      },
+      {
+       "name": "operating table",
+       "adjectives": [
+        "blue",
+        "padded"
+       ]
+      },
+      {
+       "name": "surgical drape",
+       "adjectives": [
+        "blue"
+       ]
+      },
+      {
+       "name": "surgical light",
+       "adjectives": [
+        "large",
+        "round",
+        "multi-lamp",
+        "overhead"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "eye level",
+     "step": "before",
+     "extras": {
+      "floor": false,
+      "background": "plain pale wall in an operating room, with a window or panel on the right",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "scalp": "visible",
+      "surgeon": "visible",
+      "blade": "visible"
+     }
+    },
+    "7": {
+     "objects": [
+      {
+       "name": "surgeon",
+       "adjectives": [
+        "masked",
+        "intense",
+        "focused",
+        "frowning",
+        "dark-eyed"
+       ]
+      },
+      {
+       "name": "surgical mask",
+       "adjectives": [
+        "green",
+        "teal"
+       ]
+      },
+      {
+       "name": "surgical cap",
+       "adjectives": [
+        "green",
+        "teal"
+       ]
+      },
+      {
+       "name": "scalpel",
+       "adjectives": [
+        "sharp",
+        "blue-handled",
+        "thin",
+        "pointed"
+       ]
+      },
+      {
+       "name": "gloved hand",
+       "adjectives": [
+        "beige",
+        "latex",
+        "partly cut off"
+       ]
+      },
+      {
+       "name": "patient's skin",
+       "adjectives": [
+        "smooth",
+        "rounded",
+        "pink",
+        "shiny",
+        "bare"
+       ]
+      }
+     ],
+     "shot": "close-up",
+     "angle": "high angle",
+     "step": "before",
+     "extras": {
+      "floor": false,
+      "background": "none; the frame is filled by the surgeon's face and the patient's skin",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "scalp": "hidden",
+      "surgeon": "visible",
+      "blade": "visible"
+     }
+    },
+    "8": {
+     "objects": [
+      {
+       "name": "surgeon",
+       "adjectives": [
+        "masked",
+        "focused",
+        "green-capped",
+        "intense-eyed",
+        "partly visible"
+       ]
+      },
+      {
+       "name": "scalpel",
+       "adjectives": [
+        "blue-handled",
+        "sharp",
+        "metallic",
+        "small"
+       ]
+      },
+      {
+       "name": "gloved hand",
+       "adjectives": [
+        "beige",
+        "gripping",
+        "partly cut off"
+       ]
+      },
+      {
+       "name": "scalp",
+       "adjectives": [
+        "rounded",
+        "smooth",
+        "peach-colored",
+        "shiny",
+        "incised"
+       ]
+      },
+      {
+       "name": "incision",
+       "adjectives": [
+        "thin",
+        "dark",
+        "curved"
+       ]
+      },
+      {
+       "name": "surgical cap",
+       "adjectives": [
+        "green"
+       ]
+      },
+      {
+       "name": "surgical mask",
+       "adjectives": [
+        "green"
+       ]
+      },
+      {
+       "name": "sparkle",
+       "adjectives": [
+        "white",
+        "star-shaped",
+        "outlined"
+       ]
+      }
+     ],
+     "shot": "close-up",
+     "angle": "high angle",
+     "step": "during",
+     "extras": {
+      "floor": false,
+      "background": "blurry pale white and green backdrop behind the surgeon, suggesting an operating room",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "scalp": "visible",
+      "surgeon": "partly cut",
+      "blade": "visible"
+     }
+    },
+    "9": {
+     "objects": [
+      {
+       "name": "surgeon",
+       "adjectives": [
+        "wide-eyed",
+        "shocked",
+        "masked",
+        "wearing green scrubs",
+        "wearing a surgical cap"
+       ]
+      },
+      {
+       "name": "surgical mask",
+       "adjectives": [
+        "green",
+        "pale"
+       ]
+      },
+      {
+       "name": "surgical cap",
+       "adjectives": [
+        "green"
+       ]
+      },
+      {
+       "name": "scrubs",
+       "adjectives": [
+        "green",
+        "loose"
+       ]
+      },
+      {
+       "name": "gloved hand",
+       "adjectives": [
+        "white",
+        "raised",
+        "latex"
+       ]
+      },
+      {
+       "name": "scalpel",
+       "adjectives": [
+        "small",
+        "blue-handled",
+        "sharp",
+        "silver-bladed"
+       ]
+      },
+      {
+       "name": "patient's abdomen",
+       "adjectives": [
+        "round",
+        "large",
+        "peach-colored",
+        "shiny",
+        "bare"
+       ]
+      }
+     ],
+     "shot": "medium",
+     "angle": "high angle",
+     "step": "before",
+     "extras": {
+      "floor": false,
+      "background": "pale green circular shape on a plain white backdrop",
+      "morePeople": false,
+      "readableText": ""
+     },
+     "mustSee": {
+      "scalp": "hidden",
+      "surgeon": "partly cut",
+      "blade": "visible"
+     }
+    }
+   }
+  },
+  "failures": {}
+ }
+}

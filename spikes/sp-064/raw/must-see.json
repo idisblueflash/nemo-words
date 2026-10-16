@@ -1,0 +1,2068 @@
+{
+  "anomaly": {
+    "story": "A knock rattles the family's tiles; one's irregular.",
+    "items": [
+      {
+        "name": "hand knocking",
+        "adjectives": [
+          "rattling"
+        ]
+      },
+      {
+        "name": "family of tiles",
+        "adjectives": [
+          "rattling"
+        ]
+      },
+      {
+        "name": "irregular tile",
+        "adjectives": [
+          "irregular",
+          "misshapen"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "biases": {
+    "story": "Buy a scissors-happy referee who slants every call homeward.",
+    "items": [
+      {
+        "name": "referee",
+        "adjectives": [
+          "scissors-happy"
+        ]
+      },
+      {
+        "name": "scissors",
+        "adjectives": [
+          "open",
+          "snipping"
+        ]
+      },
+      {
+        "name": "home team jersey",
+        "adjectives": [
+          "slanted",
+          "tilted"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "aisle": {
+    "story": "Passengers file down the plane's cramped passage.",
+    "items": [
+      {
+        "name": "passengers",
+        "adjectives": [
+          "several",
+          "filing in a line"
+        ]
+      },
+      {
+        "name": "plane",
+        "adjectives": []
+      },
+      {
+        "name": "passage",
+        "adjectives": [
+          "cramped",
+          "narrow"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "appeal": {
+    "story": "A peal of bells attracts a curious crowd.",
+    "items": [
+      {
+        "name": "bells",
+        "adjectives": [
+          "ringing",
+          "several"
+        ]
+      },
+      {
+        "name": "crowd",
+        "adjectives": [
+          "curious",
+          "gathered"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "apparatus": {
+    "story": "App in paw, the rat tests equipment rigged above us.",
+    "items": [
+      {
+        "name": "rat",
+        "adjectives": [
+          "tester"
+        ]
+      },
+      {
+        "name": "app",
+        "adjectives": [
+          "in paw"
+        ]
+      },
+      {
+        "name": "equipment",
+        "adjectives": [
+          "rigged above",
+          "overhead"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "bulge": {
+    "story": "Bulb bribes the judge; his pocket swells with cash.",
+    "items": [
+      {
+        "name": "man with a nametag reading \"Bulb\"",
+        "adjectives": [
+          "bribing",
+          "sneaky"
+        ]
+      },
+      {
+        "name": "judge",
+        "adjectives": [
+          "bribed",
+          "robed"
+        ]
+      },
+      {
+        "name": "pocket",
+        "adjectives": [
+          "swollen",
+          "bulging"
+        ]
+      },
+      {
+        "name": "cash",
+        "adjectives": [
+          "stuffed",
+          "wadded"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "cocked": {
+    "story": "Carl knocked, and the cat tilted its head.",
+    "items": [
+      {
+        "name": "man",
+        "adjectives": [
+          "nametag reading \"Carl\"",
+          "knocking"
+        ]
+      },
+      {
+        "name": "cat",
+        "adjectives": [
+          "head tilted",
+          "curious"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "confound": {
+    "story": "A con man found twins, mixing up nametags.",
+    "items": [
+      {
+        "name": "con man",
+        "adjectives": [
+          "sly"
+        ]
+      },
+      {
+        "name": "twins",
+        "adjectives": [
+          "identical",
+          "two"
+        ]
+      },
+      {
+        "name": "nametags",
+        "adjectives": [
+          "mixed-up",
+          "swapped"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "concocted": {
+    "story": "The chef cocked his head, stirring a devious scheme.",
+    "items": [
+      {
+        "name": "chef",
+        "adjectives": [
+          "head cocked",
+          "devious",
+          "scheming"
+        ]
+      },
+      {
+        "name": "chef's hat",
+        "adjectives": [
+          "tall",
+          "white"
+        ]
+      },
+      {
+        "name": "stirring spoon",
+        "adjectives": [
+          "wooden"
+        ]
+      },
+      {
+        "name": "pot",
+        "adjectives": [
+          "bubbling"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "corpus": {
+    "story": "An apple core tops campus's giant text collection.",
+    "items": [
+      {
+        "name": "apple core",
+        "adjectives": [
+          "bare",
+          "eaten",
+          "brown"
+        ]
+      },
+      {
+        "name": "stack of giant books",
+        "adjectives": [
+          "giant",
+          "tall"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "corncob": {
+    "story": "Campers roast corn, then toss the bare cob.",
+    "items": [
+      {
+        "name": "campers",
+        "adjectives": []
+      },
+      {
+        "name": "corn",
+        "adjectives": [
+          "roasted"
+        ]
+      },
+      {
+        "name": "cob",
+        "adjectives": [
+          "bare",
+          "tossed"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "contest": {
+    "story": "The con aces a spelling test to compete on TV.",
+    "items": [
+      {
+        "name": "convict in striped prison uniform",
+        "adjectives": [
+          "smiling",
+          "triumphant"
+        ]
+      },
+      {
+        "name": "spelling test paper",
+        "adjectives": [
+          "perfect score",
+          "red A+",
+          "graded"
+        ]
+      },
+      {
+        "name": "television",
+        "adjectives": [
+          "on",
+          "showing a contest"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "cottage": {
+    "story": "Rain caught us on the ridge, by a tiny house.",
+    "items": [
+      {
+        "name": "rain",
+        "adjectives": [
+          "falling"
+        ]
+      },
+      {
+        "name": "ridge",
+        "adjectives": []
+      },
+      {
+        "name": "house",
+        "adjectives": [
+          "tiny"
+        ]
+      },
+      {
+        "name": "people",
+        "adjectives": [
+          "rain-soaked"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "defect": {
+    "story": "Dee's new drone was wrecked by a flaw.",
+    "items": [
+      {
+        "name": "drone",
+        "adjectives": [
+          "new",
+          "wrecked",
+          "broken"
+        ]
+      },
+      {
+        "name": "nametag reading \"Dee\"",
+        "adjectives": []
+      },
+      {
+        "name": "crack",
+        "adjectives": [
+          "flaw",
+          "visible"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "cramped": {
+    "story": "A crow camped in my tent; no room to move.",
+    "items": [
+      {
+        "name": "crow",
+        "adjectives": [
+          "black",
+          "large",
+          "cramped"
+        ]
+      },
+      {
+        "name": "tent",
+        "adjectives": [
+          "small",
+          "packed",
+          "full"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "elastic": {
+    "story": "The lass grabs a stick, then stretches its rubber band.",
+    "items": [
+      {
+        "name": "girl",
+        "adjectives": [
+          "young"
+        ]
+      },
+      {
+        "name": "stick",
+        "adjectives": [
+          "grabbed"
+        ]
+      },
+      {
+        "name": "rubber band",
+        "adjectives": [
+          "stretched",
+          "taut"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "dose": {
+    "story": "A doe sips from the nurse's measured spoonful of medicine.",
+    "items": [
+      {
+        "name": "doe",
+        "adjectives": [
+          "sipping"
+        ]
+      },
+      {
+        "name": "nurse",
+        "adjectives": []
+      },
+      {
+        "name": "spoon",
+        "adjectives": [
+          "full",
+          "measured"
+        ]
+      },
+      {
+        "name": "medicine",
+        "adjectives": [
+          "liquid"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "devious": {
+    "story": "Dee flashes a V at us, sneakily pocketing our wallets.",
+    "items": [
+      {
+        "name": "person with a nametag reading \"Dee\"",
+        "adjectives": [
+          "sneaky"
+        ]
+      },
+      {
+        "name": "V sign",
+        "adjectives": [
+          "two fingers raised",
+          "flashed"
+        ]
+      },
+      {
+        "name": "wallets",
+        "adjectives": [
+          "pocketed",
+          "stolen"
+        ]
+      },
+      {
+        "name": "pocket",
+        "adjectives": [
+          "wallets tucked inside"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "essence": {
+    "story": "Her dress sense defines her true core.",
+    "items": [
+      {
+        "name": "woman",
+        "adjectives": [
+          "stylish"
+        ]
+      },
+      {
+        "name": "dress",
+        "adjectives": [
+          "distinctive",
+          "fashionable"
+        ]
+      },
+      {
+        "name": "glowing core",
+        "adjectives": [
+          "true",
+          "central"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "engine": {
+    "story": "Ten pigeons peck, then power the wagon.",
+    "items": [
+      {
+        "name": "pigeons",
+        "adjectives": [
+          "ten"
+        ]
+      },
+      {
+        "name": "wagon",
+        "adjectives": []
+      }
+    ],
+    "isSequence": true
+  },
+  "fidelity": {
+    "story": "The familiar dog naps by Dell's tea, loyal.",
+    "items": [
+      {
+        "name": "dog",
+        "adjectives": [
+          "familiar",
+          "loyal",
+          "napping"
+        ]
+      },
+      {
+        "name": "cup of tea",
+        "adjectives": []
+      },
+      {
+        "name": "nametag reading \"Dell\"",
+        "adjectives": []
+      }
+    ],
+    "isSequence": false
+  },
+  "exotic": {
+    "story": "The exhibit's robotic guide described foreign artifacts.",
+    "items": [
+      {
+        "name": "robotic guide",
+        "adjectives": [
+          "robotic"
+        ]
+      },
+      {
+        "name": "artifacts",
+        "adjectives": [
+          "foreign"
+        ]
+      },
+      {
+        "name": "exhibit",
+        "adjectives": []
+      }
+    ],
+    "isSequence": false
+  },
+  "evicted": {
+    "story": "If Victor misses rent, movers will make him leave.",
+    "items": [
+      {
+        "name": "person with a nametag reading \"Victor\"",
+        "adjectives": [
+          "worried"
+        ]
+      },
+      {
+        "name": "rent",
+        "adjectives": [
+          "missed",
+          "overdue"
+        ]
+      },
+      {
+        "name": "movers",
+        "adjectives": [
+          "burly",
+          "carrying boxes"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "flustered": {
+    "story": "Flipping the mustard, the waiter fumbles, red-faced and nervous.",
+    "items": [
+      {
+        "name": "mustard bottle",
+        "adjectives": [
+          "yellow",
+          "flipping"
+        ]
+      },
+      {
+        "name": "waiter",
+        "adjectives": [
+          "red-faced",
+          "nervous",
+          "fumbling"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "idiosyncratic": {
+    "story": "A busker's video: his sin, a crafty finger-tick — peculiar.",
+    "items": [
+      {
+        "name": "busker",
+        "adjectives": [
+          "street performer",
+          "crafty"
+        ]
+      },
+      {
+        "name": "video camera",
+        "adjectives": [
+          "recording"
+        ]
+      },
+      {
+        "name": "finger",
+        "adjectives": [
+          "ticking",
+          "crafty"
+        ]
+      },
+      {
+        "name": "tally mark",
+        "adjectives": [
+          "ticked",
+          "peculiar"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "flux": {
+    "story": "Flew south, fed ducks; seasons keep changing.",
+    "items": [
+      {
+        "name": "bird flying south",
+        "adjectives": [
+          "flying"
+        ]
+      },
+      {
+        "name": "ducks",
+        "adjectives": [
+          "fed"
+        ]
+      },
+      {
+        "name": "signpost pointing south",
+        "adjectives": [
+          "south"
+        ]
+      },
+      {
+        "name": "tree with leaves in four seasons",
+        "adjectives": [
+          "changing",
+          "autumn",
+          "winter",
+          "spring",
+          "summer"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "herd": {
+    "story": "The scout heard hundreds of zebras thunder past together.",
+    "items": [
+      {
+        "name": "scout",
+        "adjectives": [
+          "listening",
+          "attentive"
+        ]
+      },
+      {
+        "name": "zebras",
+        "adjectives": [
+          "hundreds",
+          "striped",
+          "thundering",
+          "together"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "inflate": {
+    "story": "In the yard, a float at the gate swells with air.",
+    "items": [
+      {
+        "name": "float",
+        "adjectives": [
+          "swelling",
+          "air-filled"
+        ]
+      },
+      {
+        "name": "gate",
+        "adjectives": []
+      },
+      {
+        "name": "yard",
+        "adjectives": []
+      }
+    ],
+    "isSequence": false
+  },
+  "hypernym": {
+    "story": "High on a perch, nimble birds name one category.",
+    "items": [
+      {
+        "name": "perch",
+        "adjectives": [
+          "high"
+        ]
+      },
+      {
+        "name": "birds",
+        "adjectives": [
+          "nimble"
+        ]
+      },
+      {
+        "name": "sign reading \"category\"",
+        "adjectives": []
+      }
+    ],
+    "isSequence": false
+  },
+  "intervention": {
+    "story": "The printer vents smoke, so the tech steps in.",
+    "items": [
+      {
+        "name": "printer",
+        "adjectives": [
+          "smoking"
+        ]
+      },
+      {
+        "name": "smoke",
+        "adjectives": [
+          "rising"
+        ]
+      },
+      {
+        "name": "tech",
+        "adjectives": [
+          "stepping in"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "legitimate": {
+    "story": "The lagoon guard's digit scan proves ultimately valid.",
+    "items": [
+      {
+        "name": "guard",
+        "adjectives": [
+          "lagoon"
+        ]
+      },
+      {
+        "name": "nametag reading \"Lagoon\"",
+        "adjectives": []
+      },
+      {
+        "name": "hand with fingers (digit)",
+        "adjectives": [
+          "scanned"
+        ]
+      },
+      {
+        "name": "fingerprint scanner",
+        "adjectives": []
+      },
+      {
+        "name": "green checkmark",
+        "adjectives": [
+          "valid"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "inward": {
+    "story": "Stepping in, she wrote one word, then looked deep inside.",
+    "items": [
+      {
+        "name": "woman",
+        "adjectives": []
+      },
+      {
+        "name": "written word",
+        "adjectives": [
+          "single"
+        ]
+      },
+      {
+        "name": "eyes looking deep inside",
+        "adjectives": [
+          "deep"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "jerk": {
+    "story": "He smirks, snubbing me rudely.",
+    "items": [
+      {
+        "name": "man",
+        "adjectives": [
+          "smirking",
+          "rude",
+          "snubbing",
+          "turned away"
+        ]
+      },
+      {
+        "name": "narrator",
+        "adjectives": [
+          "snubbed",
+          "ignored"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "lass": {
+    "story": "Liv taps the glass; a girl peeks out.",
+    "items": [
+      {
+        "name": "girl",
+        "adjectives": [
+          "peeking"
+        ]
+      },
+      {
+        "name": "glass",
+        "adjectives": [
+          "tapped"
+        ]
+      },
+      {
+        "name": "nametag reading \"Liv\"",
+        "adjectives": []
+      },
+      {
+        "name": "hand",
+        "adjectives": [
+          "tapping"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "literature": {
+    "story": "Trail litter, a nature guide gets written.",
+    "items": [
+      {
+        "name": "trail litter",
+        "adjectives": [
+          "scattered",
+          "discarded"
+        ]
+      },
+      {
+        "name": "nature guide",
+        "adjectives": [
+          "written",
+          "open"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "latch": {
+    "story": "Lance flips the little metal catch, sealing the pool gate.",
+    "items": [
+      {
+        "name": "man with a nametag reading \"Lance\"",
+        "adjectives": []
+      },
+      {
+        "name": "metal catch",
+        "adjectives": [
+          "little",
+          "metal",
+          "flipped shut"
+        ]
+      },
+      {
+        "name": "pool gate",
+        "adjectives": [
+          "sealed",
+          "closed"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "merely": {
+    "story": "The framed mirror crashes, just an ornament to Lee.",
+    "items": [
+      {
+        "name": "mirror",
+        "adjectives": [
+          "framed",
+          "crashing",
+          "shattering"
+        ]
+      },
+      {
+        "name": "nametag reading \"Lee\"",
+        "adjectives": []
+      }
+    ],
+    "isSequence": false
+  },
+  "malignancy": {
+    "story": "The ligament swells like pregnancy, turning cancerous.",
+    "items": [
+      {
+        "name": "ligament",
+        "adjectives": [
+          "swollen",
+          "cancerous"
+        ]
+      },
+      {
+        "name": "pregnant belly",
+        "adjectives": [
+          "round",
+          "swollen"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "odd": {
+    "story": "I nod at the strange man wearing a spaghetti hat.",
+    "items": [
+      {
+        "name": "man",
+        "adjectives": [
+          "strange"
+        ]
+      },
+      {
+        "name": "spaghetti hat",
+        "adjectives": [
+          "spaghetti"
+        ]
+      },
+      {
+        "name": "narrator nodding",
+        "adjectives": []
+      }
+    ],
+    "isSequence": false
+  },
+  "optimal": {
+    "story": "At the shelter, she opts for an animal, the best.",
+    "items": [
+      {
+        "name": "animal shelter building",
+        "adjectives": []
+      },
+      {
+        "name": "woman",
+        "adjectives": []
+      },
+      {
+        "name": "animal",
+        "adjectives": [
+          "best",
+          "chosen"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "ominous": {
+    "story": "Ommen watches Venus over almond trees, warning of a storm.",
+    "items": [
+      {
+        "name": "man with a nametag reading \"Ommen\"",
+        "adjectives": [
+          "watching",
+          "upward-gazing"
+        ]
+      },
+      {
+        "name": "planet Venus (bright star-like point with a nametag reading \"Venus\")",
+        "adjectives": [
+          "bright"
+        ]
+      },
+      {
+        "name": "almond trees",
+        "adjectives": []
+      },
+      {
+        "name": "storm clouds",
+        "adjectives": [
+          "dark",
+          "approaching"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "obtained": {
+    "story": "A bee abstained all day, then got the queen's reward.",
+    "items": [
+      {
+        "name": "bee",
+        "adjectives": [
+          "hungry",
+          "empty-handed"
+        ]
+      },
+      {
+        "name": "queen",
+        "adjectives": [
+          "crowned"
+        ]
+      },
+      {
+        "name": "reward",
+        "adjectives": [
+          "golden",
+          "shiny"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "pajamas": {
+    "story": "Jolly llamas, snug in matching sleepwear, nod off.",
+    "items": [
+      {
+        "name": "llamas",
+        "adjectives": [
+          "jolly",
+          "sleeping",
+          "nodding off"
+        ]
+      },
+      {
+        "name": "matching pajamas",
+        "adjectives": [
+          "matching",
+          "snug"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "overreach": {
+    "story": "Hanging over a peach tree, he stretches too far, falls.",
+    "items": [
+      {
+        "name": "man",
+        "adjectives": [
+          "stretching",
+          "falling"
+        ]
+      },
+      {
+        "name": "peach tree",
+        "adjectives": []
+      }
+    ],
+    "isSequence": true
+  },
+  "ornament": {
+    "story": "Warn the cat: that glass ball only decorates the tree.",
+    "items": [
+      {
+        "name": "cat",
+        "adjectives": []
+      },
+      {
+        "name": "glass ball",
+        "adjectives": [
+          "glass",
+          "round",
+          "shiny"
+        ]
+      },
+      {
+        "name": "tree",
+        "adjectives": [
+          "decorated"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "pale": {
+    "story": "Paula lifts her veil, cheeks flash white.",
+    "items": [
+      {
+        "name": "woman with a nametag reading \"Paula\"",
+        "adjectives": []
+      },
+      {
+        "name": "veil",
+        "adjectives": [
+          "lifted"
+        ]
+      },
+      {
+        "name": "cheeks",
+        "adjectives": [
+          "white",
+          "flashing"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "parchment": {
+    "story": "Pa arches for a moment, then presses goat skin.",
+    "items": [
+      {
+        "name": "man with a nametag reading \"Pa\"",
+        "adjectives": [
+          "arched",
+          "bending backward"
+        ]
+      },
+      {
+        "name": "goat skin",
+        "adjectives": [
+          "pressed"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "peculiar": {
+    "story": "The queue of familiar faces all wore odd, wrong smiles.",
+    "items": [
+      {
+        "name": "queue of people",
+        "adjectives": [
+          "familiar",
+          "lined up"
+        ]
+      },
+      {
+        "name": "faces",
+        "adjectives": [
+          "familiar"
+        ]
+      },
+      {
+        "name": "smiles",
+        "adjectives": [
+          "odd",
+          "wrong"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "period": {
+    "story": "Off the pier, an eon of peace stretched and ended.",
+    "items": [
+      {
+        "name": "pier",
+        "adjectives": [
+          "wooden"
+        ]
+      },
+      {
+        "name": "calm water",
+        "adjectives": [
+          "still",
+          "peaceful"
+        ]
+      },
+      {
+        "name": "hourglass",
+        "adjectives": [
+          "ancient",
+          "empty"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "plumbing": {
+    "story": "A plum logo hangs, advertising home pipes.",
+    "items": [
+      {
+        "name": "logo",
+        "adjectives": [
+          "plum-shaped",
+          "hanging"
+        ]
+      },
+      {
+        "name": "plum",
+        "adjectives": [
+          "purple",
+          "ripe"
+        ]
+      },
+      {
+        "name": "pipes",
+        "adjectives": [
+          "home",
+          "household"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "pound": {
+    "story": "Pam's sound asleep; fists hit her door, again and again.",
+    "items": [
+      {
+        "name": "nametag reading \"Pam\" on a woman",
+        "adjectives": [
+          "sound asleep"
+        ]
+      },
+      {
+        "name": "door",
+        "adjectives": [
+          "closed"
+        ]
+      },
+      {
+        "name": "fists",
+        "adjectives": [
+          "pounding",
+          "repeated"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "polysemy": {
+    "story": "Melissa shows me one palm, five related fingers.",
+    "items": [
+      {
+        "name": "person with a nametag reading \"Melissa\"",
+        "adjectives": []
+      },
+      {
+        "name": "palm",
+        "adjectives": [
+          "open",
+          "one"
+        ]
+      },
+      {
+        "name": "fingers",
+        "adjectives": [
+          "five",
+          "spread"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "prevalence": {
+    "story": "Ambulances rev; a lens shows flu widespread.",
+    "items": [
+      {
+        "name": "ambulances",
+        "adjectives": [
+          "revving"
+        ]
+      },
+      {
+        "name": "lens",
+        "adjectives": [
+          "magnifying"
+        ]
+      },
+      {
+        "name": "flu germs",
+        "adjectives": [
+          "widespread",
+          "many"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "rationing": {
+    "story": "The rat, with caution, doles out equal grain.",
+    "items": [
+      {
+        "name": "rat",
+        "adjectives": [
+          "cautious",
+          "careful"
+        ]
+      },
+      {
+        "name": "grain",
+        "adjectives": [
+          "equal",
+          "even piles"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "regulation": {
+    "story": "Reg, the landlord, lays down a strict house rule.",
+    "items": [
+      {
+        "name": "landlord",
+        "adjectives": [
+          "stern"
+        ]
+      },
+      {
+        "name": "nametag reading \"Reg\"",
+        "adjectives": []
+      },
+      {
+        "name": "house rule sign",
+        "adjectives": [
+          "strict"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "rev": {
+    "story": "Revelers gun their engines, roaring with energy.",
+    "items": [
+      {
+        "name": "revelers",
+        "adjectives": [
+          "energetic",
+          "cheering"
+        ]
+      },
+      {
+        "name": "engines",
+        "adjectives": [
+          "gunned",
+          "roaring"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "regional": {
+    "story": "A legion's cooks serve Al stew flavored for this area.",
+    "items": [
+      {
+        "name": "legion of soldiers",
+        "adjectives": [
+          "armored",
+          "marching"
+        ]
+      },
+      {
+        "name": "cooks",
+        "adjectives": [
+          "aproned",
+          "chef-hatted"
+        ]
+      },
+      {
+        "name": "man with a nametag that reads \"Al\"",
+        "adjectives": [
+          "hungry"
+        ]
+      },
+      {
+        "name": "bowl of stew",
+        "adjectives": [
+          "steaming",
+          "flavored",
+          "local"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "ridge": {
+    "story": "A fridge stands alone on the long narrow mountain crest.",
+    "items": [
+      {
+        "name": "fridge",
+        "adjectives": [
+          "alone"
+        ]
+      },
+      {
+        "name": "mountain crest",
+        "adjectives": [
+          "long",
+          "narrow"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "rung": {
+    "story": "Though young, she grabbed the ladder's first step.",
+    "items": [
+      {
+        "name": "girl",
+        "adjectives": [
+          "young"
+        ]
+      },
+      {
+        "name": "ladder",
+        "adjectives": []
+      },
+      {
+        "name": "first step of the ladder",
+        "adjectives": [
+          "bottom"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "rigged": {
+    "story": "Wig-wearing clerk stuffs the fixed ballot box.",
+    "items": [
+      {
+        "name": "clerk",
+        "adjectives": [
+          "wig-wearing"
+        ]
+      },
+      {
+        "name": "wig",
+        "adjectives": []
+      },
+      {
+        "name": "ballot box",
+        "adjectives": [
+          "stuffed",
+          "full",
+          "fixed"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "saturation": {
+    "story": "The satchel of rations soaked up rain until not one drop more would fit.",
+    "items": [
+      {
+        "name": "satchel",
+        "adjectives": [
+          "full",
+          "waterlogged",
+          "soaked"
+        ]
+      },
+      {
+        "name": "rations",
+        "adjectives": [
+          "soaked"
+        ]
+      },
+      {
+        "name": "rain",
+        "adjectives": []
+      },
+      {
+        "name": "drop",
+        "adjectives": []
+      }
+    ],
+    "isSequence": false
+  },
+  "shattered": {
+    "story": "Shh, a battered phone drops; its screen breaks into pieces.",
+    "items": [
+      {
+        "name": "phone",
+        "adjectives": [
+          "battered",
+          "dropping"
+        ]
+      },
+      {
+        "name": "screen",
+        "adjectives": [
+          "broken",
+          "shattered into pieces"
+        ]
+      },
+      {
+        "name": "finger over lips (shh gesture)",
+        "adjectives": []
+      }
+    ],
+    "isSequence": true
+  },
+  "scalpel": {
+    "story": "The bald scalp gleams; the surgeon's thin blade cuts precisely.",
+    "items": [
+      {
+        "name": "scalp",
+        "adjectives": [
+          "bald",
+          "gleaming"
+        ]
+      },
+      {
+        "name": "surgeon",
+        "adjectives": []
+      },
+      {
+        "name": "blade",
+        "adjectives": [
+          "thin"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "snubbing": {
+    "story": "Snow hits the pub; the king coldly ignores my wave.",
+    "items": [
+      {
+        "name": "snow",
+        "adjectives": [
+          "falling"
+        ]
+      },
+      {
+        "name": "pub",
+        "adjectives": [
+          "snow-covered"
+        ]
+      },
+      {
+        "name": "king",
+        "adjectives": [
+          "cold",
+          "crowned",
+          "aloof"
+        ]
+      },
+      {
+        "name": "waving hand",
+        "adjectives": [
+          "ignored"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "simmers": {
+    "story": "Sim ladles hers, gently bubbling, never quite boiling.",
+    "items": [
+      {
+        "name": "nametag reading \"Sim\"",
+        "adjectives": []
+      },
+      {
+        "name": "woman",
+        "adjectives": []
+      },
+      {
+        "name": "ladle",
+        "adjectives": []
+      },
+      {
+        "name": "pot of soup",
+        "adjectives": [
+          "gently bubbling",
+          "not boiling"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "spilled": {
+    "story": "Spoon tips the filled mug; coffee floods the desk.",
+    "items": [
+      {
+        "name": "spoon",
+        "adjectives": []
+      },
+      {
+        "name": "mug",
+        "adjectives": [
+          "tipped",
+          "filled"
+        ]
+      },
+      {
+        "name": "coffee",
+        "adjectives": [
+          "flooding",
+          "spilled"
+        ]
+      },
+      {
+        "name": "desk",
+        "adjectives": [
+          "flooded",
+          "covered in coffee"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "spontaneous": {
+    "story": "Watching spawn, she mounts the table, knee-first — toasts unplanned.",
+    "items": [
+      {
+        "name": "woman",
+        "adjectives": [
+          "knee-first",
+          "climbing"
+        ]
+      },
+      {
+        "name": "table",
+        "adjectives": []
+      },
+      {
+        "name": "spawn",
+        "adjectives": [
+          "watched",
+          "clustered",
+          "jelly-like"
+        ]
+      },
+      {
+        "name": "toasts",
+        "adjectives": [
+          "unplanned",
+          "golden"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "steroid": {
+    "story": "A doctor steers around the annoyed patient to reach his inflamed knee.",
+    "items": [
+      {
+        "name": "doctor",
+        "adjectives": []
+      },
+      {
+        "name": "patient",
+        "adjectives": [
+          "annoyed"
+        ]
+      },
+      {
+        "name": "knee",
+        "adjectives": [
+          "inflamed",
+          "red",
+          "swollen"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "stampede": {
+    "story": "Feet stamp, someone peed, doorbusters rush inside.",
+    "items": [
+      {
+        "name": "stamping feet",
+        "adjectives": [
+          "stomping",
+          "many"
+        ]
+      },
+      {
+        "name": "puddle of pee",
+        "adjectives": [
+          "yellow",
+          "wet"
+        ]
+      },
+      {
+        "name": "person who peed",
+        "adjectives": [
+          "embarrassed",
+          "wet pants"
+        ]
+      },
+      {
+        "name": "doorbusters",
+        "adjectives": [
+          "rushing",
+          "eager",
+          "crowd of shoppers"
+        ]
+      },
+      {
+        "name": "door",
+        "adjectives": [
+          "open",
+          "bursting"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "surgeon": {
+    "story": "Power surge! An OR goes dark; she operates by headlamp.",
+    "items": [
+      {
+        "name": "power surge lightning bolt",
+        "adjectives": [
+          "bright",
+          "crackling"
+        ]
+      },
+      {
+        "name": "operating room",
+        "adjectives": [
+          "dark"
+        ]
+      },
+      {
+        "name": "surgeon",
+        "adjectives": [
+          "female",
+          "focused"
+        ]
+      },
+      {
+        "name": "headlamp",
+        "adjectives": [
+          "lit",
+          "glowing"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "strutted": {
+    "story": "Dust rutted the farm road; a peacock swaggered, tail fanned.",
+    "items": [
+      {
+        "name": "dust",
+        "adjectives": [
+          "thick",
+          "rutted into the road"
+        ]
+      },
+      {
+        "name": "farm road",
+        "adjectives": [
+          "rutted",
+          "dusty"
+        ]
+      },
+      {
+        "name": "peacock",
+        "adjectives": [
+          "swaggering",
+          "proud"
+        ]
+      },
+      {
+        "name": "tail",
+        "adjectives": [
+          "fanned",
+          "spread wide"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "sweep": {
+    "story": "Swing deep into the corner; grab the broom.",
+    "items": [
+      {
+        "name": "broom",
+        "adjectives": []
+      },
+      {
+        "name": "corner",
+        "adjectives": [
+          "deep"
+        ]
+      },
+      {
+        "name": "swinging person",
+        "adjectives": []
+      }
+    ],
+    "isSequence": true
+  },
+  "toss": {
+    "story": "Tom's boss smiles, then lightly throws him the keys.",
+    "items": [
+      {
+        "name": "person with a nametag reading \"Tom\"",
+        "adjectives": []
+      },
+      {
+        "name": "boss",
+        "adjectives": [
+          "smiling"
+        ]
+      },
+      {
+        "name": "keys",
+        "adjectives": [
+          "thrown",
+          "airborne"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "synonym": {
+    "story": "The sinner watched his nimble mirror-twin mouth the same words.",
+    "items": [
+      {
+        "name": "sinner",
+        "adjectives": [
+          "watching"
+        ]
+      },
+      {
+        "name": "mirror-twin",
+        "adjectives": [
+          "nimble",
+          "mirrored"
+        ]
+      },
+      {
+        "name": "mouth",
+        "adjectives": [
+          "moving",
+          "speaking"
+        ]
+      },
+      {
+        "name": "words",
+        "adjectives": [
+          "same"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "tacit": {
+    "story": "He grabs the tab; they sit unspoken.",
+    "items": [
+      {
+        "name": "hand",
+        "adjectives": [
+          "grabbing"
+        ]
+      },
+      {
+        "name": "tab",
+        "adjectives": [
+          "grabbed"
+        ]
+      },
+      {
+        "name": "people",
+        "adjectives": [
+          "seated",
+          "silent"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "trait": {
+    "story": "He trips before the date, revealing a clumsy characteristic.",
+    "items": [
+      {
+        "name": "man",
+        "adjectives": [
+          "clumsy",
+          "tripping",
+          "stumbling"
+        ]
+      },
+      {
+        "name": "date",
+        "adjectives": [
+          "waiting"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "trivial": {
+    "story": "The trick charmed our jovial judge — a minor act.",
+    "items": [
+      {
+        "name": "magician's trick",
+        "adjectives": [
+          "charming"
+        ]
+      },
+      {
+        "name": "judge",
+        "adjectives": [
+          "jovial",
+          "smiling"
+        ]
+      },
+      {
+        "name": "small stage",
+        "adjectives": [
+          "minor",
+          "tiny"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "ultimately": {
+    "story": "Cult baker Lee burned loaves; in the end, perfect bread.",
+    "items": [
+      {
+        "name": "baker",
+        "adjectives": [
+          "cult"
+        ]
+      },
+      {
+        "name": "nametag reading \"Lee\"",
+        "adjectives": []
+      },
+      {
+        "name": "loaves",
+        "adjectives": [
+          "burned",
+          "black"
+        ]
+      },
+      {
+        "name": "bread",
+        "adjectives": [
+          "perfect",
+          "golden"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "wore": {
+    "story": "War ended; the king strutted out dressed in pajamas.",
+    "items": [
+      {
+        "name": "king",
+        "adjectives": [
+          "strutting"
+        ]
+      },
+      {
+        "name": "crown",
+        "adjectives": []
+      },
+      {
+        "name": "pajamas",
+        "adjectives": []
+      },
+      {
+        "name": "nametag reading \"War ended\"",
+        "adjectives": []
+      }
+    ],
+    "isSequence": true
+  },
+  "unwinding": {
+    "story": "In the hammock, my mind drifts; I relax.",
+    "items": [
+      {
+        "name": "hammock",
+        "adjectives": [
+          "hanging",
+          "relaxing"
+        ]
+      },
+      {
+        "name": "person",
+        "adjectives": [
+          "relaxed",
+          "lying back"
+        ]
+      },
+      {
+        "name": "thought bubble",
+        "adjectives": [
+          "drifting",
+          "floating away"
+        ]
+      }
+    ],
+    "isSequence": false
+  },
+  "ventilator": {
+    "story": "Nurse Venice returns later; the machine breathes for the newborn.",
+    "items": [
+      {
+        "name": "nurse",
+        "adjectives": [
+          "wearing a nametag that reads \"Venice\""
+        ]
+      },
+      {
+        "name": "breathing machine (ventilator)",
+        "adjectives": [
+          "breathing for the baby"
+        ]
+      },
+      {
+        "name": "newborn",
+        "adjectives": [
+          "tiny",
+          "hooked up to the machine"
+        ]
+      }
+    ],
+    "isSequence": true
+  },
+  "worn": {
+    "story": "Warn the driver: that tire's tread is rubbed bald.",
+    "items": [
+      {
+        "name": "driver",
+        "adjectives": [
+          "warned"
+        ]
+      },
+      {
+        "name": "tire",
+        "adjectives": [
+          "bald",
+          "worn",
+          "rubbed smooth"
+        ]
+      },
+      {
+        "name": "tread",
+        "adjectives": [
+          "rubbed off",
+          "bald"
+        ]
+      }
+    ],
+    "isSequence": false
+  }
+}

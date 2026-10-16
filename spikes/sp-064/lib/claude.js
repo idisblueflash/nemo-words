@@ -1,0 +1,102 @@
+"use strict";
+
+// The one way SP-064 calls `claude -p` (or $SP064_CLAUDE_BIN): in a fresh
+// temp folder that holds only the files the step puts there, with a fixed
+// prompt and a fixed tool list. Claude writes every text step; Jev only judges.
+// A failed call, an empty answer or an answer that isn't the JSON the step
+// asked for is a ClaudeError, so the word is unjudged and nothing is cached.
+// An answer that says the session or usage limit is reached is a
+// UsageLimitError instead (scenario 8): it isn't a ClaudeError, so no step
+// catches it and the run stops; every later ask from the same makeClaude
+// fails with it at once, without calling claude again.
+
+const fs = require("node:fs");
+const os = require("node:os");
+const path = require("node:path");
+const { execFile } = require("node:child_process");
+
+class ClaudeError extends Error {}
+
+class UsageLimitError extends Error {
+  constructor(text, resetsAt) {
+    super(`Claude's usage limit is reached: ${text}`);
+    this.resetsAt = resetsAt; // e.g. "1:10pm (Asia/Shanghai)", or null
+  }
+}
+
+// claude -p's limit answers, e.g. "You've hit your session limit · resets 1:10pm (Asia/Shanghai)".
+const LIMIT = /hit your (?:session|usage|weekly) limit|(?:session|usage) limit (?:is )?reached/i;
+
+// The answer's text → a UsageLimitError when it says the limit is reached, else null.
+function usageLimit(text) {
+  const t = oneLine(text);
+  if (!LIMIT.test(t)) return null;
+  const m = /\bresets\s+(?:at\s+)?(.+)$/i.exec(t);
+  return new UsageLimitError(t, m ? m[1].trim() : null);
+}
+
+const oneLine = (text) => String(text).replace(/\s+/g, " ").trim();
+
+// ask(prompt, { tools, prepare }) → stdout text.
+//   tools:   "" for a text-only call, "Read" to let it look at the folder's images
+//   prepare: (dir) => void, puts the call's files into its folder
+function makeClaude({ bin = "claude", model = "sonnet", timeout = 300000 } = {}) {
+  let limit = null; // the UsageLimitError once seen
+  return (prompt, { tools = "", prepare = () => {} } = {}) =>
+    new Promise((resolve, reject) => {
+      if (limit) return reject(limit);
+      const dir = fs.mkdtempSync(path.join(os.tmpdir(), "call-"));
+      try {
+        prepare(dir);
+      } catch (err) {
+        fs.rmSync(dir, { recursive: true, force: true });
+        return reject(new ClaudeError(`couldn't prepare the call: ${err.message}`));
+      }
+      const args = ["-p", prompt, "--model", model, "--tools", tools];
+      if (tools) args.push("--allowedTools", tools);
+      const child = execFile(bin, args, { cwd: dir, timeout, maxBuffer: 4 << 20 }, (err, stdout, stderr) => {
+        fs.rmSync(dir, { recursive: true, force: true });
+        // claude -p says why it failed (e.g. a usage limit) on stdout
+        const hit = (err || !String(stdout).includes("{")) && usageLimit(`${stdout} ${stderr}`);
+        if (hit) return reject((limit = limit || hit));
+        if (err) return reject(new ClaudeError(`claude failed (exit ${err.code}): ${oneLine(stdout)} ${oneLine(stderr)}`.trim()));
+        if (!String(stdout).trim()) return reject(new ClaudeError("claude gave an empty answer"));
+        resolve(String(stdout));
+      });
+      child.stdin.end(); // nothing to read: don't make claude -p wait for stdin
+    });
+}
+
+// The JSON object in a model answer (it may sit in a ```json fence).
+function parseJson(text) {
+  const s = String(text);
+  const start = s.indexOf("{");
+  const end = s.lastIndexOf("}");
+  if (start < 0 || end < start) throw new ClaudeError(`unusable claude answer (no JSON): ${oneLine(s).slice(0, 120)}`);
+  try {
+    return JSON.parse(s.slice(start, end + 1));
+  } catch (err) {
+    throw new ClaudeError(`unusable claude answer (bad JSON: ${err.message}): ${oneLine(s).slice(0, 120)}`);
+  }
+}
+
+// Runs `fn` over `items` with at most `jobs` at once. When `fn` throws, no
+// worker takes a new item, and the throw is the pool's.
+async function pool(items, jobs, fn) {
+  let next = 0;
+  let stopped = false;
+  const worker = async () => {
+    while (!stopped && next < items.length) {
+      const i = next++;
+      try {
+        await fn(items[i], i);
+      } catch (err) {
+        stopped = true;
+        throw err;
+      }
+    }
+  };
+  await Promise.all(Array.from({ length: Math.max(1, Math.min(jobs, items.length)) }, worker));
+}
+
+module.exports = { makeClaude, parseJson, pool, oneLine, usageLimit, ClaudeError, UsageLimitError };
