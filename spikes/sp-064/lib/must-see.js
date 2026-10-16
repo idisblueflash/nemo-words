@@ -37,13 +37,42 @@ function parseList(text) {
   return { items, isSequence: j.isSequence === true };
 }
 
-// words: [{ word, story }] → { cache, failures: word → error }.
+// A name anchor is a capitalized word of the story that the list names as an
+// item. Its visible sign is an item that shows the name on a nametag, sign,
+// label and so on. Returns the names the list leaves bare (bug-015).
+const SIGN = /name\s?tag|sign|label|badge|sticker|placard|banner|read/i;
+
+function unsignedNames(story, items) {
+  const text = (i) => [i.name, ...i.adjectives].join(" ");
+  const names = new Set(story.match(/[A-Z][a-z]+/g) || []);
+  return [...names].filter((n) => {
+    const re = new RegExp(`\\b${n}\\b`);
+    return items.some((i) => re.test(i.name)) && !items.some((i) => re.test(text(i)) && SIGN.test(text(i)));
+  });
+}
+
+const fixPrompt = (story, bare) =>
+  [
+    prompt(story),
+    "",
+    `Your last list left ${bare.map((n) => `"${n}"`).join(", ")} as a bare name. A name can't be seen: show it as a nametag or sign that reads the name (for example a man with a nametag that reads "${bare[0]}"), and don't list the bare name as an item.`,
+  ].join("\n");
+
+// words: [{ word, story }] → { cache, failures: word → error }. A cached list
+// that leaves a name bare is made again; a new list that does is asked once more.
 async function mustSeeLists({ words, ask, cache = {}, jobs = 6, onSave = () => {} }) {
   const failures = {};
-  const todo = words.filter((w) => !(cache[w.word] && cache[w.word].story === w.story));
+  const fresh = (w) => cache[w.word] && cache[w.word].story === w.story && unsignedNames(w.story, cache[w.word].items).length === 0;
+  const todo = words.filter((w) => !fresh(w));
   await pool(todo, jobs, async (w) => {
     try {
-      const list = parseList(await ask(prompt(w.story), { tools: "" }));
+      let list = parseList(await ask(prompt(w.story), { tools: "" }));
+      const bare = unsignedNames(w.story, list.items);
+      if (bare.length) {
+        list = parseList(await ask(fixPrompt(w.story, bare), { tools: "" }));
+        const still = unsignedNames(w.story, list.items);
+        if (still.length) throw new ClaudeError(`name left bare, with no visible sign: ${still.join(", ")}`);
+      }
       cache[w.word] = { story: w.story, ...list };
       onSave(cache);
     } catch (err) {
@@ -54,4 +83,4 @@ async function mustSeeLists({ words, ask, cache = {}, jobs = 6, onSave = () => {
   return { cache, failures };
 }
 
-module.exports = { prompt, parseList, mustSeeLists };
+module.exports = { prompt, parseList, mustSeeLists, unsignedNames };
