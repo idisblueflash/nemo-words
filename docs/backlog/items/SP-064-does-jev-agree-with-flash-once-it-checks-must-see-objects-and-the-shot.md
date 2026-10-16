@@ -2,7 +2,7 @@
 id: SP-064
 type: spike
 parent: E01
-status: in-progress
+status: done
 qa_status: passing
 timebox: 1d
 depends_on: [SP-029]
