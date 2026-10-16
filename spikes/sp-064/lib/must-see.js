@@ -42,12 +42,28 @@ function parseList(text) {
 // label and so on. Returns the names the list leaves bare (bug-015).
 const SIGN = /name\s?tag|sign|label|badge|sticker|placard|banner|read/i;
 
+// The captioner is shown item names only (ADR-0032), so the sign has to be in
+// the name of an item that holds the anchor: a bare "Victor" is judged as a
+// bare name even when an adjective says "nametag reading Victor".
 function unsignedNames(story, items) {
-  const text = (i) => [i.name, ...i.adjectives].join(" ");
   const names = new Set(story.match(/[A-Z][a-z]+/g) || []);
   return [...names].filter((n) => {
     const re = new RegExp(`\\b${n}\\b`);
-    return items.some((i) => re.test(i.name)) && !items.some((i) => re.test(text(i)) && SIGN.test(text(i)));
+    return items.some((i) => re.test(i.name) && !SIGN.test(i.name));
+  });
+}
+
+// An item that holds a name anchor in its name, with no sign there, but with
+// the sign in an adjective: the name becomes `person with a nametag reading
+// "<anchor>"` and that adjective goes (it is in the name now). No Claude call.
+function moveSignIntoName(story, items) {
+  const names = [...new Set(story.match(/[A-Z][a-z]+/g) || [])];
+  return items.map((i) => {
+    const n = names.find((x) => new RegExp(`\\b${x}\\b`).test(i.name));
+    const re = n && new RegExp(`\\b${n}\\b`);
+    const k = n && !SIGN.test(i.name) ? i.adjectives.findIndex((a) => re.test(a) && SIGN.test(a)) : -1;
+    if (k < 0) return i;
+    return { name: `person with a nametag reading "${n}"`, adjectives: i.adjectives.filter((_, j) => j !== k) };
   });
 }
 
@@ -62,14 +78,28 @@ const fixPrompt = (story, bare) =>
 // that leaves a name bare is made again; a new list that does is asked once more.
 async function mustSeeLists({ words, ask, cache = {}, jobs = 6, onSave = () => {} }) {
   const failures = {};
+  let changed = false;
+  for (const w of words) {
+    const c = cache[w.word];
+    if (c && c.story === w.story) {
+      const items = moveSignIntoName(w.story, c.items);
+      if (JSON.stringify(items) !== JSON.stringify(c.items)) {
+        cache[w.word] = { ...c, items };
+        changed = true;
+      }
+    }
+  }
+  if (changed) onSave(cache);
   const fresh = (w) => cache[w.word] && cache[w.word].story === w.story && unsignedNames(w.story, cache[w.word].items).length === 0;
   const todo = words.filter((w) => !fresh(w));
   await pool(todo, jobs, async (w) => {
     try {
       let list = parseList(await ask(prompt(w.story), { tools: "" }));
+      list.items = moveSignIntoName(w.story, list.items);
       const bare = unsignedNames(w.story, list.items);
       if (bare.length) {
         list = parseList(await ask(fixPrompt(w.story, bare), { tools: "" }));
+        list.items = moveSignIntoName(w.story, list.items);
         const still = unsignedNames(w.story, list.items);
         if (still.length) throw new ClaudeError(`name left bare, with no visible sign: ${still.join(", ")}`);
       }

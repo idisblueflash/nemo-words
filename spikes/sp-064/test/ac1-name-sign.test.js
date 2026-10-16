@@ -47,3 +47,35 @@ test("a name still bare after the second ask is a failure, not a saved list", as
   assert.match(r.failures.evicted, /Victor/);
   assert.equal(r.cache.evicted, undefined);
 });
+
+// bug-015, round 2 — the captioner sees item names only, so the sign must be
+// in the item name. A sign that sits only in an adjective is moved into the name.
+const ADJ = { items: [{ name: "Victor", adjectives: ["worried", 'nametag reading "Victor"'] }, { name: "movers", adjectives: [] }], isSequence: false };
+
+test("a sign only in an adjective, with the bare name as item name, is an unsigned name", () => {
+  assert.deepEqual(unsignedNames(STORY, ADJ.items), ["Victor"]);
+  assert.deepEqual(unsignedNames("Pam naps.", [{ name: 'nametag reading "Pam" on a woman', adjectives: [] }]), []);
+  assert.deepEqual(unsignedNames("Venice helps.", [{ name: "nurse", adjectives: ['wearing a nametag that reads "Venice"'] }]), []);
+});
+
+test("a new list with the sign only in an adjective is rewritten without another ask", async () => {
+  let calls = 0;
+  const ask = async () => (calls++, JSON.stringify(ADJ));
+  const r = await mustSeeLists({ words: [{ word: "evicted", story: STORY }], ask });
+  assert.equal(calls, 1);
+  assert.deepEqual(r.cache.evicted.items[0], { name: 'person with a nametag reading "Victor"', adjectives: ["worried"] });
+  assert.deepEqual(r.cache.evicted.items[1], ADJ.items[1]);
+});
+
+test("a cached list like that is rewritten in place with no ask and saved; a good cached list is untouched", async () => {
+  let calls = 0;
+  let saved = 0;
+  const ask = async () => (calls++, "{}");
+  const good = { story: STORY, ...SIGNED };
+  const cache = { evicted: { story: STORY, ...ADJ }, ok: good };
+  await mustSeeLists({ words: [{ word: "evicted", story: STORY }, { word: "ok", story: STORY }], ask, cache, onSave: () => saved++ });
+  assert.equal(calls, 0);
+  assert.equal(saved, 1);
+  assert.equal(cache.evicted.items[0].name, 'person with a nametag reading "Victor"');
+  assert.equal(cache.ok, good);
+});
