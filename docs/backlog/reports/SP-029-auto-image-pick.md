@@ -163,7 +163,11 @@ None.
 
 20 words where Jev's cell wasn't Flash's. Flash sees both cells side by side, unlabelled, his own on the left for half the words, and chooses one or rates them about the same.
 
-Not finished: 0 of 20 answered. The share is shown once every word is answered.
+Jev's cell chosen or rated about the same: 6 of 20 (30.0%)
+
+- Jev's cell chosen: 2
+- About the same: 4
+- Flash's cell chosen: 14
 
 ## Go / no-go
 

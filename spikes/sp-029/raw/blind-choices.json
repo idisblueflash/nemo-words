@@ -1,0 +1,102 @@
+{
+  "polysemy": {
+    "pick": "flash",
+    "side": "left",
+    "at": "2026-10-16T00:13:29.574Z"
+  },
+  "overreach": {
+    "pick": "same",
+    "side": "same",
+    "at": "2026-10-16T00:13:43.805Z"
+  },
+  "malignancy": {
+    "pick": "flash",
+    "side": "left",
+    "at": "2026-10-16T00:13:49.839Z"
+  },
+  "intervention": {
+    "pick": "flash",
+    "side": "left",
+    "at": "2026-10-16T00:13:57.256Z"
+  },
+  "shattered": {
+    "pick": "flash",
+    "side": "left",
+    "at": "2026-10-16T00:14:04.555Z"
+  },
+  "wore": {
+    "pick": "same",
+    "side": "same",
+    "at": "2026-10-16T00:14:24.873Z"
+  },
+  "snubbing": {
+    "pick": "same",
+    "side": "same",
+    "at": "2026-10-16T00:14:32.590Z"
+  },
+  "pale": {
+    "pick": "jev",
+    "side": "left",
+    "at": "2026-10-16T00:14:56.824Z"
+  },
+  "surgeon": {
+    "pick": "flash",
+    "side": "left",
+    "at": "2026-10-16T00:15:17.106Z"
+  },
+  "unwinding": {
+    "pick": "flash",
+    "side": "right",
+    "at": "2026-10-16T00:15:23.306Z"
+  },
+  "ventilator": {
+    "pick": "jev",
+    "side": "left",
+    "at": "2026-10-16T00:16:03.123Z"
+  },
+  "pajamas": {
+    "pick": "flash",
+    "side": "right",
+    "at": "2026-10-16T00:16:21.573Z"
+  },
+  "cocked": {
+    "pick": "flash",
+    "side": "right",
+    "at": "2026-10-16T00:16:31.889Z"
+  },
+  "appeal": {
+    "pick": "flash",
+    "side": "right",
+    "at": "2026-10-16T00:16:41.006Z"
+  },
+  "spontaneous": {
+    "pick": "flash",
+    "side": "left",
+    "at": "2026-10-16T00:16:44.523Z"
+  },
+  "hypernym": {
+    "pick": "flash",
+    "side": "right",
+    "at": "2026-10-16T00:16:52.340Z"
+  },
+  "regional": {
+    "pick": "same",
+    "side": "same",
+    "at": "2026-10-16T00:17:03.457Z"
+  },
+  "peculiar": {
+    "pick": "flash",
+    "side": "left",
+    "at": "2026-10-16T00:17:06.143Z"
+  },
+  "inward": {
+    "pick": "flash",
+    "side": "left",
+    "at": "2026-10-16T00:17:11.559Z"
+  },
+  "corncob": {
+    "pick": "flash",
+    "side": "right",
+    "at": "2026-10-16T00:17:14.959Z"
+  }
+}
