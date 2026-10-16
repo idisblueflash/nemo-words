@@ -18,6 +18,7 @@ const crypto = require("node:crypto");
 const path = require("node:path");
 const { cropCell } = require("../../sp-029/lib/caption");
 const { parseJson, pool, ClaudeError } = require("./claude");
+const { maskName } = require("./headword");
 
 const SHOTS = ["extreme close-up", "close-up", "medium", "wide"];
 const STEPS = ["before", "during", "after"];
@@ -27,7 +28,11 @@ const EXTRAS = ["floor", "background", "morePeople", "readableText"];
 // The must-see item names, once each, in list order.
 const itemNames = (items) => [...new Set(items.map((i) => i.name))];
 
-function prompt(items) {
+// The names as the captioner sees them: the headword is hidden in a name that
+// holds it (bug-016); every other name is as written.
+const shownNames = (items, word) => itemNames(items).map((n) => (word ? maskName(word, n) : n));
+
+function prompt(items, word) {
   return [
     "Use the Read tool to look at the image file picture.png in the current folder.",
     "Describe what the picture shows, as JSON with these keys:",
@@ -39,14 +44,15 @@ function prompt(items) {
     '- "mustSee": for each item name below (keyed by the name, exactly as written), "visible" when the thing is fully shown, "partly cut" when the edge of the picture cuts part of it off, "hidden" when it can\'t be seen. Judge only whether the thing itself is there, whatever its state',
     "Print only the JSON, no preamble.",
     "",
-    `MUST-SEE ITEMS: ${JSON.stringify(itemNames(items))}`,
+    `MUST-SEE ITEMS: ${JSON.stringify(shownNames(items, word))}`,
   ].join("\n");
 }
 
 const isObject = (x) => x !== null && typeof x === "object" && !Array.isArray(x);
 
 // Model answer → caption, or a ClaudeError when it's unusable.
-function parseCaption(text, items) {
+// The mustSee keys stay the list's own item names, whatever the captioner was shown.
+function parseCaption(text, items, word) {
   const j = parseJson(text);
   if (!Array.isArray(j.objects)) throw new ClaudeError("unusable caption: no objects array");
   if (!SHOTS.includes(j.shot)) throw new ClaudeError(`unusable caption: shot ${JSON.stringify(j.shot)}`);
@@ -54,10 +60,11 @@ function parseCaption(text, items) {
   if (!isObject(j.extras)) throw new ClaudeError("unusable caption: no extras");
   if (!isObject(j.mustSee)) throw new ClaudeError("unusable caption: no mustSee");
   const mustSee = {};
-  for (const name of itemNames(items)) {
-    if (!STATUSES.includes(j.mustSee[name])) throw new ClaudeError(`unusable caption: must-see ${name} is ${JSON.stringify(j.mustSee[name])}`);
-    mustSee[name] = j.mustSee[name];
-  }
+  const shown = shownNames(items, word);
+  itemNames(items).forEach((name, k) => {
+    if (!STATUSES.includes(j.mustSee[shown[k]])) throw new ClaudeError(`unusable caption: must-see ${shown[k]} is ${JSON.stringify(j.mustSee[shown[k]])}`);
+    mustSee[name] = j.mustSee[shown[k]];
+  });
   return {
     objects: j.objects,
     shot: j.shot,
@@ -69,20 +76,20 @@ function parseCaption(text, items) {
 }
 
 // The cache key of a caption: the prompt it was made with.
-const promptKey = (items) => crypto.createHash("sha256").update(prompt(items)).digest("hex").slice(0, 16);
+const promptKey = (items, word) => crypto.createHash("sha256").update(prompt(items, word)).digest("hex").slice(0, 16);
 
 // words: [{ word, grid }], lists: word → { items } → { cache, failures: grid → { cell, error } }.
 async function captionGrids({ words, lists, imageDir, ask, cache = {}, jobs = 6, onSave = () => {} }) {
   // a cached caption counts only if it was made with the prompt the word's current list gives
-  const fits = (caption, items) => caption && caption.promptKey === promptKey(items);
+  const fits = (caption, items, word) => caption && caption.promptKey === promptKey(items, word);
   const todo = [];
-  for (const w of words) for (let cell = 1; cell <= 9; cell++) if (!fits(cache[w.grid]?.[cell], lists[w.word].items)) todo.push({ ...w, cell });
+  for (const w of words) for (let cell = 1; cell <= 9; cell++) if (!fits(cache[w.grid]?.[cell], lists[w.word].items, w.word)) todo.push({ ...w, cell });
   const failures = {};
   await pool(todo, jobs, async ({ word, grid, cell }) => {
     const items = lists[word].items;
     try {
       const prepare = (dir) => cropCell(path.join(imageDir, grid), cell, path.join(dir, "picture.png"));
-      const caption = { ...parseCaption(await ask(prompt(items), { tools: "Read", prepare }), items), promptKey: promptKey(items) };
+      const caption = { ...parseCaption(await ask(prompt(items, word), { tools: "Read", prepare }), items, word), promptKey: promptKey(items, word) };
       // keep cells in 1–9 order however they finish
       cache[grid] = Object.fromEntries(Object.entries({ ...(cache[grid] || {}), [cell]: caption }).sort(([a], [b]) => a - b));
       onSave(cache);
