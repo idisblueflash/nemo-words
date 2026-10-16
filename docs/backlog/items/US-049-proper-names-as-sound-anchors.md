@@ -3,6 +3,7 @@ id: US-049
 type: story
 parent: E01
 status: dropped
+concepts: [C-033]
 ---
 # US-049 Proper names as sound anchors
 
