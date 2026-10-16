@@ -17,7 +17,7 @@
 ## Stories (ranked)
 1. [US-060](items/US-060-the-rhyme-rule-refuses-ye-yeah-des-and-huh.md) The rhyme rule refuses ye, yeah, des and huh · E01 · refined
 2. [SP-029](items/SP-029-does-an-auto-image-pick-agree-with-flash.md) Does an auto image pick agree with Flash's picks? · E01 · done
-3. [SP-064](items/SP-064-does-jev-agree-with-flash-once-it-checks-must-see-objects-and-the-shot.md) Does Jev agree with Flash's image pick once it checks the must-see objects and the camera shot? · E01 · ready
+3. [SP-064](items/SP-064-does-jev-agree-with-flash-once-it-checks-must-see-objects-and-the-shot.md) Does Jev agree with Flash's image pick once it checks the must-see objects and the camera shot? · E01 · in-progress
 4. [US-061](items/US-061-the-story-drafter-picks-an-anchor-for-words-that-still-stop.md) The story drafter picks an anchor for words that still stop · E01 · idea
 5. [US-063](items/US-063-a-word-rhyme-from-the-stressed-vowel-to-the-end.md) A word rhyme from the stressed vowel to the end · E01 · done
 6. [US-042](items/US-042-plain-words-mistaken-for-word-parts-still-get-a-card.md) Plain words mistaken for word parts still get a card · E01 · idea
