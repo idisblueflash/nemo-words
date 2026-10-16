@@ -28,13 +28,13 @@ test("AC3: one Claude call per grid sees the 9 cut-out cells together and writes
 
   const diffs = readJson(path.join(out, "differences.json"));
   assert.deepEqual(Object.keys(diffs).sort(), ["alpha.grid.png", "omega.grid.png"]);
-  for (const lines of Object.values(diffs)) {
+  for (const { lines } of Object.values(diffs)) {
     assert.equal(lines.length, 9);
     for (const l of lines) assert.ok(typeof l === "string" && l.trim() && !/[\n\t]/.test(l));
   }
   // line n is about cell n: alpha's cell 1 is lightness 0 (dark), cell 9 is 240
-  assert.equal(diffs["alpha.grid.png"][0], "darker than most cells (lightness 0)");
-  assert.equal(diffs["alpha.grid.png"][8], "lighter than most cells (lightness 240)");
+  assert.equal(diffs["alpha.grid.png"].lines[0], "darker than most cells (lightness 0)");
+  assert.equal(diffs["alpha.grid.png"].lines[8], "lighter than most cells (lightness 240)");
 
   const calls = claudeCalls(log).filter((c) => c.mode === "differences");
   assert.equal(calls.length, 2, "one call per grid");

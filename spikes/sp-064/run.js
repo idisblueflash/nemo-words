@@ -35,7 +35,7 @@ const path = require("node:path");
 const { makeClaude, pool, UsageLimitError } = require("./lib/claude");
 const { mustSeeLists } = require("./lib/must-see");
 const { captionGrids } = require("./lib/caption");
-const { compareGrids } = require("./lib/differences");
+const { compareGrids, linesOf } = require("./lib/differences");
 const { pickCell, loadRubric } = require("./lib/pick");
 const { renderReport } = require("./lib/report");
 const jev = require("../../scripts/lib/jev");
@@ -93,7 +93,7 @@ async function prepare(cfg, kept, argv) {
 
   const diffs = await compareGrids({ words: live(), lists: out.lists, imageDir: cfg.imageDir, ask, jobs, ...cached(cfg, "differences.json") });
   for (const w of live()) if (diffs.failures[w.grid]) failed[w.word] = `grid differences failed: ${diffs.failures[w.grid]}`;
-  out.lines = diffs.cache;
+  out.lines = Object.fromEntries(Object.entries(diffs.cache).map(([g, e]) => [g, linesOf(e)]));
   return { ...out, failed };
 }
 
