@@ -14,11 +14,14 @@ const define = (primarySense) =>
 // Each fixture holds only words the rhyme rules must turn down: the headword,
 // a word with no onset, function words, a word of more than one syllable, a
 // word whose rime only contains the chunk's rime, and a too-rare word.
+// US-063: a word of more than one syllable with the same end (shampoo for
+// stew, indulge for bulge) is now a word rhyme (C-031), the last fallback; so
+// here it is below the 5e-7 frequency limit, and the word still stops.
 const CASES = [
   {
     word: "stew",
     dict: { stew: "stˈu", ooh: "ˈu", to: "tˈu", who: "hˈu", do: "dˈu", shampoo: "ʃæmpˈu", gnu: "nˈu" },
-    freqs: { stew: 5e-6, ooh: 2e-5, to: 2e-2, who: 2e-3, do: 1e-3, shampoo: 3e-6, gnu: 1e-8 },
+    freqs: { stew: 5e-6, ooh: 2e-5, to: 2e-2, who: 2e-3, do: 1e-3, shampoo: 4e-7, gnu: 1e-8 },
     stop: "stopped at find-keywords: no sound anchor found; stu\t-\n",
   },
   {
@@ -30,7 +33,7 @@ const CASES = [
   {
     word: "bulge",
     dict: { bulge: "bˈʌldʒ", indulge: "ɪndˈʌldʒ", bulges: "bˈʌldʒɪz" },
-    freqs: { bulge: 3e-6, indulge: 4e-6, bulges: 1e-6 },
+    freqs: { bulge: 3e-6, indulge: 4e-7, bulges: 1e-6 },
     stop: "stopped at find-keywords: no sound anchor found; bʌldʒ\t-\n",
   },
 ];

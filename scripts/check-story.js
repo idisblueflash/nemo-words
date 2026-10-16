@@ -11,7 +11,7 @@ const fs = require("fs");
 const { runCli, ipaKey, stripStress } = require("./card-lib");
 const { lookupGaForms } = require("./ipa");
 const { readChunkKeywords } = require("./compose-stories");
-const { rimeOf } = require("./lib/rhyme");
+const { rimeOf, tailFrom, endsInTail } = require("./lib/rhyme");
 
 // Irregular inflected forms (past, participle, plural, comparative ...) by base
 // word — the suffix rules below can't derive these. A curated list of common
@@ -99,7 +99,13 @@ function anchorReasons(toks, chunks, lookupGa) {
     const gaAll = lookupGa(kw);
     const forms = gaAll ? gaAll.split(",").map((v) => v.trim()).filter(Boolean) : [];
     const ga = forms[0];
-    if (c.match === "rime") {
+    if (c.match === "word-rime") {
+      // US-063: a word rhyme needs the WordTail, from the stressed vowel to the end
+      const tail = tailFrom(chunks.map((x) => x.ipa), chunks.indexOf(c));
+      if (!forms.some((v) => endsInTail(v, tail))) {
+        reasons.push(`anchor-ipa: ${kw} /${ga ? stripStress(ga) : "?"}/ does not rhyme with /${tail}/`);
+      }
+    } else if (c.match === "rime") {
       // US-046: a rhyme anchor needs the chunk's rime, not its whole sound
       if (!forms.some((v) => rimeOf(v) === rimeOf(c.ipa))) {
         reasons.push(`anchor-ipa: ${kw} /${ga ? stripStress(ga) : "?"}/ does not rhyme with /${c.ipa}/`);

@@ -138,7 +138,8 @@ A rhyme line has a 4th column, `ipa\tkeyword\tfreq\trime`. `compose-stories` mar
 `(rhymes)` in the prompt, `check-stories` compares rimes for it instead of the whole sound
 (for any of the keyword's GA forms, as `find-keywords` does: `last` is `lˈæst,lˈæs`),
 and `log-card` logs `anchor_unit: rime`. A word with no exact keyword on any chunk and no
-rhyme for the stressed chunk (e.g. `bulge`) stops with `no sound anchor found`.
+rhyme and no word rhyme (below) for the stressed chunk (e.g. `breadth`) stops with
+`no sound anchor found`.
 
 Before both of those, `find-keywords` tries the stressed chunk as a **closed chunk**
 (US-050, ADR-0025, `scripts/lib/closed-chunk.js`). The rule applies to the chunk with the
@@ -157,6 +158,21 @@ and `chunk` do not change: the card's IPA line and the log's syllables still sho
 `ˈpɛ.nəl.ti`. With no closed keyword (levee, aloe, dozen, paper, cottage), the stressed chunk
 gets the result above: the exact keyword, then the rhyme, then none. Covered by
 `test/card-us050-*.test.js`.
+
+The last fallback for the stressed chunk is a **word rhyme** (US-063, C-031, ADR-0029,
+`wordRhymeFor` in `scripts/lib/rhyme.js`). It runs only when the closed chunk, the exact
+keyword and the one-chunk rhyme all give nothing. The WordTail is the stressed chunk's rime
+plus every later chunk's IPA (durable `ˈdʊ.ɹə.bəl` → /ʊɹəbəl/). A word rhyme has a GA form
+whose sound from its primary-stressed vowel to its end is the WordTail, with any number of
+syllables (bulge → `indulge`). The onset of its stressed syllable is not empty and is not the
+headword's stressed onset. It is not the headword, an inflection of it, a word the headword
+is an inflection of, or a function word, and its frequency is at least 5e-7; the most
+frequent one wins. Its line is `ipa\tkeyword\tfreq\tword-rime` on the stressed chunk, and
+every later chunk's line is `ipa\t-`, because the word rhyme covers it (ADR-0030); earlier
+chunks keep their lines. `compose-stories` writes `"incurable" (rhymes with /ʊɹəbəl/, the
+end of the word)` and `(covered by the rhyme above)`; `check-story` compares the keyword's
+GA forms with the WordTail (else `anchor-ipa: <kw> /…/ does not rhyme with /<tail>/`); and
+`log-card` logs `anchor_unit: rime`. Covered by `test/card-us063-*.test.js`.
 
 `draw-arm` (US-051, E02's retention experiment) puts an anchored word with no logged story
 in one of two arms. The **story arm** runs the rest of the pipeline as before; its row's

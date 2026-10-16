@@ -78,4 +78,101 @@ function rhymeFor({ chunkIpa, lookupLines, freqs = {}, exclude = [] }) {
   return best;
 }
 
-module.exports = { rhymeFor, rhymeCandidates, rimeOf, FREQ_THRESHOLD, FUNCTION_WORDS };
+// US-063 (C-031, ADR-0029/0030): the word rhyme, the last fallback for the
+// stressed chunk. It matches the headword's WordTail: the sound from the
+// stressed chunk's vowel to the end of the word (durable ˈdʊ.ɹə.bəl -> /ʊɹəbəl/).
+
+// The WordTail of chunk `index` in `chunkIpas` (chunk order): that chunk's
+// rime plus every later chunk's IPA, as an ipaKey.
+function tailFrom(chunkIpas, index) {
+  return rimeOf(chunkIpas[index]) + chunkIpas.slice(index + 1).map(ipaKey).join("");
+}
+
+// The stressed chunk of a syllable string (`ˈdʊ.ɹə.bəl`): the one with the
+// primary stress, or a one-chunk word's only chunk. -> { index, chunkIpas } | null
+function stressedChunk(syllableString) {
+  const parts = String(syllableString || "").split(".").filter(Boolean);
+  let index = parts.findIndex((p) => p.includes("ˈ"));
+  if (index === -1 && parts.length === 1) index = 0;
+  if (index === -1) return null;
+  return { index, chunkIpas: parts.map(ipaKey) };
+}
+
+function wordTail(syllableString) {
+  const s = stressedChunk(syllableString);
+  return s ? tailFrom(s.chunkIpas, s.index) : null;
+}
+
+// One GA form's end from its primary-stressed vowel, and that syllable's
+// onset. A one-syllable form with no `ˈ` counts as stressed; a longer form
+// with no `ˈ` gives null. Only the primary stress counts (`ˌ` is part of the end).
+// -> { tail, onset } | null
+function stressedEnd(ga) {
+  const norm = String(ga).replace(/[.ː]/g, "").replace(/r/g, "ɹ").replace(/ɡ/g, "g");
+  const sylls = syllables(norm);
+  if (!sylls[0].nucleus) return null;
+  let i = sylls.findIndex((x) => x.nucleus.stress === "ˈ");
+  if (i === -1 && sylls.length === 1) i = 0;
+  if (i === -1) return null;
+  const segs = [sylls[i].nucleus, ...sylls[i].coda];
+  for (const x of sylls.slice(i + 1)) segs.push(...x.onset, x.nucleus, ...x.coda);
+  return { tail: ipaKey(segs.map((x) => x.seg).join("")), onset: sylls[i].onset.map((x) => x.seg).join("") };
+}
+
+// Does one GA form end in `tail` from its primary-stressed vowel?
+function endsInTail(ga, tail) {
+  const end = stressedEnd(ga);
+  return Boolean(end && end.tail === tail);
+}
+
+// The words in `word\tRP\tGA[,GA…]` lookup output that can be the word rhyme
+// (frequency not yet considered): a GA form ends in the WordTail from its
+// stressed vowel, with an onset there that is not empty and not the
+// headword's stressed onset (that would be a homophone); not the headword, an
+// inflection of it, or a word it is an inflection of; not a function word.
+function wordRhymeCandidates({ syllableString, lookupLines, headword }) {
+  const s = stressedChunk(syllableString);
+  if (!s) return [];
+  const tail = tailFrom(s.chunkIpas, s.index);
+  const ownOnset = syllables(s.chunkIpas[s.index])[0].onset.map((x) => x.seg).join("");
+  const { isInflectionOf } = require("../check-story"); // lazy: check-story requires this file
+  const hw = headword ? headword.toLowerCase() : null;
+  const words = [];
+  for (const line of String(lookupLines || "").split("\n")) {
+    const [w, , ga] = line.split("\t");
+    if (!w || !ga || !/^[a-z]+$/.test(w) || FUNCTION_WORDS.has(w) || words.includes(w)) continue;
+    if (hw && (w === hw || isInflectionOf(w, hw) || isInflectionOf(hw, w))) continue;
+    const fits = ga.split(",").some((v) => {
+      const end = stressedEnd(v.trim());
+      return end && end.tail === tail && end.onset !== "" && end.onset !== ownOnset;
+    });
+    if (fits) words.push(w);
+  }
+  return words;
+}
+
+// The most frequent candidate at or above FREQ_THRESHOLD.
+// -> { keyword, frequency, tail } or null.
+function wordRhymeFor({ syllableString, lookupLines, freqs = {}, headword }) {
+  let best = null;
+  for (const w of wordRhymeCandidates({ syllableString, lookupLines, headword })) {
+    const f = freqs[w];
+    if (typeof f !== "number" || !(f >= FREQ_THRESHOLD)) continue;
+    if (!best || f > best.frequency) best = { keyword: w, frequency: f };
+  }
+  return best && { ...best, tail: wordTail(syllableString) };
+}
+
+module.exports = {
+  rhymeFor,
+  rhymeCandidates,
+  rimeOf,
+  wordRhymeFor,
+  wordRhymeCandidates,
+  wordTail,
+  tailFrom,
+  stressedEnd,
+  endsInTail,
+  FREQ_THRESHOLD,
+  FUNCTION_WORDS,
+};

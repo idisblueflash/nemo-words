@@ -20,6 +20,12 @@
 // A closed keyword wins over the open chunk's exact keyword and over a rhyme,
 // and is printed as an exact line with the closed IPA: `pɛn\tpen\tfrequency`.
 // The next chunk keeps the consonant, so no other line changes.
+// US-063 (ADR-0029/0030): when the stressed chunk still has no anchor, the
+// last fallback is a word rhyme (C-031): the most frequent common word that
+// sounds like the headword from the stressed vowel to the end of the word
+// (bulge -> "indulge", durable -> "incurable"), printed as
+// `ipa\tkeyword\tfrequency\tword-rime`. It covers every later chunk, whose
+// lines become `ipa\t-`; earlier chunks keep their lines.
 // The optional [word] is the headword itself, never offered as its own anchor.
 //
 // Candidates come from `nemo-words ipa-lookup --ga <chunk>` (substring search)
@@ -30,7 +36,15 @@ if (require.main === module) require("./lib/step-contract"); // a crash exits 2,
 const path = require("path");
 const { runCli, runTool, nemoWords, ipaKey } = require("./card-lib");
 const { chunk } = require("./chunk");
-const { rhymeFor, rhymeCandidates, rimeOf, FREQ_THRESHOLD } = require("./lib/rhyme");
+const {
+  rhymeFor,
+  rhymeCandidates,
+  rimeOf,
+  wordRhymeFor,
+  wordRhymeCandidates,
+  wordTail,
+  FREQ_THRESHOLD,
+} = require("./lib/rhyme");
 const { closedChunk, canBeClosedKeyword } = require("./lib/closed-chunk");
 
 // FREQ_THRESHOLD (5e-7, in lib/rhyme.js) is the keyword frequency cutoff (mean
@@ -107,14 +121,27 @@ function findKeywords(syllableString, word) {
     const rhymeFreqs = wordFreqs(rhymeCandidates({ chunkIpa, lookupLines, exclude }));
     const rhyme = rhymeFor({ chunkIpa, lookupLines, freqs: rhymeFreqs, exclude });
     if (rhyme) keywords[s] = { ipa: chunkIpa, ...rhyme, match: "rime" };
+    else {
+      // US-063 (ADR-0029): the word rhyme is the last fallback. It covers the
+      // stressed chunk and every later chunk (ADR-0030): those lines go `-`.
+      const tail = wordTail(syllableString);
+      const tailLines = nemoWords(["ipa-lookup", "--ga", tail]);
+      const tailFreqs = wordFreqs(wordRhymeCandidates({ syllableString, lookupLines: tailLines, headword }));
+      const wordRhyme = wordRhymeFor({ syllableString, lookupLines: tailLines, freqs: tailFreqs, headword });
+      if (wordRhyme) {
+        keywords[s] = { ipa: chunkIpa, keyword: wordRhyme.keyword, frequency: wordRhyme.frequency, match: "word-rime" };
+        for (let i = s + 1; i < keywords.length; i++) keywords[i] = { ipa: chunks[i].ipa, keyword: null };
+      }
+    }
   }
   return keywords;
 }
 
-// exact `ipa\tkeyword\tfreq`, rhyme `ipa\tkeyword\tfreq\trime`, none `ipa\t-`.
+// exact `ipa\tkeyword\tfreq`, rhyme `ipa\tkeyword\tfreq\trime`, word rhyme
+// `ipa\tkeyword\tfreq\tword-rime`, none `ipa\t-`.
 function formatKeywordLine(k) {
   if (!k.keyword) return `${k.ipa}\t-`;
-  return [k.ipa, k.keyword, k.frequency.toExponential(4), ...(k.match === "rime" ? ["rime"] : [])].join("\t");
+  return [k.ipa, k.keyword, k.frequency.toExponential(4), ...(k.match ? [k.match] : [])].join("\t");
 }
 
 if (require.main === module) {
