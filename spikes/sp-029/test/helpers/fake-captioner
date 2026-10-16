@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+"use strict";
+
+// Stands in for `claude -p` as the cell captioner. It reads `picture.png`
+// from its working folder (the only file the real captioner is pointed at),
+// reads back the fixture cell's flat gray level, and prints one line:
+// "a flat gray square, lightness N". Each call is appended to
+// $FAKE_CAPTION_LOG as JSON (argv, cwd, the files it could see), so tests can
+// check what the captioner was shown. $FAKE_CAPTION_FAIL_LEVEL makes it fail
+// on that gray level (exit 1), and $FAKE_CAPTION_EMPTY_LEVEL makes it print
+// nothing for it.
+
+const fs = require("node:fs");
+const path = require("node:path");
+const { execFileSync } = require("node:child_process");
+
+const cwd = process.cwd();
+const file = path.join(cwd, "picture.png");
+const level = Math.round(Number(execFileSync("magick", [file, "-format", "%[fx:mean*255]", "info:"]).toString()));
+
+if (process.env.FAKE_CAPTION_LOG) {
+  fs.appendFileSync(
+    process.env.FAKE_CAPTION_LOG,
+    JSON.stringify({ argv: process.argv.slice(2), cwd, files: fs.readdirSync(cwd), level }) + "\n",
+  );
+}
+if (String(level) === process.env.FAKE_CAPTION_FAIL_LEVEL) {
+  process.stdout.write("You have hit your session limit\n"); // claude -p says why on stdout
+  process.exit(1);
+}
+if (String(level) === process.env.FAKE_CAPTION_EMPTY_LEVEL) process.exit(0);
+process.stdout.write(`a flat gray square,\tlightness ${level}\n`);

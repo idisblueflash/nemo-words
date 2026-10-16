@@ -1,0 +1,939 @@
+{
+  "kept": [
+    {
+      "word": "aisle",
+      "grid": "aisle.grid.png",
+      "crop": "aisle.png",
+      "flashCell": 7,
+      "distance": 0,
+      "next": 0.1744,
+      "story": "Passengers file down the plane's cramped passage."
+    },
+    {
+      "word": "anomaly",
+      "grid": "anomaly.grid.png",
+      "crop": "anomaly.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2104,
+      "story": "A knock rattles the family's tiles; one's irregular."
+    },
+    {
+      "word": "apparatus",
+      "grid": "apparatus.grid-2.png",
+      "crop": "apparatus.png",
+      "flashCell": 3,
+      "distance": 0,
+      "next": 0.3069,
+      "story": "App in paw, the rat tests equipment rigged above us."
+    },
+    {
+      "word": "appeal",
+      "grid": "appeal.grid.png",
+      "crop": "appeal.png",
+      "flashCell": 9,
+      "distance": 0,
+      "next": 0.2906,
+      "story": "A peal of bells attracts a curious crowd."
+    },
+    {
+      "word": "biases",
+      "grid": "biases.grid.png",
+      "crop": "biases.png",
+      "flashCell": 4,
+      "distance": 0,
+      "next": 0.2485,
+      "story": "Buy a scissors-happy referee who slants every call homeward."
+    },
+    {
+      "word": "bulge",
+      "grid": "bulge.grid.png",
+      "crop": "bulge.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2604,
+      "story": "Bulb bribes the judge; his pocket swells with cash."
+    },
+    {
+      "word": "cocked",
+      "grid": "cocked.grid.png",
+      "crop": "cocked.png",
+      "flashCell": 7,
+      "distance": 0,
+      "next": 0.2192,
+      "story": "Carl knocked, and the cat tilted its head."
+    },
+    {
+      "word": "concocted",
+      "grid": "concocted.grid.png",
+      "crop": "concocted.png",
+      "flashCell": 6,
+      "distance": 0,
+      "next": 0.2189,
+      "story": "The chef cocked his head, stirring a devious scheme."
+    },
+    {
+      "word": "confound",
+      "grid": "confound.grid.png",
+      "crop": "confound.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2861,
+      "story": "A con man found twins, mixing up nametags."
+    },
+    {
+      "word": "contest",
+      "grid": "contest.grid.png",
+      "crop": "contest.png",
+      "flashCell": 7,
+      "distance": 0,
+      "next": 0.3147,
+      "story": "The con aces a spelling test to compete on TV."
+    },
+    {
+      "word": "corncob",
+      "grid": "corncob.grid.png",
+      "crop": "corncob.png",
+      "flashCell": 9,
+      "distance": 0,
+      "next": 0.21,
+      "story": "Campers roast corn, then toss the bare cob."
+    },
+    {
+      "word": "corpus",
+      "grid": "corpus.grid.png",
+      "crop": "corpus.png",
+      "flashCell": 6,
+      "distance": 0,
+      "next": 0.2021,
+      "story": "An apple core tops campus's giant text collection."
+    },
+    {
+      "word": "cottage",
+      "grid": "cottage.grid.png",
+      "crop": "cottage.png",
+      "flashCell": 3,
+      "distance": 0,
+      "next": 0.1572,
+      "story": "Rain caught us on the ridge, by a tiny house."
+    },
+    {
+      "word": "cramped",
+      "grid": "cramped.grid.png",
+      "crop": "cramped.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2478,
+      "story": "A crow camped in my tent; no room to move."
+    },
+    {
+      "word": "defect",
+      "grid": "defect.grid.png",
+      "crop": "defect.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2496,
+      "story": "Dee's new drone was wrecked by a flaw."
+    },
+    {
+      "word": "devious",
+      "grid": "devious.grid.png",
+      "crop": "devious.png",
+      "flashCell": 9,
+      "distance": 0,
+      "next": 0.2789,
+      "story": "Dee flashes a V at us, sneakily pocketing our wallets."
+    },
+    {
+      "word": "dose",
+      "grid": "dose.grid.png",
+      "crop": "dose.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2385,
+      "story": "A doe sips from the nurse's measured spoonful of medicine."
+    },
+    {
+      "word": "elastic",
+      "grid": "elastic.grid.png",
+      "crop": "elastic.png",
+      "flashCell": 7,
+      "distance": 0,
+      "next": 0.2077,
+      "story": "The lass grabs a stick, then stretches its rubber band."
+    },
+    {
+      "word": "engine",
+      "grid": "engine.grid-2.png",
+      "crop": "engine.png",
+      "flashCell": 6,
+      "distance": 0,
+      "next": 0.1608,
+      "story": "Ten pigeons peck, then power the wagon."
+    },
+    {
+      "word": "essence",
+      "grid": "essence.grid.png",
+      "crop": "essence.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2115,
+      "story": "Her dress sense defines her true core."
+    },
+    {
+      "word": "evicted",
+      "grid": "evicted.grid.png",
+      "crop": "evicted.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2105,
+      "story": "If Victor misses rent, movers will make him leave."
+    },
+    {
+      "word": "exotic",
+      "grid": "exotic.grid.png",
+      "crop": "exotic.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.237,
+      "story": "The exhibit's robotic guide described foreign artifacts."
+    },
+    {
+      "word": "fidelity",
+      "grid": "fidelity.grid.png",
+      "crop": "fidelity.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2167,
+      "story": "The familiar dog naps by Dell's tea, loyal."
+    },
+    {
+      "word": "flustered",
+      "grid": "flustered.grid.png",
+      "crop": "flustered.png",
+      "flashCell": 6,
+      "distance": 0,
+      "next": 0.3434,
+      "story": "Flipping the mustard, the waiter fumbles, red-faced and nervous."
+    },
+    {
+      "word": "flux",
+      "grid": "flux.grid.png",
+      "crop": "flux.png",
+      "flashCell": 7,
+      "distance": 0,
+      "next": 0.2562,
+      "story": "Flew south, fed ducks; seasons keep changing."
+    },
+    {
+      "word": "herd",
+      "grid": "herd.grid.png",
+      "crop": "herd.png",
+      "flashCell": 4,
+      "distance": 0,
+      "next": 0.2544,
+      "story": "The scout heard hundreds of zebras thunder past together."
+    },
+    {
+      "word": "hypernym",
+      "grid": "hypernym.grid.png",
+      "crop": "hypernym.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.1928,
+      "story": "High on a perch, nimble birds name one category."
+    },
+    {
+      "word": "idiosyncratic",
+      "grid": "idiosyncratic.grid.png",
+      "crop": "idiosyncratic.png",
+      "flashCell": 5,
+      "distance": 0,
+      "next": 0.2254,
+      "story": "A busker's video: his sin, a crafty finger-tick — peculiar."
+    },
+    {
+      "word": "inflate",
+      "grid": "inflate.grid.png",
+      "crop": "inflate.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.1876,
+      "story": "In the yard, a float at the gate swells with air."
+    },
+    {
+      "word": "intervention",
+      "grid": "intervention.grid.png",
+      "crop": "intervention.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.26,
+      "story": "The printer vents smoke, so the tech steps in."
+    },
+    {
+      "word": "inward",
+      "grid": "inward.grid-2.png",
+      "crop": "inward.png",
+      "flashCell": 2,
+      "distance": 0,
+      "next": 0.2872,
+      "story": "Stepping in, she wrote one word, then looked deep inside."
+    },
+    {
+      "word": "jerk",
+      "grid": "jerk.grid.png",
+      "crop": "jerk.png",
+      "flashCell": 4,
+      "distance": 0,
+      "next": 0.2824,
+      "story": "He smirks, snubbing me rudely."
+    },
+    {
+      "word": "lass",
+      "grid": "lass.grid.png",
+      "crop": "lass.png",
+      "flashCell": 4,
+      "distance": 0,
+      "next": 0.2751,
+      "story": "Liv taps the glass; a girl peeks out."
+    },
+    {
+      "word": "latch",
+      "grid": "latch.grid.png",
+      "crop": "latch.png",
+      "flashCell": 5,
+      "distance": 0,
+      "next": 0.3429,
+      "story": "Lance flips the little metal catch, sealing the pool gate."
+    },
+    {
+      "word": "legitimate",
+      "grid": "legitimate.grid.png",
+      "crop": "legitimate.png",
+      "flashCell": 7,
+      "distance": 0,
+      "next": 0.2999,
+      "story": "The lagoon guard's digit scan proves ultimately valid."
+    },
+    {
+      "word": "literature",
+      "grid": "literature.grid-2.png",
+      "crop": "literature.png",
+      "flashCell": 5,
+      "distance": 0,
+      "next": 0.2276,
+      "story": "Trail litter, a nature guide gets written."
+    },
+    {
+      "word": "malignancy",
+      "grid": "malignancy.grid.png",
+      "crop": "malignancy.png",
+      "flashCell": 7,
+      "distance": 0,
+      "next": 0.2062,
+      "story": "The ligament swells like pregnancy, turning cancerous."
+    },
+    {
+      "word": "merely",
+      "grid": "merely.grid.png",
+      "crop": "merely.png",
+      "flashCell": 5,
+      "distance": 0,
+      "next": 0.2042,
+      "story": "The framed mirror crashes, just an ornament to Lee."
+    },
+    {
+      "word": "obtained",
+      "grid": "obtained.grid.png",
+      "crop": "obtained.png",
+      "flashCell": 3,
+      "distance": 0,
+      "next": 0.294,
+      "story": "A bee abstained all day, then got the queen's reward."
+    },
+    {
+      "word": "odd",
+      "grid": "odd.grid.png",
+      "crop": "odd.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2857,
+      "story": "I nod at the strange man wearing a spaghetti hat."
+    },
+    {
+      "word": "ominous",
+      "grid": "ominous.grid.png",
+      "crop": "ominous.png",
+      "flashCell": 8,
+      "distance": 0,
+      "next": 0.1552,
+      "story": "Ommen watches Venus over almond trees, warning of a storm."
+    },
+    {
+      "word": "optimal",
+      "grid": "optimal.grid.png",
+      "crop": "optimal.png",
+      "flashCell": 9,
+      "distance": 0,
+      "next": 0.2688,
+      "story": "At the shelter, she opts for an animal, the best."
+    },
+    {
+      "word": "ornament",
+      "grid": "ornament.grid.png",
+      "crop": "ornament.png",
+      "flashCell": 3,
+      "distance": 0,
+      "next": 0.3944,
+      "story": "Warn the cat: that glass ball only decorates the tree."
+    },
+    {
+      "word": "overreach",
+      "grid": "overreach.grid.png",
+      "crop": "overreach.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.3084,
+      "story": "Hanging over a peach tree, he stretches too far, falls."
+    },
+    {
+      "word": "pajamas",
+      "grid": "pajamas.grid.png",
+      "crop": "pajamas.png",
+      "flashCell": 5,
+      "distance": 0,
+      "next": 0.2361,
+      "story": "Jolly llamas, snug in matching sleepwear, nod off."
+    },
+    {
+      "word": "pale",
+      "grid": "pale.grid.png",
+      "crop": "pale.png",
+      "flashCell": 2,
+      "distance": 0,
+      "next": 0.2093,
+      "story": "Paula lifts her veil, cheeks flash white."
+    },
+    {
+      "word": "parchment",
+      "grid": "parchment.grid.png",
+      "crop": "parchment.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2061,
+      "story": "Pa arches for a moment, then presses goat skin."
+    },
+    {
+      "word": "peculiar",
+      "grid": "peculiar.grid.png",
+      "crop": "peculiar.png",
+      "flashCell": 4,
+      "distance": 0,
+      "next": 0.2619,
+      "story": "The queue of familiar faces all wore odd, wrong smiles."
+    },
+    {
+      "word": "period",
+      "grid": "period.grid.png",
+      "crop": "period.png",
+      "flashCell": 9,
+      "distance": 0,
+      "next": 0.1844,
+      "story": "Off the pier, an eon of peace stretched and ended."
+    },
+    {
+      "word": "plumbing",
+      "grid": "plumbing.grid.png",
+      "crop": "plumbing.png",
+      "flashCell": 5,
+      "distance": 0,
+      "next": 0.3063,
+      "story": "A plum logo hangs, advertising home pipes."
+    },
+    {
+      "word": "polysemy",
+      "grid": "polysemy.grid.png",
+      "crop": "polysemy.png",
+      "flashCell": 5,
+      "distance": 0,
+      "next": 0.2476,
+      "story": "Melissa shows me one palm, five related fingers."
+    },
+    {
+      "word": "pound",
+      "grid": "pound.grid.png",
+      "crop": "pound.png",
+      "flashCell": 2,
+      "distance": 0,
+      "next": 0.2439,
+      "story": "Pam's sound asleep; fists hit her door, again and again."
+    },
+    {
+      "word": "prevalence",
+      "grid": "prevalence.grid.png",
+      "crop": "prevalence.png",
+      "flashCell": 6,
+      "distance": 0,
+      "next": 0.2903,
+      "story": "Ambulances rev; a lens shows flu widespread."
+    },
+    {
+      "word": "rationing",
+      "grid": "rationing.grid.png",
+      "crop": "rationing.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2273,
+      "story": "The rat, with caution, doles out equal grain."
+    },
+    {
+      "word": "regional",
+      "grid": "regional.grid-2.png",
+      "crop": "regional.png",
+      "flashCell": 4,
+      "distance": 0,
+      "next": 0.2651,
+      "story": "A legion's cooks serve Al stew flavored for this area."
+    },
+    {
+      "word": "regulation",
+      "grid": "regulation.grid.png",
+      "crop": "regulation.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2471,
+      "story": "Reg, the landlord, lays down a strict house rule."
+    },
+    {
+      "word": "rev",
+      "grid": "rev.grid.png",
+      "crop": "rev.png",
+      "flashCell": 2,
+      "distance": 0,
+      "next": 0.2432,
+      "story": "Revelers gun their engines, roaring with energy."
+    },
+    {
+      "word": "ridge",
+      "grid": "ridge.grid.png",
+      "crop": "ridge.png",
+      "flashCell": 5,
+      "distance": 0,
+      "next": 0.1708,
+      "story": "A fridge stands alone on the long narrow mountain crest."
+    },
+    {
+      "word": "rigged",
+      "grid": "rigged.grid-2.png",
+      "crop": "rigged.png",
+      "flashCell": 7,
+      "distance": 0,
+      "next": 0.2412,
+      "story": "Wig-wearing clerk stuffs the fixed ballot box."
+    },
+    {
+      "word": "rung",
+      "grid": "rung.grid.png",
+      "crop": "rung.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.255,
+      "story": "Though young, she grabbed the ladder's first step."
+    },
+    {
+      "word": "saturation",
+      "grid": "saturation.grid.png",
+      "crop": "saturation.png",
+      "flashCell": 7,
+      "distance": 0,
+      "next": 0.2153,
+      "story": "The satchel of rations soaked up rain until not one drop more would fit."
+    },
+    {
+      "word": "scalpel",
+      "grid": "scalpel.grid.png",
+      "crop": "scalpel.png",
+      "flashCell": 6,
+      "distance": 0,
+      "next": 0.2287,
+      "story": "The bald scalp gleams; the surgeon's thin blade cuts precisely."
+    },
+    {
+      "word": "shattered",
+      "grid": "shattered.grid.png",
+      "crop": "shattered.png",
+      "flashCell": 9,
+      "distance": 0,
+      "next": 0.2716,
+      "story": "Shh, a battered phone drops; its screen breaks into pieces."
+    },
+    {
+      "word": "simmers",
+      "grid": "simmers.grid.png",
+      "crop": "simmers.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2368,
+      "story": "Sim ladles hers, gently bubbling, never quite boiling."
+    },
+    {
+      "word": "snubbing",
+      "grid": "snubbing.grid.png",
+      "crop": "snubbing.png",
+      "flashCell": 6,
+      "distance": 0,
+      "next": 0.265,
+      "story": "Snow hits the pub; the king coldly ignores my wave."
+    },
+    {
+      "word": "spilled",
+      "grid": "spilled.grid-2.png",
+      "crop": "spilled.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2953,
+      "story": "Spoon tips the filled mug; coffee floods the desk."
+    },
+    {
+      "word": "spontaneous",
+      "grid": "spontaneous.grid.png",
+      "crop": "spontaneous.png",
+      "flashCell": 7,
+      "distance": 0,
+      "next": 0.1709,
+      "story": "Watching spawn, she mounts the table, knee-first — toasts unplanned."
+    },
+    {
+      "word": "stampede",
+      "grid": "stampede.grid.png",
+      "crop": "stampede.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2401,
+      "story": "Feet stamp, someone peed, doorbusters rush inside."
+    },
+    {
+      "word": "steroid",
+      "grid": "steroid.grid-2.png",
+      "crop": "steroid.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.244,
+      "story": "A doctor steers around the annoyed patient to reach his inflamed knee."
+    },
+    {
+      "word": "strutted",
+      "grid": "strutted.grid.png",
+      "crop": "strutted.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.212,
+      "story": "Dust rutted the farm road; a peacock swaggered, tail fanned."
+    },
+    {
+      "word": "surgeon",
+      "grid": "surgeon.grid.png",
+      "crop": "surgeon.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.1896,
+      "story": "Power surge! An OR goes dark; she operates by headlamp."
+    },
+    {
+      "word": "sweep",
+      "grid": "sweep.grid.png",
+      "crop": "sweep.png",
+      "flashCell": 2,
+      "distance": 0,
+      "next": 0.1668,
+      "story": "Swing deep into the corner; grab the broom."
+    },
+    {
+      "word": "synonym",
+      "grid": "synonym.grid.png",
+      "crop": "synonym.png",
+      "flashCell": 2,
+      "distance": 0,
+      "next": 0.2399,
+      "story": "The sinner watched his nimble mirror-twin mouth the same words."
+    },
+    {
+      "word": "tacit",
+      "grid": "tacit.grid.png",
+      "crop": "tacit.png",
+      "flashCell": 8,
+      "distance": 0,
+      "next": 0.2916,
+      "story": "He grabs the tab; they sit unspoken."
+    },
+    {
+      "word": "toss",
+      "grid": "toss.grid.png",
+      "crop": "toss.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2565,
+      "story": "Tom's boss smiles, then lightly throws him the keys."
+    },
+    {
+      "word": "trait",
+      "grid": "trait.grid.png",
+      "crop": "trait.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2532,
+      "story": "He trips before the date, revealing a clumsy characteristic."
+    },
+    {
+      "word": "trivial",
+      "grid": "trivial.grid.png",
+      "crop": "trivial.png",
+      "flashCell": 7,
+      "distance": 0,
+      "next": 0.2517,
+      "story": "The trick charmed our jovial judge — a minor act."
+    },
+    {
+      "word": "ultimately",
+      "grid": "ultimately.grid.png",
+      "crop": "ultimately.png",
+      "flashCell": 6,
+      "distance": 0,
+      "next": 0.3402,
+      "story": "Cult baker Lee burned loaves; in the end, perfect bread."
+    },
+    {
+      "word": "unwinding",
+      "grid": "unwinding.grid.png",
+      "crop": "unwinding.png",
+      "flashCell": 6,
+      "distance": 0,
+      "next": 0.2361,
+      "story": "In the hammock, my mind drifts; I relax."
+    },
+    {
+      "word": "ventilator",
+      "grid": "ventilator.grid.png",
+      "crop": "ventilator.png",
+      "flashCell": 8,
+      "distance": 0,
+      "next": 0.2258,
+      "story": "Nurse Venice returns later; the machine breathes for the newborn."
+    },
+    {
+      "word": "wore",
+      "grid": "wore.grid.png",
+      "crop": "wore.png",
+      "flashCell": 9,
+      "distance": 0,
+      "next": 0.2645,
+      "story": "War ended; the king strutted out dressed in pajamas."
+    },
+    {
+      "word": "worn",
+      "grid": "worn.grid.png",
+      "crop": "worn.png",
+      "flashCell": 1,
+      "distance": 0,
+      "next": 0.2724,
+      "story": "Warn the driver: that tire's tread is rubbed bald."
+    }
+  ],
+  "leftOut": [
+    {
+      "word": "-cy",
+      "grid": "-cy.grid.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "-ence",
+      "grid": "-ence.grid.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "-esce",
+      "grid": "-esce.grid.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "-gen-",
+      "grid": "-gen-.grid-2.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "-gen-",
+      "grid": "-gen-.grid.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "-glob-",
+      "grid": "-glob-.grid.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "-ion",
+      "grid": "-ion.grid.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "-meter",
+      "grid": "-meter.grid.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "-tomy",
+      "grid": "-tomy.grid.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "apparatus",
+      "grid": "apparatus.grid.png",
+      "reason": "another grid of apparatus matched its crop"
+    },
+    {
+      "word": "coaster",
+      "grid": "coaster.grid.png",
+      "reason": "no single crop coaster.png"
+    },
+    {
+      "word": "con-",
+      "grid": "con-.grid.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "creak",
+      "grid": "creak.grid.png",
+      "reason": "no single crop creak.png"
+    },
+    {
+      "word": "crest",
+      "grid": "crest.grid.png",
+      "reason": "no single crop crest.png"
+    },
+    {
+      "word": "devastating",
+      "grid": "devastating.grid.png",
+      "reason": "no single crop devastating.png"
+    },
+    {
+      "word": "engine",
+      "grid": "engine.grid.png",
+      "reason": "another grid of engine matched its crop"
+    },
+    {
+      "word": "faint",
+      "grid": "faint.grid.png",
+      "reason": "no single crop faint.png"
+    },
+    {
+      "word": "faint",
+      "grid": "faint.scenes.grid.png",
+      "reason": "no single crop faint.png"
+    },
+    {
+      "word": "fus-",
+      "grid": "fus-.grid.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "intra-",
+      "grid": "intra-.grid.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "ladles",
+      "grid": "ladles.grid.png",
+      "reason": "no single crop ladles.png"
+    },
+    {
+      "word": "ladles",
+      "grid": "ladles.noodles.grid.png",
+      "reason": "no single crop ladles.png"
+    },
+    {
+      "word": "literature",
+      "grid": "literature.grid.png",
+      "reason": "another grid of literature matched its crop"
+    },
+    {
+      "word": "malignancy",
+      "grid": "malignancy.grid-2.png",
+      "reason": "another grid of malignancy matched its crop"
+    },
+    {
+      "word": "manu-",
+      "grid": "manu-.grid.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "para-",
+      "grid": "para-.grid.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "per-",
+      "grid": "per-.grid.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "pre-",
+      "grid": "pre-.grid.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "rattles",
+      "grid": "rattles.grid.png",
+      "reason": "no single crop rattles.png"
+    },
+    {
+      "word": "rigged",
+      "grid": "rigged.grid.png",
+      "reason": "another grid of rigged matched its crop"
+    },
+    {
+      "word": "ruffled",
+      "grid": "ruffled.before.grid.png",
+      "reason": "no single crop ruffled.png"
+    },
+    {
+      "word": "ruffled",
+      "grid": "ruffled.grid.png",
+      "reason": "no single crop ruffled.png"
+    },
+    {
+      "word": "spilled",
+      "grid": "spilled.grid.png",
+      "reason": "another grid of spilled matched its crop"
+    },
+    {
+      "word": "stray",
+      "grid": "stray.grid.png",
+      "reason": "no single crop stray.png"
+    },
+    {
+      "word": "tax-",
+      "grid": "tax-.grid.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "trans-",
+      "grid": "trans-.grid.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "ultimately",
+      "grid": "ultimately.v2.grid.png",
+      "reason": "another grid of ultimately matched its crop"
+    },
+    {
+      "word": "val-",
+      "grid": "val-.grid.png",
+      "reason": "word-part card"
+    },
+    {
+      "word": "weathered",
+      "grid": "weathered.grid.png",
+      "reason": "no single crop weathered.png"
+    }
+  ]
+}

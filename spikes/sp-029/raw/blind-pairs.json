@@ -1,0 +1,282 @@
+[
+  {
+    "id": "1",
+    "word": "polysemy",
+    "story": "Melissa shows me one palm, five related fingers.",
+    "grid": "polysemy.grid.png",
+    "left": {
+      "source": "flash",
+      "cell": 5
+    },
+    "right": {
+      "source": "jev",
+      "cell": 6
+    }
+  },
+  {
+    "id": "2",
+    "word": "overreach",
+    "story": "Hanging over a peach tree, he stretches too far, falls.",
+    "grid": "overreach.grid.png",
+    "left": {
+      "source": "flash",
+      "cell": 1
+    },
+    "right": {
+      "source": "jev",
+      "cell": 7
+    }
+  },
+  {
+    "id": "3",
+    "word": "malignancy",
+    "story": "The ligament swells like pregnancy, turning cancerous.",
+    "grid": "malignancy.grid.png",
+    "left": {
+      "source": "flash",
+      "cell": 7
+    },
+    "right": {
+      "source": "jev",
+      "cell": 9
+    }
+  },
+  {
+    "id": "4",
+    "word": "intervention",
+    "story": "The printer vents smoke, so the tech steps in.",
+    "grid": "intervention.grid.png",
+    "left": {
+      "source": "flash",
+      "cell": 1
+    },
+    "right": {
+      "source": "jev",
+      "cell": 9
+    }
+  },
+  {
+    "id": "5",
+    "word": "shattered",
+    "story": "Shh, a battered phone drops; its screen breaks into pieces.",
+    "grid": "shattered.grid.png",
+    "left": {
+      "source": "flash",
+      "cell": 9
+    },
+    "right": {
+      "source": "jev",
+      "cell": 5
+    }
+  },
+  {
+    "id": "6",
+    "word": "wore",
+    "story": "War ended; the king strutted out dressed in pajamas.",
+    "grid": "wore.grid.png",
+    "left": {
+      "source": "jev",
+      "cell": 1
+    },
+    "right": {
+      "source": "flash",
+      "cell": 9
+    }
+  },
+  {
+    "id": "7",
+    "word": "snubbing",
+    "story": "Snow hits the pub; the king coldly ignores my wave.",
+    "grid": "snubbing.grid.png",
+    "left": {
+      "source": "flash",
+      "cell": 6
+    },
+    "right": {
+      "source": "jev",
+      "cell": 1
+    }
+  },
+  {
+    "id": "8",
+    "word": "pale",
+    "story": "Paula lifts her veil, cheeks flash white.",
+    "grid": "pale.grid.png",
+    "left": {
+      "source": "jev",
+      "cell": 1
+    },
+    "right": {
+      "source": "flash",
+      "cell": 2
+    }
+  },
+  {
+    "id": "9",
+    "word": "surgeon",
+    "story": "Power surge! An OR goes dark; she operates by headlamp.",
+    "grid": "surgeon.grid.png",
+    "left": {
+      "source": "flash",
+      "cell": 1
+    },
+    "right": {
+      "source": "jev",
+      "cell": 7
+    }
+  },
+  {
+    "id": "10",
+    "word": "unwinding",
+    "story": "In the hammock, my mind drifts; I relax.",
+    "grid": "unwinding.grid.png",
+    "left": {
+      "source": "jev",
+      "cell": 9
+    },
+    "right": {
+      "source": "flash",
+      "cell": 6
+    }
+  },
+  {
+    "id": "11",
+    "word": "ventilator",
+    "story": "Nurse Venice returns later; the machine breathes for the newborn.",
+    "grid": "ventilator.grid.png",
+    "left": {
+      "source": "jev",
+      "cell": 2
+    },
+    "right": {
+      "source": "flash",
+      "cell": 8
+    }
+  },
+  {
+    "id": "12",
+    "word": "pajamas",
+    "story": "Jolly llamas, snug in matching sleepwear, nod off.",
+    "grid": "pajamas.grid.png",
+    "left": {
+      "source": "jev",
+      "cell": 1
+    },
+    "right": {
+      "source": "flash",
+      "cell": 5
+    }
+  },
+  {
+    "id": "13",
+    "word": "cocked",
+    "story": "Carl knocked, and the cat tilted its head.",
+    "grid": "cocked.grid.png",
+    "left": {
+      "source": "jev",
+      "cell": 1
+    },
+    "right": {
+      "source": "flash",
+      "cell": 7
+    }
+  },
+  {
+    "id": "14",
+    "word": "appeal",
+    "story": "A peal of bells attracts a curious crowd.",
+    "grid": "appeal.grid.png",
+    "left": {
+      "source": "jev",
+      "cell": 8
+    },
+    "right": {
+      "source": "flash",
+      "cell": 9
+    }
+  },
+  {
+    "id": "15",
+    "word": "spontaneous",
+    "story": "Watching spawn, she mounts the table, knee-first — toasts unplanned.",
+    "grid": "spontaneous.grid.png",
+    "left": {
+      "source": "flash",
+      "cell": 7
+    },
+    "right": {
+      "source": "jev",
+      "cell": 1
+    }
+  },
+  {
+    "id": "16",
+    "word": "hypernym",
+    "story": "High on a perch, nimble birds name one category.",
+    "grid": "hypernym.grid.png",
+    "left": {
+      "source": "jev",
+      "cell": 6
+    },
+    "right": {
+      "source": "flash",
+      "cell": 1
+    }
+  },
+  {
+    "id": "17",
+    "word": "regional",
+    "story": "A legion's cooks serve Al stew flavored for this area.",
+    "grid": "regional.grid-2.png",
+    "left": {
+      "source": "jev",
+      "cell": 1
+    },
+    "right": {
+      "source": "flash",
+      "cell": 4
+    }
+  },
+  {
+    "id": "18",
+    "word": "peculiar",
+    "story": "The queue of familiar faces all wore odd, wrong smiles.",
+    "grid": "peculiar.grid.png",
+    "left": {
+      "source": "flash",
+      "cell": 4
+    },
+    "right": {
+      "source": "jev",
+      "cell": 1
+    }
+  },
+  {
+    "id": "19",
+    "word": "inward",
+    "story": "Stepping in, she wrote one word, then looked deep inside.",
+    "grid": "inward.grid-2.png",
+    "left": {
+      "source": "flash",
+      "cell": 2
+    },
+    "right": {
+      "source": "jev",
+      "cell": 4
+    }
+  },
+  {
+    "id": "20",
+    "word": "corncob",
+    "story": "Campers roast corn, then toss the bare cob.",
+    "grid": "corncob.grid.png",
+    "left": {
+      "source": "jev",
+      "cell": 2
+    },
+    "right": {
+      "source": "flash",
+      "cell": 9
+    }
+  }
+]

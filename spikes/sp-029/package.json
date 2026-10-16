@@ -1,0 +1,9 @@
+{
+  "name": "sp-029-auto-image-pick",
+  "private": true,
+  "version": "0.0.0",
+  "description": "SP-029 throwaway spike: does an auto image pick agree with Flash's picks?",
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  }
+}
