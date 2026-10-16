@@ -437,10 +437,9 @@
     "story": "Dee flashes a V at us, sneakily pocketing our wallets.",
     "items": [
       {
-        "name": "Dee",
+        "name": "person with a nametag reading \"Dee\"",
         "adjectives": [
-          "sneaky",
-          "wearing a nametag that reads \"Dee\""
+          "sneaky"
         ]
       },
       {
@@ -556,10 +555,9 @@
     "story": "If Victor misses rent, movers will make him leave.",
     "items": [
       {
-        "name": "Victor",
+        "name": "person with a nametag reading \"Victor\"",
         "adjectives": [
-          "worried",
-          "nametag reading \"Victor\""
+          "worried"
         ]
       },
       {
@@ -1254,10 +1252,8 @@
     "story": "Melissa shows me one palm, five related fingers.",
     "items": [
       {
-        "name": "Melissa",
-        "adjectives": [
-          "nametag reading \"Melissa\""
-        ]
+        "name": "person with a nametag reading \"Melissa\"",
+        "adjectives": []
       },
       {
         "name": "palm",
@@ -1814,10 +1810,8 @@
     "story": "Tom's boss smiles, then lightly throws him the keys.",
     "items": [
       {
-        "name": "Tom",
-        "adjectives": [
-          "nametag reading \"Tom\""
-        ]
+        "name": "person with a nametag reading \"Tom\"",
+        "adjectives": []
       },
       {
         "name": "boss",

@@ -13214,9 +13214,9 @@
           "adjectives": [
             "smiling",
             "dark-haired",
-            "playful",
             "confident",
-            "illustrated"
+            "playful",
+            "cartoon-style"
           ]
         },
         {
@@ -13228,7 +13228,16 @@
           ]
         },
         {
-          "name": "blue-gray coat",
+          "name": "hand making V sign",
+          "adjectives": [
+            "large",
+            "foreground",
+            "extended toward camera",
+            "peach-colored"
+          ]
+        },
+        {
+          "name": "blue-gray jacket",
           "adjectives": [
             "oversized",
             "loose",
@@ -13239,21 +13248,13 @@
           "name": "cream shirt",
           "adjectives": [
             "light",
-            "beige"
+            "plain"
           ]
         },
         {
-          "name": "hand making V sign",
+          "name": "red-orange sleeve cuff",
           "adjectives": [
-            "outstretched",
-            "large in foreground",
-            "peach-colored"
-          ]
-        },
-        {
-          "name": "red sleeve cuff",
-          "adjectives": [
-            "coral red",
+            "coral",
             "rolled"
           ]
         },
@@ -13262,13 +13263,14 @@
           "adjectives": [
             "brown",
             "leather",
-            "stacked"
+            "stacked",
+            "tucked in pocket"
           ]
         },
         {
-          "name": "coat pocket",
+          "name": "jacket pocket",
           "adjectives": [
-            "large",
+            "deep",
             "blue-gray"
           ]
         }
@@ -13278,17 +13280,17 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "plain white with a light gray patch at the bottom edge",
+        "background": "plain white with a light gray patch at the bottom left",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Dee": "visible",
+        "person with a nametag reading \"Dee\"": "hidden",
         "V sign": "visible",
         "wallets": "visible",
-        "pocket": "visible"
+        "pocket": "partly cut"
       },
-      "promptKey": "17c4b2a114489eed"
+      "promptKey": "a4445cb1ad41d0de"
     },
     "2": {
       "objects": [
@@ -13296,27 +13298,47 @@
           "name": "person",
           "adjectives": [
             "smiling",
-            "young",
+            "walking",
             "dark-haired",
-            "looking back over shoulder",
-            "walking"
-          ]
-        },
-        {
-          "name": "hair bun",
-          "adjectives": [
-            "messy",
-            "dark",
-            "curly"
+            "messy-bun",
+            "stylish"
           ]
         },
         {
           "name": "coat",
           "adjectives": [
-            "long",
             "gray-blue",
             "oversized",
+            "long",
             "red-cuffed"
+          ]
+        },
+        {
+          "name": "hair bun",
+          "adjectives": [
+            "dark",
+            "messy"
+          ]
+        },
+        {
+          "name": "hand making V sign",
+          "adjectives": [
+            "raised",
+            "peace-sign"
+          ]
+        },
+        {
+          "name": "wallet",
+          "adjectives": [
+            "brown",
+            "partly tucked in pocket"
+          ]
+        },
+        {
+          "name": "coat pocket",
+          "adjectives": [
+            "large",
+            "patch"
           ]
         },
         {
@@ -13329,30 +13351,7 @@
         {
           "name": "sneakers",
           "adjectives": [
-            "white",
-            "chunky"
-          ]
-        },
-        {
-          "name": "wallet",
-          "adjectives": [
-            "brown",
-            "small"
-          ]
-        },
-        {
-          "name": "coat pocket",
-          "adjectives": [
-            "large",
-            "patch",
-            "gray-blue"
-          ]
-        },
-        {
-          "name": "hand",
-          "adjectives": [
-            "raised",
-            "making a V sign"
+            "white"
           ]
         },
         {
@@ -13366,17 +13365,16 @@
         {
           "name": "tree",
           "adjectives": [
-            "green",
-            "olive",
-            "leafy",
-            "stylized"
+            "olive-green",
+            "stylized",
+            "partly cut"
           ]
         },
         {
-          "name": "ground",
+          "name": "sidewalk",
           "adjectives": [
-            "gray",
-            "paved"
+            "light",
+            "gray"
           ]
         }
       ],
@@ -13385,17 +13383,17 @@
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "A pale off-white backdrop with a tall black street lamp on the left, an olive-green tree on the right, and a light pavement or sidewalk",
+        "background": "Pale off-white background with a black street lamp on the left, an olive-green tree on the right and a sidewalk below, in a flat illustrated style",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Dee": "hidden",
+        "person with a nametag reading \"Dee\"": "hidden",
         "V sign": "visible",
         "wallets": "visible",
         "pocket": "visible"
       },
-      "promptKey": "17c4b2a114489eed"
+      "promptKey": "a4445cb1ad41d0de"
     },
     "3": {
       "objects": [
@@ -13406,15 +13404,16 @@
             "dark-haired",
             "messy-haired",
             "sly",
-            "cheerful"
+            "playful"
           ]
         },
         {
-          "name": "hand making V sign",
+          "name": "hand",
           "adjectives": [
+            "raised",
             "large",
             "foreground",
-            "raised"
+            "making a peace sign"
           ]
         },
         {
@@ -13422,27 +13421,30 @@
           "adjectives": [
             "gray-blue",
             "loose",
-            "long-sleeved"
+            "oversized"
           ]
         },
         {
           "name": "sleeve cuff",
           "adjectives": [
-            "red-orange"
+            "red",
+            "orange"
           ]
         },
         {
           "name": "wallet",
           "adjectives": [
             "brown",
-            "leather"
+            "leather",
+            "partly tucked in pocket"
           ]
         },
         {
           "name": "second wallet",
           "adjectives": [
             "brown",
-            "partly hidden"
+            "stacked",
+            "partly tucked in pocket"
           ]
         },
         {
@@ -13456,7 +13458,8 @@
           "name": "building",
           "adjectives": [
             "pale",
-            "partly visible"
+            "partly visible",
+            "right edge"
           ]
         }
       ],
@@ -13470,12 +13473,12 @@
         "readableText": ""
       },
       "mustSee": {
-        "Dee": "visible",
+        "person with a nametag reading \"Dee\"": "hidden",
         "V sign": "visible",
-        "wallets": "visible",
+        "wallets": "partly cut",
         "pocket": "visible"
       },
-      "promptKey": "17c4b2a114489eed"
+      "promptKey": "a4445cb1ad41d0de"
     },
     "4": {
       "objects": [
@@ -13484,33 +13487,32 @@
           "adjectives": [
             "smiling",
             "dark-haired",
-            "short messy hair",
+            "short-haired",
             "playful",
             "cartoon-style"
           ]
         },
         {
-          "name": "hand",
+          "name": "hand making V sign",
           "adjectives": [
             "large",
-            "raised",
             "foreground",
-            "making a V sign"
+            "peach-colored"
           ]
         },
         {
-          "name": "jacket",
+          "name": "blue-gray jacket",
           "adjectives": [
-            "blue-gray",
-            "oversized",
-            "hooded"
+            "loose",
+            "hooded-looking",
+            "blue-gray"
           ]
         },
         {
-          "name": "sleeve cuff",
+          "name": "red sleeve cuff",
           "adjectives": [
-            "red",
-            "orange-red"
+            "coral",
+            "red"
           ]
         },
         {
@@ -13519,20 +13521,19 @@
             "brown",
             "leather",
             "two",
-            "stacked",
-            "tucked in pocket"
+            "stacked"
           ]
         },
         {
           "name": "pocket",
           "adjectives": [
             "jacket",
-            "holding wallets"
+            "partly filled"
           ]
         }
       ],
       "shot": "close-up",
-      "angle": "high angle",
+      "angle": "eye level",
       "step": "during",
       "extras": {
         "floor": false,
@@ -13541,78 +13542,66 @@
         "readableText": ""
       },
       "mustSee": {
-        "Dee": "hidden",
-        "V sign": "partly cut",
-        "wallets": "visible",
+        "person with a nametag reading \"Dee\"": "hidden",
+        "V sign": "visible",
+        "wallets": "partly cut",
         "pocket": "partly cut"
       },
-      "promptKey": "17c4b2a114489eed"
+      "promptKey": "a4445cb1ad41d0de"
     },
     "5": {
       "objects": [
         {
-          "name": "man (seen from behind)",
+          "name": "person in foreground (seen from behind)",
           "adjectives": [
             "dark-haired",
             "messy-haired",
-            "out of focus",
-            "foreground",
-            "wearing beige top"
+            "tan-shirted",
+            "out-of-focus"
           ]
         },
         {
-          "name": "backpack strap / bag strap",
-          "adjectives": [
-            "brown",
-            "leather-like"
-          ]
-        },
-        {
-          "name": "woman",
+          "name": "woman/person in gray coat",
           "adjectives": [
             "smiling",
-            "dark-haired",
-            "bun hairstyle",
+            "hair in a bun",
             "walking",
-            "looking back over shoulder",
-            "playful"
+            "looking back",
+            "gray-blue",
+            "oversized"
           ]
         },
         {
-          "name": "coat",
+          "name": "brown bag strap",
           "adjectives": [
-            "blue-gray",
-            "oversized",
-            "loose",
-            "with large front pocket",
-            "orange-cuffed sleeves"
-          ]
-        },
-        {
-          "name": "hand",
-          "adjectives": [
-            "raised",
-            "making a V sign"
+            "brown",
+            "leather"
           ]
         },
         {
           "name": "wallet",
           "adjectives": [
             "brown",
-            "small",
-            "tucked in pocket",
-            "partly sticking out"
+            "dark",
+            "partly tucked in pocket"
           ]
         },
         {
-          "name": "pants",
+          "name": "coat pocket",
+          "adjectives": [
+            "large",
+            "gray-blue"
+          ]
+        },
+        {
+          "name": "black pants",
           "adjectives": [
             "black",
             "slim"
           ]
         },
         {
-          "name": "sneakers",
+          "name": "white sneaker",
           "adjectives": [
             "white"
           ]
@@ -13621,25 +13610,23 @@
           "name": "bench",
           "adjectives": [
             "wooden",
-            "park",
-            "dark brown",
-            "partly cut"
+            "dark",
+            "partly cut off"
           ]
         },
         {
           "name": "bushes",
           "adjectives": [
             "green",
-            "rounded",
-            "soft"
+            "soft",
+            "blurry"
           ]
         },
         {
-          "name": "path",
+          "name": "hand making V sign",
           "adjectives": [
-            "pale",
-            "paved",
-            "gray"
+            "raised",
+            "peace-sign"
           ]
         }
       ],
@@ -13648,24 +13635,23 @@
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "A park with rounded green shrubs, a wooden bench on the right, a pale path and a hazy off-white sky",
+        "background": "A park or path with green bushes, a wooden bench on the right, and a pale hazy sky",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Dee": "visible",
+        "person with a nametag reading \"Dee\"": "hidden",
         "V sign": "visible",
         "wallets": "visible",
         "pocket": "visible"
       },
-      "promptKey": "17c4b2a114489eed"
+      "promptKey": "a4445cb1ad41d0de"
     },
     "6": {
       "objects": [
         {
           "name": "person",
           "adjectives": [
-            "young",
             "smiling",
             "dark-haired",
             "cartoon-style",
@@ -13676,31 +13662,37 @@
           "name": "hair bun",
           "adjectives": [
             "messy",
-            "dark",
-            "top-knot"
+            "dark"
           ]
         },
         {
-          "name": "blue jacket",
+          "name": "blue coat",
           "adjectives": [
             "oversized",
             "blue-gray",
-            "orange-cuffed"
+            "loose"
           ]
         },
         {
           "name": "white shirt",
           "adjectives": [
-            "plain",
-            "light"
+            "white",
+            "plain"
+          ]
+        },
+        {
+          "name": "orange sleeve lining",
+          "adjectives": [
+            "orange",
+            "red-orange"
           ]
         },
         {
           "name": "hand making V sign",
           "adjectives": [
             "raised",
-            "extended toward camera",
-            "large in foreground"
+            "outstretched",
+            "foreshortened"
           ]
         },
         {
@@ -13708,14 +13700,14 @@
           "adjectives": [
             "brown",
             "leather",
-            "partly tucked in pocket"
+            "small"
           ]
         },
         {
-          "name": "pants",
+          "name": "dark pants",
           "adjectives": [
-            "dark",
-            "black"
+            "black",
+            "dark"
           ]
         },
         {
@@ -13723,7 +13715,7 @@
           "adjectives": [
             "white",
             "canvas",
-            "laced"
+            "high-top"
           ]
         },
         {
@@ -13731,15 +13723,15 @@
           "adjectives": [
             "green",
             "leafy",
-            "bushy"
+            "partly visible"
           ]
         },
         {
           "name": "pavement",
           "adjectives": [
+            "light",
             "tiled",
-            "beige",
-            "paved"
+            "beige"
           ]
         },
         {
@@ -13755,17 +13747,17 @@
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "beige paved sidewalk with tile lines and a green plant in the lower left corner",
+        "background": "light beige paved sidewalk with large tiles and a green shrub in the lower left corner",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Dee": "visible",
+        "person with a nametag reading \"Dee\"": "hidden",
         "V sign": "visible",
         "wallets": "visible",
         "pocket": "visible"
       },
-      "promptKey": "17c4b2a114489eed"
+      "promptKey": "a4445cb1ad41d0de"
     },
     "7": {
       "objects": [
@@ -13773,10 +13765,17 @@
           "name": "person",
           "adjectives": [
             "smiling",
-            "walking",
-            "looking back over shoulder",
             "dark-haired",
-            "messy bun"
+            "walking",
+            "playful"
+          ]
+        },
+        {
+          "name": "hair bun",
+          "adjectives": [
+            "messy",
+            "dark",
+            "top-knot"
           ]
         },
         {
@@ -13784,35 +13783,11 @@
           "adjectives": [
             "blue-gray",
             "oversized",
-            "long",
-            "loose"
+            "long"
           ]
         },
         {
-          "name": "V sign hand gesture",
-          "adjectives": [
-            "raised",
-            "peace sign"
-          ]
-        },
-        {
-          "name": "wallet",
-          "adjectives": [
-            "brown",
-            "small",
-            "tucked in pocket"
-          ]
-        },
-        {
-          "name": "coat pocket",
-          "adjectives": [
-            "large",
-            "patch",
-            "front"
-          ]
-        },
-        {
-          "name": "trousers",
+          "name": "pants",
           "adjectives": [
             "black",
             "cropped"
@@ -13826,24 +13801,33 @@
           ]
         },
         {
+          "name": "wallet",
+          "adjectives": [
+            "brown",
+            "leather",
+            "tucked in pocket"
+          ]
+        },
+        {
+          "name": "hand",
+          "adjectives": [
+            "raised",
+            "making a V sign"
+          ]
+        },
+        {
           "name": "sleeve cuff",
           "adjectives": [
-            "orange-red"
+            "coral",
+            "red-orange"
           ]
         },
         {
           "name": "bushes",
           "adjectives": [
-            "olive green",
-            "leafy",
+            "green",
+            "olive",
             "background"
-          ]
-        },
-        {
-          "name": "pavement",
-          "adjectives": [
-            "gray",
-            "flat"
           ]
         }
       ],
@@ -13852,66 +13836,66 @@
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "pale sky with olive-green bushes and a light gray road or pavement",
+        "background": "light sky, olive-green bushes and a pale road or pavement",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Dee": "visible",
+        "person with a nametag reading \"Dee\"": "hidden",
         "V sign": "visible",
         "wallets": "visible",
         "pocket": "visible"
       },
-      "promptKey": "17c4b2a114489eed"
+      "promptKey": "a4445cb1ad41d0de"
     },
     "8": {
       "objects": [
         {
           "name": "person",
           "adjectives": [
-            "cartoon",
             "smiling",
-            "partly cut off"
+            "partly cropped",
+            "cartoon-style",
+            "wearing a blue-gray jacket"
           ]
         },
         {
           "name": "hand",
           "adjectives": [
             "raised",
-            "flesh-toned",
-            "making a V sign"
+            "making a V sign",
+            "cartoon-style"
           ]
         },
         {
-          "name": "sleeve",
+          "name": "sleeve cuff",
           "adjectives": [
             "red",
-            "rolled up"
+            "orange-red"
           ]
         },
         {
           "name": "jacket",
           "adjectives": [
             "blue-gray",
-            "rumpled",
-            "buttoned"
+            "loose",
+            "rumpled"
           ]
         },
         {
           "name": "shirt",
           "adjectives": [
             "cream",
-            "collared"
+            "white"
           ]
         },
         {
           "name": "wallets",
           "adjectives": [
             "brown",
-            "leather-look",
+            "leather-like",
             "stitched",
-            "tucked in pocket",
-            "four"
+            "several"
           ]
         },
         {
@@ -13919,13 +13903,14 @@
           "adjectives": [
             "blue-gray",
             "stitched",
-            "flapless"
+            "open"
           ]
         },
         {
           "name": "button",
           "adjectives": [
             "dark",
+            "small",
             "round"
           ]
         }
@@ -13935,28 +13920,28 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "plain white",
+        "background": "plain white background",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Dee": "partly cut",
+        "person with a nametag reading \"Dee\"": "hidden",
         "V sign": "visible",
         "wallets": "visible",
         "pocket": "visible"
       },
-      "promptKey": "17c4b2a114489eed"
+      "promptKey": "a4445cb1ad41d0de"
     },
     "9": {
       "objects": [
         {
-          "name": "woman",
+          "name": "person",
           "adjectives": [
             "smiling",
             "winking",
             "dark-haired",
-            "messy-bun",
-            "playful"
+            "playful",
+            "cartoon"
           ]
         },
         {
@@ -13968,34 +13953,27 @@
           ]
         },
         {
-          "name": "oversized coat",
+          "name": "gray-blue coat",
           "adjectives": [
-            "blue-gray",
+            "oversized",
             "long",
             "loose"
           ]
         },
         {
-          "name": "red sleeve cuffs",
-          "adjectives": [
-            "red",
-            "orange-red"
-          ]
-        },
-        {
-          "name": "wallets in hand",
+          "name": "wallets",
           "adjectives": [
             "brown",
             "leather",
-            "fanned-out",
-            "three"
+            "fanned out",
+            "held in hand"
           ]
         },
         {
           "name": "wallet in pocket",
           "adjectives": [
             "brown",
-            "tucked-in",
+            "tucked in",
             "partly sticking out"
           ]
         },
@@ -14011,45 +13989,47 @@
           "name": "hand making V sign",
           "adjectives": [
             "raised",
-            "peace-sign"
+            "peace sign"
           ]
         },
         {
-          "name": "left outstretched hand",
+          "name": "orange sleeve cuffs",
           "adjectives": [
-            "reaching",
-            "open",
-            "grabbing"
+            "orange",
+            "red-orange",
+            "cuffed"
           ]
         },
         {
-          "name": "right outstretched hand",
+          "name": "reaching hands (left)",
           "adjectives": [
-            "reaching",
-            "open",
-            "grabbing"
+            "outstretched",
+            "grasping",
+            "cut off by edge"
           ]
         },
         {
-          "name": "olive sleeve",
+          "name": "reaching hands (right)",
           "adjectives": [
-            "olive-green",
-            "partly visible"
+            "outstretched",
+            "grasping",
+            "cut off by edge"
           ]
         },
         {
-          "name": "tan sleeve",
+          "name": "sleeves of reaching people",
           "adjectives": [
-            "tan",
+            "olive",
+            "khaki",
             "partly visible"
           ]
         },
         {
           "name": "motion lines",
           "adjectives": [
+            "small",
             "black",
-            "short",
-            "above the wallets"
+            "dashed"
           ]
         }
       ],
@@ -14063,12 +14043,12 @@
         "readableText": ""
       },
       "mustSee": {
-        "Dee": "visible",
+        "person with a nametag reading \"Dee\"": "hidden",
         "V sign": "visible",
         "wallets": "visible",
         "pocket": "visible"
       },
-      "promptKey": "17c4b2a114489eed"
+      "promptKey": "a4445cb1ad41d0de"
     }
   },
   "dose.grid.png": {
@@ -17214,67 +17194,83 @@
         {
           "name": "man in blue shirt",
           "adjectives": [
-            "scared",
+            "frightened",
+            "worried",
             "wide-eyed",
             "messy-haired",
-            "being carried",
-            "jeans-wearing"
+            "being held"
           ]
         },
         {
-          "name": "mover on left",
+          "name": "bearded mover in green cap",
           "adjectives": [
             "bearded",
-            "green-capped",
-            "serious",
-            "uniformed"
+            "burly",
+            "focused",
+            "uniformed",
+            "green"
           ]
         },
         {
-          "name": "mover on right",
+          "name": "mover in green uniform",
           "adjectives": [
             "dark-haired",
             "stern",
             "uniformed",
-            "strong"
+            "muscular"
           ]
         },
         {
           "name": "cardboard box",
           "adjectives": [
-            "large",
             "brown",
+            "large",
             "carried"
           ]
         },
         {
-          "name": "small cardboard box",
+          "name": "second cardboard box",
           "adjectives": [
             "brown",
-            "stacked",
-            "beside lamp"
+            "small",
+            "stacked on floor"
           ]
         },
         {
           "name": "floor lamp",
           "adjectives": [
-            "cream-shaded",
-            "slim"
+            "yellow",
+            "lit",
+            "shaded"
           ]
         },
         {
-          "name": "door",
+          "name": "open door",
           "adjectives": [
             "white",
             "open"
           ]
         },
         {
-          "name": "sign",
+          "name": "notice sign",
           "adjectives": [
             "white",
-            "taped to door",
-            "printed"
+            "paper",
+            "taped to door"
+          ]
+        },
+        {
+          "name": "jeans",
+          "adjectives": [
+            "dark",
+            "blue"
+          ]
+        },
+        {
+          "name": "shoes",
+          "adjectives": [
+            "brown",
+            "black"
           ]
         }
       ],
@@ -17283,58 +17279,43 @@
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "A beige apartment room with a floor lamp and a box on the left, and an open white door on the right leading to a hallway",
-        "morePeople": true,
+        "background": "A room with a tan wall, a floor lamp, a cardboard box, and an open white door with a notice taped to it",
+        "morePeople": false,
         "readableText": "RENT DUE"
       },
       "mustSee": {
-        "Victor": "visible",
+        "person with a nametag reading \"Victor\"": "hidden",
         "rent": "visible",
         "movers": "visible"
       },
-      "promptKey": "7faae03f2260b2a3"
+      "promptKey": "16c18e57c94d4e86"
     },
     "2": {
       "objects": [
         {
-          "name": "man in blue shirt",
-          "adjectives": [
-            "panicked",
-            "wide-eyed",
-            "carried",
-            "brown-haired",
-            "startled"
-          ]
-        },
-        {
-          "name": "bearded mover",
+          "name": "bearded man in green cap and green uniform",
           "adjectives": [
             "bearded",
-            "burly",
+            "muscular",
             "stern",
-            "green-uniformed",
-            "wearing cap"
+            "green"
           ]
         },
         {
-          "name": "second mover",
+          "name": "man in green cap and green uniform",
           "adjectives": [
             "dark-skinned",
-            "stern",
-            "green-uniformed",
-            "wearing cap"
+            "serious",
+            "green"
           ]
         },
         {
-          "name": "green caps",
+          "name": "frightened man being carried",
           "adjectives": [
-            "olive green"
-          ]
-        },
-        {
-          "name": "green uniform shirts",
-          "adjectives": [
-            "olive green"
+            "brown-haired",
+            "panicked",
+            "wide-eyed",
+            "blue-shirted"
           ]
         },
         {
@@ -17345,40 +17326,53 @@
           ]
         },
         {
-          "name": "dark pants",
+          "name": "dark blue pants",
           "adjectives": [
-            "navy",
-            "dark"
+            "dark blue"
           ]
         },
         {
-          "name": "shoes",
+          "name": "brown shoes",
           "adjectives": [
-            "dark",
-            "worn",
-            "soles visible"
+            "brown",
+            "thick-soled",
+            "raised"
           ]
         },
         {
-          "name": "notice paper",
+          "name": "green caps",
           "adjectives": [
-            "white",
-            "taped",
-            "posted on door"
+            "green",
+            "two"
           ]
         },
         {
           "name": "door",
           "adjectives": [
-            "beige",
+            "cream",
             "open"
+          ]
+        },
+        {
+          "name": "door frame",
+          "adjectives": [
+            "grey",
+            "open"
+          ]
+        },
+        {
+          "name": "paper sign",
+          "adjectives": [
+            "white",
+            "taped",
+            "handwritten"
           ]
         },
         {
           "name": "door knob",
           "adjectives": [
             "metal",
-            "silver"
+            "round"
           ]
         },
         {
@@ -17394,53 +17388,57 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "A beige hallway with an open door and a door frame, with a notice taped to the door",
+        "background": "A doorway and hallway wall in cream and grey tones, with a door that has a 'RENT DUE' sign taped to it",
         "morePeople": false,
         "readableText": "RENT DUE"
       },
       "mustSee": {
-        "Victor": "hidden",
+        "person with a nametag reading \"Victor\"": "hidden",
         "rent": "visible",
         "movers": "visible"
       },
-      "promptKey": "7faae03f2260b2a3"
+      "promptKey": "16c18e57c94d4e86"
     },
     "3": {
       "objects": [
         {
-          "name": "man in blue shirt",
-          "adjectives": [
-            "brown-haired",
-            "spiky-haired",
-            "seen from behind",
-            "blue"
-          ]
-        },
-        {
-          "name": "bearded mover",
+          "name": "man in green cap (left, bearded)",
           "adjectives": [
             "bearded",
-            "green-capped",
-            "green-shirted",
-            "left foreground",
-            "partly cut off"
+            "brown-haired",
+            "wearing olive green cap",
+            "wearing green shirt",
+            "seen from behind/side",
+            "fist clenched"
           ]
         },
         {
-          "name": "mover on right",
+          "name": "man in green cap (right)",
           "adjectives": [
-            "green-capped",
-            "green-shirted",
-            "right foreground",
-            "partly cut off"
+            "dark-skinned",
+            "wearing olive green cap",
+            "wearing green shirt",
+            "seen from behind",
+            "partly cut off by frame"
           ]
         },
         {
-          "name": "mover in doorway",
+          "name": "man with spiky brown hair",
+          "adjectives": [
+            "spiky",
+            "brown-haired",
+            "wearing blue shirt",
+            "seen from behind",
+            "being escorted"
+          ]
+        },
+        {
+          "name": "man in green cap carrying box (background)",
           "adjectives": [
             "distant",
-            "green-capped",
-            "green-shirted",
+            "wearing olive green cap",
+            "wearing green shirt",
+            "seen from behind",
             "carrying a box"
           ]
         },
@@ -17448,44 +17446,31 @@
           "name": "cardboard box",
           "adjectives": [
             "brown",
-            "carried"
-          ]
-        },
-        {
-          "name": "green cap",
-          "adjectives": [
-            "green",
-            "worn by movers"
+            "large",
+            "being carried"
           ]
         },
         {
           "name": "open door",
           "adjectives": [
             "white",
-            "open"
+            "open",
+            "has a doorknob"
           ]
         },
         {
-          "name": "doorframe",
+          "name": "doorway",
           "adjectives": [
-            "wooden",
-            "tan"
+            "open",
+            "framed in wood"
           ]
         },
         {
-          "name": "door handle",
-          "adjectives": [
-            "small",
-            "gray"
-          ]
-        },
-        {
-          "name": "sign",
+          "name": "notice paper",
           "adjectives": [
             "white",
-            "paper",
             "taped to door",
-            "reads RENT DUE"
+            "printed with text"
           ]
         },
         {
@@ -17497,17 +17482,11 @@
           ]
         },
         {
-          "name": "sky",
-          "adjectives": [
-            "blue",
-            "clear"
-          ]
-        },
-        {
-          "name": "fence",
+          "name": "fence/railing",
           "adjectives": [
             "dark",
-            "distant"
+            "outdoors",
+            "partly visible"
           ]
         }
       ],
@@ -17515,27 +17494,26 @@
       "angle": "eye level",
       "step": "during",
       "extras": {
-        "floor": false,
-        "background": "An open doorway looking out to a sunny outdoor area with trees, a blue sky and a fence. A mover carries a box away outside.",
+        "floor": true,
+        "background": "An open doorway leading outside to a sunny view with green trees and a railing, with a mover carrying a cardboard box away from the building",
         "morePeople": true,
         "readableText": "RENT DUE"
       },
       "mustSee": {
-        "Victor": "hidden",
+        "person with a nametag reading \"Victor\"": "hidden",
         "rent": "visible",
         "movers": "partly cut"
       },
-      "promptKey": "7faae03f2260b2a3"
+      "promptKey": "16c18e57c94d4e86"
     },
     "4": {
       "objects": [
         {
-          "name": "man",
+          "name": "man in blue shirt",
           "adjectives": [
             "frightened",
-            "wide-eyed",
             "brown-haired",
-            "blue-shirted",
+            "wide-eyed",
             "being carried"
           ]
         },
@@ -17543,9 +17521,9 @@
           "name": "mover on left",
           "adjectives": [
             "green-uniformed",
-            "hunched",
-            "carrying a box",
-            "partly cut off"
+            "wearing cap",
+            "bent over",
+            "holding box"
           ]
         },
         {
@@ -17557,55 +17535,53 @@
           ]
         },
         {
-          "name": "cardboard box carried by left mover",
+          "name": "cardboard box held by left mover",
           "adjectives": [
             "brown",
             "large"
           ]
         },
         {
-          "name": "cardboard box on lower right",
-          "adjectives": [
-            "brown",
-            "partly cut off"
-          ]
-        },
-        {
-          "name": "cardboard box under lamp",
-          "adjectives": [
-            "brown",
-            "partly cut off"
-          ]
-        },
-        {
           "name": "table lamp",
           "adjectives": [
-            "white-shaded",
-            "cream",
+            "cream-shaded",
             "small"
           ]
         },
         {
-          "name": "door",
+          "name": "small side table",
           "adjectives": [
-            "open",
+            "cardboard-colored",
+            "low"
+          ]
+        },
+        {
+          "name": "cardboard box bottom right",
+          "adjectives": [
+            "brown",
+            "stacked"
+          ]
+        },
+        {
+          "name": "open door",
+          "adjectives": [
             "white",
+            "open",
             "has a sign"
           ]
         },
         {
-          "name": "sign",
+          "name": "sign reading RENT DUE",
           "adjectives": [
             "white",
-            "paper",
-            "reads RENT DUE"
+            "taped to door"
           ]
         },
         {
-          "name": "doorway and hallway",
+          "name": "hallway",
           "adjectives": [
             "narrow",
-            "light-colored"
+            "gray-floored"
           ]
         }
       ],
@@ -17614,16 +17590,16 @@
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "A narrow hallway with a gray floor, cream walls and an open white door. A doorway at the top shows a gray space beyond it.",
+        "background": "A narrow apartment hallway with beige walls, a white door and a doorway at the far end",
         "morePeople": false,
         "readableText": "RENT DUE"
       },
       "mustSee": {
-        "Victor": "visible",
+        "person with a nametag reading \"Victor\"": "hidden",
         "rent": "visible",
-        "movers": "partly cut"
+        "movers": "visible"
       },
-      "promptKey": "7faae03f2260b2a3"
+      "promptKey": "16c18e57c94d4e86"
     },
     "5": {
       "objects": [
@@ -17632,38 +17608,52 @@
           "adjectives": [
             "frightened",
             "wide-eyed",
-            "messy-haired",
-            "brown-haired",
+            "messy brown hair",
+            "open-mouthed",
             "worried"
           ]
         },
         {
-          "name": "bearded man in green cap",
+          "name": "bearded man in green uniform",
           "adjectives": [
             "bearded",
             "stern",
-            "partly cut off",
-            "green-uniformed"
+            "partially visible",
+            "cap-wearing"
           ]
         },
         {
-          "name": "man in green helmet",
+          "name": "man in green uniform and helmet",
           "adjectives": [
-            "scowling",
             "dark-skinned",
-            "green-uniformed",
-            "partly cut off"
+            "scowling",
+            "helmeted",
+            "stern"
           ]
         },
         {
-          "name": "hands",
+          "name": "hands on shoulders",
           "adjectives": [
             "gripping",
-            "on shoulders"
+            "large"
           ]
         },
         {
-          "name": "sign",
+          "name": "green cap",
+          "adjectives": [
+            "olive",
+            "cut off"
+          ]
+        },
+        {
+          "name": "green helmet",
+          "adjectives": [
+            "olive",
+            "military-style"
+          ]
+        },
+        {
+          "name": "'RENT DUE' sign",
           "adjectives": [
             "white",
             "paper",
@@ -17674,7 +17664,8 @@
           "name": "cardboard box",
           "adjectives": [
             "brown",
-            "small"
+            "blurry",
+            "background"
           ]
         },
         {
@@ -17686,71 +17677,71 @@
           ]
         }
       ],
-      "shot": "close-up",
+      "shot": "medium",
       "angle": "eye level",
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "A pale wall with a door or frame, a 'RENT DUE' sign and a cardboard box",
+        "background": "A beige wall with a door frame, a white 'RENT DUE' sign taped to it, and a cardboard box in the background",
         "morePeople": true,
         "readableText": "RENT DUE"
       },
       "mustSee": {
-        "Victor": "hidden",
+        "person with a nametag reading \"Victor\"": "hidden",
         "rent": "visible",
-        "movers": "partly cut"
+        "movers": "visible"
       },
-      "promptKey": "7faae03f2260b2a3"
+      "promptKey": "16c18e57c94d4e86"
     },
     "6": {
       "objects": [
-        {
-          "name": "mover in foreground (seen from behind)",
-          "adjectives": [
-            "large",
-            "stocky",
-            "wearing olive green cap and shirt",
-            "pressing a sign onto the wall"
-          ]
-        },
         {
           "name": "man in blue shirt",
           "adjectives": [
             "frightened",
             "wide-eyed",
-            "messy brown hair",
-            "being held from behind"
+            "spiky-haired",
+            "being held back"
           ]
         },
         {
-          "name": "bearded mover",
+          "name": "mover in green cap and shirt (foreground, back to camera)",
+          "adjectives": [
+            "large",
+            "green",
+            "faces away from camera",
+            "arms raised"
+          ]
+        },
+        {
+          "name": "bearded mover in green cap and shirt",
           "adjectives": [
             "bearded",
-            "wearing olive green cap and uniform",
-            "partly hidden behind the others"
+            "green",
+            "holding the man in blue",
+            "in the background"
           ]
         },
         {
-          "name": "paper sign",
+          "name": "paper notice",
           "adjectives": [
             "white",
-            "taped to the wall",
-            "reads RENT DUE"
+            "rectangular",
+            "taped to wall"
           ]
         },
         {
-          "name": "piece of tape",
+          "name": "tape",
           "adjectives": [
-            "tan",
-            "holding the sign up"
+            "beige",
+            "small"
           ]
         },
         {
           "name": "cardboard boxes",
           "adjectives": [
             "brown",
-            "stacked",
-            "partly visible"
+            "stacked"
           ]
         },
         {
@@ -17764,7 +17755,7 @@
           "name": "window",
           "adjectives": [
             "glass",
-            "showing outdoors"
+            "light blue"
           ]
         },
         {
@@ -17778,7 +17769,7 @@
           "name": "trees",
           "adjectives": [
             "green",
-            "seen outside through the window"
+            "distant"
           ]
         }
       ],
@@ -17787,45 +17778,44 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "An interior wall and doorway, with cardboard boxes inside and trees visible outside through the window",
+        "background": "A doorway and window looking out to trees and sky, with cardboard boxes stacked inside and a beige wall on the right",
         "morePeople": false,
         "readableText": "RENT DUE"
       },
       "mustSee": {
-        "Victor": "hidden",
+        "person with a nametag reading \"Victor\"": "hidden",
         "rent": "visible",
-        "movers": "partly cut"
+        "movers": "visible"
       },
-      "promptKey": "7faae03f2260b2a3"
+      "promptKey": "16c18e57c94d4e86"
     },
     "7": {
       "objects": [
         {
-          "name": "man in blue shirt (being escorted)",
+          "name": "man in blue shirt",
           "adjectives": [
-            "sad",
             "dejected",
+            "sad",
             "messy-haired",
-            "disheveled",
-            "slumped"
+            "being escorted"
           ]
         },
         {
-          "name": "mover on left",
+          "name": "bearded mover",
           "adjectives": [
             "bearded",
-            "stern",
             "green-uniformed",
-            "carrying a box"
+            "wearing cap",
+            "serious"
           ]
         },
         {
-          "name": "mover on right",
+          "name": "second mover",
           "adjectives": [
-            "serious",
             "green-uniformed",
-            "heavyset",
-            "gripping the man's arm"
+            "wearing cap",
+            "stern",
+            "stocky"
           ]
         },
         {
@@ -17833,33 +17823,34 @@
           "adjectives": [
             "brown",
             "large",
-            "taped"
+            "carried"
           ]
         },
         {
-          "name": "door",
+          "name": "open door",
           "adjectives": [
             "white",
             "open"
           ]
         },
         {
-          "name": "sign reading RENT DUE",
+          "name": "RENT DUE sign",
           "adjectives": [
             "white",
-            "taped to door"
+            "rectangular",
+            "posted on door"
           ]
         },
         {
           "name": "stairs",
           "adjectives": [
-            "gray",
             "concrete",
+            "grey",
             "descending"
           ]
         },
         {
-          "name": "railing",
+          "name": "metal railings",
           "adjectives": [
             "black",
             "metal"
@@ -17882,22 +17873,8 @@
         {
           "name": "window",
           "adjectives": [
-            "small",
-            "partly visible"
-          ]
-        },
-        {
-          "name": "green caps",
-          "adjectives": [
-            "olive",
-            "matching"
-          ]
-        },
-        {
-          "name": "blue jeans",
-          "adjectives": [
-            "dark",
-            "denim"
+            "glass",
+            "framed"
           ]
         }
       ],
@@ -17905,17 +17882,17 @@
       "angle": "eye level",
       "step": "during",
       "extras": {
-        "floor": false,
-        "background": "Beige apartment building entrance with an open white door, concrete steps, black metal railings, green bushes and a window",
+        "floor": true,
+        "background": "Entrance of a beige apartment building with an open white door, a window on the left, black railings, green bushes and concrete steps",
         "morePeople": false,
         "readableText": "RENT DUE"
       },
       "mustSee": {
-        "Victor": "hidden",
+        "person with a nametag reading \"Victor\"": "hidden",
         "rent": "visible",
         "movers": "visible"
       },
-      "promptKey": "7faae03f2260b2a3"
+      "promptKey": "16c18e57c94d4e86"
     },
     "8": {
       "objects": [
@@ -17925,33 +17902,34 @@
             "sad",
             "dejected",
             "brown-haired",
-            "being led away",
-            "looking down"
+            "worried",
+            "being held"
           ]
         },
         {
-          "name": "mover in green cap and shirt",
+          "name": "bearded mover",
           "adjectives": [
             "bearded",
-            "stocky",
-            "gripping the man's arm",
-            "green"
+            "heavyset",
+            "green-uniformed",
+            "wearing cap"
           ]
         },
         {
-          "name": "second mover in green cap and shirt",
+          "name": "second mover",
           "adjectives": [
-            "dark-skinned",
+            "green-uniformed",
+            "wearing cap",
             "partly cut off",
-            "green"
+            "dark-skinned"
           ]
         },
         {
           "name": "cardboard box",
           "adjectives": [
             "brown",
-            "closed",
-            "large"
+            "large",
+            "closed"
           ]
         },
         {
@@ -17970,10 +17948,11 @@
           ]
         },
         {
-          "name": "sign",
+          "name": "sign on door",
           "adjectives": [
             "white",
-            "taped to door"
+            "paper",
+            "reads RENT DUE"
           ]
         },
         {
@@ -17987,7 +17966,7 @@
           "name": "walls",
           "adjectives": [
             "yellow",
-            "plain"
+            "beige"
           ]
         }
       ],
@@ -17996,16 +17975,16 @@
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "A bare, mostly empty room with yellow walls, a gray floor, a floor lamp, a cardboard box and an open door with a sign on it",
-        "morePeople": true,
+        "background": "An empty room with yellow walls, a gray floor, a floor lamp, a cardboard box, and an open door with a RENT DUE sign",
+        "morePeople": false,
         "readableText": "RENT DUE"
       },
       "mustSee": {
-        "Victor": "hidden",
+        "person with a nametag reading \"Victor\"": "hidden",
         "rent": "visible",
         "movers": "partly cut"
       },
-      "promptKey": "7faae03f2260b2a3"
+      "promptKey": "16c18e57c94d4e86"
     },
     "9": {
       "objects": [
@@ -18013,51 +17992,48 @@
           "name": "man in blue shirt",
           "adjectives": [
             "worried",
-            "brown-haired",
-            "distressed",
-            "being held"
+            "messy-haired",
+            "held by the arms",
+            "anxious"
           ]
         },
         {
-          "name": "bearded mover",
+          "name": "bearded mover in green cap",
           "adjectives": [
-            "green-capped",
             "bearded",
-            "carrying a box",
-            "uniformed"
+            "green-uniformed",
+            "carrying a box"
           ]
         },
         {
-          "name": "second mover",
+          "name": "mover in green uniform",
           "adjectives": [
             "dark-haired",
             "stern",
-            "uniformed",
-            "holding the man's arm"
+            "green-uniformed"
           ]
         },
         {
-          "name": "third mover",
+          "name": "mover with cap lifting armchair",
           "adjectives": [
-            "green-capped",
-            "bending over",
-            "uniformed"
+            "green-uniformed",
+            "bent over",
+            "partly turned away"
           ]
         },
         {
           "name": "brown armchair",
           "adjectives": [
             "brown",
-            "upholstered",
+            "padded",
             "being moved"
           ]
         },
         {
-          "name": "cardboard box",
+          "name": "cardboard box carried",
           "adjectives": [
             "brown",
-            "large",
-            "carried"
+            "large"
           ]
         },
         {
@@ -18071,7 +18047,7 @@
           "name": "moving truck",
           "adjectives": [
             "open",
-            "grey"
+            "gray"
           ]
         },
         {
@@ -18089,23 +18065,23 @@
           ]
         },
         {
-          "name": "door",
+          "name": "open door",
           "adjectives": [
             "open",
-            "brown"
+            "brown-framed"
           ]
         },
         {
-          "name": "sign",
+          "name": "sign reading RENT DUE",
           "adjectives": [
             "white",
-            "posted on the door"
+            "posted on door"
           ]
         },
         {
           "name": "sidewalk",
           "adjectives": [
-            "grey",
+            "gray",
             "paved"
           ]
         },
@@ -18113,7 +18089,7 @@
           "name": "steps",
           "adjectives": [
             "concrete",
-            "grey"
+            "short"
           ]
         },
         {
@@ -18122,6 +18098,13 @@
             "black",
             "metal"
           ]
+        },
+        {
+          "name": "shrub",
+          "adjectives": [
+            "green",
+            "small"
+          ]
         }
       ],
       "shot": "medium",
@@ -18129,16 +18112,16 @@
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "A city street with a moving truck full of boxes, a tree, and an apartment building with a door and steps",
-        "morePeople": false,
+        "background": "A city street with an open moving truck, a tree, a tan building with an open doorway and steps, and a pink building behind.",
+        "morePeople": true,
         "readableText": "RENT DUE"
       },
       "mustSee": {
-        "Victor": "hidden",
+        "person with a nametag reading \"Victor\"": "hidden",
         "rent": "visible",
         "movers": "visible"
       },
-      "promptKey": "7faae03f2260b2a3"
+      "promptKey": "16c18e57c94d4e86"
     }
   },
   "exotic.grid.png": {
@@ -41666,16 +41649,28 @@
             "smiling",
             "cheerful",
             "dark-haired",
-            "waving",
-            "happy"
+            "waving"
           ]
         },
         {
           "name": "hair bun",
           "adjectives": [
-            "messy",
-            "dark brown",
-            "top-knotted"
+            "dark",
+            "messy"
+          ]
+        },
+        {
+          "name": "shirt",
+          "adjectives": [
+            "green",
+            "button-up",
+            "rolled-sleeve"
+          ]
+        },
+        {
+          "name": "pants",
+          "adjectives": [
+            "dark"
           ]
         },
         {
@@ -41683,32 +41678,14 @@
           "adjectives": [
             "raised",
             "open",
-            "orange",
-            "outstretched"
-          ]
-        },
-        {
-          "name": "green button shirt",
-          "adjectives": [
-            "olive green",
-            "rolled-sleeve",
-            "buttoned",
-            "casual"
-          ]
-        },
-        {
-          "name": "dark pants",
-          "adjectives": [
-            "dark gray",
-            "partly visible"
+            "orange"
           ]
         },
         {
           "name": "houseplant",
           "adjectives": [
             "leafy",
-            "green",
-            "potted"
+            "green"
           ]
         },
         {
@@ -41721,18 +41698,15 @@
         {
           "name": "window",
           "adjectives": [
-            "framed",
             "tan-framed",
-            "bright",
-            "blue-skied"
+            "bright"
           ]
         },
         {
           "name": "tree",
           "adjectives": [
             "green",
-            "leafy",
-            "seen through window"
+            "visible through window"
           ]
         }
       ],
@@ -41740,20 +41714,30 @@
       "angle": "eye level",
       "step": "during",
       "extras": {
-        "floor": false,
-        "background": "A cream-colored interior wall with a leafy potted plant on the left and a window on the right showing blue sky and a green tree.",
+        "floor": true,
+        "background": "A cream-colored room with a leafy houseplant on the left and a window on the right showing a green tree and blue sky.",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Melissa": "hidden",
+        "person with a nametag reading \"Melissa\"": "hidden",
         "palm": "visible",
         "fingers": "visible"
       },
-      "promptKey": "6ca4dfb6ff09337f"
+      "promptKey": "29f3061badaa19c6"
     },
     "2": {
       "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "smiling",
+            "dark-haired",
+            "curly",
+            "cartoon-style",
+            "happy"
+          ]
+        },
         {
           "name": "hand",
           "adjectives": [
@@ -41765,51 +41749,27 @@
           ]
         },
         {
-          "name": "fingers",
-          "adjectives": [
-            "five",
-            "spread",
-            "extended"
-          ]
-        },
-        {
-          "name": "palm",
-          "adjectives": [
-            "open",
-            "facing camera"
-          ]
-        },
-        {
-          "name": "person",
-          "adjectives": [
-            "smiling",
-            "dark-haired",
-            "curly",
-            "cartoon",
-            "looking up"
-          ]
-        },
-        {
           "name": "shirt",
           "adjectives": [
             "green",
+            "olive",
             "long-sleeved",
             "buttoned"
           ]
         },
         {
-          "name": "arm",
+          "name": "sky",
           "adjectives": [
-            "raised",
-            "bent"
+            "light blue",
+            "plain"
           ]
         },
         {
-          "name": "hair",
+          "name": "ground",
           "adjectives": [
-            "dark",
-            "wavy",
-            "short"
+            "tan",
+            "sandy",
+            "curved"
           ]
         },
         {
@@ -41817,7 +41777,7 @@
           "adjectives": [
             "black",
             "partly visible",
-            "at bottom edge"
+            "at bottom"
           ]
         }
       ],
@@ -41825,17 +41785,17 @@
       "angle": "low angle",
       "step": "during",
       "extras": {
-        "floor": false,
-        "background": "pale blue sky with a tan sandy slope or curved surface in the lower left",
+        "floor": true,
+        "background": "plain light blue sky with a tan curved ground area at the bottom left",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Melissa": "hidden",
+        "person with a nametag reading \"Melissa\"": "hidden",
         "palm": "visible",
         "fingers": "visible"
       },
-      "promptKey": "6ca4dfb6ff09337f"
+      "promptKey": "29f3061badaa19c6"
     },
     "3": {
       "objects": [
@@ -41845,36 +41805,29 @@
             "smiling",
             "cheerful",
             "dark-haired",
+            "hair in a bun",
             "waving"
-          ]
-        },
-        {
-          "name": "hair bun",
-          "adjectives": [
-            "messy",
-            "dark",
-            "top-knotted"
           ]
         },
         {
           "name": "person seen from behind",
           "adjectives": [
             "dark-haired",
-            "spiky",
-            "out-of-focus",
-            "foreground"
+            "messy hair",
+            "partly cut off",
+            "facing away"
           ]
         },
         {
-          "name": "hand",
+          "name": "raised hand",
           "adjectives": [
-            "raised",
             "open",
-            "orange-toned"
+            "orange-toned",
+            "outstretched"
           ]
         },
         {
-          "name": "green blouse",
+          "name": "green shirt",
           "adjectives": [
             "sage green",
             "buttoned",
@@ -41899,6 +41852,7 @@
           "name": "chair",
           "adjectives": [
             "wooden",
+            "brown",
             "partly visible"
           ]
         }
@@ -41913,30 +41867,28 @@
         "readableText": ""
       },
       "mustSee": {
-        "Melissa": "visible",
+        "person with a nametag reading \"Melissa\"": "hidden",
         "palm": "visible",
         "fingers": "visible"
       },
-      "promptKey": "6ca4dfb6ff09337f"
+      "promptKey": "29f3061badaa19c6"
     },
     "4": {
       "objects": [
         {
           "name": "woman",
           "adjectives": [
-            "cartoon",
             "smiling",
+            "cheerful",
             "dark-haired",
-            "happy",
             "looking up"
           ]
         },
         {
           "name": "hair bun",
           "adjectives": [
-            "messy",
             "dark",
-            "curly"
+            "messy"
           ]
         },
         {
@@ -41949,7 +41901,7 @@
           ]
         },
         {
-          "name": "green blouse",
+          "name": "green shirt",
           "adjectives": [
             "sage green",
             "loose",
@@ -41971,36 +41923,36 @@
           ]
         },
         {
+          "name": "wooden floor",
+          "adjectives": [
+            "tan",
+            "planked",
+            "diagonal"
+          ]
+        },
+        {
           "name": "shadow",
           "adjectives": [
             "soft",
             "grey-brown"
           ]
-        },
-        {
-          "name": "wooden floor",
-          "adjectives": [
-            "tan",
-            "plank",
-            "diagonal"
-          ]
         }
       ],
-      "shot": "medium",
+      "shot": "wide",
       "angle": "high angle",
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "Light tan wooden plank floor seen from above, with diagonal board lines and a soft shadow under the woman",
+        "background": "A beige wooden plank floor seen from above, with diagonal planks and a soft shadow under the person",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Melissa": "visible",
+        "person with a nametag reading \"Melissa\"": "hidden",
         "palm": "visible",
         "fingers": "visible"
       },
-      "promptKey": "6ca4dfb6ff09337f"
+      "promptKey": "29f3061badaa19c6"
     },
     "5": {
       "objects": [
@@ -42009,28 +41961,37 @@
           "adjectives": [
             "large",
             "open",
+            "raised",
             "orange",
             "cartoon",
-            "outlined",
-            "raised"
+            "outlined"
           ]
         },
         {
-          "name": "woman",
+          "name": "person",
           "adjectives": [
-            "partly visible",
+            "cartoon",
             "smiling",
             "wide-eyed",
             "dark-haired",
-            "cartoon",
-            "cheerful"
+            "partly cropped",
+            "excited"
           ]
         },
         {
-          "name": "green top",
+          "name": "hair",
           "adjectives": [
-            "olive green",
-            "partly visible"
+            "dark",
+            "messy",
+            "curly"
+          ]
+        },
+        {
+          "name": "shirt",
+          "adjectives": [
+            "green",
+            "sage",
+            "loose"
           ]
         }
       ],
@@ -42039,16 +42000,16 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "plain cream backdrop",
+        "background": "plain cream/beige backdrop",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Melissa": "partly cut",
+        "person with a nametag reading \"Melissa\"": "hidden",
         "palm": "visible",
         "fingers": "visible"
       },
-      "promptKey": "6ca4dfb6ff09337f"
+      "promptKey": "29f3061badaa19c6"
     },
     "6": {
       "objects": [
@@ -42057,9 +42018,76 @@
           "adjectives": [
             "smiling",
             "dark-haired",
-            "cartoon",
             "seated",
-            "cheerful"
+            "cheerful",
+            "wearing green blouse",
+            "wearing dark pants"
+          ]
+        },
+        {
+          "name": "hair bun",
+          "adjectives": [
+            "dark",
+            "messy"
+          ]
+        },
+        {
+          "name": "open hand",
+          "adjectives": [
+            "raised",
+            "spread",
+            "orange-toned"
+          ]
+        },
+        {
+          "name": "pointing hand",
+          "adjectives": [
+            "raised",
+            "index finger up"
+          ]
+        },
+        {
+          "name": "wooden stool",
+          "adjectives": [
+            "small",
+            "brown"
+          ]
+        },
+        {
+          "name": "person seen from behind",
+          "adjectives": [
+            "brown-haired",
+            "blurred in foreground",
+            "wearing blue shirt",
+            "partly cut off"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "extras": {
+        "floor": false,
+        "background": "plain cream backdrop",
+        "morePeople": true,
+        "readableText": ""
+      },
+      "mustSee": {
+        "person with a nametag reading \"Melissa\"": "hidden",
+        "palm": "visible",
+        "fingers": "visible"
+      },
+      "promptKey": "29f3061badaa19c6"
+    },
+    "7": {
+      "objects": [
+        {
+          "name": "woman",
+          "adjectives": [
+            "smiling",
+            "cheerful",
+            "dark-haired",
+            "waving"
           ]
         },
         {
@@ -42073,123 +42101,31 @@
           "name": "green blouse",
           "adjectives": [
             "olive green",
-            "button-up",
-            "long-sleeved"
-          ]
-        },
-        {
-          "name": "black pants",
-          "adjectives": [
-            "dark",
-            "fitted"
-          ]
-        },
-        {
-          "name": "wooden stool",
-          "adjectives": [
-            "brown",
-            "small"
-          ]
-        },
-        {
-          "name": "open hand",
-          "adjectives": [
-            "raised",
-            "orange",
-            "spread"
-          ]
-        },
-        {
-          "name": "pointing hand",
-          "adjectives": [
-            "raised",
-            "index finger up"
-          ]
-        },
-        {
-          "name": "man",
-          "adjectives": [
-            "brown-haired",
-            "seen from behind",
-            "partly cut off",
-            "blurry-edged"
-          ]
-        },
-        {
-          "name": "blue shirt",
-          "adjectives": [
-            "blue",
-            "gray-blue"
-          ]
-        }
-      ],
-      "shot": "medium",
-      "angle": "eye level",
-      "step": "during",
-      "extras": {
-        "floor": false,
-        "background": "plain cream",
-        "morePeople": true,
-        "readableText": ""
-      },
-      "mustSee": {
-        "Melissa": "partly cut",
-        "palm": "visible",
-        "fingers": "visible"
-      },
-      "promptKey": "6ca4dfb6ff09337f"
-    },
-    "7": {
-      "objects": [
-        {
-          "name": "woman",
-          "adjectives": [
-            "smiling",
-            "dark-haired",
-            "happy",
-            "walking",
-            "waving"
-          ]
-        },
-        {
-          "name": "hair bun",
-          "adjectives": [
-            "dark",
-            "messy",
-            "loose strands"
-          ]
-        },
-        {
-          "name": "green shirt",
-          "adjectives": [
-            "sage green",
             "loose",
-            "button-up",
-            "rolled sleeves"
+            "rolled-sleeve"
           ]
         },
         {
           "name": "black pants",
           "adjectives": [
-            "dark gray",
+            "dark",
             "loose"
           ]
         },
         {
           "name": "hand",
           "adjectives": [
+            "large",
             "orange",
-            "open",
-            "raised",
-            "large in foreground"
+            "outstretched",
+            "open"
           ]
         },
         {
           "name": "trees",
           "adjectives": [
             "green",
-            "leafy",
-            "background"
+            "leafy"
           ]
         },
         {
@@ -42200,24 +42136,23 @@
           ]
         },
         {
-          "name": "sky",
-          "adjectives": [
-            "blue",
-            "clear"
-          ]
-        },
-        {
-          "name": "cloud",
+          "name": "clouds",
           "adjectives": [
             "white",
             "fluffy"
           ]
         },
         {
-          "name": "sandy path",
+          "name": "sky",
           "adjectives": [
-            "beige",
-            "flat"
+            "blue"
+          ]
+        },
+        {
+          "name": "dirt path",
+          "adjectives": [
+            "sandy",
+            "beige"
           ]
         }
       ],
@@ -42226,16 +42161,16 @@
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "A sunny park with green trees and bushes, a blue sky with a white cloud, and a sandy path",
+        "background": "A park-like outdoor scene with green trees and bushes, a blue sky with white clouds, and a sandy dirt path",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Melissa": "partly cut",
+        "person with a nametag reading \"Melissa\"": "hidden",
         "palm": "visible",
         "fingers": "visible"
       },
-      "promptKey": "6ca4dfb6ff09337f"
+      "promptKey": "29f3061badaa19c6"
     },
     "8": {
       "objects": [
@@ -42243,51 +42178,53 @@
           "name": "person",
           "adjectives": [
             "smiling",
+            "eyes closed",
             "dark-haired",
             "curly",
-            "eyes closed",
             "serene",
             "illustrated"
           ]
         },
         {
-          "name": "hand",
+          "name": "hair",
           "adjectives": [
-            "raised",
-            "open",
-            "orange",
-            "five fingers spread"
+            "dark",
+            "messy",
+            "curly",
+            "tied up in a bun"
           ]
         },
         {
-          "name": "hand",
+          "name": "raised hand",
           "adjectives": [
-            "pointing",
-            "index finger extended",
-            "lower right"
+            "open",
+            "orange",
+            "outstretched",
+            "spread-fingered"
+          ]
+        },
+        {
+          "name": "pointing hand",
+          "adjectives": [
+            "small",
+            "index finger extended"
           ]
         },
         {
           "name": "shirt",
           "adjectives": [
             "green",
-            "button-up",
             "sage",
+            "button-up",
             "long-sleeved"
-          ]
-        },
-        {
-          "name": "hair bun",
-          "adjectives": [
-            "dark",
-            "messy"
           ]
         },
         {
           "name": "buttons",
           "adjectives": [
             "small",
-            "grey"
+            "round",
+            "grey-green"
           ]
         }
       ],
@@ -42301,11 +42238,11 @@
         "readableText": ""
       },
       "mustSee": {
-        "Melissa": "visible",
+        "person with a nametag reading \"Melissa\"": "hidden",
         "palm": "visible",
         "fingers": "visible"
       },
-      "promptKey": "6ca4dfb6ff09337f"
+      "promptKey": "29f3061badaa19c6"
     },
     "9": {
       "objects": [
@@ -42313,30 +42250,29 @@
           "name": "woman",
           "adjectives": [
             "smiling",
-            "standing",
             "dark-haired",
-            "curly updo",
+            "standing",
             "reaching up"
           ]
         },
         {
-          "name": "green blouse",
+          "name": "green shirt",
           "adjectives": [
             "sage green",
             "rolled sleeves",
-            "collared"
+            "loose"
           ]
         },
         {
-          "name": "black trousers",
+          "name": "dark trousers",
           "adjectives": [
-            "dark",
-            "loose",
-            "cropped"
+            "charcoal",
+            "cropped",
+            "loose"
           ]
         },
         {
-          "name": "black flats",
+          "name": "flats",
           "adjectives": [
             "black",
             "flat"
@@ -42346,7 +42282,7 @@
           "name": "framed picture",
           "adjectives": [
             "small",
-            "brown framed",
+            "brown-framed",
             "landscape",
             "hanging on wall"
           ]
@@ -42355,15 +42291,13 @@
           "name": "wall",
           "adjectives": [
             "cream",
-            "plain",
-            "corner"
+            "plain"
           ]
         },
         {
           "name": "floor",
           "adjectives": [
             "beige",
-            "flat",
             "smooth"
           ]
         },
@@ -42371,8 +42305,7 @@
           "name": "shadow",
           "adjectives": [
             "soft",
-            "dark",
-            "under feet"
+            "under the woman"
           ]
         }
       ],
@@ -42381,16 +42314,16 @@
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "A plain cream room corner with a framed landscape picture on the right wall and a beige floor",
+        "background": "A plain cream-colored room corner with a framed landscape painting on the right wall and a beige floor",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Melissa": "visible",
+        "person with a nametag reading \"Melissa\"": "hidden",
         "palm": "visible",
         "fingers": "visible"
       },
-      "promptKey": "6ca4dfb6ff09337f"
+      "promptKey": "29f3061badaa19c6"
     }
   },
   "pound.grid.png": {
@@ -63119,10 +63052,12 @@
         {
           "name": "older man",
           "adjectives": [
-            "smiling",
             "gray-haired",
-            "happy",
-            "middle-aged"
+            "smiling",
+            "heavyset",
+            "eyes closed",
+            "wearing maroon blazer",
+            "tossing keys"
           ]
         },
         {
@@ -63130,53 +63065,38 @@
           "adjectives": [
             "dark-haired",
             "excited",
-            "surprised",
-            "eager"
-          ]
-        },
-        {
-          "name": "maroon blazer",
-          "adjectives": [
-            "red",
-            "worn",
-            "casual"
-          ]
-        },
-        {
-          "name": "white shirt",
-          "adjectives": [
-            "light",
-            "collared"
-          ]
-        },
-        {
-          "name": "dark trousers",
-          "adjectives": [
-            "dark",
-            "gray"
-          ]
-        },
-        {
-          "name": "teal shirt",
-          "adjectives": [
-            "blue-green",
-            "long-sleeved"
+            "wide-eyed",
+            "wearing teal shirt",
+            "hands raised to catch"
           ]
         },
         {
           "name": "keys",
           "adjectives": [
             "gold",
-            "flying",
-            "tossed",
-            "bunched"
+            "airborne",
+            "on a ring",
+            "three keys"
           ]
         },
         {
           "name": "desk",
           "adjectives": [
             "gray",
-            "partly hidden"
+            "partially visible"
+          ]
+        },
+        {
+          "name": "shirt",
+          "adjectives": [
+            "white",
+            "under blazer"
+          ]
+        },
+        {
+          "name": "trousers",
+          "adjectives": [
+            "dark"
           ]
         }
       ],
@@ -63190,23 +63110,23 @@
         "readableText": ""
       },
       "mustSee": {
-        "Tom": "partly cut",
+        "person with a nametag reading \"Tom\"": "hidden",
         "boss": "visible",
         "keys": "visible"
       },
-      "promptKey": "bd4fdb417f5b636c"
+      "promptKey": "6cd75a9c2409ebc8"
     },
     "2": {
       "objects": [
         {
           "name": "man",
           "adjectives": [
-            "middle-aged",
             "smiling",
+            "middle-aged",
             "gray-haired",
+            "cartoon",
             "happy",
-            "eyes closed",
-            "laughing"
+            "eyes closed"
           ]
         },
         {
@@ -63220,35 +63140,33 @@
         {
           "name": "shirt",
           "adjectives": [
-            "white",
-            "open-collar"
+            "cream",
+            "open-collared"
           ]
         },
         {
           "name": "hand",
           "adjectives": [
             "outstretched",
-            "pointing",
-            "tossing",
-            "cartoon"
+            "pointing forward",
+            "large"
           ]
         },
         {
           "name": "keys",
           "adjectives": [
-            "gold",
-            "shiny",
-            "bunched",
-            "on a ring",
-            "airborne",
-            "three"
+            "golden",
+            "yellow",
+            "bunched on a ring",
+            "flying through the air",
+            "shiny"
           ]
         },
         {
-          "name": "key ring",
+          "name": "motion lines",
           "adjectives": [
-            "silver",
-            "round"
+            "curved",
+            "dark"
           ]
         }
       ],
@@ -63262,11 +63180,11 @@
         "readableText": ""
       },
       "mustSee": {
-        "Tom": "visible",
+        "person with a nametag reading \"Tom\"": "hidden",
         "boss": "hidden",
         "keys": "visible"
       },
-      "promptKey": "bd4fdb417f5b636c"
+      "promptKey": "6cd75a9c2409ebc8"
     },
     "3": {
       "objects": [
@@ -63276,53 +63194,41 @@
             "smiling",
             "gray-haired",
             "heavyset",
-            "cheerful"
+            "looking up",
+            "content"
+          ]
+        },
+        {
+          "name": "burgundy blazer",
+          "adjectives": [
+            "maroon",
+            "worn by older man"
+          ]
+        },
+        {
+          "name": "cream shirt",
+          "adjectives": [
+            "light",
+            "collared",
+            "worn by older man"
           ]
         },
         {
           "name": "young man",
           "adjectives": [
             "dark-haired",
+            "smiling",
             "excited",
             "open-mouthed",
-            "happy"
+            "looking up"
           ]
         },
         {
-          "name": "burgundy blazer",
+          "name": "teal shirt",
           "adjectives": [
-            "burgundy",
-            "worn by the older man"
-          ]
-        },
-        {
-          "name": "cream collared shirt",
-          "adjectives": [
-            "cream",
-            "worn by the older man"
-          ]
-        },
-        {
-          "name": "teal button-up shirt",
-          "adjectives": [
-            "teal",
-            "worn by the young man"
-          ]
-        },
-        {
-          "name": "keys",
-          "adjectives": [
-            "gold",
-            "airborne",
-            "bunched on a ring"
-          ]
-        },
-        {
-          "name": "motion lines",
-          "adjectives": [
-            "curved",
-            "thin",
-            "black"
+            "blue-green",
+            "collared",
+            "worn by young man"
           ]
         },
         {
@@ -63330,148 +63236,23 @@
           "adjectives": [
             "open",
             "outstretched",
-            "reaching"
-          ]
-        }
-      ],
-      "shot": "medium",
-      "angle": "low angle",
-      "step": "during",
-      "extras": {
-        "floor": false,
-        "background": "plain white",
-        "morePeople": false,
-        "readableText": ""
-      },
-      "mustSee": {
-        "Tom": "partly cut",
-        "boss": "partly cut",
-        "keys": "visible"
-      },
-      "promptKey": "bd4fdb417f5b636c"
-    },
-    "4": {
-      "objects": [
-        {
-          "name": "hand pointing",
-          "adjectives": [
-            "left",
-            "extended",
-            "index finger pointing",
-            "light-skinned"
-          ]
-        },
-        {
-          "name": "sleeve",
-          "adjectives": [
-            "maroon",
-            "red-brown",
-            "suit-like"
-          ]
-        },
-        {
-          "name": "keys",
-          "adjectives": [
-            "golden",
-            "yellow",
-            "bunch of three",
-            "on a ring",
-            "falling or tossed"
-          ]
-        },
-        {
-          "name": "person",
-          "adjectives": [
-            "dark-haired",
-            "spiky-haired",
-            "seen from above",
-            "wearing a teal-gray shirt"
-          ]
-        },
-        {
-          "name": "hands",
-          "adjectives": [
-            "two",
-            "open",
-            "outstretched",
             "reaching up"
-          ]
-        },
-        {
-          "name": "floor",
-          "adjectives": [
-            "white",
-            "light",
-            "plain"
-          ]
-        },
-        {
-          "name": "wall or furniture",
-          "adjectives": [
-            "gray",
-            "dark",
-            "angular"
-          ]
-        }
-      ],
-      "shot": "medium",
-      "angle": "high angle",
-      "step": "during",
-      "extras": {
-        "floor": true,
-        "background": "A plain white floor with gray wall or furniture edges at the top left and top right.",
-        "morePeople": true,
-        "readableText": ""
-      },
-      "mustSee": {
-        "Tom": "partly cut",
-        "boss": "partly cut",
-        "keys": "visible"
-      },
-      "promptKey": "bd4fdb417f5b636c"
-    },
-    "5": {
-      "objects": [
-        {
-          "name": "man in foreground (seen from behind)",
-          "adjectives": [
-            "dark-haired",
-            "messy-haired",
-            "teal-shirted",
-            "reaching"
-          ]
-        },
-        {
-          "name": "older man",
-          "adjectives": [
-            "smiling",
-            "gray-haired",
-            "heavyset",
-            "maroon-jacketed",
-            "cheerful"
           ]
         },
         {
           "name": "bunch of keys",
           "adjectives": [
-            "golden",
-            "shiny",
+            "gold",
             "airborne",
-            "tossed"
-          ]
-        },
-        {
-          "name": "outstretched hand",
-          "adjectives": [
-            "open",
-            "large",
-            "reaching up"
+            "tossed",
+            "on a ring"
           ]
         },
         {
           "name": "motion lines",
           "adjectives": [
             "curved",
+            "black",
             "thin"
           ]
         }
@@ -63481,57 +63262,212 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "plain white background",
+        "background": "plain white",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Tom": "partly cut",
-        "boss": "partly cut",
+        "person with a nametag reading \"Tom\"": "hidden",
+        "boss": "hidden",
         "keys": "visible"
       },
-      "promptKey": "bd4fdb417f5b636c"
+      "promptKey": "6cd75a9c2409ebc8"
     },
-    "6": {
+    "4": {
       "objects": [
+        {
+          "name": "hand (pointing)",
+          "adjectives": [
+            "adult",
+            "extended",
+            "index finger pointing"
+          ]
+        },
+        {
+          "name": "sleeve of reddish-brown jacket with white cuff",
+          "adjectives": [
+            "maroon",
+            "long"
+          ]
+        },
         {
           "name": "keys",
           "adjectives": [
             "gold",
             "yellow",
-            "three",
-            "shiny",
-            "cartoon",
-            "on a ring",
-            "mid-air"
+            "bunched on a ring",
+            "three keys"
           ]
         },
+        {
+          "name": "person (seen from above)",
+          "adjectives": [
+            "dark-haired",
+            "spiky hair",
+            "wearing teal-green top"
+          ]
+        },
+        {
+          "name": "two open hands",
+          "adjectives": [
+            "outstretched",
+            "raised",
+            "reaching"
+          ]
+        },
+        {
+          "name": "floor/surface",
+          "adjectives": [
+            "white",
+            "bright"
+          ]
+        },
+        {
+          "name": "gray wall/door panel",
+          "adjectives": [
+            "gray",
+            "upper right"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "high angle",
+      "step": "during",
+      "extras": {
+        "floor": true,
+        "background": "A white floor with gray walls or panels at the upper left and upper right edges",
+        "morePeople": true,
+        "readableText": ""
+      },
+      "mustSee": {
+        "person with a nametag reading \"Tom\"": "hidden",
+        "boss": "hidden",
+        "keys": "visible"
+      },
+      "promptKey": "6cd75a9c2409ebc8"
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "man in foreground (seen from behind)",
+          "adjectives": [
+            "dark-haired",
+            "messy-haired",
+            "teal-shirted",
+            "facing away"
+          ]
+        },
+        {
+          "name": "older man",
+          "adjectives": [
+            "gray-haired",
+            "smiling",
+            "cheerful",
+            "heavyset",
+            "maroon-jacketed",
+            "white-shirted"
+          ]
+        },
+        {
+          "name": "keys (key ring with keys)",
+          "adjectives": [
+            "golden",
+            "shiny",
+            "airborne",
+            "bunched together"
+          ]
+        },
+        {
+          "name": "outstretched hand",
+          "adjectives": [
+            "open",
+            "large",
+            "reaching",
+            "foreground"
+          ]
+        },
+        {
+          "name": "motion lines",
+          "adjectives": [
+            "curved",
+            "thin",
+            "dark"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "extras": {
+        "floor": false,
+        "background": "plain white background with no scenery",
+        "morePeople": true,
+        "readableText": ""
+      },
+      "mustSee": {
+        "person with a nametag reading \"Tom\"": "hidden",
+        "boss": "hidden",
+        "keys": "visible"
+      },
+      "promptKey": "6cd75a9c2409ebc8"
+    },
+    "6": {
+      "objects": [
         {
           "name": "key ring",
           "adjectives": [
             "gold",
+            "metal",
             "round",
-            "thin"
+            "shiny"
           ]
         },
         {
-          "name": "left hand",
+          "name": "key",
           "adjectives": [
-            "open",
-            "reaching",
-            "tan",
-            "cartoon",
-            "partly cut off"
+            "gold",
+            "yellow",
+            "jagged",
+            "cartoon"
           ]
         },
         {
-          "name": "right hand",
+          "name": "key",
           "adjectives": [
+            "gold",
+            "yellow",
+            "jagged",
+            "cartoon"
+          ]
+        },
+        {
+          "name": "key",
+          "adjectives": [
+            "gold",
+            "yellow",
+            "jagged",
+            "cartoon"
+          ]
+        },
+        {
+          "name": "hand",
+          "adjectives": [
+            "left",
             "open",
             "reaching",
             "light-skinned",
-            "cartoon",
-            "partly cut off"
+            "cartoon"
+          ]
+        },
+        {
+          "name": "hand",
+          "adjectives": [
+            "right",
+            "open",
+            "reaching",
+            "small",
+            "light-skinned",
+            "cartoon"
           ]
         },
         {
@@ -63539,7 +63475,7 @@
           "adjectives": [
             "curved",
             "black",
-            "thin"
+            "small"
           ]
         }
       ],
@@ -63553,21 +63489,22 @@
         "readableText": ""
       },
       "mustSee": {
-        "Tom": "hidden",
+        "person with a nametag reading \"Tom\"": "hidden",
         "boss": "hidden",
         "keys": "visible"
       },
-      "promptKey": "bd4fdb417f5b636c"
+      "promptKey": "6cd75a9c2409ebc8"
     },
     "7": {
       "objects": [
         {
           "name": "older man",
           "adjectives": [
-            "gray-haired",
             "smiling",
-            "cheerful",
-            "wearing a maroon blazer"
+            "gray-haired",
+            "middle-aged",
+            "eyes closed",
+            "cheerful"
           ]
         },
         {
@@ -63576,37 +63513,53 @@
             "dark-haired",
             "excited",
             "wide-eyed",
-            "wearing a teal shirt"
+            "open-mouthed",
+            "reaching out"
+          ]
+        },
+        {
+          "name": "burgundy blazer",
+          "adjectives": [
+            "maroon",
+            "worn by the older man"
+          ]
+        },
+        {
+          "name": "cream collared shirt",
+          "adjectives": [
+            "light",
+            "worn by the older man"
+          ]
+        },
+        {
+          "name": "teal shirt",
+          "adjectives": [
+            "blue-green",
+            "worn by the young man"
           ]
         },
         {
           "name": "keys",
           "adjectives": [
-            "golden",
+            "gold",
             "shiny",
-            "bunched on a ring"
+            "bunched on a ring",
+            "held up"
           ]
         },
         {
-          "name": "blazer",
+          "name": "key ring",
           "adjectives": [
-            "maroon",
-            "oversized"
+            "small",
+            "metal"
           ]
         },
         {
-          "name": "shirt",
+          "name": "gray ledge",
           "adjectives": [
-            "cream",
-            "collared"
-          ]
-        },
-        {
-          "name": "counter",
-          "adjectives": [
+            "flat",
             "gray",
-            "blurry",
-            "in the background"
+            "in the lower background"
           ]
         }
       ],
@@ -63615,27 +63568,27 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "plain white wall with a gray counter or ledge",
+        "background": "plain white wall with a gray ledge or counter at the bottom",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Tom": "partly cut",
-        "boss": "partly cut",
+        "person with a nametag reading \"Tom\"": "hidden",
+        "boss": "hidden",
         "keys": "visible"
       },
-      "promptKey": "bd4fdb417f5b636c"
+      "promptKey": "6cd75a9c2409ebc8"
     },
     "8": {
       "objects": [
         {
           "name": "young man",
           "adjectives": [
-            "excited",
             "dark-haired",
+            "excited",
             "smiling",
             "open-mouthed",
-            "wearing a teal shirt"
+            "wearing teal-green shirt"
           ]
         },
         {
@@ -63643,8 +63596,9 @@
           "adjectives": [
             "gray-haired",
             "smiling",
-            "content",
-            "wearing a red-brown blazer and beige shirt"
+            "happy",
+            "wearing red-brown blazer",
+            "wearing beige shirt"
           ]
         },
         {
@@ -63669,57 +63623,45 @@
       "step": "after",
       "extras": {
         "floor": false,
-        "background": "plain white",
+        "background": "plain white background",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Tom": "visible",
-        "boss": "partly cut",
+        "person with a nametag reading \"Tom\"": "hidden",
+        "boss": "hidden",
         "keys": "visible"
       },
-      "promptKey": "bd4fdb417f5b636c"
+      "promptKey": "6cd75a9c2409ebc8"
     },
     "9": {
       "objects": [
         {
           "name": "older man",
           "adjectives": [
+            "heavyset",
             "smiling",
             "gray-haired",
-            "heavyset",
-            "friendly"
+            "cheerful",
+            "wearing a red-maroon jacket and dark trousers"
           ]
         },
         {
           "name": "younger man",
           "adjectives": [
             "dark-haired",
+            "slim",
             "excited",
-            "athletic",
-            "reaching"
-          ]
-        },
-        {
-          "name": "red-maroon blazer",
-          "adjectives": [
-            "maroon",
-            "worn"
-          ]
-        },
-        {
-          "name": "teal shirt",
-          "adjectives": [
-            "teal",
-            "button-up"
+            "wearing a teal shirt and dark trousers",
+            "arms raised to catch"
           ]
         },
         {
           "name": "keys",
           "adjectives": [
-            "gold",
+            "golden",
             "airborne",
-            "jingling",
+            "tossed",
             "small"
           ]
         },
@@ -63727,28 +63669,32 @@
           "name": "desk",
           "adjectives": [
             "wooden",
-            "large",
-            "gray-brown"
+            "brown",
+            "office"
           ]
         },
         {
           "name": "office chair",
           "adjectives": [
             "blue",
-            "partially hidden"
+            "dark",
+            "behind the desk"
           ]
         },
         {
           "name": "potted plant",
           "adjectives": [
             "green",
-            "leafy"
+            "leafy",
+            "tall"
           ]
         },
         {
-          "name": "dark trousers",
+          "name": "wall panel",
           "adjectives": [
-            "dark gray"
+            "beige",
+            "tall",
+            "partial"
           ]
         }
       ],
@@ -63757,16 +63703,16 @@
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "A bright, minimal office with a desk and chair on the left, a large wall panel and window on the right, and a potted plant in the right corner",
+        "background": "A bright, minimalist office with beige wall panels, a desk with a chair, and a potted plant by a window, drawn in an illustrated cartoon style",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Tom": "hidden",
+        "person with a nametag reading \"Tom\"": "hidden",
         "boss": "hidden",
         "keys": "visible"
       },
-      "promptKey": "bd4fdb417f5b636c"
+      "promptKey": "6cd75a9c2409ebc8"
     }
   },
   "trait.grid.png": {

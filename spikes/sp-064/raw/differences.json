@@ -137,17 +137,20 @@
     "Extreme close-up on the chest pocket stuffed with several wallets and the V-sign fist above it; the face is mostly cut off (only the smirk shows), and no nametag is visible.",
     "Winking, full-body, caught in the act: fans out several stolen wallets in one hand while flashing V sign with the other, two grabbing hands reaching in from both sides, another wallet in the pocket; no nametag visible."
   ],
-  "cramped.grid.png": [
-    "Medium-wide front view with the crow filling the left of the tent and the wide-eyed person curled in a sleeping bag at right; the crow is large and the tent feels cramped, with the full tent, its pegs and a rock all visible.",
-    "Distant side view from outside at sunset: the crow's head pokes from the tent's open end and only the person's sock-footed leg sticks out the side, so the person's face and sleeping bag are hidden and the tent isn't visibly packed.",
-    "Top-down view through a rounded tent opening, showing the crow, the person, a pillow and a lantern; the crowding is very clear, and the tent looks full and cramped with the whole crow body visible.",
-    "Extreme close-up on the person's worried face with the crow's beak and head above; the crow's body and most of the tent are cut off, so the cramped, packed tent isn't visible.",
-    "Low-angle shot looking up at the crow with its wings spread and feet planted; it is huge and dominates the frame. The person is a small face at the bottom right, and the tent is mostly cropped, so it doesn't read as full.",
-    "Tight close-up from behind the person's beanie, with the crow's dark wing and head filling the frame; the crow's face and feet and the person's face are mostly hidden, and the tent is only a green backdrop.",
-    "The person lifts the tent flap and shines a flashlight, mouth open in surprise, while the crow sits calmly in a pile of bedding; this is the only one with a flashlight and the person's torso, and the crow is partly cropped on the right.",
-    "High-angle view from the foot of the bed: the crow perches on the huge lumpy blanket, with the person's face peeking out at right and both hands gripping the blanket; the blanket makes the tent look full.",
-    "Wide exterior front view with an exclamation bubble over the person, who peeks out startled beside the huge crow; the entire tent and its surroundings are visible, and the crow's bulk packs the tent."
-  ],
+  "cramped.grid.png": {
+    "promptKey": "1bfaf4cfadef975f",
+    "lines": [
+      "Front-on eye-level view of the whole tent opening, with the huge crow filling the left and the wide-eyed camper tucked in a sleeping bag at right. The tent is cropped at the bottom edge and shows no sunset or camp scenery.",
+      "Wide side shot at sunset with a hilly landscape. The crow's head pokes out of a smaller tent while only the camper's arm and sock stick out on the right. The camper's face is hidden, and the tent looks less full than in the others.",
+      "Tight top-down view looking into the tent, with the crow, the camper in a red beanie, a pillow and a lantern all packed in. Only this cell shows the lantern and the pillow. The tent is seen only from inside, as a cramped frame.",
+      "Extreme close-up of the camper's worried face with the crow's beak and head looming over them. The tent and most of the crow's body are cut off, so the tent looks neither small nor full.",
+      "Low-angle shot of the crow standing tall and spreading its wings over the camper, who peeks out at the bottom right. Only here is the crow's full upright body with both feet shown, and the tent is mostly hidden behind it.",
+      "Very tight close-up from behind the camper's beanie, with the crow's wing and eye filling the frame. The tent is barely visible as a green backdrop and the crow's whole body is cut off.",
+      "The camper leans out of the tent flap holding a flashlight and looks startled, while the crow sits calmly in the right half. Only this cell has the flashlight and a camper who is up and moving, and the tent looks open and roomy.",
+      "High-angle shot looking over the sleeping bag, with the crow perched on top of the camper's bedding and the camper peering from the right. The camper's hands are visible, but the tent is mostly cropped to its inner walls.",
+      "Wide front view of the whole tent with the crow filling it, the camper's face hidden at its side, and an exclamation-mark speech bubble. The grass, rock and trees are shown and nothing is cropped."
+    ]
+  },
   "dose.grid.png": [
     "Wide full-body shot: the only one showing the deer's whole body and legs, tongue at a spoon with a little liquid, nurse small at the right holding the bottle.",
     "Tight medium shot from the deer's side: deer's head fills the left and its body is cut off. The nurse smiles above the spoon, and the bottle is half cropped at the bottom.",
@@ -511,17 +514,20 @@
     "Tight close-up with eyes closed and a serene smile, with the open palm at left and the other hand's finger pointing at the chest, close to where a nametag would sit. No nametag is visible, and it is the only closed-eyes frame.",
     "Wide, distant full-body shot in an empty room with a framed picture, with the arm raised high and the palm tiny at the top. The palm and fingers are barely legible, and no nametag is visible."
   ],
-  "pound.grid.png": [
-    "Medium-wide side-on shot with the sleeping woman and the whole closed door both in frame, fists striking at right; no nametag \"Pam\" visible.",
-    "Close-up on the door and two big fists mid-strike, with the sleeper small and pushed to the far left; most dramatic fists, but no nametag \"Pam\" visible.",
-    "Low, tilted angle looking along the door, with the fists large at right and the sleeper small at lower left; no nametag \"Pam\" visible.",
-    "Top-down view of the sleeper in bed, with the door cut off at the right edge so only a sliver and the fists show; no nametag \"Pam\" visible.",
-    "Over-the-shoulder shot from behind the sleeper's head, with the closed door and fists in the distance; her face is hidden and no nametag \"Pam\" visible.",
-    "Tight close-up of the smiling sleeper's face with the door and fists small and cut off at upper right; no nametag \"Pam\" visible.",
-    "Flat side view with the door edge, lock and knob in the center and the sleeper at left, fists striking at right; no nametag \"Pam\" visible.",
-    "Wide room shot showing the whole bed and floor, with ghosted repeated fists that make the pounding clearest; no nametag \"Pam\" visible.",
-    "Close, slightly low view of the sleeper with motion lines on the door and the fists raised before impact; no nametag \"Pam\" visible."
-  ],
+  "pound.grid.png": {
+    "promptKey": "5939b8ecb311784b",
+    "lines": [
+      "Straight-on medium-wide shot of the sleeper in bed with the whole door and two fists at right. No nametag is visible, unlike none of the others, since no cell shows one.",
+      "Close, door-dominated view with two big fists mid-impact and a large knob. The sleeper is tiny and far away at the left edge, so this is the most door-heavy cell.",
+      "Low, tilted angle looking up along the door at the fists and knob, with the sleeper small at the lower left. The door fills much more of the frame than in cells 1 and 8.",
+      "High overhead view down on the sleeper and bed. The door is cut to a sliver at the right edge, with the fists half cropped and the door barely readable.",
+      "Over-the-shoulder view from behind the sleeper's head and pillow, so the face is mostly hidden. The door and fists sit in the background at the right.",
+      "Tight close-up of the sleeper's smiling face, the most detailed face of the nine. The door and fists are tiny and partly cut off at the top right.",
+      "Side-on view across the bed, with the door as a vertical strip beside a light switch and knob. The fists are at the right and the sleeper is small at the left.",
+      "Wide room shot with the whole bed and the sleeper small at the left. It is the only cell with ghosted motion-trail fists, which show several repeated punches on the door at right.",
+      "Mid close-up of the sleeper from the foot of the bed, with a large blanket in the foreground. The door is partly cut off at the upper right, with the fists mid-swing and motion lines but no knob."
+    ]
+  },
   "rev.grid.png": [
     "Wide, level front view of five laughing riders lined up in a row with small exhaust flames at each bike; the only cell that shows all five riders together, but it is static and the engines are the least dramatic.",
     "Low, close three-quarter front shot of the bearded rider popping a wheelie with a huge exhaust blast and speed lines; the other riders are small in the corners, and it is the most dynamic engine moment.",
