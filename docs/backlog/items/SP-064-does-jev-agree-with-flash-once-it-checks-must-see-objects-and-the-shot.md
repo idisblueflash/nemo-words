@@ -3,6 +3,26 @@ id: SP-064
 type: spike
 parent: E01
 status: in-progress
+qa_status: bug
+bugs:
+  - ac: 1
+    summary: "The must-see list for evicted keeps the name Victor as a bare item. It does not turn the name into a visible sign."
+    command: "node -e 'console.log(JSON.stringify(require(\"./spikes/sp-064/raw/must-see.json\").evicted))'"
+    expected: "The list turns the name anchor Victor into its visible sign, such as a nametag that reads \"Victor\", because scenario 1 says a name anchor becomes its visible sign."
+    actual: "The real run's list for evicted has the item {\"name\":\"Victor\",\"adjectives\":[\"worried\"]}. No item or adjective shows a nametag or other visible sign for Victor. The other name anchors in the run (Venice, Dee, Carl, Lee and more) do get a nametag."
+    found: 2026-10-17
+  - ac: 2
+    summary: "The caption call sees the headword when the must-see list names it. This happened for ventilator, surgeon and pajamas in the real run."
+    command: "node -e 'const c=require(\"./spikes/sp-064/lib/caption.js\");console.log(c.prompt(require(\"./spikes/sp-064/raw/must-see.json\").ventilator.items).split(\"\\n\").pop())'"
+    expected: "The captioner never sees the word, because scenario 2 says it sees only the cell and the list, never the word."
+    actual: "The caption prompt for ventilator ends with MUST-SEE ITEMS: [\"nurse\",\"breathing machine (ventilator)\",\"newborn\"]. The prompt for surgeon lists \"surgeon\", and the prompt for pajamas lists \"matching pajamas\". The promptKey in raw/captions.json matches these prompts, so the real caption calls got the headword."
+    found: 2026-10-17
+  - ac: 3
+    summary: "The grid-differences call sees the headword when the must-see list holds it as a name or an adjective. This happened for 7 words in the real run."
+    command: "node -e 'const d=require(\"./spikes/sp-064/lib/differences.js\");console.log(d.prompt(require(\"./spikes/sp-064/raw/must-see.json\").worn.items).split(\"\\n\").pop())'"
+    expected: "The grid-differences call never sees the word, because scenario 3 says it works under the same blindness as the captioner."
+    actual: "The differences prompt sends the full must-see list with adjectives. For worn it holds the adjective \"worn\". The lists for cramped, spilled, shattered, surgeon, pajamas and ventilator also hold the headword, so those calls saw it too."
+    found: 2026-10-17
 timebox: 1d
 depends_on: [SP-029]
 concepts: [C-002, C-004, C-030, C-034, C-035, C-036, C-037]
