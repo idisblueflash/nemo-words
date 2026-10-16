@@ -10,11 +10,14 @@
 if (require.main === module) require("./lib/step-contract"); // a crash exits 2, never 1
 const fs = require("fs");
 const { runCli, claude, flatten, extractJson } = require("./card-lib");
+const { tailFrom } = require("./lib/rhyme");
 
 const CANDIDATES = 5;
 
 // find-keywords output -> [{ ipa, keyword|null }] in chunk order; a rhyme
-// keyword (US-046, fourth column `rime`) also gets `match: "rime"`.
+// keyword (US-046, fourth column `rime`) also gets `match: "rime"`, a word
+// rhyme (US-063, fourth column `word-rime`) `match: "word-rime"`.
+const MATCHES = new Set(["rime", "word-rime"]);
 function readChunkKeywords(text) {
   return text
     .split("\n")
@@ -22,18 +25,25 @@ function readChunkKeywords(text) {
     .map((l) => {
       const [ipa, keyword, , match] = l.split("\t");
       const c = { ipa, keyword: keyword && keyword !== "-" ? keyword : null };
-      if (c.keyword && match === "rime") c.match = "rime";
+      if (c.keyword && MATCHES.has(match)) c.match = match;
       return c;
     });
 }
 
-function anchorText(c) {
-  if (!c.keyword) return "(no anchor; leave this sound out)";
+// The index of the word-rhyme chunk (US-063), or -1.
+const wordRhymeIndex = (chunks) => chunks.findIndex((c) => c.keyword && c.match === "word-rime");
+
+function anchorText(c, i, chunks) {
+  const w = wordRhymeIndex(chunks);
+  if (c.match === "word-rime") {
+    return `"${c.keyword}" (rhymes with /${tailFrom(chunks.map((x) => x.ipa), i)}/, the end of the word)`;
+  }
+  if (!c.keyword) return w !== -1 && i > w ? "(covered by the rhyme above)" : "(no anchor; leave this sound out)";
   return c.match === "rime" ? `"${c.keyword}" (rhymes)` : `"${c.keyword}"`;
 }
 
 function composePrompt(word, primarySense, chunks) {
-  const anchors = chunks.map((c, i) => `  ${i + 1}. /${c.ipa}/ -> ${anchorText(c)}`).join("\n");
+  const anchors = chunks.map((c, i) => `  ${i + 1}. /${c.ipa}/ -> ${anchorText(c, i, chunks)}`).join("\n");
   return [
     "Step: compose-stories",
     `Write ${CANDIDATES} different one-sentence mnemonic stories for the English word "${word}" (main sense: ${primarySense}).`,

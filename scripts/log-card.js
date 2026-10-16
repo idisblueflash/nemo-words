@@ -55,10 +55,11 @@ function parseTags(text) {
 }
 
 // chunks: [{ anchorUnits, keyword|null, match? }] in syllable order.
-// US-046: a rhyme on the stressed chunk (find-keywords' `rime`) is a `rime` anchor.
+// US-046: a rhyme on the stressed chunk (find-keywords' `rime`) is a `rime`
+// anchor; so is a word rhyme (US-063, `word-rime`), as Flash's levee -> heavy row.
 function anchorUnit(chunks) {
   const stressed = chunks.length === 1 ? chunks[0] : chunks.find((c) => c.anchorUnits.includes("stressed-syllable"));
-  if (stressed && stressed.keyword && stressed.match === "rime") return "rime";
+  if (stressed && stressed.keyword && (stressed.match === "rime" || stressed.match === "word-rime")) return "rime";
   if (chunks.length === 1) return "whole-word";
   if (stressed && stressed.keyword) return "stressed-syllable";
   const first = chunks.find((c) => c.keyword);
