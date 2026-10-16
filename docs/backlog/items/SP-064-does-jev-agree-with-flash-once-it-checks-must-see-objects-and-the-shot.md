@@ -3,14 +3,7 @@ id: SP-064
 type: spike
 parent: E01
 status: in-progress
-qa_status: bug
-bugs:
-  - ac: 1
-    summary: "Four must-see lists keep a bare name as an item. The nametag is only an adjective, so the caption call and the gate still check the bare name."
-    command: "node -e 'const ms=require(\"./spikes/sp-064/raw/must-see.json\");for(const w of [\"evicted\",\"devious\",\"polysemy\",\"toss\"])console.log(w,JSON.stringify(ms[w].items[0]))'"
-    expected: "The list turns each name anchor into its visible sign, such as an item \"nametag reading \\\"Victor\\\"\", because scenario 1 says a name anchor becomes its visible sign. The bulge list does this with the item \"man with a nametag reading \\\"Bulb\\\"\"."
-    actual: "The real lists for evicted, devious, polysemy and toss keep the bare names Victor, Dee, Melissa and Tom as item names. The nametag appears only in an adjective, such as {\"name\":\"Victor\",\"adjectives\":[\"worried\",\"nametag reading \\\"Victor\\\"\"]}. The caption prompt shows names only, so the captioner judges the bare name. In raw/captions.json it marks Victor hidden in 7 of 9 cells, and the gate puts those 7 cells out."
-    found: 2026-10-17
+qa_status: passing
 timebox: 1d
 depends_on: [SP-029]
 concepts: [C-002, C-004, C-030, C-034, C-035, C-036, C-037]
