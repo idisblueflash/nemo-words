@@ -1,0 +1,29 @@
+{
+  "_comment": "SP-064: the image pick's rubric, read by lib/pick.js (Jev), shaped like scripts/story-rubric.json's axes. One Score question per scored cell and axis; Jev answers a level 0-2, and the axis score is that + 1 (decimals kept, as US-038 keeps them). A partly cut must-see item gets the lowest clarity.",
+  "axes": {
+    "plausible": {
+      "label": "Plausible",
+      "levels": [
+        "the scene makes little sense: no setting clues, or the action happens in an order that doesn't fit the story",
+        "the scene makes some sense: a few setting clues, or a mostly sensible order of action",
+        "the scene makes sense: clear setting clues such as a floor, a hand or a height, and a sensible order of action"
+      ]
+    },
+    "vivid": {
+      "label": "Vivid",
+      "levels": [
+        "a flat, distant or ordinary shot at eye level",
+        "a closer shot or a somewhat unusual camera angle",
+        "an extreme close-up or a strong camera angle"
+      ]
+    },
+    "clarity": {
+      "label": "Must-see clarity",
+      "levels": [
+        "a must-see item is partly cut off by the edge of the picture, or small and hard to make out",
+        "every must-see item is shown in full, but some are small or unclear",
+        "every must-see item is shown in full, large and clear"
+      ]
+    }
+  }
+}

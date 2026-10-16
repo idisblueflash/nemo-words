@@ -1,0 +1,93 @@
+#!/usr/bin/env node
+"use strict";
+
+// Stands in for `claude -p` in all three SP-064 text steps. It tells them
+// apart by the files in its working folder, the only files the real calls
+// are pointed at:
+//   none                    → must-see list (text only); the story is in the prompt
+//   picture.png             → cell caption; the must-see list is in the prompt
+//   cell-1.png … cell-9.png → grid differences
+// A fixture cell is flat gray; the fake reads its gray level back with magick.
+//
+// Story words drive the must-see list, and list items drive the captions:
+//   "Venice"        → item "nametag" reading "Venice" (a name anchor's visible sign)
+//   "then"          → isSequence true
+//   "moon"          → item "moon": hidden in cells darker than 100, partly cut below 150
+//   "ghost"         → item "ghost": hidden in every cell
+//   "claude-fails"  → the must-see call fails (exit 1)
+//   "garbled-list"  → the must-see call prints something that isn't JSON
+//   "crash"         → item "crash": every caption call fails
+//   "garble"        → item "garble": every caption prints something that isn't JSON
+//   "split"         → item "split": the differences call fails
+// Shot: extreme close-up at levels ≥ 200, else medium. Step: before below 90,
+// during below 180, after from 180.
+// Each call is appended to $FAKE_CLAUDE_LOG as JSON (argv, cwd, files, mode).
+
+const fs = require("node:fs");
+const path = require("node:path");
+const { execFileSync } = require("node:child_process");
+
+const argv = process.argv.slice(2);
+const prompt = argv[argv.indexOf("-p") + 1] || "";
+const cwd = process.cwd();
+const files = fs.readdirSync(cwd).sort();
+const mode = files.includes("picture.png") ? "caption" : files.some((f) => /^cell-\d\.png$/.test(f)) ? "differences" : "must-see";
+
+if (process.env.FAKE_CLAUDE_LOG) {
+  fs.appendFileSync(process.env.FAKE_CLAUDE_LOG, JSON.stringify({ argv, cwd, files, mode }) + "\n");
+}
+
+const level = (file) => Math.round(Number(execFileSync("magick", [path.join(cwd, file), "-format", "%[fx:mean*255]", "info:"]).toString()));
+const fail = (why) => {
+  process.stdout.write(`${why}\n`);
+  process.exit(1);
+};
+const out = (obj) => process.stdout.write("```json\n" + JSON.stringify(obj, null, 2) + "\n```\n");
+
+// The must-see list as the prompt shows it: a JSON line after "MUST-SEE LIST:".
+function listFromPrompt() {
+  const m = /MUST-SEE LIST: (\[.*\])/.exec(prompt);
+  return m ? JSON.parse(m[1]) : [];
+}
+
+if (mode === "must-see") {
+  const story = (/STORY: (.*)/.exec(prompt) || [])[1] || "";
+  if (story.includes("claude-fails")) fail("You have hit your session limit");
+  if (story.includes("garbled-list")) {
+    process.stdout.write("Sure! Here are the objects.\n");
+    process.exit(0);
+  }
+  const items = [{ name: "square", adjectives: ["flat", "gray"] }];
+  if (story.includes("Venice")) items.push({ name: "nametag", adjectives: ['reading "Venice"'] });
+  for (const special of ["moon", "ghost", "crash", "garble", "split"]) {
+    if (story.includes(special)) items.push({ name: special, adjectives: ["round"] });
+  }
+  out({ items, isSequence: /\bthen\b/.test(story) });
+} else if (mode === "caption") {
+  const names = listFromPrompt().map((i) => i.name);
+  if (names.includes("crash")) fail("You have hit your session limit");
+  if (names.includes("garble")) {
+    process.stdout.write("a gray square, nothing else\n");
+    process.exit(0);
+  }
+  const l = level("picture.png");
+  const status = (name) => {
+    if (name === "ghost") return "hidden";
+    if (name === "moon") return l < 100 ? "hidden" : l < 150 ? "partly cut" : "visible";
+    return "visible";
+  };
+  out({
+    objects: [{ name: "square", adjectives: ["flat", "gray", `lightness ${l}`] }],
+    shot: l >= 200 ? "extreme close-up" : "medium",
+    angle: "eye level",
+    step: l < 90 ? "before" : l < 180 ? "during" : "after",
+    extras: { floor: false, background: "plain", morePeople: false, readableText: "" },
+    mustSee: Object.fromEntries(names.map((n) => [n, status(n)])),
+  });
+} else {
+  const names = listFromPrompt().map((i) => i.name);
+  if (names.includes("split")) fail("You have hit your session limit");
+  const levels = [1, 2, 3, 4, 5, 6, 7, 8, 9].map((c) => level(`cell-${c}.png`));
+  const mean = levels.reduce((s, x) => s + x, 0) / 9;
+  out({ lines: levels.map((l) => (l > mean ? `lighter than most cells (lightness ${l})` : `darker than most cells (lightness ${l})`)) });
+}

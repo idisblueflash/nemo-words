@@ -1,0 +1,4 @@
+[
+  { "id": "1", "word": "alpha", "story": "Alpha story, lightness 120.", "grid": "alpha.grid.png", "left": { "source": "flash", "cell": 5 }, "right": { "source": "jev", "cell": 3 } },
+  { "id": "2", "word": "eta", "story": "Eta story, lightness 150.", "grid": "eta.grid.png", "left": { "source": "jev", "cell": 4 }, "right": { "source": "flash", "cell": 1 } }
+]
