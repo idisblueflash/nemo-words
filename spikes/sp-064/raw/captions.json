@@ -1,0 +1,1422 @@
+{
+  "aisle.grid.png": {
+    "1": {
+      "objects": [
+        {
+          "name": "man in green jacket",
+          "adjectives": [
+            "dark-haired",
+            "walking",
+            "seen from behind",
+            "wearing a backpack"
+          ]
+        },
+        {
+          "name": "black backpack",
+          "adjectives": [
+            "large",
+            "black",
+            "padded"
+          ]
+        },
+        {
+          "name": "woman in red top",
+          "adjectives": [
+            "brown-haired",
+            "walking",
+            "seen from behind"
+          ]
+        },
+        {
+          "name": "brown shoulder bag",
+          "adjectives": [
+            "tan",
+            "leather-look"
+          ]
+        },
+        {
+          "name": "older man in blue jacket",
+          "adjectives": [
+            "gray-haired",
+            "walking",
+            "seen from behind"
+          ]
+        },
+        {
+          "name": "person at far end of aisle",
+          "adjectives": [
+            "dark-haired",
+            "distant",
+            "partly hidden"
+          ]
+        },
+        {
+          "name": "rolling bag or cane",
+          "adjectives": [
+            "dark",
+            "thin"
+          ]
+        },
+        {
+          "name": "airplane seats",
+          "adjectives": [
+            "blue",
+            "gray-blue",
+            "lined up on both sides"
+          ]
+        },
+        {
+          "name": "aisle carpet",
+          "adjectives": [
+            "yellow",
+            "narrow"
+          ]
+        },
+        {
+          "name": "window",
+          "adjectives": [
+            "small",
+            "rounded",
+            "light blue"
+          ]
+        },
+        {
+          "name": "overhead bins",
+          "adjectives": [
+            "curved",
+            "cream-colored"
+          ]
+        },
+        {
+          "name": "jeans",
+          "adjectives": [
+            "blue",
+            "denim"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "extras": {
+        "floor": true,
+        "background": "The long, narrow aisle of an airplane cabin, with rows of blue seats, overhead bins and a small window, receding toward the front.",
+        "morePeople": true,
+        "readableText": ""
+      },
+      "mustSee": {
+        "passengers": "visible",
+        "plane": "visible",
+        "passage": "visible"
+      }
+    },
+    "2": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "worried",
+            "hunched",
+            "tall",
+            "dark-haired",
+            "wearing olive jacket"
+          ]
+        },
+        {
+          "name": "backpack",
+          "adjectives": [
+            "black",
+            "worn on shoulders"
+          ]
+        },
+        {
+          "name": "rolling suitcase",
+          "adjectives": [
+            "black",
+            "small",
+            "carry-on"
+          ]
+        },
+        {
+          "name": "person behind",
+          "adjectives": [
+            "partly hidden",
+            "small",
+            "in orange-red top",
+            "dark-haired"
+          ]
+        },
+        {
+          "name": "airplane seats",
+          "adjectives": [
+            "blue",
+            "padded",
+            "in rows"
+          ]
+        },
+        {
+          "name": "armrests",
+          "adjectives": [
+            "gray",
+            "beige"
+          ]
+        },
+        {
+          "name": "overhead bin",
+          "adjectives": [
+            "low",
+            "beige",
+            "closed"
+          ]
+        },
+        {
+          "name": "aisle floor",
+          "adjectives": [
+            "narrow",
+            "yellow-striped"
+          ]
+        },
+        {
+          "name": "sneakers",
+          "adjectives": [
+            "white",
+            "worn"
+          ]
+        },
+        {
+          "name": "jeans",
+          "adjectives": [
+            "blue"
+          ]
+        },
+        {
+          "name": "shirt",
+          "adjectives": [
+            "cream",
+            "white"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "extras": {
+        "floor": true,
+        "background": "Cramped airplane cabin aisle lined with blue seats, with a low ceiling and overhead bins and a second passenger partly hidden behind the man",
+        "morePeople": true,
+        "readableText": ""
+      },
+      "mustSee": {
+        "passengers": "partly cut",
+        "plane": "visible",
+        "passage": "visible"
+      }
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "woman",
+          "adjectives": [
+            "brown-haired",
+            "long-haired",
+            "seen from behind",
+            "wearing a red-orange top"
+          ]
+        },
+        {
+          "name": "shoulder bag strap",
+          "adjectives": [
+            "tan",
+            "leather-like"
+          ]
+        },
+        {
+          "name": "man with dark hair",
+          "adjectives": [
+            "curly-haired",
+            "seen from behind",
+            "wearing an olive green jacket"
+          ]
+        },
+        {
+          "name": "backpack (black)",
+          "adjectives": [
+            "black",
+            "worn on the back"
+          ]
+        },
+        {
+          "name": "older man",
+          "adjectives": [
+            "gray-haired",
+            "seen from behind",
+            "wearing a blue shirt"
+          ]
+        },
+        {
+          "name": "person with hair bun",
+          "adjectives": [
+            "dark-haired",
+            "seen from behind",
+            "wearing a beige top"
+          ]
+        },
+        {
+          "name": "backpack (green)",
+          "adjectives": [
+            "green",
+            "worn on the back"
+          ]
+        },
+        {
+          "name": "airplane seats",
+          "adjectives": [
+            "blue",
+            "gray-blue",
+            "cushioned",
+            "in rows"
+          ]
+        },
+        {
+          "name": "overhead bins",
+          "adjectives": [
+            "beige",
+            "cream-colored",
+            "closed",
+            "curved"
+          ]
+        },
+        {
+          "name": "window",
+          "adjectives": [
+            "small",
+            "oval",
+            "blue-tinted"
+          ]
+        },
+        {
+          "name": "aisle carpet",
+          "adjectives": [
+            "narrow",
+            "with a yellow stripe"
+          ]
+        },
+        {
+          "name": "ceiling",
+          "adjectives": [
+            "curved",
+            "cream-colored"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "extras": {
+        "floor": true,
+        "background": "The interior of an airplane cabin with rows of blue seats and overhead storage bins, and a line of passengers walking down the aisle away from the camera",
+        "morePeople": true,
+        "readableText": ""
+      },
+      "mustSee": {
+        "passengers": "visible",
+        "plane": "visible",
+        "passage": "visible"
+      }
+    },
+    "4": {
+      "objects": [
+        {
+          "name": "man in olive green jacket with black backpack",
+          "adjectives": [
+            "dark-haired",
+            "walking",
+            "seen from behind"
+          ]
+        },
+        {
+          "name": "woman in orange-red top",
+          "adjectives": [
+            "brown-haired",
+            "long-haired",
+            "walking",
+            "seen from behind"
+          ]
+        },
+        {
+          "name": "person in blue sweater with gray shoulder bag",
+          "adjectives": [
+            "gray-haired",
+            "walking",
+            "seen from behind"
+          ]
+        },
+        {
+          "name": "person in cream shirt with green backpack",
+          "adjectives": [
+            "dark-haired",
+            "walking",
+            "seen from behind"
+          ]
+        },
+        {
+          "name": "backpack",
+          "adjectives": [
+            "black"
+          ]
+        },
+        {
+          "name": "backpack",
+          "adjectives": [
+            "green"
+          ]
+        },
+        {
+          "name": "shoulder bag",
+          "adjectives": [
+            "gray"
+          ]
+        },
+        {
+          "name": "airplane seats",
+          "adjectives": [
+            "blue",
+            "padded",
+            "many",
+            "in rows"
+          ]
+        },
+        {
+          "name": "headrest covers",
+          "adjectives": [
+            "white",
+            "cream"
+          ]
+        },
+        {
+          "name": "aisle carpet",
+          "adjectives": [
+            "yellow",
+            "narrow"
+          ]
+        },
+        {
+          "name": "windows",
+          "adjectives": [
+            "oval",
+            "small",
+            "light blue"
+          ]
+        },
+        {
+          "name": "cabin walls",
+          "adjectives": [
+            "cream",
+            "curved"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "overhead",
+      "step": "during",
+      "extras": {
+        "floor": true,
+        "background": "Airplane cabin interior with rows of blue seats on both sides of a yellow-carpeted aisle, oval windows along the walls",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "passengers": "visible",
+        "plane": "visible",
+        "passage": "visible"
+      }
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "seated man",
+          "adjectives": [
+            "dark-haired",
+            "worried",
+            "wearing blue sweater",
+            "wearing khaki pants",
+            "looking sideways"
+          ]
+        },
+        {
+          "name": "walking passenger",
+          "adjectives": [
+            "wearing olive jacket",
+            "wearing blue jeans",
+            "wearing gray sneakers",
+            "mid-stride",
+            "partly visible"
+          ]
+        },
+        {
+          "name": "rolling suitcase",
+          "adjectives": [
+            "black",
+            "carry-on",
+            "wheeled",
+            "being pulled"
+          ]
+        },
+        {
+          "name": "second passenger",
+          "adjectives": [
+            "behind the first",
+            "wearing brown pants",
+            "wearing white sneakers",
+            "partly visible"
+          ]
+        },
+        {
+          "name": "airplane seats",
+          "adjectives": [
+            "blue",
+            "padded",
+            "cloth-covered"
+          ]
+        },
+        {
+          "name": "aisle floor strip",
+          "adjectives": [
+            "yellow",
+            "narrow"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "high angle",
+      "step": "during",
+      "extras": {
+        "floor": true,
+        "background": "Inside an airplane cabin: blue seats on both sides of a narrow aisle, with the passengers' legs and torsos in the center",
+        "morePeople": true,
+        "readableText": ""
+      },
+      "mustSee": {
+        "passengers": "partly cut",
+        "plane": "partly cut",
+        "passage": "visible"
+      }
+    },
+    "6": {
+      "objects": [
+        {
+          "name": "woman",
+          "adjectives": [
+            "brown-haired",
+            "smiling",
+            "wearing red-orange sweater",
+            "pointing",
+            "seen from behind"
+          ]
+        },
+        {
+          "name": "man",
+          "adjectives": [
+            "dark-haired",
+            "worried",
+            "frowning",
+            "wearing olive green jacket"
+          ]
+        },
+        {
+          "name": "man with glasses",
+          "adjectives": [
+            "bun hairstyle",
+            "bespectacled",
+            "wearing blue jacket",
+            "tired"
+          ]
+        },
+        {
+          "name": "woman in background",
+          "adjectives": [
+            "dark-haired",
+            "hair in bun",
+            "looking down",
+            "partly hidden"
+          ]
+        },
+        {
+          "name": "tan shoulder bag",
+          "adjectives": [
+            "brown",
+            "leather-looking",
+            "hanging from shoulder"
+          ]
+        },
+        {
+          "name": "backpack",
+          "adjectives": [
+            "black",
+            "strapped on back"
+          ]
+        },
+        {
+          "name": "rolling suitcase",
+          "adjectives": [
+            "black",
+            "partly visible"
+          ]
+        },
+        {
+          "name": "airplane seats",
+          "adjectives": [
+            "blue",
+            "gray-blue",
+            "upholstered",
+            "in rows"
+          ]
+        },
+        {
+          "name": "airplane windows",
+          "adjectives": [
+            "small",
+            "oval",
+            "bright"
+          ]
+        },
+        {
+          "name": "overhead compartments",
+          "adjectives": [
+            "curved",
+            "cream-colored"
+          ]
+        },
+        {
+          "name": "jeans",
+          "adjectives": [
+            "blue",
+            "denim"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "extras": {
+        "floor": false,
+        "background": "Airplane cabin interior with rows of blue seats, oval windows and overhead bins, with more passengers queued behind in the aisle",
+        "morePeople": true,
+        "readableText": ""
+      },
+      "mustSee": {
+        "passengers": "visible",
+        "plane": "visible",
+        "passage": "visible"
+      }
+    },
+    "7": {
+      "objects": [
+        {
+          "name": "woman in front",
+          "adjectives": [
+            "brown-haired",
+            "smiling",
+            "wearing a rust-red sweater",
+            "wearing blue jeans"
+          ]
+        },
+        {
+          "name": "man with backpack",
+          "adjectives": [
+            "dark-haired",
+            "worried",
+            "wearing an olive green jacket"
+          ]
+        },
+        {
+          "name": "older man",
+          "adjectives": [
+            "gray-haired",
+            "bespectacled",
+            "wearing a blue shirt"
+          ]
+        },
+        {
+          "name": "woman with bun",
+          "adjectives": [
+            "dark-haired",
+            "wearing a green bag strap",
+            "partly hidden"
+          ]
+        },
+        {
+          "name": "black rolling suitcase",
+          "adjectives": [
+            "black",
+            "upright",
+            "with extended handle"
+          ]
+        },
+        {
+          "name": "second suitcase handle",
+          "adjectives": [
+            "dark",
+            "thin"
+          ]
+        },
+        {
+          "name": "backpack",
+          "adjectives": [
+            "dark",
+            "worn on the man's back"
+          ]
+        },
+        {
+          "name": "airplane seats",
+          "adjectives": [
+            "blue",
+            "gray-blue",
+            "padded",
+            "in rows"
+          ]
+        },
+        {
+          "name": "overhead bins",
+          "adjectives": [
+            "beige",
+            "curved",
+            "closed"
+          ]
+        },
+        {
+          "name": "windows",
+          "adjectives": [
+            "small",
+            "oval",
+            "bright blue"
+          ]
+        },
+        {
+          "name": "aisle floor",
+          "adjectives": [
+            "narrow",
+            "with yellow stripe"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "extras": {
+        "floor": true,
+        "background": "Interior of an airplane cabin with rows of blue seats, oval windows and overhead storage bins, with the aisle narrowing into the distance",
+        "morePeople": true,
+        "readableText": ""
+      },
+      "mustSee": {
+        "passengers": "visible",
+        "plane": "visible",
+        "passage": "visible"
+      }
+    },
+    "8": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "dark-haired",
+            "anxious",
+            "sweaty",
+            "wide-eyed",
+            "squeezed",
+            "glancing sideways"
+          ]
+        },
+        {
+          "name": "olive green jacket",
+          "adjectives": [
+            "olive",
+            "worn open"
+          ]
+        },
+        {
+          "name": "beige t-shirt",
+          "adjectives": [
+            "cream",
+            "plain"
+          ]
+        },
+        {
+          "name": "backpack straps",
+          "adjectives": [
+            "black"
+          ]
+        },
+        {
+          "name": "blue jeans",
+          "adjectives": [
+            "dark blue"
+          ]
+        },
+        {
+          "name": "rolling suitcase",
+          "adjectives": [
+            "black",
+            "small",
+            "carry-on"
+          ]
+        },
+        {
+          "name": "suitcase handle",
+          "adjectives": [
+            "extendable",
+            "gripped"
+          ]
+        },
+        {
+          "name": "airplane seats",
+          "adjectives": [
+            "blue",
+            "gray-blue",
+            "tall",
+            "padded"
+          ]
+        },
+        {
+          "name": "aisle carpet",
+          "adjectives": [
+            "yellow",
+            "partly visible"
+          ]
+        },
+        {
+          "name": "cabin wall",
+          "adjectives": [
+            "cream",
+            "blurry"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "extras": {
+        "floor": true,
+        "background": "Blurred cream airplane cabin interior behind blue seat backs, in a cartoon illustration style",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "passengers": "hidden",
+        "plane": "visible",
+        "passage": "visible"
+      }
+    },
+    "9": {
+      "objects": [
+        {
+          "name": "gray-haired man",
+          "adjectives": [
+            "elderly",
+            "walking away",
+            "wearing blue jacket",
+            "carrying backpack"
+          ]
+        },
+        {
+          "name": "woman with brown hair",
+          "adjectives": [
+            "walking away",
+            "wearing red-orange top",
+            "ahead in line"
+          ]
+        },
+        {
+          "name": "man in green jacket",
+          "adjectives": [
+            "dark-haired",
+            "walking away",
+            "far ahead in line"
+          ]
+        },
+        {
+          "name": "third person partly hidden behind the woman",
+          "adjectives": [
+            "partly hidden",
+            "distant"
+          ]
+        },
+        {
+          "name": "black backpack",
+          "adjectives": [
+            "black",
+            "worn on back",
+            "padded"
+          ]
+        },
+        {
+          "name": "rolling suitcase",
+          "adjectives": [
+            "black",
+            "small",
+            "cut off at bottom edge",
+            "pulled behind"
+          ]
+        },
+        {
+          "name": "airplane seats",
+          "adjectives": [
+            "blue",
+            "gray-blue",
+            "high-backed",
+            "lined in rows"
+          ]
+        },
+        {
+          "name": "overhead bins",
+          "adjectives": [
+            "cream",
+            "curved",
+            "closed"
+          ]
+        },
+        {
+          "name": "windows",
+          "adjectives": [
+            "small",
+            "oval",
+            "bright blue"
+          ]
+        },
+        {
+          "name": "aisle",
+          "adjectives": [
+            "narrow",
+            "carpeted",
+            "yellow floor strip"
+          ]
+        },
+        {
+          "name": "cabin ceiling",
+          "adjectives": [
+            "cream",
+            "lit"
+          ]
+        },
+        {
+          "name": "doorway at far end of cabin",
+          "adjectives": [
+            "dim",
+            "distant"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "eye level",
+      "step": "during",
+      "extras": {
+        "floor": true,
+        "background": "Interior of an airplane cabin looking down the aisle toward the front, with rows of blue seats, overhead bins, oval windows and a dim doorway at the far end.",
+        "morePeople": true,
+        "readableText": ""
+      },
+      "mustSee": {
+        "passengers": "visible",
+        "plane": "visible",
+        "passage": "visible"
+      }
+    }
+  },
+  "anomaly.grid.png": {
+    "1": {
+      "objects": [
+        {
+          "name": "woman",
+          "adjectives": [
+            "smiling",
+            "brown-haired",
+            "pink-sweatered",
+            "crouching"
+          ]
+        },
+        {
+          "name": "man",
+          "adjectives": [
+            "dark-haired",
+            "green-shirted",
+            "standing",
+            "facing away"
+          ]
+        },
+        {
+          "name": "boy",
+          "adjectives": [
+            "excited",
+            "dark-haired",
+            "yellow-jacketed",
+            "crouching",
+            "pointing"
+          ]
+        },
+        {
+          "name": "girl",
+          "adjectives": [
+            "worried",
+            "wide-eyed",
+            "pink-dressed",
+            "small"
+          ]
+        },
+        {
+          "name": "door",
+          "adjectives": [
+            "blue",
+            "paneled",
+            "closed"
+          ]
+        },
+        {
+          "name": "door knocker",
+          "adjectives": [
+            "metal",
+            "ring-shaped"
+          ]
+        },
+        {
+          "name": "orange floor tile",
+          "adjectives": [
+            "cracked",
+            "orange",
+            "irregular",
+            "misshapen",
+            "rattling"
+          ]
+        },
+        {
+          "name": "floor tiles",
+          "adjectives": [
+            "beige",
+            "square"
+          ]
+        },
+        {
+          "name": "wall tiles",
+          "adjectives": [
+            "light",
+            "white",
+            "square"
+          ]
+        },
+        {
+          "name": "sneakers",
+          "adjectives": [
+            "blue",
+            "white-soled"
+          ]
+        },
+        {
+          "name": "shoes",
+          "adjectives": [
+            "pink",
+            "brown"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "high angle",
+      "step": "during",
+      "extras": {
+        "floor": true,
+        "background": "A cream wall on the left and a blue door in the center, with white tiled wall on the right",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "hand knocking": "visible",
+        "family of tiles": "hidden",
+        "irregular tile": "visible"
+      }
+    },
+    "2": {
+      "objects": [
+        {
+          "name": "hand",
+          "adjectives": [
+            "clenched",
+            "human",
+            "knocking",
+            "pale"
+          ]
+        },
+        {
+          "name": "sleeve",
+          "adjectives": [
+            "green",
+            "olive"
+          ]
+        },
+        {
+          "name": "door knocker ring",
+          "adjectives": [
+            "metal",
+            "round",
+            "dark gray"
+          ]
+        },
+        {
+          "name": "door",
+          "adjectives": [
+            "blue-gray",
+            "paneled",
+            "wooden"
+          ]
+        },
+        {
+          "name": "orange tile",
+          "adjectives": [
+            "cracked",
+            "orange",
+            "irregular",
+            "misshapen",
+            "vibrating"
+          ]
+        },
+        {
+          "name": "cream tiles",
+          "adjectives": [
+            "cream",
+            "square",
+            "white-ish",
+            "tiled"
+          ]
+        },
+        {
+          "name": "motion lines",
+          "adjectives": [
+            "curved",
+            "rattling"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "extras": {
+        "floor": false,
+        "background": "A blue-gray door beside a wall of cream tiles with one cracked orange tile",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "hand knocking": "visible",
+        "family of tiles": "partly cut",
+        "irregular tile": "visible"
+      }
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "dark-haired",
+            "green-shirted",
+            "seen from behind"
+          ]
+        },
+        {
+          "name": "boy",
+          "adjectives": [
+            "dark-haired",
+            "yellow-hooded",
+            "reaching up",
+            "seen from behind"
+          ]
+        },
+        {
+          "name": "girl",
+          "adjectives": [
+            "ponytailed",
+            "pink-shirted",
+            "wide-eyed",
+            "surprised"
+          ]
+        },
+        {
+          "name": "woman",
+          "adjectives": [
+            "brown-haired",
+            "pink-shirted",
+            "wide-eyed",
+            "surprised"
+          ]
+        },
+        {
+          "name": "door",
+          "adjectives": [
+            "blue-gray",
+            "paneled"
+          ]
+        },
+        {
+          "name": "door knocker ring",
+          "adjectives": [
+            "metal",
+            "round",
+            "dark"
+          ]
+        },
+        {
+          "name": "orange tile",
+          "adjectives": [
+            "orange",
+            "tilted",
+            "loose",
+            "misshapen",
+            "rattling"
+          ]
+        },
+        {
+          "name": "tiled wall",
+          "adjectives": [
+            "white",
+            "cream",
+            "tiled"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "extras": {
+        "floor": false,
+        "background": "A blue-gray door on the left and a cream-white tiled wall on the right, with one orange tile tilted out of place and motion marks beside it.",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "hand knocking": "visible",
+        "family of tiles": "partly cut",
+        "irregular tile": "visible"
+      }
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "boy",
+          "adjectives": [
+            "young",
+            "crouching",
+            "wide-eyed",
+            "shocked",
+            "yellow-hooded",
+            "dark-haired"
+          ]
+        },
+        {
+          "name": "woman",
+          "adjectives": [
+            "brown-haired",
+            "surprised",
+            "wide-eyed",
+            "pink-clothed"
+          ]
+        },
+        {
+          "name": "girl",
+          "adjectives": [
+            "little",
+            "dark-haired",
+            "startled",
+            "pink-dressed"
+          ]
+        },
+        {
+          "name": "man",
+          "adjectives": [
+            "tall",
+            "dark-haired",
+            "green-shirted",
+            "brown-trousered",
+            "seen from behind"
+          ]
+        },
+        {
+          "name": "door",
+          "adjectives": [
+            "blue",
+            "tall",
+            "closed"
+          ]
+        },
+        {
+          "name": "door handle",
+          "adjectives": [
+            "metal",
+            "dark"
+          ]
+        },
+        {
+          "name": "man's hand",
+          "adjectives": [
+            "raised",
+            "knocking"
+          ]
+        },
+        {
+          "name": "orange floor tile",
+          "adjectives": [
+            "large",
+            "cracked",
+            "irregular",
+            "misshapen",
+            "orange",
+            "rattling"
+          ]
+        },
+        {
+          "name": "surrounding floor tiles",
+          "adjectives": [
+            "beige",
+            "light",
+            "square"
+          ]
+        },
+        {
+          "name": "motion lines",
+          "adjectives": [
+            "curved",
+            "gray",
+            "vibrating"
+          ]
+        },
+        {
+          "name": "wall",
+          "adjectives": [
+            "cream",
+            "plain"
+          ]
+        },
+        {
+          "name": "sneakers",
+          "adjectives": [
+            "dark blue",
+            "worn"
+          ]
+        },
+        {
+          "name": "jeans",
+          "adjectives": [
+            "blue"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "high angle",
+      "step": "during",
+      "extras": {
+        "floor": true,
+        "background": "A cream-colored hallway wall beside a tall blue door, with a light tiled floor in front.",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "hand knocking": "visible",
+        "family of tiles": "hidden",
+        "irregular tile": "partly cut"
+      }
+    },
+    "6": {
+      "objects": [
+        {
+          "name": "woman",
+          "adjectives": [
+            "middle-aged",
+            "bending forward",
+            "wearing a red-pink top and maroon skirt",
+            "hair in a bun"
+          ]
+        },
+        {
+          "name": "boy",
+          "adjectives": [
+            "young",
+            "leaning forward",
+            "wearing a yellow hoodie and blue jeans",
+            "pointing"
+          ]
+        },
+        {
+          "name": "girl",
+          "adjectives": [
+            "small",
+            "wearing a pink dress",
+            "ponytails",
+            "leaning forward"
+          ]
+        },
+        {
+          "name": "man",
+          "adjectives": [
+            "tall",
+            "wearing a green sweater and brown trousers",
+            "seen from behind"
+          ]
+        },
+        {
+          "name": "door",
+          "adjectives": [
+            "blue",
+            "closed",
+            "paneled"
+          ]
+        },
+        {
+          "name": "door frame",
+          "adjectives": [
+            "light blue"
+          ]
+        },
+        {
+          "name": "tiled floor",
+          "adjectives": [
+            "cream",
+            "gridded"
+          ]
+        },
+        {
+          "name": "orange tile",
+          "adjectives": [
+            "cracked",
+            "irregular",
+            "orange"
+          ]
+        },
+        {
+          "name": "wall",
+          "adjectives": [
+            "beige"
+          ]
+        },
+        {
+          "name": "shoes",
+          "adjectives": [
+            "various",
+            "brown",
+            "blue and white",
+            "red"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "high angle",
+      "step": "before",
+      "extras": {
+        "floor": true,
+        "background": "A closed blue door in a beige wall at the end of a tiled hallway, with a family of four seen from behind approaching it",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "hand knocking": "hidden",
+        "family of tiles": "hidden",
+        "irregular tile": "visible"
+      }
+    }
+  }
+}
