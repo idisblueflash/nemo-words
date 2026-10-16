@@ -4521,9 +4521,10 @@
           "adjectives": [
             "cartoon",
             "yellow",
-            "smiling",
+            "grinning",
             "sly",
-            "anthropomorphic"
+            "animated",
+            "thin-limbed"
           ]
         },
         {
@@ -4531,27 +4532,10 @@
           "adjectives": [
             "elderly",
             "gray-haired",
-            "smiling",
             "bespectacled",
-            "cartoon"
-          ]
-        },
-        {
-          "name": "judge's robe",
-          "adjectives": [
-            "black"
-          ]
-        },
-        {
-          "name": "white jabot collar",
-          "adjectives": [
-            "white"
-          ]
-        },
-        {
-          "name": "glasses",
-          "adjectives": [
-            "round"
+            "smiling",
+            "cartoon",
+            "wearing black robe"
           ]
         },
         {
@@ -4566,14 +4550,9 @@
           "name": "money bag",
           "adjectives": [
             "green",
-            "full"
-          ]
-        },
-        {
-          "name": "gavel",
-          "adjectives": [
-            "wooden",
-            "brown"
+            "full",
+            "open",
+            "stuffed with cash"
           ]
         },
         {
@@ -4585,17 +4564,25 @@
           ]
         },
         {
-          "name": "chair",
+          "name": "gavel",
           "adjectives": [
-            "red",
-            "high-backed"
+            "wooden",
+            "brown"
           ]
         },
         {
-          "name": "floor",
+          "name": "chair",
           "adjectives": [
-            "wooden",
-            "tan"
+            "red",
+            "high-backed",
+            "partly visible"
+          ]
+        },
+        {
+          "name": "white jabot collar",
+          "adjectives": [
+            "white",
+            "pleated"
           ]
         }
       ],
@@ -4604,17 +4591,17 @@
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "plain white background",
+        "background": "plain white background with a courtroom bench, gavel and a red chair",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Bulb": "visible",
+        "man with a nametag reading \"Bulb\"": "hidden",
         "judge": "visible",
         "pocket": "hidden",
         "cash": "visible"
       },
-      "promptKey": "506ed77c388e227d"
+      "promptKey": "f823cdfe0f07fbf5"
     },
     "2": {
       "objects": [
@@ -4623,50 +4610,35 @@
           "adjectives": [
             "elderly",
             "gray-haired",
-            "smiling",
             "bespectacled",
-            "robed",
-            "cartoon"
+            "smiling",
+            "black-robed"
           ]
         },
         {
           "name": "light bulb character",
           "adjectives": [
+            "cartoon",
             "anthropomorphic",
             "yellow",
-            "smirking",
-            "cartoon",
-            "scheming"
+            "grinning",
+            "sly"
           ]
         },
         {
-          "name": "bundle of cash",
+          "name": "stack of cash",
           "adjectives": [
             "green",
             "thick",
-            "banded"
+            "being handed over"
           ]
         },
         {
           "name": "money bag",
           "adjectives": [
             "green",
-            "overflowing",
-            "cash-filled"
-          ]
-        },
-        {
-          "name": "judge's robe",
-          "adjectives": [
-            "black",
-            "loose"
-          ]
-        },
-        {
-          "name": "eyeglasses",
-          "adjectives": [
-            "round",
-            "thin-framed"
+            "bulging",
+            "full of bills"
           ]
         },
         {
@@ -4681,40 +4653,45 @@
           "adjectives": [
             "red",
             "high-backed",
-            "leather-like"
+            "leather"
+          ]
+        },
+        {
+          "name": "eyeglasses",
+          "adjectives": [
+            "round"
           ]
         }
       ],
       "shot": "medium",
-      "angle": "eye level",
+      "angle": "low angle",
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "plain white background with no scenery",
+        "background": "plain white background",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Bulb": "partly cut",
+        "man with a nametag reading \"Bulb\"": "hidden",
         "judge": "visible",
         "pocket": "hidden",
         "cash": "visible"
       },
-      "promptKey": "506ed77c388e227d"
+      "promptKey": "f823cdfe0f07fbf5"
     },
     "3": {
       "objects": [
         {
-          "name": "judge",
+          "name": "judge's hand",
           "adjectives": [
-            "faceless",
-            "cartoon",
-            "dark-robed",
-            "black-robed"
+            "pale",
+            "open",
+            "motion-lined"
           ]
         },
         {
-          "name": "judge's robe",
+          "name": "black judge's robe",
           "adjectives": [
             "black",
             "dark",
@@ -4722,41 +4699,39 @@
           ]
         },
         {
-          "name": "hand",
+          "name": "white shirt cuff",
           "adjectives": [
-            "open",
-            "pale",
-            "reaching",
-            "cartoon"
+            "white",
+            "crisp"
           ]
         },
         {
-          "name": "green money bag",
+          "name": "green pocket",
           "adjectives": [
             "green",
             "bulging",
-            "sagging",
-            "full"
+            "large",
+            "sack-like"
           ]
         },
         {
           "name": "cash bills",
           "adjectives": [
             "green",
-            "crumpled",
-            "several",
-            "sticking out"
+            "stacked",
+            "crumpled"
           ]
         },
         {
           "name": "gavel",
           "adjectives": [
             "brown",
-            "wooden"
+            "wooden",
+            "partly cut"
           ]
         },
         {
-          "name": "bench",
+          "name": "wooden bench",
           "adjectives": [
             "brown",
             "wooden"
@@ -4768,28 +4743,36 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "plain white on the right side with dark robe on the left",
+        "background": "plain white and dark robe fabric; courtroom bench in the lower part",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Bulb": "hidden",
+        "man with a nametag reading \"Bulb\"": "hidden",
         "judge": "partly cut",
         "pocket": "visible",
         "cash": "visible"
       },
-      "promptKey": "506ed77c388e227d"
+      "promptKey": "f823cdfe0f07fbf5"
     },
     "4": {
       "objects": [
         {
-          "name": "light bulb character",
+          "name": "light bulb",
           "adjectives": [
             "cartoon",
-            "yellow",
-            "glowing",
             "large",
-            "anthropomorphic"
+            "yellow",
+            "anthropomorphic",
+            "glowing"
+          ]
+        },
+        {
+          "name": "bulb's arms",
+          "adjectives": [
+            "thin",
+            "white",
+            "cartoon"
           ]
         },
         {
@@ -4799,51 +4782,56 @@
             "gray-haired",
             "smiling",
             "bespectacled",
-            "robed",
             "cartoon"
           ]
         },
         {
-          "name": "glasses",
+          "name": "round glasses",
           "adjectives": [
-            "round",
-            "black-rimmed"
+            "black-rimmed",
+            "round"
           ]
         },
         {
-          "name": "judicial robe",
+          "name": "black judge's robe",
           "adjectives": [
             "black",
-            "white-collared"
+            "loose"
+          ]
+        },
+        {
+          "name": "white collar",
+          "adjectives": [
+            "white"
           ]
         },
         {
           "name": "stack of cash",
           "adjectives": [
             "green",
-            "bundled",
-            "thick"
+            "thick",
+            "bundled"
           ]
         },
         {
           "name": "money bag",
           "adjectives": [
             "green",
-            "overflowing"
+            "bulging"
           ]
         },
         {
           "name": "loose banknotes",
           "adjectives": [
             "green",
-            "sticking out of bag"
+            "sticking out of the bag"
           ]
         },
         {
           "name": "gavel",
           "adjectives": [
-            "wooden",
             "brown",
+            "wooden",
             "small"
           ]
         },
@@ -4862,18 +4850,10 @@
           ]
         },
         {
-          "name": "arms of the bulb",
-          "adjectives": [
-            "thin",
-            "white",
-            "cartoonish"
-          ]
-        },
-        {
           "name": "motion lines",
           "adjectives": [
             "black",
-            "short"
+            "small"
           ]
         }
       ],
@@ -4882,17 +4862,17 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "plain white background behind the judge, with a red-brown high-backed chair",
+        "background": "plain white background with a courtroom bench in the foreground",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Bulb": "visible",
+        "man with a nametag reading \"Bulb\"": "hidden",
         "judge": "visible",
         "pocket": "hidden",
         "cash": "visible"
       },
-      "promptKey": "506ed77c388e227d"
+      "promptKey": "f823cdfe0f07fbf5"
     },
     "5": {
       "objects": [
@@ -4908,62 +4888,33 @@
           ]
         },
         {
-          "name": "judge's wig",
-          "adjectives": [
-            "gray",
-            "curled"
-          ]
-        },
-        {
-          "name": "glasses",
-          "adjectives": [
-            "round",
-            "small"
-          ]
-        },
-        {
-          "name": "white collar bands",
+          "name": "white wig collar/jabot",
           "adjectives": [
             "white",
             "pleated"
           ]
         },
         {
-          "name": "black judicial robe",
-          "adjectives": [
-            "black",
-            "loose"
-          ]
-        },
-        {
           "name": "stack of cash",
           "adjectives": [
             "green",
-            "bundled",
-            "thick"
+            "thick",
+            "banded"
           ]
         },
         {
-          "name": "money bag",
+          "name": "green money bag",
           "adjectives": [
             "green",
             "bulging",
-            "overflowing with bills"
-          ]
-        },
-        {
-          "name": "banknotes",
-          "adjectives": [
-            "green",
-            "loose",
-            "sticking out of bag"
+            "full of bills"
           ]
         },
         {
           "name": "gavel",
           "adjectives": [
-            "brown",
-            "wooden"
+            "wooden",
+            "brown"
           ]
         },
         {
@@ -4975,30 +4926,21 @@
           ]
         },
         {
-          "name": "high-backed chair",
+          "name": "chair",
           "adjectives": [
             "red",
-            "dark",
+            "high-backed",
             "leather"
           ]
         },
         {
-          "name": "round bulb-like object",
+          "name": "round white figure seen from behind",
           "adjectives": [
-            "large",
-            "cream-colored",
-            "pale yellow",
             "round",
-            "glowing"
-          ]
-        },
-        {
-          "name": "white cartoon arms/hands",
-          "adjectives": [
-            "white",
-            "thin",
-            "raised",
-            "holding up the cash"
+            "cream-colored",
+            "faceless",
+            "thin-armed",
+            "white-gloved"
           ]
         }
       ],
@@ -5007,17 +4949,17 @@
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "A courtroom with a wooden judge's bench and a red high-backed chair behind the judge",
+        "background": "courtroom with a wooden judge's bench, a red high-backed chair behind the judge, and a tan wall",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Bulb": "visible",
+        "man with a nametag reading \"Bulb\"": "hidden",
         "judge": "visible",
         "pocket": "hidden",
         "cash": "visible"
       },
-      "promptKey": "506ed77c388e227d"
+      "promptKey": "f823cdfe0f07fbf5"
     },
     "6": {
       "objects": [
@@ -5025,18 +4967,18 @@
           "name": "judge",
           "adjectives": [
             "elderly",
-            "gray-haired",
             "smiling",
+            "gray-haired",
             "bespectacled",
             "robed",
-            "cartoon"
+            "cheerful"
           ]
         },
         {
           "name": "gavel",
           "adjectives": [
-            "brown",
             "wooden",
+            "brown",
             "raised"
           ]
         },
@@ -5052,18 +4994,17 @@
           "name": "cash bills",
           "adjectives": [
             "green",
-            "stuffed",
-            "paper"
+            "stuffed in bag"
           ]
         },
         {
           "name": "light bulb character",
           "adjectives": [
             "walking",
-            "smiling",
             "cartoon",
+            "smiling",
             "yellow",
-            "animated"
+            "anthropomorphic"
           ]
         },
         {
@@ -5082,24 +5023,9 @@
           ]
         },
         {
-          "name": "judge's robe",
-          "adjectives": [
-            "black",
-            "loose"
-          ]
-        },
-        {
           "name": "white collar bands",
           "adjectives": [
-            "white",
-            "pleated"
-          ]
-        },
-        {
-          "name": "eyeglasses",
-          "adjectives": [
-            "round",
-            "thin-framed"
+            "white"
           ]
         }
       ],
@@ -5108,39 +5034,39 @@
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "plain white background with a courtroom bench and chair on the left",
+        "background": "plain white background with a courtroom bench and chair",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Bulb": "visible",
+        "man with a nametag reading \"Bulb\"": "hidden",
         "judge": "visible",
         "pocket": "hidden",
         "cash": "visible"
       },
-      "promptKey": "506ed77c388e227d"
+      "promptKey": "f823cdfe0f07fbf5"
     },
     "7": {
       "objects": [
         {
           "name": "judge",
           "adjectives": [
-            "smiling",
+            "elderly",
+            "smug",
             "gray-haired",
             "robed",
-            "content",
-            "corrupt-looking"
+            "content"
           ]
         },
         {
-          "name": "bulb-headed character",
+          "name": "light bulb character",
           "adjectives": [
+            "round",
+            "glowing",
+            "yellow",
             "bowing",
-            "cartoon",
-            "handcuffed",
-            "bound",
-            "sad",
-            "light-bulb-headed"
+            "restrained",
+            "sad"
           ]
         },
         {
@@ -5148,28 +5074,33 @@
           "adjectives": [
             "green",
             "full",
-            "stuffed with cash"
+            "bulging"
           ]
         },
         {
           "name": "cash bills",
           "adjectives": [
             "green",
-            "sticking out of the bag"
+            "paper"
           ]
         },
         {
-          "name": "judge's robe",
+          "name": "black judge's robe",
           "adjectives": [
             "black",
-            "long",
-            "with white collar bands"
+            "flowing"
+          ]
+        },
+        {
+          "name": "white collar bands",
+          "adjectives": [
+            "white"
           ]
         },
         {
           "name": "gavel",
           "adjectives": [
-            "brown",
+            "small",
             "wooden"
           ]
         },
@@ -5189,29 +5120,30 @@
           ]
         },
         {
-          "name": "handcuffs/chains",
+          "name": "restraints",
           "adjectives": [
             "gray",
-            "binding"
+            "wrapped",
+            "tight"
           ]
         }
       ],
-      "shot": "medium",
+      "shot": "wide",
       "angle": "eye level",
       "step": "after",
       "extras": {
         "floor": true,
-        "background": "plain white background with a courtroom bench, gavel and red chair",
+        "background": "A courtroom with a judge's bench, gavel and red chair against a plain white backdrop",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Bulb": "visible",
+        "man with a nametag reading \"Bulb\"": "hidden",
         "judge": "visible",
         "pocket": "hidden",
         "cash": "visible"
       },
-      "promptKey": "506ed77c388e227d"
+      "promptKey": "f823cdfe0f07fbf5"
     },
     "8": {
       "objects": [
@@ -5219,11 +5151,11 @@
           "name": "light bulb character",
           "adjectives": [
             "cartoon",
-            "anthropomorphic",
             "smiling",
             "pale yellow",
-            "thin-limbed",
-            "mischievous"
+            "animated",
+            "excited",
+            "thin-armed"
           ]
         },
         {
@@ -5234,14 +5166,14 @@
             "bespectacled",
             "smiling",
             "robed",
-            "cartoon"
+            "black-robed"
           ]
         },
         {
-          "name": "judge's robe",
+          "name": "judge's glasses",
           "adjectives": [
-            "black",
-            "loose"
+            "round",
+            "wire-rimmed"
           ]
         },
         {
@@ -5249,38 +5181,31 @@
           "adjectives": [
             "green",
             "open",
-            "overflowing"
+            "full"
           ]
         },
         {
-          "name": "banknotes",
+          "name": "cash bills",
           "adjectives": [
             "green",
             "flying",
-            "airborne",
-            "paper"
+            "tossed",
+            "multiple"
           ]
         },
         {
           "name": "gavel",
           "adjectives": [
-            "wooden",
-            "brown"
+            "brown",
+            "wooden"
           ]
         },
         {
           "name": "judge's bench",
           "adjectives": [
-            "wooden",
             "brown",
+            "wooden",
             "large"
-          ]
-        },
-        {
-          "name": "glasses",
-          "adjectives": [
-            "round",
-            "wire-rimmed"
           ]
         }
       ],
@@ -5294,12 +5219,12 @@
         "readableText": ""
       },
       "mustSee": {
-        "Bulb": "visible",
-        "judge": "partly cut",
+        "man with a nametag reading \"Bulb\"": "hidden",
+        "judge": "visible",
         "pocket": "hidden",
         "cash": "visible"
       },
-      "promptKey": "506ed77c388e227d"
+      "promptKey": "f823cdfe0f07fbf5"
     },
     "9": {
       "objects": [
@@ -5307,31 +5232,32 @@
           "name": "judge",
           "adjectives": [
             "elderly",
-            "smiling",
             "gray-haired",
             "bespectacled",
-            "cartoon"
+            "smiling",
+            "cartoon",
+            "wearing black robe"
           ]
         },
         {
-          "name": "judge's robe",
+          "name": "glasses",
+          "adjectives": [
+            "round",
+            "wire-rimmed"
+          ]
+        },
+        {
+          "name": "judicial robe",
           "adjectives": [
             "black",
             "loose"
           ]
         },
         {
-          "name": "white collar bands (jabot)",
+          "name": "white collar bands",
           "adjectives": [
             "white",
             "pleated"
-          ]
-        },
-        {
-          "name": "eyeglasses",
-          "adjectives": [
-            "round",
-            "thin-rimmed"
           ]
         },
         {
@@ -5339,24 +5265,15 @@
           "adjectives": [
             "green",
             "bulging",
-            "full"
+            "large"
           ]
         },
         {
-          "name": "dollar bills",
+          "name": "cash bills",
           "adjectives": [
             "green",
             "stacked",
             "crumpled"
-          ]
-        },
-        {
-          "name": "light bulb",
-          "adjectives": [
-            "smiling",
-            "cartoon",
-            "yellow",
-            "glowing"
           ]
         },
         {
@@ -5369,8 +5286,18 @@
         {
           "name": "bench",
           "adjectives": [
-            "brown",
-            "wooden"
+            "wooden",
+            "brown"
+          ]
+        },
+        {
+          "name": "lightbulb character",
+          "adjectives": [
+            "smiling",
+            "cartoon",
+            "glowing",
+            "yellow-white",
+            "partly cut off"
           ]
         }
       ],
@@ -5379,17 +5306,17 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "plain white background",
+        "background": "plain white",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "Bulb": "partly cut",
+        "man with a nametag reading \"Bulb\"": "hidden",
         "judge": "visible",
         "pocket": "hidden",
         "cash": "visible"
       },
-      "promptKey": "506ed77c388e227d"
+      "promptKey": "f823cdfe0f07fbf5"
     }
   },
   "cocked.grid.png": {
@@ -17287,51 +17214,248 @@
         {
           "name": "man in blue shirt",
           "adjectives": [
-            "frightened",
+            "scared",
             "wide-eyed",
             "messy-haired",
-            "being held",
-            "brown-haired"
+            "being carried",
+            "jeans-wearing"
           ]
         },
         {
-          "name": "mover with beard and green cap",
+          "name": "mover on left",
           "adjectives": [
             "bearded",
-            "stern",
-            "wearing green uniform",
-            "carrying a box"
+            "green-capped",
+            "serious",
+            "uniformed"
           ]
         },
         {
-          "name": "mover in green uniform",
+          "name": "mover on right",
           "adjectives": [
             "dark-haired",
-            "serious",
-            "gripping the man's arm",
-            "short-haired"
+            "stern",
+            "uniformed",
+            "strong"
           ]
         },
         {
-          "name": "cardboard box (carried)",
+          "name": "cardboard box",
           "adjectives": [
+            "large",
             "brown",
-            "large"
+            "carried"
           ]
         },
         {
-          "name": "cardboard box (on floor)",
+          "name": "small cardboard box",
           "adjectives": [
             "brown",
-            "closed"
+            "stacked",
+            "beside lamp"
           ]
         },
         {
           "name": "floor lamp",
           "adjectives": [
-            "small",
+            "cream-shaded",
+            "slim"
+          ]
+        },
+        {
+          "name": "door",
+          "adjectives": [
+            "white",
+            "open"
+          ]
+        },
+        {
+          "name": "sign",
+          "adjectives": [
+            "white",
+            "taped to door",
+            "printed"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "extras": {
+        "floor": true,
+        "background": "A beige apartment room with a floor lamp and a box on the left, and an open white door on the right leading to a hallway",
+        "morePeople": true,
+        "readableText": "RENT DUE"
+      },
+      "mustSee": {
+        "Victor": "visible",
+        "rent": "visible",
+        "movers": "visible"
+      },
+      "promptKey": "7faae03f2260b2a3"
+    },
+    "2": {
+      "objects": [
+        {
+          "name": "man in blue shirt",
+          "adjectives": [
+            "panicked",
+            "wide-eyed",
+            "carried",
+            "brown-haired",
+            "startled"
+          ]
+        },
+        {
+          "name": "bearded mover",
+          "adjectives": [
+            "bearded",
+            "burly",
+            "stern",
+            "green-uniformed",
+            "wearing cap"
+          ]
+        },
+        {
+          "name": "second mover",
+          "adjectives": [
+            "dark-skinned",
+            "stern",
+            "green-uniformed",
+            "wearing cap"
+          ]
+        },
+        {
+          "name": "green caps",
+          "adjectives": [
+            "olive green"
+          ]
+        },
+        {
+          "name": "green uniform shirts",
+          "adjectives": [
+            "olive green"
+          ]
+        },
+        {
+          "name": "blue shirt",
+          "adjectives": [
+            "blue",
+            "button-up"
+          ]
+        },
+        {
+          "name": "dark pants",
+          "adjectives": [
+            "navy",
+            "dark"
+          ]
+        },
+        {
+          "name": "shoes",
+          "adjectives": [
+            "dark",
+            "worn",
+            "soles visible"
+          ]
+        },
+        {
+          "name": "notice paper",
+          "adjectives": [
+            "white",
+            "taped",
+            "posted on door"
+          ]
+        },
+        {
+          "name": "door",
+          "adjectives": [
             "beige",
-            "lit"
+            "open"
+          ]
+        },
+        {
+          "name": "door knob",
+          "adjectives": [
+            "metal",
+            "silver"
+          ]
+        },
+        {
+          "name": "cardboard box",
+          "adjectives": [
+            "brown",
+            "partly visible"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "low angle",
+      "step": "during",
+      "extras": {
+        "floor": false,
+        "background": "A beige hallway with an open door and a door frame, with a notice taped to the door",
+        "morePeople": false,
+        "readableText": "RENT DUE"
+      },
+      "mustSee": {
+        "Victor": "hidden",
+        "rent": "visible",
+        "movers": "visible"
+      },
+      "promptKey": "7faae03f2260b2a3"
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "man in blue shirt",
+          "adjectives": [
+            "brown-haired",
+            "spiky-haired",
+            "seen from behind",
+            "blue"
+          ]
+        },
+        {
+          "name": "bearded mover",
+          "adjectives": [
+            "bearded",
+            "green-capped",
+            "green-shirted",
+            "left foreground",
+            "partly cut off"
+          ]
+        },
+        {
+          "name": "mover on right",
+          "adjectives": [
+            "green-capped",
+            "green-shirted",
+            "right foreground",
+            "partly cut off"
+          ]
+        },
+        {
+          "name": "mover in doorway",
+          "adjectives": [
+            "distant",
+            "green-capped",
+            "green-shirted",
+            "carrying a box"
+          ]
+        },
+        {
+          "name": "cardboard box",
+          "adjectives": [
+            "brown",
+            "carried"
+          ]
+        },
+        {
+          "name": "green cap",
+          "adjectives": [
+            "green",
+            "worn by movers"
           ]
         },
         {
@@ -17342,210 +17466,26 @@
           ]
         },
         {
-          "name": "rent due notice",
+          "name": "doorframe",
           "adjectives": [
-            "white",
-            "paper",
-            "posted on door"
-          ]
-        },
-        {
-          "name": "jeans",
-          "adjectives": [
-            "dark",
-            "blue"
-          ]
-        },
-        {
-          "name": "boots",
-          "adjectives": [
-            "brown",
-            "dark"
-          ]
-        }
-      ],
-      "shot": "medium",
-      "angle": "eye level",
-      "step": "during",
-      "extras": {
-        "floor": true,
-        "background": "A yellow-walled room interior with a lamp, a stacked box, and an open white door leading to a hallway",
-        "morePeople": false,
-        "readableText": "RENT DUE"
-      },
-      "mustSee": {
-        "Victor": "hidden",
-        "rent payment": "hidden",
-        "movers": "visible"
-      },
-      "promptKey": "b36090cf7bdb965d"
-    },
-    "2": {
-      "objects": [
-        {
-          "name": "man being carried",
-          "adjectives": [
-            "startled",
-            "wide-eyed",
-            "brown-haired",
-            "blue-shirted",
-            "airborne",
-            "dark-trousered"
-          ]
-        },
-        {
-          "name": "bearded man in green cap and shirt",
-          "adjectives": [
-            "bearded",
-            "stern",
-            "muscular",
-            "green-uniformed"
-          ]
-        },
-        {
-          "name": "man in green cap and shirt",
-          "adjectives": [
-            "serious",
-            "dark-skinned",
-            "green-uniformed",
-            "arms crossed"
-          ]
-        },
-        {
-          "name": "paper sign",
-          "adjectives": [
-            "white",
-            "taped",
-            "printed"
-          ]
-        },
-        {
-          "name": "door",
-          "adjectives": [
-            "cream-colored",
-            "open",
-            "panelled"
-          ]
-        },
-        {
-          "name": "door handle",
-          "adjectives": [
-            "metal",
-            "round",
-            "gray"
-          ]
-        },
-        {
-          "name": "cardboard box",
-          "adjectives": [
-            "brown",
-            "partly visible"
-          ]
-        },
-        {
-          "name": "shoes",
-          "adjectives": [
-            "dark",
-            "worn",
-            "thick-soled"
-          ]
-        }
-      ],
-      "shot": "medium",
-      "angle": "low angle",
-      "step": "during",
-      "extras": {
-        "floor": false,
-        "background": "a cream-colored hallway wall and door frame with a door bearing a paper sign",
-        "morePeople": false,
-        "readableText": "RENT DUE"
-      },
-      "mustSee": {
-        "Victor": "visible",
-        "rent payment": "hidden",
-        "movers": "partly cut"
-      },
-      "promptKey": "b36090cf7bdb965d"
-    },
-    "3": {
-      "objects": [
-        {
-          "name": "man in blue shirt",
-          "adjectives": [
-            "brown-haired",
-            "spiky-haired",
-            "seen from behind",
-            "blue-shirted"
-          ]
-        },
-        {
-          "name": "bearded man in green cap",
-          "adjectives": [
-            "bearded",
-            "green",
-            "cropped at left edge",
-            "in profile"
-          ]
-        },
-        {
-          "name": "man in green cap on right",
-          "adjectives": [
-            "green",
-            "cropped at right edge",
-            "dark-skinned"
-          ]
-        },
-        {
-          "name": "man carrying box",
-          "adjectives": [
-            "distant",
-            "green-uniformed",
-            "seen from behind"
-          ]
-        },
-        {
-          "name": "cardboard box",
-          "adjectives": [
-            "brown",
-            "large",
-            "carried"
-          ]
-        },
-        {
-          "name": "green cap",
-          "adjectives": [
-            "green",
-            "olive",
-            "baseball-style"
-          ]
-        },
-        {
-          "name": "doorway",
-          "adjectives": [
-            "open",
-            "bright"
-          ]
-        },
-        {
-          "name": "open door",
-          "adjectives": [
-            "white",
-            "right side"
+            "wooden",
+            "tan"
           ]
         },
         {
           "name": "door handle",
           "adjectives": [
             "small",
-            "metallic"
+            "gray"
           ]
         },
         {
-          "name": "paper sign",
+          "name": "sign",
           "adjectives": [
             "white",
-            "taped",
-            "rectangular"
+            "paper",
+            "taped to door",
+            "reads RENT DUE"
           ]
         },
         {
@@ -17553,7 +17493,14 @@
           "adjectives": [
             "green",
             "leafy",
-            "outdoor"
+            "outdoors"
+          ]
+        },
+        {
+          "name": "sky",
+          "adjectives": [
+            "blue",
+            "clear"
           ]
         },
         {
@@ -17569,25 +17516,26 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "Outdoors beyond an open doorway: green trees, blue sky, a fence and a man carrying a box away from the house",
+        "background": "An open doorway looking out to a sunny outdoor area with trees, a blue sky and a fence. A mover carries a box away outside.",
         "morePeople": true,
         "readableText": "RENT DUE"
       },
       "mustSee": {
         "Victor": "hidden",
-        "rent payment": "hidden",
+        "rent": "visible",
         "movers": "partly cut"
       },
-      "promptKey": "b36090cf7bdb965d"
+      "promptKey": "7faae03f2260b2a3"
     },
     "4": {
       "objects": [
         {
-          "name": "man in blue shirt",
+          "name": "man",
           "adjectives": [
             "frightened",
             "wide-eyed",
             "brown-haired",
+            "blue-shirted",
             "being carried"
           ]
         },
@@ -17595,9 +17543,9 @@
           "name": "mover on left",
           "adjectives": [
             "green-uniformed",
-            "capped",
-            "bending",
-            "carrying a box"
+            "hunched",
+            "carrying a box",
+            "partly cut off"
           ]
         },
         {
@@ -17609,14 +17557,14 @@
           ]
         },
         {
-          "name": "cardboard box held by left mover",
+          "name": "cardboard box carried by left mover",
           "adjectives": [
             "brown",
             "large"
           ]
         },
         {
-          "name": "cardboard box at bottom right",
+          "name": "cardboard box on lower right",
           "adjectives": [
             "brown",
             "partly cut off"
@@ -17632,37 +17580,32 @@
         {
           "name": "table lamp",
           "adjectives": [
-            "cream-shaded",
+            "white-shaded",
+            "cream",
             "small"
           ]
         },
         {
-          "name": "open door",
+          "name": "door",
           "adjectives": [
-            "white",
             "open",
+            "white",
             "has a sign"
           ]
         },
         {
-          "name": "sign on door",
+          "name": "sign",
           "adjectives": [
             "white",
-            "paper"
+            "paper",
+            "reads RENT DUE"
           ]
         },
         {
-          "name": "hallway",
+          "name": "doorway and hallway",
           "adjectives": [
             "narrow",
-            "gray-floored"
-          ]
-        },
-        {
-          "name": "dark pants and shoes",
-          "adjectives": [
-            "dark",
-            "worn by the man"
+            "light-colored"
           ]
         }
       ],
@@ -17671,27 +17614,27 @@
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "A narrow hallway with a gray floor, beige walls and an open white door at the end, seen from above.",
-        "morePeople": true,
+        "background": "A narrow hallway with a gray floor, cream walls and an open white door. A doorway at the top shows a gray space beyond it.",
+        "morePeople": false,
         "readableText": "RENT DUE"
       },
       "mustSee": {
-        "Victor": "hidden",
-        "rent payment": "hidden",
-        "movers": "visible"
+        "Victor": "visible",
+        "rent": "visible",
+        "movers": "partly cut"
       },
-      "promptKey": "b36090cf7bdb965d"
+      "promptKey": "7faae03f2260b2a3"
     },
     "5": {
       "objects": [
         {
-          "name": "frightened man",
+          "name": "man in blue shirt",
           "adjectives": [
-            "brown-haired",
+            "frightened",
             "wide-eyed",
-            "anxious",
-            "blue-shirted",
-            "open-mouthed"
+            "messy-haired",
+            "brown-haired",
+            "worried"
           ]
         },
         {
@@ -17699,17 +17642,17 @@
           "adjectives": [
             "bearded",
             "stern",
-            "partly cut",
-            "olive-uniformed"
+            "partly cut off",
+            "green-uniformed"
           ]
         },
         {
           "name": "man in green helmet",
           "adjectives": [
             "scowling",
-            "helmeted",
-            "olive-uniformed",
-            "partly cut"
+            "dark-skinned",
+            "green-uniformed",
+            "partly cut off"
           ]
         },
         {
@@ -17720,28 +17663,7 @@
           ]
         },
         {
-          "name": "blue polo shirt",
-          "adjectives": [
-            "blue",
-            "collared"
-          ]
-        },
-        {
-          "name": "green cap",
-          "adjectives": [
-            "olive",
-            "military-style"
-          ]
-        },
-        {
-          "name": "green helmet",
-          "adjectives": [
-            "olive",
-            "dark"
-          ]
-        },
-        {
-          "name": "RENT DUE sign",
+          "name": "sign",
           "adjectives": [
             "white",
             "paper",
@@ -17752,14 +17674,15 @@
           "name": "cardboard box",
           "adjectives": [
             "brown",
-            "partly hidden"
+            "small"
           ]
         },
         {
-          "name": "door or wall",
+          "name": "blue polo shirt",
           "adjectives": [
-            "pale",
-            "beige"
+            "blue",
+            "collared",
+            "buttoned"
           ]
         }
       ],
@@ -17768,16 +17691,16 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "A pale wall or doorway with a 'RENT DUE' sign and a cardboard box, behind two men in olive uniforms",
+        "background": "A pale wall with a door or frame, a 'RENT DUE' sign and a cardboard box",
         "morePeople": true,
         "readableText": "RENT DUE"
       },
       "mustSee": {
         "Victor": "hidden",
-        "rent payment": "hidden",
-        "movers": "hidden"
+        "rent": "visible",
+        "movers": "partly cut"
       },
-      "promptKey": "b36090cf7bdb965d"
+      "promptKey": "7faae03f2260b2a3"
     },
     "6": {
       "objects": [
@@ -17785,44 +17708,41 @@
           "name": "mover in foreground (seen from behind)",
           "adjectives": [
             "large",
-            "green-shirted",
-            "cap-wearing",
-            "arms raised"
+            "stocky",
+            "wearing olive green cap and shirt",
+            "pressing a sign onto the wall"
           ]
         },
         {
-          "name": "frightened man",
+          "name": "man in blue shirt",
           "adjectives": [
-            "blue-shirted",
-            "spiky-haired",
+            "frightened",
             "wide-eyed",
-            "scared",
-            "being held"
+            "messy brown hair",
+            "being held from behind"
           ]
         },
         {
           "name": "bearded mover",
           "adjectives": [
-            "green-shirted",
-            "cap-wearing",
             "bearded",
-            "holding the man"
+            "wearing olive green cap and uniform",
+            "partly hidden behind the others"
           ]
         },
         {
-          "name": "RENT DUE notice",
+          "name": "paper sign",
           "adjectives": [
             "white",
-            "paper",
-            "taped to wall",
-            "handwritten-style"
+            "taped to the wall",
+            "reads RENT DUE"
           ]
         },
         {
-          "name": "tape",
+          "name": "piece of tape",
           "adjectives": [
-            "beige",
-            "small"
+            "tan",
+            "holding the sign up"
           ]
         },
         {
@@ -17830,15 +17750,21 @@
           "adjectives": [
             "brown",
             "stacked",
-            "partly hidden"
+            "partly visible"
+          ]
+        },
+        {
+          "name": "doorway",
+          "adjectives": [
+            "open",
+            "bright"
           ]
         },
         {
           "name": "window",
           "adjectives": [
-            "open",
-            "bright",
-            "framed"
+            "glass",
+            "showing outdoors"
           ]
         },
         {
@@ -17852,7 +17778,7 @@
           "name": "trees",
           "adjectives": [
             "green",
-            "distant"
+            "seen outside through the window"
           ]
         }
       ],
@@ -17861,55 +17787,57 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "A doorway or window looking outside onto green trees, with cardboard boxes on the left and a beige wall on the right",
-        "morePeople": true,
+        "background": "An interior wall and doorway, with cardboard boxes inside and trees visible outside through the window",
+        "morePeople": false,
         "readableText": "RENT DUE"
       },
       "mustSee": {
         "Victor": "hidden",
-        "rent payment": "hidden",
-        "movers": "visible"
+        "rent": "visible",
+        "movers": "partly cut"
       },
-      "promptKey": "b36090cf7bdb965d"
+      "promptKey": "7faae03f2260b2a3"
     },
     "7": {
       "objects": [
         {
-          "name": "man in blue shirt",
+          "name": "man in blue shirt (being escorted)",
           "adjectives": [
             "sad",
             "dejected",
             "messy-haired",
-            "being escorted"
+            "disheveled",
+            "slumped"
           ]
         },
         {
-          "name": "mover with beard",
+          "name": "mover on left",
           "adjectives": [
             "bearded",
+            "stern",
             "green-uniformed",
-            "cap-wearing",
             "carrying a box"
           ]
         },
         {
-          "name": "second mover",
+          "name": "mover on right",
           "adjectives": [
+            "serious",
             "green-uniformed",
-            "cap-wearing",
-            "stern",
-            "holding the man's arm"
+            "heavyset",
+            "gripping the man's arm"
           ]
         },
         {
           "name": "cardboard box",
           "adjectives": [
             "brown",
-            "large"
+            "large",
+            "taped"
           ]
         },
         {
-          "name": "open door",
+          "name": "door",
           "adjectives": [
             "white",
             "open"
@@ -17919,21 +17847,22 @@
           "name": "sign reading RENT DUE",
           "adjectives": [
             "white",
-            "posted on door"
+            "taped to door"
           ]
         },
         {
-          "name": "steps",
+          "name": "stairs",
           "adjectives": [
+            "gray",
             "concrete",
-            "gray"
+            "descending"
           ]
         },
         {
-          "name": "metal railings",
+          "name": "railing",
           "adjectives": [
             "black",
-            "iron"
+            "metal"
           ]
         },
         {
@@ -17947,14 +17876,28 @@
           "name": "building",
           "adjectives": [
             "beige",
-            "brick-trimmed"
+            "stucco"
           ]
         },
         {
           "name": "window",
           "adjectives": [
-            "partly visible",
-            "framed"
+            "small",
+            "partly visible"
+          ]
+        },
+        {
+          "name": "green caps",
+          "adjectives": [
+            "olive",
+            "matching"
+          ]
+        },
+        {
+          "name": "blue jeans",
+          "adjectives": [
+            "dark",
+            "denim"
           ]
         }
       ],
@@ -17962,17 +17905,17 @@
       "angle": "eye level",
       "step": "during",
       "extras": {
-        "floor": true,
-        "background": "Exterior of a beige house entrance with an open door, porch steps, black railings and green bushes",
+        "floor": false,
+        "background": "Beige apartment building entrance with an open white door, concrete steps, black metal railings, green bushes and a window",
         "morePeople": false,
         "readableText": "RENT DUE"
       },
       "mustSee": {
         "Victor": "hidden",
-        "rent payment": "hidden",
+        "rent": "visible",
         "movers": "visible"
       },
-      "promptKey": "b36090cf7bdb965d"
+      "promptKey": "7faae03f2260b2a3"
     },
     "8": {
       "objects": [
@@ -17982,25 +17925,41 @@
             "sad",
             "dejected",
             "brown-haired",
-            "worried",
-            "being escorted"
+            "being led away",
+            "looking down"
           ]
         },
         {
-          "name": "bearded man in green uniform",
+          "name": "mover in green cap and shirt",
           "adjectives": [
-            "large",
             "bearded",
-            "wearing cap",
-            "gripping the man's arm"
+            "stocky",
+            "gripping the man's arm",
+            "green"
           ]
         },
         {
-          "name": "man in green uniform",
+          "name": "second mover in green cap and shirt",
           "adjectives": [
             "dark-skinned",
-            "wearing cap",
-            "partly cut off"
+            "partly cut off",
+            "green"
+          ]
+        },
+        {
+          "name": "cardboard box",
+          "adjectives": [
+            "brown",
+            "closed",
+            "large"
+          ]
+        },
+        {
+          "name": "floor lamp",
+          "adjectives": [
+            "tall",
+            "lit",
+            "white-shaded"
           ]
         },
         {
@@ -18011,27 +17970,10 @@
           ]
         },
         {
-          "name": "sign reading RENT DUE",
+          "name": "sign",
           "adjectives": [
             "white",
-            "paper",
             "taped to door"
-          ]
-        },
-        {
-          "name": "cardboard box",
-          "adjectives": [
-            "brown",
-            "large",
-            "empty room"
-          ]
-        },
-        {
-          "name": "floor lamp",
-          "adjectives": [
-            "tall",
-            "lit",
-            "white-shaded"
           ]
         },
         {
@@ -18045,7 +17987,7 @@
           "name": "walls",
           "adjectives": [
             "yellow",
-            "beige"
+            "plain"
           ]
         }
       ],
@@ -18054,16 +17996,16 @@
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "A bare yellow-walled room with a lamp, a cardboard box and an open door with a RENT DUE sign.",
+        "background": "A bare, mostly empty room with yellow walls, a gray floor, a floor lamp, a cardboard box and an open door with a sign on it",
         "morePeople": true,
         "readableText": "RENT DUE"
       },
       "mustSee": {
-        "Victor": "visible",
-        "rent payment": "hidden",
+        "Victor": "hidden",
+        "rent": "visible",
         "movers": "partly cut"
       },
-      "promptKey": "b36090cf7bdb965d"
+      "promptKey": "7faae03f2260b2a3"
     },
     "9": {
       "objects": [
@@ -18072,121 +18014,106 @@
           "adjectives": [
             "worried",
             "brown-haired",
-            "wide-eyed",
-            "held by the arms"
+            "distressed",
+            "being held"
           ]
         },
         {
           "name": "bearded mover",
           "adjectives": [
+            "green-capped",
             "bearded",
-            "stocky",
-            "green-capped",
-            "green-uniformed",
-            "carrying a box"
+            "carrying a box",
+            "uniformed"
           ]
         },
         {
-          "name": "second mover holding the man",
+          "name": "second mover",
           "adjectives": [
-            "dark-skinned",
+            "dark-haired",
             "stern",
-            "green-uniformed",
-            "short-haired"
+            "uniformed",
+            "holding the man's arm"
           ]
         },
         {
-          "name": "mover at left",
+          "name": "third mover",
           "adjectives": [
             "green-capped",
-            "green-uniformed",
-            "bent over",
-            "pushing a chair"
+            "bending over",
+            "uniformed"
           ]
         },
         {
-          "name": "cardboard box carried by the bearded mover",
-          "adjectives": [
-            "brown",
-            "large",
-            "cardboard"
-          ]
-        },
-        {
-          "name": "cardboard boxes on the sidewalk",
-          "adjectives": [
-            "stacked",
-            "brown",
-            "cardboard"
-          ]
-        },
-        {
-          "name": "armchair",
+          "name": "brown armchair",
           "adjectives": [
             "brown",
             "upholstered",
-            "cushioned"
+            "being moved"
+          ]
+        },
+        {
+          "name": "cardboard box",
+          "adjectives": [
+            "brown",
+            "large",
+            "carried"
+          ]
+        },
+        {
+          "name": "cardboard boxes",
+          "adjectives": [
+            "stacked",
+            "brown"
           ]
         },
         {
           "name": "moving truck",
           "adjectives": [
             "open",
-            "large",
-            "filled with boxes"
-          ]
-        },
-        {
-          "name": "boxes inside the truck",
-          "adjectives": [
-            "stacked",
-            "brown",
-            "cardboard"
+            "grey"
           ]
         },
         {
           "name": "tree",
           "adjectives": [
             "green",
-            "leafy",
-            "tall"
+            "leafy"
           ]
         },
         {
           "name": "building",
           "adjectives": [
             "tan",
-            "multi-story"
+            "brick"
           ]
         },
         {
-          "name": "brick building",
+          "name": "door",
           "adjectives": [
-            "pink",
-            "distant"
+            "open",
+            "brown"
           ]
         },
         {
-          "name": "open door",
-          "adjectives": [
-            "dark",
-            "wooden",
-            "open"
-          ]
-        },
-        {
-          "name": "rent due sign",
+          "name": "sign",
           "adjectives": [
             "white",
-            "posted on the door",
-            "rectangular"
+            "posted on the door"
+          ]
+        },
+        {
+          "name": "sidewalk",
+          "adjectives": [
+            "grey",
+            "paved"
           ]
         },
         {
           "name": "steps",
           "adjectives": [
             "concrete",
-            "light grey"
+            "grey"
           ]
         },
         {
@@ -18195,28 +18122,6 @@
             "black",
             "metal"
           ]
-        },
-        {
-          "name": "sidewalk",
-          "adjectives": [
-            "grey",
-            "concrete"
-          ]
-        },
-        {
-          "name": "curb",
-          "adjectives": [
-            "grey",
-            "concrete"
-          ]
-        },
-        {
-          "name": "bush",
-          "adjectives": [
-            "green",
-            "leafy",
-            "small"
-          ]
         }
       ],
       "shot": "medium",
@@ -18224,16 +18129,16 @@
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "A city street in front of a residential building, with a moving truck loaded with boxes on the left, a tree, a pink brick building in the distance, and a doorway with steps on the right",
-        "morePeople": true,
+        "background": "A city street with a moving truck full of boxes, a tree, and an apartment building with a door and steps",
+        "morePeople": false,
         "readableText": "RENT DUE"
       },
       "mustSee": {
         "Victor": "hidden",
-        "rent payment": "hidden",
+        "rent": "visible",
         "movers": "visible"
       },
-      "promptKey": "b36090cf7bdb965d"
+      "promptKey": "7faae03f2260b2a3"
     }
   },
   "exotic.grid.png": {
@@ -37203,78 +37108,61 @@
     "1": {
       "objects": [
         {
-          "name": "llama (cream-colored)",
+          "name": "llama (left)",
           "adjectives": [
             "cream",
             "fluffy",
-            "sleepy",
-            "content",
+            "eyes closed",
             "smiling",
-            "eyes closed"
+            "sitting",
+            "wearing pajamas"
           ]
         },
         {
-          "name": "llama (brown)",
+          "name": "llama (right)",
           "adjectives": [
             "brown",
-            "fluffy",
-            "sleepy",
-            "content",
+            "smaller",
+            "eyes closed",
             "smiling",
-            "eyes closed"
+            "sitting",
+            "wearing pajamas"
           ]
         },
         {
-          "name": "blue and white striped pajamas (on cream llama)",
+          "name": "blue and white striped pajamas",
           "adjectives": [
-            "blue",
-            "white",
             "striped",
-            "button-up"
-          ]
-        },
-        {
-          "name": "blue and white striped pajamas (on brown llama)",
-          "adjectives": [
-            "blue",
-            "white",
-            "striped",
-            "button-up"
+            "buttoned",
+            "matching"
           ]
         },
         {
           "name": "bed",
           "adjectives": [
-            "wooden headboard",
-            "cozy"
+            "pink blanket",
+            "wooden headboard"
           ]
         },
         {
-          "name": "pink blanket",
-          "adjectives": [
-            "pink",
-            "rumpled"
-          ]
-        },
-        {
-          "name": "pillow (cream)",
+          "name": "pillow (left)",
           "adjectives": [
             "cream",
             "soft"
           ]
         },
         {
-          "name": "pillow (green)",
+          "name": "pillow (right)",
           "adjectives": [
             "green",
-            "soft",
-            "partly hidden"
+            "soft"
           ]
         },
         {
           "name": "window",
           "adjectives": [
             "arched",
+            "night-time",
             "dark blue"
           ]
         },
@@ -37282,7 +37170,7 @@
           "name": "crescent moon",
           "adjectives": [
             "yellow",
-            "crescent"
+            "bright"
           ]
         }
       ],
@@ -37291,28 +37179,27 @@
       "step": "before",
       "extras": {
         "floor": false,
-        "background": "plain white background with a night-sky window above the bed",
+        "background": "plain white background with a bed against a wall and an arched night window showing a crescent moon",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
         "llamas": "partly cut",
-        "matching pajamas": "partly cut"
+        "matching pajamas": "hidden"
       },
-      "promptKey": "42563b4905f61e71"
+      "promptKey": "c3d48d4aba24f064"
     },
     "2": {
       "objects": [
         {
           "name": "llama",
           "adjectives": [
+            "cartoon",
             "fluffy",
             "cream-colored",
-            "tan",
-            "sleepy",
-            "content",
             "smiling",
-            "cartoon"
+            "sleepy",
+            "content"
           ]
         },
         {
@@ -37323,11 +37210,19 @@
             "striped",
             "collared"
           ]
+        },
+        {
+          "name": "ears",
+          "adjectives": [
+            "tall",
+            "pointed",
+            "pink-inner"
+          ]
         }
       ],
       "shot": "close-up",
       "angle": "eye level",
-      "step": "after",
+      "step": "during",
       "extras": {
         "floor": false,
         "background": "plain white",
@@ -37335,48 +37230,46 @@
         "readableText": ""
       },
       "mustSee": {
-        "llamas": "visible",
-        "matching pajamas": "partly cut"
+        "llamas": "partly cut",
+        "matching pajamas": "hidden"
       },
-      "promptKey": "42563b4905f61e71"
+      "promptKey": "c3d48d4aba24f064"
     },
     "3": {
       "objects": [
         {
-          "name": "llama (left)",
+          "name": "llama",
           "adjectives": [
             "cream",
             "fluffy",
             "sleeping",
-            "peaceful",
-            "smiling"
+            "smiling",
+            "peaceful"
           ]
         },
         {
-          "name": "llama (right)",
+          "name": "llama",
           "adjectives": [
             "brown",
             "sleeping",
-            "peaceful",
-            "smiling"
+            "smiling",
+            "peaceful"
           ]
         },
         {
-          "name": "pajamas (left, blue and white striped)",
+          "name": "pajamas",
           "adjectives": [
+            "blue and white",
             "striped",
-            "buttoned",
-            "blue",
-            "white"
+            "button-up"
           ]
         },
         {
-          "name": "pajamas (right, blue and white striped)",
+          "name": "pajamas",
           "adjectives": [
+            "blue and white",
             "striped",
-            "buttoned",
-            "blue",
-            "white"
+            "button-up"
           ]
         },
         {
@@ -37391,15 +37284,14 @@
           "name": "bed",
           "adjectives": [
             "pink",
-            "red-toned",
-            "cozy"
+            "rumpled"
           ]
         },
         {
-          "name": "wooden headboard",
+          "name": "headboard",
           "adjectives": [
-            "brown",
-            "wooden"
+            "wooden",
+            "brown"
           ]
         }
       ],
@@ -37408,70 +37300,61 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "A pink bedspread and a pillow on a bed, with a bit of wooden headboard at the top right",
+        "background": "A pink bed with a cream pillow and a wooden headboard at the top edge. Nothing else is visible.",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
         "llamas": "visible",
-        "matching pajamas": "visible"
+        "matching pajamas": "hidden"
       },
-      "promptKey": "42563b4905f61e71"
+      "promptKey": "c3d48d4aba24f064"
     },
     "4": {
       "objects": [
         {
           "name": "llama (front, yawning)",
           "adjectives": [
-            "cream",
+            "cream-colored",
             "fluffy",
             "sleepy",
             "yawning",
-            "standing"
+            "standing",
+            "wearing blue and white striped pajamas"
           ]
         },
         {
           "name": "llama (back, holding pillow)",
           "adjectives": [
             "brown",
-            "fluffy",
+            "smaller",
             "content",
             "smiling",
-            "sleepy"
-          ]
-        },
-        {
-          "name": "striped pajamas (front llama)",
-          "adjectives": [
-            "blue",
-            "white",
-            "striped",
-            "buttoned"
-          ]
-        },
-        {
-          "name": "striped pajamas (back llama)",
-          "adjectives": [
-            "blue",
-            "white",
-            "striped",
-            "matching"
+            "wearing blue and white striped pajamas"
           ]
         },
         {
           "name": "pillow",
           "adjectives": [
             "white",
-            "plump",
-            "soft"
+            "fluffy",
+            "large"
+          ]
+        },
+        {
+          "name": "pajamas",
+          "adjectives": [
+            "blue and white",
+            "striped",
+            "button-up"
           ]
         },
         {
           "name": "bed",
           "adjectives": [
-            "wooden",
             "partly visible",
-            "pink-blanketed"
+            "pink-blanketed",
+            "wooden-framed"
           ]
         },
         {
@@ -37485,54 +37368,54 @@
       ],
       "shot": "wide",
       "angle": "eye level",
-      "step": "during",
+      "step": "before",
       "extras": {
         "floor": true,
-        "background": "plain white background with a bedroom floor, a bed at the left edge and a rug on the floor",
+        "background": "plain white background with a bedroom floor, a bed at the left edge",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
         "llamas": "visible",
-        "matching pajamas": "visible"
+        "matching pajamas": "hidden"
       },
-      "promptKey": "42563b4905f61e71"
+      "promptKey": "c3d48d4aba24f064"
     },
     "5": {
       "objects": [
         {
-          "name": "llama (left)",
+          "name": "llama",
           "adjectives": [
             "cream",
             "fluffy",
             "sleepy",
             "eyes closed",
-            "cartoon"
+            "wearing pajamas"
           ]
         },
         {
-          "name": "llama (right)",
+          "name": "llama",
           "adjectives": [
             "brown",
             "sleepy",
             "eyes closed",
-            "cartoon"
+            "wearing pajamas"
           ]
         },
         {
-          "name": "pajamas (left llama)",
+          "name": "pajamas",
           "adjectives": [
             "blue and white",
             "striped",
-            "button-up"
+            "buttoned"
           ]
         },
         {
-          "name": "pajamas (right llama)",
+          "name": "pajamas",
           "adjectives": [
             "blue and white",
             "striped",
-            "button-up"
+            "buttoned"
           ]
         },
         {
@@ -37544,23 +37427,23 @@
           ]
         },
         {
-          "name": "bed frame",
+          "name": "pillow",
+          "adjectives": [
+            "white",
+            "soft"
+          ]
+        },
+        {
+          "name": "headboard",
           "adjectives": [
             "wooden",
             "brown"
           ]
         },
         {
-          "name": "pillow",
-          "adjectives": [
-            "white",
-            "partly visible"
-          ]
-        },
-        {
           "name": "zzz letters",
           "adjectives": [
-            "dark",
+            "black",
             "floating"
           ]
         }
@@ -37570,46 +37453,40 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "plain off-white background",
+        "background": "plain white",
         "morePeople": false,
-        "readableText": "Z z z"
+        "readableText": "Z z Z"
       },
       "mustSee": {
         "llamas": "visible",
-        "matching pajamas": "visible"
+        "matching pajamas": "hidden"
       },
-      "promptKey": "42563b4905f61e71"
+      "promptKey": "c3d48d4aba24f064"
     },
     "6": {
       "objects": [
         {
-          "name": "llama (left, seen from behind)",
+          "name": "llama",
           "adjectives": [
             "cream",
             "fluffy",
-            "tall-eared",
-            "partly cut off by the edge"
+            "facing away",
+            "wearing striped pajamas",
+            "partly cut"
           ]
         },
         {
-          "name": "llama (right, facing viewer)",
+          "name": "llama",
           "adjectives": [
             "brown",
             "content",
-            "sleepy",
+            "eyes closed",
             "smiling",
-            "eyes closed"
+            "wearing striped pajamas"
           ]
         },
         {
-          "name": "pajamas (left llama)",
-          "adjectives": [
-            "blue and white",
-            "striped"
-          ]
-        },
-        {
-          "name": "pajamas (right llama)",
+          "name": "pajamas",
           "adjectives": [
             "blue and white",
             "striped",
@@ -37619,172 +37496,16 @@
         {
           "name": "bed or headboard",
           "adjectives": [
-            "reddish-brown",
+            "brown",
             "wooden",
             "partly hidden"
           ]
-        }
-      ],
-      "shot": "medium",
-      "angle": "eye level",
-      "step": "after",
-      "extras": {
-        "floor": false,
-        "background": "plain white background with a small reddish-brown bed or headboard edge at the lower right",
-        "morePeople": false,
-        "readableText": ""
-      },
-      "mustSee": {
-        "llamas": "partly cut",
-        "matching pajamas": "partly cut"
-      },
-      "promptKey": "42563b4905f61e71"
-    },
-    "7": {
-      "objects": [
-        {
-          "name": "cream llama",
-          "adjectives": [
-            "sleepy",
-            "fluffy",
-            "cream-colored",
-            "content",
-            "smiling",
-            "eyes closed"
-          ]
         },
         {
-          "name": "brown llama",
-          "adjectives": [
-            "sleepy",
-            "fluffy",
-            "brown",
-            "content",
-            "smiling",
-            "eyes closed"
-          ]
-        },
-        {
-          "name": "blue and white striped pajamas (cream llama)",
-          "adjectives": [
-            "striped",
-            "blue",
-            "white",
-            "buttoned"
-          ]
-        },
-        {
-          "name": "blue and white striped pajamas (brown llama)",
-          "adjectives": [
-            "striped",
-            "blue",
-            "white",
-            "buttoned"
-          ]
-        },
-        {
-          "name": "bed or couch",
-          "adjectives": [
-            "wooden-framed",
-            "cushioned"
-          ]
-        },
-        {
-          "name": "pillow",
-          "adjectives": [
-            "cream",
-            "soft"
-          ]
-        }
-      ],
-      "shot": "medium",
-      "angle": "eye level",
-      "step": "after",
-      "extras": {
-        "floor": false,
-        "background": "plain white wall behind a bed or couch with a wooden headboard and a cream pillow",
-        "morePeople": false,
-        "readableText": ""
-      },
-      "mustSee": {
-        "llamas": "partly cut",
-        "matching pajamas": "partly cut"
-      },
-      "promptKey": "42563b4905f61e71"
-    },
-    "8": {
-      "objects": [
-        {
-          "name": "llama (left)",
-          "adjectives": [
-            "cream",
-            "fluffy",
-            "sleeping",
-            "smiling",
-            "wearing pajamas"
-          ]
-        },
-        {
-          "name": "llama (right)",
-          "adjectives": [
-            "brown",
-            "sleeping",
-            "smiling",
-            "wearing pajamas"
-          ]
-        },
-        {
-          "name": "pajamas (left)",
-          "adjectives": [
-            "blue and white",
-            "striped",
-            "buttoned"
-          ]
-        },
-        {
-          "name": "pajamas (right)",
-          "adjectives": [
-            "blue and white",
-            "striped",
-            "buttoned"
-          ]
-        },
-        {
-          "name": "bed",
-          "adjectives": [
-            "wooden",
-            "double"
-          ]
-        },
-        {
-          "name": "pillows",
-          "adjectives": [
-            "cream",
-            "large",
-            "soft"
-          ]
-        },
-        {
-          "name": "blanket",
+          "name": "pillow or blanket",
           "adjectives": [
             "pink",
-            "dusty rose",
-            "wavy"
-          ]
-        },
-        {
-          "name": "window",
-          "adjectives": [
-            "arched",
-            "small",
-            "night-time"
-          ]
-        },
-        {
-          "name": "crescent moon",
-          "adjectives": [
-            "yellow",
-            "glowing"
+            "partly visible"
           ]
         }
       ],
@@ -37793,15 +37514,166 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "plain white wall with a small arched window showing a night sky and crescent moon",
+        "background": "plain white",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "llamas": "partly cut",
+        "matching pajamas": "hidden"
+      },
+      "promptKey": "c3d48d4aba24f064"
+    },
+    "7": {
+      "objects": [
+        {
+          "name": "llama (light cream)",
+          "adjectives": [
+            "cream",
+            "fluffy",
+            "sleepy",
+            "cuddly",
+            "cartoon"
+          ]
+        },
+        {
+          "name": "llama (brown)",
+          "adjectives": [
+            "brown",
+            "fluffy",
+            "sleepy",
+            "content",
+            "cartoon"
+          ]
+        },
+        {
+          "name": "pajamas (left)",
+          "adjectives": [
+            "blue",
+            "white",
+            "striped",
+            "buttoned"
+          ]
+        },
+        {
+          "name": "pajamas (right)",
+          "adjectives": [
+            "blue",
+            "white",
+            "striped",
+            "buttoned"
+          ]
+        },
+        {
+          "name": "couch or bed",
+          "adjectives": [
+            "tan",
+            "partly visible"
+          ]
+        },
+        {
+          "name": "pillow or cushion",
+          "adjectives": [
+            "cream",
+            "soft"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "extras": {
+        "floor": false,
+        "background": "plain white, with the back of a brown and cream couch or bed on the left and right edges",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "llamas": "partly cut",
+        "matching pajamas": "partly cut"
+      },
+      "promptKey": "c3d48d4aba24f064"
+    },
+    "8": {
+      "objects": [
+        {
+          "name": "llama",
+          "adjectives": [
+            "cream",
+            "fluffy",
+            "sleeping",
+            "smiling",
+            "content"
+          ]
+        },
+        {
+          "name": "llama",
+          "adjectives": [
+            "brown",
+            "sleeping",
+            "smiling",
+            "content"
+          ]
+        },
+        {
+          "name": "striped pajamas",
+          "adjectives": [
+            "blue",
+            "white",
+            "striped"
+          ]
+        },
+        {
+          "name": "bed",
+          "adjectives": [
+            "wooden",
+            "cozy"
+          ]
+        },
+        {
+          "name": "pillows",
+          "adjectives": [
+            "cream",
+            "soft"
+          ]
+        },
+        {
+          "name": "blanket",
+          "adjectives": [
+            "pink",
+            "rose",
+            "rumpled"
+          ]
+        },
+        {
+          "name": "window",
+          "adjectives": [
+            "arched",
+            "small"
+          ]
+        },
+        {
+          "name": "crescent moon",
+          "adjectives": [
+            "yellow",
+            "night"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "extras": {
+        "floor": false,
+        "background": "A plain white background with a small arched window showing a night sky and crescent moon above a wooden headboard",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
         "llamas": "visible",
-        "matching pajamas": "visible"
+        "matching pajamas": "hidden"
       },
-      "promptKey": "42563b4905f61e71"
+      "promptKey": "c3d48d4aba24f064"
     },
     "9": {
       "objects": [
@@ -37811,8 +37683,8 @@
             "cream",
             "fluffy",
             "sleeping",
-            "peaceful",
-            "lying down"
+            "lying down",
+            "pajama-clad"
           ]
         },
         {
@@ -37820,41 +37692,31 @@
           "adjectives": [
             "brown",
             "sleeping",
-            "peaceful",
             "sitting up",
-            "eyes closed"
+            "pajama-clad"
           ]
         },
         {
-          "name": "striped pajamas (left llama)",
+          "name": "blue and white striped pajamas",
           "adjectives": [
-            "blue and white",
             "striped",
-            "button-up"
-          ]
-        },
-        {
-          "name": "striped pajamas (right llama)",
-          "adjectives": [
-            "blue and white",
-            "striped",
-            "button-up"
+            "buttoned",
+            "matching"
           ]
         },
         {
           "name": "bed",
           "adjectives": [
-            "large",
-            "pink-red",
-            "wooden-framed"
+            "pink",
+            "wooden-headboard"
           ]
         },
         {
           "name": "pillows",
           "adjectives": [
+            "white",
             "cream",
-            "soft",
-            "two"
+            "soft"
           ]
         },
         {
@@ -37862,7 +37724,7 @@
           "adjectives": [
             "arched",
             "small",
-            "night-time"
+            "night"
           ]
         },
         {
@@ -37878,15 +37740,15 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "plain white wall with a small arched window showing a night sky and crescent moon, plus the wooden headboard of the bed",
+        "background": "plain white wall with a headboard and an arched night window showing a crescent moon",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
         "llamas": "visible",
-        "matching pajamas": "visible"
+        "matching pajamas": "hidden"
       },
-      "promptKey": "42563b4905f61e71"
+      "promptKey": "c3d48d4aba24f064"
     }
   },
   "pale.grid.png": {
@@ -59693,12 +59555,10 @@
         {
           "name": "surgeon",
           "adjectives": [
-            "older",
-            "gray-haired",
+            "elderly",
             "focused",
-            "bespectacled",
-            "masked",
-            "gloved"
+            "gray-haired",
+            "bespectacled"
           ]
         },
         {
@@ -59712,20 +59572,21 @@
           "adjectives": [
             "lit",
             "yellow",
-            "bright"
+            "glowing"
           ]
         },
         {
-          "name": "face mask",
+          "name": "glasses",
           "adjectives": [
-            "blue",
-            "surgical"
+            "round",
+            "wire-framed"
           ]
         },
         {
-          "name": "eyeglasses",
+          "name": "surgical mask",
           "adjectives": [
-            "round"
+            "pale blue",
+            "white"
           ]
         },
         {
@@ -59736,14 +59597,21 @@
           ]
         },
         {
-          "name": "surgical gloves",
+          "name": "gloves",
           "adjectives": [
-            "cream",
-            "latex"
+            "latex",
+            "cream-colored"
           ]
         },
         {
-          "name": "surgical instruments",
+          "name": "scalpel",
+          "adjectives": [
+            "thin",
+            "metal"
+          ]
+        },
+        {
+          "name": "forceps",
           "adjectives": [
             "thin",
             "metal"
@@ -59752,21 +59620,27 @@
         {
           "name": "patient",
           "adjectives": [
-            "draped",
-            "covered"
+            "covered",
+            "draped"
           ]
         },
         {
           "name": "surgical drape",
           "adjectives": [
-            "blue-gray",
+            "gray-blue",
             "rumpled"
+          ]
+        },
+        {
+          "name": "operating table",
+          "adjectives": [
+            "partly visible"
           ]
         },
         {
           "name": "surgical light",
           "adjectives": [
-            "large",
+            "round",
             "overhead",
             "dark"
           ]
@@ -59786,24 +59660,25 @@
           ]
         },
         {
-          "name": "lightning bolt symbol",
+          "name": "lightning bolt",
           "adjectives": [
             "yellow",
-            "small"
+            "small",
+            "zigzag"
           ]
         },
         {
           "name": "instrument tray",
           "adjectives": [
             "metal",
-            "partly visible"
+            "partly cut"
           ]
         },
         {
-          "name": "equipment cabinet",
+          "name": "light beam",
           "adjectives": [
-            "dark",
-            "partly visible"
+            "yellow",
+            "translucent"
           ]
         }
       ],
@@ -59812,36 +59687,27 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "A dim blue-gray operating room with a large overhead surgical light, a dark monitor on a stand, and a wall-mounted electrical panel with a yellow lightning bolt beside it.",
+        "background": "dim blue-gray operating room with a wall-mounted electrical panel, a dark monitor and an overhead surgical light",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
         "power surge lightning bolt": "visible",
         "operating room": "visible",
-        "surgeon": "visible",
+        "surgeon": "hidden",
         "headlamp": "visible"
       },
-      "promptKey": "362e5cd0d4500077"
+      "promptKey": "5a7213615d33cde9"
     },
     "2": {
       "objects": [
         {
           "name": "surgeon",
           "adjectives": [
-            "hunched",
             "focused",
             "masked",
-            "wearing green scrubs",
-            "wearing glasses"
-          ]
-        },
-        {
-          "name": "headlamp",
-          "adjectives": [
-            "lit",
-            "bright",
-            "yellow beam"
+            "hunched",
+            "green-gowned"
           ]
         },
         {
@@ -59852,45 +59718,44 @@
           ]
         },
         {
-          "name": "surgical cap",
+          "name": "headlamp",
           "adjectives": [
-            "dark"
+            "lit",
+            "bright",
+            "head-mounted"
+          ]
+        },
+        {
+          "name": "light beam",
+          "adjectives": [
+            "yellow",
+            "bright",
+            "narrow"
           ]
         },
         {
           "name": "operating table",
           "adjectives": [
             "draped",
-            "blue-gray"
+            "blue-gray",
+            "central"
           ]
         },
         {
           "name": "surgical drape",
           "adjectives": [
-            "blue-gray",
-            "large"
+            "blue",
+            "gray",
+            "covering"
           ]
         },
         {
-          "name": "patient",
-          "adjectives": [
-            "covered",
-            "barely visible"
-          ]
-        },
-        {
-          "name": "surgical light",
+          "name": "surgical lamp",
           "adjectives": [
             "large",
-            "round",
             "overhead",
-            "off"
-          ]
-        },
-        {
-          "name": "ceiling equipment arm",
-          "adjectives": [
-            "mechanical",
+            "round",
+            "multi-bulb",
             "dark"
           ]
         },
@@ -59898,7 +59763,8 @@
           "name": "IV stand",
           "adjectives": [
             "tall",
-            "metal"
+            "metal",
+            "thin"
           ]
         },
         {
@@ -59909,24 +59775,608 @@
           ]
         },
         {
+          "name": "IV tubing",
+          "adjectives": [
+            "thin",
+            "dark"
+          ]
+        },
+        {
           "name": "monitor",
           "adjectives": [
             "dark",
-            "boxy"
+            "boxy",
+            "blank"
           ]
         },
         {
           "name": "stool",
           "adjectives": [
             "round",
-            "black"
+            "black",
+            "low"
           ]
         },
         {
           "name": "instrument table",
           "adjectives": [
+            "draped",
+            "metal",
+            "small"
+          ]
+        },
+        {
+          "name": "surgical instruments",
+          "adjectives": [
             "small",
-            "covered"
+            "metallic"
+          ]
+        },
+        {
+          "name": "wall outlet panel",
+          "adjectives": [
+            "gray",
+            "wall-mounted"
+          ]
+        },
+        {
+          "name": "lightning bolt symbol",
+          "adjectives": [
+            "yellow",
+            "small",
+            "glowing"
+          ]
+        },
+        {
+          "name": "ceiling pipes",
+          "adjectives": [
+            "gray",
+            "thick",
+            "overhead"
+          ]
+        },
+        {
+          "name": "equipment cart",
+          "adjectives": [
+            "metal",
+            "partly visible"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "eye level",
+      "step": "during",
+      "extras": {
+        "floor": true,
+        "background": "a dim, dark blue-gray operating room with walls, ceiling pipes, an overhead surgical lamp, IV stands and a monitor",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "power surge lightning bolt": "visible",
+        "operating room": "visible",
+        "surgeon": "hidden",
+        "headlamp": "visible"
+      },
+      "promptKey": "5a7213615d33cde9"
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "surgeon",
+          "adjectives": [
+            "elderly",
+            "gray-haired",
+            "bespectacled",
+            "focused",
+            "wide-eyed"
+          ]
+        },
+        {
+          "name": "surgical mask",
+          "adjectives": [
+            "pale blue",
+            "white"
+          ]
+        },
+        {
+          "name": "round glasses",
+          "adjectives": [
+            "thin-framed",
+            "round",
+            "dark"
+          ]
+        },
+        {
+          "name": "surgical cap",
+          "adjectives": [
+            "green"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "glowing",
+            "yellow",
+            "bright"
+          ]
+        },
+        {
+          "name": "light beam",
+          "adjectives": [
+            "yellow",
+            "angled"
+          ]
+        },
+        {
+          "name": "surgical gown",
+          "adjectives": [
+            "green",
+            "wrinkled"
+          ]
+        },
+        {
+          "name": "surgical lamp",
+          "adjectives": [
+            "dark",
+            "round",
+            "multi-panel",
+            "partly visible"
+          ]
+        },
+        {
+          "name": "operating table or patient",
+          "adjectives": [
+            "blurry",
+            "pale",
+            "foreground"
+          ]
+        },
+        {
+          "name": "hair bun",
+          "adjectives": [
+            "gray"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "low angle",
+      "step": "during",
+      "extras": {
+        "floor": false,
+        "background": "dark blue-gray operating room ceiling with a large surgical light at upper left",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "power surge lightning bolt": "hidden",
+        "operating room": "visible",
+        "surgeon": "hidden",
+        "headlamp": "visible"
+      },
+      "promptKey": "5a7213615d33cde9"
+    },
+    "4": {
+      "objects": [
+        {
+          "name": "surgeon",
+          "adjectives": [
+            "elderly",
+            "gray-haired",
+            "focused",
+            "wearing glasses",
+            "seen from behind"
+          ]
+        },
+        {
+          "name": "hair bun",
+          "adjectives": [
+            "gray",
+            "large"
+          ]
+        },
+        {
+          "name": "surgical cap",
+          "adjectives": [
+            "green"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "black strap",
+            "glowing",
+            "yellow-lit"
+          ]
+        },
+        {
+          "name": "surgical mask",
+          "adjectives": [
+            "pale blue",
+            "worn below the nose"
+          ]
+        },
+        {
+          "name": "glasses",
+          "adjectives": [
+            "thin-framed"
+          ]
+        },
+        {
+          "name": "surgical gown",
+          "adjectives": [
+            "green",
+            "tied at the back"
+          ]
+        },
+        {
+          "name": "surgical gloves",
+          "adjectives": [
+            "beige",
+            "latex"
+          ]
+        },
+        {
+          "name": "scalpel",
+          "adjectives": [
+            "small",
+            "held in hand"
+          ]
+        },
+        {
+          "name": "surgical tray",
+          "adjectives": [
+            "dark",
+            "metal"
+          ]
+        },
+        {
+          "name": "bowl",
+          "adjectives": [
+            "small",
+            "metal"
+          ]
+        },
+        {
+          "name": "surgical scissors/clamps",
+          "adjectives": [
+            "silver",
+            "two or three",
+            "laid out on tray"
+          ]
+        },
+        {
+          "name": "patient",
+          "adjectives": [
+            "covered",
+            "draped in white sheet"
+          ]
+        },
+        {
+          "name": "operating table",
+          "adjectives": [
+            "blue-gray",
+            "draped"
+          ]
+        },
+        {
+          "name": "light beam",
+          "adjectives": [
+            "yellow",
+            "cone-shaped"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "high angle",
+      "step": "during",
+      "extras": {
+        "floor": false,
+        "background": "dim blue-gray operating room with a draped table and a tray of instruments",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "power surge lightning bolt": "hidden",
+        "operating room": "visible",
+        "surgeon": "hidden",
+        "headlamp": "visible"
+      },
+      "promptKey": "5a7213615d33cde9"
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "surgeon",
+          "adjectives": [
+            "hunched",
+            "focused",
+            "wearing green scrubs",
+            "hair in a bun"
+          ]
+        },
+        {
+          "name": "surgical mask",
+          "adjectives": [
+            "green"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "lit",
+            "black",
+            "bright yellow beam"
+          ]
+        },
+        {
+          "name": "surgical gown",
+          "adjectives": [
+            "green",
+            "long-sleeved"
+          ]
+        },
+        {
+          "name": "surgical gloves",
+          "adjectives": [
+            "beige",
+            "latex"
+          ]
+        },
+        {
+          "name": "scalpel",
+          "adjectives": [
+            "thin",
+            "held in right hand"
+          ]
+        },
+        {
+          "name": "forceps",
+          "adjectives": [
+            "thin",
+            "held in left hand"
+          ]
+        },
+        {
+          "name": "surgical drape",
+          "adjectives": [
+            "blue-gray",
+            "wrinkled",
+            "covering the patient"
+          ]
+        },
+        {
+          "name": "patient",
+          "adjectives": [
+            "covered",
+            "draped",
+            "mostly hidden"
+          ]
+        },
+        {
+          "name": "instrument tray",
+          "adjectives": [
+            "blue",
+            "side-mounted"
+          ]
+        },
+        {
+          "name": "surgical scissors",
+          "adjectives": [
+            "silver",
+            "on the tray"
+          ]
+        },
+        {
+          "name": "clamps",
+          "adjectives": [
+            "silver",
+            "on the tray"
+          ]
+        },
+        {
+          "name": "metal bowl",
+          "adjectives": [
+            "round",
+            "dark",
+            "empty"
+          ]
+        },
+        {
+          "name": "monitors",
+          "adjectives": [
+            "dark",
+            "boxy",
+            "wall-mounted"
+          ]
+        },
+        {
+          "name": "cables",
+          "adjectives": [
+            "black",
+            "curved",
+            "hanging"
+          ]
+        },
+        {
+          "name": "light circle",
+          "adjectives": [
+            "yellow",
+            "round",
+            "glowing"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "high angle",
+      "step": "during",
+      "extras": {
+        "floor": false,
+        "background": "Dark operating room with monitors and equipment at the top corners, instrument tray on the left, and cables hanging down",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "power surge lightning bolt": "hidden",
+        "operating room": "visible",
+        "surgeon": "hidden",
+        "headlamp": "visible"
+      },
+      "promptKey": "5a7213615d33cde9"
+    },
+    "6": {
+      "objects": [
+        {
+          "name": "surgeon",
+          "adjectives": [
+            "elderly",
+            "gray-haired",
+            "wide-eyed",
+            "focused",
+            "glasses-wearing"
+          ]
+        },
+        {
+          "name": "surgical cap",
+          "adjectives": [
+            "green",
+            "loose"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "black",
+            "bright",
+            "glowing",
+            "yellow"
+          ]
+        },
+        {
+          "name": "headlamp light beam",
+          "adjectives": [
+            "yellow",
+            "translucent",
+            "angled"
+          ]
+        },
+        {
+          "name": "surgical mask",
+          "adjectives": [
+            "light blue",
+            "pleated"
+          ]
+        },
+        {
+          "name": "eyeglasses",
+          "adjectives": [
+            "round",
+            "thin-framed",
+            "black"
+          ]
+        },
+        {
+          "name": "surgical gown",
+          "adjectives": [
+            "green",
+            "teal"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "high angle",
+      "step": "before",
+      "extras": {
+        "floor": false,
+        "background": "dark teal wall on the left edge and green surgical gown fabric below; no room details are visible",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "power surge lightning bolt": "hidden",
+        "operating room": "hidden",
+        "surgeon": "hidden",
+        "headlamp": "visible"
+      },
+      "promptKey": "5a7213615d33cde9"
+    },
+    "7": {
+      "objects": [
+        {
+          "name": "surgeon",
+          "adjectives": [
+            "elderly",
+            "gray-haired",
+            "bespectacled",
+            "startled",
+            "masked"
+          ]
+        },
+        {
+          "name": "surgical cap",
+          "adjectives": [
+            "green"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "lit",
+            "yellow",
+            "strapped on"
+          ]
+        },
+        {
+          "name": "glasses",
+          "adjectives": [
+            "round"
+          ]
+        },
+        {
+          "name": "surgical mask",
+          "adjectives": [
+            "pale green"
+          ]
+        },
+        {
+          "name": "surgical gown",
+          "adjectives": [
+            "green"
+          ]
+        },
+        {
+          "name": "surgical gloves",
+          "adjectives": [
+            "cream-colored"
+          ]
+        },
+        {
+          "name": "surgical instruments",
+          "adjectives": [
+            "thin",
+            "metal"
+          ]
+        },
+        {
+          "name": "patient",
+          "adjectives": [
+            "covered",
+            "draped"
+          ]
+        },
+        {
+          "name": "surgical drape",
+          "adjectives": [
+            "blue-gray",
+            "lit by the lamp"
+          ]
+        },
+        {
+          "name": "surgical light",
+          "adjectives": [
+            "large",
+            "overhead",
+            "dark"
           ]
         },
         {
@@ -59941,587 +60391,28 @@
           "adjectives": [
             "yellow",
             "small",
-            "glowing"
-          ]
-        },
-        {
-          "name": "equipment cart",
-          "adjectives": [
-            "metal",
-            "dim"
-          ]
-        }
-      ],
-      "shot": "wide",
-      "angle": "eye level",
-      "step": "during",
-      "extras": {
-        "floor": true,
-        "background": "A dim blue-gray operating room with walls, ceiling-mounted equipment, an IV stand, a monitor and a surgical light",
-        "morePeople": false,
-        "readableText": ""
-      },
-      "mustSee": {
-        "power surge lightning bolt": "visible",
-        "operating room": "visible",
-        "surgeon": "visible",
-        "headlamp": "visible"
-      },
-      "promptKey": "362e5cd0d4500077"
-    },
-    "3": {
-      "objects": [
-        {
-          "name": "surgeon",
-          "adjectives": [
-            "elderly",
-            "gray-haired",
-            "bespectacled",
-            "wide-eyed",
-            "focused",
-            "masked"
-          ]
-        },
-        {
-          "name": "surgical mask",
-          "adjectives": [
-            "pale blue-green",
-            "light"
-          ]
-        },
-        {
-          "name": "round glasses",
-          "adjectives": [
-            "dark-rimmed",
-            "round"
-          ]
-        },
-        {
-          "name": "headlamp",
-          "adjectives": [
-            "lit",
-            "glowing",
-            "yellow",
-            "bright"
-          ]
-        },
-        {
-          "name": "light beam",
-          "adjectives": [
-            "yellow",
-            "cone-shaped"
-          ]
-        },
-        {
-          "name": "surgical cap",
-          "adjectives": [
-            "green"
-          ]
-        },
-        {
-          "name": "surgical gown",
-          "adjectives": [
-            "green",
-            "loose"
-          ]
-        },
-        {
-          "name": "gray hair bun",
-          "adjectives": [
-            "gray",
-            "low"
-          ]
-        },
-        {
-          "name": "surgical lamp",
-          "adjectives": [
-            "dark",
-            "round",
-            "multi-paneled",
-            "partly visible"
-          ]
-        },
-        {
-          "name": "patient/operating table",
-          "adjectives": [
-            "blurred",
-            "pale",
-            "foreground"
-          ]
-        }
-      ],
-      "shot": "medium",
-      "angle": "low angle",
-      "step": "during",
-      "extras": {
-        "floor": false,
-        "background": "dark teal-gray wall with an overhead surgical lamp in the upper left",
-        "morePeople": false,
-        "readableText": ""
-      },
-      "mustSee": {
-        "power surge lightning bolt": "hidden",
-        "operating room": "visible",
-        "surgeon": "visible",
-        "headlamp": "visible"
-      },
-      "promptKey": "362e5cd0d4500077"
-    },
-    "4": {
-      "objects": [
-        {
-          "name": "surgeon",
-          "adjectives": [
-            "elderly",
-            "gray-haired",
-            "focused",
-            "bun-haired",
-            "bespectacled",
-            "masked"
-          ]
-        },
-        {
-          "name": "surgical cap",
-          "adjectives": [
-            "green",
-            "tied"
-          ]
-        },
-        {
-          "name": "face mask",
-          "adjectives": [
-            "pale blue",
-            "worn below the nose"
-          ]
-        },
-        {
-          "name": "glasses",
-          "adjectives": [
-            "small",
-            "wire-framed"
-          ]
-        },
-        {
-          "name": "headlamp",
-          "adjectives": [
-            "black strap",
-            "glowing",
-            "yellow-lit"
-          ]
-        },
-        {
-          "name": "surgical gown",
-          "adjectives": [
-            "green",
-            "tied at the back"
-          ]
-        },
-        {
-          "name": "surgical gloves",
-          "adjectives": [
-            "pale",
-            "latex"
-          ]
-        },
-        {
-          "name": "scalpel",
-          "adjectives": [
-            "small",
-            "metal"
-          ]
-        },
-        {
-          "name": "surgical drape",
-          "adjectives": [
-            "white",
-            "bluish-gray",
-            "draped"
-          ]
-        },
-        {
-          "name": "instrument tray",
-          "adjectives": [
-            "metal",
-            "dark"
-          ]
-        },
-        {
-          "name": "basin",
-          "adjectives": [
-            "small",
-            "metal",
-            "round"
-          ]
-        },
-        {
-          "name": "surgical scissors",
-          "adjectives": [
-            "metal",
-            "silver"
-          ]
-        },
-        {
-          "name": "forceps",
-          "adjectives": [
-            "metal",
-            "silver"
-          ]
-        },
-        {
-          "name": "light beam",
-          "adjectives": [
-            "yellow",
-            "warm",
-            "triangular"
-          ]
-        }
-      ],
-      "shot": "medium",
-      "angle": "high angle",
-      "step": "during",
-      "extras": {
-        "floor": false,
-        "background": "A dim, blue-gray operating room with a draped patient and a tray of instruments in the upper right.",
-        "morePeople": false,
-        "readableText": ""
-      },
-      "mustSee": {
-        "power surge lightning bolt": "hidden",
-        "operating room": "visible",
-        "surgeon": "visible",
-        "headlamp": "visible"
-      },
-      "promptKey": "362e5cd0d4500077"
-    },
-    "5": {
-      "objects": [
-        {
-          "name": "surgeon",
-          "adjectives": [
-            "focused",
-            "hunched",
-            "masked",
-            "gloved",
-            "green-gowned",
-            "hair in a bun"
-          ]
-        },
-        {
-          "name": "headlamp",
-          "adjectives": [
-            "black",
-            "lit",
-            "bright"
-          ]
-        },
-        {
-          "name": "surgical mask",
-          "adjectives": [
-            "green"
-          ]
-        },
-        {
-          "name": "surgical gloves",
-          "adjectives": [
-            "beige",
-            "latex"
-          ]
-        },
-        {
-          "name": "scalpel",
-          "adjectives": [
-            "thin",
-            "metallic"
-          ]
-        },
-        {
-          "name": "forceps",
-          "adjectives": [
-            "thin",
-            "metallic"
-          ]
-        },
-        {
-          "name": "patient",
-          "adjectives": [
-            "covered",
-            "draped",
-            "lying down"
-          ]
-        },
-        {
-          "name": "surgical drape",
-          "adjectives": [
-            "blue-gray",
-            "wrinkled"
-          ]
-        },
-        {
-          "name": "light pool",
-          "adjectives": [
-            "yellow",
-            "circular",
-            "glowing"
-          ]
-        },
-        {
-          "name": "instrument tray",
-          "adjectives": [
-            "blue",
-            "side-mounted"
-          ]
-        },
-        {
-          "name": "surgical scissors",
-          "adjectives": [
-            "metallic",
-            "silver"
-          ]
-        },
-        {
-          "name": "clamp",
-          "adjectives": [
-            "metallic",
-            "silver"
-          ]
-        },
-        {
-          "name": "metal basin",
-          "adjectives": [
-            "round",
-            "steel",
-            "dark"
+            "sparking"
           ]
         },
         {
           "name": "monitor",
           "adjectives": [
             "dark",
-            "boxy",
-            "partly visible"
+            "black screen"
           ]
         },
         {
-          "name": "cables",
+          "name": "metal trays",
           "adjectives": [
-            "black",
-            "curved"
+            "small",
+            "silver"
           ]
         },
         {
-          "name": "operating table",
+          "name": "equipment cabinet",
           "adjectives": [
-            "partly visible"
-          ]
-        }
-      ],
-      "shot": "medium",
-      "angle": "high angle",
-      "step": "during",
-      "extras": {
-        "floor": true,
-        "background": "dark operating room with medical equipment and monitors at the edges, drawn in comic-book illustration style",
-        "morePeople": false,
-        "readableText": ""
-      },
-      "mustSee": {
-        "power surge lightning bolt": "hidden",
-        "operating room": "visible",
-        "surgeon": "visible",
-        "headlamp": "visible"
-      },
-      "promptKey": "362e5cd0d4500077"
-    },
-    "6": {
-      "objects": [
-        {
-          "name": "surgeon",
-          "adjectives": [
-            "elderly",
-            "gray-haired",
-            "bespectacled",
-            "wide-eyed",
-            "focused"
-          ]
-        },
-        {
-          "name": "surgical cap",
-          "adjectives": [
-            "green",
-            "scrubs-style"
-          ]
-        },
-        {
-          "name": "headlamp",
-          "adjectives": [
-            "black",
-            "glowing",
-            "bright yellow"
-          ]
-        },
-        {
-          "name": "headlamp strap",
-          "adjectives": [
-            "black",
-            "thick"
-          ]
-        },
-        {
-          "name": "light beam",
-          "adjectives": [
-            "yellow",
-            "translucent"
-          ]
-        },
-        {
-          "name": "glasses",
-          "adjectives": [
-            "round",
-            "thin-framed",
-            "black"
-          ]
-        },
-        {
-          "name": "surgical mask",
-          "adjectives": [
-            "pale blue",
-            "pleated"
-          ]
-        },
-        {
-          "name": "surgical gown",
-          "adjectives": [
-            "green",
-            "teal"
-          ]
-        }
-      ],
-      "shot": "extreme close-up",
-      "angle": "eye level",
-      "step": "during",
-      "extras": {
-        "floor": false,
-        "background": "dark teal, plain, mostly obscured by the face and the light beam",
-        "morePeople": false,
-        "readableText": ""
-      },
-      "mustSee": {
-        "power surge lightning bolt": "hidden",
-        "operating room": "hidden",
-        "surgeon": "partly cut",
-        "headlamp": "visible"
-      },
-      "promptKey": "362e5cd0d4500077"
-    },
-    "7": {
-      "objects": [
-        {
-          "name": "surgeon",
-          "adjectives": [
-            "elderly",
-            "gray-haired",
-            "bespectacled",
-            "masked",
-            "startled",
-            "green-gowned"
-          ]
-        },
-        {
-          "name": "surgical cap",
-          "adjectives": [
-            "green"
-          ]
-        },
-        {
-          "name": "headlamp",
-          "adjectives": [
-            "yellow",
-            "lit",
-            "glowing"
-          ]
-        },
-        {
-          "name": "glasses",
-          "adjectives": [
-            "round"
-          ]
-        },
-        {
-          "name": "surgical mask",
-          "adjectives": [
-            "light blue",
-            "pale"
-          ]
-        },
-        {
-          "name": "surgical gown",
-          "adjectives": [
-            "green"
-          ]
-        },
-        {
-          "name": "surgical gloves",
-          "adjectives": [
-            "cream",
-            "latex"
-          ]
-        },
-        {
-          "name": "surgical instruments",
-          "adjectives": [
-            "thin",
-            "metal"
-          ]
-        },
-        {
-          "name": "patient",
-          "adjectives": [
-            "draped",
-            "covered"
-          ]
-        },
-        {
-          "name": "surgical drape",
-          "adjectives": [
-            "pale",
-            "illuminated"
-          ]
-        },
-        {
-          "name": "surgical light",
-          "adjectives": [
-            "large",
-            "overhead",
-            "dark"
-          ]
-        },
-        {
-          "name": "lightning bolt",
-          "adjectives": [
-            "yellow",
-            "small"
-          ]
-        },
-        {
-          "name": "electrical outlet panel",
-          "adjectives": [
-            "wall-mounted",
-            "gray"
-          ]
-        },
-        {
-          "name": "monitor",
-          "adjectives": [
-            "black",
             "dark",
-            "blank"
-          ]
-        },
-        {
-          "name": "instrument trays",
-          "adjectives": [
-            "metal",
-            "small"
+            "partly cut"
           ]
         }
       ],
@@ -60530,17 +60421,17 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "dim blue-gray operating room with an overhead surgical light, a wall outlet panel, a dark monitor and equipment",
+        "background": "A dim operating room in blue-gray tones, with a large overhead surgical light, a wall outlet panel, a dark monitor and equipment.",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
         "power surge lightning bolt": "visible",
         "operating room": "visible",
-        "surgeon": "visible",
+        "surgeon": "hidden",
         "headlamp": "visible"
       },
-      "promptKey": "362e5cd0d4500077"
+      "promptKey": "5a7213615d33cde9"
     },
     "8": {
       "objects": [
@@ -60555,9 +60446,133 @@
           ]
         },
         {
-          "name": "hair bun",
+          "name": "surgical cap",
           "adjectives": [
-            "gray"
+            "green"
+          ]
+        },
+        {
+          "name": "surgical mask",
+          "adjectives": [
+            "white",
+            "blue-tinted"
+          ]
+        },
+        {
+          "name": "glasses",
+          "adjectives": [
+            "round",
+            "wire-framed"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "black-strapped",
+            "glowing",
+            "yellow"
+          ]
+        },
+        {
+          "name": "light beam",
+          "adjectives": [
+            "yellow",
+            "bright"
+          ]
+        },
+        {
+          "name": "surgical gloves",
+          "adjectives": [
+            "white",
+            "latex"
+          ]
+        },
+        {
+          "name": "surgical instrument (forceps)",
+          "adjectives": [
+            "metal",
+            "slender"
+          ]
+        },
+        {
+          "name": "assistant's hand",
+          "adjectives": [
+            "gloved",
+            "extended"
+          ]
+        },
+        {
+          "name": "assistant's sleeve",
+          "adjectives": [
+            "green",
+            "partly visible"
+          ]
+        },
+        {
+          "name": "patient",
+          "adjectives": [
+            "covered",
+            "draped",
+            "blue-gray"
+          ]
+        },
+        {
+          "name": "surgical drape",
+          "adjectives": [
+            "blue-gray",
+            "rumpled"
+          ]
+        },
+        {
+          "name": "monitor",
+          "adjectives": [
+            "dark",
+            "black-screened"
+          ]
+        },
+        {
+          "name": "instrument tray",
+          "adjectives": [
+            "metal",
+            "right-side"
+          ]
+        },
+        {
+          "name": "metal bowls",
+          "adjectives": [
+            "silver",
+            "stainless",
+            "foreground"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "extras": {
+        "floor": false,
+        "background": "dark blue-gray operating room wall with a black monitor on an arm",
+        "morePeople": true,
+        "readableText": ""
+      },
+      "mustSee": {
+        "power surge lightning bolt": "hidden",
+        "operating room": "visible",
+        "surgeon": "hidden",
+        "headlamp": "visible"
+      },
+      "promptKey": "5a7213615d33cde9"
+    },
+    "9": {
+      "objects": [
+        {
+          "name": "surgeon",
+          "adjectives": [
+            "elderly",
+            "focused",
+            "gray-haired",
+            "masked",
+            "wearing green scrubs"
           ]
         },
         {
@@ -60569,140 +60584,16 @@
         {
           "name": "headlamp",
           "adjectives": [
-            "black",
             "lit",
-            "glowing yellow"
+            "yellow",
+            "glowing"
           ]
         },
         {
           "name": "light beam",
           "adjectives": [
             "yellow",
-            "triangular"
-          ]
-        },
-        {
-          "name": "face mask",
-          "adjectives": [
-            "white",
-            "blue-gray"
-          ]
-        },
-        {
-          "name": "glasses",
-          "adjectives": [
-            "round",
-            "thin-framed"
-          ]
-        },
-        {
-          "name": "surgical gown",
-          "adjectives": [
-            "green",
-            "loose"
-          ]
-        },
-        {
-          "name": "surgical gloves",
-          "adjectives": [
-            "pale",
-            "latex"
-          ]
-        },
-        {
-          "name": "forceps",
-          "adjectives": [
-            "metal",
-            "slender"
-          ]
-        },
-        {
-          "name": "second person's hand",
-          "adjectives": [
-            "gloved",
-            "extended",
-            "partly cut"
-          ]
-        },
-        {
-          "name": "patient",
-          "adjectives": [
-            "covered",
-            "draped",
-            "lying down"
-          ]
-        },
-        {
-          "name": "surgical drape",
-          "adjectives": [
-            "blue-gray",
-            "wrinkled"
-          ]
-        },
-        {
-          "name": "monitor",
-          "adjectives": [
-            "dark",
-            "black screen",
-            "square"
-          ]
-        },
-        {
-          "name": "instrument tray",
-          "adjectives": [
-            "metal",
-            "partly cut"
-          ]
-        },
-        {
-          "name": "metal bowls",
-          "adjectives": [
-            "silver",
-            "round",
-            "foreground",
-            "partly cut"
-          ]
-        }
-      ],
-      "shot": "medium",
-      "angle": "eye level",
-      "step": "during",
-      "extras": {
-        "floor": false,
-        "background": "dark blue-gray operating room wall with a monitor and equipment",
-        "morePeople": true,
-        "readableText": ""
-      },
-      "mustSee": {
-        "power surge lightning bolt": "hidden",
-        "operating room": "visible",
-        "surgeon": "visible",
-        "headlamp": "visible"
-      },
-      "promptKey": "362e5cd0d4500077"
-    },
-    "9": {
-      "objects": [
-        {
-          "name": "surgeon",
-          "adjectives": [
-            "focused",
-            "elderly",
-            "gray-haired",
-            "masked",
-            "bespectacled"
-          ]
-        },
-        {
-          "name": "surgical cap",
-          "adjectives": [
-            "green"
-          ]
-        },
-        {
-          "name": "surgical mask",
-          "adjectives": [
-            "light blue"
+            "bright"
           ]
         },
         {
@@ -60712,25 +60603,15 @@
           ]
         },
         {
-          "name": "headlamp",
+          "name": "surgical mask",
           "adjectives": [
-            "glowing",
-            "yellow",
-            "bright"
-          ]
-        },
-        {
-          "name": "light beam",
-          "adjectives": [
-            "yellow",
-            "cone-shaped"
+            "light blue"
           ]
         },
         {
           "name": "surgical gown",
           "adjectives": [
-            "green",
-            "loose"
+            "green"
           ]
         },
         {
@@ -60744,7 +60625,7 @@
           "name": "surgical instruments",
           "adjectives": [
             "thin",
-            "metallic"
+            "metal"
           ]
         },
         {
@@ -60758,37 +60639,28 @@
           "name": "surgical drape",
           "adjectives": [
             "gray-blue",
-            "draped",
-            "illuminated"
+            "draped"
           ]
         },
         {
           "name": "operating table",
           "adjectives": [
-            "dark"
+            "partly visible"
           ]
         },
         {
           "name": "surgical light",
           "adjectives": [
             "large",
-            "round",
             "overhead",
             "dark"
           ]
         },
         {
-          "name": "IV stand",
+          "name": "IV stand with bag",
           "adjectives": [
             "tall",
             "thin"
-          ]
-        },
-        {
-          "name": "IV bag",
-          "adjectives": [
-            "clear",
-            "hanging"
           ]
         },
         {
@@ -60804,6 +60676,13 @@
             "small",
             "metal"
           ]
+        },
+        {
+          "name": "medical equipment cart",
+          "adjectives": [
+            "dim",
+            "in background"
+          ]
         }
       ],
       "shot": "medium",
@@ -60811,17 +60690,17 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "A dark, dim operating room with an overhead surgical light, an IV stand with a bag, a monitor and medical equipment in blue-gray tones",
+        "background": "dim, dark teal operating room with an overhead surgical light, IV stand, monitor and equipment",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
         "power surge lightning bolt": "hidden",
         "operating room": "visible",
-        "surgeon": "visible",
+        "surgeon": "hidden",
         "headlamp": "visible"
       },
-      "promptKey": "362e5cd0d4500077"
+      "promptKey": "5a7213615d33cde9"
     }
   },
   "sweep.grid.png": {
@@ -67659,34 +67538,33 @@
           "adjectives": [
             "smiling",
             "dark-haired",
+            "walking",
             "wearing blue scrubs",
-            "wearing a white cap",
-            "wearing a name badge",
-            "walking"
+            "wearing a cap",
+            "wearing a name badge"
           ]
         },
         {
-          "name": "breathing machine (ventilator)",
+          "name": "breathing machine",
           "adjectives": [
-            "orange-red",
-            "boxy",
-            "has a green waveform screen",
-            "has a round gauge",
-            "has a corrugated black bellows",
-            "has a gray hose"
+            "red-orange",
+            "large",
+            "with a screen",
+            "with a pressure gauge",
+            "with a corrugated hose"
           ]
         },
         {
           "name": "newborn",
           "adjectives": [
-            "small",
             "sleeping",
-            "wrapped in a white blanket",
-            "has a pacifier"
+            "small",
+            "swaddled",
+            "wearing a pacifier"
           ]
         },
         {
-          "name": "incubator (baby crib)",
+          "name": "incubator",
           "adjectives": [
             "clear",
             "transparent",
@@ -67704,35 +67582,20 @@
           "name": "wall clock",
           "adjectives": [
             "round",
-            "white-faced",
-            "analog"
+            "white"
           ]
         },
         {
           "name": "window",
           "adjectives": [
-            "framed",
-            "showing night sky"
-          ]
-        },
-        {
-          "name": "moon",
-          "adjectives": [
-            "crescent",
-            "pale"
-          ]
-        },
-        {
-          "name": "trees",
-          "adjectives": [
-            "dark",
-            "silhouetted"
+            "night-time",
+            "framed"
           ]
         },
         {
           "name": "machine stand",
           "adjectives": [
-            "gray",
+            "dark gray",
             "metal"
           ]
         },
@@ -67740,32 +67603,26 @@
           "name": "hose",
           "adjectives": [
             "gray",
-            "flexible",
-            "corrugated"
-          ]
-        },
-        {
-          "name": "nurse's shoes",
-          "adjectives": [
-            "white"
+            "corrugated",
+            "curved"
           ]
         }
       ],
       "shot": "wide",
       "angle": "eye level",
-      "step": "during",
+      "step": "before",
       "extras": {
         "floor": true,
-        "background": "A pale green hospital room with an open wooden door, a wall clock and a window that shows a night sky with a crescent moon and dark trees",
+        "background": "A hospital nursery room with pale green walls, an open wooden door, a wall clock, and a window showing a crescent moon and trees at night",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
         "nurse": "visible",
         "breathing machine (ventilator)": "visible",
-        "newborn": "visible"
+        "newborn": "partly cut"
       },
-      "promptKey": "d85dee40f57dfc31"
+      "promptKey": "9764529f24dac735"
     },
     "2": {
       "objects": [
@@ -67775,33 +67632,35 @@
             "smiling",
             "dark-haired",
             "young",
-            "wearing a white cap",
+            "friendly",
             "wearing blue scrubs",
-            "looking down"
+            "wearing white nurse cap"
           ]
         },
         {
           "name": "name tag",
           "adjectives": [
             "white",
+            "small",
             "reads Venice"
           ]
         },
         {
-          "name": "ventilator (breathing machine)",
+          "name": "breathing machine",
           "adjectives": [
             "orange-red",
             "large",
-            "has a screen",
-            "has a pressure gauge",
-            "has a ribbed bellows"
+            "boxy",
+            "has bellows",
+            "has gauge",
+            "has screen"
           ]
         },
         {
           "name": "monitor screen",
           "adjectives": [
-            "dark teal",
-            "shows a green waveform"
+            "blue",
+            "green waveform"
           ]
         },
         {
@@ -67815,7 +67674,7 @@
           "name": "indicator lights",
           "adjectives": [
             "green",
-            "orange"
+            "yellow"
           ]
         },
         {
@@ -67829,23 +67688,25 @@
         {
           "name": "newborn",
           "adjectives": [
-            "tiny",
+            "small",
             "sleeping",
-            "wrapped in a blanket",
-            "wearing a breathing mask"
+            "wearing breathing mask",
+            "swaddled"
           ]
         },
         {
-          "name": "incubator / bassinet",
+          "name": "incubator",
           "adjectives": [
-            "clear-sided",
-            "white"
+            "clear",
+            "white",
+            "transparent hood"
           ]
         },
         {
-          "name": "nurse's cap",
+          "name": "blanket",
           "adjectives": [
-            "white"
+            "white",
+            "soft"
           ]
         }
       ],
@@ -67854,16 +67715,16 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "A pale green hospital room with wall and ceiling lines.",
+        "background": "pale green hospital room wall and ceiling lines",
         "morePeople": false,
         "readableText": "Venice"
       },
       "mustSee": {
-        "nurse": "partly cut",
+        "nurse": "visible",
         "breathing machine (ventilator)": "partly cut",
         "newborn": "partly cut"
       },
-      "promptKey": "d85dee40f57dfc31"
+      "promptKey": "9764529f24dac735"
     },
     "3": {
       "objects": [
@@ -67875,34 +67736,16 @@
             "wearing a white cap",
             "wearing blue scrubs",
             "attentive",
-            "seen from behind and the side"
+            "seen from the side"
           ]
         },
         {
           "name": "newborn",
           "adjectives": [
-            "small",
+            "tiny",
             "swaddled",
             "sleeping",
-            "wearing a breathing mask"
-          ]
-        },
-        {
-          "name": "breathing machine (ventilator)",
-          "adjectives": [
-            "red-orange",
-            "large",
-            "has a screen showing a green wave",
-            "has a dial",
-            "connected to a corrugated tube"
-          ]
-        },
-        {
-          "name": "corrugated breathing tube",
-          "adjectives": [
-            "gray",
-            "ribbed",
-            "curved"
+            "has a breathing tube or mask on the face"
           ]
         },
         {
@@ -67910,7 +67753,16 @@
           "adjectives": [
             "clear",
             "transparent-sided",
-            "white-padded"
+            "hospital-style"
+          ]
+        },
+        {
+          "name": "breathing machine",
+          "adjectives": [
+            "red-orange",
+            "has a green waveform screen",
+            "has a corrugated hose",
+            "has dials and knobs"
           ]
         },
         {
@@ -67918,7 +67770,7 @@
           "adjectives": [
             "round",
             "white",
-            "black-rimmed"
+            "shows about 11:05"
           ]
         },
         {
@@ -67929,11 +67781,9 @@
           ]
         },
         {
-          "name": "gray wall-mounted device",
+          "name": "wall",
           "adjectives": [
-            "small",
-            "gray",
-            "numbered"
+            "pale green"
           ]
         }
       ],
@@ -67942,16 +67792,16 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "A pale green hospital or neonatal room wall with a dark window and a round wall clock",
+        "background": "A hospital or neonatal room with a pale green wall, a dark window and a round wall clock",
         "morePeople": false,
-        "readableText": "1 2 3 4 5 6 7 8 9 10 11 12 (the clock numerals) and a '6' on a gray device"
+        "readableText": "Clock numerals 1 to 12; a small \"6\" on the box behind the machine"
       },
       "mustSee": {
         "nurse": "partly cut",
         "breathing machine (ventilator)": "partly cut",
         "newborn": "visible"
       },
-      "promptKey": "d85dee40f57dfc31"
+      "promptKey": "9764529f24dac735"
     },
     "4": {
       "objects": [
@@ -67960,48 +67810,39 @@
           "adjectives": [
             "dark-haired",
             "hair in a bun",
-            "wearing a white nurse cap",
+            "wearing a white cap",
             "wearing blue scrubs",
             "looking down",
-            "leaning over"
-          ]
-        },
-        {
-          "name": "name tag",
-          "adjectives": [
-            "small",
-            "white",
-            "pinned to scrubs"
+            "attentive"
           ]
         },
         {
           "name": "newborn",
           "adjectives": [
-            "tiny",
+            "small",
             "swaddled",
             "wrapped in white blanket",
-            "lying on back",
+            "lying down",
             "dark-haired"
           ]
         },
         {
-          "name": "breathing machine (ventilator)",
+          "name": "breathing machine",
           "adjectives": [
             "red-orange",
             "boxy",
-            "has a screen showing a green waveform",
-            "has a dial gauge",
-            "has colored indicator buttons",
-            "on a dark stand"
+            "has a screen",
+            "has a dial",
+            "has green and yellow buttons"
           ]
         },
         {
-          "name": "ventilator tube",
+          "name": "breathing tube",
           "adjectives": [
-            "corrugated",
             "gray",
+            "corrugated",
             "flexible",
-            "connected to newborn's face"
+            "connected to the baby's face"
           ]
         },
         {
@@ -68010,14 +67851,28 @@
             "clear",
             "transparent",
             "rectangular",
-            "open-topped"
+            "white-lined"
           ]
         },
         {
-          "name": "mattress/bedding",
+          "name": "name tag",
           "adjectives": [
+            "small",
             "white",
-            "soft"
+            "handwritten"
+          ]
+        },
+        {
+          "name": "nurse's cap",
+          "adjectives": [
+            "white"
+          ]
+        },
+        {
+          "name": "machine stand",
+          "adjectives": [
+            "dark gray",
+            "wheeled"
           ]
         }
       ],
@@ -68026,7 +67881,7 @@
       "step": "during",
       "extras": {
         "floor": true,
-        "background": "beige floor of a hospital room, with a teal wall corner at the top right",
+        "background": "A beige tiled hospital floor with a pale teal wall or edge at the top right corner",
         "morePeople": false,
         "readableText": "Vonz"
       },
@@ -68035,7 +67890,7 @@
         "breathing machine (ventilator)": "partly cut",
         "newborn": "visible"
       },
-      "promptKey": "d85dee40f57dfc31"
+      "promptKey": "9764529f24dac735"
     },
     "5": {
       "objects": [
@@ -68044,31 +67899,34 @@
           "adjectives": [
             "smiling",
             "dark-haired",
+            "young",
             "wearing blue scrubs",
-            "wearing a white cap",
+            "wearing white cap",
             "cartoon"
           ]
         },
         {
-          "name": "name tag reading Venice",
+          "name": "name tag",
           "adjectives": [
             "white",
             "small"
           ]
         },
         {
-          "name": "ventilator machine",
+          "name": "breathing machine",
           "adjectives": [
             "red-orange",
             "large",
-            "cartoon"
+            "with screen",
+            "with pressure gauge",
+            "with ribbed corrugated tubing"
           ]
         },
         {
-          "name": "monitor screen",
+          "name": "screen",
           "adjectives": [
-            "blue",
-            "showing a green wave line"
+            "teal",
+            "showing a wave line"
           ]
         },
         {
@@ -68089,40 +67947,31 @@
           "name": "yellow button",
           "adjectives": [
             "round",
-            "small",
+            "orange-yellow",
             "being pressed"
           ]
         },
         {
-          "name": "corrugated ventilator bellows",
+          "name": "newborn",
           "adjectives": [
-            "black",
-            "ridged",
-            "cylindrical"
+            "sleeping",
+            "small",
+            "swaddled in a white blanket"
+          ]
+        },
+        {
+          "name": "incubator",
+          "adjectives": [
+            "clear",
+            "transparent"
           ]
         },
         {
           "name": "breathing tube",
           "adjectives": [
-            "grey",
+            "gray",
             "corrugated",
-            "flexible"
-          ]
-        },
-        {
-          "name": "incubator/bassinet",
-          "adjectives": [
-            "clear",
-            "transparent",
-            "small"
-          ]
-        },
-        {
-          "name": "newborn baby",
-          "adjectives": [
-            "sleeping",
-            "small",
-            "swaddled in white"
+            "curved"
           ]
         }
       ],
@@ -68131,7 +67980,7 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "plain pale green-grey wall",
+        "background": "plain pale gray-green wall",
         "morePeople": false,
         "readableText": "Venice"
       },
@@ -68140,7 +67989,7 @@
         "breathing machine (ventilator)": "partly cut",
         "newborn": "visible"
       },
-      "promptKey": "d85dee40f57dfc31"
+      "promptKey": "9764529f24dac735"
     },
     "6": {
       "objects": [
@@ -68149,9 +67998,9 @@
           "adjectives": [
             "smiling",
             "dark-haired",
+            "young",
             "wearing a white cap",
-            "wearing blue scrubs",
-            "focused"
+            "wearing blue scrubs"
           ]
         },
         {
@@ -68159,8 +68008,17 @@
           "adjectives": [
             "small",
             "swaddled",
-            "lying down",
-            "intubated"
+            "sleeping",
+            "connected to a tube"
+          ]
+        },
+        {
+          "name": "breathing machine",
+          "adjectives": [
+            "red-orange",
+            "boxy",
+            "has a screen",
+            "has a pressure gauge"
           ]
         },
         {
@@ -68172,18 +68030,18 @@
           ]
         },
         {
-          "name": "breathing machine (ventilator)",
+          "name": "blanket",
           "adjectives": [
-            "red-orange",
-            "boxy",
-            "with screen and gauge"
+            "white",
+            "soft",
+            "thick"
           ]
         },
         {
-          "name": "ventilator tube",
+          "name": "breathing tube",
           "adjectives": [
-            "corrugated",
             "gray",
+            "corrugated",
             "flexible"
           ]
         },
@@ -68196,10 +68054,18 @@
           ]
         },
         {
-          "name": "blanket",
+          "name": "stand",
           "adjectives": [
-            "white",
-            "thick"
+            "gray",
+            "metal"
+          ]
+        },
+        {
+          "name": "buttons",
+          "adjectives": [
+            "green",
+            "yellow",
+            "small"
           ]
         },
         {
@@ -68208,28 +68074,6 @@
             "small",
             "gray"
           ]
-        },
-        {
-          "name": "machine stand",
-          "adjectives": [
-            "gray",
-            "metal"
-          ]
-        },
-        {
-          "name": "indicator lights",
-          "adjectives": [
-            "green",
-            "yellow",
-            "round"
-          ]
-        },
-        {
-          "name": "pressure gauge",
-          "adjectives": [
-            "round",
-            "white"
-          ]
         }
       ],
       "shot": "medium",
@@ -68237,7 +68081,7 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "Pale green hospital room wall with a wall clock, an electrical outlet and a wall-mounted fixture",
+        "background": "pale green hospital room wall with a wall clock and an outlet",
         "morePeople": false,
         "readableText": ""
       },
@@ -68246,7 +68090,7 @@
         "breathing machine (ventilator)": "partly cut",
         "newborn": "visible"
       },
-      "promptKey": "d85dee40f57dfc31"
+      "promptKey": "9764529f24dac735"
     },
     "7": {
       "objects": [
@@ -68255,10 +68099,9 @@
           "adjectives": [
             "smiling",
             "dark-haired",
-            "young",
             "wearing blue scrubs",
-            "wearing a white nurse cap",
-            "wearing a name tag reading Venice"
+            "wearing a white cap",
+            "friendly"
           ]
         },
         {
@@ -68266,20 +68109,18 @@
           "adjectives": [
             "sleeping",
             "small",
-            "wrapped in a white blanket",
-            "lying on its back",
-            "dark-haired"
+            "swaddled",
+            "wearing a breathing mask"
           ]
         },
         {
-          "name": "breathing machine (ventilator)",
+          "name": "breathing machine",
           "adjectives": [
-            "orange-red",
+            "red-orange",
             "large",
-            "has a monitor showing a wave line",
-            "has a pressure gauge",
-            "has green and yellow lights",
-            "has a gray corrugated tube"
+            "has a screen",
+            "has a dial gauge",
+            "has green and yellow lights"
           ]
         },
         {
@@ -68287,88 +68128,7 @@
           "adjectives": [
             "gray",
             "corrugated",
-            "curved",
-            "connected to a mask on the baby's face"
-          ]
-        },
-        {
-          "name": "respiratory mask",
-          "adjectives": [
-            "small",
-            "gray",
-            "covering the baby's nose and mouth"
-          ]
-        },
-        {
-          "name": "bassinet",
-          "adjectives": [
-            "clear",
-            "transparent-sided",
-            "with a white mattress"
-          ]
-        },
-        {
-          "name": "name tag",
-          "adjectives": [
-            "white",
-            "small",
-            "reads Venice"
-          ]
-        },
-        {
-          "name": "window",
-          "adjectives": [
-            "tall",
-            "dark blue night sky",
-            "showing a crescent moon"
-          ]
-        },
-        {
-          "name": "door",
-          "adjectives": [
-            "wooden",
-            "partly open",
-            "tall"
-          ]
-        }
-      ],
-      "shot": "medium",
-      "angle": "eye level",
-      "step": "during",
-      "extras": {
-        "floor": false,
-        "background": "A hospital room at night with a window showing a crescent moon and a tree, pale green walls, a door frame and a wall fixture on the right",
-        "morePeople": false,
-        "readableText": "Venice"
-      },
-      "mustSee": {
-        "nurse": "visible",
-        "breathing machine (ventilator)": "partly cut",
-        "newborn": "visible"
-      },
-      "promptKey": "d85dee40f57dfc31"
-    },
-    "8": {
-      "objects": [
-        {
-          "name": "nurse",
-          "adjectives": [
-            "smiling",
-            "dark-haired",
-            "wearing blue scrubs",
-            "hair in a bun",
-            "leaning over the crib",
-            "looking down",
-            "wearing a name tag"
-          ]
-        },
-        {
-          "name": "newborn",
-          "adjectives": [
-            "sleeping",
-            "small",
-            "swaddled in a cream blanket",
-            "lying on its back"
+            "flexible"
           ]
         },
         {
@@ -68376,25 +68136,7 @@
           "adjectives": [
             "clear",
             "transparent",
-            "rectangular"
-          ]
-        },
-        {
-          "name": "breathing machine (ventilator)",
-          "adjectives": [
-            "orange-red",
-            "has a screen showing a wave",
-            "has a dial gauge",
-            "has green and yellow buttons"
-          ]
-        },
-        {
-          "name": "ventilator tube",
-          "adjectives": [
-            "gray",
-            "corrugated",
-            "flexible",
-            "connected to the baby's face"
+            "hospital"
           ]
         },
         {
@@ -68405,11 +68147,115 @@
           ]
         },
         {
+          "name": "window",
+          "adjectives": [
+            "night-time",
+            "dark blue"
+          ]
+        },
+        {
+          "name": "moon",
+          "adjectives": [
+            "crescent",
+            "white"
+          ]
+        },
+        {
+          "name": "door",
+          "adjectives": [
+            "wooden",
+            "partly open"
+          ]
+        },
+        {
+          "name": "blanket",
+          "adjectives": [
+            "white",
+            "thick"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "extras": {
+        "floor": false,
+        "background": "A hospital room at night with a window showing a crescent moon, a wooden door frame and pale green walls",
+        "morePeople": false,
+        "readableText": "Venice"
+      },
+      "mustSee": {
+        "nurse": "visible",
+        "breathing machine (ventilator)": "partly cut",
+        "newborn": "visible"
+      },
+      "promptKey": "9764529f24dac735"
+    },
+    "8": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "smiling",
+            "dark-haired",
+            "young",
+            "wearing blue scrubs",
+            "looking down"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "sleeping",
+            "small",
+            "swaddled",
+            "wrapped in cream blanket"
+          ]
+        },
+        {
+          "name": "breathing machine",
+          "adjectives": [
+            "red-orange",
+            "large",
+            "has screen and dial",
+            "with gray corrugated tube"
+          ]
+        },
+        {
+          "name": "bassinet",
+          "adjectives": [
+            "clear",
+            "transparent",
+            "plastic"
+          ]
+        },
+        {
+          "name": "name badge",
+          "adjectives": [
+            "white",
+            "small"
+          ]
+        },
+        {
+          "name": "nurse's cap",
+          "adjectives": [
+            "white",
+            "partly visible"
+          ]
+        },
+        {
           "name": "blanket",
           "adjectives": [
             "cream",
-            "soft",
-            "wrapped around the baby"
+            "soft"
+          ]
+        },
+        {
+          "name": "breathing tube",
+          "adjectives": [
+            "gray",
+            "corrugated",
+            "flexible"
           ]
         }
       ],
@@ -68427,7 +68273,7 @@
         "breathing machine (ventilator)": "partly cut",
         "newborn": "visible"
       },
-      "promptKey": "d85dee40f57dfc31"
+      "promptKey": "9764529f24dac735"
     },
     "9": {
       "objects": [
@@ -68437,8 +68283,8 @@
             "smiling",
             "dark-haired",
             "wearing blue scrubs",
-            "wearing white cap",
-            "focused"
+            "wearing a white cap",
+            "attentive"
           ]
         },
         {
@@ -68446,24 +68292,24 @@
           "adjectives": [
             "sleeping",
             "swaddled",
-            "small",
-            "wearing breathing mask"
+            "wrapped in white blanket",
+            "small"
           ]
         },
         {
-          "name": "ventilator",
+          "name": "breathing machine",
           "adjectives": [
             "red-orange",
             "large",
-            "with screen",
-            "with gauge"
+            "with a screen",
+            "with a gauge"
           ]
         },
         {
-          "name": "ventilator hose",
+          "name": "ventilator tube",
           "adjectives": [
-            "corrugated",
             "gray",
+            "corrugated",
             "flexible"
           ]
         },
@@ -68472,7 +68318,29 @@
           "adjectives": [
             "clear",
             "transparent",
-            "hospital"
+            "plastic"
+          ]
+        },
+        {
+          "name": "wall clock",
+          "adjectives": [
+            "round",
+            "white-faced",
+            "analog"
+          ]
+        },
+        {
+          "name": "window",
+          "adjectives": [
+            "dark",
+            "night-time"
+          ]
+        },
+        {
+          "name": "crescent moon",
+          "adjectives": [
+            "pale",
+            "yellow"
           ]
         },
         {
@@ -68483,53 +68351,17 @@
           ]
         },
         {
-          "name": "wall clock",
-          "adjectives": [
-            "round",
-            "white",
-            "analog"
-          ]
-        },
-        {
-          "name": "window",
-          "adjectives": [
-            "night-time",
-            "framed"
-          ]
-        },
-        {
-          "name": "crescent moon",
-          "adjectives": [
-            "white",
-            "in night sky"
-          ]
-        },
-        {
           "name": "wall outlets and switches",
           "adjectives": [
             "small",
-            "wall-mounted"
+            "gray"
           ]
         },
         {
-          "name": "blanket",
+          "name": "green and yellow indicator lights",
           "adjectives": [
-            "white",
-            "soft"
-          ]
-        },
-        {
-          "name": "green indicator light",
-          "adjectives": [
-            "green",
-            "round"
-          ]
-        },
-        {
-          "name": "yellow indicator light",
-          "adjectives": [
-            "yellow",
-            "round"
+            "round",
+            "small"
           ]
         }
       ],
@@ -68538,7 +68370,7 @@
       "step": "during",
       "extras": {
         "floor": false,
-        "background": "A hospital nursery room at night with a window showing a crescent moon, a wall clock, and wall outlets on a pale green wall",
+        "background": "A hospital nursery room with pale green walls, a night-time window with a crescent moon, a wall clock and wall outlets",
         "morePeople": false,
         "readableText": "Venice"
       },
@@ -68547,7 +68379,7 @@
         "breathing machine (ventilator)": "partly cut",
         "newborn": "visible"
       },
-      "promptKey": "d85dee40f57dfc31"
+      "promptKey": "9764529f24dac735"
     }
   },
   "wore.grid.png": {

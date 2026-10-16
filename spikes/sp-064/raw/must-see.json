@@ -123,17 +123,17 @@
     "story": "Bulb bribes the judge; his pocket swells with cash.",
     "items": [
       {
-        "name": "Bulb",
+        "name": "man with a nametag reading \"Bulb\"",
         "adjectives": [
-          "light bulb head",
-          "bribing"
+          "bribing",
+          "sneaky"
         ]
       },
       {
         "name": "judge",
         "adjectives": [
-          "wearing robe",
-          "holding gavel"
+          "bribed",
+          "robed"
         ]
       },
       {
@@ -147,8 +147,7 @@
         "name": "cash",
         "adjectives": [
           "stuffed",
-          "overflowing",
-          "banknotes"
+          "wadded"
         ]
       }
     ],
@@ -559,20 +558,22 @@
       {
         "name": "Victor",
         "adjectives": [
-          "worried"
+          "worried",
+          "nametag reading \"Victor\""
         ]
       },
       {
-        "name": "rent payment",
+        "name": "rent",
         "adjectives": [
           "missed",
-          "unpaid"
+          "overdue"
         ]
       },
       {
         "name": "movers",
         "adjectives": [
-          "burly"
+          "burly",
+          "carrying boxes"
         ]
       }
     ],
