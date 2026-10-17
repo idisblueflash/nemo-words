@@ -1,5 +1,5 @@
 {
-  "_comment": "SP-066: the image pick's rubric, read by lib/pick.js (Jev), shaped like scripts/story-rubric.json's axes. One Score question per scored cell and axis; Jev answers a level 0-2, and the axis score is that + 1 (decimals kept, as US-038 keeps them). An axis's optional \"check\" is added to its question. SP-066 changes SP-064's rubric in two places only (ADR-0033): vivid scores the scene (what the story objects do to each other), not the camera, with the angle exception of C-042; and must-see clarity uses each item's size from the caption, so a small item gets the lowest level. Must-see clarity still checks the items with their adjectives (ADR-0032). After stage 2, the plausible and clarity checks name the drawing errors (ADR-0036) and the name sign (ADR-0035), so that Jev's levels agree with the caps that lib/pick.js applies in code.",
+  "_comment": "SP-066: the image pick's rubric, read by lib/pick.js (Jev), shaped like scripts/story-rubric.json's axes. One Score question per scored cell and axis; Jev answers a level 0-2, and the axis score is that + 1 (decimals kept, as US-038 keeps them). An axis's optional \"check\" is added to its question. SP-066 changes SP-064's rubric so that vivid scores the scene (what the story objects do to each other), not the camera, with the angle exception of C-042 (ADR-0033). After stage 5 (ADR-0037), must-see clarity has no levels of its own: it is scored in parts (C-046), one Score question per scored cell and part, each with its own levels and check (the clarity check comes first), and clarity is the mean of the parts that apply: completeness, size and state always, nameSign only for a name anchor, view only when the story has a main subject (C-045). Code caps no score: Jev sees the drawing errors when it scores plausible, and name_sign_readable when it scores the name sign.",
   "axes": {
     "plausible": {
       "label": "Plausible",
@@ -8,7 +8,7 @@
         "the scene makes some sense: a few setting clues, or a mostly sensible order of action",
         "the scene makes sense: clear setting clues such as a floor, a hand or a height, and a sensible order of action"
       ],
-      "check": "A drawing error (an object in the cell's drawing_errors: it floats, looks pasted on, or breaks the lines of the wall or floor) makes the scene make less sense: one on a must-see item gives the lowest level, and one on another object gives the middle level at most."
+      "check": "A drawing error (an object in the cell's drawing_errors: it floats, looks pasted on, or breaks the lines of the wall or floor) makes the scene make less sense, so give the cell a lower score for it: one on a must-see item costs more than one on another object."
     },
     "vivid": {
       "label": "Vivid",
@@ -21,12 +21,54 @@
     },
     "clarity": {
       "label": "Must-see clarity",
-      "check": "Check each must-see item with its adjectives: the item must be shown in the state its adjectives give (a bare cob). The cell's must-see marks say whether the item itself is visible, partly cut or hidden, and give its size (large / medium / small) and place (front / back); they don't check its state. Use each item's size: a small item gets the lowest level. A name sign is not a must-see item: when the cell's name_sign_readable is false (its readable text doesn't show the name, such as \"Venice\" on the nurse's nametag), give the middle level at most.",
-      "levels": [
-        "a must-see item is small, is partly cut off by the edge of the picture, or is not in the state its adjectives give (a cob that isn't bare yet)",
-        "every must-see item is shown in full and in the state its adjectives give, and none is small, but some are only medium or unclear, or a name sign can't be read (no \"Venice\" on the nurse's nametag)",
-        "every must-see item is shown in full, in the state its adjectives give, large and clear, and every name sign can be read"
-      ]
+      "check": "Must-see clarity is scored in parts, one question each; this question scores one part only, from the cell's full description. A name sign is not a must-see item.",
+      "parts": {
+        "completeness": {
+          "label": "Must-see clarity: completeness",
+          "check": "Use each must-see item's mark (visible / partly cut / hidden) and the cell's shot. A crop that fits the shot, as when a close-up cuts the edge of an item, costs less than a crop that cuts off part of the story (the hand that acts, the thing it acts on).",
+          "levels": [
+            "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
+            "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
+            "every must-see item is fully visible"
+          ]
+        },
+        "size": {
+          "label": "Must-see clarity: size",
+          "check": "Use each must-see item's size (large / medium / small). An item that is small by nature, such as a headlamp or a ring, costs less than a story item drawn too small to see what it does.",
+          "levels": [
+            "a story item is too small to see what it does",
+            "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
+            "every must-see item is large enough to see"
+          ]
+        },
+        "state": {
+          "label": "Must-see clarity: state",
+          "check": "Check each must-see item with its adjectives: the item must be shown in the state its adjectives give (a bare cob). The cell's must-see marks say only whether an item is there, not its state: use the cell's objects and their adjectives.",
+          "levels": [
+            "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
+            "the state of some must-see items is unclear",
+            "every must-see item is in the state its adjectives give"
+          ]
+        },
+        "nameSign": {
+          "label": "Must-see clarity: name sign",
+          "check": "Use the cell's readable text (extras.readableText) and its name_sign_readable: can every name sign (name_signs) be read on the item that carries it, such as \"Venice\" on the nurse's nametag?",
+          "levels": [
+            "a name sign can't be read (no \"Venice\" on the nurse's nametag)",
+            "a name sign is partly readable or misread",
+            "every name sign can be read"
+          ]
+        },
+        "view": {
+          "label": "Must-see clarity: main-subject view",
+          "check": "Use the cell's main_view, the view of the story's main subject (main_subject): where its face and body point. When main_view is null (the main subject is hidden), give the lowest level.",
+          "levels": [
+            "the main subject is seen from the back or from above, or is hidden",
+            "the main subject is seen from the side",
+            "the main subject is seen from the front or in three-quarter view"
+          ]
+        }
+      }
     }
   }
 }

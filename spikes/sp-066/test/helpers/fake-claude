@@ -14,7 +14,11 @@
 //   "then"          → isSequence true
 //   "view" / "lone" → angleCase "view" / "one-object" (else "none")
 //   "moon"          → item "moon": hidden in cells darker than 100, partly cut below 150
-//   "operates"      → item "surgeon" (bug-020)
+//   "operates"      → item "surgeon" (bug-020), and the main subject "surgeon"
+//   "star"          → item "star", and the main subject "star" (C-045; else null)
+//   "haunts"        → the main subject "ghost" (with "ghost": hidden in every cell)
+//   "bad-main"      → the main subject "dragon" (no item) until the repair
+//                     prompt, then "star"; "bad-main-always": "dragon" every time
 //   "ghost"         → item "ghost": hidden in every cell
 //   "claude-fails"  → the must-see call fails (exit 1)
 //   "garbled-list"  → the must-see call prints something that isn't JSON
@@ -23,6 +27,10 @@
 //   "split"         → item "split": the differences call fails
 //   "tile"          → item "tile": a drawing error on the tile (a must-see
 //                     item) from lightness 210, on a lamp (not one) at 150–209
+// A caption whose prompt names a main subject (MAIN SUBJECT: "…") gives its
+// view by lightness: below 60 above, below 90 back, below 150 side, below 210
+// three-quarter, else front (null when it's hidden); for "noview" it leaves
+// mainView out ("noview" in a story → that item and main subject).
 // A caption with a "nurse" item reads "VENICE, R.N." from lightness 150, else
 // nothing (extras.readableText); every other caption has no drawing error.
 // Shot: extreme close-up at levels ≥ 200, else medium. Step: before below 90,
@@ -74,6 +82,12 @@ function namesFromPrompt() {
   return m ? JSON.parse(m[1]) : [];
 }
 
+// The caption prompt's main subject: a JSON string after "MAIN SUBJECT:", or null.
+function mainFromPrompt() {
+  const m = /^MAIN SUBJECT: (".*")$/m.exec(prompt);
+  return m ? JSON.parse(m[1]) : null;
+}
+
 if (mode === "must-see") {
   const story = (/STORY: (.*)/.exec(prompt) || [])[1] || "";
   if (story.includes("claude-fails")) fail("API Error: 500 Internal server error");
@@ -92,10 +106,16 @@ if (mode === "must-see") {
   }
   // bug-020: the headword as an item name (the fake caption hides "key item", what a blind captioner can't read)
   if (story.includes("operates")) items.push({ name: "surgeon", adjectives: [] });
+  if (/\bstar\b/.test(story)) items.push({ name: "star", adjectives: ["bright"] });
+  if (story.includes("noview")) items.push({ name: "noview", adjectives: [] });
   const angleCase = /\bview\b/.test(story) ? "view" : /\blone\b/.test(story) ? "one-object" : "none";
-  out({ items, nameSigns, isSequence: /\bthen\b/.test(story), angleCase });
+  const repair = /Your last list named the main subject/.test(prompt);
+  let mainSubject = story.includes("operates") ? "surgeon" : /\bstar\b/.test(story) ? "star" : story.includes("noview") ? "noview" : /\bhaunts\b/.test(story) ? "ghost" : null;
+  if (story.includes("bad-main-always") || (story.includes("bad-main") && !repair)) mainSubject = "dragon";
+  out({ items, nameSigns, isSequence: /\bthen\b/.test(story), angleCase, mainSubject });
 } else if (mode === "caption") {
   const names = namesFromPrompt();
+  const main = mainFromPrompt();
   if (names.includes("crash")) fail("API Error: 500 Internal server error");
   if (names.includes("garble")) {
     process.stdout.write("a gray square, nothing else\n");
@@ -121,6 +141,8 @@ if (mode === "must-see") {
     extras: { floor: false, background: "plain", morePeople: false, readableText: names.includes("nurse") && l >= 150 ? "VENICE, R.N." : "" },
     mustSee: Object.fromEntries(names.map((n) => [n, mark(n)])),
     drawingErrors: !names.includes("tile") ? [] : l >= 210 ? [{ object: "tile", mustSee: true, note: "sits on top of the grout lines" }] : l >= 150 ? [{ object: "lamp", mustSee: false, note: "floats above the table" }] : [],
+    // the main subject's view (C-045), only when the prompt names one
+    ...(main === null || main === "noview" ? {} : { mainView: status(main) === "hidden" ? null : l < 60 ? "above" : l < 90 ? "back" : l < 150 ? "side" : l < 210 ? "three-quarter" : "front" }),
   });
 } else {
   const names = listFromPrompt().map((i) => i.name);

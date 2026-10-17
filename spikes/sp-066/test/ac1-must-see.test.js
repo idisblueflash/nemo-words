@@ -103,9 +103,10 @@ test("AC1: an angleCase that isn't view, one-object or none is an unusable list,
   const { parseList } = require("../lib/must-see");
   assert.throws(() => parseList(JSON.stringify({ items: [], isSequence: false, angleCase: "sideways" })), /angleCase/);
   assert.throws(() => parseList(JSON.stringify({ items: [], isSequence: false })), /angleCase/);
-  assert.deepEqual(parseList(JSON.stringify({ items: [{ name: "cob", adjectives: ["bare"] }], isSequence: false, angleCase: "one-object" })), {
+  assert.deepEqual(parseList(JSON.stringify({ items: [{ name: "cob", adjectives: ["bare"] }], mainSubject: "cob", isSequence: false, angleCase: "one-object" })), {
     items: [{ name: "cob", adjectives: ["bare"] }],
     nameSigns: [],
+    mainSubject: "cob",
     isSequence: false,
     angleCase: "one-object",
   });
@@ -114,7 +115,7 @@ test("AC1: an angleCase that isn't view, one-object or none is an unusable list,
 test("AC1: a cached list without an angleCase (SP-064's shape) is made again; one with it is reused", async () => {
   const { mustSeeLists, promptKey } = require("../lib/must-see");
   let calls = 0;
-  const ask = async () => (calls++, JSON.stringify({ items: [{ name: "cob", adjectives: [] }], isSequence: false, angleCase: "none" }));
+  const ask = async () => (calls++, JSON.stringify({ items: [{ name: "cob", adjectives: [] }], mainSubject: null, isSequence: false, angleCase: "none" }));
   const cache = {
     old: { story: "A cob.", items: [{ name: "cob", adjectives: [] }], isSequence: false },
     ok: { story: "A cob.", items: [{ name: "cob", adjectives: [] }], nameSigns: [], isSequence: false, angleCase: "one-object", promptKey: promptKey("A cob.") },

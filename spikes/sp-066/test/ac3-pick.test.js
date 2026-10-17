@@ -6,8 +6,9 @@
 // large and acting on each other as the story says, 2 = clear but not
 // acting, 1 = small, far or apart); an unusual angle lowers vivid only when
 // it hides the action, and not when the story is about a view or has one
-// main object (C-042); must-see clarity uses each item's size, so a small
-// item scores lowest; and code adds the weighted scores and picks the main
+// main object (C-042); must-see clarity is the mean of its parts (ADR-0037:
+// completeness, size and state here, with no name sign and no main subject);
+// and code adds the weighted scores and picks the main
 // cell and the alternative cell as in SP-064.
 //
 // End to end through run.js against the fake claude and a mock Jev that
@@ -16,13 +17,13 @@
 // hidden in cells 1–4 and partly cut in cell 5. The fake captioner: objects
 // act on each other at lightness 100–199; a shown item is medium below 160,
 // else large. So:
-//   cell 5 (120): plausible 3,      vivid 2 (acting, medium), clarity 1 (partly cut)  total 9
-//   cell 6 (150): plausible 2.7647, vivid 2 (acting, medium), clarity 2 (medium)      total 9.5294
-//   cell 7 (180): plausible 2.5294, vivid 3 (acting, large),  clarity 3               total 11.0588 ← main
-//   cell 8 (210): plausible 2.2941, vivid 2 (apart),          clarity 3               total 9.5882
-//   cell 9 (240): plausible 2.0588, vivid 2 (apart),          clarity 3               total 9.1176
+//   cell 5 (120): plausible 3,      vivid 2 (acting, medium), clarity (1+2+3)/3 = 2 (partly cut, medium)  total 10
+//   cell 6 (150): plausible 2.7647, vivid 2 (acting, medium), clarity (3+2+3)/3 = 2.6667 (medium)       total 10.1961
+//   cell 7 (180): plausible 2.5294, vivid 3 (acting, large),  clarity 3                                 total 11.0588 ← main
+//   cell 8 (210): plausible 2.2941, vivid 2 (apart),          clarity 3                                 total 9.5882
+//   cell 9 (240): plausible 2.0588, vivid 2 (apart),          clarity 3                                 total 9.1176
 // with the start weights 2·plausible + vivid + clarity. The alternative is the
-// next-highest total (cell 7 isn't an extreme close-up): cell 8.
+// next-highest total (cell 7 isn't an extreme close-up): cell 6.
 
 const test = require("node:test");
 const assert = require("node:assert/strict");
@@ -47,7 +48,7 @@ async function pickRun(kept = [KAPPA], { byWord = {}, env = {} } = {}) {
 }
 
 test("AC3: the gate takes out hidden-item cells; Jev scores the rest in one request; code totals and picks the main and the alternative cell", async () => {
-  const { run, calls } = await pickRun([KAPPA], { byWord: { kappa: { cell_7_clarity: { score: 2, confidence: 0.48 } } } });
+  const { run, calls } = await pickRun([KAPPA], { byWord: { kappa: { cell_7_clarity_state: { score: 2, confidence: 0.48 } } } });
   const p = run.words.find((w) => w.word === "kappa").pick;
 
   assert.deepEqual(p.gatedOut, [1, 2, 3, 4]);
@@ -57,21 +58,22 @@ test("AC3: the gate takes out hidden-item cells; Jev scores the rest in one requ
   assert.equal(calls.length, 1, "one Jev request per grid");
   const { state, questions } = calls[0].body;
   assert.deepEqual(Object.keys(state.cells), ["cell_5", "cell_6", "cell_7", "cell_8", "cell_9"]);
-  assert.equal(Object.keys(questions).length, 15);
+  assert.equal(Object.keys(questions).length, 25, "plausible, vivid and 3 clarity parts per cell");
   const rubric = readJson(path.join(SPIKE, "image-rubric.json"));
-  for (const axis of ["plausible", "vivid", "clarity"]) assert.deepEqual(questions[`cell_5_${axis}`].criteria, rubric.axes[axis].levels);
+  for (const axis of ["plausible", "vivid"]) assert.deepEqual(questions[`cell_5_${axis}`].criteria, rubric.axes[axis].levels);
+  for (const part of ["completeness", "size", "state"]) assert.deepEqual(questions[`cell_5_clarity_${part}`].criteria, rubric.axes.clarity.parts[part].levels);
 
   assert.equal(p.scores["5"].vivid.score, 2);
   assert.equal(p.scores["7"].vivid.score, 3);
   assert.equal(p.scores["8"].vivid.score, 2);
-  assert.equal(p.scores["5"].clarity.score, 1);
-  assert.equal(p.scores["6"].clarity.score, 2);
+  assert.equal(p.scores["5"].clarity.score, 2);
+  assert.ok(near(p.scores["6"].clarity.score, 2.6667));
   assert.deepEqual(p.weights, { plausible: 2, vivid: 1, clarity: 1 });
-  assert.ok(near(p.totals["5"], 9) && near(p.totals["6"], 9.5294) && near(p.totals["7"], 11.0588) && near(p.totals["8"], 9.5882));
+  assert.ok(near(p.totals["5"], 10) && near(p.totals["6"], 10.1961) && near(p.totals["7"], 11.0588) && near(p.totals["8"], 9.5882));
   assert.equal(p.mainCell, 7);
-  assert.deepEqual(p.ranking, [7, 8, 6, 9, 5]);
-  assert.equal(p.alternativeCell, 8);
-  assert.ok(near(p.margin, 11.0588 - 9.5882));
+  assert.deepEqual(p.ranking, [7, 6, 5, 8, 9]);
+  assert.equal(p.alternativeCell, 6);
+  assert.ok(near(p.margin, 11.0588 - 10.1961));
   assert.equal(p.weakestConfidence, 0.48);
 });
 
@@ -110,23 +112,23 @@ test("AC3: an unusual angle lowers vivid when the story is neither about a view 
   assert.equal(none.scores["6"].vivid.score, view.scores["6"].vivid.score, "an eye-level cell is the same either way");
 });
 
-test("AC3: must-see clarity uses each item's size, so a small item scores lowest", async () => {
-  const clarity = readJson(path.join(SPIKE, "image-rubric.json")).axes.clarity;
-  assert.match(clarity.levels[0], /small/);
-  assert.match(clarity.levels[0], /partly cut/);
-  assert.match(clarity.levels[0], /bare/);
-  // after stage 2 (ADR-0035): an unreadable name sign is the middle level, not the lowest
-  assert.doesNotMatch(clarity.levels[0], /Venice/);
-  assert.match(clarity.levels[1], /name sign can't be read/);
-  assert.match(clarity.levels[2], /large/);
-  assert.match(clarity.check, /size/);
-  assert.match(clarity.check, /a small item gets the lowest level/);
+test("AC3: must-see clarity's size part uses each item's size, so a small story item gets its lowest level", async () => {
+  // since the stage-5 refine (ADR-0037), the size is one clarity part, not the whole score
+  const { size, state, completeness } = readJson(path.join(SPIKE, "image-rubric.json")).axes.clarity.parts;
+  assert.match(size.check, /size \(large \/ medium \/ small\)/);
+  assert.match(size.levels[0], /too small/);
+  assert.match(size.levels[2], /large enough/);
+  assert.match(completeness.levels[0], /partly cut/);
+  assert.match(state.levels[0], /bare/);
 
   // psi: R grid (cell n = 240 − 30·(n−1)), only the square: cells 7–9 show it small
   const psi = { word: "psi", grid: "theta.grid.png", flashCell: 1, story: "Psi story, lightness 120." };
   const { run, calls } = await pickRun([psi]);
   const p = run.words[0].pick;
   assert.equal(calls[0].body.state.cells.cell_8.must_see.square.size, "small");
-  for (const c of [7, 8, 9]) assert.equal(p.scores[c].clarity.score, 1, `cell ${c}: small item, lowest clarity`);
+  for (const c of [7, 8, 9]) {
+    assert.equal(p.scores[c].clarity.parts.size.score, 1, `cell ${c}: small item, lowest size level`);
+    assert.ok(near(p.scores[c].clarity.score, 7 / 3), `cell ${c}: the mean of 3, 1 and 3`);
+  }
   assert.equal(p.scores[1].clarity.score, 3);
 });

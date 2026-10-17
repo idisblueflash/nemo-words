@@ -8,16 +8,16 @@
 //         only toward must-see clarity. When the
 //         gate would leave no cell, all 9 are scored without it (gateSkipped).
 //   Jev:  one systemOne request per grid, the way judge-stories scores
-//         stories (US-038): per scored cell and rubric axis one Score question
-//         `cell_<N>_<axis>`; the axis score is Jev's level + 1 (1–3, decimals
-//         kept), with Jev's confidence for it.
-//   Caps: code lowers Jev's scores after the answers (applyCaps): must-see
-//         clarity at 2 at most when the cell's readable text doesn't show a
-//         name sign (ADR-0035; a name sign never gates a cell), plausible at
-//         1 for a drawing error on a must-see item and at 2 at most for one
-//         on another object (ADR-0036). The pick's scores are the capped
-//         ones (so the report's re-pick keeps the caps); `answers` stays
-//         Jev's own, and `caps` says which cell and axis was capped and why.
+//         stories (US-038): per scored cell one Score question for plausible
+//         (`cell_<N>_plausible`) and vivid (`cell_<N>_vivid`), and one per
+//         must-see clarity part (`cell_<N>_clarity_<part>`, ADR-0037, C-046):
+//         completeness, size and state always, nameSign only with a name sign,
+//         view only with a main subject. A score is Jev's level + 1 (1–3,
+//         decimals kept), with Jev's confidence; clarity is the mean of its
+//         parts, with the lowest confidence of its parts (for C-037). Each
+//         question gets the full captions in the state. Code caps no score
+//         (ADR-0037): Jev's state holds each cell's drawing errors and, with
+//         a name sign, name_sign_readable (a name sign never gates a cell).
 //   Code: total = Σ weight·score; the highest total is the main cell (ties:
 //         higher plausible, then lower cell). The alternative cell, margin and
 //         weakest confidence come from the totals and the captions — no second
@@ -32,17 +32,27 @@ const jev = require("../../../scripts/lib/jev");
 
 const RUBRIC_FILE = path.join(__dirname, "..", "image-rubric.json");
 const AXES = ["plausible", "vivid", "clarity"];
+const PARTS = ["completeness", "size", "state", "nameSign", "view"];
 const START_WEIGHTS = { plausible: 2, vivid: 1, clarity: 1 };
 const CELLS = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 function loadRubric(file = RUBRIC_FILE) {
   const rubric = JSON.parse(fs.readFileSync(file, "utf8"));
-  for (const axis of AXES) {
-    const a = rubric.axes && rubric.axes[axis];
-    if (!a || !a.label || !Array.isArray(a.levels) || a.levels.length !== 3) throw new Error(`${file}: axis ${axis} needs a label and 3 levels`);
+  const ok = (a) => a && a.label && Array.isArray(a.levels) && a.levels.length === 3;
+  for (const axis of AXES.filter((x) => x !== "clarity")) {
+    if (!ok(rubric.axes && rubric.axes[axis])) throw new Error(`${file}: axis ${axis} needs a label and 3 levels`);
+  }
+  const clarity = rubric.axes && rubric.axes.clarity;
+  for (const part of PARTS) {
+    if (!(clarity && clarity.label && clarity.parts && ok(clarity.parts[part]))) throw new Error(`${file}: clarity part ${part} needs a label and 3 levels`);
   }
   return rubric;
 }
+
+// The clarity parts that apply to a story (C-046): the name sign only with
+// one, the view only with a main subject.
+const clarityParts = ({ nameSigns = [], mainSubject = null } = {}) =>
+  PARTS.filter((p) => (p === "nameSign" ? nameSigns.length > 0 : p === "view" ? mainSubject !== null && mainSubject !== undefined : true));
 
 // A caption's must-see marks (SP-066: each item is { mark, size, place }).
 const marks = (caption) => Object.values((caption && caption.mustSee) || {}).map((m) => m.mark);
@@ -57,19 +67,22 @@ function gate(captions) {
 
 const qname = (cell, axis) => `cell_${cell}_${axis}`;
 
-function buildQuestions(rubric, cells) {
+const STATE_TEXT =
+  "The state holds a mnemonic story for an English word, its must-see list (the objects a picture of it must show), its angle_case (\"view\" when the story is about a view, \"one-object\" when it has one main object, else \"none\"), its main_subject (the one must-see item that the story is about, or null), and descriptions of candidate pictures for it (cells, keyed by id): each cell's objects, shot, angle, action step, action line (what the objects do to each other), extras, each must-see item's mark (visible / partly cut / hidden), size and place, its drawing errors (objects drawn wrong: they float, look pasted on, or break the lines of the wall or floor; mustSee says if the object is a must-see item), and how it differs from the other cells. When the story has name signs (name_signs: a name that the picture should show as text, on the item that carries it), each cell's name_sign_readable says whether its readable text shows every name sign. When the story has a main subject, each cell's main_view gives its view: front, three-quarter, side, back or above (null when the cell hides it).";
+
+// parts: the clarity parts that apply (clarityParts).
+function buildQuestions(rubric, cells, parts = clarityParts()) {
+  const ask = (c, a, kind, extraChecks = []) =>
+    jev.score([STATE_TEXT, `Score picture cell_${c}, exactly as described, on the "${a.label}" ${kind}.`, ...extraChecks, ...(a.check ? [a.check] : [])].join("\n"), a.levels);
   const questions = {};
   for (const c of cells) {
     for (const axis of AXES) {
-      const a = rubric.axes[axis];
-      questions[qname(c, axis)] = jev.score(
-        [
-          "The state holds a mnemonic story for an English word, its must-see list (the objects a picture of it must show), its angle_case (\"view\" when the story is about a view, \"one-object\" when it has one main object, else \"none\"), and descriptions of candidate pictures for it (cells, keyed by id): each cell's objects, shot, angle, action step, action line (what the objects do to each other), extras, each must-see item's mark (visible / partly cut / hidden), size and place, its drawing errors (objects drawn wrong: they float, look pasted on, or break the lines of the wall or floor; mustSee says if the object is a must-see item), and how it differs from the other cells. When the story has name signs (name_signs: a name that the picture should show as text, on the item that carries it), each cell's name_sign_readable says whether its readable text shows every name sign.",
-          `Score picture cell_${c}, exactly as described, on the "${a.label}" axis.`,
-          ...(a.check ? [a.check] : []),
-        ].join("\n"),
-        a.levels,
-      );
+      if (axis !== "clarity") {
+        questions[qname(c, axis)] = ask(c, rubric.axes[axis], "axis");
+        continue;
+      }
+      const clarity = rubric.axes.clarity;
+      for (const part of parts) questions[qname(c, `clarity_${part}`)] = ask(c, clarity.parts[part], "part", clarity.check ? [clarity.check] : []);
     }
   }
   return questions;
@@ -94,63 +107,56 @@ function nameSignReadable(nameSigns, caption) {
   return nameSigns.every((s) => seen.includes(plainText(s.text)));
 }
 
-// Code's caps on Jev's scores (ADR-0035, ADR-0036): must-see clarity at 2 at
-// most when the cell can't show a name sign; plausible at 1 for a drawing
-// error on a must-see item, else at 2 at most for one on another object. A
-// cap never raises a score, and the confidence stays Jev's.
-// → { scores (capped), caps: cell → axis → why }
-function applyCaps(scores, captions, nameSigns) {
-  const capped = {};
-  const caps = {};
-  const cap = (c, axis, max, why) => {
-    capped[c][axis] = { ...capped[c][axis], score: Math.min(capped[c][axis].score, max) };
-    caps[c] = { ...(caps[c] || {}), [axis]: why };
-  };
-  for (const c of Object.keys(scores)) {
-    capped[c] = { ...scores[c] };
-    if (nameSignReadable(nameSigns, captions[c]) === false) cap(c, "clarity", 2, "name sign not readable");
-    const errors = (captions[c] && captions[c].drawingErrors) || [];
-    if (errors.some((e) => e.mustSee)) cap(c, "plausible", 1, "drawing error on a must-see item");
-    else if (errors.length) cap(c, "plausible", 2, "drawing error on another object");
-  }
-  return { scores: capped, caps };
-}
-
-function buildState({ word, story, items, nameSigns = [], angleCase, captions, lines }, cells) {
+function buildState({ word, story, items, nameSigns = [], mainSubject = null, angleCase, captions, lines }, cells) {
   const cellState = {};
+  const hasMain = mainSubject !== null && mainSubject !== undefined;
   for (const c of cells) {
-    const { mustSee, drawingErrors, promptKey, ...rest } = captions[c]; // promptKey is the caption cache's, not Jev's
+    const { mustSee, drawingErrors, mainView, promptKey, ...rest } = captions[c]; // promptKey is the caption cache's, not Jev's
     const readable = nameSignReadable(nameSigns, captions[c]);
     cellState[`cell_${c}`] = {
       ...rest,
       must_see: mustSee,
       drawing_errors: drawingErrors || [],
       ...(readable === null ? {} : { name_sign_readable: readable }),
+      ...(hasMain ? { main_view: mainView ?? null } : {}),
       differs: lines[c - 1],
     };
   }
-  return { word, story, must_see: items, name_signs: nameSigns, angle_case: angleCase, cells: cellState };
+  return { word, story, must_see: items, name_signs: nameSigns, main_subject: hasMain ? mainSubject : null, angle_case: angleCase, cells: cellState };
 }
 
 const usable = (x, lo, hi) => typeof x === "number" && Number.isFinite(x) && x >= lo && x <= hi;
 
-// Jev's answers → cell → axis → { score: 1–3, confidence }
-function toScores(answers, cells) {
+const round6 = (x) => Math.round(x * 1e6) / 1e6;
+
+// Jev's answers → cell → axis → { score: 1–3, confidence }; clarity also holds
+// its parts (part → { score, confidence }), its score is their mean and its
+// confidence their lowest. parts: the clarity parts that apply.
+function toScores(answers, cells, parts = clarityParts()) {
+  const one = (name) => {
+    const a = answers && answers[name];
+    if (!a || !usable(a.score, 0, 2) || !usable(a.confidence, 0, 1)) throw new jev.JevError(`unusable Jev answer for ${name}: ${JSON.stringify(a)}`);
+    return { score: a.score + 1, confidence: a.confidence };
+  };
   const scores = {};
   for (const c of cells) {
     scores[c] = {};
     for (const axis of AXES) {
-      const a = answers && answers[qname(c, axis)];
-      if (!a || !usable(a.score, 0, 2) || !usable(a.confidence, 0, 1)) {
-        throw new jev.JevError(`unusable Jev answer for ${qname(c, axis)}: ${JSON.stringify(a)}`);
+      if (axis !== "clarity") {
+        scores[c][axis] = one(qname(c, axis));
+        continue;
       }
-      scores[c][axis] = { score: a.score + 1, confidence: a.confidence };
+      const p = Object.fromEntries(parts.map((part) => [part, one(qname(c, `clarity_${part}`))]));
+      const all = Object.values(p);
+      scores[c].clarity = {
+        score: round6(all.reduce((sum, x) => sum + x.score, 0) / all.length),
+        confidence: Math.min(...all.map((x) => x.confidence)),
+        parts: p,
+      };
     }
   }
   return scores;
 }
-
-const round6 = (x) => Math.round(x * 1e6) / 1e6;
 
 // The alternative cell (C-035): among the ranked cells after the main one, the
 // first with a wider shot when the main cell is an extreme close-up, else the
@@ -194,16 +200,17 @@ function choose(scores, weights, captions, isSequence) {
 // The cache key of a Jev request: its state and questions.
 const requestKey = (request) => crypto.createHash("sha256").update(JSON.stringify(request)).digest("hex").slice(0, 16);
 
-// One grid's pick. input: { word, story, items, isSequence, angleCase, captions, lines }.
+// One grid's pick. input: { word, story, items, nameSigns, mainSubject, isSequence, angleCase, captions, lines }.
 // cache (word → { key, answers }) holds Jev's usable answers: a request with
 // the same state and questions reuses them (fromCache), with no Jev call.
 async function pickCell(input, { rubric = loadRubric(), weights = START_WEIGHTS, cache = null, onSave = () => {}, ...opts } = {}) {
   const g = gate(input.captions);
-  const request = { state: buildState(input, g.scored), questions: buildQuestions(rubric, g.scored) };
+  const parts = clarityParts(input);
+  const request = { state: buildState(input, g.scored), questions: buildQuestions(rubric, g.scored, parts) };
   const key = requestKey(request);
   const hit = cache && cache[input.word] && cache[input.word].key === key ? cache[input.word] : null;
   const answers = hit ? hit.answers : await jev.systemOne(request, opts);
-  const { scores, caps } = applyCaps(toScores(answers, g.scored), input.captions, input.nameSigns);
+  const scores = toScores(answers, g.scored, parts);
   if (cache && !hit) {
     cache[input.word] = { key, answers };
     onSave(cache);
@@ -213,7 +220,7 @@ async function pickCell(input, { rubric = loadRubric(), weights = START_WEIGHTS,
   const steps = Object.fromEntries(g.scored.map((c) => [c, input.captions[c].step]));
   // every cell (scored or not) with a partly cut must-see item, for the report's share
   const partlyCut = CELLS.filter((c) => marks(input.captions[c]).includes("partly cut"));
-  return { ...g, scores, caps, shots, steps, isSequence: input.isSequence, partlyCut, ...choose(scores, weights, input.captions, input.isSequence), answers, fromCache: !!hit };
+  return { ...g, scores, shots, steps, isSequence: input.isSequence, partlyCut, ...choose(scores, weights, input.captions, input.isSequence), answers, fromCache: !!hit };
 }
 
-module.exports = { AXES, START_WEIGHTS, loadRubric, gate, buildQuestions, buildState, toScores, nameSignReadable, applyCaps, alternative, choose, pickCell };
+module.exports = { AXES, PARTS, START_WEIGHTS, loadRubric, clarityParts, gate, buildQuestions, buildState, toScores, nameSignReadable, alternative, choose, pickCell };

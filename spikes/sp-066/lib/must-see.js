@@ -9,7 +9,11 @@
 // a name used as a sound anchor gives the person or thing that carries it as
 // a must-see item ("nurse") and the name as a name sign ({ item: "nurse",
 // text: "Venice" }); a name sign is not a must-see item, so the gate never
-// checks it. Cached in <out>/must-see.json (word → { story, items, nameSigns,
+// checks it. After stage 5 (ADR-0037, C-045): it names the main subject, the
+// one item that the story is about, or null; a main subject that isn't one of
+// the items gets the repair prompt once (with the name repair, if that is
+// needed too), and the word fails if it is still wrong. Cached in
+// <out>/must-see.json (word → { story, items, nameSigns, mainSubject,
 // isSequence, angleCase, promptKey }); a cached list is reused while the story
 // and the prompt (`promptKey`) are unchanged.
 
@@ -25,7 +29,8 @@ function prompt(story) {
     'A person\'s or place\'s name can\'t be seen. For a name, list the person or thing that carries the name as an item, without the name (for example "nurse" for a nurse called Venice), and give the name as a name sign: the text that the picture should show, with the item that carries it ({"item":"nurse","text":"Venice"}). Don\'t put the name in any item\'s name. A story with no name has no name signs ([]).',
     "Also say whether the story is a sequence: two or more steps in time (\"roast corn, then toss the cob\").",
     'Also say if the story is about a view (looking down from a ridge, something that looms over a person): "view"; or has one main object, so a close-up of it is the clearest picture: "one-object"; or neither: "none".',
-    'Print only JSON, no preamble: {"items":[{"name":"...","adjectives":["..."]}],"nameSigns":[{"item":"...","text":"..."}],"isSequence":true|false,"angleCase":"view"|"one-object"|"none"}',
+    'Also name the main subject: the one person or object that the story is about, as the name of one of your items, exactly as written there (for example "surgeon" for a surgeon who operates by headlamp); or null when the story has no one main subject.',
+    'Print only JSON, no preamble: {"items":[{"name":"...","adjectives":["..."]}],"nameSigns":[{"item":"...","text":"..."}],"mainSubject":"..."|null,"isSequence":true|false,"angleCase":"view"|"one-object"|"none"}',
     "",
     `STORY: ${story}`,
   ].join("\n");
@@ -50,8 +55,13 @@ function parseList(text) {
     return { item: s.item.trim(), text: s.text.trim() };
   });
   if (!ANGLE_CASES.includes(j.angleCase)) throw new ClaudeError(`unusable must-see list: angleCase ${JSON.stringify(j.angleCase)}`);
-  return { items, nameSigns, isSequence: j.isSequence === true, angleCase: j.angleCase };
+  // a main subject that isn't an item stays as given, for the repair (badMainSubject)
+  const mainSubject = typeof j.mainSubject === "string" ? j.mainSubject.trim() : j.mainSubject;
+  return { items, nameSigns, mainSubject, isSequence: j.isSequence === true, angleCase: j.angleCase };
 }
+
+// The main subject must be one of the items, or null (C-045); a missing one isn't named.
+const badMainSubject = (list) => list.mainSubject !== null && !(list.items || []).some((i) => i.name === list.mainSubject);
 
 // The story's names: each capitalized word that doesn't start a sentence
 // ("Venice" in "Nurse Venice returns", "Victor" in "If Victor misses rent"),
@@ -79,13 +89,35 @@ function unsignedNames(story, list) {
   return [...new Set([...inName, ...orphans])];
 }
 
-// The repair prompt: a name in an item's name becomes its carrier plus a name sign.
-const fixPrompt = (story, bare) =>
+// The repair prompt: a name in an item's name becomes its carrier plus a name
+// sign, and a main subject that isn't an item becomes one of the items or null.
+// fix: { bare: [name], main: the list with the bad main subject, or undefined }.
+const fixPrompt = (story, { bare, main }) =>
   [
     prompt(story),
     "",
-    `Your last list put ${bare.map((n) => `"${n}"`).join(", ")} in an item's name, or gave a name sign whose item isn't on the list. A name can't be seen: list the person or thing that carries the name as the item, without the name (for example "man" for a man called "${bare[0]}"), give the name as a name sign ({"item":"man","text":"${bare[0]}"}), and don't put the name in any item's name.`,
+    ...(bare.length
+      ? [
+          `Your last list put ${bare.map((n) => `"${n}"`).join(", ")} in an item's name, or gave a name sign whose item isn't on the list. A name can't be seen: list the person or thing that carries the name as the item, without the name (for example "man" for a man called "${bare[0]}"), give the name as a name sign ({"item":"man","text":"${bare[0]}"}), and don't put the name in any item's name.`,
+        ]
+      : []),
+    ...(main
+      ? [`Your last list named the main subject ${JSON.stringify(main.mainSubject ?? null)}, which isn't the name of one of its items. Give the main subject as the name of one of your items, exactly as written there, or null when the story has no one main subject.`]
+      : []),
   ].join("\n");
+
+// What a list needs repaired: { bare, main } as fixPrompt takes it, or null when nothing.
+function needsRepair(story, list) {
+  const bare = unsignedNames(story, list);
+  const main = badMainSubject(list) ? list : undefined;
+  return bare.length || main ? { bare, main } : null;
+}
+
+const repairText = ({ bare, main }) =>
+  [
+    ...(bare.length ? [`name left in an item's name, or a name sign with no carrier: ${bare.join(", ")}`] : []),
+    ...(main ? [`main subject isn't an item: ${JSON.stringify(main.mainSubject ?? null)}`] : []),
+  ].join("; ");
 
 // The cache key of a list: the prompt it was made with.
 const promptKey = (story) => crypto.createHash("sha256").update(prompt(story)).digest("hex").slice(0, 16);
@@ -103,11 +135,11 @@ async function mustSeeLists({ words, ask, cache = {}, jobs = 6, onSave = () => {
   await pool(todo, jobs, async (w) => {
     try {
       let list = parseList(await ask(prompt(w.story), { tools: "" }));
-      const bare = unsignedNames(w.story, list);
-      if (bare.length) {
-        list = parseList(await ask(fixPrompt(w.story, bare), { tools: "" }));
-        const still = unsignedNames(w.story, list);
-        if (still.length) throw new ClaudeError(`name left in an item's name, or a name sign with no carrier: ${still.join(", ")}`);
+      const fix = needsRepair(w.story, list);
+      if (fix) {
+        list = parseList(await ask(fixPrompt(w.story, fix), { tools: "" }));
+        const still = needsRepair(w.story, list);
+        if (still) throw new ClaudeError(repairText(still));
       }
       cache[w.word] = { story: w.story, ...list, promptKey: promptKey(w.story) };
       onSave(cache);
@@ -119,4 +151,4 @@ async function mustSeeLists({ words, ask, cache = {}, jobs = 6, onSave = () => {
   return { cache, failures };
 }
 
-module.exports = { prompt, promptKey, parseList, mustSeeLists, unsignedNames, storyNames, ANGLE_CASES };
+module.exports = { prompt, promptKey, parseList, mustSeeLists, unsignedNames, badMainSubject, storyNames, ANGLE_CASES };

@@ -89,8 +89,10 @@ test("alternative: a different action step when the story is a sequence", () => 
 
 test("toScores: a missing confidence or an out-of-range level is unusable", () => {
   const ok = { type: "score", score: 1, confidence: 0.5 };
-  const answers = { cell_1_plausible: ok, cell_1_vivid: ok, cell_1_clarity: { type: "score", score: 1 } };
-  assert.throws(() => toScores(answers, [1]), /unusable Jev answer for cell_1_clarity/);
-  assert.throws(() => toScores({ ...answers, cell_1_clarity: { score: 2.5, confidence: 0.5 } }, [1]), /unusable/);
-  assert.deepEqual(toScores({ ...answers, cell_1_clarity: ok }, [1])[1].clarity, { score: 2, confidence: 0.5 });
+  // since the stage-5 refine (ADR-0037), clarity is asked in parts
+  const answers = { cell_1_plausible: ok, cell_1_vivid: ok, cell_1_clarity_completeness: ok, cell_1_clarity_size: ok, cell_1_clarity_state: { type: "score", score: 1 } };
+  assert.throws(() => toScores(answers, [1]), /unusable Jev answer for cell_1_clarity_state/);
+  assert.throws(() => toScores({ ...answers, cell_1_clarity_state: { score: 2.5, confidence: 0.5 } }, [1]), /unusable/);
+  assert.equal(toScores({ ...answers, cell_1_clarity_state: ok }, [1])[1].clarity.score, 2);
+  assert.equal(toScores({ ...answers, cell_1_clarity_state: ok }, [1])[1].clarity.confidence, 0.5);
 });

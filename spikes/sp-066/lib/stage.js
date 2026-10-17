@@ -9,9 +9,36 @@
 // stage-2 refine also: whether every caption has a drawing-errors list, for
 // the name-anchor words the cells gated out only because the name can't be
 // read (should be 0, ADR-0035), and how many cells have a drawing error
-// (most cells → stop for design, ADR-0036).
+// (most cells → stop for design, ADR-0036). After the stage-5 refine
+// (ADR-0037): the captions that show the main subject but give no mainView
+// (should be 0), and clarity's mean spread inside a grid (max − min over the
+// scored cells, then the mean over the judged words), next to stage 5's value
+// before the refine.
 
-const { vividAlone, hasNameAnchor } = require("./split");
+const { vividAlone, hasNameAnchor, hasMainSubject } = require("./split");
+const { VIEWS } = require("./caption");
+
+// Stage 5's clarity spread before the refine (the item's "Check after each stage").
+const SPREAD_BEFORE = 0.71;
+
+// Whether a caption shows the list's main subject (it isn't marked hidden).
+const showsMain = (list, c) => {
+  const m = c.mustSee && c.mustSee[list.mainSubject];
+  return !(m && m.mark === "hidden");
+};
+
+// For a main-subject word: the cells that show the main subject but have no usable mainView.
+function missingViews(list, cells) {
+  return Object.entries(cells || {})
+    .filter(([, c]) => showsMain(list, c) && !VIEWS.includes(c.mainView))
+    .map(([cell]) => Number(cell));
+}
+
+// A judged word's clarity spread: max − min over its scored cells.
+function claritySpread(pick) {
+  const v = pick.scored.map((c) => pick.scores[c].clarity.score);
+  return Math.max(...v) - Math.min(...v);
+}
 
 const pct = (n, k) => (k ? `${((n / k) * 100).toFixed(1)}%` : "—");
 const of = (n, k) => `${n} of ${k} (${pct(n, k)})`;
@@ -91,6 +118,12 @@ function stageSummary({ stage, words, total, split, outcomes, lists, captions, c
   const judgedCells = judged.flatMap((w) => Object.values(captions[w.grid] || {}));
   const errorCells = judgedCells.filter((c) => (c.drawingErrors || []).length);
   const mustSeeErrorCells = errorCells.filter((c) => c.drawingErrors.some((e) => e.mustSee));
+  const mainWords = judged.filter((w) => hasMainSubject(lists[w.word]));
+  const noView = mainWords.map((w) => [w.word, missingViews(lists[w.word], captions[w.grid])]).filter(([, cells]) => cells.length);
+  const nNoView = noView.reduce((n, [, cells]) => n + cells.length, 0);
+  const showing = mainWords.reduce((n, w) => n + Object.values(captions[w.grid] || {}).filter((c) => showsMain(lists[w.word], c)).length, 0);
+  const spreads = judged.map((w) => claritySpread(w.pick));
+  const meanSpread = spreads.length ? (spreads.reduce((s, x) => s + x, 0) / spreads.length).toFixed(2) : "—";
   lines.push(
     "",
     `Judged: ${judged.length} of ${words.length}; unjudged: ${words.length - judged.length}`,
@@ -98,6 +131,8 @@ function stageSummary({ stage, words, total, split, outcomes, lists, captions, c
     `Captions with a drawing-errors list: ${withErrorLists.length} of ${judged.length} judged grids`,
     `Name-anchor words: ${nameWords.length}; cells gated out only because the name can't be read: ${nForName}${forName.length ? ` (${forName.map(([w, cells]) => `${w}: ${cells.join(", ")}`).join("; ")})` : ""}`,
     `Cells with a drawing error: ${of(errorCells.length, judgedCells.length)}; on a must-see item: ${mustSeeErrorCells.length}`,
+    `Main-subject words: ${mainWords.length}; captions that show the main subject with no mainView: ${nNoView} of ${showing}${noView.length ? ` (${noView.map(([w, cells]) => `${w}: ${cells.join(", ")}`).join("; ")})` : ""}`,
+    `Clarity's spread inside a grid (max − min): mean ${meanSpread} over ${judged.length} judged grids; stage 5 before the refine: ${SPREAD_BEFORE}`,
     `Gate skipped: ${skipped.length} of ${judged.length}; SP-064 on the same words: ${sp064Skipped.length} of ${sp064Same.length}`,
     `Exact (start weights): ${of(judged.filter((w) => w.pick.mainCell === w.flashCell).length, judged.length)}; in three: ${of(judged.filter((w) => w.pick.ranking.slice(0, 3).includes(w.flashCell)).length, judged.length)}`,
     `Vivid alone (exact): ${of(vividExact.length, judged.length)}; chance 11.1%`,

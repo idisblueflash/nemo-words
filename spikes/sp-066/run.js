@@ -17,7 +17,7 @@
 // A tuning stage first makes the must-see lists of every tuning word (text
 // only), so that the tuning order can put the Staged run's early picks first
 // (an SP-064 hit, a name anchor, an angleCase view or one-object, an SP-064
-// gate skip); the order is saved in raw/split.json and doesn't change while
+// gate skip, and after the stage-5 refine a word with a main subject); the order is saved in raw/split.json and doesn't change while
 // the must-see prompt stays the same (listPromptKey; after the stage-2 refine
 // the old order is made again from the new lists, ADR-0035). Then
 // it runs the chosen words and prints a stage summary (stdout). The measure
@@ -176,7 +176,7 @@ async function judge(cfg, kept, prepared, tuning) {
     const list = prepared.lists[w.word];
     try {
       const { fromCache, ...pick } = await pickCell(
-        { word: w.word, story: w.story, items: list.items, nameSigns: list.nameSigns || [], isSequence: list.isSequence, angleCase: list.angleCase, captions: prepared.captions[w.grid], lines: prepared.lines[w.grid] },
+        { word: w.word, story: w.story, items: list.items, nameSigns: list.nameSigns || [], mainSubject: list.mainSubject ?? null, isSequence: list.isSequence, angleCase: list.angleCase, captions: prepared.captions[w.grid], lines: prepared.lines[w.grid] },
         { rubric, ...jevCache },
       );
       if (!fromCache) jevCalls++;

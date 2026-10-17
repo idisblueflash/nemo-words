@@ -17,7 +17,13 @@
 // object that floats, looks pasted on, or breaks the lines of the wall or
 // floor (not one the scene shows broken on purpose); an empty list when there
 // is none, and a caption without the list is unusable. The text it can read
-// stays in extras.readableText (the name-sign check, ADR-0035). Cached in <out>/captions.json (grid → cell → caption); each
+// stays in extras.readableText (the name-sign check, ADR-0035). After stage 5
+// (ADR-0037, C-045): when the list has a main subject, the prompt names it (as
+// the captioner may see it, without the headword) and asks for its view,
+// mainView: front, three-quarter, side, back or above; null when the cell hides
+// it. A caption with no usable mainView then is unusable. With no main subject
+// the prompt has no view question, and mainView is null.
+// Cached in <out>/captions.json (grid → cell → caption); each
 // caption keeps the key of the prompt it was made with (`promptKey`), so a
 // caption made under another prompt or list is made again. A failed or
 // unusable caption isn't cached.
@@ -34,6 +40,7 @@ const STATUSES = ["visible", "partly cut", "hidden"];
 const EXTRAS = ["floor", "background", "morePeople", "readableText"];
 const SIZES = ["large", "medium", "small"];
 const PLACES = ["front", "back"];
+const VIEWS = ["front", "three-quarter", "side", "back", "above"];
 
 // The must-see item names, once each, in list order.
 const itemNames = (items) => [...new Set(items.map((i) => i.name))];
@@ -43,7 +50,11 @@ const itemNames = (items) => [...new Set(items.map((i) => i.name))];
 // since the bare placeholder says nothing (bug-020); every other name is as written.
 const shownNames = (items, word) => itemNames(items).map((n) => (word ? describeBareName(word, n) || maskName(word, n) : n));
 
-function prompt(items, word) {
+// The main subject as the captioner sees it, like the item names.
+const shownMain = (mainSubject, word) => (word ? describeBareName(word, mainSubject) || maskName(word, mainSubject) : mainSubject);
+
+function prompt(items, word, mainSubject = null) {
+  const main = mainSubject === null || mainSubject === undefined ? null : shownMain(mainSubject, word);
   return [
     "Use the Read tool to look at the image file picture.png in the current folder.",
     "Describe what the picture shows, as JSON with these keys:",
@@ -55,9 +66,15 @@ function prompt(items, word) {
     '- "action": one line: what the objects do to each other in the picture (who holds, pushes, hands over, looks at what), or that they stand apart',
     '- "mustSee": for each item name below (keyed by the name, exactly as written), {"mark": "visible", "partly cut" or "hidden", "size": "large", "medium" or "small", "place": "front" or "back"}. The mark is "visible" when the thing is fully shown, "partly cut" when the edge of the picture cuts part of it off, "hidden" when it can\'t be seen; judge only whether the thing itself is there, whatever its state. The size is how much of the picture the thing takes up; the place is whether it is in the front or the back of the scene. For a hidden thing, give null for size and place',
     '- "drawingErrors": each object that doesn\'t fit the picture as drawn: it floats, looks pasted on, or breaks the lines of the wall or floor, as [{"object":"...","mustSee": true or false,"note":"what is wrong"}], with "mustSee" true when the object is one of the item names below. An object that is cut off by the edge of the cell (a crop, for example in a close-up), drawn small, or shown in the wrong state is not a drawing error. An object that the scene shows as broken or crooked on purpose is not a drawing error either. Give an empty list ([]) when there is none',
+    ...(main === null
+      ? []
+      : [
+          `- "mainView": the view of the main subject below (MAIN SUBJECT): one of ${VIEWS.slice(0, -1).map((v) => `"${v}"`).join(", ")} or "${VIEWS[VIEWS.length - 1]}" (seen from above). It says where its face and body point: "front" when they face the viewer, "three-quarter" when they are turned part way, "side" in profile, "back" when they face away. Give null when the main subject is hidden`,
+        ]),
     'Put the words you can read in the picture (on a nametag, a sign, a label) in "extras"."readableText", exactly as written.',
     "Print only the JSON, no preamble.",
     "",
+    ...(main === null ? [] : [`MAIN SUBJECT: ${JSON.stringify(main)}`]),
     `MUST-SEE ITEMS: ${JSON.stringify(shownNames(items, word))}`,
   ].join("\n");
 }
@@ -66,7 +83,7 @@ const isObject = (x) => x !== null && typeof x === "object" && !Array.isArray(x)
 
 // Model answer → caption, or a ClaudeError when it's unusable.
 // The mustSee keys stay the list's own item names, whatever the captioner was shown.
-function parseCaption(text, items, word) {
+function parseCaption(text, items, word, mainSubject = null) {
   const j = parseJson(text);
   if (!Array.isArray(j.objects)) throw new ClaudeError("unusable caption: no objects array");
   if (!SHOTS.includes(j.shot)) throw new ClaudeError(`unusable caption: shot ${JSON.stringify(j.shot)}`);
@@ -94,6 +111,12 @@ function parseCaption(text, items, word) {
     if (!PLACES.includes(m.place)) throw new ClaudeError(`unusable caption: must-see ${shown[k]} has place ${JSON.stringify(m.place)}`);
     mustSee[name] = { mark: m.mark, size: m.size, place: m.place };
   });
+  let mainView = null;
+  const hasMain = mainSubject !== null && mainSubject !== undefined;
+  if (hasMain && !(mustSee[mainSubject] && mustSee[mainSubject].mark === "hidden")) {
+    if (!VIEWS.includes(j.mainView)) throw new ClaudeError(`unusable caption: mainView ${JSON.stringify(j.mainView)}`);
+    mainView = j.mainView;
+  }
   return {
     objects: j.objects,
     shot: j.shot,
@@ -103,24 +126,27 @@ function parseCaption(text, items, word) {
     extras: Object.fromEntries(EXTRAS.map((k) => [k, j.extras[k] ?? null])),
     mustSee,
     drawingErrors,
+    mainView,
   };
 }
 
 // The cache key of a caption: the prompt it was made with.
-const promptKey = (items, word) => crypto.createHash("sha256").update(prompt(items, word)).digest("hex").slice(0, 16);
+const promptKey = (items, word, mainSubject = null) => crypto.createHash("sha256").update(prompt(items, word, mainSubject)).digest("hex").slice(0, 16);
 
-// words: [{ word, grid }], lists: word → { items } → { cache, failures: grid → { cell, error } }.
+// words: [{ word, grid }], lists: word → { items, mainSubject } → { cache, failures: grid → { cell, error } }.
 async function captionGrids({ words, lists, imageDir, ask, cache = {}, jobs = 6, onSave = () => {} }) {
   // a cached caption counts only if it was made with the prompt the word's current list gives
-  const fits = (caption, items, word) => caption && caption.promptKey === promptKey(items, word);
+  const mainOf = (word) => lists[word].mainSubject ?? null;
+  const fits = (caption, word) => caption && caption.promptKey === promptKey(lists[word].items, word, mainOf(word));
   const todo = [];
-  for (const w of words) for (let cell = 1; cell <= 9; cell++) if (!fits(cache[w.grid]?.[cell], lists[w.word].items, w.word)) todo.push({ ...w, cell });
+  for (const w of words) for (let cell = 1; cell <= 9; cell++) if (!fits(cache[w.grid]?.[cell], w.word)) todo.push({ ...w, cell });
   const failures = {};
   await pool(todo, jobs, async ({ word, grid, cell }) => {
     const items = lists[word].items;
+    const main = mainOf(word);
     try {
       const prepare = (dir) => cropCell(path.join(imageDir, grid), cell, path.join(dir, "picture.png"));
-      const caption = { ...parseCaption(await ask(prompt(items, word), { tools: "Read", prepare }), items, word), promptKey: promptKey(items, word) };
+      const caption = { ...parseCaption(await ask(prompt(items, word, main), { tools: "Read", prepare }), items, word, main), promptKey: promptKey(items, word, main) };
       // keep cells in 1–9 order however they finish
       cache[grid] = Object.fromEntries(Object.entries({ ...(cache[grid] || {}), [cell]: caption }).sort(([a], [b]) => a - b));
       onSave(cache);
@@ -132,4 +158,4 @@ async function captionGrids({ words, lists, imageDir, ask, cache = {}, jobs = 6,
   return { cache, failures };
 }
 
-module.exports = { prompt, promptKey, itemNames, parseCaption, captionGrids, SHOTS, STEPS, STATUSES, SIZES, PLACES };
+module.exports = { prompt, promptKey, itemNames, parseCaption, captionGrids, SHOTS, STEPS, STATUSES, SIZES, PLACES, VIEWS };

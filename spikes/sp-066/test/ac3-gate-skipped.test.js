@@ -41,11 +41,14 @@ test("AC3: a grid whose every cell hides a must-see item has all 9 cells scored,
     assert.deepEqual(psi.gatedOut, []);
     assert.deepEqual(Object.keys(psi.totals).map(Number), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
     // theta grid R (cell n = 240 − 30·(n−1)), story lightness 30: cell 8 is the
-    // nearest, but its square is small (lowest vivid and clarity); cell 3
-    // (lightness 180) shows it large and acting, so it wins (SP-066's vivid axis)
-    assert.equal(psi.mainCell, 3);
+    // nearest, but its square is small (lowest vivid and size part). Since the
+    // stage-5 refine (ADR-0037) clarity is the mean of 3 parts, so a medium
+    // square costs one part only: cell 6 (lightness 90, plausible 2.53, vivid
+    // 2, clarity 2.67, total 9.73) beats cell 3 (180, large and acting:
+    // plausible 1.82, vivid 3, clarity 3, total 9.65)
+    assert.equal(psi.mainCell, 6);
     const psiCall = jev.calls.find((c) => c.body.state.word === "psi");
-    assert.equal(Object.keys(psiCall.body.questions).length, 27);
+    assert.equal(Object.keys(psiCall.body.questions).length, 9 * 5, "plausible, vivid and 3 clarity parts per cell");
 
     const gamma = run.words.find((w) => w.word === "gamma").pick;
     assert.equal(gamma.gateSkipped, false);

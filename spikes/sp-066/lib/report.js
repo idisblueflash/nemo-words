@@ -195,7 +195,7 @@ function renderReport(run, opts = {}) {
   const lines = [
     "# SP-066 — Does Jev agree with Flash's image pick when vivid scores the scene, not the camera?",
     "",
-    `Run ${run.date}. Per word: a must-see list (Claude, text only: only what a drawing can show, and the story's angleCase), a caption per cell (with an action line and a size and place per must-see item) and SP-064's compare lines (filled in where missing), all blind to the word, the story and Flash's cell; a gate on hidden must-see items; then one Jev request scoring each remaining cell on plausible, vivid (the scene, not the camera: ADR-0033) and must-see clarity (\`image-rubric.json\`). A name anchor is a must-see item for its carrier plus a name sign, which never gates a cell: code caps must-see clarity at 2 when the cell's readable text doesn't show the name sign (ADR-0035), and caps plausible at 1 for a drawing error on a must-see item and at 2 for one on another object (ADR-0036). Code adds the weighted scores; the highest total is the main cell (ties: higher plausible, then lower cell).`,
+    `Run ${run.date}. Per word: a must-see list (Claude, text only: only what a drawing can show, the story's angleCase and its main subject), a caption per cell (with an action line, a size and place per must-see item, the cell's drawing errors and the main subject's view) and SP-064's compare lines (filled in where missing), all blind to the word, the story and Flash's cell; a gate on hidden must-see items; then one Jev request scoring each remaining cell on plausible (with the cell's drawing errors), vivid (the scene, not the camera: ADR-0033) and must-see clarity (\`image-rubric.json\`). Must-see clarity is the mean of its parts, one Jev question each: completeness, size and state, the name sign for a name anchor, and the main subject's view when the story has one (ADR-0037). A name anchor is a must-see item for its carrier plus a name sign, which never gates a cell. Code caps no score. Code adds the weighted scores; the highest total is the main cell (ties: higher plausible, then lower cell).`,
     `Tuned on ${s.tuningAll.length} tuning words (${s.tuning.length} judged); measured on ${s.measureAll.length} other words (${s.k} judged). Rates are over the judged words only.`,
     "",
     "## Results (measured words)",
@@ -270,7 +270,7 @@ function renderReport(run, opts = {}) {
     "",
     "## Partly cut must-see items",
     "",
-    `Cells with a partly cut must-see item: ${of(s.partlyCutCells, 9 * s.k)}, over all 9 cells of the ${s.k} judged measured words. A partly cut item doesn't put a cell out; it gets the lowest must-see clarity.`,
+    `Cells with a partly cut must-see item: ${of(s.partlyCutCells, 9 * s.k)}, over all 9 cells of the ${s.k} judged measured words. A partly cut item doesn't put a cell out; it lowers the completeness part of must-see clarity.`,
     "",
     `## Words where every cell hid a must-see item (${s.gateSkipped.length})`,
     "",

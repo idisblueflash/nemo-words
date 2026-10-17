@@ -1,12 +1,11 @@
 "use strict";
 
-// SP-066 AC3 (after stage 2, ADR-0035, ADR-0036) — Given the captions, the
-// compare lines and the story of a word, when Jev picks a cell, then a name
-// sign that can't be read never takes a cell out; when the cell's readable
-// text doesn't show the name sign, must-see clarity is at the middle level (2)
-// at most; and a drawing error on a must-see item puts plausible at its lowest
-// level (1), and a drawing error on another object puts it at the middle level
-// (2) at most. Code applies both caps to Jev's scores; Jev's state also gets
+// SP-066 AC3 (after stage 5, ADR-0037, which replaces the caps of ADR-0035 and
+// ADR-0036) — Given the captions, the compare lines and the story of a word,
+// when Jev picks a cell, then a name sign that can't be read never takes a
+// cell out; Jev sees the cell's drawing errors and gives plausible a lower
+// score for them, and code doesn't cap plausible; the name sign is a clarity
+// part of its own, and code doesn't cap clarity. Jev's state keeps
 // name_sign_readable and the drawing errors.
 //
 // End to end through run.js against the fake claude and the mock Jev
@@ -21,7 +20,7 @@ const path = require("node:path");
 
 const { tmpDir, fixtureEnv, gridsFile, runNode, readJson } = require("./helpers/harness");
 const { startMockJev } = require("./helpers/mock-jev");
-const { nameSignReadable, applyCaps } = require("../lib/pick");
+const { nameSignReadable } = require("../lib/pick");
 
 async function pickRun(kept, { byWord = {} } = {}) {
   const out = tmpDir();
@@ -38,19 +37,18 @@ async function pickRun(kept, { byWord = {} } = {}) {
 const NURSE = { word: "nursey", grid: "alpha.grid.png", flashCell: 7, story: "Nurse Venice waves, lightness 120." };
 const TILE = { word: "anomaly", grid: "alpha.grid.png", flashCell: 5, story: "An odd tile rattles, lightness 120." };
 
-test("AC3: a name sign that can't be read never takes a cell out, and caps must-see clarity at the middle level", async () => {
-  // Jev would give cells 1 and 8 its top clarity level
+test("AC3: a name sign that can't be read never takes a cell out; it is one clarity part, and code doesn't cap clarity", async () => {
+  // Jev gives cell 1 its top level on every part but the name sign
   const top = { score: 2, confidence: 0.9 };
-  const { run, calls } = await pickRun([NURSE], { byWord: { nursey: { cell_1_clarity: top, cell_8_clarity: top } } });
+  const { run, calls } = await pickRun([NURSE], { byWord: { nursey: { cell_1_clarity_completeness: top, cell_1_clarity_size: top, cell_1_clarity_state: top } } });
   const p = run.words[0].pick;
   assert.deepEqual(p.gatedOut, [], "no cell is gated out for its name");
   assert.deepEqual(p.scored, [1, 2, 3, 4, 5, 6, 7, 8, 9]);
   assert.equal(p.gateSkipped, false);
-  assert.equal(p.scores["1"].clarity.score, 2, "cell 1 can't read Venice: clarity at 2 at most");
-  assert.equal(p.scores["8"].clarity.score, 3, "cell 8 reads VENICE, R.N.: no cap");
-  assert.equal(p.answers.cell_1_clarity.score, 2, "Jev's own answer is kept as it was");
-  assert.deepEqual(p.caps["1"], { clarity: "name sign not readable" });
-  assert.equal(p.caps["8"], undefined);
+  assert.equal(p.scores["1"].clarity.parts.nameSign.score, 1, "cell 1 can't read Venice: the lowest name-sign level");
+  assert.equal(p.scores["1"].clarity.score, 2.5, "the mean of 3, 3, 3 and 1: above ADR-0035's old cap of 2");
+  assert.equal(p.scores["8"].clarity.parts.nameSign.score, 3, "cell 8 reads VENICE, R.N.");
+  assert.equal(p.caps, undefined, "code caps nothing");
 
   const { state } = calls[0].body;
   assert.deepEqual(state.name_signs, [{ item: "nurse", text: "Venice" }]);
@@ -59,19 +57,18 @@ test("AC3: a name sign that can't be read never takes a cell out, and caps must-
   assert.ok(!state.must_see.some((i) => /Venice/.test(i.name)), "the name sign is not a must-see item");
 });
 
-test("AC3: a drawing error on a must-see item puts plausible at 1; one on another object caps it at 2", async () => {
-  const { run, calls } = await pickRun([TILE]);
+test("AC3: Jev scores plausible with the drawing errors in its state, and code doesn't cap plausible", async () => {
+  // Jev lowers cell 9 (the tile drawn wrong) to its middle level
+  const { run, calls } = await pickRun([TILE], { byWord: { anomaly: { cell_9_plausible: { score: 1, confidence: 0.8 } } } });
   const p = run.words[0].pick;
+  const near = (a, b) => Math.abs(a - b) < 1e-3;
   // the mock's plausible: 1 + 2·(1 − |120 − Y| / 255)
-  assert.equal(p.scores["5"].plausible.score, 3, "no drawing error: no cap");
-  assert.equal(p.scores["6"].plausible.score, 2, "a lamp drawn wrong: 2.76 capped at 2");
-  assert.equal(p.scores["7"].plausible.score, 2, "a lamp drawn wrong: 2.53 capped at 2");
-  assert.equal(p.scores["9"].plausible.score, 1, "the tile drawn wrong: 2.06 down to 1");
-  assert.equal(p.scores["8"].plausible.score, 1);
-  assert.deepEqual(p.caps["9"], { plausible: "drawing error on a must-see item" });
-  assert.deepEqual(p.caps["6"], { plausible: "drawing error on another object" });
-  // the totals use the capped scores: 2·plausible + vivid + clarity
-  assert.equal(p.totals["9"], 2 * 1 + p.scores["9"].vivid.score + p.scores["9"].clarity.score);
+  assert.equal(p.scores["5"].plausible.score, 3);
+  assert.ok(near(p.scores["6"].plausible.score, 2.7647), "a lamp drawn wrong: Jev's score, not capped at 2");
+  assert.ok(near(p.scores["8"].plausible.score, 2.2941), "the tile drawn wrong: Jev's score, not put at 1");
+  assert.equal(p.scores["9"].plausible.score, 2, "Jev's own lower score stands");
+  assert.equal(p.caps, undefined, "code caps nothing");
+  assert.ok(near(p.totals["8"], 2 * 2.2941 + p.scores["8"].vivid.score + p.scores["8"].clarity.score));
 
   const { state } = calls[0].body;
   assert.deepEqual(state.cells.cell_9.drawing_errors, [{ object: "tile", mustSee: true, note: "sits on top of the grout lines" }]);
@@ -79,11 +76,16 @@ test("AC3: a drawing error on a must-see item puts plausible at 1; one on anothe
   assert.equal(state.cells.cell_1.name_sign_readable, undefined, "no name sign: no name_sign_readable");
 });
 
-test("AC3: the questions tell Jev about the name sign and the drawing errors", async () => {
+test("AC3: the questions tell Jev about the name sign and the drawing errors, and the plausible check promises no cap", async () => {
+  const text = (q) => q.prompt || JSON.stringify(q);
   const { calls } = await pickRun([TILE]);
-  const q = calls[0].body.questions.cell_1_plausible.prompt || JSON.stringify(calls[0].body.questions.cell_1_plausible);
+  const q = text(calls[0].body.questions.cell_1_plausible);
   assert.match(q, /name_sign_readable/);
   assert.match(q, /drawing errors/);
+  assert.match(q, /lower score for it/);
+  assert.doesNotMatch(q, /lowest level|at most/, "no level is promised for a drawing error");
+  const nurse = await pickRun([NURSE]);
+  assert.match(text(nurse.calls[0].body.questions.cell_1_clarity_nameSign), /name_sign_readable/);
 });
 
 test("name-sign check: a possessive form of the name counts as the name (bug-019)", () => {
@@ -109,22 +111,4 @@ test("name-sign check: case and punctuation don't count; empty or missing readab
   assert.equal(nameSignReadable(two, { extras: { readableText: "Venice" } }), false);
   // no name sign: nothing to read
   assert.equal(nameSignReadable([], { extras: { readableText: "" } }), null);
-});
-
-test("applyCaps: clarity at 2 at most for an unreadable sign; plausible 1 for a must-see drawing error, else at 2 at most", () => {
-  const s = (p, v, c) => ({ plausible: { score: p, confidence: 0.9 }, vivid: { score: v, confidence: 0.9 }, clarity: { score: c, confidence: 0.9 } });
-  const captions = {
-    1: { extras: { readableText: "" }, drawingErrors: [] },
-    2: { extras: { readableText: "Venice" }, drawingErrors: [{ object: "lamp", mustSee: false, note: "" }] },
-    3: { extras: { readableText: "Venice" }, drawingErrors: [{ object: "lamp", mustSee: false, note: "" }, { object: "nurse", mustSee: true, note: "" }] },
-    4: { extras: { readableText: "" }, drawingErrors: [{ object: "lamp", mustSee: false, note: "" }] },
-  };
-  const signs = [{ item: "nurse", text: "Venice" }];
-  const { scores, caps } = applyCaps({ 1: s(3, 3, 3), 2: s(2.5, 3, 3), 3: s(3, 3, 3), 4: s(1.5, 2, 1.5) }, captions, signs);
-  assert.deepEqual([scores[1].clarity.score, scores[1].plausible.score], [2, 3]);
-  assert.deepEqual([scores[2].clarity.score, scores[2].plausible.score], [3, 2]);
-  assert.deepEqual([scores[3].clarity.score, scores[3].plausible.score], [3, 1]);
-  assert.deepEqual([scores[4].clarity.score, scores[4].plausible.score], [1.5, 1.5], "a cap never raises a score");
-  assert.deepEqual(caps[4], { clarity: "name sign not readable", plausible: "drawing error on another object" });
-  assert.equal(scores[1].clarity.confidence, 0.9, "the confidence stays Jev's");
 });

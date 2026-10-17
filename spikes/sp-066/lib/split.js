@@ -76,12 +76,16 @@ function drawSplit(words, hits, { seed = SEED, size = TUNING_SIZE } = {}) {
 // A name anchor: the must-see list gives a name sign (ADR-0035, C-043).
 const hasNameAnchor = (list) => !!list && Array.isArray(list.nameSigns) && list.nameSigns.length > 0;
 
+// A main subject: the must-see list names one (ADR-0037, C-045).
+const hasMainSubject = (list) => !!list && typeof list.mainSubject === "string" && list.mainSubject !== "";
+
 // The early picks the Staged run asks for, in this order; one word can meet several.
 const EARLY = [
   { role: "SP-064 hit", meets: (w, x) => !!(x.sp064[w.word] && x.sp064[w.word].hit) },
   { role: "name anchor", meets: (w, x) => !!x.lists[w.word] && hasNameAnchor(x.lists[w.word]) },
   { role: "angleCase view or one-object", meets: (w, x) => !!x.lists[w.word] && ["view", "one-object"].includes(x.lists[w.word].angleCase) },
   { role: "gate skipped in SP-064", meets: (w, x) => !!(x.sp064[w.word] && x.sp064[w.word].gateSkipped) },
+  { role: "main subject", meets: (w, x) => hasMainSubject(x.lists[w.word]) },
 ];
 
 // tuning: [{ word, story }] in draw order; sp064: sp064Outcomes; lists: word → list
@@ -102,4 +106,4 @@ function tuningOrder(tuning, { sp064 = {}, lists = {} } = {}) {
   return { order: [...picked, ...tuning.filter((t) => !picked.includes(t))].map((w) => w.word), early, missing };
 }
 
-module.exports = { SEED, TUNING_SIZE, rng, drawSplit, sp064Outcomes, vividAlone, hasNameAnchor, tuningOrder, EARLY };
+module.exports = { SEED, TUNING_SIZE, rng, drawSplit, sp064Outcomes, vividAlone, hasNameAnchor, hasMainSubject, tuningOrder, EARLY };

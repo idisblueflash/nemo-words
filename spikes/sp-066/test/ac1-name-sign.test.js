@@ -16,11 +16,12 @@ const { mustSeeLists, unsignedNames, parseList, prompt, promptKey } = require(".
 const { tmpDir, fixtureEnv, runNode, readJson, claudeCalls } = require("./helpers/harness");
 
 const STORY = "If Victor misses rent, movers will make him leave.";
-const BARE = { items: [{ name: "Victor", adjectives: ["worried"] }, { name: "movers", adjectives: [] }], nameSigns: [], isSequence: false, angleCase: "none" };
-const NAMETAG = { items: [{ name: 'man with a nametag reading "Victor"', adjectives: [] }, { name: "movers", adjectives: [] }], nameSigns: [], isSequence: false, angleCase: "none" };
+const BARE = { items: [{ name: "Victor", adjectives: ["worried"] }, { name: "movers", adjectives: [] }], nameSigns: [], mainSubject: null, isSequence: false, angleCase: "none" };
+const NAMETAG = { items: [{ name: 'man with a nametag reading "Victor"', adjectives: [] }, { name: "movers", adjectives: [] }], nameSigns: [], mainSubject: null, isSequence: false, angleCase: "none" };
 const SIGNED = {
   items: [{ name: "man", adjectives: ["worried"] }, { name: "movers", adjectives: [] }],
   nameSigns: [{ item: "man", text: "Victor" }],
+  mainSubject: null,
   isSequence: false,
   angleCase: "none",
 };

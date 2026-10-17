@@ -9,8 +9,15 @@
 //              line says the objects act on each other and every shown item
 //              is large; else 1. An angle other than eye level costs one
 //              level (not below 0) unless angle_case is view or one-object.
-//   clarity    0 when a must-see item is partly cut or small; else 2 when
-//              every shown item is large; else 1
+// and the must-see clarity parts (`cell_<N>_clarity_<part>`, ADR-0037):
+//   completeness  0 when a must-see item is partly cut (1 in a close-up or
+//                 an extreme close-up, where the crop fits the shot), else 2
+//   size          0 when a shown item is small; 2 when every shown item is
+//                 large; else 1
+//   state         2
+//   nameSign      2 when name_sign_readable, else 0
+//   view          2 for a main_view front or three-quarter, 1 for side,
+//                 else 0 (back, above, or null when hidden)
 // with confidence 0.9. `byWord[word]` overrides that for one word:
 //   "http-500"  answer HTTP 500
 //   "unusable"  answer score = "high" for every question
@@ -32,7 +39,12 @@ function answer(name, state) {
   if (axis === "vivid") {
     level = small ? 0 : /act on each other/.test(c.action) && allLarge ? 2 : 1;
     if (c.angle !== "eye level" && !["view", "one-object"].includes(state.angle_case)) level = Math.max(0, level - 1);
-  } else if (axis === "clarity") level = small || shown.some((x) => x.mark === "partly cut") ? 0 : allLarge ? 2 : 1;
+  } else if (axis === "clarity_completeness") level = shown.some((x) => x.mark === "partly cut") ? (/close-up/.test(c.shot) ? 1 : 0) : 2;
+  else if (axis === "clarity_size") level = small ? 0 : allLarge ? 2 : 1;
+  else if (axis === "clarity_state") level = 2;
+  else if (axis === "clarity_nameSign") level = c.name_sign_readable ? 2 : 0;
+  else if (axis === "clarity_view") level = ["front", "three-quarter"].includes(c.main_view) ? 2 : c.main_view === "side" ? 1 : 0;
+  else if (axis !== "plausible") throw new Error(`mock Jev: unknown question ${name}`);
   return { type: "score", score: level, confidence: 0.9, legend: {}, probabilities: {} };
 }
 
