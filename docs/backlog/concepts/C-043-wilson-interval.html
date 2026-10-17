@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wilson interval</title>
+<!-- The figure for C-043. The backlog map shows it in the concept's side panel and sends it
+     the map's colour tokens; opened alone, it uses the fallbacks below. -->
+<style>
+  :root {
+    --bg: #f3efe8; --surface: #fbf9f5; --sunken: #e8e2d8; --rule: #ddd5c8;
+    --ink: #2a2520; --ink-2: #574f46; --ink-3: #6f665b; --flash: #1d6871; --flash-wash: #d9e8e6; --on-flash: #ffffff;
+    --wilson: #2a78d6; --wald: #eb6834;
+    --font-ui: "Avenir Next", Avenir, "Segoe UI", system-ui, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1a1714; --surface: #23201c; --sunken: #13110f; --rule: #353029;
+      --ink: #ebe5db; --ink-2: #b8afa2; --ink-3: #958c7f; --flash: #74c2c6; --flash-wash: #1c3537; --on-flash: #0f2224;
+      --wilson: #3987e5; --wald: #d95926; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] { --wilson: #3987e5; --wald: #d95926; color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: var(--bg); color: var(--ink); font: 13px/1.45 var(--font-ui); padding: 12px; display: grid; gap: 12px; }
+  .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+  button { font: inherit; color: inherit; cursor: pointer; }
+  :focus-visible { outline: 2px solid var(--flash); outline-offset: 1px; }
+
+  .presets { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: 12px; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--rule); background: var(--surface); }
+  .chip:hover { border-color: var(--ink-3); }
+  .chip[aria-pressed="true"] { background: var(--flash); border-color: var(--flash); color: var(--on-flash); }
+  .chip .num { font-size: 11px; opacity: .8; margin-left: 4px; }
+
+  .controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 8px 18px; }
+  .ctl { display: grid; gap: 3px; min-width: 0; }
+  .ctl label, .ctl .lbl { font-size: 12px; color: var(--ink-2); display: flex; justify-content: space-between; gap: 8px; }
+  .ctl output { font-family: var(--font-mono); color: var(--ink); }
+  input[type=range] { width: 100%; margin: 0; accent-color: var(--flash); }
+  .seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; width: fit-content; background: var(--surface); }
+  .seg button { font-size: 12px; border: 0; background: transparent; color: var(--ink-2); padding: 3px 9px; }
+  .seg button + button { border-left: 1px solid var(--rule); }
+  .seg button[aria-pressed="true"] { background: var(--flash-wash); color: var(--ink); }
+
+  .readout { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+  .readout div { display: grid; }
+  .readout .k { font-size: 11px; color: var(--ink-3); letter-spacing: .05em; text-transform: uppercase; }
+  .readout .v { font-family: var(--font-mono); font-size: 15px; font-variant-numeric: tabular-nums; }
+  .sw { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 5px; }
+
+  h2 { font-size: 11px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-2); margin: 4px 0 0; }
+  .chart { position: relative; }
+  svg { display: block; width: 100%; height: auto; }
+  svg text { font-family: var(--font-ui); fill: var(--ink-2); font-size: 11px; }
+  svg .mono { font-family: var(--font-mono); fill: var(--ink-3); }
+
+  .verdicts { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+  .verdicts li { display: grid; grid-template-columns: 18px 1fr; gap: 6px; }
+  .mk { font-family: var(--font-mono); font-size: 11px; width: 18px; height: 18px; border-radius: 4px; display: grid; place-items: center;
+        border: 1px solid var(--rule); color: var(--ink-2); margin-top: 1px; }
+  .tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font-size: 11px; padding: 4px 7px;
+         border-radius: 5px; white-space: nowrap; transform: translate(-50%, calc(-100% - 8px)); z-index: 2; }
+  .note { color: var(--ink-3); font-size: 12px; margin: 0; }
+</style>
+</head>
+<body>
+  <div class="presets" id="presets" role="group" aria-label="Examples from the spikes"></div>
+  <div class="controls">
+    <div class="ctl"><label for="n">Words measured <output id="nOut"></output></label><input type="range" id="n" min="5" max="300" step="1"></div>
+    <div class="ctl"><label for="k">Hits <output id="kOut"></output></label><input type="range" id="k" min="0" max="62" step="1"></div>
+    <div class="ctl"><span class="lbl">Compare as</span>
+      <div class="seg" id="mode" role="group" aria-label="Compare as"><button type="button" data-v="exact">exact (1/9)</button><button type="button" data-v="three">in-three (3/9)</button></div></div>
+    <div class="ctl"><span class="lbl">Certainty</span>
+      <div class="seg" id="conf" role="group" aria-label="Certainty"><button type="button" data-v="90">90%</button><button type="button" data-v="95">95%</button><button type="button" data-v="99">99%</button></div></div>
+  </div>
+  <div class="readout" aria-live="polite">
+    <div><span class="k">Measured</span><span class="v" id="rRate"></span></div>
+    <div><span class="k"><i class="sw" style="background:var(--wilson)"></i>Wilson</span><span class="v" id="rWilson"></span></div>
+    <div><span class="k"><i class="sw" style="background:var(--wald)"></i>Rate ± 2 errors</span><span class="v" id="rWald"></span></div>
+  </div>
+
+  <h2>Where the true rate can be</h2>
+  <div class="chart" id="c1"></div>
+  <ul class="verdicts" id="verdicts"></ul>
+
+  <h2>More words make the range narrower</h2>
+  <div class="chart" id="c2"></div>
+  <p class="note">The curve keeps the measured rate and changes only the number of words. The dot is your number of words. Hit counts come from the rates in SP-029 and SP-064.</p>
+
+  <h2>How to use the range</h2>
+  <ul class="verdicts">
+    <li><span class="mk" aria-hidden="true">1</span><span>Compare ranges, not rates. If the range includes a baseline, the words cannot show which one is better. SP-064 in-three (30% – 54%) includes the always-cell-1 rule (39%).</span></li>
+    <li><span class="mk" aria-hidden="true">2</span><span>A rate on the go bar can come from luck. 28 of 62 (45%) meets the exact bar, but its range starts at 33%. To be sure that a pick beats the always-cell-1 rule, it needs 32 of 62 (52%).</span></li>
+    <li><span class="mk" aria-hidden="true">3</span><span>62 words see only large differences, about 15 points or more. A 6-point difference, for example 45% against 39%, needs several hundred words.</span></li>
+    <li><span class="mk" aria-hidden="true">4</span><span>Small sets give wide ranges. On a tuning set of 20 words, 4 hits (20%) is 8% – 42%. For E01's kept count, 14 of 20 (70%) is 48% – 85%.</span></li>
+    <li><span class="mk" aria-hidden="true">5</span><span>Near 0% the simple range fails. For 0 of 10 it gives 0% – 0%, so it says that we are fully sure. Wilson gives 0% – 28%.</span></li>
+  </ul>
+
+<script>
+const PRESETS = [
+  { id: "sp064e", label: "SP-064 exact", k: 13, n: 62, mode: "exact" },
+  { id: "sp064t", label: "SP-064 in-three", k: 26, n: 62, mode: "three" },
+  { id: "cell1", label: "Always cell 1", k: 24, n: 62, mode: "exact" },
+  { id: "sp029e", label: "SP-029 exact", k: 13, n: 82, mode: "exact" },
+  { id: "sp029t", label: "SP-029 in-three", k: 38, n: 82, mode: "three" },
+  { id: "gomet", label: "Go bar just met", k: 28, n: 62, mode: "exact" },
+  { id: "abovec1", label: "Lower end above cell 1", k: 32, n: 62, mode: "exact" },
+  { id: "zero", label: "0 hits", k: 0, n: 10, mode: "exact" },
+];
+const REFS = {
+  exact: [{ v: 1/9, name: "chance 1/9", row: 0 }, { v: 24/62, name: "always cell 1", row: 1 }, { v: .45, name: "go bar", row: 0 }],
+  three: [{ v: 3/9, name: "chance 3/9", row: 0 }, { v: .70, name: "go bar", row: 0 }],
+};
+const Z = { 90: 1.6449, 95: 1.96, 99: 2.5758 };
+let state = { n: 62, k: 13, mode: "exact", conf: 95, preset: "sp064e" };
+
+function wilson(k, n, z) {
+  const p = k / n, d = 1 + z*z/n, c = (p + z*z/(2*n)) / d, h = z * Math.sqrt(p*(1-p)/n + z*z/(4*n*n)) / d;
+  return [Math.max(0, c - h), Math.min(1, c + h)];
+}
+function wald(k, n, z) { const p = k / n, h = z * Math.sqrt(p*(1-p)/n); return [p - h, p + h]; }
+const pct = (x, d = 1) => (x * 100).toFixed(d) + "%";
+const $ = (id) => document.getElementById(id);
+function el(tag, attrs, parent, text) {
+  const e = document.createElementNS("http://www.w3.org/2000/svg", tag);
+  for (const a in attrs) e.setAttribute(a, attrs[a]);
+  if (text != null) e.textContent = text;
+  if (parent) parent.appendChild(e);
+  return e;
+}
+function tip(box, x, y, html) {
+  let t = box.querySelector(".tip");
+  if (!t) { t = document.createElement("div"); t.className = "tip"; box.appendChild(t); }
+  t.innerHTML = html; t.hidden = false;
+  const tw = t.offsetWidth;
+  t.style.left = Math.min(Math.max(x, tw / 2 + 2), box.clientWidth - tw / 2 - 2) + "px";
+  t.style.top = y + "px";
+}
+const untip = (box) => { const t = box.querySelector(".tip"); if (t) t.hidden = true; };
+
+function drawRuler() {
+  const box = $("c1"); box.innerHTML = "";
+  const W = Math.max(280, box.clientWidth), H = 176, L = 10, R = 10, xAx = H - 24;
+  const x = (v) => L + v * (W - L - R);
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "The measured rate with its Wilson interval and the simple interval, with the baselines" }, box);
+  el("rect", { width: W, height: H, rx: 6, fill: "var(--surface)" }, svg);
+  for (let i = 0; i <= 10; i++) {
+    const t = i / 10;
+    el("line", { x1: x(t), x2: x(t), y1: 44, y2: xAx, stroke: "var(--sunken)" }, svg);
+    if (i % 2 === 0) el("text", { x: x(t), y: xAx + 15, "text-anchor": i === 0 ? "start" : i === 10 ? "end" : "middle", class: "mono" }, svg, i * 10 + "%");
+  }
+  el("line", { x1: L, x2: W - R, y1: xAx, y2: xAx, stroke: "var(--rule)" }, svg);
+  for (const r of REFS[state.mode]) {
+    const xx = x(r.v), ly = 14 + r.row * 14;
+    el("line", { x1: xx, x2: xx, y1: ly + 5, y2: xAx, stroke: "var(--ink-2)", "stroke-width": 1.25, "stroke-dasharray": "3 3" }, svg);
+    // A label on the second row sits left of its line, so it does not cross the next line.
+    const a = xx < 70 ? "start" : xx > W - 70 || r.row ? "end" : "middle";
+    el("text", { x: xx + (a === "end" && r.row ? -4 : 0), y: ly, "text-anchor": a, style: "fill: var(--ink)" }, svg, `${r.name} ${pct(r.v, 0)}`);
+  }
+  const z = Z[state.conf], p = state.k / state.n, [wl, wh] = wilson(state.k, state.n, z), [dl, dh] = wald(state.k, state.n, z);
+  const rows = [
+    { y: 78, lo: wl, hi: wh, raw: [wl, wh], color: "var(--wilson)", name: `Wilson ${state.conf}%` },
+    { y: 120, lo: Math.max(0, dl), hi: Math.min(1, dh), raw: [dl, dh], color: "var(--wald)", name: `Rate ± ${z.toFixed(2)} errors` },
+  ];
+  for (const r of rows) {
+    el("text", { x: L, y: r.y - 13, style: "paint-order: stroke; stroke: var(--surface); stroke-width: 4px" }, svg, r.name);
+    const bw = Math.max(2, x(r.hi) - x(r.lo));
+    el("rect", { x: x(r.lo), y: r.y - 4, width: bw, height: 8, rx: 4, fill: r.color }, svg);
+    for (const e of [r.lo, r.hi]) el("line", { x1: x(e), x2: x(e), y1: r.y - 8, y2: r.y + 8, stroke: r.color, "stroke-width": 2 }, svg);
+    el("circle", { cx: x(p), cy: r.y, r: 5, fill: "var(--surface)", stroke: "var(--ink)", "stroke-width": 2 }, svg);
+    const cut = r.raw[0] < 0 ? r.raw[0] : r.raw[1] > 1 ? r.raw[1] : null;
+    if (cut != null) el("text", { x: x(r.lo) + (r.raw[0] < 0 ? 0 : -4), y: r.y + 20, "text-anchor": r.raw[0] < 0 ? "start" : "end", style: "fill: var(--ink-3)" }, svg, `cut at ${r.raw[0] < 0 ? "0%" : "100%"}: it goes to ${pct(cut)}`);
+    const hit = el("rect", { x: x(r.lo) - 8, y: r.y - 14, width: bw + 16, height: 28, fill: "transparent" }, svg);
+    const html = `${r.name}: <span class="num">${pct(r.raw[0])} – ${pct(r.raw[1])}</span>`;
+    hit.addEventListener("pointermove", (e) => { const b = box.getBoundingClientRect(); tip(box, e.clientX - b.left, (r.y - 10) * b.width / W, html); });
+    hit.addEventListener("pointerleave", () => untip(box));
+  }
+  $("verdicts").innerHTML = REFS[state.mode].map((r) => {
+    const [sym, txt] = wl > r.v ? ["↑", `The whole range is above ${r.name} (${pct(r.v, 0)}). The pick is clearly better than it.`]
+      : wh < r.v ? ["↓", `The whole range is below ${r.name} (${pct(r.v, 0)}). The pick is clearly worse than it.`]
+      : ["?", `The range includes ${r.name} (${pct(r.v, 0)}). These words cannot tell the two apart.`];
+    return `<li><span class="mk" aria-hidden="true">${sym}</span><span>${txt}</span></li>`;
+  }).join("");
+}
+
+function drawWidth() {
+  const box = $("c2"); box.innerHTML = "";
+  const W = Math.max(280, box.clientWidth), H = 190, L = 34, R = 66, T = 10, B = 32;
+  const z = Z[state.conf], p = state.k / state.n, ns = [];
+  for (let n = 5; n <= 300; n++) ns.push(n);
+  const wil = ns.map((n) => { const [a, b] = wilson(p * n, n, z); return b - a; });
+  const wal = ns.map((n) => Math.min(1, 2 * z * Math.sqrt(p * (1 - p) / n)));
+  const ymax = Math.max(.1, Math.ceil(Math.max(...wil, ...wal) * 10) / 10);
+  const x = (n) => L + (n - 5) / 295 * (W - L - R), y = (w) => T + (1 - w / ymax) * (H - T - B);
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "The width of the interval against the number of words" }, box);
+  el("rect", { width: W, height: H, rx: 6, fill: "var(--surface)" }, svg);
+  const step = ymax > .5 ? .2 : .1;
+  for (let t = 0; t <= ymax + 1e-9; t += step) {
+    el("line", { x1: L, x2: W - R, y1: y(t), y2: y(t), stroke: "var(--sunken)" }, svg);
+    el("text", { x: L - 6, y: y(t) + 4, "text-anchor": "end", class: "mono" }, svg, Math.round(t * 100));
+  }
+  for (const n of [5, 100, 200, 300]) el("text", { x: x(n), y: H - B + 15, "text-anchor": "middle", class: "mono" }, svg, n);
+  el("text", { x: (L + W - R) / 2, y: H - 4, "text-anchor": "middle", style: "fill: var(--ink-3)" }, svg, "words measured");
+  el("text", { x: 10, y: (T + H - B) / 2, "text-anchor": "middle", transform: `rotate(-90 10 ${(T + H - B) / 2})`, style: "fill: var(--ink-3)" }, svg, "width, % points");
+  el("line", { x1: L, x2: W - R, y1: H - B, y2: H - B, stroke: "var(--rule)" }, svg);
+  const path = (arr) => arr.map((w, i) => `${i ? "L" : "M"}${x(ns[i]).toFixed(1)},${y(w).toFixed(1)}`).join("");
+  el("path", { d: path(wal), fill: "none", stroke: "var(--wald)", "stroke-width": 2 }, svg);
+  el("path", { d: path(wil), fill: "none", stroke: "var(--wilson)", "stroke-width": 2 }, svg);
+  const yw = y(wil.at(-1)), yd = y(wal.at(-1)), sep = Math.abs(yw - yd) < 13 ? (yw <= yd ? -6.5 : 6.5) : 0;
+  el("text", { x: W - R + 6, y: yw + 4 + sep, style: "fill: var(--ink)" }, svg, "Wilson");
+  el("text", { x: W - R + 6, y: yd + 4 - sep }, svg, "± 2 errors");
+  const ci = state.n - 5;
+  el("line", { x1: x(state.n), x2: x(state.n), y1: T, y2: H - B, stroke: "var(--ink-3)", "stroke-dasharray": "2 3" }, svg);
+  el("circle", { cx: x(state.n), cy: y(wil[ci]), r: 4.5, fill: "var(--wilson)", stroke: "var(--surface)", "stroke-width": 2 }, svg);
+  const cross = el("line", { y1: T, y2: H - B, stroke: "var(--ink-2)", visibility: "hidden" }, svg);
+  const d1 = el("circle", { r: 4, fill: "var(--wilson)", stroke: "var(--surface)", "stroke-width": 2, visibility: "hidden" }, svg);
+  const d2 = el("circle", { r: 4, fill: "var(--wald)", stroke: "var(--surface)", "stroke-width": 2, visibility: "hidden" }, svg);
+  const hit = el("rect", { x: L, y: T, width: W - L - R, height: H - T - B, fill: "transparent" }, svg);
+  hit.addEventListener("pointermove", (e) => {
+    const b = box.getBoundingClientRect(), s = b.width / W, sx = (e.clientX - b.left) / s;
+    const n = Math.min(300, Math.max(5, Math.round(5 + (sx - L) / (W - L - R) * 295))), i = n - 5, [a, c] = wilson(p * n, n, z);
+    for (const m of [cross, d1, d2]) m.setAttribute("visibility", "visible");
+    cross.setAttribute("x1", x(n)); cross.setAttribute("x2", x(n));
+    d1.setAttribute("cx", x(n)); d1.setAttribute("cy", y(wil[i])); d2.setAttribute("cx", x(n)); d2.setAttribute("cy", y(wal[i]));
+    tip(box, x(n) * s, y(Math.max(wil[i], wal[i])) * s,
+      `<span class="num">${n}</span> words at <span class="num">${pct(p)}</span>: Wilson <span class="num">${pct(a)} – ${pct(c)}</span>`);
+  });
+  hit.addEventListener("pointerleave", () => { for (const m of [cross, d1, d2]) m.setAttribute("visibility", "hidden"); untip(box); });
+}
+
+// The backlog map, when this page runs in its side panel.
+const inMap = window.parent !== window;
+const toMap = (msg) => { if (inMap) parent.postMessage(msg, "*"); };
+
+function sync(save = true) {
+  if (state.k > state.n) state.k = state.n;
+  $("n").value = state.n; $("k").max = state.n; $("k").value = state.k;
+  $("nOut").textContent = state.n; $("kOut").textContent = `${state.k} (${pct(state.k / state.n)})`;
+  for (const b of $("mode").children) b.setAttribute("aria-pressed", b.dataset.v === state.mode);
+  for (const b of $("conf").children) b.setAttribute("aria-pressed", b.dataset.v == state.conf);
+  for (const b of $("presets").children) b.setAttribute("aria-pressed", b.dataset.id === state.preset);
+  const z = Z[state.conf], [a, b] = wilson(state.k, state.n, z), [c, d] = wald(state.k, state.n, z);
+  $("rRate").textContent = `${state.k}/${state.n} = ${pct(state.k / state.n)}`;
+  $("rWilson").textContent = `${pct(a)} – ${pct(b)}`;
+  $("rWald").textContent = `${pct(c)} – ${pct(d)}`;
+  drawRuler(); drawWidth();
+  if (save) toMap({ type: "backlog-map:figure-state", state });
+}
+for (const p of PRESETS) {
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "chip"; b.dataset.id = p.id;
+  b.innerHTML = `${p.label}<span class="num">${p.k}/${p.n}</span>`;
+  b.addEventListener("click", () => { state = { ...state, n: p.n, k: p.k, mode: p.mode, preset: p.id }; sync(); });
+  $("presets").appendChild(b);
+}
+$("n").addEventListener("input", (e) => { state.n = +e.target.value; state.preset = null; sync(); });
+$("k").addEventListener("input", (e) => { state.k = +e.target.value; state.preset = null; sync(); });
+$("mode").addEventListener("click", (e) => { const v = e.target.closest("button")?.dataset.v; if (v) { state.mode = v; state.preset = null; sync(); } });
+$("conf").addEventListener("click", (e) => { const v = e.target.closest("button")?.dataset.v; if (v) { state.conf = +v; sync(); } });
+
+addEventListener("message", (e) => {
+  const m = e.data;
+  if (e.source !== parent || !m || m.type !== "backlog-map:figure") return;
+  const root = document.documentElement;
+  for (const [k, v] of Object.entries(m.tokens || {})) if (v) root.style.setProperty(`--${k}`, v);
+  root.dataset.theme = m.dark ? "dark" : "light";
+  if (m.state && typeof m.state === "object") state = { ...state, ...m.state };
+  sync(false);
+});
+new ResizeObserver(() => toMap({ type: "backlog-map:figure-height", height: document.body.offsetHeight })).observe(document.body);
+let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { drawRuler(); drawWidth(); }, 60); });
+sync(false);
+toMap({ type: "backlog-map:figure-ready" });
+</script>
+</body>
+</html>
