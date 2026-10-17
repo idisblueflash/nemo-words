@@ -36,7 +36,16 @@ const lightness = (x) => Number((/lightness (\d+)/.exec(typeof x === "string" ? 
 // override of one part (`cell_5_plausible_actions`) sets that part only.
 const SPLIT_AXIS = /^(cell_\d+_(?:plausible|vivid))_\w+$/;
 
+// The vivid onlooker part (C-048) of a cell with onlookers: 0 when one looks
+// away or does something else, else 2 (one watches or reacts); a cell with no
+// onlooker answers its vivid level, as the other parts do.
 function answer(name, state) {
+  const onlooker = /^(cell_\d+)_vivid_onlooker$/.exec(name);
+  const lookers = onlooker && (state.cells[onlooker[1]].onlookers || []);
+  if (lookers && lookers.length) {
+    const away = lookers.some((o) => ["looks away", "other"].includes(o.does));
+    return { type: "score", score: away ? 0 : 2, confidence: 0.9, legend: {}, probabilities: {} };
+  }
   const split = SPLIT_AXIS.exec(name);
   if (split) return answer(split[1], state);
   const [, cell, axis] = /^(cell_\d)_(\w+)$/.exec(name);

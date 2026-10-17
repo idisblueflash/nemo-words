@@ -91,6 +91,7 @@ test("parseCaption: mainView must be one of the five views; null only when the m
       action: "she operates",
       mustSee,
       drawingErrors: [],
+      onlookers: [],
       ...extra,
     });
   const shown = { star: { mark: "visible", size: "large", place: "front" } };
@@ -123,13 +124,13 @@ test("a caption made under the prompt without the main subject is made again onc
   assert.equal(caption.prompt(list, "starry", null), caption.prompt(list, "starry"));
 });
 
-test("a non-actor main subject's caption prompt is the one before ADR-0038, so its cached captions stay valid", () => {
-  // the keys that the prompt made with the bare-string main subject, before ADR-0038
-  assert.equal(caption.promptKey(items("square", "star"), "starry", { name: "star", actor: false }), "ee4f54b0bd53a688");
-  assert.equal(caption.promptKey(items("square", "star"), "starry", null), "edb2d63ba9cb649f");
-  assert.equal(caption.promptKey(items("surgeon", "headlamp"), "surgeon", { name: "surgeon", actor: false }), "a32fe97268ac088d");
-  // the same name as an actor is another prompt
-  assert.notEqual(caption.promptKey(items("square", "star"), "starry", { name: "star", actor: true }), "ee4f54b0bd53a688");
+test("an actor's caption prompt differs from a non-actor's with the same name (ADR-0038); the onlookers line (ADR-0039) makes every caption again", () => {
+  const star = caption.promptKey(items("square", "star"), "starry", { name: "star", actor: false });
+  assert.notEqual(caption.promptKey(items("square", "star"), "starry", { name: "star", actor: true }), star);
+  // the keys of the prompt before ADR-0039 no longer match
+  assert.notEqual(star, "ee4f54b0bd53a688");
+  assert.notEqual(caption.promptKey(items("square", "star"), "starry", null), "edb2d63ba9cb649f");
+  assert.match(caption.prompt(items("square", "star"), "starry", null), /"onlookers"/);
 });
 
 test("AC2: an actor's caption names the person, masked; a cell that doesn't show the person gives mainView null, and is kept", async () => {

@@ -58,9 +58,9 @@ test("AC3: the gate takes out hidden-item cells; Jev scores the rest in one requ
   assert.equal(calls.length, 1, "one Jev request per grid");
   const { state, questions } = calls[0].body;
   assert.deepEqual(Object.keys(state.cells), ["cell_5", "cell_6", "cell_7", "cell_8", "cell_9"]);
-  assert.equal(Object.keys(questions).length, 35, "3 plausible parts, vivid and 3 clarity parts per cell");
+  assert.equal(Object.keys(questions).length, 40, "3 plausible parts, 2 vivid parts and 3 clarity parts per cell");
   const rubric = readJson(path.join(SPIKE, "image-rubric.json"));
-  assert.deepEqual(questions.cell_5_vivid.criteria, rubric.axes.vivid.levels);
+  for (const part of ["scene", "onlooker"]) assert.deepEqual(questions[`cell_5_vivid_${part}`].criteria, rubric.axes.vivid.parts[part].levels);
   for (const part of ["setting", "drawing", "actions"]) assert.deepEqual(questions[`cell_5_plausible_${part}`].criteria, rubric.axes.plausible.parts[part].levels);
   for (const part of ["completeness", "size", "state"]) assert.deepEqual(questions[`cell_5_clarity_${part}`].criteria, rubric.axes.clarity.parts[part].levels);
 
@@ -89,7 +89,7 @@ test("AC3: Jev's state holds each cell's action line, each item's mark, size and
 });
 
 test("AC3: the vivid axis scores the scene, not the camera", () => {
-  const vivid = readJson(path.join(SPIKE, "image-rubric.json")).axes.vivid;
+  const vivid = readJson(path.join(SPIKE, "image-rubric.json")).axes.vivid.parts.scene; // ADR-0039: the scene part
   assert.match(vivid.levels[0], /small, far away or apart/);
   assert.match(vivid.levels[1], /clear, but .*don't act on each other/);
   assert.match(vivid.levels[2], /large and act on each other as the story says/);

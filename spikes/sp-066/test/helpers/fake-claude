@@ -30,6 +30,11 @@
 //   "crash"         → item "crash": every caption call fails
 //   "garble"        → item "garble": every caption prints something that isn't JSON
 //   "split"         → item "split": the differences call fails
+//   "waiter"        → item "waiter": each caption has an onlooker, a customer
+//                     seen from the back, who watches from lightness 150 and
+//                     looks away below (ADR-0039, C-048); every other caption
+//                     has an empty onlookers list
+//   "nolookers"     → item "nolookers": the captions have no onlookers list
 //   "tile"          → item "tile": a drawing error on the tile (a must-see
 //                     item) from lightness 210, on a lamp (not one) at 150–209
 // A caption whose prompt names a main subject (MAIN SUBJECT: "…") gives its
@@ -109,7 +114,7 @@ if (mode === "must-see") {
     items.push({ name: "nurse", adjectives: ["tired"] });
     nameSigns.push({ item: "nurse", text: "Venice" });
   }
-  for (const special of ["moon", "ghost", "crash", "garble", "split", "tile"]) {
+  for (const special of ["moon", "ghost", "crash", "garble", "split", "tile", "waiter", "nolookers"]) {
     if (story.includes(special)) items.push({ name: special, adjectives: ["round"] });
   }
   // bug-020: the headword as an item name (the fake caption hides "key item", what a blind captioner can't read)
@@ -151,6 +156,9 @@ if (mode === "must-see") {
     extras: { floor: false, background: "plain", morePeople: false, readableText: names.includes("nurse") && l >= 150 ? "VENICE, R.N." : "" },
     mustSee: Object.fromEntries(names.map((n) => [n, mark(n)])),
     drawingErrors: !names.includes("tile") ? [] : l >= 210 ? [{ object: "tile", mustSee: true, note: "sits on top of the grout lines" }] : l >= 150 ? [{ object: "lamp", mustSee: false, note: "floats above the table" }] : [],
+    // onlookers (C-048): with a "waiter" item, a customer seen from the back
+    // who watches from lightness 150 and looks away below; "nolookers": no list
+    ...(names.includes("nolookers") ? {} : { onlookers: names.includes("waiter") ? [{ who: "customer", does: l >= 150 ? "watches" : "looks away", view: "back" }] : [] }),
     // the main subject's view (C-045), only when the prompt names one
     // an actor ("person who …", maybe masked; not an item) isn't shown below lightness 90: mainView null
     ...(main === null || main === "noview" ? {} : { mainView: status(main) === "hidden" || (/^person who/.test(main) && l < 90) ? null : l < 60 ? "above" : l < 90 ? "back" : l < 150 ? "side" : l < 210 ? "three-quarter" : "front" }),

@@ -1,5 +1,5 @@
 {
-  "_comment": "SP-066: the image pick's rubric, read by lib/pick.js (Jev), shaped like scripts/story-rubric.json's axes. One Score question per scored cell and axis; Jev answers a level 0-2, and the axis score is that + 1 (decimals kept, as US-038 keeps them). An axis's optional \"check\" is added to its question. SP-066 changes SP-064's rubric so that vivid scores the scene (what the story objects do to each other), not the camera, with the angle exception of C-042 (ADR-0033). After stage 5 (ADR-0037), must-see clarity has no levels of its own: it is scored in parts (C-046), one Score question per scored cell and part, each with its own levels and check (the clarity check comes first), and clarity is the mean of the parts that apply: completeness, size and state always, nameSign only for a name anchor, view only when the story has a main subject (C-045). Code caps no score: Jev sees the drawing errors when it scores plausible, and name_sign_readable when it scores the name sign. After stage 20 (ADR-0039, C-049): plausible is scored in parts too, setting, drawing and story actions, one Score question each (the plausible check comes first), and plausible is their mean.",
+  "_comment": "SP-066: the image pick's rubric, read by lib/pick.js (Jev), shaped like scripts/story-rubric.json's axes. One Score question per scored cell and axis; Jev answers a level 0-2, and the axis score is that + 1 (decimals kept, as US-038 keeps them). An axis's optional \"check\" is added to its question. SP-066 changes SP-064's rubric so that vivid scores the scene (what the story objects do to each other), not the camera, with the angle exception of C-042 (ADR-0033). After stage 5 (ADR-0037), must-see clarity has no levels of its own: it is scored in parts (C-046), one Score question per scored cell and part, each with its own levels and check (the clarity check comes first), and clarity is the mean of the parts that apply: completeness, size and state always, nameSign only for a name anchor, view only when the story has a main subject (C-045). Code caps no score: Jev sees the drawing errors when it scores plausible, and name_sign_readable when it scores the name sign. After stage 20 (ADR-0039, C-049): plausible is scored in parts too, setting, drawing and story actions, one Score question each (the plausible check comes first), and plausible is their mean. Vivid is scored in 2 parts too (ADR-0039): scene (the vivid question before ADR-0039) and onlooker (C-048, from the caption's onlookers), and vivid is their mean.",
   "axes": {
     "plausible": {
       "label": "Plausible",
@@ -36,12 +36,27 @@
     },
     "vivid": {
       "label": "Vivid",
-      "check": "Score the scene, not the camera: what the story objects do to each other, from the cell's action line and the sizes of its must-see items. An eye-level, medium shot is the normal view, and an extreme close-up or a strong camera angle adds nothing. An unusual camera angle lowers vivid only when it hides the action; an unusual angle never lowers vivid when the state's angle_case is \"view\" (the story is about a view) or \"one-object\" (the story has one main object).",
-      "levels": [
-        "the story objects are small, far away or apart from each other",
-        "the story objects are clear, but they don't act on each other as the story says",
-        "the story objects are large and act on each other as the story says"
-      ]
+      "check": "Vivid is scored in parts, one question each; this question scores one part only, from the cell's full description.",
+      "parts": {
+        "scene": {
+          "label": "Vivid: scene",
+          "check": "Score the scene, not the camera: what the story objects do to each other, from the cell's action line and the sizes of its must-see items. An eye-level, medium shot is the normal view, and an extreme close-up or a strong camera angle adds nothing. An unusual camera angle lowers vivid only when it hides the action; an unusual angle never lowers vivid when the state's angle_case is \"view\" (the story is about a view) or \"one-object\" (the story has one main object).",
+          "levels": [
+            "the story objects are small, far away or apart from each other",
+            "the story objects are clear, but they don't act on each other as the story says",
+            "the story objects are large and act on each other as the story says"
+          ]
+        },
+        "onlooker": {
+          "label": "Vivid: onlooker",
+          "check": "Use the cell's onlookers: the people or animals that are there but don't do the main action. A group in the story that only reacts to the action (a curious crowd that bells attract) is an onlooker too. An onlooker that watches or reacts makes the story's feeling stronger (a customer who sees a nervous waiter fumble); seen from the back, it also leads the eye to the action. An onlooker that looks away or does something else draws the eye away from the action. A cell with no onlooker gets the middle level.",
+          "levels": [
+            "an onlooker looks away or does something else, so it draws the eye away from the story's action",
+            "no onlooker, or an onlooker that adds nothing to the story",
+            "an onlooker watches or reacts to the action and makes the story's feeling stronger"
+          ]
+        }
+      }
     },
     "clarity": {
       "label": "Must-see clarity",

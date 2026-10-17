@@ -44,6 +44,8 @@ const EXTRAS = ["floor", "background", "morePeople", "readableText"];
 const SIZES = ["large", "medium", "small"];
 const PLACES = ["front", "back"];
 const VIEWS = ["front", "three-quarter", "side", "back", "above"];
+// What an onlooker does (ADR-0039, C-048).
+const ONLOOKER_DOES = ["watches", "reacts", "looks away", "other"];
 
 // The must-see item names, once each, in list order.
 const itemNames = (items) => [...new Set(items.map((i) => i.name))];
@@ -75,6 +77,7 @@ function prompt(items, word, mainSubject = null) {
     '- "action": one line: what the objects do to each other in the picture (who holds, pushes, hands over, looks at what), or that they stand apart',
     '- "mustSee": for each item name below (keyed by the name, exactly as written), {"mark": "visible", "partly cut" or "hidden", "size": "large", "medium" or "small", "place": "front" or "back"}. The mark is "visible" when the thing is fully shown, "partly cut" when the edge of the picture cuts part of it off, "hidden" when it can\'t be seen; judge only whether the thing itself is there, whatever its state. The size is how much of the picture the thing takes up; the place is whether it is in the front or the back of the scene. For a hidden thing, give null for size and place',
     '- "drawingErrors": each object that doesn\'t fit the picture as drawn: it floats, looks pasted on, or breaks the lines of the wall or floor, as [{"object":"...","mustSee": true or false,"note":"what is wrong"}], with "mustSee" true when the object is one of the item names below. An object that is cut off by the edge of the cell (a crop, for example in a close-up), drawn small, or shown in the wrong state is not a drawing error. An object that the scene shows as broken or crooked on purpose is not a drawing error either. Give an empty list ([]) when there is none',
+    `- "onlookers": each person or animal in the picture that doesn't do the main action itself${main === null ? "" : " and isn't the main subject below"}, but is there with it: it watches the action, reacts to it, looks away, or does something else. Give [{"who":"...","does": ${ONLOOKER_DOES.map((d) => `"${d}"`).join(", ")},"view": one of ${VIEWS.slice(0, -1).map((v) => `"${v}"`).join(", ")} or "${VIEWS[VIEWS.length - 1]}"}], where "view" says where its face and body point: "front" when they face the viewer, "three-quarter" when they are turned part way, "side" in profile, "back" when they face away, "above" when seen from above. Give an empty list ([]) when there is none`,
     ...(main === null
       ? []
       : [
@@ -107,6 +110,13 @@ function parseCaption(text, items, word, mainSubject = null) {
     }
     return { object: e.object.trim(), mustSee: e.mustSee, note: typeof e.note === "string" ? oneLine(e.note) : "" };
   });
+  if (!Array.isArray(j.onlookers)) throw new ClaudeError("unusable caption: no onlookers list");
+  const onlookers = j.onlookers.map((o) => {
+    if (!isObject(o) || typeof o.who !== "string" || !o.who.trim() || !ONLOOKER_DOES.includes(o.does) || !VIEWS.includes(o.view)) {
+      throw new ClaudeError(`unusable caption: onlooker ${JSON.stringify(o)}`);
+    }
+    return { who: o.who.trim(), does: o.does, view: o.view };
+  });
   const mustSee = {};
   const shown = shownNames(items, word);
   itemNames(items).forEach((name, k) => {
@@ -137,6 +147,7 @@ function parseCaption(text, items, word, mainSubject = null) {
     extras: Object.fromEntries(EXTRAS.map((k) => [k, j.extras[k] ?? null])),
     mustSee,
     drawingErrors,
+    onlookers,
     mainView,
   };
 }
@@ -169,4 +180,4 @@ async function captionGrids({ words, lists, imageDir, ask, cache = {}, jobs = 6,
   return { cache, failures };
 }
 
-module.exports = { prompt, promptKey, itemNames, parseCaption, captionGrids, SHOTS, STEPS, STATUSES, SIZES, PLACES, VIEWS };
+module.exports = { prompt, promptKey, itemNames, parseCaption, captionGrids, SHOTS, STEPS, STATUSES, SIZES, PLACES, VIEWS, ONLOOKER_DOES };

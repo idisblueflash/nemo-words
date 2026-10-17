@@ -151,6 +151,7 @@ function stageSummary({ stage, words, total, split, outcomes, lists, captions, c
     `Captions with a drawing-errors list: ${withErrorLists.length} of ${judged.length} judged grids`,
     `Name-anchor words: ${nameWords.length}; cells gated out only because the name can't be read: ${nForName}${forName.length ? ` (${forName.map(([w, cells]) => `${w}: ${cells.join(", ")}`).join("; ")})` : ""}`,
     `Cells with a drawing error: ${of(errorCells.length, judgedCells.length)}; on a must-see item: ${mustSeeErrorCells.length}`,
+    `Cells with an onlooker (ADR-0039): ${of(judgedCells.filter((c) => (c.onlookers || []).length).length, judgedCells.length)}; one that watches or reacts: ${judgedCells.filter((c) => (c.onlookers || []).some((o) => ["watches", "reacts"].includes(o.does))).length}`,
     `Main-subject words: ${mainWords.length}; captions that show the main subject with no mainView: ${nNoView} of ${showing}${noView.length ? ` (${noView.map(([w, cells]) => `${w}: ${cells.join(", ")}`).join("; ")})` : ""}`,
     `Actor words: ${actorWords.length}; cells where the actor isn't shown: ${nNotShown} of ${actorCells}${notShown.length ? ` (${notShown.map(([w, cells]) => `${w}: ${cells.join(", ")}`).join("; ")})` : ""}`,
     `Clarity's spread inside a grid (max − min): mean ${meanSpread} over ${judged.length} judged grids; stage 5 before the refine: ${SPREAD_BEFORE}`,

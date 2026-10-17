@@ -48,7 +48,7 @@ test("AC3: a grid whose every cell hides a must-see item has all 9 cells scored,
     // plausible 1.82, vivid 3, clarity 3, total 9.65)
     assert.equal(psi.mainCell, 6);
     const psiCall = jev.calls.find((c) => c.body.state.word === "psi");
-    assert.equal(Object.keys(psiCall.body.questions).length, 9 * 7, "3 plausible parts, vivid and 3 clarity parts per cell");
+    assert.equal(Object.keys(psiCall.body.questions).length, 9 * 8, "3 plausible parts, 2 vivid parts and 3 clarity parts per cell");
 
     const gamma = run.words.find((w) => w.word === "gamma").pick;
     assert.equal(gamma.gateSkipped, false);

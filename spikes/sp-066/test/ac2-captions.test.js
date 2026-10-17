@@ -226,6 +226,7 @@ test("AC2: a caption with no drawing-errors list, or a drawing error with no obj
     action: "the tile rattles in the wall",
     mustSee: { tile: { mark: "visible", size: "large", place: "front" } },
     drawingErrors: [{ object: "tile", mustSee: true, note: "sits on the grout" }],
+    onlookers: [],
   };
   assert.deepEqual(parseCaption(JSON.stringify(base), items).drawingErrors, [{ object: "tile", mustSee: true, note: "sits on the grout" }]);
   assert.deepEqual(parseCaption(JSON.stringify({ ...base, drawingErrors: [] }), items).drawingErrors, []);
@@ -248,6 +249,7 @@ test("AC2: a caption with no action line, or a shown item with no size or place,
     action: "a hand tosses the cob",
     mustSee: { cob: { mark: "visible", size: "large", place: "front" } },
     drawingErrors: [],
+    onlookers: [],
   };
   const ok = parseCaption(JSON.stringify(base), items);
   assert.equal(ok.action, "a hand tosses the cob");

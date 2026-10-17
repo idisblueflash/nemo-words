@@ -56,7 +56,7 @@ test("AC3: with a main subject, Jev scores four clarity parts per cell, one ques
   const rubric = readJson(path.join(SPIKE, "image-rubric.json"));
 
   assert.equal(calls.length, 1, "one Jev request per grid");
-  assert.equal(Object.keys(questions).length, 9 * 8, "3 plausible parts, vivid and 4 clarity parts per cell");
+  assert.equal(Object.keys(questions).length, 9 * 9, "3 plausible parts, 2 vivid parts and 4 clarity parts per cell");
   assert.deepEqual(partNames(questions, 1), ["completeness", "size", "state", "view"]);
   assert.equal(questions.cell_1_clarity, undefined, "no single clarity question");
   for (const part of ["completeness", "size", "state", "view"]) {

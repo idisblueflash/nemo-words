@@ -44,6 +44,7 @@ test("bug-020: the mustSee key stays the list's item name", () => {
     action: "she operates",
     mustSee: { [desc]: { mark: "visible", size: "large", place: "front" } },
     drawingErrors: [],
+    onlookers: [],
   });
   assert.deepEqual(caption.parseCaption(answer, list, "surgeon").mustSee, { surgeon: { mark: "visible", size: "large", place: "front" } });
 });

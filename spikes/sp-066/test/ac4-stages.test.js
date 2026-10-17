@@ -208,6 +208,7 @@ test("AC4 (after stage 2): a cell gated out only for an item that holds the name
     action: "the nurse waves",
     extras: { readableText: "" },
     drawingErrors: [],
+    onlookers: [],
     mustSee: { nurse: { mark: "visible", size: "large", place: "front" }, 'nametag reading "Venice"': hidden ? { mark: "hidden", size: null, place: null } : { mark: "visible", size: "small", place: "front" } },
   });
   const captions = { "n.grid.png": Object.fromEntries([1, 2, 3, 4, 5, 6, 7, 8, 9].map((c) => [c, cell(c <= 2)])) };

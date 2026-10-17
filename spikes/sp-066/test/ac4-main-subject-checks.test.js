@@ -88,6 +88,7 @@ test("stageSummary: a caption that shows the main subject but has no mainView is
     action: "the surgeon operates",
     extras: { readableText: "" },
     drawingErrors: [],
+    onlookers: [],
     mustSee: { surgeon: c === 1 ? { mark: "hidden", size: null, place: null } : { mark: "visible", size: "large", place: "front" } },
     mainView: c <= 3 ? null : "side",
   });
