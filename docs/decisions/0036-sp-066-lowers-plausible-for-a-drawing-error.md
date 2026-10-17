@@ -1,5 +1,5 @@
 ---
-status: accepted
+status: superseded
 deciders: Flash Hu
 date: 2026-10-17
 backlog: [SP-066, C-044]
@@ -59,3 +59,4 @@ The caption lists each object that doesn't fit the picture: it floats, looks pas
 ## Links
 
 * ADR-0035: the other decision made after stage 2
+* Superseded by ADR-0037

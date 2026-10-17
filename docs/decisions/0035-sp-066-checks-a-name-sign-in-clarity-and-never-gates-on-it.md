@@ -1,5 +1,5 @@
 ---
-status: accepted
+status: superseded
 deciders: Flash Hu
 date: 2026-10-17
 backlog: [SP-066, C-034, C-043]
@@ -60,3 +60,4 @@ The must-see list gives the carrier as a must-see item (`nurse`) and the name as
 
 * ADR-0032: the must-see gate checks item names only (still true; a name sign is not an item)
 * ADR-0036: the other decision made after stage 2
+* Superseded by ADR-0037
