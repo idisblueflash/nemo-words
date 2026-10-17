@@ -54,5 +54,33 @@
       "Front-facing, centered shot of the figure walking toward the viewer with hands in pockets and a relaxed smile; it shows the pier and water but cuts off the pier's far end, and has no hourglass.",
       "Side three-quarter view of the figure standing at the pier's end with arms crossed, looking up; it is the only cell with a distant shoreline, the long pier with its pilings reflected in calm water is fully visible, and there is no hourglass."
     ]
+  },
+  "surgeon.grid.png": {
+    "source": "sp-064",
+    "lines": [
+      "Medium shot from the front-left with the surgeon looking down at the incision; the small yellow lightning bolt by the wall panel is visible, and the headlamp beam is lit. Head tilted more than in cell 8.",
+      "Wide, far-back shot of the whole dark operating room with IV stands, stool and tray. The surgeon is tiny, and the bolt is a small spark at far left. It shows the most room of any cell and the least detail on the face.",
+      "Low-angle close-up looking up at the surgeon's wide-eyed, focused face, with the headlamp glowing at upper right. No lightning bolt is visible, and the room is mostly cut off apart from the edge of the surgical light.",
+      "Over-the-shoulder view from behind and to the left, showing the bun, the headlamp and the instrument tray at upper right. The face is mostly hidden, there is no bolt, and the room is not shown.",
+      "Top-down overhead shot with the surgeon's head bowed and the headlamp casting a bright circle on the drape. Both hands hold instruments and the tray is at left. The face is hidden and there is no bolt.",
+      "Extreme close-up of the eyes, glasses and glowing headlamp. Nothing else is visible: no bolt, no room, no hands.",
+      "Medium shot like cell 1, but the surgeon looks up and away toward the bolt, startled, with small alert marks by the headlamp. This is the reaction moment after the surge, and the bolt is clearly visible at the left.",
+      "Side profile facing left, with a second gloved hand passing an instrument in from the right. The lamp beam is lit and the monitor shows behind. There is no lightning bolt, and the room is mostly dark.",
+      "Front medium shot with the surgeon looking down and working, in a darker room than cell 1, with the IV stand at left and the beam lit. No lightning bolt is visible, and the shot is more centered than cells 1 and 7."
+    ]
+  },
+  "sweep.grid.png": {
+    "source": "sp-064",
+    "lines": [
+      "Side-on, eye-level full-body lunge with the arm reaching toward the broom, which is still untouched; the corner is a flat, shallow wall seam with little depth, and it's the earliest moment alongside cell 6.",
+      "Closer, slightly low side view of a crouched sprint with the hand just short of the broom; her far leg and the corner are partly cropped, so the corner reads shallow and the full body is not shown.",
+      "High rear three-quarter view looking into a deep, clearly receding corner with the floor and both walls visible; she stretches toward the broom, the feet cut off at the bottom-left and the face mostly hidden.",
+      "Steep overhead view with motion arcs showing her lunge toward the broom; the deep corner is visible as a floor-and-wall angle, but the broom is only partly in frame at the top right and her face is hidden.",
+      "Tight close-up cropping her body to the head and arm as her hand grips the broom handle; the corner is a flat wall seam, the swing hasn't started, and the broom is large.",
+      "Medium crouch with her hand just closing on the broom handle, the full body and the corner both visible; it's the grab moment, a step after cell 2 and before cell 7.",
+      "Side view of a full lunge with her arm up on the broom handle, the broom held upright against the corner; the corner is shallow, and it's the moment just after grabbing, with more of her legs than cell 6.",
+      "Extreme close-up with her determined face and fist on the broom, the brush filling the right side; the swing and the corner are mostly cropped out, and her body is cut off.",
+      "High three-quarter view of the swing itself, a wide stance with the broom sweeping across the floor and motion arcs; the deep corner is visible behind her, and it's the latest moment, the only one where she is actually swinging."
+    ]
   }
 }
