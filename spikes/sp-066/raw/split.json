@@ -129,11 +129,10 @@
       "word": "period",
       "roles": [
         "angleCase view or one-object",
-        "gate skipped in SP-064",
-        "main subject"
+        "gate skipped in SP-064"
       ]
     }
   ],
   "missingEarlyPicks": [],
-  "listPromptKey": "a46f799f47180eb9"
+  "listPromptKey": "37340c022cc1a187"
 }

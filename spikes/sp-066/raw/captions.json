@@ -15,7 +15,7 @@
           "name": "man",
           "adjectives": [
             "dark-haired",
-            "green-sweatered",
+            "green-shirted",
             "facing away",
             "knocking"
           ]
@@ -25,7 +25,7 @@
           "adjectives": [
             "crouching",
             "yellow-sweatered",
-            "excited",
+            "wide-eyed",
             "pointing"
           ]
         },
@@ -33,8 +33,8 @@
           "name": "girl",
           "adjectives": [
             "small",
-            "worried",
             "pink-dressed",
+            "worried",
             "hands clasped"
           ]
         },
@@ -50,7 +50,15 @@
           "name": "door knocker",
           "adjectives": [
             "metal",
-            "round"
+            "ring-shaped"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "cream",
+            "square",
+            "glossy"
           ]
         },
         {
@@ -63,33 +71,30 @@
           ]
         },
         {
-          "name": "tiles",
-          "adjectives": [
-            "cream",
-            "square",
-            "floor",
-            "wall"
-          ]
-        },
-        {
           "name": "wall",
           "adjectives": [
-            "beige",
-            "tiled"
+            "tiled",
+            "pale",
+            "cream"
           ]
         }
       ],
       "shot": "medium",
       "angle": "eye level",
       "step": "during",
-      "action": "The man knocks on the door while the woman, boy and girl crouch and look at the cracked orange floor tile; the boy points at it.",
+      "action": "The man knocks on the blue door while the woman, boy and girl crouch or stand behind him. The boy points at the cracked orange floor tile, and the girl and woman look on.",
       "extras": {
         "floor": true,
-        "background": "A beige hallway wall with white tiles on the right and a blue door in the center",
+        "background": "A blue door in a cream wall, with tiled wall panels on the right",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        },
         "family": {
           "mark": "visible",
           "size": "large",
@@ -97,8 +102,8 @@
         },
         "tiles": {
           "mark": "visible",
-          "size": "medium",
-          "place": "back"
+          "size": "large",
+          "place": "front"
         },
         "irregular tile": {
           "mark": "visible",
@@ -107,8 +112,8 @@
         }
       },
       "drawingErrors": [],
-      "mainView": "above",
-      "promptKey": "205be213b23738e4"
+      "mainView": "three-quarter",
+      "promptKey": "5925b9a6f624d742"
     },
     "2": {
       "objects": [
@@ -118,7 +123,7 @@
             "human",
             "fist-clenched",
             "knocking",
-            "pale"
+            "light-skinned"
           ]
         },
         {
@@ -139,10 +144,17 @@
         {
           "name": "door knocker ring",
           "adjectives": [
-            "metal",
             "round",
-            "dark",
-            "iron"
+            "metal",
+            "dark gray"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "cream",
+            "square",
+            "glossy"
           ]
         },
         {
@@ -150,31 +162,26 @@
           "adjectives": [
             "orange",
             "cracked",
-            "square",
-            "terracotta"
-          ]
-        },
-        {
-          "name": "tiles",
-          "adjectives": [
-            "cream",
-            "white",
-            "square",
-            "glossy"
+            "terracotta-colored"
           ]
         }
       ],
       "shot": "close-up",
       "angle": "eye level",
       "step": "during",
-      "action": "A hand grips the ring door knocker and knocks on the door, with motion lines showing the impact. The knock seems to shake the wall, and the orange tile next to the door is cracked.",
+      "action": "A hand grips a ring knocker and knocks on the door; the tiles and the orange tile stand apart on the wall beside it.",
       "extras": {
         "floor": false,
-        "background": "A blue-gray paneled door on the left and a wall of cream tiles on the right, with one orange cracked tile.",
+        "background": "A blue-gray door next to a wall of cream tiles with one orange cracked tile",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
         "family": {
           "mark": "hidden",
           "size": null,
@@ -192,16 +199,15 @@
         }
       },
       "drawingErrors": [],
-      "mainView": "front",
-      "promptKey": "205be213b23738e4"
+      "mainView": null,
+      "promptKey": "5925b9a6f624d742"
     },
     "3": {
       "objects": [
         {
           "name": "father",
           "adjectives": [
-            "tall",
-            "dark-haired",
+            "brown-haired",
             "green-shirted",
             "seen from behind"
           ]
@@ -209,17 +215,14 @@
         {
           "name": "boy",
           "adjectives": [
-            "small",
             "dark-haired",
             "yellow-hooded",
-            "seen from behind",
             "reaching up"
           ]
         },
         {
           "name": "girl",
           "adjectives": [
-            "young",
             "ponytailed",
             "pink-shirted",
             "wide-eyed",
@@ -230,18 +233,15 @@
           "name": "mother",
           "adjectives": [
             "brown-haired",
-            "bun",
-            "pink-shirted",
-            "surprised",
-            "wide-eyed"
+            "pink-topped",
+            "surprised"
           ]
         },
         {
           "name": "door",
           "adjectives": [
-            "blue-gray",
-            "closed",
-            "paneled"
+            "blue",
+            "closed"
           ]
         },
         {
@@ -249,17 +249,7 @@
           "adjectives": [
             "round",
             "metal",
-            "ring-shaped"
-          ]
-        },
-        {
-          "name": "irregular tile",
-          "adjectives": [
-            "orange",
-            "square-ish",
-            "tilted",
-            "crooked",
-            "terracotta"
+            "iron"
           ]
         },
         {
@@ -267,30 +257,34 @@
           "adjectives": [
             "white",
             "cream",
-            "grid-lined",
             "square"
           ]
         },
         {
-          "name": "motion marks",
+          "name": "irregular tile",
           "adjectives": [
-            "curved",
-            "small",
-            "black"
+            "orange",
+            "crooked",
+            "tilted"
           ]
         }
       ],
       "shot": "medium",
       "angle": "eye level",
       "step": "during",
-      "action": "The boy reaches up and grabs the door knocker while the father stands next to him. The girl and the mother look up in surprise at the tilted orange tile on the wall, which looks like it is wobbling.",
+      "action": "The boy reaches up and knocks the ring knocker on the door while the father stands beside him; the girl and mother look up in surprise at the crooked orange tile on the wall.",
       "extras": {
         "floor": false,
-        "background": "A tiled wall in white and cream with grout lines, next to a blue-gray door.",
+        "background": "a tiled wall beside a blue door",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        },
         "family": {
           "mark": "partly cut",
           "size": "large",
@@ -309,7 +303,7 @@
       },
       "drawingErrors": [],
       "mainView": "three-quarter",
-      "promptKey": "205be213b23738e4"
+      "promptKey": "5925b9a6f624d742"
     },
     "4": {
       "objects": [
@@ -317,92 +311,75 @@
           "name": "door",
           "adjectives": [
             "blue",
-            "closed"
+            "closed",
+            "paneled"
           ]
         },
         {
-          "name": "tiled floor",
-          "adjectives": [
-            "cream",
-            "square-tiled"
-          ]
-        },
-        {
-          "name": "irregular tile",
+          "name": "doormat",
           "adjectives": [
             "orange",
             "rectangular",
-            "loose",
-            "slightly shifted"
+            "small"
           ]
         },
         {
-          "name": "person's legs in brown trousers",
+          "name": "adult in brown trousers and brown boots",
           "adjectives": [
-            "olive-brown",
+            "standing",
+            "cut off",
+            "left side"
+          ]
+        },
+        {
+          "name": "person in blue jeans and blue sneaker",
+          "adjectives": [
+            "center",
+            "yellow-clothed",
+            "laced"
+          ]
+        },
+        {
+          "name": "person in red and white sneaker",
+          "adjectives": [
+            "right side",
+            "cut off",
+            "pink clothing"
+          ]
+        },
+        {
+          "name": "person in purple skirt or trousers and dark shoe",
+          "adjectives": [
+            "bottom right",
+            "maroon",
             "standing"
           ]
         },
         {
-          "name": "brown shoes",
+          "name": "floor tiles",
           "adjectives": [
-            "brown",
-            "leather"
-          ]
-        },
-        {
-          "name": "person's leg in blue jeans",
-          "adjectives": [
-            "blue",
-            "denim"
-          ]
-        },
-        {
-          "name": "blue sneaker",
-          "adjectives": [
-            "blue",
-            "white-laced"
-          ]
-        },
-        {
-          "name": "yellow clothing",
-          "adjectives": [
-            "mustard yellow"
-          ]
-        },
-        {
-          "name": "person in purple/maroon clothing",
-          "adjectives": [
-            "maroon",
-            "purple"
-          ]
-        },
-        {
-          "name": "red sneaker",
-          "adjectives": [
-            "red",
-            "white-soled"
-          ]
-        },
-        {
-          "name": "dark brown shoe",
-          "adjectives": [
-            "dark",
-            "brown"
+            "cream",
+            "square",
+            "grouted"
           ]
         }
       ],
       "shot": "wide",
       "angle": "high angle",
       "step": "before",
-      "action": "Several people stand around the orange tile and look down at it from the edges of the picture. It seems to wobble, as the small motion lines show. Nobody touches it.",
+      "action": "Several people stand close together on the tiled floor in front of a closed door, facing it. Nobody touches anything. Small motion marks beside the doormat suggest a knock or a step.",
       "extras": {
         "floor": true,
-        "background": "A blue door at the top of a cream tiled floor",
+        "background": "A blue paneled door at the top of the picture, with a tiled floor and an orange doormat in front of it",
         "morePeople": true,
         "readableText": ""
       },
       "mustSee": {
+        "knock": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        },
         "family": {
           "mark": "partly cut",
           "size": "large",
@@ -414,14 +391,14 @@
           "place": "back"
         },
         "irregular tile": {
-          "mark": "visible",
-          "size": "small",
-          "place": "back"
+          "mark": "hidden",
+          "size": null,
+          "place": null
         }
       },
       "drawingErrors": [],
       "mainView": "above",
-      "promptKey": "205be213b23738e4"
+      "promptKey": "5925b9a6f624d742"
     },
     "5": {
       "objects": [
@@ -429,17 +406,18 @@
           "name": "boy",
           "adjectives": [
             "young",
-            "dark-haired",
             "surprised",
             "crouching",
-            "yellow-hoodie"
+            "dark-haired",
+            "yellow-hooded"
           ]
         },
         {
           "name": "woman",
           "adjectives": [
             "brown-haired",
-            "surprised",
+            "shocked",
+            "leaning",
             "pink-clothed"
           ]
         },
@@ -448,17 +426,17 @@
           "adjectives": [
             "small",
             "dark-haired",
-            "shocked",
-            "pink-dress"
+            "surprised",
+            "pink-dressed"
           ]
         },
         {
           "name": "man",
           "adjectives": [
-            "dark-haired",
+            "tall",
             "green-shirted",
-            "brown-trousered",
-            "facing the door"
+            "facing away",
+            "brown-trousered"
           ]
         },
         {
@@ -470,52 +448,57 @@
           ]
         },
         {
-          "name": "door handle",
+          "name": "door knocker",
           "adjectives": [
             "small",
             "metal"
           ]
         },
         {
-          "name": "irregular tile",
+          "name": "cracked tile",
           "adjectives": [
             "orange",
             "large",
             "cracked",
-            "jagged"
+            "shaking"
           ]
         },
         {
-          "name": "tiles",
+          "name": "floor tiles",
           "adjectives": [
             "beige",
-            "square",
-            "flat"
+            "light",
+            "square"
           ]
         },
         {
-          "name": "wall",
+          "name": "motion lines",
           "adjectives": [
-            "cream",
-            "plain"
+            "curved",
+            "gray"
           ]
         }
       ],
       "shot": "medium",
       "angle": "high angle",
       "step": "during",
-      "action": "The man reaches for the door handle while the boy, woman and girl look down in surprise at the cracked orange tile in the floor, which has motion lines beside it.",
+      "action": "The man knocks on the blue door while the boy, woman and girl lean forward and stare in surprise at the cracked orange tile shaking on the floor.",
       "extras": {
         "floor": true,
-        "background": "a cream wall with a blue door and a tiled hallway floor",
+        "background": "A blue door set in a cream-coloured wall and doorframe, with a tiled hallway floor in front of it",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        },
         "family": {
           "mark": "visible",
           "size": "large",
-          "place": "back"
+          "place": "front"
         },
         "tiles": {
           "mark": "visible",
@@ -529,46 +512,55 @@
         }
       },
       "drawingErrors": [],
-      "mainView": "above",
-      "promptKey": "205be213b23738e4"
+      "mainView": "three-quarter",
+      "promptKey": "5925b9a6f624d742"
     },
     "6": {
       "objects": [
         {
-          "name": "woman",
+          "name": "mother",
           "adjectives": [
             "adult",
+            "dark-haired",
+            "bun",
+            "maroon top",
+            "long skirt",
             "bending forward",
-            "brown hair in a bun",
-            "wearing a pink top and a long maroon skirt"
+            "seen from behind"
           ]
         },
         {
-          "name": "man",
+          "name": "father",
           "adjectives": [
             "adult",
             "tall",
-            "dark hair",
-            "wearing a green sweater and brown trousers",
-            "seen from behind"
+            "dark-haired",
+            "green sweater",
+            "brown trousers",
+            "seen from behind",
+            "leaning forward"
           ]
         },
         {
           "name": "boy",
           "adjectives": [
-            "young",
-            "wearing a yellow hoodie and blue jeans",
-            "crouching forward",
-            "pointing at the floor"
+            "small",
+            "child",
+            "yellow hoodie",
+            "blue jeans",
+            "pointing",
+            "bending forward"
           ]
         },
         {
           "name": "girl",
           "adjectives": [
             "small",
-            "wearing a pink dress with a ponytail",
-            "leaning forward",
-            "hands on knees"
+            "child",
+            "pigtails",
+            "pink dress",
+            "white socks",
+            "bending forward"
           ]
         },
         {
@@ -576,17 +568,16 @@
           "adjectives": [
             "blue",
             "closed",
-            "has a handle",
-            "in a light frame"
+            "paneled",
+            "has a handle"
           ]
         },
         {
-          "name": "tiles",
+          "name": "tile floor",
           "adjectives": [
-            "light beige",
-            "square",
-            "grid-patterned",
-            "on the floor"
+            "beige",
+            "gridded",
+            "clean"
           ]
         },
         {
@@ -595,7 +586,7 @@
             "orange",
             "cracked",
             "square",
-            "stands out from the other tiles"
+            "different from the others"
           ]
         },
         {
@@ -608,8 +599,8 @@
       ],
       "shot": "medium",
       "angle": "high angle",
-      "step": "during",
-      "action": "The four family members, seen from behind, lean forward and look down at the orange cracked tile on the floor, and the boy points at it.",
+      "step": "before",
+      "action": "The four family members walk toward the blue door with their backs to the viewer and look down at the cracked orange tile; the boy points at it and nobody touches the door.",
       "extras": {
         "floor": true,
         "background": "a cream wall with a closed blue door at the end of a tiled floor",
@@ -617,10 +608,15 @@
         "readableText": ""
       },
       "mustSee": {
+        "knock": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        },
         "family": {
           "mark": "visible",
           "size": "large",
-          "place": "back"
+          "place": "front"
         },
         "tiles": {
           "mark": "visible",
@@ -634,8 +630,8 @@
         }
       },
       "drawingErrors": [],
-      "mainView": "above",
-      "promptKey": "205be213b23738e4"
+      "mainView": "back",
+      "promptKey": "5925b9a6f624d742"
     },
     "7": {
       "objects": [
@@ -644,8 +640,8 @@
           "adjectives": [
             "dark-haired",
             "green-shirted",
-            "seen from behind",
-            "reaching up"
+            "reaching up",
+            "seen from behind"
           ]
         },
         {
@@ -653,7 +649,7 @@
           "adjectives": [
             "brown-haired",
             "pink-shirted",
-            "surprised",
+            "startled",
             "wide-eyed"
           ]
         },
@@ -695,8 +691,7 @@
           "adjectives": [
             "cream",
             "square",
-            "glossy",
-            "arranged in a grid"
+            "grid-lined"
           ]
         },
         {
@@ -704,30 +699,34 @@
           "adjectives": [
             "orange",
             "cracked",
-            "square",
             "shaking",
-            "loose"
+            "square"
           ]
         }
       ],
       "shot": "medium",
       "angle": "eye level",
       "step": "during",
-      "action": "The father knocks on the door with the ring knocker while the mother, boy and girl crowd behind him and look up at the cracked orange tile, which shakes on the wall.",
+      "action": "The father knocks on the door with the ring knocker while the mother, boy and girl stand close behind him and look up toward the cracked orange tile, which is shaking.",
       "extras": {
         "floor": false,
-        "background": "A blue door beside a cream tiled wall, with motion lines around the door knocker and the orange tile",
+        "background": "A blue door beside a cream tiled wall, with motion lines around the knocker and the orange tile",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        },
         "family": {
           "mark": "partly cut",
           "size": "large",
           "place": "front"
         },
         "tiles": {
-          "mark": "partly cut",
+          "mark": "visible",
           "size": "large",
           "place": "back"
         },
@@ -738,8 +737,8 @@
         }
       },
       "drawingErrors": [],
-      "mainView": "front",
-      "promptKey": "205be213b23738e4"
+      "mainView": "three-quarter",
+      "promptKey": "5925b9a6f624d742"
     },
     "8": {
       "objects": [
@@ -748,8 +747,9 @@
           "adjectives": [
             "smiling",
             "brown-haired",
-            "bending forward",
-            "wearing a mauve top and long skirt"
+            "bun hairstyle",
+            "crouching",
+            "wearing mauve top and long skirt"
           ]
         },
         {
@@ -757,9 +757,9 @@
           "adjectives": [
             "smiling",
             "dark-haired",
-            "standing",
-            "wearing a green sweater and brown pants",
-            "holding the door"
+            "tall",
+            "wearing green sweater and brown trousers",
+            "looking back over shoulder"
           ]
         },
         {
@@ -768,33 +768,16 @@
             "crouching",
             "dark-haired",
             "excited",
-            "wearing a yellow hoodie and blue jeans"
+            "wearing yellow hoodie and blue jeans"
           ]
         },
         {
           "name": "girl",
           "adjectives": [
-            "small",
+            "young",
             "curly-haired",
             "wide-eyed",
-            "wearing a pink dress"
-          ]
-        },
-        {
-          "name": "irregular tile",
-          "adjectives": [
-            "orange",
-            "cracked",
-            "uneven",
-            "dark-edged"
-          ]
-        },
-        {
-          "name": "floor tiles",
-          "adjectives": [
-            "cream",
-            "square",
-            "light-colored"
+            "wearing pink dress"
           ]
         },
         {
@@ -802,51 +785,65 @@
           "adjectives": [
             "blue",
             "open",
-            "wooden"
+            "tall"
           ]
         },
         {
-          "name": "door frame",
+          "name": "tiles",
           "adjectives": [
-            "blue",
-            "tall"
+            "beige",
+            "square",
+            "large"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "orange",
+            "cracked",
+            "terracotta"
           ]
         },
         {
           "name": "tree",
           "adjectives": [
             "green",
-            "leafy"
+            "leafy",
+            "outdoor"
           ]
         },
         {
           "name": "wall",
           "adjectives": [
             "tiled",
-            "cream",
-            "light-colored"
+            "beige"
           ]
         }
       ],
       "shot": "medium",
       "angle": "high angle",
       "step": "during",
-      "action": "The boy crouches and points at the cracked orange tile on the floor, while the mother, the girl and the father look at it or at the door. The father holds the open door.",
+      "action": "The father holds the open door handle and looks back while the mother, boy and girl crouch or lean in; the boy points at the cracked orange floor tile and the others look toward it.",
       "extras": {
         "floor": true,
-        "background": "A blue open doorway with a green tree and a low wall outside, next to a cream tiled wall",
+        "background": "A beige tiled wall with a blue door standing open, and a green tree and a low wall visible outside",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
+        "knock": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        },
         "family": {
           "mark": "visible",
           "size": "large",
-          "place": "back"
+          "place": "front"
         },
         "tiles": {
           "mark": "visible",
-          "size": "medium",
+          "size": "large",
           "place": "front"
         },
         "irregular tile": {
@@ -856,8 +853,8 @@
         }
       },
       "drawingErrors": [],
-      "mainView": "above",
-      "promptKey": "205be213b23738e4"
+      "mainView": "three-quarter",
+      "promptKey": "5925b9a6f624d742"
     },
     "9": {
       "objects": [
@@ -866,7 +863,7 @@
           "adjectives": [
             "adult",
             "brown-haired",
-            "wearing a pink top",
+            "wearing pink-red top",
             "looking at the wall"
           ]
         },
@@ -875,8 +872,9 @@
           "adjectives": [
             "adult",
             "dark-haired",
-            "wearing a green sweater",
-            "reaching toward the door"
+            "wearing green sweater",
+            "facing the door",
+            "knocking"
           ]
         },
         {
@@ -884,8 +882,8 @@
           "adjectives": [
             "small",
             "child",
-            "wearing a yellow hoodie",
-            "looking at the tile"
+            "wearing yellow top and blue pants",
+            "looking up"
           ]
         },
         {
@@ -893,9 +891,9 @@
           "adjectives": [
             "small",
             "child",
-            "wearing a pink dress",
-            "has pigtails",
-            "looking at the tile"
+            "wearing pink dress",
+            "ponytail",
+            "looking up"
           ]
         },
         {
@@ -907,72 +905,88 @@
           ]
         },
         {
-          "name": "wall tiles",
+          "name": "wall",
           "adjectives": [
-            "white",
+            "tiled",
+            "cream",
+            "long"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
             "cream",
             "square",
             "large",
-            "grid-lined"
+            "gridded"
           ]
         },
         {
           "name": "irregular tile",
           "adjectives": [
             "orange",
-            "terracotta",
             "cracked",
-            "vibrating",
-            "different from the others"
+            "square",
+            "vibrating"
           ]
         },
         {
           "name": "floor",
           "adjectives": [
             "tiled",
-            "beige",
-            "light"
+            "beige"
           ]
         },
         {
           "name": "baseboard",
           "adjectives": [
-            "long",
             "pale",
-            "receding"
+            "long"
+          ]
+        },
+        {
+          "name": "motion lines",
+          "adjectives": [
+            "curved",
+            "black"
           ]
         }
       ],
       "shot": "wide",
       "angle": "eye level",
       "step": "during",
-      "action": "The family stands at the blue door on the left. The father reaches toward the door while the mother and children look at the cracked orange tile on the wall. The tile has motion marks around it to show it shaking.",
+      "action": "The father knocks on the blue door while the mother and two children stand close behind him and look toward the door and the wall. The cracked orange tile on the wall shakes, as shown by the motion lines.",
       "extras": {
         "floor": true,
-        "background": "A long hallway with a wall of large cream tiles on the right and a blue door on the left.",
+        "background": "A long hallway with a cream tiled wall running into the distance, a blue door at the far end, and a beige tiled floor",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        },
         "family": {
           "mark": "visible",
           "size": "medium",
-          "place": "front"
+          "place": "back"
         },
         "tiles": {
-          "mark": "partly cut",
+          "mark": "visible",
           "size": "large",
-          "place": "back"
+          "place": "front"
         },
         "irregular tile": {
           "mark": "visible",
           "size": "medium",
-          "place": "back"
+          "place": "front"
         }
       },
       "drawingErrors": [],
-      "mainView": "side",
-      "promptKey": "205be213b23738e4"
+      "mainView": "three-quarter",
+      "promptKey": "5925b9a6f624d742"
     }
   },
   "ventilator.grid.png": {
