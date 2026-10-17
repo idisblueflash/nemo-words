@@ -175,7 +175,7 @@ Planning and building go through the `backlog` plugin (`backlog@blueflash`): sto
 with the plugin's `teddy` / `qa` / `buzz` agents, then opens a PR. `/backlog:next` says what to
 do next. The stack, test commands and bug-numbering rule those agents need are in
 `.claude/rules/build.md`. Before `/backlog:refine` sets an item that changes a story
-step's rules to `ready`, have `_david` measure it on real data first (see `build.md`).
+step's rules to `ready`, have `backlog:david` measure it on real data first (see `build.md`).
 
 ## Rules
 

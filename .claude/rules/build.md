@@ -1,12 +1,13 @@
 ---
-description: How backlog items get built here — stack, test commands and conventions for the backlog plugin's teddy, qa and buzz agents.
+description: How backlog items get built here — stack, test commands and conventions for the backlog plugin's teddy, qa, buzz and david agents.
 ---
 
 # Building backlog items
 
 `/backlog:implement <ID>` (the `backlog` plugin, phase 6) builds one `ready` item from
 `docs/backlog/items/`: `backlog:teddy` implements it test-first, `backlog:qa` checks it
-black-box, `backlog:buzz` fixes what `qa` flags. These are the repo-specific facts they need.
+black-box, `backlog:buzz` fixes what `qa` flags. `backlog:david` measures an item on real data
+before it is refined. These are the repo-specific facts they need.
 
 ## Stack
 
@@ -33,6 +34,20 @@ or the files it names usually make that obvious. The E01 card pipeline is all No
 
 A full check runs both suites: `node --test` and `clojure -M:test`.
 
+## Data
+
+`backlog:david` measures claims against this data. Read a few real rows of a file before
+you trust a claim about it.
+
+- `resources/data/`: `kaikki-en.jsonl` (3.2 GB — never load it whole; stream it, or use
+  `grep` / `jq` with `-m` or line limits), `en_US_RP_ipa.tsv`, `cmudict.dict`,
+  `wikipron_us_broad.tsv`, `en_US.txt`, `en_UK.txt`.
+- `data/mnemonics/log.jsonl`: one row per mnemonic made so far.
+- Quick checks: a Node one-off (stdlib only), an `awk` / `jq` pipeline, or a pure Clojure
+  function through a `clojure -M -e '...'` one-liner, the same way `qa` checks one.
+- Scratch scripts go in the session scratchpad, not in `scripts/`, which holds only scripts
+  the repo keeps.
+
 ## Bug reports
 
 `backlog:buzz` files them in `docs/backlog/bugs/`. Numbering continues the legacy
@@ -51,8 +66,7 @@ Each step of the story workflow needs research on real data before its rules are
 sample words with no anchor). So before `/backlog:refine` sets an item to `ready`, if
 the item adds or changes a step's rules (`chunk`, `find-keywords`, `compose-stories`,
 `check-stories`, `pick-story`, …) or rests on claims about the real data
-(`resources/data/`, `data/mnemonics/log.jsonl`, Flash's own cards), have `_david`
-investigate it first, and draft the ACs from what it measures. `_david` is a local
-agent, not part of the plugin. While it works, `_david` claims the item with a
-`claimed:` frontmatter field (the plugin's "Claims" rule, backlog 0.10.0+), so
-`/backlog:next` in another session won't send Flash to refine or research it again.
+(`resources/data/`, `data/mnemonics/log.jsonl`, Flash's own cards), have
+`backlog:david` investigate it first, and draft the ACs from what it measures. While it
+works, `david` claims the item with a `claimed:` frontmatter field (the plugin's "Claims"
+rule), so `/backlog:next` in another session won't send Flash to refine or research it again.
