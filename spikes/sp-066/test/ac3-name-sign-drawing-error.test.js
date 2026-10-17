@@ -86,6 +86,16 @@ test("AC3: the questions tell Jev about the name sign and the drawing errors", a
   assert.match(q, /drawing errors/);
 });
 
+test("name-sign check: a possessive form of the name counts as the name (bug-019)", () => {
+  const sign = [{ item: "nurse", text: "Venice" }];
+  for (const t of ["NURSE VENICE'S STATION", "Venice\u2019s", "venice's", "VENICE\u2019S"]) {
+    assert.equal(nameSignReadable(sign, { extras: { readableText: t } }), true, t);
+  }
+  assert.equal(nameSignReadable(sign, { extras: { readableText: "Venices" } }), false);
+  assert.equal(nameSignReadable(sign, { extras: { readableText: "Venicean" } }), false);
+  assert.equal(nameSignReadable(sign, { extras: { readableText: "Venice's" } }), true);
+});
+
 test("name-sign check: case and punctuation don't count; empty or missing readable text can't show it", () => {
   assert.equal(nameSignReadable([{ item: "nurse", text: "Venice" }], { extras: { readableText: "VENICE, R.N." } }), true);
   assert.equal(nameSignReadable([{ item: "nurse", text: "Dr. O'Neil" }], { extras: { readableText: "dr oneil" } }), true);

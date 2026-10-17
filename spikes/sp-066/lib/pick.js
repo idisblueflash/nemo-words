@@ -81,6 +81,7 @@ function buildQuestions(rubric, cells) {
 const plainText = (t) =>
   ` ${String(t ?? "")
     .toLowerCase()
+    .replace(/['’]s(?![\p{L}\p{N}])/gu, "") // a possessive counts as the name (bug-019)
     .replace(/[.'’]/g, "")
     .replace(/[^\p{L}\p{N}]+/gu, " ")
     .trim()} `;
