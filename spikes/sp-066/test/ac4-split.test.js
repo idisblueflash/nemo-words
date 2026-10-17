@@ -72,16 +72,13 @@ test("AC4: the real 82 words split into 20 tuning words, 4 or 5 of them SP-064 h
   assert.ok(hits === 4 || hits === 5, `${hits} SP-064 hits in the tuning set`);
 });
 
-test("AC4 (early picks): a name anchor is a story name shown as a sign, in an item name or an adjective", () => {
+test("AC4 (early picks): a name anchor is a must-see list with a name sign (ADR-0035)", () => {
   const { hasNameAnchor } = require("../lib/split");
-  // the shape the real must-see call gave for ventilator (a smoke check, 2026-10-17)
-  assert.equal(hasNameAnchor("Nurse Venice returns later.", [{ name: "nurse", adjectives: ['wearing a nametag that reads "Venice"'] }]), true);
-  assert.equal(hasNameAnchor("If Victor misses rent.", [{ name: 'person with a nametag reading "Victor"', adjectives: [] }]), true);
-  assert.equal(hasNameAnchor("Nurse Venice checks.", [{ name: "nametag", adjectives: ['reading "Venice"'] }]), true);
-  // a sign that names no one, or a name with no sign, isn't one
-  assert.equal(hasNameAnchor("A road sign falls.", [{ name: "road sign", adjectives: [] }]), false);
-  assert.equal(hasNameAnchor("Nurse Venice checks.", [{ name: "nurse", adjectives: ["Venice"] }]), false);
-  assert.equal(hasNameAnchor("Power surge! An OR goes dark.", [{ name: "exit sign", adjectives: ["glowing"] }]), false);
+  assert.equal(hasNameAnchor({ items: [{ name: "nurse", adjectives: [] }], nameSigns: [{ item: "nurse", text: "Venice" }] }), true);
+  // no name sign: not a name anchor, even with a sign-like item
+  assert.equal(hasNameAnchor({ items: [{ name: "road sign", adjectives: [] }], nameSigns: [] }), false);
+  assert.equal(hasNameAnchor({ items: [{ name: 'person with a nametag reading "Victor"', adjectives: [] }] }), false, "an old list with no nameSigns");
+  assert.equal(hasNameAnchor(undefined), false);
 });
 
 test("AC4: run.js --split writes the split and prints it; a re-run makes the same split, with no Claude or Jev call", async () => {

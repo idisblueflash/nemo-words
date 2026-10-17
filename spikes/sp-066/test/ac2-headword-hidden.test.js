@@ -40,6 +40,7 @@ test("bug-016: the mustSee keys stay the list's item names", () => {
     extras: { floor: true, background: "", morePeople: false, readableText: "" },
     action: "the nurse turns on the breathing machine",
     mustSee: { nurse: { mark: "visible", size: "large", place: "front" }, "breathing machine": { mark: "partly cut", size: "medium", place: "back" } },
+    drawingErrors: [],
   });
   assert.deepEqual(caption.parseCaption(answer, list, "ventilator").mustSee, {
     nurse: { mark: "visible", size: "large", place: "front" },

@@ -67,7 +67,7 @@ test("AC2: every cell of a kept grid gets a caption with objects, shot, angle, s
   assert.deepEqual(kappa["9"].mustSee.moon, { mark: "visible", size: "large", place: "back" });
   assert.equal(kappa["5"].action, "the square pushes the moon: the objects act on each other");
   assert.equal(kappa["1"].action, "the objects stand apart");
-  assert.deepEqual(Object.keys(captions["nu.grid.png"]["5"].mustSee), ["square", "nametag"]);
+  assert.deepEqual(Object.keys(captions["nu.grid.png"]["5"].mustSee), ["square", "nurse"]);
 });
 
 test("AC2: the captioner sees only that cell and the must-see list, never the word, the story or Flash's cell", async () => {
@@ -129,7 +129,7 @@ test("AC2: a caption made under the old prompt (items with adjectives) is redone
     angle: "eye level",
     step: "during",
     extras: { floor: false, background: "plain", morePeople: false, readableText: "" },
-    mustSee: { square: "visible", ...(moon ? { moon: "hidden" } : { nametag: "hidden" }) },
+    mustSee: { square: "visible", ...(moon ? { moon: "hidden" } : { nurse: "hidden" }) },
   });
   const cells = (moon) => Object.fromEntries([1, 2, 3, 4, 5, 6, 7, 8, 9].map((c) => [c, old(moon)]));
   require("node:fs").writeFileSync(path.join(out, "captions.json"), JSON.stringify({ "alpha.grid.png": cells(true), "nu.grid.png": cells(false) }));
@@ -138,7 +138,7 @@ test("AC2: a caption made under the old prompt (items with adjectives) is redone
   assert.equal(again.filter((c) => c.mode === "must-see").length, 0, "the must-see lists are reused");
   assert.equal(again.filter((c) => c.mode === "caption").length, 18, "every old caption is made again");
   const captions = readJson(path.join(out, "captions.json"));
-  assert.equal(captions["nu.grid.png"]["1"].mustSee.nametag.mark, "visible");
+  assert.equal(captions["nu.grid.png"]["1"].mustSee.nurse.mark, "visible");
   assert.equal(captions["alpha.grid.png"]["9"].mustSee.moon.mark, "visible");
 });
 
@@ -179,6 +179,63 @@ test("AC2: the caption prompt asks for the action line and a size and place per 
   assert.match(prompt, /"mark": "visible"/);
 });
 
+// After stage 2 (ADR-0036, C-044): the caption lists the cell's drawing errors.
+// The fake captioner: with a "tile" item, a cell from lightness 210 draws the
+// tile wrong (a must-see item), a cell at 150–209 draws a lamp wrong (another
+// object), and a darker cell has no error. With a "nurse" item, a cell from
+// lightness 150 can read "VENICE, R.N."; a darker cell reads nothing.
+const TILE = { word: "anomaly", grid: "alpha.grid.png", flashCell: 6, story: "An odd tile rattles, lightness 120." };
+
+test("AC2: every caption lists its drawing errors, each with whether it is a must-see item; a cell with none has an empty list", async () => {
+  const out = tmpDir();
+  const log = path.join(out, "claude.jsonl");
+  const r = await runNode("run.js", ["--stage", "tuning", "--caption-only"], fixtureEnv(out, { SP066_GRIDS: gridsFile(out, [TILE, KEPT[1]]), FAKE_CLAUDE_LOG: log }));
+  assert.equal(r.code, 0, r.stderr);
+  const captions = readJson(path.join(out, "captions.json"));
+  for (const cells of Object.values(captions)) for (const c of Object.values(cells)) assert.ok(Array.isArray(c.drawingErrors), "every caption has the list");
+  const a = captions["alpha.grid.png"]; // cell n = lightness 30·(n−1)
+  assert.deepEqual(a["1"].drawingErrors, []);
+  assert.deepEqual(a["6"].drawingErrors, [{ object: "lamp", mustSee: false, note: "floats above the table" }]);
+  assert.deepEqual(a["9"].drawingErrors, [{ object: "tile", mustSee: true, note: "sits on top of the grout lines" }]);
+  // the text it can read stays in extras
+  const nu = captions["nu.grid.png"]; // cell n = lightness 30·(n−1)
+  assert.equal(nu["6"].extras.readableText, "VENICE, R.N.");
+  assert.equal(nu["1"].extras.readableText, "");
+
+  const c = claudeCalls(log).find((x) => x.mode === "caption");
+  const prompt = c.argv[c.argv.indexOf("-p") + 1];
+  assert.match(prompt, /"drawingErrors"/);
+  assert.match(prompt, /floats/);
+  assert.match(prompt, /pasted on/);
+  assert.match(prompt, /breaks the lines of the wall or floor/);
+  assert.match(prompt, /broken or crooked on purpose is not a drawing error/);
+  assert.match(prompt, /"mustSee": true or false/);
+  assert.match(prompt, /empty list/);
+  assert.match(prompt, /readableText/);
+});
+
+test("AC2: a caption with no drawing-errors list, or a drawing error with no object or no must-see flag, is unusable", () => {
+  const { parseCaption } = require("../lib/caption");
+  const items = [{ name: "tile", adjectives: ["odd"] }];
+  const base = {
+    objects: [{ name: "tile", adjectives: [] }],
+    shot: "medium",
+    angle: "eye level",
+    step: "during",
+    extras: { floor: true, background: "wall", morePeople: false, readableText: "" },
+    action: "the tile rattles in the wall",
+    mustSee: { tile: { mark: "visible", size: "large", place: "front" } },
+    drawingErrors: [{ object: "tile", mustSee: true, note: "sits on the grout" }],
+  };
+  assert.deepEqual(parseCaption(JSON.stringify(base), items).drawingErrors, [{ object: "tile", mustSee: true, note: "sits on the grout" }]);
+  assert.deepEqual(parseCaption(JSON.stringify({ ...base, drawingErrors: [] }), items).drawingErrors, []);
+  assert.deepEqual(parseCaption(JSON.stringify({ ...base, drawingErrors: [{ object: "lamp", mustSee: false }] }), items).drawingErrors, [{ object: "lamp", mustSee: false, note: "" }]);
+  assert.throws(() => parseCaption(JSON.stringify({ ...base, drawingErrors: undefined }), items), /drawing errors/);
+  assert.throws(() => parseCaption(JSON.stringify({ ...base, drawingErrors: "none" }), items), /drawing errors/);
+  assert.throws(() => parseCaption(JSON.stringify({ ...base, drawingErrors: [{ mustSee: true, note: "x" }] }), items), /drawing error/);
+  assert.throws(() => parseCaption(JSON.stringify({ ...base, drawingErrors: [{ object: "tile", mustSee: "yes" }] }), items), /drawing error/);
+});
+
 test("AC2: a caption with no action line, or a shown item with no size or place, is unusable", () => {
   const { parseCaption } = require("../lib/caption");
   const items = [{ name: "cob", adjectives: ["bare"] }];
@@ -190,6 +247,7 @@ test("AC2: a caption with no action line, or a shown item with no size or place,
     extras: { floor: true, background: "", morePeople: false, readableText: "" },
     action: "a hand tosses the cob",
     mustSee: { cob: { mark: "visible", size: "large", place: "front" } },
+    drawingErrors: [],
   };
   const ok = parseCaption(JSON.stringify(base), items);
   assert.equal(ok.action, "a hand tosses the cob");

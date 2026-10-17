@@ -115,7 +115,9 @@ test("AC3: must-see clarity uses each item's size, so a small item scores lowest
   assert.match(clarity.levels[0], /small/);
   assert.match(clarity.levels[0], /partly cut/);
   assert.match(clarity.levels[0], /bare/);
-  assert.match(clarity.levels[0], /Venice/);
+  // after stage 2 (ADR-0035): an unreadable name sign is the middle level, not the lowest
+  assert.doesNotMatch(clarity.levels[0], /Venice/);
+  assert.match(clarity.levels[1], /name sign can't be read/);
   assert.match(clarity.levels[2], /large/);
   assert.match(clarity.check, /size/);
   assert.match(clarity.check, /a small item gets the lowest level/);

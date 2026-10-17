@@ -10,7 +10,7 @@
 // A fixture cell is flat gray; the fake reads its gray level back with magick.
 //
 // Story words drive the must-see list, and list items drive the captions:
-//   "Venice"        → item "nametag" reading "Venice" (a name anchor's visible sign)
+//   "Venice"        → item "nurse" and the name sign { item: "nurse", text: "Venice" } (ADR-0035)
 //   "then"          → isSequence true
 //   "view" / "lone" → angleCase "view" / "one-object" (else "none")
 //   "moon"          → item "moon": hidden in cells darker than 100, partly cut below 150
@@ -20,6 +20,10 @@
 //   "crash"         → item "crash": every caption call fails
 //   "garble"        → item "garble": every caption prints something that isn't JSON
 //   "split"         → item "split": the differences call fails
+//   "tile"          → item "tile": a drawing error on the tile (a must-see
+//                     item) from lightness 210, on a lamp (not one) at 150–209
+// A caption with a "nurse" item reads "VENICE, R.N." from lightness 150, else
+// nothing (extras.readableText); every other caption has no drawing error.
 // Shot: extreme close-up at levels ≥ 200, else medium. Step: before below 90,
 // during below 180, after from 180. Action: the objects act on each other at
 // levels 100–199, else they stand apart. A shown item's size: small below 80,
@@ -77,12 +81,16 @@ if (mode === "must-see") {
     process.exit(0);
   }
   const items = [{ name: "square", adjectives: ["flat", "gray"] }];
-  if (story.includes("Venice")) items.push({ name: "nametag", adjectives: ['reading "Venice"'] });
-  for (const special of ["moon", "ghost", "crash", "garble", "split"]) {
+  const nameSigns = [];
+  if (story.includes("Venice")) {
+    items.push({ name: "nurse", adjectives: ["tired"] });
+    nameSigns.push({ item: "nurse", text: "Venice" });
+  }
+  for (const special of ["moon", "ghost", "crash", "garble", "split", "tile"]) {
     if (story.includes(special)) items.push({ name: special, adjectives: ["round"] });
   }
   const angleCase = /\bview\b/.test(story) ? "view" : /\blone\b/.test(story) ? "one-object" : "none";
-  out({ items, isSequence: /\bthen\b/.test(story), angleCase });
+  out({ items, nameSigns, isSequence: /\bthen\b/.test(story), angleCase });
 } else if (mode === "caption") {
   const names = namesFromPrompt();
   if (names.includes("crash")) fail("API Error: 500 Internal server error");
@@ -107,8 +115,9 @@ if (mode === "must-see") {
     angle: process.env.FAKE_CLAUDE_HIGH_ANGLE && l >= Number(process.env.FAKE_CLAUDE_HIGH_ANGLE) ? "high angle" : "eye level",
     action: l >= 100 && l < 200 ? "the square pushes the moon: the objects act on each other" : "the objects stand apart",
     step: l < 90 ? "before" : l < 180 ? "during" : "after",
-    extras: { floor: false, background: "plain", morePeople: false, readableText: "" },
+    extras: { floor: false, background: "plain", morePeople: false, readableText: names.includes("nurse") && l >= 150 ? "VENICE, R.N." : "" },
     mustSee: Object.fromEntries(names.map((n) => [n, mark(n)])),
+    drawingErrors: !names.includes("tile") ? [] : l >= 210 ? [{ object: "tile", mustSee: true, note: "sits on top of the grout lines" }] : l >= 150 ? [{ object: "lamp", mustSee: false, note: "floats above the table" }] : [],
   });
 } else {
   const names = listFromPrompt().map((i) => i.name);

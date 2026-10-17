@@ -12,7 +12,6 @@
 //     18 hits of 82); the other words are the measure set, in grid order.
 
 const sp064Report = require("../../sp-064/lib/report");
-const { SIGN } = require("./must-see");
 
 const SEED = 66;
 const TUNING_SIZE = 20;
@@ -74,22 +73,13 @@ function drawSplit(words, hits, { seed = SEED, size = TUNING_SIZE } = {}) {
   return { seed, size: n, tuning, measure: words.filter((w) => !inTuning.has(w)), tuningHits: nHits };
 }
 
-// A name anchor: a capitalized word of the story that isn't its first word
-// (the story's own name: "Venice", "Victor") shown as a sign — in an item's
-// name or adjective that holds the name, with a sign word (nametag, label …)
-// there or in the item's name ('nurse' + 'wearing a nametag that reads "Venice"').
-function hasNameAnchor(story, items) {
-  const words = String(story).split(/\s+/).slice(1).map((w) => w.replace(/[^A-Za-z]/g, ""));
-  const names = words.filter((w) => /^[A-Z][a-z]+$/.test(w));
-  return (items || []).some((i) =>
-    names.some((n) => [i.name, ...(i.adjectives || [])].some((t) => new RegExp(`\\b${n}\\b`).test(t) && (SIGN.test(t) || SIGN.test(i.name)))),
-  );
-}
+// A name anchor: the must-see list gives a name sign (ADR-0035, C-043).
+const hasNameAnchor = (list) => !!list && Array.isArray(list.nameSigns) && list.nameSigns.length > 0;
 
 // The early picks the Staged run asks for, in this order; one word can meet several.
 const EARLY = [
   { role: "SP-064 hit", meets: (w, x) => !!(x.sp064[w.word] && x.sp064[w.word].hit) },
-  { role: "name anchor", meets: (w, x) => !!x.lists[w.word] && hasNameAnchor(w.story, x.lists[w.word].items) },
+  { role: "name anchor", meets: (w, x) => !!x.lists[w.word] && hasNameAnchor(x.lists[w.word]) },
   { role: "angleCase view or one-object", meets: (w, x) => !!x.lists[w.word] && ["view", "one-object"].includes(x.lists[w.word].angleCase) },
   { role: "gate skipped in SP-064", meets: (w, x) => !!(x.sp064[w.word] && x.sp064[w.word].gateSkipped) },
 ];

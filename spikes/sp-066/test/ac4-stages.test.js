@@ -183,3 +183,65 @@ test("AC4: the tuning order puts the Staged run's early picks first: an SP-064 h
   assert.deepEqual(split(out).tuningOrder, s.tuningOrder);
   assert.match(again.stdout, /tuning order: h, n, v, g, /);
 });
+
+test("AC4 (after stage 2): the stage summary checks the drawing-errors lists, the name-anchor gate, and counts the cells with a drawing error", async (t) => {
+  const kept = [
+    { word: "anomaly", grid: "alpha.grid.png", flashCell: 5, story: "An odd tile rattles, lightness 120." },
+    { word: "nursey", grid: "nu.grid.png", flashCell: 5, story: "Nurse Venice waves, lightness 120." },
+  ];
+  const sp064 = [
+    { word: "anomaly", flashCell: 5, best: 2 },
+    { word: "nursey", flashCell: 5, best: 2 },
+  ];
+  const { run } = await setup(t, kept, sp064, "2");
+  const r = await run("--stage", "tuning");
+  assert.equal(r.code, 0, r.stderr);
+  assert.match(r.stdout, /Captions with a drawing-errors list: 2 of 2 judged grids/);
+  assert.match(r.stdout, /Name-anchor words: 1; cells gated out only because the name can't be read: 0/);
+  // the fake draws a lamp wrong in alpha's cells 6 and 7, and the tile itself in cells 8 and 9
+  assert.match(r.stdout, /Cells with a drawing error: 4 of 18 \(22\.2%\); on a must-see item: 2/);
+});
+
+test("AC4 (after stage 2): a cell gated out only for an item that holds the name sign is counted", () => {
+  const { stageSummary } = require("../lib/stage");
+  const cell = (hidden) => ({
+    action: "the nurse waves",
+    extras: { readableText: "" },
+    drawingErrors: [],
+    mustSee: { nurse: { mark: "visible", size: "large", place: "front" }, 'nametag reading "Venice"': hidden ? { mark: "hidden", size: null, place: null } : { mark: "visible", size: "small", place: "front" } },
+  });
+  const captions = { "n.grid.png": Object.fromEntries([1, 2, 3, 4, 5, 6, 7, 8, 9].map((c) => [c, cell(c <= 2)])) };
+  const lists = { n: { items: [{ name: "nurse", adjectives: [] }, { name: 'nametag reading "Venice"', adjectives: [] }], nameSigns: [{ item: "nurse", text: "Venice" }], angleCase: "none" } };
+  const scores = Object.fromEntries([3, 4, 5, 6, 7, 8, 9].map((c) => [c, { plausible: { score: 2 }, vivid: { score: 2 }, clarity: { score: 2 } }]));
+  const words = [{ word: "n", grid: "n.grid.png", flashCell: 3, pick: { gatedOut: [1, 2], scored: [3, 4, 5, 6, 7, 8, 9], gateSkipped: false, scores, ranking: [3, 4, 5], mainCell: 3, alternativeCell: 4 } }];
+  const out = stageSummary({ stage: "tuning", words, total: 1, split: {}, outcomes: {}, lists, captions, claudeCounts: { mustSee: 0, caption: 0, compare: 0 }, jevCalls: 0 });
+  assert.match(out, /Name-anchor words: 1; cells gated out only because the name can't be read: 2 \(n: 1, 2\)/);
+  assert.match(out, /Cells with a drawing error: 0 of 9 \(0\.0%\); on a must-see item: 0/);
+});
+
+test("AC1/AC4 (after stage 2): a tuning order made from must-see lists under an older prompt is made again from the new lists", async (t) => {
+  const kept = [
+    { word: "p1", grid: "p1.grid.png", flashCell: 1, story: "A cat sits, lightness 10." },
+    { word: "n", grid: "n.grid.png", flashCell: 1, story: "Nurse Venice sits, lightness 10." },
+  ];
+  const sp064 = [
+    { word: "p1", flashCell: 1, best: 2 },
+    { word: "n", flashCell: 1, best: 2 },
+  ];
+  const { out, run } = await setup(t, kept, sp064, "2");
+  assert.equal((await run("--split")).code, 0);
+  // split.json as stages 1–2 left it: an order and early picks from the old lists, with no list prompt key
+  const old = split(out);
+  fs.writeFileSync(path.join(out, "split.json"), JSON.stringify({ ...old, tuningOrder: ["p1", "n"], earlyPicks: [{ word: "p1", roles: ["name anchor"] }], missingEarlyPicks: [] }));
+  const r = await run("--stage", "tuning", "--must-see-only");
+  assert.equal(r.code, 0, r.stderr);
+  const s = split(out);
+  assert.deepEqual(s.tuningOrder, ["n", "p1"]);
+  assert.deepEqual(s.earlyPicks, [{ word: "n", roles: ["name anchor"] }]);
+  assert.match(r.stdout, /early picks: n \(name anchor\)/);
+  assert.ok(s.listPromptKey, "the order says which list prompt it was made from");
+  // once made under the current prompt, it is kept
+  const again = await run("--split");
+  assert.match(again.stdout, /tuning order: n, p1/);
+  assert.equal(split(out).listPromptKey, s.listPromptKey);
+});

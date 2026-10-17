@@ -4,7 +4,7 @@
 // run makes its must-see list, then one text-only Claude call lists only
 // objects that a drawing can show, each with its adjectives; it lists no
 // abstract items (a time, a relation, a feeling with no visible sign); a name
-// anchor stays its visible sign (a nametag that reads "Venice"), as in SP-064;
+// anchor gives its carrier as an item and its name as a name sign (ADR-0035);
 // it says if the story is about a view, has one main object, or neither
 // (angleCase, C-042); and the list is cached, so a re-run doesn't call Claude
 // again.
@@ -41,16 +41,17 @@ test("AC1: run.js --must-see-only makes one text-only Claude call per story and 
   for (const w of Object.values(lists)) assert.equal(prompts.filter((p) => p.includes(w.story)).length, 1);
 });
 
-test("AC1: a name anchor becomes its visible sign, and the prompt asks for that", async () => {
+test("AC1: a name anchor gives its carrier as an item and its name as a name sign, and the prompt asks for that", async () => {
   const out = tmpDir();
   const log = path.join(out, "claude.jsonl");
   const r = await runNode("run.js", ["--stage", "tuning", "--must-see-only"], fixtureEnv(out, { FAKE_CLAUDE_LOG: log }));
   assert.equal(r.code, 0, r.stderr);
   const nu = readJson(path.join(out, "must-see.json")).nu;
-  assert.deepEqual(nu.items.find((i) => i.name === "nametag"), { name: "nametag", adjectives: ['reading "Venice"'] });
+  assert.deepEqual(nu.items.find((i) => i.name === "nurse"), { name: "nurse", adjectives: ["tired"] });
+  assert.deepEqual(nu.nameSigns, [{ item: "nurse", text: "Venice" }]);
   const prompt = claudeCalls(log)[0].argv[claudeCalls(log)[0].argv.indexOf("-p") + 1];
-  assert.match(prompt, /name/i);
-  assert.match(prompt, /nametag that reads "Venice"/);
+  assert.match(prompt, /name sign/i);
+  assert.match(prompt, /\{"item":"nurse","text":"Venice"\}/);
   assert.match(prompt, /adjective/i);
 });
 
@@ -104,18 +105,19 @@ test("AC1: an angleCase that isn't view, one-object or none is an unusable list,
   assert.throws(() => parseList(JSON.stringify({ items: [], isSequence: false })), /angleCase/);
   assert.deepEqual(parseList(JSON.stringify({ items: [{ name: "cob", adjectives: ["bare"] }], isSequence: false, angleCase: "one-object" })), {
     items: [{ name: "cob", adjectives: ["bare"] }],
+    nameSigns: [],
     isSequence: false,
     angleCase: "one-object",
   });
 });
 
 test("AC1: a cached list without an angleCase (SP-064's shape) is made again; one with it is reused", async () => {
-  const { mustSeeLists } = require("../lib/must-see");
+  const { mustSeeLists, promptKey } = require("../lib/must-see");
   let calls = 0;
   const ask = async () => (calls++, JSON.stringify({ items: [{ name: "cob", adjectives: [] }], isSequence: false, angleCase: "none" }));
   const cache = {
     old: { story: "A cob.", items: [{ name: "cob", adjectives: [] }], isSequence: false },
-    ok: { story: "A cob.", items: [{ name: "cob", adjectives: [] }], isSequence: false, angleCase: "one-object" },
+    ok: { story: "A cob.", items: [{ name: "cob", adjectives: [] }], nameSigns: [], isSequence: false, angleCase: "one-object", promptKey: promptKey("A cob.") },
   };
   await mustSeeLists({ words: [{ word: "old", story: "A cob." }, { word: "ok", story: "A cob." }], ask, cache });
   assert.equal(calls, 1);

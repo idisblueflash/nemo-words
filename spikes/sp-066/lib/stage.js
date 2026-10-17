@@ -5,9 +5,13 @@
 // weights are fixed), the calls it really made (a re-run of cached words
 // makes none), whether every caption has the action line and a size and
 // place per shown item, the gate skips next to SP-064's on the same words,
-// vivid alone next to the chance rate, and the angleCase counts.
+// vivid alone next to the chance rate, and the angleCase counts. After the
+// stage-2 refine also: whether every caption has a drawing-errors list, for
+// the name-anchor words the cells gated out only because the name can't be
+// read (should be 0, ADR-0035), and how many cells have a drawing error
+// (most cells → stop for design, ADR-0036).
 
-const { vividAlone } = require("./split");
+const { vividAlone, hasNameAnchor } = require("./split");
 
 const pct = (n, k) => (k ? `${((n / k) * 100).toFixed(1)}%` : "—");
 const of = (n, k) => `${n} of ${k} (${pct(n, k)})`;
@@ -23,6 +27,30 @@ function captionsComplete(cells) {
       c.action.trim() !== "" &&
       Object.values(c.mustSee || {}).every((m) => m.mark === "hidden" || (m.size && m.place)),
   );
+}
+
+// After stage 2: every caption of the word's grid has a drawing-errors list.
+const hasDrawingErrorLists = (cells) => {
+  const all = Object.values(cells || {});
+  return all.length === 9 && all.every((c) => Array.isArray(c.drawingErrors));
+};
+
+// An item that holds the name (ADR-0035 says it shouldn't): its name holds a
+// name sign's text, or names a nametag, badge, label or sign.
+const NAME_ITEM = /name\s?tag|badge|label|\bsign\b/i;
+function holdsName(itemName, nameSigns) {
+  if (NAME_ITEM.test(itemName)) return true;
+  const lower = itemName.toLowerCase();
+  return nameSigns.some((s) => new RegExp(`\\b${s.text.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`).test(lower));
+}
+
+// For a name-anchor word: the gated-out cells whose every hidden must-see item
+// holds the name, so the cell is out only because its name can't be read.
+function gatedForName(w, list, cells) {
+  return (w.pick.gatedOut || []).filter((c) => {
+    const hidden = Object.entries((cells && cells[c] && cells[c].mustSee) || {}).filter(([, m]) => m.mark === "hidden");
+    return hidden.length > 0 && hidden.every(([name]) => holdsName(name, list.nameSigns));
+  });
 }
 
 function stageSummary({ stage, words, total, split, outcomes, lists, captions, claudeCounts, jevCalls }) {
@@ -56,10 +84,20 @@ function stageSummary({ stage, words, total, split, outcomes, lists, captions, c
   const vividExact = judged.filter((w) => vividAlone(w.pick.scores) === w.flashCell);
   const cases = { view: 0, "one-object": 0, none: 0 };
   for (const w of words) if (lists[w.word]) cases[lists[w.word].angleCase]++;
+  const withErrorLists = judged.filter((w) => hasDrawingErrorLists(captions[w.grid]));
+  const nameWords = judged.filter((w) => hasNameAnchor(lists[w.word]));
+  const forName = nameWords.map((w) => [w.word, gatedForName(w, lists[w.word], captions[w.grid])]).filter(([, cells]) => cells.length);
+  const nForName = forName.reduce((n, [, cells]) => n + cells.length, 0);
+  const judgedCells = judged.flatMap((w) => Object.values(captions[w.grid] || {}));
+  const errorCells = judgedCells.filter((c) => (c.drawingErrors || []).length);
+  const mustSeeErrorCells = errorCells.filter((c) => c.drawingErrors.some((e) => e.mustSee));
   lines.push(
     "",
     `Judged: ${judged.length} of ${words.length}; unjudged: ${words.length - judged.length}`,
     `Captions with the action line and a size and place per shown item: ${complete.length} of ${judged.length} judged grids`,
+    `Captions with a drawing-errors list: ${withErrorLists.length} of ${judged.length} judged grids`,
+    `Name-anchor words: ${nameWords.length}; cells gated out only because the name can't be read: ${nForName}${forName.length ? ` (${forName.map(([w, cells]) => `${w}: ${cells.join(", ")}`).join("; ")})` : ""}`,
+    `Cells with a drawing error: ${of(errorCells.length, judgedCells.length)}; on a must-see item: ${mustSeeErrorCells.length}`,
     `Gate skipped: ${skipped.length} of ${judged.length}; SP-064 on the same words: ${sp064Skipped.length} of ${sp064Same.length}`,
     `Exact (start weights): ${of(judged.filter((w) => w.pick.mainCell === w.flashCell).length, judged.length)}; in three: ${of(judged.filter((w) => w.pick.ranking.slice(0, 3).includes(w.flashCell)).length, judged.length)}`,
     `Vivid alone (exact): ${of(vividExact.length, judged.length)}; chance 11.1%`,

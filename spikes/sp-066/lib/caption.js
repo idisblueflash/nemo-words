@@ -12,7 +12,12 @@
 // hidden item has no size or place (null). The prompt names the must-see items by name only,
 // without their adjectives (ADR-0032): the adjectives can describe the story's
 // last step and so hide an earlier step's cell; they count only toward the
-// clarity score. Cached in <out>/captions.json (grid → cell → caption); each
+// clarity score. After stage 2 (ADR-0036, C-044) it also lists the cell's
+// drawing errors, drawingErrors [{ object, mustSee: true|false, note }]: an
+// object that floats, looks pasted on, or breaks the lines of the wall or
+// floor (not one the scene shows broken on purpose); an empty list when there
+// is none, and a caption without the list is unusable. The text it can read
+// stays in extras.readableText (the name-sign check, ADR-0035). Cached in <out>/captions.json (grid → cell → caption); each
 // caption keeps the key of the prompt it was made with (`promptKey`), so a
 // caption made under another prompt or list is made again. A failed or
 // unusable caption isn't cached.
@@ -48,6 +53,8 @@ function prompt(items, word) {
     '- "extras": what else it shows, {"floor": true|false, "background": "...", "morePeople": true|false, "readableText": "the words you can read, or empty"}',
     '- "action": one line: what the objects do to each other in the picture (who holds, pushes, hands over, looks at what), or that they stand apart',
     '- "mustSee": for each item name below (keyed by the name, exactly as written), {"mark": "visible", "partly cut" or "hidden", "size": "large", "medium" or "small", "place": "front" or "back"}. The mark is "visible" when the thing is fully shown, "partly cut" when the edge of the picture cuts part of it off, "hidden" when it can\'t be seen; judge only whether the thing itself is there, whatever its state. The size is how much of the picture the thing takes up; the place is whether it is in the front or the back of the scene. For a hidden thing, give null for size and place',
+    '- "drawingErrors": each object that doesn\'t fit the picture as drawn: it floats, looks pasted on, or breaks the lines of the wall or floor, as [{"object":"...","mustSee": true or false,"note":"what is wrong"}], with "mustSee" true when the object is one of the item names below. An object that the scene shows as broken or crooked on purpose is not a drawing error. Give an empty list ([]) when there is none',
+    'Put the words you can read in the picture (on a nametag, a sign, a label) in "extras"."readableText", exactly as written.',
     "Print only the JSON, no preamble.",
     "",
     `MUST-SEE ITEMS: ${JSON.stringify(shownNames(items, word))}`,
@@ -66,6 +73,13 @@ function parseCaption(text, items, word) {
   if (!isObject(j.extras)) throw new ClaudeError("unusable caption: no extras");
   if (!isObject(j.mustSee)) throw new ClaudeError("unusable caption: no mustSee");
   if (typeof j.action !== "string" || !j.action.trim()) throw new ClaudeError("unusable caption: no action line");
+  if (!Array.isArray(j.drawingErrors)) throw new ClaudeError("unusable caption: no drawing errors list");
+  const drawingErrors = j.drawingErrors.map((e) => {
+    if (!isObject(e) || typeof e.object !== "string" || !e.object.trim() || typeof e.mustSee !== "boolean") {
+      throw new ClaudeError(`unusable caption: drawing error ${JSON.stringify(e)}`);
+    }
+    return { object: e.object.trim(), mustSee: e.mustSee, note: typeof e.note === "string" ? oneLine(e.note) : "" };
+  });
   const mustSee = {};
   const shown = shownNames(items, word);
   itemNames(items).forEach((name, k) => {
@@ -87,6 +101,7 @@ function parseCaption(text, items, word) {
     action: oneLine(j.action),
     extras: Object.fromEntries(EXTRAS.map((k) => [k, j.extras[k] ?? null])),
     mustSee,
+    drawingErrors,
   };
 }
 

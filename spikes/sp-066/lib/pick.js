@@ -11,6 +11,13 @@
 //         stories (US-038): per scored cell and rubric axis one Score question
 //         `cell_<N>_<axis>`; the axis score is Jev's level + 1 (1–3, decimals
 //         kept), with Jev's confidence for it.
+//   Caps: code lowers Jev's scores after the answers (applyCaps): must-see
+//         clarity at 2 at most when the cell's readable text doesn't show a
+//         name sign (ADR-0035; a name sign never gates a cell), plausible at
+//         1 for a drawing error on a must-see item and at 2 at most for one
+//         on another object (ADR-0036). The pick's scores are the capped
+//         ones (so the report's re-pick keeps the caps); `answers` stays
+//         Jev's own, and `caps` says which cell and axis was capped and why.
 //   Code: total = Σ weight·score; the highest total is the main cell (ties:
 //         higher plausible, then lower cell). The alternative cell, margin and
 //         weakest confidence come from the totals and the captions — no second
@@ -57,7 +64,7 @@ function buildQuestions(rubric, cells) {
       const a = rubric.axes[axis];
       questions[qname(c, axis)] = jev.score(
         [
-          "The state holds a mnemonic story for an English word, its must-see list (the objects a picture of it must show), its angle_case (\"view\" when the story is about a view, \"one-object\" when it has one main object, else \"none\"), and descriptions of candidate pictures for it (cells, keyed by id): each cell's objects, shot, angle, action step, action line (what the objects do to each other), extras, each must-see item's mark (visible / partly cut / hidden), size and place, and how it differs from the other cells.",
+          "The state holds a mnemonic story for an English word, its must-see list (the objects a picture of it must show), its angle_case (\"view\" when the story is about a view, \"one-object\" when it has one main object, else \"none\"), and descriptions of candidate pictures for it (cells, keyed by id): each cell's objects, shot, angle, action step, action line (what the objects do to each other), extras, each must-see item's mark (visible / partly cut / hidden), size and place, its drawing errors (objects drawn wrong: they float, look pasted on, or break the lines of the wall or floor; mustSee says if the object is a must-see item), and how it differs from the other cells. When the story has name signs (name_signs: a name that the picture should show as text, on the item that carries it), each cell's name_sign_readable says whether its readable text shows every name sign.",
           `Score picture cell_${c}, exactly as described, on the "${a.label}" axis.`,
           ...(a.check ? [a.check] : []),
         ].join("\n"),
@@ -68,13 +75,60 @@ function buildQuestions(rubric, cells) {
   return questions;
 }
 
-function buildState({ word, story, items, angleCase, captions, lines }, cells) {
+// A caption's text, for the name-sign check: lower case, with no punctuation
+// (a period or an apostrophe is dropped, other marks split words), padded with
+// a space on each side so that only whole words match.
+const plainText = (t) =>
+  ` ${String(t ?? "")
+    .toLowerCase()
+    .replace(/[.'’]/g, "")
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .trim()} `;
+
+// Whether the cell's readable text shows every name sign (ADR-0035): true or
+// false, or null when the story has no name sign.
+function nameSignReadable(nameSigns, caption) {
+  if (!nameSigns || !nameSigns.length) return null;
+  const seen = plainText(caption && caption.extras && caption.extras.readableText);
+  return nameSigns.every((s) => seen.includes(plainText(s.text)));
+}
+
+// Code's caps on Jev's scores (ADR-0035, ADR-0036): must-see clarity at 2 at
+// most when the cell can't show a name sign; plausible at 1 for a drawing
+// error on a must-see item, else at 2 at most for one on another object. A
+// cap never raises a score, and the confidence stays Jev's.
+// → { scores (capped), caps: cell → axis → why }
+function applyCaps(scores, captions, nameSigns) {
+  const capped = {};
+  const caps = {};
+  const cap = (c, axis, max, why) => {
+    capped[c][axis] = { ...capped[c][axis], score: Math.min(capped[c][axis].score, max) };
+    caps[c] = { ...(caps[c] || {}), [axis]: why };
+  };
+  for (const c of Object.keys(scores)) {
+    capped[c] = { ...scores[c] };
+    if (nameSignReadable(nameSigns, captions[c]) === false) cap(c, "clarity", 2, "name sign not readable");
+    const errors = (captions[c] && captions[c].drawingErrors) || [];
+    if (errors.some((e) => e.mustSee)) cap(c, "plausible", 1, "drawing error on a must-see item");
+    else if (errors.length) cap(c, "plausible", 2, "drawing error on another object");
+  }
+  return { scores: capped, caps };
+}
+
+function buildState({ word, story, items, nameSigns = [], angleCase, captions, lines }, cells) {
   const cellState = {};
   for (const c of cells) {
-    const { mustSee, promptKey, ...rest } = captions[c]; // promptKey is the caption cache's, not Jev's
-    cellState[`cell_${c}`] = { ...rest, must_see: mustSee, differs: lines[c - 1] };
+    const { mustSee, drawingErrors, promptKey, ...rest } = captions[c]; // promptKey is the caption cache's, not Jev's
+    const readable = nameSignReadable(nameSigns, captions[c]);
+    cellState[`cell_${c}`] = {
+      ...rest,
+      must_see: mustSee,
+      drawing_errors: drawingErrors || [],
+      ...(readable === null ? {} : { name_sign_readable: readable }),
+      differs: lines[c - 1],
+    };
   }
-  return { word, story, must_see: items, angle_case: angleCase, cells: cellState };
+  return { word, story, must_see: items, name_signs: nameSigns, angle_case: angleCase, cells: cellState };
 }
 
 const usable = (x, lo, hi) => typeof x === "number" && Number.isFinite(x) && x >= lo && x <= hi;
@@ -148,7 +202,7 @@ async function pickCell(input, { rubric = loadRubric(), weights = START_WEIGHTS,
   const key = requestKey(request);
   const hit = cache && cache[input.word] && cache[input.word].key === key ? cache[input.word] : null;
   const answers = hit ? hit.answers : await jev.systemOne(request, opts);
-  const scores = toScores(answers, g.scored);
+  const { scores, caps } = applyCaps(toScores(answers, g.scored), input.captions, input.nameSigns);
   if (cache && !hit) {
     cache[input.word] = { key, answers };
     onSave(cache);
@@ -158,7 +212,7 @@ async function pickCell(input, { rubric = loadRubric(), weights = START_WEIGHTS,
   const steps = Object.fromEntries(g.scored.map((c) => [c, input.captions[c].step]));
   // every cell (scored or not) with a partly cut must-see item, for the report's share
   const partlyCut = CELLS.filter((c) => marks(input.captions[c]).includes("partly cut"));
-  return { ...g, scores, shots, steps, isSequence: input.isSequence, partlyCut, ...choose(scores, weights, input.captions, input.isSequence), answers, fromCache: !!hit };
+  return { ...g, scores, caps, shots, steps, isSequence: input.isSequence, partlyCut, ...choose(scores, weights, input.captions, input.isSequence), answers, fromCache: !!hit };
 }
 
-module.exports = { AXES, START_WEIGHTS, loadRubric, gate, buildQuestions, buildState, toScores, alternative, choose, pickCell };
+module.exports = { AXES, START_WEIGHTS, loadRubric, gate, buildQuestions, buildState, toScores, nameSignReadable, applyCaps, alternative, choose, pickCell };

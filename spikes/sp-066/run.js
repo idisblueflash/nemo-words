@@ -17,7 +17,9 @@
 // A tuning stage first makes the must-see lists of every tuning word (text
 // only), so that the tuning order can put the Staged run's early picks first
 // (an SP-064 hit, a name anchor, an angleCase view or one-object, an SP-064
-// gate skip); the order is saved in raw/split.json and doesn't change. Then
+// gate skip); the order is saved in raw/split.json and doesn't change while
+// the must-see prompt stays the same (listPromptKey; after the stage-2 refine
+// the old order is made again from the new lists, ADR-0035). Then
 // it runs the chosen words and prints a stage summary (stdout). The measure
 // stage refuses to run until every tuning word has run; it then fixes the
 // weights on the tuning words (raw/weights.json), after which the tuning
@@ -53,7 +55,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const { makeClaude, pool, UsageLimitError } = require("./lib/claude");
-const { mustSeeLists } = require("./lib/must-see");
+const { mustSeeLists, promptKey: listPromptKey } = require("./lib/must-see");
 const { captionGrids } = require("./lib/caption");
 const { compareGrids, linesOf } = require("./lib/differences");
 const { pickCell, loadRubric } = require("./lib/pick");
@@ -174,7 +176,7 @@ async function judge(cfg, kept, prepared, tuning) {
     const list = prepared.lists[w.word];
     try {
       const { fromCache, ...pick } = await pickCell(
-        { word: w.word, story: w.story, items: list.items, isSequence: list.isSequence, angleCase: list.angleCase, captions: prepared.captions[w.grid], lines: prepared.lines[w.grid] },
+        { word: w.word, story: w.story, items: list.items, nameSigns: list.nameSigns || [], isSequence: list.isSequence, angleCase: list.angleCase, captions: prepared.captions[w.grid], lines: prepared.lines[w.grid] },
         { rubric, ...jevCache },
       );
       if (!fromCache) jevCalls++;
@@ -202,14 +204,21 @@ function mergeRun(cfg, split, words) {
   return run;
 }
 
+// The must-see prompt's own key (its text with no story): it changes whenever
+// the list prompt changes, so a tuning order made from older lists is made again.
+const LIST_PROMPT_KEY = listPromptKey("");
+
 // The split, saved in <out>/split.json; a saved tuning order is kept while the
-// tuning set is the same.
+// tuning set is the same and its early picks came from lists made under the
+// current must-see prompt (the order before the stage-2 refine has no key, so
+// it is made again from the new lists).
 function makeSplit(cfg, kept, outcomes) {
   const words = kept.map((g) => g.word);
   const s = drawSplit(words, new Set(words.filter((w) => outcomes[w] && outcomes[w].hit)), { size: cfg.tuningSize });
   const old = readJsonOr(outFile(cfg, "split.json"), null);
   const same = old && JSON.stringify(old.tuning) === JSON.stringify(s.tuning) && old.seed === s.seed;
-  const split = { ...s, ...(same && old.tuningOrder ? { tuningOrder: old.tuningOrder, earlyPicks: old.earlyPicks, missingEarlyPicks: old.missingEarlyPicks } : {}) };
+  const keep = same && old.tuningOrder && old.listPromptKey === LIST_PROMPT_KEY;
+  const split = { ...s, ...(keep ? { tuningOrder: old.tuningOrder, earlyPicks: old.earlyPicks, missingEarlyPicks: old.missingEarlyPicks, listPromptKey: old.listPromptKey } : {}) };
   writeJson(outFile(cfg, "split.json"), split);
   return split;
 }
@@ -241,7 +250,7 @@ async function ensureTuningOrder(cfg, split, kept, outcomes, claude) {
   const lists = await mustSeeLists({ words: tuningKept, ask: claude.mustSee, jobs: cfg.claudeJobs, ...cached(cfg, "must-see.json") });
   const o = tuningOrder(tuningKept, { sp064: outcomes, lists: lists.cache });
   const done = split.tuning.every((w) => lists.cache[w]);
-  const next = { ...split, tuningOrder: o.order, earlyPicks: o.early, missingEarlyPicks: o.missing };
+  const next = { ...split, tuningOrder: o.order, earlyPicks: o.early, missingEarlyPicks: o.missing, listPromptKey: LIST_PROMPT_KEY };
   if (done) writeJson(outFile(cfg, "split.json"), next);
   return next;
 }
