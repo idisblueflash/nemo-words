@@ -5028,332 +5028,25 @@
           "name": "elderly woman",
           "adjectives": [
             "gray-haired",
+            "bun",
             "bespectacled",
             "lunging",
             "stretching",
-            "focused"
-          ]
-        },
-        {
-          "name": "hair bun",
-          "adjectives": [
-            "gray",
-            "round"
-          ]
-        },
-        {
-          "name": "glasses",
-          "adjectives": [
-            "small",
-            "round"
-          ]
-        },
-        {
-          "name": "red-orange sweater",
-          "adjectives": [
-            "long-sleeved",
-            "salmon-colored"
-          ]
-        },
-        {
-          "name": "olive green pants",
-          "adjectives": [
-            "baggy",
-            "green"
-          ]
-        },
-        {
-          "name": "dark shoes",
-          "adjectives": [
-            "brown",
-            "flat"
-          ]
-        },
-        {
-          "name": "broom",
-          "adjectives": [
-            "upright",
-            "yellow-bristled",
-            "wooden-handled",
-            "leaning"
-          ]
-        },
-        {
-          "name": "wall",
-          "adjectives": [
-            "blue",
-            "flat"
-          ]
-        },
-        {
-          "name": "floor",
-          "adjectives": [
-            "beige",
-            "flat"
-          ]
-        },
-        {
-          "name": "corner",
-          "adjectives": [
-            "vertical",
-            "where two walls meet"
-          ]
-        }
-      ],
-      "shot": "medium",
-      "angle": "eye level",
-      "step": "during",
-      "action": "The woman lunges toward the broom with her arm stretched out to grab it, looking at it, while the broom leans in the corner.",
-      "extras": {
-        "floor": true,
-        "background": "A light blue wall with a vertical corner line on the right, above a beige floor",
-        "morePeople": false,
-        "readableText": ""
-      },
-      "mustSee": {
-        "corner": {
-          "mark": "visible",
-          "size": "medium",
-          "place": "back"
-        },
-        "broom": {
-          "mark": "visible",
-          "size": "medium",
-          "place": "back"
-        }
-      },
-      "drawingErrors": [],
-      "mainView": "side",
-      "promptKey": "aa07e0019741dd08"
-    },
-    "2": {
-      "objects": [
-        {
-          "name": "elderly woman",
-          "adjectives": [
-            "gray-haired",
-            "bespectacled",
-            "crouching",
-            "reaching",
-            "wrinkled"
-          ]
-        },
-        {
-          "name": "broom",
-          "adjectives": [
-            "yellow-bristled",
-            "wooden-handled",
-            "upright",
-            "leaning"
+            "wearing red-orange sweater",
+            "wearing olive green pants"
           ]
         },
         {
           "name": "glasses",
           "adjectives": [
             "round",
-            "black-rimmed"
-          ]
-        },
-        {
-          "name": "hair bun",
-          "adjectives": [
-            "gray",
-            "round"
+            "thin-framed"
           ]
         },
         {
           "name": "shoes",
           "adjectives": [
-            "dark",
-            "brown",
-            "flat"
-          ]
-        },
-        {
-          "name": "wall corner",
-          "adjectives": [
-            "blue",
-            "gray-blue"
-          ]
-        },
-        {
-          "name": "floor",
-          "adjectives": [
-            "beige",
-            "flat"
-          ]
-        }
-      ],
-      "shot": "medium",
-      "angle": "eye level",
-      "step": "during",
-      "action": "The woman crouches low and stretches her right arm toward the broom standing in the corner, looking at it as she reaches.",
-      "extras": {
-        "floor": true,
-        "background": "A blue-gray wall with a corner where two walls meet, above a beige floor",
-        "morePeople": false,
-        "readableText": ""
-      },
-      "mustSee": {
-        "corner": {
-          "mark": "visible",
-          "size": "large",
-          "place": "back"
-        },
-        "broom": {
-          "mark": "visible",
-          "size": "medium",
-          "place": "back"
-        }
-      },
-      "drawingErrors": [],
-      "mainView": "side",
-      "promptKey": "aa07e0019741dd08"
-    },
-    "3": {
-      "objects": [
-        {
-          "name": "elderly woman",
-          "adjectives": [
-            "gray-haired",
-            "bespectacled",
-            "stretching",
-            "crawling",
-            "lunging"
-          ]
-        },
-        {
-          "name": "hair bun",
-          "adjectives": [
-            "gray",
-            "round"
-          ]
-        },
-        {
-          "name": "glasses",
-          "adjectives": [
-            "thin",
-            "round"
-          ]
-        },
-        {
-          "name": "red sweater",
-          "adjectives": [
-            "salmon-red",
-            "long-sleeved",
-            "loose"
-          ]
-        },
-        {
-          "name": "green pants",
-          "adjectives": [
-            "olive-green",
-            "baggy"
-          ]
-        },
-        {
-          "name": "shoe",
-          "adjectives": [
-            "dark",
-            "black"
-          ]
-        },
-        {
-          "name": "broom",
-          "adjectives": [
-            "yellow-bristled",
-            "wooden-handled",
-            "upright",
-            "leaning"
-          ]
-        },
-        {
-          "name": "corner",
-          "adjectives": [
-            "blue-walled",
-            "two-walled",
-            "meeting at a vertical edge"
-          ]
-        },
-        {
-          "name": "wall",
-          "adjectives": [
-            "light blue",
-            "plain"
-          ]
-        },
-        {
-          "name": "floor",
-          "adjectives": [
-            "beige",
-            "flat"
-          ]
-        },
-        {
-          "name": "shadow",
-          "adjectives": [
-            "soft",
-            "gray"
-          ]
-        }
-      ],
-      "shot": "medium",
-      "angle": "high angle",
-      "step": "during",
-      "action": "The woman, seen from behind, stretches her arm toward the broom that leans in the corner, reaching for it as she crawls across the floor.",
-      "extras": {
-        "floor": true,
-        "background": "Light blue walls meeting in a corner above a beige floor",
-        "morePeople": false,
-        "readableText": ""
-      },
-      "mustSee": {
-        "corner": {
-          "mark": "visible",
-          "size": "large",
-          "place": "back"
-        },
-        "broom": {
-          "mark": "visible",
-          "size": "medium",
-          "place": "back"
-        }
-      },
-      "drawingErrors": [],
-      "mainView": "side",
-      "promptKey": "aa07e0019741dd08"
-    },
-    "4": {
-      "objects": [
-        {
-          "name": "elderly woman",
-          "adjectives": [
-            "gray-haired",
-            "bun",
-            "stretching",
-            "lunging",
-            "older"
-          ]
-        },
-        {
-          "name": "red-orange shirt",
-          "adjectives": [
-            "loose",
-            "short-sleeved",
-            "coral"
-          ]
-        },
-        {
-          "name": "green pants",
-          "adjectives": [
-            "olive",
-            "dark green"
-          ]
-        },
-        {
-          "name": "dark shoes",
-          "adjectives": [
-            "black",
+            "dark brown",
             "flat"
           ]
         },
@@ -5368,57 +5061,47 @@
           ]
         },
         {
-          "name": "corner",
+          "name": "wall",
           "adjectives": [
-            "wall-floor",
-            "blue-gray",
-            "angled"
+            "light blue",
+            "flat"
           ]
         },
         {
           "name": "floor",
           "adjectives": [
             "beige",
-            "tan",
-            "flat"
-          ]
-        },
-        {
-          "name": "motion lines",
-          "adjectives": [
-            "curved",
-            "dark",
-            "swooshing"
+            "tan"
           ]
         }
       ],
-      "shot": "wide",
-      "angle": "high angle",
-      "step": "during",
-      "action": "The woman lunges across the floor and reaches out her right arm toward the broom leaning in the corner, with motion lines showing her fast movement.",
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "before",
+      "action": "The woman lunges toward the broom with her arm outstretched and looks at it, but she has not yet touched it; the broom leans in the corner.",
       "extras": {
         "floor": true,
-        "background": "A beige floor meeting two blue-gray walls in a corner, with the broom leaning against the wall at the upper right",
+        "background": "A light blue wall meeting a second wall at a corner on the right, with a beige floor below",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
         "corner": {
           "mark": "visible",
-          "size": "large",
+          "size": "medium",
           "place": "back"
         },
         "broom": {
           "mark": "visible",
-          "size": "small",
+          "size": "medium",
           "place": "back"
         }
       },
       "drawingErrors": [],
-      "mainView": "above",
-      "promptKey": "aa07e0019741dd08"
+      "mainView": "side",
+      "promptKey": "ee1ec609c0c53503"
     },
-    "5": {
+    "2": {
       "objects": [
         {
           "name": "elderly woman",
@@ -5426,20 +5109,35 @@
             "gray-haired",
             "bespectacled",
             "crouching",
-            "focused"
+            "reaching"
+          ]
+        },
+        {
+          "name": "broom",
+          "adjectives": [
+            "yellow-bristled",
+            "wooden-handled",
+            "upright",
+            "leaning"
           ]
         },
         {
           "name": "glasses",
           "adjectives": [
             "round",
-            "thin-framed"
+            "dark-rimmed"
           ]
         },
         {
-          "name": "red-orange long-sleeved shirt",
+          "name": "hair bun",
           "adjectives": [
-            "rust-colored",
+            "gray"
+          ]
+        },
+        {
+          "name": "red-orange shirt",
+          "adjectives": [
+            "long-sleeved",
             "loose"
           ]
         },
@@ -5451,10 +5149,229 @@
           ]
         },
         {
-          "name": "dark shoe",
+          "name": "shoes",
           "adjectives": [
-            "brown-black",
+            "dark",
+            "black-brown"
+          ]
+        },
+        {
+          "name": "wall",
+          "adjectives": [
+            "blue-gray",
             "flat"
+          ]
+        },
+        {
+          "name": "corner",
+          "adjectives": [
+            "blue-gray",
+            "vertical"
+          ]
+        },
+        {
+          "name": "floor",
+          "adjectives": [
+            "beige",
+            "flat"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "before",
+      "action": "The woman crouches low and stretches her right hand toward the broom leaning in the corner, looking at it as she is about to grab it.",
+      "extras": {
+        "floor": true,
+        "background": "a blue-gray wall meeting at a corner, with a beige floor",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "mainView": "side",
+      "promptKey": "ee1ec609c0c53503"
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "elderly woman",
+          "adjectives": [
+            "gray-haired",
+            "bun hairstyle",
+            "stretching",
+            "wearing glasses",
+            "lunging"
+          ]
+        },
+        {
+          "name": "broom",
+          "adjectives": [
+            "yellow-bristled",
+            "wooden-handled",
+            "upright",
+            "leaning against wall"
+          ]
+        },
+        {
+          "name": "red sweater",
+          "adjectives": [
+            "rust-red",
+            "long-sleeved"
+          ]
+        },
+        {
+          "name": "green pants",
+          "adjectives": [
+            "olive-green"
+          ]
+        },
+        {
+          "name": "shoes",
+          "adjectives": [
+            "dark",
+            "black"
+          ]
+        },
+        {
+          "name": "glasses",
+          "adjectives": [
+            "thin-framed",
+            "small"
+          ]
+        },
+        {
+          "name": "wall corner",
+          "adjectives": [
+            "blue-gray",
+            "meeting of two walls"
+          ]
+        },
+        {
+          "name": "floor",
+          "adjectives": [
+            "beige",
+            "flat"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "high angle",
+      "step": "before",
+      "action": "The woman lunges across the floor with her arm outstretched toward the broom leaning in the corner. Her hand is close to it but has not yet grabbed it.",
+      "extras": {
+        "floor": true,
+        "background": "Blue-gray walls meeting in a corner above a beige floor",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "mainView": "back",
+      "promptKey": "ee1ec609c0c53503"
+    },
+    "4": {
+      "objects": [
+        {
+          "name": "older woman",
+          "adjectives": [
+            "gray-haired",
+            "bun hairstyle",
+            "stretching",
+            "lunging",
+            "red-shirted",
+            "green-trousered"
+          ]
+        },
+        {
+          "name": "broom",
+          "adjectives": [
+            "yellow-bristled",
+            "wooden-handled",
+            "leaning",
+            "upright"
+          ]
+        },
+        {
+          "name": "wall corner",
+          "adjectives": [
+            "blue",
+            "bare"
+          ]
+        },
+        {
+          "name": "floor",
+          "adjectives": [
+            "beige",
+            "flat"
+          ]
+        },
+        {
+          "name": "shoes",
+          "adjectives": [
+            "dark",
+            "black"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "high angle",
+      "step": "during",
+      "action": "The woman lunges and reaches her arm out toward the broom leaning in the corner, swinging to grab it; motion lines show her movement.",
+      "extras": {
+        "floor": true,
+        "background": "blue walls meeting in a corner at the top right, with a beige floor",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "mainView": "above",
+      "promptKey": "ee1ec609c0c53503"
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "elderly woman",
+          "adjectives": [
+            "gray-haired",
+            "bespectacled",
+            "crouching",
+            "focused",
+            "cropped"
           ]
         },
         {
@@ -5463,7 +5380,42 @@
             "yellow",
             "straw",
             "long-handled",
-            "wooden-handled"
+            "wooden-handled",
+            "black-banded"
+          ]
+        },
+        {
+          "name": "glasses",
+          "adjectives": [
+            "round",
+            "thin-framed"
+          ]
+        },
+        {
+          "name": "hair bun",
+          "adjectives": [
+            "gray",
+            "cropped"
+          ]
+        },
+        {
+          "name": "shirt",
+          "adjectives": [
+            "red-brown",
+            "long-sleeved"
+          ]
+        },
+        {
+          "name": "pants",
+          "adjectives": [
+            "olive green"
+          ]
+        },
+        {
+          "name": "shoe",
+          "adjectives": [
+            "dark",
+            "flat"
           ]
         },
         {
@@ -5477,51 +5429,62 @@
           "name": "floor",
           "adjectives": [
             "beige",
-            "flat"
+            "smooth"
+          ]
+        },
+        {
+          "name": "corner",
+          "adjectives": [
+            "blue wall meeting beige floor",
+            "right side"
           ]
         }
       ],
       "shot": "medium",
       "angle": "eye level",
       "step": "during",
-      "action": "The woman crouches and grips the broom handle with one hand, pushing the broom bristles into the corner of the room while she looks at it.",
+      "action": "The woman crouches and grips the broom handle with her right hand while sweeping the broom bristles into the corner of the room, looking toward it.",
       "extras": {
         "floor": true,
-        "background": "plain light blue walls meeting in a corner, with a beige floor",
+        "background": "plain blue wall meeting a beige floor at a corner on the right side",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
         "corner": {
-          "mark": "partly cut",
+          "mark": "visible",
           "size": "medium",
           "place": "back"
         },
         "broom": {
-          "mark": "partly cut",
+          "mark": "visible",
           "size": "large",
           "place": "front"
         }
       },
       "drawingErrors": [],
       "mainView": "side",
-      "promptKey": "aa07e0019741dd08"
+      "promptKey": "ee1ec609c0c53503"
     },
     "6": {
       "objects": [
         {
-          "name": "elderly woman",
+          "name": "older woman",
           "adjectives": [
             "gray-haired",
             "bespectacled",
             "crouching",
-            "smiling"
+            "smiling",
+            "focused"
           ]
         },
         {
-          "name": "hair bun",
+          "name": "broom",
           "adjectives": [
-            "gray"
+            "yellow-bristled",
+            "long-handled",
+            "brown-handled",
+            "upright"
           ]
         },
         {
@@ -5532,33 +5495,38 @@
           ]
         },
         {
-          "name": "red-orange long-sleeve shirt",
+          "name": "hair bun",
           "adjectives": [
-            "rust-colored",
-            "loose"
+            "gray",
+            "small"
           ]
         },
         {
-          "name": "olive green pants",
+          "name": "sweater",
           "adjectives": [
-            "green",
+            "red-brown",
+            "long-sleeved"
+          ]
+        },
+        {
+          "name": "pants",
+          "adjectives": [
+            "olive green",
             "baggy"
           ]
         },
         {
-          "name": "dark shoes",
+          "name": "shoes",
           "adjectives": [
-            "brown-black",
+            "dark",
             "flat"
           ]
         },
         {
-          "name": "broom",
+          "name": "walls",
           "adjectives": [
-            "long",
-            "yellow-bristled",
-            "wooden-handled",
-            "straw"
+            "light blue",
+            "meeting at a corner"
           ]
         },
         {
@@ -5567,35 +5535,22 @@
             "beige",
             "flat"
           ]
-        },
-        {
-          "name": "walls",
-          "adjectives": [
-            "blue-gray",
-            "meeting at a corner"
-          ]
-        },
-        {
-          "name": "corner",
-          "adjectives": [
-            "where two walls meet"
-          ]
         }
       ],
       "shot": "medium",
       "angle": "eye level",
       "step": "during",
-      "action": "The woman crouches low and reaches out with one arm, holding the broom handle and sweeping its bristles toward the corner of the room while looking at it.",
+      "action": "The woman crouches low and stretches her right arm out to grab the upright broom by its handle, looking toward it.",
       "extras": {
         "floor": true,
-        "background": "blue-gray walls meeting at a corner above a beige floor",
+        "background": "Plain light blue walls meeting at a corner, with a beige floor",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
         "corner": {
           "mark": "visible",
-          "size": "large",
+          "size": "medium",
           "place": "back"
         },
         "broom": {
@@ -5606,7 +5561,7 @@
       },
       "drawingErrors": [],
       "mainView": "three-quarter",
-      "promptKey": "aa07e0019741dd08"
+      "promptKey": "ee1ec609c0c53503"
     },
     "7": {
       "objects": [
@@ -5615,25 +5570,18 @@
           "adjectives": [
             "gray-haired",
             "bespectacled",
-            "stretching",
             "lunging",
+            "stretching",
             "focused"
           ]
         },
         {
           "name": "broom",
           "adjectives": [
-            "tall",
+            "long",
             "wooden-handled",
             "yellow-bristled",
             "upright"
-          ]
-        },
-        {
-          "name": "hair bun",
-          "adjectives": [
-            "gray",
-            "round"
           ]
         },
         {
@@ -5644,30 +5592,37 @@
           ]
         },
         {
-          "name": "red-orange top",
+          "name": "hair bun",
           "adjectives": [
-            "long-sleeved",
+            "gray",
+            "tied up"
+          ]
+        },
+        {
+          "name": "shirt",
+          "adjectives": [
+            "red-brown",
+            "long-sleeved"
+          ]
+        },
+        {
+          "name": "pants",
+          "adjectives": [
+            "olive green",
             "loose"
           ]
         },
         {
-          "name": "olive green pants",
+          "name": "shoes",
           "adjectives": [
-            "baggy",
-            "dark green"
-          ]
-        },
-        {
-          "name": "dark shoes",
-          "adjectives": [
-            "brown",
+            "dark brown",
             "flat"
           ]
         },
         {
           "name": "wall",
           "adjectives": [
-            "blue",
+            "light blue",
             "flat"
           ]
         },
@@ -5675,17 +5630,17 @@
           "name": "floor",
           "adjectives": [
             "beige",
-            "plain"
+            "smooth"
           ]
         }
       ],
       "shot": "medium",
       "angle": "eye level",
       "step": "during",
-      "action": "The woman lunges sideways with a wide stance and reaches her right arm up to grip the upright broom handle, which stands in the corner. She looks toward the broom.",
+      "action": "The woman lunges to the right and reaches out with one arm to grab the upright broom standing in the corner. She looks toward it.",
       "extras": {
         "floor": true,
-        "background": "A light blue wall that meets another blue wall at a corner on the right, above a beige floor",
+        "background": "A light blue wall with a corner on the right where two walls meet, above a beige floor",
         "morePeople": false,
         "readableText": ""
       },
@@ -5698,12 +5653,12 @@
         "broom": {
           "mark": "visible",
           "size": "medium",
-          "place": "front"
+          "place": "back"
         }
       },
       "drawingErrors": [],
       "mainView": "side",
-      "promptKey": "aa07e0019741dd08"
+      "promptKey": "ee1ec609c0c53503"
     },
     "8": {
       "objects": [
@@ -5718,13 +5673,6 @@
           ]
         },
         {
-          "name": "glasses",
-          "adjectives": [
-            "round",
-            "black-rimmed"
-          ]
-        },
-        {
           "name": "broom",
           "adjectives": [
             "yellow",
@@ -5734,9 +5682,23 @@
           ]
         },
         {
+          "name": "glasses",
+          "adjectives": [
+            "round",
+            "black-rimmed"
+          ]
+        },
+        {
+          "name": "shoe",
+          "adjectives": [
+            "black",
+            "worn"
+          ]
+        },
+        {
           "name": "sweater",
           "adjectives": [
-            "red",
+            "red-brown",
             "long-sleeved"
           ]
         },
@@ -5744,13 +5706,6 @@
           "name": "pants",
           "adjectives": [
             "olive green"
-          ]
-        },
-        {
-          "name": "shoe",
-          "adjectives": [
-            "black",
-            "flat"
           ]
         },
         {
@@ -5770,10 +5725,10 @@
       "shot": "medium",
       "angle": "low angle",
       "step": "during",
-      "action": "The woman grips the broom handle with one hand and crouches while sweeping, looking intently ahead at the floor or corner.",
+      "action": "The woman crouches in a lunging stance and grips the broom handle with one hand, holding it up and forward as if swinging it.",
       "extras": {
         "floor": true,
-        "background": "light blue walls meeting at a recessed corner, with a beige floor",
+        "background": "light blue wall meeting a beige floor, with a darker blue doorway or corner edge at the upper right",
         "morePeople": false,
         "readableText": ""
       },
@@ -5791,7 +5746,7 @@
       },
       "drawingErrors": [],
       "mainView": "three-quarter",
-      "promptKey": "aa07e0019741dd08"
+      "promptKey": "ee1ec609c0c53503"
     },
     "9": {
       "objects": [
@@ -5800,18 +5755,25 @@
           "adjectives": [
             "gray-haired",
             "bespectacled",
-            "smiling",
-            "bent over",
-            "focused"
+            "hunched",
+            "focused",
+            "smiling"
           ]
         },
         {
           "name": "broom",
           "adjectives": [
-            "yellow",
-            "straw",
-            "long-handled",
-            "wooden"
+            "long",
+            "wooden-handled",
+            "yellow-bristled",
+            "straw"
+          ]
+        },
+        {
+          "name": "hair bun",
+          "adjectives": [
+            "gray",
+            "small"
           ]
         },
         {
@@ -5821,36 +5783,25 @@
           ]
         },
         {
-          "name": "hair bun",
+          "name": "red-orange sweater",
           "adjectives": [
-            "gray"
+            "long-sleeved",
+            "salmon-colored"
           ]
         },
         {
-          "name": "sweater",
+          "name": "green pants",
           "adjectives": [
-            "red",
-            "long-sleeved"
-          ]
-        },
-        {
-          "name": "pants",
-          "adjectives": [
-            "olive green"
+            "olive",
+            "loose"
           ]
         },
         {
           "name": "shoes",
           "adjectives": [
             "dark",
+            "brown",
             "flat"
-          ]
-        },
-        {
-          "name": "wall corner",
-          "adjectives": [
-            "blue",
-            "two-walled"
           ]
         },
         {
@@ -5861,27 +5812,35 @@
           ]
         },
         {
+          "name": "walls",
+          "adjectives": [
+            "blue",
+            "pale"
+          ]
+        },
+        {
           "name": "sweep marks",
           "adjectives": [
             "curved",
-            "gray"
+            "gray",
+            "thin"
           ]
         }
       ],
       "shot": "medium",
       "angle": "high angle",
       "step": "during",
-      "action": "The woman holds the broom with both hands and sweeps the floor in a wide arc, looking down at it.",
+      "action": "The woman holds the broom with both hands, leaning into a wide stance and sweeping it in an arc across the floor.",
       "extras": {
         "floor": true,
-        "background": "Blue walls meeting in a corner above a plain beige floor",
+        "background": "pale blue walls meeting in a corner above a beige floor",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
         "corner": {
           "mark": "visible",
-          "size": "medium",
+          "size": "small",
           "place": "back"
         },
         "broom": {
@@ -5892,7 +5851,7 @@
       },
       "drawingErrors": [],
       "mainView": "three-quarter",
-      "promptKey": "aa07e0019741dd08"
+      "promptKey": "ee1ec609c0c53503"
     }
   }
 }
