@@ -12,7 +12,10 @@
 //         (`cell_<N>_plausible`) and vivid (`cell_<N>_vivid`), and one per
 //         must-see clarity part (`cell_<N>_clarity_<part>`, ADR-0037, C-046):
 //         completeness, size and state always, nameSign only with a name sign,
-//         view only with a main subject. A score is Jev's level + 1 (1–3,
+//         view only with a main subject (ADR-0038: { name, actor }, an
+//         actor too; an actor is never a must-see item, so the gate never
+//         checks it, and a cell that doesn't show it has main_view null and
+//         the lowest view level). A score is Jev's level + 1 (1–3,
 //         decimals kept), with Jev's confidence; clarity is the mean of its
 //         parts, with the lowest confidence of its parts (for C-037). Each
 //         question gets the full captions in the state. Code caps no score
@@ -68,7 +71,7 @@ function gate(captions) {
 const qname = (cell, axis) => `cell_${cell}_${axis}`;
 
 const STATE_TEXT =
-  "The state holds a mnemonic story for an English word, its must-see list (the objects a picture of it must show), its angle_case (\"view\" when the story is about a view, \"one-object\" when it has one main object, else \"none\"), its main_subject (the one must-see item that the story is about, or null), and descriptions of candidate pictures for it (cells, keyed by id): each cell's objects, shot, angle, action step, action line (what the objects do to each other), extras, each must-see item's mark (visible / partly cut / hidden), size and place, its drawing errors (objects drawn wrong: they float, look pasted on, or break the lines of the wall or floor; mustSee says if the object is a must-see item), and how it differs from the other cells. When the story has name signs (name_signs: a name that the picture should show as text, on the item that carries it), each cell's name_sign_readable says whether its readable text shows every name sign. When the story has a main subject, each cell's main_view gives its view: front, three-quarter, side, back or above (null when the cell hides it).";
+  "The state holds a mnemonic story for an English word, its must-see list (the objects a picture of it must show), its angle_case (\"view\" when the story is about a view, \"one-object\" when it has one main object, else \"none\"), its main_subject (the one person, animal or group of them that does the story's action, as {name, actor}: actor false for a must-see item, actor true for the actor, the person who does the action when the story names no person, which is not a must-see item; or null), and descriptions of candidate pictures for it (cells, keyed by id): each cell's objects, shot, angle, action step, action line (what the objects do to each other), extras, each must-see item's mark (visible / partly cut / hidden), size and place, its drawing errors (objects drawn wrong: they float, look pasted on, or break the lines of the wall or floor; mustSee says if the object is a must-see item), and how it differs from the other cells. When the story has name signs (name_signs: a name that the picture should show as text, on the item that carries it), each cell's name_sign_readable says whether its readable text shows every name sign. When the story has a main subject, each cell's main_view gives its view: front, three-quarter, side, back or above (null when the cell doesn't show it).";
 
 // parts: the clarity parts that apply (clarityParts).
 function buildQuestions(rubric, cells, parts = clarityParts()) {

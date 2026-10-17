@@ -7,9 +7,17 @@
 // gets no mainView question, and its captions have mainView null. The main
 // subject reaches the captioner without the headword (bug-016, bug-020).
 //
+// After the second stage 5 (ADR-0038, C-047): the main subject is { name,
+// actor } and the MAIN SUBJECT line gives its name, masked as item names are
+// (an actor's name too). For an actor (not an item), the caption may give
+// null when the cell doesn't show the person, and that is usable; any other
+// non-view value is unusable. A non-actor main subject's prompt doesn't
+// change, so its cached captions stay valid.
+//
 // The fake captioner gives the view by the cell's lightness: below 60 above,
 // below 90 back, below 150 side, below 210 three-quarter, else front. It
-// leaves mainView out when the main subject is "noview".
+// leaves mainView out when the main subject is "noview", and it doesn't show
+// the actor ("grab" stories) below lightness 90.
 
 const test = require("node:test");
 const assert = require("node:assert/strict");
@@ -88,13 +96,21 @@ test("parseCaption: mainView must be one of the five views; null only when the m
   const shown = { star: { mark: "visible", size: "large", place: "front" } };
   const hidden = { star: { mark: "hidden", size: null, place: null } };
   const list = items("star");
-  for (const v of caption.VIEWS) assert.equal(caption.parseCaption(answer(shown, { mainView: v }), list, "starry", "star").mainView, v);
+  const star = { name: "star", actor: false };
+  for (const v of caption.VIEWS) assert.equal(caption.parseCaption(answer(shown, { mainView: v }), list, "starry", star).mainView, v);
   assert.deepEqual(caption.VIEWS, ["front", "three-quarter", "side", "back", "above"]);
-  assert.throws(() => caption.parseCaption(answer(shown, {}), list, "starry", "star"), /mainView/);
-  assert.throws(() => caption.parseCaption(answer(shown, { mainView: "sideways" }), list, "starry", "star"), /mainView/);
-  assert.throws(() => caption.parseCaption(answer(shown, { mainView: null }), list, "starry", "star"), /mainView/, "a shown main subject has a view");
-  assert.equal(caption.parseCaption(answer(hidden, { mainView: null }), list, "starry", "star").mainView, null);
-  assert.equal(caption.parseCaption(answer(hidden, { mainView: "side" }), list, "starry", "star").mainView, null, "a hidden main subject has no view");
+  assert.throws(() => caption.parseCaption(answer(shown, {}), list, "starry", star), /mainView/);
+  assert.throws(() => caption.parseCaption(answer(shown, { mainView: "sideways" }), list, "starry", star), /mainView/);
+  assert.throws(() => caption.parseCaption(answer(shown, { mainView: null }), list, "starry", star), /mainView/, "a shown main subject has a view");
+  assert.equal(caption.parseCaption(answer(hidden, { mainView: null }), list, "starry", star).mainView, null);
+  assert.equal(caption.parseCaption(answer(hidden, { mainView: "side" }), list, "starry", star).mainView, null, "a hidden main subject has no view");
+  // an actor (not an item): null means the cell doesn't show the person, and is usable
+  const actor = { name: "person who sweeps", actor: true };
+  for (const v of caption.VIEWS) assert.equal(caption.parseCaption(answer(shown, { mainView: v }), list, "starry", actor).mainView, v);
+  assert.equal(caption.parseCaption(answer(shown, { mainView: null }), list, "starry", actor).mainView, null);
+  assert.throws(() => caption.parseCaption(answer(shown, {}), list, "starry", actor), /mainView/, "a missing mainView is unusable");
+  assert.throws(() => caption.parseCaption(answer(shown, { mainView: "sideways" }), list, "starry", actor), /mainView/);
+  assert.throws(() => caption.parseCaption(answer(shown, { mainView: "none" }), list, "starry", actor), /mainView/);
   // no main subject: no view, whatever the answer says
   assert.equal(caption.parseCaption(answer(shown, {}), list, "starry", null).mainView, null);
   assert.equal(caption.parseCaption(answer(shown, { mainView: "front" }), list, "starry").mainView, null);
@@ -102,6 +118,33 @@ test("parseCaption: mainView must be one of the five views; null only when the m
 
 test("a caption made under the prompt without the main subject is made again once the list has one", () => {
   const list = items("star");
-  assert.notEqual(caption.promptKey(list, "starry", "star"), caption.promptKey(list, "starry", null));
+  const star = { name: "star", actor: false };
+  assert.notEqual(caption.promptKey(list, "starry", star), caption.promptKey(list, "starry", null));
   assert.equal(caption.prompt(list, "starry", null), caption.prompt(list, "starry"));
+});
+
+test("a non-actor main subject's caption prompt is the one before ADR-0038, so its cached captions stay valid", () => {
+  // the keys that the prompt made with the bare-string main subject, before ADR-0038
+  assert.equal(caption.promptKey(items("square", "star"), "starry", { name: "star", actor: false }), "ee4f54b0bd53a688");
+  assert.equal(caption.promptKey(items("square", "star"), "starry", null), "edb2d63ba9cb649f");
+  assert.equal(caption.promptKey(items("surgeon", "headlamp"), "surgeon", { name: "surgeon", actor: false }), "a32fe97268ac088d");
+  // the same name as an actor is another prompt
+  assert.notEqual(caption.promptKey(items("square", "star"), "starry", { name: "star", actor: true }), "ee4f54b0bd53a688");
+});
+
+test("AC2: an actor's caption names the person, masked; a cell that doesn't show the person gives mainView null, and is kept", async () => {
+  const { r, captions, calls } = await captionOnly([{ word: "grab", grid: "alpha.grid.png", flashCell: 2, story: "Swing deep into the corner; grab the broom, lightness 120." }]);
+  assert.doesNotMatch(r.stderr, /caption failed/);
+  assert.equal(calls.length, 9);
+  for (const c of calls) {
+    assert.match(promptOf(c), /^MAIN SUBJECT: "person who key item the broom"$/m, "the actor's name, with the headword masked");
+    assert.doesNotMatch(promptOf(c), /grab/i);
+    assert.match(promptOf(c), /Give null when the picture doesn't show the main subject/);
+    assert.doesNotMatch(promptOf(c), /MUST-SEE ITEMS: .*person/, "an actor is not a must-see item");
+  }
+  // alpha: cell n = lightness 30·(n−1); the actor isn't shown below 90
+  assert.deepEqual(
+    Object.values(captions["alpha.grid.png"]).map((c) => c.mainView),
+    [null, null, null, "side", "side", "three-quarter", "three-quarter", "front", "front"],
+  );
 });

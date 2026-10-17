@@ -9,16 +9,24 @@
 // a name used as a sound anchor gives the person or thing that carries it as
 // a must-see item ("nurse") and the name as a name sign ({ item: "nurse",
 // text: "Venice" }); a name sign is not a must-see item, so the gate never
-// checks it. After stage 5 (ADR-0037, C-045): it names the main subject, the
-// one item that the story is about, or null; a main subject that isn't one of
-// the items gets the repair prompt once (with the name repair, if that is
-// needed too), and the word fails if it is still wrong. Cached in
+// checks it. After stage 5 (ADR-0037, C-045): it names the main subject. After
+// the second stage 5 (ADR-0038, C-047) that is { name, actor } or null: the
+// one person, animal or group of them that does the story's action (an item,
+// actor false; never an object, never one that only receives the action), or,
+// when the story names no person but has an action, the person who does it
+// (the actor, actor true: a short name that is not an item, so the gate never
+// checks it). A non-actor main subject that isn't one of the items, or a
+// malformed value, gets the repair prompt once (with the name repair, if that
+// is needed too), and the word fails if it is still wrong. Cached in
 // <out>/must-see.json (word → { story, items, nameSigns, mainSubject,
 // isSequence, angleCase, promptKey }); a cached list is reused while the story
 // and the prompt (`promptKey`) are unchanged.
 
 const crypto = require("node:crypto");
 const { parseJson, pool, ClaudeError } = require("./claude");
+
+// The main subject's JSON shape, as the prompts give it.
+const MAIN_SHAPE = '{"name":"...","actor":true|false}|null';
 
 function prompt(story) {
   return [
@@ -29,14 +37,16 @@ function prompt(story) {
     'A person\'s or place\'s name can\'t be seen. For a name, list the person or thing that carries the name as an item, without the name (for example "nurse" for a nurse called Venice), and give the name as a name sign: the text that the picture should show, with the item that carries it ({"item":"nurse","text":"Venice"}). Don\'t put the name in any item\'s name. A story with no name has no name signs ([]).',
     "Also say whether the story is a sequence: two or more steps in time (\"roast corn, then toss the cob\").",
     'Also say if the story is about a view (looking down from a ridge, something that looms over a person): "view"; or has one main object, so a close-up of it is the clearest picture: "one-object"; or neither: "none".',
-    'Also name the main subject: the one person or object that the story is about, as the name of one of your items, exactly as written there (for example "surgeon" for a surgeon who operates by headlamp); or null when the story has no one main subject.',
-    'Print only JSON, no preamble: {"items":[{"name":"...","adjectives":["..."]}],"nameSigns":[{"item":"...","text":"..."}],"mainSubject":"..."|null,"isSequence":true|false,"angleCase":"view"|"one-object"|"none"}',
+    'Also name the main subject: the one person, animal or group of them that does the story\'s action (a group such as a family counts as one), as {"name":"...","actor":false} with the name of one of your items, exactly as written there (for example {"name":"surgeon","actor":false} for a surgeon who operates by headlamp). When two of them act, it is the one that does the story\'s main action. One that only receives the action is not the main subject (not the patient that a doctor treats, but the doctor). An object is never the main subject (not a cup, a bridge or a rake).',
+    'When the story names no person but has an action that a person does ("pull the rope"), the main subject is that person, the actor: give {"name":"...","actor":true} with a short name for the person, such as "person who pulls the rope". An actor is not one of your items: don\'t list it as an item. Otherwise (no person, animal or group acts) give null.',
+    `Print only JSON, no preamble: {"items":[{"name":"...","adjectives":["..."]}],"nameSigns":[{"item":"...","text":"..."}],"mainSubject":${MAIN_SHAPE},"isSequence":true|false,"angleCase":"view"|"one-object"|"none"}`,
     "",
     `STORY: ${story}`,
   ].join("\n");
 }
 
 const isText = (x) => typeof x === "string" && x.trim() !== "";
+const isObject = (x) => x !== null && typeof x === "object" && !Array.isArray(x);
 const ANGLE_CASES = ["view", "one-object", "none"];
 
 // Model answer → { items, nameSigns, isSequence, angleCase }, or a ClaudeError when it's unusable.
@@ -55,13 +65,28 @@ function parseList(text) {
     return { item: s.item.trim(), text: s.text.trim() };
   });
   if (!ANGLE_CASES.includes(j.angleCase)) throw new ClaudeError(`unusable must-see list: angleCase ${JSON.stringify(j.angleCase)}`);
-  // a main subject that isn't an item stays as given, for the repair (badMainSubject)
-  const mainSubject = typeof j.mainSubject === "string" ? j.mainSubject.trim() : j.mainSubject;
+  // a well-formed main subject is trimmed; any other value stays as given, for the repair (badMainSubject)
+  const m = j.mainSubject;
+  const mainSubject = wellFormedMain(m) ? { name: m.name.trim(), actor: m.actor } : m;
   return { items, nameSigns, mainSubject, isSequence: j.isSequence === true, angleCase: j.angleCase };
 }
 
-// The main subject must be one of the items, or null (C-045); a missing one isn't named.
-const badMainSubject = (list) => list.mainSubject !== null && !(list.items || []).some((i) => i.name === list.mainSubject);
+// A main subject's shape (ADR-0038): { name: a non-empty string, actor: true | false }.
+const wellFormedMain = (m) => isObject(m) && isText(m.name) && typeof m.actor === "boolean";
+
+// What is wrong with a list's main subject: "malformed" (not null and not
+// { name, actor }; a missing one isn't named), "not an item" (a non-actor main
+// subject that isn't one of the items, C-045), or null when it is fine. An
+// actor is never an item (C-047), so any actor name is fine.
+function mainSubjectProblem(list) {
+  const m = list.mainSubject;
+  if (m === null) return null;
+  if (!wellFormedMain(m)) return "malformed";
+  if (m.actor) return null;
+  return (list.items || []).some((i) => i.name === m.name) ? null : "not an item";
+}
+
+const badMainSubject = (list) => mainSubjectProblem(list) !== null;
 
 // The story's names: each capitalized word that doesn't start a sentence
 // ("Venice" in "Nurse Venice returns", "Victor" in "If Victor misses rent"),
@@ -102,7 +127,9 @@ const fixPrompt = (story, { bare, main }) =>
         ]
       : []),
     ...(main
-      ? [`Your last list named the main subject ${JSON.stringify(main.mainSubject ?? null)}, which isn't the name of one of its items. Give the main subject as the name of one of your items, exactly as written there, or null when the story has no one main subject.`]
+      ? [
+          `Your last list named the main subject ${JSON.stringify(main.mainSubject ?? null)}, which ${mainSubjectProblem(main) === "malformed" ? `isn't in the form ${MAIN_SHAPE}` : "isn't the name of one of its items"}. Give the main subject as ${MAIN_SHAPE}: with actor false, the name of one of your items, exactly as written there; with actor true, a short name for the person who does the action when the story names no person; or null when no person, animal or group acts.`,
+        ]
       : []),
   ].join("\n");
 
@@ -116,7 +143,7 @@ function needsRepair(story, list) {
 const repairText = ({ bare, main }) =>
   [
     ...(bare.length ? [`name left in an item's name, or a name sign with no carrier: ${bare.join(", ")}`] : []),
-    ...(main ? [`main subject isn't an item: ${JSON.stringify(main.mainSubject ?? null)}`] : []),
+    ...(main ? [`main subject ${mainSubjectProblem(main) === "malformed" ? "isn't usable" : "isn't an item"}: ${JSON.stringify(main.mainSubject ?? null)}`] : []),
   ].join("; ");
 
 // The cache key of a list: the prompt it was made with.

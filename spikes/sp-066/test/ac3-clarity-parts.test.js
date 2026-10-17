@@ -6,7 +6,11 @@
 // main subject's view (only when the story has a main subject: front or
 // three-quarter 3, side 2, back or from above 1). Must-see clarity is the
 // mean of the parts that apply, its confidence the lowest of theirs, and code
-// doesn't cap it.
+// doesn't cap it. After the second stage 5 (ADR-0038, C-047): the view part
+// applies whenever there is a main subject, an actor too; Jev's state gives
+// the main subject as { name, actor }. An actor is never a must-see item, so
+// the gate never checks it: a cell that doesn't show the actor stays scored,
+// with main_view null, and its view part gets the lowest level (1).
 //
 // End to end through run.js against the fake claude and the mock Jev
 // (test/helpers/). The mock scores the parts from the caption:
@@ -59,7 +63,7 @@ test("AC3: with a main subject, Jev scores four clarity parts per cell, one ques
     assert.deepEqual(questions[`cell_4_clarity_${part}`].criteria, rubric.axes.clarity.parts[part].levels);
   }
   // the full caption is in the state, with the main subject and its view
-  assert.equal(state.main_subject, "star");
+  assert.deepEqual(state.main_subject, { name: "star", actor: false });
   assert.equal(state.cells.cell_8.main_view, "front");
   assert.equal(state.cells.cell_4.main_view, "side");
   for (const k of ["objects", "shot", "angle", "step", "action", "extras", "must_see", "drawing_errors", "differs"]) assert.ok(k in state.cells.cell_4, k);
@@ -101,7 +105,7 @@ test("AC3: the main subject hidden in every cell: all 9 are scored, and each vie
   const p = run.words[0].pick;
   assert.equal(p.gateSkipped, true);
   assert.deepEqual(p.scored, [1, 2, 3, 4, 5, 6, 7, 8, 9]);
-  assert.equal(calls[0].body.state.main_subject, "ghost");
+  assert.deepEqual(calls[0].body.state.main_subject, { name: "ghost", actor: false });
   for (let c = 1; c <= 9; c++) {
     assert.equal(calls[0].body.state.cells[`cell_${c}`].main_view, null);
     assert.equal(p.scores[c].clarity.parts.view.score, 1, `cell ${c}`);
@@ -127,6 +131,7 @@ test("AC3: the rubric gives each clarity part its levels; the view part's order 
   assert.match(nameSign.levels[1], /partly readable or misread/);
   assert.match(nameSign.levels[2], /can be read/);
   assert.match(view.levels[0], /back or from above/);
+  assert.match(view.levels[0], /an actor that the cell doesn't show/);
   assert.match(view.levels[1], /side/);
   assert.match(view.levels[2], /front or in three-quarter/);
   assert.match(view.check, /main_view/);
@@ -137,7 +142,8 @@ test("clarityParts: completeness, size and state always; the name sign only with
   assert.deepEqual(PARTS, ["completeness", "size", "state", "nameSign", "view"]);
   assert.deepEqual(clarityParts({ nameSigns: [], mainSubject: null }), ["completeness", "size", "state"]);
   assert.deepEqual(clarityParts({ nameSigns: [{ item: "nurse", text: "Venice" }], mainSubject: null }), ["completeness", "size", "state", "nameSign"]);
-  assert.deepEqual(clarityParts({ mainSubject: "surgeon" }), ["completeness", "size", "state", "view"]);
+  assert.deepEqual(clarityParts({ mainSubject: { name: "surgeon", actor: false } }), ["completeness", "size", "state", "view"]);
+  assert.deepEqual(clarityParts({ mainSubject: { name: "person who sweeps", actor: true } }), ["completeness", "size", "state", "view"], "an actor has a view part too");
 });
 
 test("toScores: clarity is the mean of its parts (level + 1), with the lowest confidence; a missing part answer is a JevError", () => {
@@ -157,4 +163,23 @@ test("toScores: clarity is the mean of its parts (level + 1), with the lowest co
   assert.deepEqual(s[1].clarity.parts.view, { score: 3, confidence: 0.7 });
   assert.equal(toScores(answers, [1], ["completeness", "size", "state"])[1].clarity.score, Math.round((8 / 3) * 1e6) / 1e6);
   assert.throws(() => toScores(answers, [1], ["completeness", "size", "state", "nameSign"]), /unusable Jev answer for cell_1_clarity_nameSign/);
+});
+
+test("AC3: an actor that a cell doesn't show: the cell stays scored, and its view part gets the lowest level", async () => {
+  const { run, calls } = await pickRun([{ word: "sweepy", grid: "alpha.grid.png", flashCell: 2, story: "Swing deep into the corner; grab the broom, lightness 120." }]);
+  const p = run.words[0].pick;
+  const { state, questions } = calls[0].body;
+  assert.deepEqual(state.main_subject, { name: "person who grabs the broom", actor: true });
+  assert.equal(p.gateSkipped, false);
+  assert.deepEqual(p.gatedOut, [], "the gate never checks an actor");
+  assert.deepEqual(p.scored, [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  assert.deepEqual(partNames(questions, 1), ["completeness", "size", "state", "view"]);
+  // alpha: cell n = lightness 30·(n−1); the actor isn't shown below 90
+  for (const c of [1, 2, 3]) {
+    assert.equal(state.cells[`cell_${c}`].main_view, null, `cell ${c}`);
+    assert.equal(p.scores[c].clarity.parts.view.score, 1, `cell ${c}`);
+  }
+  assert.equal(state.cells.cell_4.main_view, "side");
+  assert.equal(p.scores[4].clarity.parts.view.score, 2);
+  assert.match(JSON.stringify(questions.cell_1_clarity_view), /actor/);
 });

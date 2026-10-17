@@ -76,8 +76,8 @@ function drawSplit(words, hits, { seed = SEED, size = TUNING_SIZE } = {}) {
 // A name anchor: the must-see list gives a name sign (ADR-0035, C-043).
 const hasNameAnchor = (list) => !!list && Array.isArray(list.nameSigns) && list.nameSigns.length > 0;
 
-// A main subject: the must-see list names one (ADR-0037, C-045).
-const hasMainSubject = (list) => !!list && typeof list.mainSubject === "string" && list.mainSubject !== "";
+// A main subject: the must-see list names one, { name, actor } (ADR-0037, ADR-0038, C-045); an actor counts.
+const hasMainSubject = (list) => !!list && !!list.mainSubject && typeof list.mainSubject.name === "string" && list.mainSubject.name !== "";
 
 // The early picks the Staged run asks for, in this order; one word can meet several.
 const EARLY = [

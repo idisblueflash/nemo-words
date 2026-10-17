@@ -22,7 +22,10 @@
 // the captioner may see it, without the headword) and asks for its view,
 // mainView: front, three-quarter, side, back or above; null when the cell hides
 // it. A caption with no usable mainView then is unusable. With no main subject
-// the prompt has no view question, and mainView is null.
+// the prompt has no view question, and mainView is null. After the second
+// stage 5 (ADR-0038, C-047) the main subject is { name, actor }; the prompt
+// gives its name, masked as item names are. An actor isn't an item: null then
+// means the cell doesn't show the person, and is usable.
 // Cached in <out>/captions.json (grid → cell → caption); each
 // caption keeps the key of the prompt it was made with (`promptKey`), so a
 // caption made under another prompt or list is made again. A failed or
@@ -50,11 +53,17 @@ const itemNames = (items) => [...new Set(items.map((i) => i.name))];
 // since the bare placeholder says nothing (bug-020); every other name is as written.
 const shownNames = (items, word) => itemNames(items).map((n) => (word ? describeBareName(word, n) || maskName(word, n) : n));
 
-// The main subject as the captioner sees it, like the item names.
-const shownMain = (mainSubject, word) => (word ? describeBareName(word, mainSubject) || maskName(word, mainSubject) : mainSubject);
+// The main subject's name as the captioner sees it, like the item names (an actor's too).
+const shownMain = (name, word) => (word ? describeBareName(word, name) || maskName(word, name) : name);
 
+const hasMain = (mainSubject) => mainSubject !== null && mainSubject !== undefined;
+
+// mainSubject: { name, actor } or null (ADR-0038). A non-actor main subject's
+// prompt is the one it had as a bare name, so its cached captions stay valid;
+// an actor's view question says to give null when the cell doesn't show it.
 function prompt(items, word, mainSubject = null) {
-  const main = mainSubject === null || mainSubject === undefined ? null : shownMain(mainSubject, word);
+  const main = hasMain(mainSubject) ? shownMain(mainSubject.name, word) : null;
+  const ifNull = hasMain(mainSubject) && mainSubject.actor ? "the picture doesn't show the main subject" : "the main subject is hidden";
   return [
     "Use the Read tool to look at the image file picture.png in the current folder.",
     "Describe what the picture shows, as JSON with these keys:",
@@ -69,7 +78,7 @@ function prompt(items, word, mainSubject = null) {
     ...(main === null
       ? []
       : [
-          `- "mainView": the view of the main subject below (MAIN SUBJECT): one of ${VIEWS.slice(0, -1).map((v) => `"${v}"`).join(", ")} or "${VIEWS[VIEWS.length - 1]}" (seen from above). It says where its face and body point: "front" when they face the viewer, "three-quarter" when they are turned part way, "side" in profile, "back" when they face away. Give null when the main subject is hidden`,
+          `- "mainView": the view of the main subject below (MAIN SUBJECT): one of ${VIEWS.slice(0, -1).map((v) => `"${v}"`).join(", ")} or "${VIEWS[VIEWS.length - 1]}" (seen from above). It says where its face and body point: "front" when they face the viewer, "three-quarter" when they are turned part way, "side" in profile, "back" when they face away. Give null when ${ifNull}`,
         ]),
     'Put the words you can read in the picture (on a nametag, a sign, a label) in "extras"."readableText", exactly as written.',
     "Print only the JSON, no preamble.",
@@ -111,9 +120,11 @@ function parseCaption(text, items, word, mainSubject = null) {
     if (!PLACES.includes(m.place)) throw new ClaudeError(`unusable caption: must-see ${shown[k]} has place ${JSON.stringify(m.place)}`);
     mustSee[name] = { mark: m.mark, size: m.size, place: m.place };
   });
+  // a non-actor main subject has a view unless its item is hidden; an actor
+  // (not an item) has a view or null, when the cell doesn't show the person
   let mainView = null;
-  const hasMain = mainSubject !== null && mainSubject !== undefined;
-  if (hasMain && !(mustSee[mainSubject] && mustSee[mainSubject].mark === "hidden")) {
+  const hiddenItem = hasMain(mainSubject) && !mainSubject.actor && mustSee[mainSubject.name] && mustSee[mainSubject.name].mark === "hidden";
+  if (hasMain(mainSubject) && !hiddenItem && !(mainSubject.actor && j.mainView === null)) {
     if (!VIEWS.includes(j.mainView)) throw new ClaudeError(`unusable caption: mainView ${JSON.stringify(j.mainView)}`);
     mainView = j.mainView;
   }
@@ -133,7 +144,7 @@ function parseCaption(text, items, word, mainSubject = null) {
 // The cache key of a caption: the prompt it was made with.
 const promptKey = (items, word, mainSubject = null) => crypto.createHash("sha256").update(prompt(items, word, mainSubject)).digest("hex").slice(0, 16);
 
-// words: [{ word, grid }], lists: word → { items, mainSubject } → { cache, failures: grid → { cell, error } }.
+// words: [{ word, grid }], lists: word → { items, mainSubject: { name, actor } | null } → { cache, failures: grid → { cell, error } }.
 async function captionGrids({ words, lists, imageDir, ask, cache = {}, jobs = 6, onSave = () => {} }) {
   // a cached caption counts only if it was made with the prompt the word's current list gives
   const mainOf = (word) => lists[word].mainSubject ?? null;

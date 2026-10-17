@@ -13,7 +13,10 @@
 // (ADR-0037): the captions that show the main subject but give no mainView
 // (should be 0), and clarity's mean spread inside a grid (max − min over the
 // scored cells, then the mean over the judged words), next to stage 5's value
-// before the refine.
+// before the refine. After the second stage 5 (ADR-0038, C-047): each word's
+// main subject, marked "(actor)" when it is one, or "none"; for an actor a
+// null mainView means the cell doesn't show it, so it isn't counted as a
+// missing view, and the cells where an actor isn't shown get a line of their own.
 
 const { vividAlone, hasNameAnchor, hasMainSubject } = require("./split");
 const { VIEWS } = require("./caption");
@@ -21,11 +24,24 @@ const { VIEWS } = require("./caption");
 // Stage 5's clarity spread before the refine (the item's "Check after each stage").
 const SPREAD_BEFORE = 0.71;
 
-// Whether a caption shows the list's main subject (it isn't marked hidden).
+const isActor = (list) => !!(list && list.mainSubject && list.mainSubject.actor);
+
+// Whether a caption shows the list's main subject: an item that isn't marked
+// hidden, or an actor with a mainView (null: the cell doesn't show it).
 const showsMain = (list, c) => {
-  const m = c.mustSee && c.mustSee[list.mainSubject];
+  if (isActor(list)) return c.mainView !== null && c.mainView !== undefined;
+  const m = c.mustSee && c.mustSee[list.mainSubject.name];
   return !(m && m.mark === "hidden");
 };
+
+// For an actor word: the cells that don't show the actor (mainView null).
+const actorNotShown = (list, cells) =>
+  Object.entries(cells || {})
+    .filter(([, c]) => !showsMain(list, c))
+    .map(([cell]) => Number(cell));
+
+// A word's main subject as the summary prints it.
+const mainText = (list) => (hasMainSubject(list) ? `; main subject ${list.mainSubject.name}${isActor(list) ? " (actor)" : ""}` : "; main subject none");
 
 // For a main-subject word: the cells that show the main subject but have no usable mainView.
 function missingViews(list, cells) {
@@ -92,7 +108,7 @@ function stageSummary({ stage, words, total, split, outcomes, lists, captions, c
   for (const w of words) {
     const list = lists[w.word];
     const role = early.has(w.word) ? `; early pick: ${early.get(w.word).join(", ")}` : "";
-    const ac = list ? `; angleCase ${list.angleCase}` : "";
+    const ac = list ? `; angleCase ${list.angleCase}${mainText(list)}` : "";
     if (!w.pick) {
       lines.push(`- ${w.word}: unjudged: ${w.unjudged}${ac}${role}`);
       continue;
@@ -122,6 +138,10 @@ function stageSummary({ stage, words, total, split, outcomes, lists, captions, c
   const noView = mainWords.map((w) => [w.word, missingViews(lists[w.word], captions[w.grid])]).filter(([, cells]) => cells.length);
   const nNoView = noView.reduce((n, [, cells]) => n + cells.length, 0);
   const showing = mainWords.reduce((n, w) => n + Object.values(captions[w.grid] || {}).filter((c) => showsMain(lists[w.word], c)).length, 0);
+  const actorWords = mainWords.filter((w) => isActor(lists[w.word]));
+  const notShown = actorWords.map((w) => [w.word, actorNotShown(lists[w.word], captions[w.grid])]).filter(([, cells]) => cells.length);
+  const nNotShown = notShown.reduce((n, [, cells]) => n + cells.length, 0);
+  const actorCells = actorWords.reduce((n, w) => n + Object.keys(captions[w.grid] || {}).length, 0);
   const spreads = judged.map((w) => claritySpread(w.pick));
   const meanSpread = spreads.length ? (spreads.reduce((s, x) => s + x, 0) / spreads.length).toFixed(2) : "—";
   lines.push(
@@ -132,6 +152,7 @@ function stageSummary({ stage, words, total, split, outcomes, lists, captions, c
     `Name-anchor words: ${nameWords.length}; cells gated out only because the name can't be read: ${nForName}${forName.length ? ` (${forName.map(([w, cells]) => `${w}: ${cells.join(", ")}`).join("; ")})` : ""}`,
     `Cells with a drawing error: ${of(errorCells.length, judgedCells.length)}; on a must-see item: ${mustSeeErrorCells.length}`,
     `Main-subject words: ${mainWords.length}; captions that show the main subject with no mainView: ${nNoView} of ${showing}${noView.length ? ` (${noView.map(([w, cells]) => `${w}: ${cells.join(", ")}`).join("; ")})` : ""}`,
+    `Actor words: ${actorWords.length}; cells where the actor isn't shown: ${nNotShown} of ${actorCells}${notShown.length ? ` (${notShown.map(([w, cells]) => `${w}: ${cells.join(", ")}`).join("; ")})` : ""}`,
     `Clarity's spread inside a grid (max − min): mean ${meanSpread} over ${judged.length} judged grids; stage 5 before the refine: ${SPREAD_BEFORE}`,
     `Gate skipped: ${skipped.length} of ${judged.length}; SP-064 on the same words: ${sp064Skipped.length} of ${sp064Same.length}`,
     `Exact (start weights): ${of(judged.filter((w) => w.pick.mainCell === w.flashCell).length, judged.length)}; in three: ${of(judged.filter((w) => w.pick.ranking.slice(0, 3).includes(w.flashCell)).length, judged.length)}`,

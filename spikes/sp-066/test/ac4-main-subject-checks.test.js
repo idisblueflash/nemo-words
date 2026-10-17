@@ -5,7 +5,10 @@
 // checks: the captions that show the main subject but have no mainView
 // (should be 0), and clarity's mean spread inside a grid (max − min over the
 // scored cells, then the mean over the judged words), next to 0.71, stage 5's
-// value before the refine.
+// value before the refine. After the second stage 5 (ADR-0038, C-047): the
+// summary prints each word's main subject, marked "(actor)" when it is one, or
+// "none"; for an actor, a null mainView means the cell doesn't show it, which
+// isn't counted as a missing view but counted on its own line.
 
 const test = require("node:test");
 const assert = require("node:assert/strict");
@@ -18,12 +21,14 @@ const { tuningOrder, hasMainSubject } = require("../lib/split");
 const { stageSummary } = require("../lib/stage");
 
 test("AC4 (early picks): a word with a main subject is an early pick of its own", () => {
-  assert.equal(hasMainSubject({ items: [{ name: "surgeon" }], mainSubject: "surgeon" }), true);
+  assert.equal(hasMainSubject({ items: [{ name: "surgeon" }], mainSubject: { name: "surgeon", actor: false } }), true);
+  assert.equal(hasMainSubject({ items: [], mainSubject: { name: "person who sweeps", actor: true } }), true, "an actor is a main subject");
+  assert.equal(hasMainSubject({ items: [{ name: "surgeon" }], mainSubject: "surgeon" }), false, "the old bare string isn't a main subject");
   assert.equal(hasMainSubject({ items: [{ name: "cat" }], mainSubject: null }), false);
   assert.equal(hasMainSubject({ items: [] }), false, "an old list with no mainSubject");
   assert.equal(hasMainSubject(undefined), false);
   const tuning = [{ word: "p" }, { word: "m" }];
-  const lists = { p: { mainSubject: null, nameSigns: [], angleCase: "none" }, m: { mainSubject: "star", nameSigns: [], angleCase: "none" } };
+  const lists = { p: { mainSubject: null, nameSigns: [], angleCase: "none" }, m: { mainSubject: { name: "star", actor: false }, nameSigns: [], angleCase: "none" } };
   const o = tuningOrder(tuning, { lists });
   assert.deepEqual(o.order, ["m", "p"]);
   assert.deepEqual(o.early, [{ word: "m", roles: ["main subject"] }]);
@@ -62,6 +67,9 @@ test("AC4: the stage summary counts captions with a mainView where needed, and g
     const r = await runNode("run.js", ["--stage", "tuning"], fixtureEnv(out, { SP066_GRIDS: gridsFile(out, kept), SP066_SP064_RUN: sp064, SP066_TUNING_SIZE: "2", NEMO_JEV_ENV_FILE: jev.envFile }));
     assert.equal(r.code, 0, r.stderr);
     assert.match(r.stdout, /Main-subject words: 1; captions that show the main subject with no mainView: 0 of 9/);
+    assert.match(r.stdout, /^- starry: .*; main subject star(;|$)/m);
+    assert.match(r.stdout, /^- plain: .*; main subject none(;|$)/m);
+    assert.match(r.stdout, /Actor words: 0; cells where the actor isn't shown: 0 of 0/);
     // the spread per word, from the saved picks
     const run = readJson(path.join(out, "run.json"));
     const spreads = run.words.map((w) => {
@@ -84,11 +92,35 @@ test("stageSummary: a caption that shows the main subject but has no mainView is
     mainView: c <= 3 ? null : "side",
   });
   const captions = { "s.grid.png": Object.fromEntries([1, 2, 3, 4, 5, 6, 7, 8, 9].map((c) => [c, cell(c)])) };
-  const lists = { s: { items: [{ name: "surgeon", adjectives: [] }], nameSigns: [], mainSubject: "surgeon", angleCase: "none" } };
+  const lists = { s: { items: [{ name: "surgeon", adjectives: [] }], nameSigns: [], mainSubject: { name: "surgeon", actor: false }, angleCase: "none" } };
   const sc = (x) => ({ plausible: { score: 2 }, vivid: { score: 2 }, clarity: { score: x } });
   const scores = Object.fromEntries([2, 3, 4, 5, 6, 7, 8, 9].map((c) => [c, sc(c === 2 ? 1.5 : c === 9 ? 2.75 : 2)]));
   const words = [{ word: "s", grid: "s.grid.png", flashCell: 2, pick: { gatedOut: [1], scored: [2, 3, 4, 5, 6, 7, 8, 9], gateSkipped: false, scores, ranking: [9, 2, 3], mainCell: 9, alternativeCell: 2 } }];
   const out = stageSummary({ stage: "tuning", words, total: 1, split: {}, outcomes: {}, lists, captions, claudeCounts: { mustSee: 0, caption: 0, compare: 0 }, jevCalls: 0 });
   assert.match(out, /Main-subject words: 1; captions that show the main subject with no mainView: 2 of 8 \(s: 2, 3\)/);
   assert.match(out, /Clarity's spread inside a grid \(max − min\): mean 1\.25 over 1 judged grids; stage 5 before the refine: 0\.71/);
+});
+
+test("AC4: the stage summary marks an actor, and counts the cells where the actor isn't shown, not as missing views", async () => {
+  const out = tmpDir();
+  const jev = await startMockJev({}, out);
+  try {
+    const kept = [{ word: "sweepy", grid: "alpha.grid.png", flashCell: 2, story: "Swing deep into the corner; grab the broom, lightness 120." }];
+    const sp064 = sp064RunFile(out, [{ word: "sweepy", flashCell: 2, best: 2 }]);
+    const r = await runNode("run.js", ["--stage", "tuning"], fixtureEnv(out, { SP066_GRIDS: gridsFile(out, kept), SP066_SP064_RUN: sp064, SP066_TUNING_SIZE: "1", NEMO_JEV_ENV_FILE: jev.envFile }));
+    assert.equal(r.code, 0, r.stderr);
+    assert.match(r.stdout, /^- sweepy: .*; main subject person who grabs the broom \(actor\)(;|$)/m);
+    // alpha: cell n = lightness 30·(n−1); the fake doesn't show the actor below 90
+    assert.match(r.stdout, /Main-subject words: 1; captions that show the main subject with no mainView: 0 of 6\n/);
+    assert.match(r.stdout, /Actor words: 1; cells where the actor isn't shown: 3 of 9 \(sweepy: 1, 2, 3\)/);
+  } finally {
+    await jev.close();
+  }
+});
+
+test("stageSummary: an unjudged word with a list still prints its main subject", () => {
+  const lists = { u: { items: [], nameSigns: [], mainSubject: { name: "person who sweeps", actor: true }, angleCase: "none" } };
+  const words = [{ word: "u", grid: "u.grid.png", flashCell: 1, unjudged: "Jev failed" }];
+  const out = stageSummary({ stage: "tuning", words, total: 1, split: {}, outcomes: {}, lists, captions: {}, claudeCounts: { mustSee: 0, caption: 0, compare: 0 }, jevCalls: 0 });
+  assert.match(out, /^- u: unjudged: Jev failed; angleCase none; main subject person who sweeps \(actor\)$/m);
 });

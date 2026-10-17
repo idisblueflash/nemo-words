@@ -61,9 +61,9 @@
         },
         "view": {
           "label": "Must-see clarity: main-subject view",
-          "check": "Use the cell's main_view, the view of the story's main subject (main_subject): where its face and body point. When main_view is null (the main subject is hidden), give the lowest level.",
+          "check": "Use the cell's main_view, the view of the story's main subject (main_subject): where its face and body point. When main_view is null (the main subject is hidden, or the cell doesn't show the actor: main_subject.actor is true), give the lowest level.",
           "levels": [
-            "the main subject is seen from the back or from above, or is hidden",
+            "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
             "the main subject is seen from the side",
             "the main subject is seen from the front or in three-quarter view"
           ]
