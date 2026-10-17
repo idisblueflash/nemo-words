@@ -39,11 +39,17 @@ const PARTS = ["completeness", "size", "state", "nameSign", "view"];
 const START_WEIGHTS = { plausible: 2, vivid: 1, clarity: 1 };
 const CELLS = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+// After stage 20 (ADR-0039, C-049) plausible and vivid may be scored in parts
+// too: an axis with "parts" in the rubric (and no levels of its own) gets one
+// Score question per part (`cell_<N>_<axis>_<part>`), and its score is their
+// mean, as for clarity. An axis with levels stays one question.
 function loadRubric(file = RUBRIC_FILE) {
   const rubric = JSON.parse(fs.readFileSync(file, "utf8"));
   const ok = (a) => a && a.label && Array.isArray(a.levels) && a.levels.length === 3;
   for (const axis of AXES.filter((x) => x !== "clarity")) {
-    if (!ok(rubric.axes && rubric.axes[axis])) throw new Error(`${file}: axis ${axis} needs a label and 3 levels`);
+    const a = rubric.axes && rubric.axes[axis];
+    const parted = a && a.label && a.parts && Object.keys(a.parts).length > 0 && Object.values(a.parts).every(ok);
+    if (!ok(a) && !parted) throw new Error(`${file}: axis ${axis} needs a label and 3 levels, or parts with a label and 3 levels each`);
   }
   const clarity = rubric.axes && rubric.axes.clarity;
   for (const part of PARTS) {
@@ -56,6 +62,21 @@ function loadRubric(file = RUBRIC_FILE) {
 // one, the view only with a main subject.
 const clarityParts = ({ nameSigns = [], mainSubject = null } = {}) =>
   PARTS.filter((p) => (p === "nameSign" ? nameSigns.length > 0 : p === "view" ? mainSubject !== null && mainSubject !== undefined : true));
+
+// The parts of every axis for a story: axis → [part] (clarity: the parts that
+// apply), or null for an axis that is one question.
+function axisParts(rubric, input = {}) {
+  const parts = {};
+  for (const axis of AXES) {
+    if (axis === "clarity") parts[axis] = clarityParts(input);
+    else parts[axis] = rubric.axes[axis].parts ? Object.keys(rubric.axes[axis].parts) : null;
+  }
+  return parts;
+}
+
+// An axis-parts argument: a map as axisParts gives it, or (as before ADR-0039)
+// a list of the clarity parts, with plausible and vivid one question each.
+const partsMap = (parts) => (Array.isArray(parts) ? { plausible: null, vivid: null, clarity: parts } : parts);
 
 // A caption's must-see marks (SP-066: each item is { mark, size, place }).
 const marks = (caption) => Object.values((caption && caption.mustSee) || {}).map((m) => m.mark);
@@ -73,19 +94,21 @@ const qname = (cell, axis) => `cell_${cell}_${axis}`;
 const STATE_TEXT =
   "The state holds a mnemonic story for an English word, its must-see list (the objects a picture of it must show), its angle_case (\"view\" when the story is about a view, \"one-object\" when it has one main object, else \"none\"), its main_subject (the one person, animal or group of them that does the story's action, as {name, actor}: actor false for a must-see item, actor true for the actor, the person who does the action when the story names no person, which is not a must-see item; or null), and descriptions of candidate pictures for it (cells, keyed by id): each cell's objects, shot, angle, action step, action line (what the objects do to each other), extras, each must-see item's mark (visible / partly cut / hidden), size and place, its drawing errors (objects drawn wrong: they float, look pasted on, or break the lines of the wall or floor; mustSee says if the object is a must-see item), and how it differs from the other cells. When the story has name signs (name_signs: a name that the picture should show as text, on the item that carries it), each cell's name_sign_readable says whether its readable text shows every name sign. When the story has a main subject, each cell's main_view gives its view: front, three-quarter, side, back or above (null when the cell doesn't show it).";
 
-// parts: the clarity parts that apply (clarityParts).
+// parts: the axis parts (axisParts), or a list of the clarity parts that
+// apply (clarityParts), with plausible and vivid as the rubric gives them.
 function buildQuestions(rubric, cells, parts = clarityParts()) {
+  const map = Array.isArray(parts) ? { ...axisParts(rubric), clarity: parts } : parts;
   const ask = (c, a, kind, extraChecks = []) =>
     jev.score([STATE_TEXT, `Score picture cell_${c}, exactly as described, on the "${a.label}" ${kind}.`, ...extraChecks, ...(a.check ? [a.check] : [])].join("\n"), a.levels);
   const questions = {};
   for (const c of cells) {
     for (const axis of AXES) {
-      if (axis !== "clarity") {
-        questions[qname(c, axis)] = ask(c, rubric.axes[axis], "axis");
+      const a = rubric.axes[axis];
+      if (!map[axis]) {
+        questions[qname(c, axis)] = ask(c, a, "axis");
         continue;
       }
-      const clarity = rubric.axes.clarity;
-      for (const part of parts) questions[qname(c, `clarity_${part}`)] = ask(c, clarity.parts[part], "part", clarity.check ? [clarity.check] : []);
+      for (const part of map[axis]) questions[qname(c, `${axis}_${part}`)] = ask(c, a.parts[part], "part", a.check ? [a.check] : []);
     }
   }
   return questions;
@@ -132,10 +155,12 @@ const usable = (x, lo, hi) => typeof x === "number" && Number.isFinite(x) && x >
 
 const round6 = (x) => Math.round(x * 1e6) / 1e6;
 
-// Jev's answers → cell → axis → { score: 1–3, confidence }; clarity also holds
-// its parts (part → { score, confidence }), its score is their mean and its
-// confidence their lowest. parts: the clarity parts that apply.
+// Jev's answers → cell → axis → { score: 1–3, confidence }; an axis in parts
+// (clarity, and after ADR-0039 plausible and vivid) also holds its parts
+// (part → { score, confidence }), its score is their mean and its confidence
+// their lowest. parts: as buildQuestions takes it.
 function toScores(answers, cells, parts = clarityParts()) {
+  const map = partsMap(parts);
   const one = (name) => {
     const a = answers && answers[name];
     if (!a || !usable(a.score, 0, 2) || !usable(a.confidence, 0, 1)) throw new jev.JevError(`unusable Jev answer for ${name}: ${JSON.stringify(a)}`);
@@ -145,13 +170,13 @@ function toScores(answers, cells, parts = clarityParts()) {
   for (const c of cells) {
     scores[c] = {};
     for (const axis of AXES) {
-      if (axis !== "clarity") {
+      if (!map[axis]) {
         scores[c][axis] = one(qname(c, axis));
         continue;
       }
-      const p = Object.fromEntries(parts.map((part) => [part, one(qname(c, `clarity_${part}`))]));
+      const p = Object.fromEntries(map[axis].map((part) => [part, one(qname(c, `${axis}_${part}`))]));
       const all = Object.values(p);
-      scores[c].clarity = {
+      scores[c][axis] = {
         score: round6(all.reduce((sum, x) => sum + x.score, 0) / all.length),
         confidence: Math.min(...all.map((x) => x.confidence)),
         parts: p,
@@ -208,7 +233,7 @@ const requestKey = (request) => crypto.createHash("sha256").update(JSON.stringif
 // the same state and questions reuses them (fromCache), with no Jev call.
 async function pickCell(input, { rubric = loadRubric(), weights = START_WEIGHTS, cache = null, onSave = () => {}, ...opts } = {}) {
   const g = gate(input.captions);
-  const parts = clarityParts(input);
+  const parts = axisParts(rubric, input);
   const request = { state: buildState(input, g.scored), questions: buildQuestions(rubric, g.scored, parts) };
   const key = requestKey(request);
   const hit = cache && cache[input.word] && cache[input.word].key === key ? cache[input.word] : null;
@@ -226,4 +251,4 @@ async function pickCell(input, { rubric = loadRubric(), weights = START_WEIGHTS,
   return { ...g, scores, shots, steps, isSequence: input.isSequence, partlyCut, ...choose(scores, weights, input.captions, input.isSequence), answers, fromCache: !!hit };
 }
 
-module.exports = { AXES, PARTS, START_WEIGHTS, loadRubric, clarityParts, gate, buildQuestions, buildState, toScores, nameSignReadable, alternative, choose, pickCell };
+module.exports = { AXES, PARTS, START_WEIGHTS, loadRubric, clarityParts, axisParts, gate, buildQuestions, buildState, toScores, nameSignReadable, alternative, choose, pickCell };

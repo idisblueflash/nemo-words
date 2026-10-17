@@ -1,14 +1,38 @@
 {
-  "_comment": "SP-066: the image pick's rubric, read by lib/pick.js (Jev), shaped like scripts/story-rubric.json's axes. One Score question per scored cell and axis; Jev answers a level 0-2, and the axis score is that + 1 (decimals kept, as US-038 keeps them). An axis's optional \"check\" is added to its question. SP-066 changes SP-064's rubric so that vivid scores the scene (what the story objects do to each other), not the camera, with the angle exception of C-042 (ADR-0033). After stage 5 (ADR-0037), must-see clarity has no levels of its own: it is scored in parts (C-046), one Score question per scored cell and part, each with its own levels and check (the clarity check comes first), and clarity is the mean of the parts that apply: completeness, size and state always, nameSign only for a name anchor, view only when the story has a main subject (C-045). Code caps no score: Jev sees the drawing errors when it scores plausible, and name_sign_readable when it scores the name sign.",
+  "_comment": "SP-066: the image pick's rubric, read by lib/pick.js (Jev), shaped like scripts/story-rubric.json's axes. One Score question per scored cell and axis; Jev answers a level 0-2, and the axis score is that + 1 (decimals kept, as US-038 keeps them). An axis's optional \"check\" is added to its question. SP-066 changes SP-064's rubric so that vivid scores the scene (what the story objects do to each other), not the camera, with the angle exception of C-042 (ADR-0033). After stage 5 (ADR-0037), must-see clarity has no levels of its own: it is scored in parts (C-046), one Score question per scored cell and part, each with its own levels and check (the clarity check comes first), and clarity is the mean of the parts that apply: completeness, size and state always, nameSign only for a name anchor, view only when the story has a main subject (C-045). Code caps no score: Jev sees the drawing errors when it scores plausible, and name_sign_readable when it scores the name sign. After stage 20 (ADR-0039, C-049): plausible is scored in parts too, setting, drawing and story actions, one Score question each (the plausible check comes first), and plausible is their mean.",
   "axes": {
     "plausible": {
       "label": "Plausible",
-      "levels": [
-        "the scene makes little sense: no setting clues, or the action happens in an order that doesn't fit the story",
-        "the scene makes some sense: a few setting clues, or a mostly sensible order of action",
-        "the scene makes sense: clear setting clues such as a floor, a hand or a height, and a sensible order of action"
-      ],
-      "check": "A drawing error (an object in the cell's drawing_errors: it floats, looks pasted on, or breaks the lines of the wall or floor) makes the scene make less sense, so give the cell a lower score for it: one on a must-see item costs more than one on another object."
+      "check": "Plausible is scored in parts, one question each; this question scores one part only, from the cell's full description.",
+      "parts": {
+        "setting": {
+          "label": "Plausible: setting",
+          "check": "Use the cell's objects, extras (floor, background) and action line: does the cell show where the scene happens, so that the action makes sense there?",
+          "levels": [
+            "no setting clues: nothing shows where the scene happens",
+            "a few setting clues",
+            "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
+          ]
+        },
+        "drawing": {
+          "label": "Plausible: drawing",
+          "check": "Use the cell's drawing_errors (objects that float, look pasted on, or break the lines of the wall or floor; mustSee says if the object is a must-see item). An empty list means no drawing error.",
+          "levels": [
+            "a must-see item is drawn wrong (a drawing error with mustSee true)",
+            "another object is drawn wrong (a drawing error with mustSee false only)",
+            "no drawing error"
+          ]
+        },
+        "actions": {
+          "label": "Plausible: story actions",
+          "check": "Use the cell's action line and step, and the story. The picture is an anchor for the story, so a cell that shows more of the story's actions, in the story's order, is better. The result (the story's last action, such as a fall or a mess) can be left out: the reader imagines it from the actions before it. When the word itself names the result (the word is \"spilled\" and the result is the spill), a cell that shows the result is good. A story with one action: a cell that shows that action gets the top level.",
+          "levels": [
+            "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
+            "the cell shows some of the story's beginning actions",
+            "the cell shows the story's beginning actions in the story's order (the result may be left out)"
+          ]
+        }
+      }
     },
     "vivid": {
       "label": "Vivid",

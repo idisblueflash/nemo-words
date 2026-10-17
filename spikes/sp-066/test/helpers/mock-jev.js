@@ -29,7 +29,16 @@ const path = require("node:path");
 
 const lightness = (x) => Number((/lightness (\d+)/.exec(typeof x === "string" ? x : JSON.stringify(x)) || [])[1]);
 
+// After ADR-0039 (C-049) plausible and vivid can be scored in parts
+// (`cell_<N>_plausible_<part>`, `cell_<N>_vivid_<part>`): each part answers
+// its axis's level above, so the axis (their mean) keeps it, and an override
+// of the axis question (`cell_5_plausible`) sets every one of its parts; an
+// override of one part (`cell_5_plausible_actions`) sets that part only.
+const SPLIT_AXIS = /^(cell_\d+_(?:plausible|vivid))_\w+$/;
+
 function answer(name, state) {
+  const split = SPLIT_AXIS.exec(name);
+  if (split) return answer(split[1], state);
   const [, cell, axis] = /^(cell_\d)_(\w+)$/.exec(name);
   const c = state.cells[cell];
   let level = 2 * (1 - Math.abs(lightness(state.story) - lightness(c.objects)) / 255); // plausible
@@ -65,7 +74,10 @@ async function startMockJev({ byWord = {} } = {}, dir) {
       const answers = {};
       for (const name of Object.keys(body.questions || {})) {
         if (over === "unusable") answers[name] = { type: "score", score: "high", confidence: 0.9 };
-        else answers[name] = { ...answer(name, body.state), ...((over && over[name]) || {}) };
+        else {
+          const axis = SPLIT_AXIS.exec(name);
+          answers[name] = { ...answer(name, body.state), ...((over && axis && over[axis[1]]) || {}), ...((over && over[name]) || {}) };
+        }
       }
       send(200, { model: "jev-mock", answers });
     });

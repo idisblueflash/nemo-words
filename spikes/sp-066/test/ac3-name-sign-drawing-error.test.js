@@ -76,14 +76,15 @@ test("AC3: Jev scores plausible with the drawing errors in its state, and code d
   assert.equal(state.cells.cell_1.name_sign_readable, undefined, "no name sign: no name_sign_readable");
 });
 
-test("AC3: the questions tell Jev about the name sign and the drawing errors, and the plausible check promises no cap", async () => {
+test("AC3 (ADR-0039): the questions tell Jev about the name sign and the drawing errors; the drawing part of plausible ranks an error on a must-see item lowest", async () => {
   const text = (q) => q.prompt || JSON.stringify(q);
   const { calls } = await pickRun([TILE]);
-  const q = text(calls[0].body.questions.cell_1_plausible);
-  assert.match(q, /name_sign_readable/);
-  assert.match(q, /drawing errors/);
-  assert.match(q, /lower score for it/);
-  assert.doesNotMatch(q, /lowest level|at most/, "no level is promised for a drawing error");
+  const q = calls[0].body.questions.cell_1_plausible_drawing;
+  assert.match(text(q), /name_sign_readable/);
+  assert.match(text(q), /drawing_errors/);
+  assert.match(q.criteria[0], /must-see item is drawn wrong/);
+  assert.match(q.criteria[1], /another object is drawn wrong/);
+  assert.match(q.criteria[2], /no drawing error/);
   const nurse = await pickRun([NURSE]);
   assert.match(text(nurse.calls[0].body.questions.cell_1_clarity_nameSign), /name_sign_readable/);
 });
