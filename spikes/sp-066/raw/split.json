@@ -91,13 +91,13 @@
   "tuningOrder": [
     "anomaly",
     "ventilator",
-    "worn",
     "period",
     "surgeon",
     "sweep",
     "overreach",
     "appeal",
     "rigged",
+    "worn",
     "cottage",
     "cocked",
     "contest",
@@ -124,17 +124,13 @@
       ]
     },
     {
-      "word": "worn",
-      "roles": [
-        "angleCase view or one-object"
-      ]
-    },
-    {
       "word": "period",
       "roles": [
+        "angleCase view or one-object",
         "gate skipped in SP-064"
       ]
     }
   ],
-  "missingEarlyPicks": []
+  "missingEarlyPicks": [],
+  "listPromptKey": "3589febf3d0d7dc5"
 }
