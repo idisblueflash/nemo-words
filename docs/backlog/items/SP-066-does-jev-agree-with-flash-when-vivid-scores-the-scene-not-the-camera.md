@@ -2,7 +2,7 @@
 id: SP-066
 type: spike
 parent: E01
-status: ready
+status: in-progress
 timebox: 1d
 depends_on: [SP-064]
 concepts: [C-004, C-034, C-035, C-036, C-037, C-039, C-040, C-041, C-042]
