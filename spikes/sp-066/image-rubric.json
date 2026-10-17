@@ -16,7 +16,7 @@
         },
         "drawing": {
           "label": "Plausible: drawing",
-          "check": "Use the cell's drawing_errors (objects that float, look pasted on, or break the lines of the wall or floor; mustSee says if the object is a must-see item). An empty list means no drawing error.",
+          "check": "Use the cell's drawing_errors (objects that float, look pasted on, or break the lines of the wall or floor, or a face or a hand drawn wrong; mustSee says if the object is a must-see item). An empty list means no drawing error.",
           "levels": [
             "a must-see item is drawn wrong (a drawing error with mustSee true)",
             "another object is drawn wrong (a drawing error with mustSee false only)",
