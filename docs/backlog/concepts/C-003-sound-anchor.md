@@ -2,7 +2,7 @@
 id: C-003
 type: concept
 status: active
-aliases: [anchor, keyword, exact keyword, exact sound anchor, exact anchor, ChunkKeyword]
+aliases: [anchor, exact keyword, exact sound anchor, exact anchor]
 related: [C-005, C-011, C-001]
 ---
 # C-003 Sound anchor

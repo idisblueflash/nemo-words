@@ -4,7 +4,7 @@ type: story
 parent: E01
 status: done
 qa_status: passing
-concepts: [C-001, C-003, C-004, C-005, C-007, C-008, C-009, C-013, C-014, C-018, C-019, C-020, C-021, C-024, C-025]
+concepts: [C-001, C-003, C-004, C-005, C-007, C-008, C-009, C-013, C-014, C-018, C-019, C-020, C-021, C-024, C-025, C-038]
 ---
 # US-028 One word in, a story card out
 

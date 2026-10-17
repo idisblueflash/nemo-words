@@ -3,7 +3,7 @@ id: US-065
 type: story
 parent: E01
 status: idea
-concepts: [C-002, C-003, C-005, C-011, C-012, C-031]
+concepts: [C-002, C-003, C-005, C-011, C-012, C-031, C-038]
 ---
 # US-065 Jev knows when a keyword is a rhyme
 
