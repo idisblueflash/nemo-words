@@ -26,7 +26,7 @@ const crypto = require("node:crypto");
 const path = require("node:path");
 const { cropCell } = require("../../sp-029/lib/caption");
 const { parseJson, pool, oneLine, ClaudeError } = require("./claude");
-const { maskName } = require("./headword");
+const { maskName, describeBareName } = require("./headword");
 
 const SHOTS = ["extreme close-up", "close-up", "medium", "wide"];
 const STEPS = ["before", "during", "after"];
@@ -39,8 +39,9 @@ const PLACES = ["front", "back"];
 const itemNames = (items) => [...new Set(items.map((i) => i.name))];
 
 // The names as the captioner sees them: the headword is hidden in a name that
-// holds it (bug-016); every other name is as written.
-const shownNames = (items, word) => itemNames(items).map((n) => (word ? maskName(word, n) : n));
+// holds it (bug-016); a name that is wholly the headword is described instead,
+// since the bare placeholder says nothing (bug-020); every other name is as written.
+const shownNames = (items, word) => itemNames(items).map((n) => (word ? describeBareName(word, n) || maskName(word, n) : n));
 
 function prompt(items, word) {
   return [

@@ -14,6 +14,7 @@
 //   "then"          → isSequence true
 //   "view" / "lone" → angleCase "view" / "one-object" (else "none")
 //   "moon"          → item "moon": hidden in cells darker than 100, partly cut below 150
+//   "operates"      → item "surgeon" (bug-020)
 //   "ghost"         → item "ghost": hidden in every cell
 //   "claude-fails"  → the must-see call fails (exit 1)
 //   "garbled-list"  → the must-see call prints something that isn't JSON
@@ -89,6 +90,8 @@ if (mode === "must-see") {
   for (const special of ["moon", "ghost", "crash", "garble", "split", "tile"]) {
     if (story.includes(special)) items.push({ name: special, adjectives: ["round"] });
   }
+  // bug-020: the headword as an item name (the fake caption hides "key item", what a blind captioner can't read)
+  if (story.includes("operates")) items.push({ name: "surgeon", adjectives: [] });
   const angleCase = /\bview\b/.test(story) ? "view" : /\blone\b/.test(story) ? "one-object" : "none";
   out({ items, nameSigns, isSequence: /\bthen\b/.test(story), angleCase });
 } else if (mode === "caption") {
@@ -100,7 +103,7 @@ if (mode === "must-see") {
   }
   const l = level("picture.png");
   const status = (name) => {
-    if (name === "ghost") return "hidden";
+    if (name === "ghost" || name === "key item") return "hidden";
     if (name === "moon") return l < 100 ? "hidden" : l < 150 ? "partly cut" : "visible";
     return "visible";
   };

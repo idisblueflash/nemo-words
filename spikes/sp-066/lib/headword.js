@@ -34,4 +34,16 @@ function maskName(word, name) {
   return name.replace(headwordRe(word), PLACEHOLDER);
 }
 
-module.exports = { headwordRe, mentions, maskName, PLACEHOLDER };
+// A name that is wholly the headword ("surgeon" for the word "surgeon") would
+// become the bare placeholder, which a blind captioner can't read (bug-020: it
+// marked the item hidden in cells that show it). The captioner gets this
+// description instead: it holds no headword and no story, and it points at what
+// the scene is about. null when the name holds other words (those keep the
+// placeholder, so their prompts don't change).
+const BARE_DESCRIPTION = "the main subject of the picture (the one thing or person the scene is about)";
+function describeBareName(word, name) {
+  if (!mentions(word, name)) return null;
+  return maskName(word, name) === PLACEHOLDER ? BARE_DESCRIPTION : null;
+}
+
+module.exports = { headwordRe, mentions, maskName, describeBareName, PLACEHOLDER };
