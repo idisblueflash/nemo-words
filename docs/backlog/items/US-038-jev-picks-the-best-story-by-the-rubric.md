@@ -4,7 +4,7 @@ type: story
 parent: E01
 status: done
 qa_status: passing
-concepts: [C-001, C-002, C-004, C-005, C-007, C-008, C-010, C-012, C-013, C-014, C-015, C-020, C-021]
+concepts: [C-001, C-002, C-004, C-005, C-007, C-008, C-010, C-012, C-013, C-014, C-015, C-020, C-021, C-038]
 ---
 # US-038 Jev picks the best story by the story rubric
 

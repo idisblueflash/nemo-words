@@ -5,7 +5,7 @@ parent: E01
 status: done
 qa_status: passing
 depends_on: [US-046, US-050]
-concepts: [C-003, C-005, C-007, C-011, C-020, C-024, C-025, C-026, C-031, C-032, C-033]
+concepts: [C-003, C-005, C-007, C-011, C-020, C-024, C-025, C-026, C-031, C-032, C-033, C-038]
 ---
 # US-063 A word rhyme from the stressed vowel to the end
 

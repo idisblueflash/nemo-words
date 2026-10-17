@@ -5,7 +5,7 @@ parent: E01
 status: done
 qa_status: passing
 depends_on: [US-041]
-concepts: [C-003, C-005, C-006, C-011, C-020, C-024, C-025, C-033]
+concepts: [C-003, C-005, C-006, C-011, C-020, C-024, C-025, C-033, C-038]
 ---
 # US-046 Words with no exact-sound match get a rhyme anchor
 

@@ -5,7 +5,7 @@ parent: E01
 status: done
 timebox: 1d
 qa_status: passing
-concepts: [C-001, C-002, C-006, C-008, C-010, C-012, C-013, C-014, C-015, C-021, C-024, C-025]
+concepts: [C-001, C-002, C-006, C-008, C-010, C-012, C-013, C-014, C-015, C-021, C-024, C-025, C-038]
 ---
 # SP-037 Does Jev pick the story Flash would?
 

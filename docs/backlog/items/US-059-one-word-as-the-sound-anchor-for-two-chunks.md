@@ -3,7 +3,7 @@ id: US-059
 type: story
 parent: E01
 status: idea
-concepts: [C-003, C-005, C-024, C-025]
+concepts: [C-003, C-005, C-024, C-025, C-038]
 ---
 # US-059 One word as the sound anchor for two chunks
 
