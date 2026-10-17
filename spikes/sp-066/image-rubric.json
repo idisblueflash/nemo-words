@@ -100,7 +100,7 @@
         },
         "view": {
           "label": "Must-see clarity: main-subject view",
-          "check": "Use the cell's main_view, the view of the story's main subject (main_subject): where its face and body point. When main_view is null (the main subject is hidden, or the cell doesn't show the actor: main_subject.actor is true), give the lowest level. A main subject that only watches or reacts to what another figure in the cell does (a curious crowd that bells attract, while a bell ringer pulls the rope) is an onlooker of that action (ADR-0039): seen from the back, it leads the eye to the action and hides its own faces, so a back view that faces the action gets the top level.",
+          "check": "Use the cell's main_view, the view of the story's main subject (main_subject): where its face and body point. When main_view is null (the main subject is hidden, or the cell doesn't show the actor: main_subject.actor is true), give the lowest level.",
           "levels": [
             "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
             "the main subject is seen from the side",
