@@ -12,5 +12,33 @@
       "Like cell 1 but the door is already open, with a garden behind it. Everyone is smiling and the boy points at the floor tile. Dad's hand is on the door edge, not knocking, so the knock moment is over.",
       "Wide side view down a corridor. The family is tiny at the far left with dad knocking, and a cracked orange wall tile with rattle lines dominates the big tiled wall."
     ]
+  },
+  "ventilator.grid.png": {
+    "source": "sp-064",
+    "lines": [
+      "Wide shot of the whole room with the nurse walking in through the door at far left; her nametag is too small to read, and the baby is small at right with the hose running to it.",
+      "Medium shot from the machine's side with the nurse looking down at the baby; the \"Venice\" tag is clearly legible and the hose visibly reaches the baby's mask.",
+      "Over-the-shoulder view from behind the nurse's head; her face and nametag are hidden or cut off, but the baby, hose and machine are all visible.",
+      "High overhead angle looking down into the crib; the nametag reads \"Venice\" only partly (it looks like \"Venza\"), and the baby is shown in full with the hose across the swaddle, one of her hands on the machine.",
+      "Tight close-up with the machine filling the left half; the nurse presses a button with her finger and the \"Venice\" tag is clear, but the baby is cropped to the lower right corner.",
+      "Side view with the nurse reaching across to touch the machine's screen; there is no nametag at all, and the baby and hose are fully visible, with the clock and a window behind.",
+      "Front-facing, eye-level shot from the foot of the crib with the nurse behind the crib, a night window behind her and the tag legible; the baby's face with the mask is large and central.",
+      "Close-up from the baby's side with the nurse's face large at upper left; her nametag is cut off at the bottom edge (reads \"Venice\" only in part), the machine is cropped at the right, and the baby and hose fill the foreground.",
+      "Balanced medium shot like cell 2 but wider, with the nurse behind the crib, the \"Venice\" tag clear, the machine at left, the baby fully visible and the window and clock behind."
+    ]
+  },
+  "worn.grid.png": {
+    "source": "sp-064",
+    "lines": [
+      "Medium side-on shot from the car's front-left: the mechanic points and shouts with an exclamation bubble while the driver leans out of the window, and the whole red bald tire is visible with its tread worn smooth.",
+      "Tight close-up on the tire: only a pointing hand and sleeve appear, with no mechanic's face, and the driver is small and distant in the window, so it shows the smooth tread most clearly but cuts off the mechanic.",
+      "Low-angle shot from the front-left: the mechanic points and the driver peers out, and the whole bald tire and the car's front are visible, with no speech bubble and a more dramatic perspective than cell 1.",
+      "Top-down bird's-eye view: the mechanic runs toward the car and the driver leans out, but the tire is a thin red sliver at the front wheel, so the bald tread is barely visible, unlike every other cell.",
+      "Over-the-mechanic's-shoulder shot: the mechanic's cap and back fill the left side, a hand points at the tire, and the driver looks alarmed in the window, with the tire cropped at the bottom and right edges.",
+      "Mechanic rushes alongside the moving car with hands up and an exclamation bubble, and the driver sits at the wheel looking stern rather than scared, which is the only cell where he does not look warned, with the bald tire at the bottom.",
+      "Mechanic crouches and rubs the smooth tread by hand while the driver stands beside him with a hand on his mouth, and the tire is shown at the left edge, so it focuses on checking the tread, not on warning.",
+      "Shot from inside the car over the dashboard: the driver's frightened face fills the left, the mechanic points through the window with an exclamation bubble, and the bald tire is only a cropped red band in the foreground.",
+      "Aftermath: the driver crouches with his head in his hands in distress while the mechanic comforts him, and the bald tire is on the left, so this is the latest moment with no pointing or warning."
+    ]
   }
 }

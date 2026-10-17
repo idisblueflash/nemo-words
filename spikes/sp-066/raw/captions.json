@@ -958,5 +958,1978 @@
       },
       "promptKey": "c3d2da0f0765d648"
     }
+  },
+  "ventilator.grid.png": {
+    "1": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "smiling",
+            "dark-haired",
+            "walking",
+            "wearing blue scrubs",
+            "wearing a white cap"
+          ]
+        },
+        {
+          "name": "nametag",
+          "adjectives": [
+            "small",
+            "white"
+          ]
+        },
+        {
+          "name": "door",
+          "adjectives": [
+            "open",
+            "wooden",
+            "brown"
+          ]
+        },
+        {
+          "name": "breathing machine",
+          "adjectives": [
+            "red-orange",
+            "boxy",
+            "has a screen and a dial",
+            "has a corrugated hose"
+          ]
+        },
+        {
+          "name": "newborn baby",
+          "adjectives": [
+            "sleeping",
+            "swaddled",
+            "small",
+            "has a pacifier"
+          ]
+        },
+        {
+          "name": "incubator",
+          "adjectives": [
+            "clear",
+            "plastic",
+            "has a tube attached"
+          ]
+        },
+        {
+          "name": "hose",
+          "adjectives": [
+            "gray",
+            "corrugated",
+            "flexible"
+          ]
+        },
+        {
+          "name": "wall clock",
+          "adjectives": [
+            "round",
+            "white"
+          ]
+        },
+        {
+          "name": "window",
+          "adjectives": [
+            "night-time",
+            "has a crescent moon"
+          ]
+        },
+        {
+          "name": "machine stand",
+          "adjectives": [
+            "dark gray",
+            "metal"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The nurse steps through the open door and holds it with one hand while looking toward the baby. The baby lies in the incubator, connected to the breathing machine by a hose.",
+      "extras": {
+        "floor": true,
+        "background": "A hospital nursery room with pale green walls, an open door, a wall clock, and a window showing a night sky with a crescent moon and dark trees",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "nurse with a nametag that reads \"Venice\"": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        },
+        "breathing machine (ventilator)": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "newborn baby": {
+          "mark": "partly cut",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "promptKey": "caa7b74bcd2880de"
+    },
+    "2": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "smiling",
+            "dark-haired",
+            "young",
+            "wearing blue scrubs",
+            "wearing white cap"
+          ]
+        },
+        {
+          "name": "nametag",
+          "adjectives": [
+            "white",
+            "small",
+            "reads Venice"
+          ]
+        },
+        {
+          "name": "breathing machine",
+          "adjectives": [
+            "large",
+            "orange-red",
+            "with screen",
+            "with gauge",
+            "with corrugated bellows"
+          ]
+        },
+        {
+          "name": "newborn baby",
+          "adjectives": [
+            "small",
+            "sleeping",
+            "swaddled",
+            "wearing breathing mask"
+          ]
+        },
+        {
+          "name": "breathing hose",
+          "adjectives": [
+            "gray",
+            "corrugated",
+            "flexible"
+          ]
+        },
+        {
+          "name": "incubator",
+          "adjectives": [
+            "clear",
+            "white",
+            "bassinet-like"
+          ]
+        },
+        {
+          "name": "blanket",
+          "adjectives": [
+            "white",
+            "soft"
+          ]
+        },
+        {
+          "name": "monitor screen",
+          "adjectives": [
+            "dark teal",
+            "showing green waveform"
+          ]
+        },
+        {
+          "name": "pressure gauge",
+          "adjectives": [
+            "round",
+            "white-faced"
+          ]
+        },
+        {
+          "name": "indicator lights",
+          "adjectives": [
+            "green",
+            "yellow",
+            "round"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "high angle",
+      "step": "during",
+      "action": "The nurse looks down at the newborn baby in the incubator, while the breathing machine's hose connects to the baby's mask to assist breathing.",
+      "extras": {
+        "floor": false,
+        "background": "pale green hospital room wall and ceiling corner",
+        "morePeople": false,
+        "readableText": "Venice"
+      },
+      "mustSee": {
+        "nurse with a nametag that reads \"Venice\"": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "breathing machine (ventilator)": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "newborn baby": {
+          "mark": "partly cut",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "promptKey": "caa7b74bcd2880de"
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "dark-haired",
+            "hair in a bun",
+            "wearing a white cap",
+            "wearing a blue top",
+            "attentive",
+            "seen from behind and the side"
+          ]
+        },
+        {
+          "name": "newborn baby",
+          "adjectives": [
+            "swaddled",
+            "small",
+            "sleeping",
+            "connected to a breathing tube"
+          ]
+        },
+        {
+          "name": "bassinet",
+          "adjectives": [
+            "clear",
+            "transparent",
+            "plastic"
+          ]
+        },
+        {
+          "name": "breathing machine",
+          "adjectives": [
+            "red-orange",
+            "large",
+            "has a green waveform screen",
+            "has a gray corrugated hose"
+          ]
+        },
+        {
+          "name": "corrugated hose",
+          "adjectives": [
+            "gray",
+            "ribbed",
+            "flexible"
+          ]
+        },
+        {
+          "name": "wall clock",
+          "adjectives": [
+            "round",
+            "white-faced",
+            "analog"
+          ]
+        },
+        {
+          "name": "window",
+          "adjectives": [
+            "dark",
+            "night-time",
+            "framed"
+          ]
+        },
+        {
+          "name": "gauge",
+          "adjectives": [
+            "round",
+            "partly cut off"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The nurse looks down at the newborn baby in the bassinet. The baby is connected by a tube to the breathing machine beside them.",
+      "extras": {
+        "floor": false,
+        "background": "A hospital nursery room with a pale green wall, a dark window and a round wall clock.",
+        "morePeople": false,
+        "readableText": "The clock shows the numbers 1 to 12. No other words are readable."
+      },
+      "mustSee": {
+        "nurse with a nametag that reads \"Venice\"": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        },
+        "breathing machine (ventilator)": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "newborn baby": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "promptKey": "caa7b74bcd2880de"
+    },
+    "4": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "dark-haired",
+            "wearing blue scrubs",
+            "wearing white cap",
+            "hair in a bun",
+            "looking down",
+            "leaning over"
+          ]
+        },
+        {
+          "name": "nametag",
+          "adjectives": [
+            "white",
+            "small",
+            "reads 'Venice' or similar (hard to read)"
+          ]
+        },
+        {
+          "name": "newborn baby",
+          "adjectives": [
+            "small",
+            "swaddled",
+            "wrapped in white blanket",
+            "sleeping",
+            "dark-haired"
+          ]
+        },
+        {
+          "name": "bassinet",
+          "adjectives": [
+            "clear",
+            "transparent",
+            "rectangular",
+            "white-lined"
+          ]
+        },
+        {
+          "name": "breathing machine",
+          "adjectives": [
+            "red-orange",
+            "boxy",
+            "with screen and dial",
+            "on a stand"
+          ]
+        },
+        {
+          "name": "breathing tube",
+          "adjectives": [
+            "gray",
+            "corrugated",
+            "flexible"
+          ]
+        },
+        {
+          "name": "breathing mask",
+          "adjectives": [
+            "small",
+            "on the baby's face"
+          ]
+        },
+        {
+          "name": "monitor screen",
+          "adjectives": [
+            "teal",
+            "showing waveform"
+          ]
+        },
+        {
+          "name": "dial",
+          "adjectives": [
+            "round",
+            "white-faced"
+          ]
+        },
+        {
+          "name": "indicator lights",
+          "adjectives": [
+            "green",
+            "red",
+            "yellow",
+            "small"
+          ]
+        },
+        {
+          "name": "machine stand",
+          "adjectives": [
+            "dark",
+            "gray"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "high angle",
+      "step": "during",
+      "action": "The nurse leans over the bassinet, looking down at the baby, with one hand on the bassinet rim and the other resting on the breathing machine, while the machine's tube runs to the baby's face.",
+      "extras": {
+        "floor": true,
+        "background": "beige tiled hospital floor with a pale teal wall corner at top right",
+        "morePeople": false,
+        "readableText": "The nametag is small and the lettering is hard to make out; it looks like 'Venice' or 'Vonnz'."
+      },
+      "mustSee": {
+        "nurse with a nametag that reads \"Venice\"": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "breathing machine (ventilator)": {
+          "mark": "partly cut",
+          "size": "medium",
+          "place": "back"
+        },
+        "newborn baby": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "promptKey": "caa7b74bcd2880de"
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "smiling",
+            "dark-haired",
+            "cartoon",
+            "wearing blue scrubs",
+            "wearing a white nurse cap"
+          ]
+        },
+        {
+          "name": "nametag",
+          "adjectives": [
+            "white",
+            "reads Venice"
+          ]
+        },
+        {
+          "name": "breathing machine",
+          "adjectives": [
+            "red-orange",
+            "large",
+            "has a screen, pressure gauge, buttons and corrugated bellows"
+          ]
+        },
+        {
+          "name": "monitor screen",
+          "adjectives": [
+            "blue",
+            "shows a wave line"
+          ]
+        },
+        {
+          "name": "pressure gauge",
+          "adjectives": [
+            "round",
+            "white-faced"
+          ]
+        },
+        {
+          "name": "green button",
+          "adjectives": [
+            "small",
+            "round"
+          ]
+        },
+        {
+          "name": "yellow button",
+          "adjectives": [
+            "small",
+            "round",
+            "being pressed"
+          ]
+        },
+        {
+          "name": "corrugated tube",
+          "adjectives": [
+            "gray",
+            "flexible",
+            "ribbed"
+          ]
+        },
+        {
+          "name": "incubator",
+          "adjectives": [
+            "clear",
+            "transparent"
+          ]
+        },
+        {
+          "name": "newborn baby",
+          "adjectives": [
+            "sleeping",
+            "small",
+            "swaddled in white blanket"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The nurse smiles and looks at the breathing machine while pressing its yellow button with her finger; a tube connects the machine to the baby lying in the incubator.",
+      "extras": {
+        "floor": false,
+        "background": "pale green-gray backdrop",
+        "morePeople": false,
+        "readableText": "Venice"
+      },
+      "mustSee": {
+        "nurse with a nametag that reads \"Venice\"": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "back"
+        },
+        "breathing machine (ventilator)": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "newborn baby": {
+          "mark": "partly cut",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "promptKey": "caa7b74bcd2880de"
+    },
+    "6": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "smiling",
+            "dark-haired",
+            "young",
+            "focused"
+          ]
+        },
+        {
+          "name": "nurse's cap",
+          "adjectives": [
+            "white",
+            "small"
+          ]
+        },
+        {
+          "name": "blue scrubs",
+          "adjectives": [
+            "light blue",
+            "short-sleeved"
+          ]
+        },
+        {
+          "name": "newborn baby",
+          "adjectives": [
+            "tiny",
+            "swaddled",
+            "sleeping",
+            "wrapped in white blanket"
+          ]
+        },
+        {
+          "name": "bassinet",
+          "adjectives": [
+            "clear",
+            "transparent",
+            "plastic"
+          ]
+        },
+        {
+          "name": "breathing machine",
+          "adjectives": [
+            "red-orange",
+            "boxy",
+            "with screen and gauge"
+          ]
+        },
+        {
+          "name": "ventilator screen",
+          "adjectives": [
+            "small",
+            "green",
+            "showing a waveform"
+          ]
+        },
+        {
+          "name": "pressure gauge",
+          "adjectives": [
+            "round",
+            "white"
+          ]
+        },
+        {
+          "name": "indicator lights",
+          "adjectives": [
+            "green",
+            "yellow",
+            "small"
+          ]
+        },
+        {
+          "name": "breathing tube",
+          "adjectives": [
+            "gray",
+            "corrugated",
+            "flexible"
+          ]
+        },
+        {
+          "name": "wall clock",
+          "adjectives": [
+            "round",
+            "white",
+            "analog"
+          ]
+        },
+        {
+          "name": "metal stand",
+          "adjectives": [
+            "gray",
+            "dark"
+          ]
+        },
+        {
+          "name": "wall outlet",
+          "adjectives": [
+            "small",
+            "white"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The nurse leans over the bassinet and presses the touchscreen on the breathing machine with one finger, while the machine's tube runs to the sleeping baby's face.",
+      "extras": {
+        "floor": false,
+        "background": "Pale green hospital room wall with a wall clock, a wall outlet and a gray fixture",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "nurse with a nametag that reads \"Venice\"": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        },
+        "breathing machine (ventilator)": {
+          "mark": "partly cut",
+          "size": "medium",
+          "place": "front"
+        },
+        "newborn baby": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "promptKey": "caa7b74bcd2880de"
+    },
+    "7": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "smiling",
+            "dark-haired",
+            "young",
+            "wearing blue scrubs",
+            "wearing a white nurse cap"
+          ]
+        },
+        {
+          "name": "nametag",
+          "adjectives": [
+            "white",
+            "small",
+            "reads Venice"
+          ]
+        },
+        {
+          "name": "breathing machine",
+          "adjectives": [
+            "orange-red",
+            "large",
+            "with a green waveform screen",
+            "with a pressure gauge",
+            "with green and yellow indicator lights"
+          ]
+        },
+        {
+          "name": "ventilator tube",
+          "adjectives": [
+            "gray",
+            "corrugated",
+            "curved"
+          ]
+        },
+        {
+          "name": "newborn baby",
+          "adjectives": [
+            "small",
+            "sleeping",
+            "swaddled",
+            "wearing a breathing mask"
+          ]
+        },
+        {
+          "name": "bassinet",
+          "adjectives": [
+            "clear",
+            "transparent-sided",
+            "white"
+          ]
+        },
+        {
+          "name": "blanket",
+          "adjectives": [
+            "white",
+            "thick"
+          ]
+        },
+        {
+          "name": "window",
+          "adjectives": [
+            "tall",
+            "dark"
+          ]
+        },
+        {
+          "name": "moon",
+          "adjectives": [
+            "crescent",
+            "white"
+          ]
+        },
+        {
+          "name": "door",
+          "adjectives": [
+            "wooden",
+            "open"
+          ]
+        },
+        {
+          "name": "wall",
+          "adjectives": [
+            "pale green",
+            "light teal"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "high angle",
+      "step": "during",
+      "action": "The nurse stands behind the bassinet and looks down at the baby with a smile, resting her hand on the bassinet rail, while the breathing machine's tube is attached to the baby's mask.",
+      "extras": {
+        "floor": false,
+        "background": "A hospital nursery room at night, with a window showing a crescent moon in a dark blue sky, a wooden door frame, and pale green walls.",
+        "morePeople": false,
+        "readableText": "Venice"
+      },
+      "mustSee": {
+        "nurse with a nametag that reads \"Venice\"": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "breathing machine (ventilator)": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "newborn baby": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "promptKey": "caa7b74bcd2880de"
+    },
+    "8": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "smiling",
+            "dark-haired",
+            "gentle",
+            "wearing blue scrubs",
+            "looking down"
+          ]
+        },
+        {
+          "name": "nametag",
+          "adjectives": [
+            "white",
+            "partly legible"
+          ]
+        },
+        {
+          "name": "newborn baby",
+          "adjectives": [
+            "sleeping",
+            "swaddled",
+            "small",
+            "wrapped in white blanket"
+          ]
+        },
+        {
+          "name": "bassinet",
+          "adjectives": [
+            "clear",
+            "transparent",
+            "plastic"
+          ]
+        },
+        {
+          "name": "breathing machine",
+          "adjectives": [
+            "red-orange",
+            "boxy",
+            "has screen and dial"
+          ]
+        },
+        {
+          "name": "breathing tube",
+          "adjectives": [
+            "gray",
+            "corrugated",
+            "flexible"
+          ]
+        },
+        {
+          "name": "machine screen",
+          "adjectives": [
+            "dark green",
+            "showing wave line"
+          ]
+        },
+        {
+          "name": "machine dial",
+          "adjectives": [
+            "round",
+            "white"
+          ]
+        },
+        {
+          "name": "machine buttons",
+          "adjectives": [
+            "green",
+            "yellow"
+          ]
+        },
+        {
+          "name": "nurse's hand",
+          "adjectives": [
+            "resting",
+            "on bassinet edge"
+          ]
+        },
+        {
+          "name": "nurse's cap",
+          "adjectives": [
+            "white",
+            "partly cut off"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "high angle",
+      "step": "during",
+      "action": "The nurse leans over the bassinet and looks down at the baby, resting a hand on the bassinet edge, while the breathing machine's tube runs to the baby's face.",
+      "extras": {
+        "floor": false,
+        "background": "plain pale green-gray wall",
+        "morePeople": false,
+        "readableText": "Venice"
+      },
+      "mustSee": {
+        "nurse with a nametag that reads \"Venice\"": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "back"
+        },
+        "breathing machine (ventilator)": {
+          "mark": "partly cut",
+          "size": "medium",
+          "place": "back"
+        },
+        "newborn baby": {
+          "mark": "partly cut",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "promptKey": "caa7b74bcd2880de"
+    },
+    "9": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "smiling",
+            "dark-haired",
+            "wearing blue scrubs",
+            "wearing a white cap"
+          ]
+        },
+        {
+          "name": "nametag",
+          "adjectives": [
+            "white",
+            "small",
+            "reads Venice"
+          ]
+        },
+        {
+          "name": "newborn baby",
+          "adjectives": [
+            "sleeping",
+            "swaddled",
+            "small"
+          ]
+        },
+        {
+          "name": "breathing machine",
+          "adjectives": [
+            "red-orange",
+            "large",
+            "has a screen and a gauge"
+          ]
+        },
+        {
+          "name": "breathing tube",
+          "adjectives": [
+            "gray",
+            "corrugated",
+            "flexible"
+          ]
+        },
+        {
+          "name": "bassinet",
+          "adjectives": [
+            "clear",
+            "transparent",
+            "plastic"
+          ]
+        },
+        {
+          "name": "blanket",
+          "adjectives": [
+            "white",
+            "soft"
+          ]
+        },
+        {
+          "name": "wall clock",
+          "adjectives": [
+            "round",
+            "white"
+          ]
+        },
+        {
+          "name": "window",
+          "adjectives": [
+            "night-time",
+            "framed"
+          ]
+        },
+        {
+          "name": "moon",
+          "adjectives": [
+            "crescent",
+            "pale yellow"
+          ]
+        },
+        {
+          "name": "wall outlets and switches",
+          "adjectives": [
+            "small",
+            "white"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "high angle",
+      "step": "during",
+      "action": "The nurse looks down at the baby and rests her hands on the edge of the bassinet. The breathing machine is connected to the baby by a tube.",
+      "extras": {
+        "floor": false,
+        "background": "A hospital nursery room with pale green walls, a window showing a night sky with a crescent moon, a wall clock and wall outlets",
+        "morePeople": false,
+        "readableText": "Venice"
+      },
+      "mustSee": {
+        "nurse with a nametag that reads \"Venice\"": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "breathing machine (ventilator)": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "newborn baby": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "promptKey": "caa7b74bcd2880de"
+    }
+  },
+  "worn.grid.png": {
+    "1": {
+      "objects": [
+        {
+          "name": "mechanic",
+          "adjectives": [
+            "male",
+            "wearing teal coveralls",
+            "wearing a cap",
+            "alarmed",
+            "bending forward",
+            "pointing"
+          ]
+        },
+        {
+          "name": "driver",
+          "adjectives": [
+            "male",
+            "dark-haired",
+            "worried",
+            "leaning out of the car window",
+            "startled"
+          ]
+        },
+        {
+          "name": "car",
+          "adjectives": [
+            "gray",
+            "silver",
+            "sedan",
+            "parked"
+          ]
+        },
+        {
+          "name": "tire",
+          "adjectives": [
+            "red",
+            "worn",
+            "large",
+            "front",
+            "flat-looking"
+          ]
+        },
+        {
+          "name": "tread",
+          "adjectives": [
+            "red",
+            "smooth",
+            "worn"
+          ]
+        },
+        {
+          "name": "wheel rim",
+          "adjectives": [
+            "silver",
+            "multi-spoke"
+          ]
+        },
+        {
+          "name": "rear tire",
+          "adjectives": [
+            "black",
+            "small",
+            "partly visible"
+          ]
+        },
+        {
+          "name": "side mirror",
+          "adjectives": [
+            "gray",
+            "small"
+          ]
+        },
+        {
+          "name": "speech bubble",
+          "adjectives": [
+            "white",
+            "round",
+            "containing a red exclamation mark"
+          ]
+        },
+        {
+          "name": "exclamation mark",
+          "adjectives": [
+            "red"
+          ]
+        },
+        {
+          "name": "work shoes",
+          "adjectives": [
+            "black",
+            "worn"
+          ]
+        },
+        {
+          "name": "road",
+          "adjectives": [
+            "gray",
+            "flat"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The mechanic bends toward the car, points at the red front tire and shouts a warning, while the driver leans out of the window and looks down at the tire.",
+      "extras": {
+        "floor": true,
+        "background": "plain white background with no scenery",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "driver": {
+          "mark": "partly cut",
+          "size": "medium",
+          "place": "back"
+        },
+        "tire": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tread": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "promptKey": "69448656a0ae8839"
+    },
+    "2": {
+      "objects": [
+        {
+          "name": "hand",
+          "adjectives": [
+            "human",
+            "pointing",
+            "extended index finger",
+            "teal-sleeved"
+          ]
+        },
+        {
+          "name": "tire",
+          "adjectives": [
+            "large",
+            "black",
+            "worn",
+            "close to the camera"
+          ]
+        },
+        {
+          "name": "tread",
+          "adjectives": [
+            "red-orange",
+            "smooth",
+            "worn",
+            "highlighted"
+          ]
+        },
+        {
+          "name": "wheel rim",
+          "adjectives": [
+            "silver",
+            "metallic",
+            "partly visible"
+          ]
+        },
+        {
+          "name": "car",
+          "adjectives": [
+            "gray",
+            "parked",
+            "cartoon-style"
+          ]
+        },
+        {
+          "name": "driver",
+          "adjectives": [
+            "young",
+            "dark-haired",
+            "shocked",
+            "wide-eyed",
+            "worried"
+          ]
+        },
+        {
+          "name": "car window",
+          "adjectives": [
+            "open",
+            "framed"
+          ]
+        },
+        {
+          "name": "exclamation marks",
+          "adjectives": [
+            "black",
+            "small",
+            "alarm-conveying"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "A hand from the left points at the worn, smooth tire tread, and the driver in the car looks at it with a shocked expression.",
+      "extras": {
+        "floor": true,
+        "background": "A gray car in the upper right, with the driver looking out of the open window; a light, plain backdrop and a patch of pavement at the bottom right",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "driver": {
+          "mark": "partly cut",
+          "size": "small",
+          "place": "back"
+        },
+        "tire": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "tread": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        }
+      },
+      "promptKey": "69448656a0ae8839"
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "mechanic",
+          "adjectives": [
+            "shocked",
+            "bending",
+            "wearing teal coveralls",
+            "wearing teal cap",
+            "pointing"
+          ]
+        },
+        {
+          "name": "driver",
+          "adjectives": [
+            "surprised",
+            "wide-eyed",
+            "dark-haired",
+            "leaning out of window"
+          ]
+        },
+        {
+          "name": "car",
+          "adjectives": [
+            "silver",
+            "parked",
+            "sedan"
+          ]
+        },
+        {
+          "name": "front tire",
+          "adjectives": [
+            "large",
+            "worn",
+            "red-orange",
+            "bald",
+            "close to camera"
+          ]
+        },
+        {
+          "name": "wheel rim",
+          "adjectives": [
+            "gray",
+            "multi-spoke",
+            "alloy"
+          ]
+        },
+        {
+          "name": "rear tire",
+          "adjectives": [
+            "dark",
+            "partly visible"
+          ]
+        },
+        {
+          "name": "headlight",
+          "adjectives": [
+            "clear",
+            "angular"
+          ]
+        },
+        {
+          "name": "side mirror",
+          "adjectives": [
+            "silver"
+          ]
+        },
+        {
+          "name": "work shoes",
+          "adjectives": [
+            "black"
+          ]
+        },
+        {
+          "name": "ground",
+          "adjectives": [
+            "gray",
+            "flat"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "low angle",
+      "step": "during",
+      "action": "The mechanic bends toward the car and points at the worn front tire with a shocked expression, while the driver leans out of the window and looks at the tire in surprise.",
+      "extras": {
+        "floor": true,
+        "background": "plain white",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "driver": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        },
+        "tire": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tread": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        }
+      },
+      "promptKey": "69448656a0ae8839"
+    },
+    "4": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "running",
+            "uniformed",
+            "teal",
+            "capped",
+            "pointing"
+          ]
+        },
+        {
+          "name": "cap",
+          "adjectives": [
+            "teal"
+          ]
+        },
+        {
+          "name": "car",
+          "adjectives": [
+            "gray",
+            "silver",
+            "parked",
+            "viewed from above"
+          ]
+        },
+        {
+          "name": "child",
+          "adjectives": [
+            "wide-eyed",
+            "startled",
+            "leaning out of window"
+          ]
+        },
+        {
+          "name": "tire",
+          "adjectives": [
+            "red-highlighted",
+            "front",
+            "left"
+          ]
+        },
+        {
+          "name": "road",
+          "adjectives": [
+            "gray",
+            "paved"
+          ]
+        },
+        {
+          "name": "lane markings",
+          "adjectives": [
+            "white",
+            "dashed"
+          ]
+        },
+        {
+          "name": "side mirror",
+          "adjectives": [
+            "gray"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "high angle",
+      "step": "during",
+      "action": "The man in the teal uniform runs toward the car and points at its red-highlighted front tire, while the child leans out of the car window and looks startled.",
+      "extras": {
+        "floor": true,
+        "background": "gray road surface with white dashed lane lines",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "driver": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        },
+        "tire": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        },
+        "tread": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        }
+      },
+      "promptKey": "69448656a0ae8839"
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "mechanic",
+          "adjectives": [
+            "crouching",
+            "pointing",
+            "teal-clad",
+            "wearing cap",
+            "seen from behind"
+          ]
+        },
+        {
+          "name": "driver",
+          "adjectives": [
+            "shocked",
+            "wide-eyed",
+            "open-mouthed",
+            "yellow-shirted",
+            "leaning out of window"
+          ]
+        },
+        {
+          "name": "car",
+          "adjectives": [
+            "gray",
+            "parked"
+          ]
+        },
+        {
+          "name": "tire",
+          "adjectives": [
+            "black",
+            "worn",
+            "large"
+          ]
+        },
+        {
+          "name": "tread",
+          "adjectives": [
+            "red-orange",
+            "worn",
+            "smooth"
+          ]
+        },
+        {
+          "name": "side mirror",
+          "adjectives": [
+            "gray"
+          ]
+        },
+        {
+          "name": "cap",
+          "adjectives": [
+            "teal"
+          ]
+        },
+        {
+          "name": "wheel rim",
+          "adjectives": [
+            "silver",
+            "partly visible"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The mechanic in the foreground points at the car's worn tire while the driver looks out of the window with a shocked expression.",
+      "extras": {
+        "floor": false,
+        "background": "gray car body and window; no other scenery",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "driver": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        },
+        "tire": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "tread": {
+          "mark": "partly cut",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "promptKey": "69448656a0ae8839"
+    },
+    "6": {
+      "objects": [
+        {
+          "name": "mechanic",
+          "adjectives": [
+            "panicked",
+            "alarmed",
+            "wide-eyed",
+            "blue-uniformed",
+            "reaching out"
+          ]
+        },
+        {
+          "name": "driver",
+          "adjectives": [
+            "tense",
+            "frowning",
+            "brown-haired",
+            "yellow-shirted",
+            "focused"
+          ]
+        },
+        {
+          "name": "car",
+          "adjectives": [
+            "gray",
+            "silver",
+            "large in the frame"
+          ]
+        },
+        {
+          "name": "tire",
+          "adjectives": [
+            "black",
+            "worn",
+            "wrapped in a red band"
+          ]
+        },
+        {
+          "name": "tread",
+          "adjectives": [
+            "red",
+            "orange-red",
+            "worn",
+            "rough"
+          ]
+        },
+        {
+          "name": "steering wheel",
+          "adjectives": [
+            "black"
+          ]
+        },
+        {
+          "name": "side mirror",
+          "adjectives": [
+            "gray"
+          ]
+        },
+        {
+          "name": "headlight",
+          "adjectives": [
+            "white",
+            "partly cut off"
+          ]
+        },
+        {
+          "name": "speech bubble",
+          "adjectives": [
+            "white",
+            "with a red exclamation mark"
+          ]
+        },
+        {
+          "name": "wheel rim",
+          "adjectives": [
+            "silver",
+            "partly visible"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "low angle",
+      "step": "during",
+      "action": "The mechanic jumps back with both hands up and shouts a warning at the car. The driver looks to the side, frowning, and keeps driving. The red worn tire is sticking out of the car's front wheel arch.",
+      "extras": {
+        "floor": true,
+        "background": "plain white background, with a bit of road at the lower left",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "driver": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "tire": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "tread": {
+          "mark": "partly cut",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "promptKey": "69448656a0ae8839"
+    },
+    "7": {
+      "objects": [
+        {
+          "name": "mechanic",
+          "adjectives": [
+            "crouching",
+            "worried",
+            "wearing teal coveralls",
+            "wearing a green cap",
+            "dark-haired"
+          ]
+        },
+        {
+          "name": "man in yellow shirt",
+          "adjectives": [
+            "standing",
+            "bending forward",
+            "shocked",
+            "dark-haired",
+            "hand at mouth"
+          ]
+        },
+        {
+          "name": "car",
+          "adjectives": [
+            "gray",
+            "partly visible"
+          ]
+        },
+        {
+          "name": "tire",
+          "adjectives": [
+            "black",
+            "red-orange",
+            "worn",
+            "large"
+          ]
+        },
+        {
+          "name": "wheel rim",
+          "adjectives": [
+            "silver",
+            "gray"
+          ]
+        },
+        {
+          "name": "side mirror",
+          "adjectives": [
+            "gray"
+          ]
+        },
+        {
+          "name": "work boots",
+          "adjectives": [
+            "brown",
+            "black"
+          ]
+        },
+        {
+          "name": "shoes",
+          "adjectives": [
+            "black",
+            "dark"
+          ]
+        },
+        {
+          "name": "trousers",
+          "adjectives": [
+            "dark blue",
+            "long"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "after",
+      "action": "The mechanic crouches beside the car and presses a hand on the red-orange tire while looking at it with alarm, and the man in the yellow shirt leans over and watches with his hand at his mouth.",
+      "extras": {
+        "floor": true,
+        "background": "plain white or pale background with a gray pavement",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "driver": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        },
+        "tire": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "tread": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "promptKey": "69448656a0ae8839"
+    },
+    "8": {
+      "objects": [
+        {
+          "name": "driver",
+          "adjectives": [
+            "frightened",
+            "wide-eyed",
+            "open-mouthed",
+            "dark-haired",
+            "yellow-shirted"
+          ]
+        },
+        {
+          "name": "steering wheel",
+          "adjectives": [
+            "dark",
+            "gripped"
+          ]
+        },
+        {
+          "name": "man in teal cap and jacket",
+          "adjectives": [
+            "pointing",
+            "shouting",
+            "distant",
+            "teal"
+          ]
+        },
+        {
+          "name": "speech bubble with exclamation mark",
+          "adjectives": [
+            "white",
+            "red-marked"
+          ]
+        },
+        {
+          "name": "car window and frame",
+          "adjectives": [
+            "glass",
+            "grey"
+          ]
+        },
+        {
+          "name": "tire",
+          "adjectives": [
+            "black",
+            "red-banded",
+            "large",
+            "rounded"
+          ]
+        },
+        {
+          "name": "red-and-black seat or tire surface",
+          "adjectives": [
+            "red",
+            "curved"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The driver grips the steering wheel and stares in alarm while the man outside points and shouts a warning at them; the tire-like curved shape in the foreground is not touched by anyone.",
+      "extras": {
+        "floor": false,
+        "background": "A view through a car window showing a man in a teal cap and jacket pointing and shouting, with a speech bubble containing a red exclamation mark",
+        "morePeople": true,
+        "readableText": ""
+      },
+      "mustSee": {
+        "driver": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "tire": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "tread": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        }
+      },
+      "promptKey": "69448656a0ae8839"
+    },
+    "9": {
+      "objects": [
+        {
+          "name": "man crouching",
+          "adjectives": [
+            "worried",
+            "distressed",
+            "dark-haired",
+            "hands on cheeks",
+            "yellow-shirted"
+          ]
+        },
+        {
+          "name": "mechanic",
+          "adjectives": [
+            "concerned",
+            "shocked",
+            "crouching",
+            "teal-uniformed",
+            "capped"
+          ]
+        },
+        {
+          "name": "cap",
+          "adjectives": [
+            "teal",
+            "worn"
+          ]
+        },
+        {
+          "name": "car",
+          "adjectives": [
+            "gray",
+            "partly visible"
+          ]
+        },
+        {
+          "name": "tire",
+          "adjectives": [
+            "large",
+            "orange-red",
+            "worn",
+            "bulging"
+          ]
+        },
+        {
+          "name": "wheel rim",
+          "adjectives": [
+            "gray",
+            "silver",
+            "partly visible"
+          ]
+        },
+        {
+          "name": "shoes",
+          "adjectives": [
+            "dark",
+            "black"
+          ]
+        },
+        {
+          "name": "pavement",
+          "adjectives": [
+            "gray",
+            "flat"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "after",
+      "action": "The crouching man holds his face in distress while staring at the tire, and the mechanic behind him rests a hand on his shoulder and looks at the tire too.",
+      "extras": {
+        "floor": true,
+        "background": "plain white",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "driver": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tire": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "tread": {
+          "mark": "partly cut",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "promptKey": "69448656a0ae8839"
+    }
   }
 }
