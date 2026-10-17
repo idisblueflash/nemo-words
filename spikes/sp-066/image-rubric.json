@@ -40,7 +40,7 @@
       "parts": {
         "scene": {
           "label": "Vivid: scene",
-          "check": "Score the scene, not the camera: what the story objects do to each other, from the cell's action line and the sizes of its must-see items. An eye-level, medium shot is the normal view, and an extreme close-up or a strong camera angle adds nothing. An unusual camera angle lowers vivid only when it hides the action; an unusual angle never lowers vivid when the state's angle_case is \"view\" (the story is about a view) or \"one-object\" (the story has one main object).",
+          "check": "Score the scene, not the camera: what the story objects do to each other, from the cell's action line and the sizes of its must-see items. An eye-level, medium shot is the normal view, and an extreme close-up or a strong camera angle adds nothing. An unusual camera angle lowers vivid only when it hides the action; an unusual angle never lowers vivid when the state's angle_case is \"view\" (the story is about a view) or \"one-object\" (the story has one main object). When a must-see item has a size word such as tiny, little or huge in its adjectives, or the story is about a place or the shape of the land (a ridge), a wide shot that shows the whole place, with the small item small next to a larger story item, is not \"small, far away\": score it on what its story objects do, as for any other shot (ADR-0039).",
           "levels": [
             "the story objects are small, far away or apart from each other",
             "the story objects are clear, but they don't act on each other as the story says",
@@ -73,7 +73,7 @@
         },
         "size": {
           "label": "Must-see clarity: size",
-          "check": "Use each must-see item's size (large / medium / small). An item that is small by nature, such as a headlamp or a ring, costs less than a story item drawn too small to see what it does.",
+          "check": "Use each must-see item's size (large / medium / small). An item that is small by nature, such as a headlamp or a ring, costs less than a story item drawn too small to see what it does. A must-see item that the story calls small (tiny, little) and that is drawn small or medium next to a larger story item costs nothing: that is its state (ADR-0039).",
           "levels": [
             "a story item is too small to see what it does",
             "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
@@ -82,7 +82,7 @@
         },
         "state": {
           "label": "Must-see clarity: state",
-          "check": "Check each must-see item with its adjectives: the item must be shown in the state its adjectives give (a bare cob). The cell's must-see marks say only whether an item is there, not its state: use the cell's objects and their adjectives.",
+          "check": "Check each must-see item with its adjectives: the item must be shown in the state its adjectives give (a bare cob). The cell's must-see marks say only whether an item is there, not its state: use the cell's objects and their adjectives. An item with a size word such as tiny, little or huge is in its state only when it looks that size next to another story item (a tiny house that is small next to a large ridge); a tiny house drawn large in the front of the cell is not in its state (ADR-0039).",
           "levels": [
             "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
             "the state of some must-see items is unclear",
