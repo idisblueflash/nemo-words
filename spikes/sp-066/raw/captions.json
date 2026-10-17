@@ -1028,16 +1028,30 @@
           "adjectives": [
             "smiling",
             "dark-haired",
+            "young",
             "walking",
-            "wearing blue scrubs",
-            "wearing a nametag"
+            "wearing blue scrubs"
+          ]
+        },
+        {
+          "name": "nursing cap",
+          "adjectives": [
+            "white",
+            "small"
+          ]
+        },
+        {
+          "name": "name tag",
+          "adjectives": [
+            "small",
+            "white"
           ]
         },
         {
           "name": "door",
           "adjectives": [
-            "open",
             "wooden",
+            "open",
             "brown"
           ]
         },
@@ -1046,26 +1060,46 @@
           "adjectives": [
             "red-orange",
             "medical",
-            "with screen",
-            "with dial",
-            "with corrugated black bellows"
+            "boxy",
+            "with a screen and gauge"
           ]
         },
         {
-          "name": "tube",
+          "name": "monitor screen",
+          "adjectives": [
+            "green",
+            "showing a wave line"
+          ]
+        },
+        {
+          "name": "pressure gauge",
+          "adjectives": [
+            "round",
+            "white"
+          ]
+        },
+        {
+          "name": "corrugated tube",
           "adjectives": [
             "gray",
-            "corrugated",
-            "flexible"
+            "flexible",
+            "ribbed"
+          ]
+        },
+        {
+          "name": "machine stand",
+          "adjectives": [
+            "dark gray",
+            "metal"
           ]
         },
         {
           "name": "newborn",
           "adjectives": [
-            "sleeping",
             "small",
-            "wearing a pacifier",
-            "swaddled"
+            "sleeping",
+            "swaddled",
+            "wearing a pacifier"
           ]
         },
         {
@@ -1077,11 +1111,18 @@
           ]
         },
         {
-          "name": "clock",
+          "name": "pacifier",
+          "adjectives": [
+            "small",
+            "light blue"
+          ]
+        },
+        {
+          "name": "wall clock",
           "adjectives": [
             "round",
             "white",
-            "wall-mounted"
+            "analog"
           ]
         },
         {
@@ -1099,27 +1140,26 @@
           ]
         },
         {
-          "name": "cart",
+          "name": "trees",
           "adjectives": [
             "dark",
-            "metal"
+            "silhouetted"
           ]
         },
         {
-          "name": "nametag",
+          "name": "shoes",
           "adjectives": [
-            "small",
             "white"
           ]
         }
       ],
-      "shot": "wide",
+      "shot": "medium",
       "angle": "eye level",
       "step": "before",
-      "action": "The nurse walks in through the open door, holding it with one hand and looking toward the baby, while the newborn lies in an incubator connected by a tube to the machine; she is not yet touching either of them.",
+      "action": "The nurse walks in through the open door, holding the door edge with one hand and looking toward the machine and the newborn, while the newborn sleeps in the incubator connected to the machine by a tube.",
       "extras": {
         "floor": true,
-        "background": "A hospital room with pale green walls, an open wooden door, a round wall clock, and a window showing a night sky with a crescent moon and dark trees",
+        "background": "A hospital nursery room with pale green walls, an open wooden door, a wall clock and a window showing a night sky with a crescent moon and trees",
         "morePeople": false,
         "readableText": ""
       },
@@ -1127,7 +1167,7 @@
         "nurse": {
           "mark": "visible",
           "size": "large",
-          "place": "front"
+          "place": "back"
         },
         "machine": {
           "mark": "visible",
@@ -1136,13 +1176,14 @@
         },
         "newborn": {
           "mark": "partly cut",
-          "size": "small",
+          "size": "medium",
           "place": "front"
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "three-quarter",
-      "promptKey": "08a9fcc81b4ff66c"
+      "promptKey": "9a133c611ab9b993"
     },
     "2": {
       "objects": [
@@ -1153,8 +1194,42 @@
             "dark-haired",
             "young",
             "wearing blue scrubs",
-            "wearing white cap",
-            "friendly"
+            "wearing white cap"
+          ]
+        },
+        {
+          "name": "ventilator machine",
+          "adjectives": [
+            "red-orange",
+            "large",
+            "with monitor screen",
+            "with gauge",
+            "with bellows"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "small",
+            "sleeping",
+            "swaddled",
+            "wearing breathing mask"
+          ]
+        },
+        {
+          "name": "incubator bassinet",
+          "adjectives": [
+            "clear",
+            "white",
+            "transparent-sided"
+          ]
+        },
+        {
+          "name": "breathing tube",
+          "adjectives": [
+            "gray",
+            "corrugated",
+            "flexible"
           ]
         },
         {
@@ -1165,18 +1240,9 @@
           ]
         },
         {
-          "name": "machine",
+          "name": "monitor screen",
           "adjectives": [
-            "red-orange",
-            "large",
-            "medical",
-            "ventilator-like"
-          ]
-        },
-        {
-          "name": "machine screen",
-          "adjectives": [
-            "dark blue",
+            "dark teal",
             "showing green wave line"
           ]
         },
@@ -1191,72 +1257,17 @@
           "name": "indicator lights",
           "adjectives": [
             "green",
-            "yellow",
-            "small"
-          ]
-        },
-        {
-          "name": "bellows",
-          "adjectives": [
-            "black",
-            "ribbed",
-            "accordion-like"
-          ]
-        },
-        {
-          "name": "breathing hose",
-          "adjectives": [
-            "gray",
-            "corrugated",
-            "flexible"
-          ]
-        },
-        {
-          "name": "newborn",
-          "adjectives": [
-            "small",
-            "sleeping",
-            "wrapped in white blanket",
-            "wearing breathing mask"
-          ]
-        },
-        {
-          "name": "incubator",
-          "adjectives": [
-            "clear",
-            "transparent",
-            "white-based"
-          ]
-        },
-        {
-          "name": "blanket",
-          "adjectives": [
-            "white",
-            "soft"
-          ]
-        },
-        {
-          "name": "breathing mask",
-          "adjectives": [
-            "small",
-            "gray"
-          ]
-        },
-        {
-          "name": "wall and ceiling",
-          "adjectives": [
-            "pale green",
-            "plain"
+            "orange"
           ]
         }
       ],
       "shot": "medium",
       "angle": "high angle",
       "step": "during",
-      "action": "The nurse leans over the incubator and looks down at the newborn, who is connected to the machine by a hose, while the machine supplies breathing support.",
+      "action": "The nurse looks down at the newborn in the bassinet while the ventilator machine supplies air through a tube to the baby's mask.",
       "extras": {
         "floor": false,
-        "background": "pale green hospital room wall and ceiling corner, with a partly visible window or panel at the right edge",
+        "background": "pale green hospital room wall and ceiling corner",
         "morePeople": false,
         "readableText": "Venice"
       },
@@ -1264,7 +1275,7 @@
         "nurse": {
           "mark": "visible",
           "size": "large",
-          "place": "front"
+          "place": "back"
         },
         "machine": {
           "mark": "partly cut",
@@ -1278,8 +1289,9 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "three-quarter",
-      "promptKey": "08a9fcc81b4ff66c"
+      "promptKey": "9a133c611ab9b993"
     },
     "3": {
       "objects": [
@@ -1289,18 +1301,19 @@
             "dark-haired",
             "hair in a bun",
             "wearing a white cap",
-            "wearing a blue top",
-            "attentive",
-            "seen in profile"
+            "wearing a light blue top",
+            "seen from behind",
+            "looking down"
           ]
         },
         {
           "name": "newborn",
           "adjectives": [
+            "small",
             "swaddled",
             "sleeping",
-            "small",
-            "wearing a breathing mask"
+            "wrapped in a white blanket",
+            "has a small tube or mask at the mouth"
           ]
         },
         {
@@ -1308,17 +1321,18 @@
           "adjectives": [
             "clear",
             "transparent",
-            "hospital"
+            "plastic",
+            "open-topped"
           ]
         },
         {
-          "name": "ventilator machine",
+          "name": "machine",
           "adjectives": [
             "red-orange",
             "large",
-            "with a green screen",
-            "with a wave display",
-            "with dial and buttons"
+            "medical",
+            "has a screen with a green wave line",
+            "has dials and buttons"
           ]
         },
         {
@@ -1326,34 +1340,43 @@
           "adjectives": [
             "gray",
             "corrugated",
-            "flexible"
+            "flexible",
+            "connected to the machine and the newborn"
           ]
         },
         {
           "name": "wall clock",
           "adjectives": [
             "round",
-            "white",
-            "analog"
+            "white-faced",
+            "analog",
+            "showing about 11:05"
           ]
         },
         {
           "name": "window",
           "adjectives": [
             "dark",
-            "framed"
+            "framed",
+            "blue-toned"
+          ]
+        },
+        {
+          "name": "wall",
+          "adjectives": [
+            "pale green"
           ]
         }
       ],
       "shot": "medium",
       "angle": "high angle",
       "step": "during",
-      "action": "The nurse looks down at the newborn lying in the bassinet, while the newborn is connected by a tube to the ventilator machine beside it.",
+      "action": "The nurse looks down at the newborn in the bassinet. The newborn is linked to the machine by a breathing tube.",
       "extras": {
         "floor": false,
-        "background": "pale green hospital wall with a clock and a dark window",
+        "background": "A pale green hospital room wall with a dark window and a round wall clock.",
         "morePeople": false,
-        "readableText": ""
+        "readableText": "The clock numbers 1 to 12. No other words are readable."
       },
       "mustSee": {
         "nurse": {
@@ -1373,8 +1396,9 @@
         }
       },
       "drawingErrors": [],
-      "mainView": "side",
-      "promptKey": "08a9fcc81b4ff66c"
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "9a133c611ab9b993"
     },
     "4": {
       "objects": [
@@ -1385,8 +1409,16 @@
             "hair in a bun",
             "wearing a white cap",
             "wearing blue scrubs",
-            "looking down",
-            "leaning over"
+            "leaning over",
+            "looking down"
+          ]
+        },
+        {
+          "name": "nametag",
+          "adjectives": [
+            "white",
+            "small",
+            "pinned to scrubs"
           ]
         },
         {
@@ -1394,8 +1426,8 @@
           "adjectives": [
             "small",
             "swaddled",
-            "wrapped in a white blanket",
-            "lying down",
+            "wrapped in white blanket",
+            "lying on its back",
             "dark-haired"
           ]
         },
@@ -1403,19 +1435,18 @@
           "name": "machine",
           "adjectives": [
             "red-orange",
-            "with a screen",
-            "with a dial",
-            "with colored indicator lights",
+            "boxed",
+            "has a screen and a dial",
             "on a dark stand"
           ]
         },
         {
           "name": "breathing tube",
           "adjectives": [
-            "corrugated",
             "gray",
+            "corrugated",
             "flexible",
-            "connected to the machine"
+            "curved"
           ]
         },
         {
@@ -1424,25 +1455,49 @@
             "clear",
             "transparent",
             "rectangular",
-            "with white bedding"
+            "has a white mattress"
           ]
         },
         {
-          "name": "nametag",
+          "name": "blanket",
           "adjectives": [
             "white",
+            "thick",
+            "wrapped around the baby"
+          ]
+        },
+        {
+          "name": "monitor screen",
+          "adjectives": [
             "small",
-            "clipped to the scrubs"
+            "dark teal",
+            "shows a green waveform"
+          ]
+        },
+        {
+          "name": "dial",
+          "adjectives": [
+            "round",
+            "white"
+          ]
+        },
+        {
+          "name": "indicator lights",
+          "adjectives": [
+            "small",
+            "green",
+            "red",
+            "yellow"
           ]
         }
       ],
       "shot": "medium",
       "angle": "high angle",
       "step": "during",
-      "action": "The nurse leans over the bassinet and looks down at the newborn. One hand rests on the bassinet rim and the other rests on top of the machine. The machine's tube runs to the newborn's face.",
+      "action": "The nurse leans over the bassinet, looks down at the newborn, and rests one hand on the machine. The machine's tube runs to the newborn's face.",
       "extras": {
         "floor": true,
-        "background": "A beige tiled floor with a teal wall or corner at the top right",
+        "background": "A beige tiled hospital floor with a pale teal wall at the top corner.",
         "morePeople": false,
         "readableText": "Vonz"
       },
@@ -1464,8 +1519,9 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "three-quarter",
-      "promptKey": "08a9fcc81b4ff66c"
+      "promptKey": "9a133c611ab9b993"
     },
     "5": {
       "objects": [
@@ -1484,10 +1540,10 @@
           "adjectives": [
             "red-orange",
             "large",
-            "has monitor screen",
-            "has pressure gauge",
-            "has buttons",
-            "has corrugated bellows"
+            "ventilator-like",
+            "has screen",
+            "has gauge",
+            "has buttons"
           ]
         },
         {
@@ -1496,7 +1552,7 @@
             "sleeping",
             "small",
             "swaddled",
-            "in clear bassinet"
+            "in bassinet"
           ]
         },
         {
@@ -1504,15 +1560,38 @@
           "adjectives": [
             "clear",
             "transparent",
-            "small"
+            "plastic"
           ]
         },
         {
-          "name": "breathing tube",
+          "name": "tube",
           "adjectives": [
             "gray",
             "corrugated",
             "flexible"
+          ]
+        },
+        {
+          "name": "screen",
+          "adjectives": [
+            "blue",
+            "showing wave line"
+          ]
+        },
+        {
+          "name": "gauge",
+          "adjectives": [
+            "round",
+            "white",
+            "dial"
+          ]
+        },
+        {
+          "name": "buttons",
+          "adjectives": [
+            "green",
+            "yellow-orange",
+            "round"
           ]
         },
         {
@@ -1523,31 +1602,16 @@
           ]
         },
         {
-          "name": "monitor screen",
+          "name": "nurse cap",
           "adjectives": [
-            "blue",
-            "green waveform"
-          ]
-        },
-        {
-          "name": "pressure gauge",
-          "adjectives": [
-            "round",
-            "white-faced"
-          ]
-        },
-        {
-          "name": "buttons",
-          "adjectives": [
-            "green",
-            "yellow-orange"
+            "white"
           ]
         }
       ],
       "shot": "medium",
       "angle": "eye level",
       "step": "during",
-      "action": "The nurse smiles and presses a button on the machine with her finger while looking toward the machine. A tube runs from the machine to the newborn sleeping in the bassinet.",
+      "action": "The nurse smiles and presses a button on the machine with her finger while looking toward it, and a tube connects the machine to the sleeping newborn in the bassinet.",
       "extras": {
         "floor": false,
         "background": "plain pale green-gray wall",
@@ -1566,14 +1630,15 @@
           "place": "front"
         },
         "newborn": {
-          "mark": "visible",
+          "mark": "partly cut",
           "size": "small",
-          "place": "back"
+          "place": "front"
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "three-quarter",
-      "promptKey": "08a9fcc81b4ff66c"
+      "promptKey": "9a133c611ab9b993"
     },
     "6": {
       "objects": [
@@ -1583,21 +1648,17 @@
             "smiling",
             "dark-haired",
             "young",
-            "focused"
+            "wearing blue scrubs",
+            "wearing a white cap"
           ]
         },
         {
-          "name": "nurse cap",
+          "name": "machine",
           "adjectives": [
-            "white",
-            "small"
-          ]
-        },
-        {
-          "name": "scrubs",
-          "adjectives": [
-            "blue",
-            "short-sleeved"
+            "red-orange",
+            "large",
+            "with screen and dial",
+            "with green and yellow buttons"
           ]
         },
         {
@@ -1606,60 +1667,22 @@
             "small",
             "swaddled",
             "sleeping",
-            "wearing breathing tube"
+            "wearing breathing mask"
           ]
         },
         {
           "name": "bassinet",
           "adjectives": [
             "clear",
-            "plastic",
-            "transparent"
-          ]
-        },
-        {
-          "name": "blanket",
-          "adjectives": [
-            "white",
-            "soft"
-          ]
-        },
-        {
-          "name": "machine",
-          "adjectives": [
-            "red-orange",
-            "boxy",
-            "with screen and dial"
-          ]
-        },
-        {
-          "name": "screen",
-          "adjectives": [
-            "small",
-            "green",
-            "showing a waveform"
-          ]
-        },
-        {
-          "name": "pressure gauge",
-          "adjectives": [
-            "round",
-            "white"
-          ]
-        },
-        {
-          "name": "indicator lights",
-          "adjectives": [
-            "green",
-            "yellow",
-            "small"
+            "transparent",
+            "plastic"
           ]
         },
         {
           "name": "breathing tube",
           "adjectives": [
-            "corrugated",
             "gray",
+            "corrugated",
             "flexible"
           ]
         },
@@ -1672,27 +1695,34 @@
           ]
         },
         {
-          "name": "metal stand",
+          "name": "blanket",
+          "adjectives": [
+            "white",
+            "soft"
+          ]
+        },
+        {
+          "name": "stand",
           "adjectives": [
             "gray",
-            "low"
+            "metal"
           ]
         },
         {
           "name": "wall outlet",
           "adjectives": [
             "small",
-            "light"
+            "white"
           ]
         }
       ],
       "shot": "medium",
-      "angle": "eye level",
+      "angle": "high angle",
       "step": "during",
-      "action": "The nurse leans over the bassinet and presses the machine's screen with her finger while the newborn lies in the bassinet, connected to the machine by a breathing tube.",
+      "action": "The nurse leans over the bassinet, looks at the newborn and presses the screen of the machine with her finger. A tube links the machine to the newborn's breathing mask.",
       "extras": {
         "floor": false,
-        "background": "pale green hospital room wall with a clock, an outlet and a wall-mounted fixture",
+        "background": "pale green hospital room wall with a wall clock and a wall outlet",
         "morePeople": false,
         "readableText": ""
       },
@@ -1704,7 +1734,7 @@
         },
         "machine": {
           "mark": "partly cut",
-          "size": "medium",
+          "size": "large",
           "place": "back"
         },
         "newborn": {
@@ -1714,8 +1744,9 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "three-quarter",
-      "promptKey": "08a9fcc81b4ff66c"
+      "promptKey": "9a133c611ab9b993"
     },
     "7": {
       "objects": [
@@ -1724,9 +1755,42 @@
           "adjectives": [
             "smiling",
             "dark-haired",
-            "young",
             "wearing blue scrubs",
-            "wearing white cap"
+            "wearing a white cap"
+          ]
+        },
+        {
+          "name": "machine",
+          "adjectives": [
+            "red-orange",
+            "large",
+            "ventilator-like",
+            "has a screen and gauge"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "sleeping",
+            "small",
+            "wrapped in a blanket",
+            "wearing a breathing mask"
+          ]
+        },
+        {
+          "name": "bassinet",
+          "adjectives": [
+            "clear",
+            "transparent-sided",
+            "hospital"
+          ]
+        },
+        {
+          "name": "hose",
+          "adjectives": [
+            "gray",
+            "corrugated",
+            "flexible"
           ]
         },
         {
@@ -1737,65 +1801,10 @@
           ]
         },
         {
-          "name": "machine",
-          "adjectives": [
-            "orange-red",
-            "large",
-            "medical",
-            "with screen and gauge"
-          ]
-        },
-        {
-          "name": "screen",
-          "adjectives": [
-            "dark",
-            "showing green wave line"
-          ]
-        },
-        {
-          "name": "gauge",
-          "adjectives": [
-            "round",
-            "dial"
-          ]
-        },
-        {
-          "name": "indicator lights",
-          "adjectives": [
-            "green",
-            "yellow"
-          ]
-        },
-        {
-          "name": "tube",
-          "adjectives": [
-            "gray",
-            "corrugated",
-            "flexible"
-          ]
-        },
-        {
-          "name": "newborn",
-          "adjectives": [
-            "sleeping",
-            "small",
-            "wrapped in white blanket",
-            "wearing breathing mask"
-          ]
-        },
-        {
-          "name": "bassinet",
-          "adjectives": [
-            "clear",
-            "plastic-sided",
-            "white"
-          ]
-        },
-        {
           "name": "window",
           "adjectives": [
-            "night",
-            "dark blue"
+            "night-time",
+            "framed"
           ]
         },
         {
@@ -1809,17 +1818,17 @@
           "name": "door",
           "adjectives": [
             "wooden",
-            "tall"
+            "open"
           ]
         }
       ],
       "shot": "medium",
-      "angle": "high angle",
+      "angle": "eye level",
       "step": "during",
-      "action": "The nurse stands behind the bassinet looking down at the newborn with a smile, her hands resting on the bassinet rail, while the machine's tube connects to a mask on the newborn's face.",
+      "action": "The nurse stands behind the bassinet, resting a hand on its rail and looking down at the newborn, who is connected to the machine by a hose and breathing mask.",
       "extras": {
         "floor": false,
-        "background": "hospital room at night with a window showing a crescent moon, a door frame and pale green walls",
+        "background": "hospital room with a night window showing a crescent moon, a wooden door frame and pale green walls",
         "morePeople": false,
         "readableText": "Venice"
       },
@@ -1841,8 +1850,9 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "three-quarter",
-      "promptKey": "08a9fcc81b4ff66c"
+      "promptKey": "9a133c611ab9b993"
     },
     "8": {
       "objects": [
@@ -1851,42 +1861,10 @@
           "adjectives": [
             "smiling",
             "dark-haired",
-            "gentle",
+            "young",
             "wearing blue scrubs",
-            "looking down"
-          ]
-        },
-        {
-          "name": "newborn",
-          "adjectives": [
-            "sleeping",
-            "swaddled",
-            "small",
-            "wrapped in a white blanket"
-          ]
-        },
-        {
-          "name": "incubator",
-          "adjectives": [
-            "clear",
-            "transparent",
-            "open-topped"
-          ]
-        },
-        {
-          "name": "machine",
-          "adjectives": [
-            "red-orange",
-            "with a monitor and dial",
-            "medical"
-          ]
-        },
-        {
-          "name": "breathing tube",
-          "adjectives": [
-            "corrugated",
-            "gray",
-            "flexible"
+            "leaning over",
+            "gentle"
           ]
         },
         {
@@ -1897,17 +1875,88 @@
           ]
         },
         {
-          "name": "nurse cap",
+          "name": "newborn",
+          "adjectives": [
+            "sleeping",
+            "swaddled",
+            "small",
+            "bald"
+          ]
+        },
+        {
+          "name": "bassinet",
+          "adjectives": [
+            "clear",
+            "transparent",
+            "plastic"
+          ]
+        },
+        {
+          "name": "blanket",
           "adjectives": [
             "white",
-            "partly visible"
+            "cream",
+            "swaddling"
+          ]
+        },
+        {
+          "name": "machine",
+          "adjectives": [
+            "red-orange",
+            "medical",
+            "large",
+            "with screen and dials"
+          ]
+        },
+        {
+          "name": "screen",
+          "adjectives": [
+            "dark",
+            "green waveform"
+          ]
+        },
+        {
+          "name": "dial gauge",
+          "adjectives": [
+            "round",
+            "white"
+          ]
+        },
+        {
+          "name": "buttons",
+          "adjectives": [
+            "green",
+            "yellow",
+            "round"
+          ]
+        },
+        {
+          "name": "breathing tube",
+          "adjectives": [
+            "gray",
+            "corrugated",
+            "flexible"
+          ]
+        },
+        {
+          "name": "nasal mask",
+          "adjectives": [
+            "clear",
+            "small"
+          ]
+        },
+        {
+          "name": "hand",
+          "adjectives": [
+            "resting",
+            "on bassinet edge"
           ]
         }
       ],
       "shot": "medium",
       "angle": "high angle",
       "step": "during",
-      "action": "The nurse leans over the incubator, resting her hand on its edge and looking down at the newborn, who is connected by a breathing tube to the machine.",
+      "action": "The nurse leans over the bassinet and looks down at the newborn, who is connected by a breathing tube to the machine; her hand rests on the bassinet edge.",
       "extras": {
         "floor": false,
         "background": "plain pale green-gray wall",
@@ -1927,13 +1976,14 @@
         },
         "newborn": {
           "mark": "partly cut",
-          "size": "large",
+          "size": "medium",
           "place": "front"
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "three-quarter",
-      "promptKey": "08a9fcc81b4ff66c"
+      "promptKey": "9a133c611ab9b993"
     },
     "9": {
       "objects": [
@@ -1943,8 +1993,17 @@
             "smiling",
             "dark-haired",
             "wearing blue scrubs",
-            "wearing white cap",
-            "attentive"
+            "wearing a white cap"
+          ]
+        },
+        {
+          "name": "machine",
+          "adjectives": [
+            "red-orange",
+            "large",
+            "has a screen with a wave",
+            "has a round gauge",
+            "has green and yellow lights"
           ]
         },
         {
@@ -1952,25 +2011,7 @@
           "adjectives": [
             "sleeping",
             "swaddled",
-            "small",
-            "wearing breathing mask"
-          ]
-        },
-        {
-          "name": "ventilator machine",
-          "adjectives": [
-            "red-orange",
-            "large",
-            "has screen and gauge",
-            "has green and yellow lights"
-          ]
-        },
-        {
-          "name": "breathing tube",
-          "adjectives": [
-            "gray",
-            "corrugated",
-            "flexible"
+            "small"
           ]
         },
         {
@@ -1982,29 +2023,11 @@
           ]
         },
         {
-          "name": "wall clock",
+          "name": "breathing tube",
           "adjectives": [
-            "round",
-            "white-faced"
-          ]
-        },
-        {
-          "name": "window",
-          "adjectives": [
-            "night-time",
-            "framed"
-          ]
-        },
-        {
-          "name": "moon",
-          "adjectives": [
-            "crescent"
-          ]
-        },
-        {
-          "name": "wall outlets and switches",
-          "adjectives": [
-            "wall-mounted"
+            "gray",
+            "corrugated",
+            "flexible"
           ]
         },
         {
@@ -2013,15 +2036,50 @@
             "white",
             "small"
           ]
+        },
+        {
+          "name": "window",
+          "adjectives": [
+            "night",
+            "dark blue"
+          ]
+        },
+        {
+          "name": "moon",
+          "adjectives": [
+            "crescent",
+            "pale yellow"
+          ]
+        },
+        {
+          "name": "wall clock",
+          "adjectives": [
+            "round",
+            "white"
+          ]
+        },
+        {
+          "name": "wall outlets and switches",
+          "adjectives": [
+            "small",
+            "gray"
+          ]
+        },
+        {
+          "name": "blanket",
+          "adjectives": [
+            "white",
+            "soft"
+          ]
         }
       ],
       "shot": "medium",
       "angle": "high angle",
       "step": "during",
-      "action": "The nurse stands behind the clear bassinet, looking down at the newborn with a gentle smile while her hands rest on the bassinet's edge. A tube runs from the machine to a mask on the newborn's face.",
+      "action": "The nurse stands behind the bassinet and looks down at the newborn, resting her hands on the bassinet's edge. The machine's tube runs to the newborn's face.",
       "extras": {
         "floor": false,
-        "background": "Hospital nursery room with pale green walls, a window showing a night sky with a crescent moon, a wall clock and wall outlets",
+        "background": "A hospital nursery room with pale green walls, a night window with a crescent moon, a wall clock and wall outlets.",
         "morePeople": false,
         "readableText": "Venice"
       },
@@ -2043,8 +2101,9 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "front",
-      "promptKey": "08a9fcc81b4ff66c"
+      "promptKey": "9a133c611ab9b993"
     }
   },
   "worn.grid.png": {
@@ -3013,21 +3072,24 @@
     "1": {
       "objects": [
         {
-          "name": "pier",
+          "name": "person",
           "adjectives": [
-            "wooden",
-            "long",
-            "brown",
-            "weathered"
+            "small",
+            "distant",
+            "standing",
+            "wearing green jacket",
+            "wearing gray pants",
+            "hand raised to forehead"
           ]
         },
         {
-          "name": "person",
+          "name": "pier",
           "adjectives": [
-            "standing",
-            "small",
-            "distant",
-            "green-shirted"
+            "long",
+            "wooden",
+            "brown",
+            "weathered",
+            "extending into the sea"
           ]
         },
         {
@@ -3035,14 +3097,16 @@
           "adjectives": [
             "wooden",
             "thick",
-            "vertical"
+            "tall",
+            "reflected in water"
           ]
         },
         {
           "name": "railing",
           "adjectives": [
-            "short",
-            "wooden"
+            "small",
+            "wooden",
+            "at the end of the pier"
           ]
         },
         {
@@ -3050,7 +3114,7 @@
           "adjectives": [
             "calm",
             "blue-gray",
-            "flat"
+            "still"
           ]
         },
         {
@@ -3058,7 +3122,7 @@
           "adjectives": [
             "small",
             "pale",
-            "soft"
+            "light blue"
           ]
         },
         {
@@ -3068,22 +3132,15 @@
             "cream",
             "empty"
           ]
-        },
-        {
-          "name": "reflections",
-          "adjectives": [
-            "faint",
-            "wavy"
-          ]
         }
       ],
       "shot": "wide",
       "angle": "high angle",
       "step": "during",
-      "action": "A person stands at the far end of the pier with one hand raised to their forehead, looking out over the sea.",
+      "action": "A lone person stands at the far end of the pier and shades their eyes with one hand, looking out over the sea.",
       "extras": {
         "floor": false,
-        "background": "A flat, calm blue-gray sea meets a pale cream sky with one small cloud on the left.",
+        "background": "Calm blue-gray sea under a pale cream sky with one small cloud on the left; the horizon is a flat line",
         "morePeople": false,
         "readableText": ""
       },
@@ -3099,9 +3156,16 @@
           "place": "back"
         }
       },
-      "drawingErrors": [],
+      "drawingErrors": [
+        {
+          "object": "sea",
+          "mustSee": true,
+          "note": "The right edge of the sea drops off in a sharp vertical line, so the water looks cut off and pasted on rather than continuing to the edge of the picture."
+        }
+      ],
+      "onlookers": [],
       "mainView": null,
-      "promptKey": "b35cad685b7aa871"
+      "promptKey": "98c96b8873f8f244"
     },
     "2": {
       "objects": [
@@ -3111,8 +3175,8 @@
             "standing",
             "dark-haired",
             "looking up",
-            "hands in pockets",
-            "casual"
+            "casual",
+            "hands in pockets"
           ]
         },
         {
@@ -3138,18 +3202,18 @@
           "name": "wooden pier",
           "adjectives": [
             "wooden",
-            "elevated",
+            "brown",
+            "raised",
             "weathered",
-            "brown"
+            "on tall posts"
           ]
         },
         {
-          "name": "wooden pillars",
+          "name": "wooden posts",
           "adjectives": [
             "thick",
             "tall",
-            "brown",
-            "supporting"
+            "brown"
           ]
         },
         {
@@ -3163,35 +3227,36 @@
         {
           "name": "sea",
           "adjectives": [
+            "blue",
             "calm",
-            "pale blue",
-            "flat"
+            "flat",
+            "pale"
           ]
         },
         {
           "name": "cloud",
           "adjectives": [
             "small",
-            "light blue",
-            "wispy"
+            "pale blue",
+            "flat"
           ]
         },
         {
           "name": "sky",
           "adjectives": [
             "cream",
-            "pale",
-            "empty"
+            "empty",
+            "plain"
           ]
         }
       ],
       "shot": "wide",
       "angle": "low angle",
       "step": "during",
-      "action": "The young man stands on the edge of the pier with hands in his pockets and looks up at the sky; the pier's pillars hold up the deck beneath him.",
+      "action": "A man stands alone at the edge of the pier with his hands in his pockets, looking up at the sky; he does not interact with anything else.",
       "extras": {
-        "floor": false,
-        "background": "pale cream sky with a small blue cloud, and a flat pale blue sea behind the pier pillars",
+        "floor": true,
+        "background": "plain cream sky with one small cloud and a pale blue calm sea behind the pier posts",
         "morePeople": false,
         "readableText": ""
       },
@@ -3207,15 +3272,10 @@
           "place": "back"
         }
       },
-      "drawingErrors": [
-        {
-          "object": "calm sea",
-          "mustSee": true,
-          "note": "The sea is a flat blue block with a hard, straight-edged top and right side that looks like a pasted rectangle. It does not blend with the pillars or the horizon, and it floats in the sky area."
-        }
-      ],
+      "drawingErrors": [],
+      "onlookers": [],
       "mainView": null,
-      "promptKey": "b35cad685b7aa871"
+      "promptKey": "98c96b8873f8f244"
     },
     "3": {
       "objects": [
@@ -3225,7 +3285,7 @@
             "dark-haired",
             "messy-haired",
             "seen from behind",
-            "wearing olive green jacket"
+            "wearing olive-green jacket"
           ]
         },
         {
@@ -3250,7 +3310,7 @@
           "adjectives": [
             "small",
             "pale blue",
-            "white"
+            "wispy"
           ]
         },
         {
@@ -3259,28 +3319,21 @@
             "wooden",
             "short"
           ]
-        },
-        {
-          "name": "railing",
-          "adjectives": [
-            "wooden",
-            "at the end of the pier"
-          ]
         }
       ],
       "shot": "medium",
       "angle": "eye level",
       "step": "before",
-      "action": "The man stands at the start of the pier with his back to the viewer and looks along it toward the sea.",
+      "action": "A man seen from behind stands at the start of a wooden pier and looks out along it toward the sea; he does not touch anything.",
       "extras": {
         "floor": false,
-        "background": "calm blue sea under a pale cream sky with a small cloud",
+        "background": "calm blue sea under a cream-coloured sky with a small cloud",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
         "pier": {
-          "mark": "partly cut",
+          "mark": "visible",
           "size": "large",
           "place": "front"
         },
@@ -3291,8 +3344,9 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": null,
-      "promptKey": "b35cad685b7aa871"
+      "promptKey": "98c96b8873f8f244"
     },
     "4": {
       "objects": [
@@ -3300,9 +3354,9 @@
           "name": "pier",
           "adjectives": [
             "wooden",
+            "brown",
             "long",
-            "narrow",
-            "brown"
+            "narrow"
           ]
         },
         {
@@ -3310,19 +3364,20 @@
           "adjectives": [
             "small",
             "dark-haired",
-            "seen from above"
+            "seen from above",
+            "standing at the end of the pier"
           ]
         },
         {
           "name": "sea",
           "adjectives": [
-            "calm",
             "blue",
+            "calm",
             "flat"
           ]
         },
         {
-          "name": "pier posts",
+          "name": "posts",
           "adjectives": [
             "wooden",
             "small",
@@ -3330,27 +3385,21 @@
           ]
         },
         {
-          "name": "shadow of the pier",
+          "name": "shore",
           "adjectives": [
-            "dark",
-            "soft"
-          ]
-        },
-        {
-          "name": "possible small animal or object near the person's head",
-          "adjectives": [
-            "orange",
-            "tiny"
+            "pale",
+            "cream-colored",
+            "plain"
           ]
         }
       ],
       "shot": "wide",
       "angle": "overhead",
       "step": "during",
-      "action": "One person stands alone at the end of the pier and looks out toward the sea. They aren't interacting with any other object.",
+      "action": "A person stands at the far end of the pier and faces the sea. They do not touch any other object.",
       "extras": {
         "floor": false,
-        "background": "Blue sea fills most of the frame, and a plain cream strip runs down the right edge. It may be sand or empty space.",
+        "background": "Calm blue water fills most of the frame. A plain cream-colored strip of shore or sand runs down the right edge.",
         "morePeople": false,
         "readableText": ""
       },
@@ -3367,41 +3416,43 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": null,
-      "promptKey": "b35cad685b7aa871"
+      "promptKey": "98c96b8873f8f244"
     },
     "5": {
       "objects": [
         {
-          "name": "young man",
+          "name": "man",
           "adjectives": [
+            "young",
             "dark-haired",
             "messy-haired",
+            "thoughtful",
             "smiling",
-            "dreamy",
-            "relaxed"
+            "cartoon"
           ]
         },
         {
-          "name": "green jacket",
+          "name": "jacket",
           "adjectives": [
-            "olive",
+            "olive green",
             "loose",
-            "worn"
+            "hooded"
           ]
         },
         {
-          "name": "orange shirt",
+          "name": "shirt",
           "adjectives": [
-            "mustard",
-            "small visible patch"
+            "orange",
+            "mustard"
           ]
         },
         {
           "name": "wooden railing",
           "adjectives": [
             "brown",
-            "rough",
+            "thick",
             "weathered",
             "sturdy"
           ]
@@ -3411,17 +3462,18 @@
           "adjectives": [
             "blue",
             "calm",
-            "flat"
+            "flat",
+            "gently rippled"
           ]
         }
       ],
       "shot": "medium",
       "angle": "eye level",
       "step": "during",
-      "action": "The young man leans his folded arms on the wooden railing, rests his chin on his hand and gazes out at the sea.",
+      "action": "The man leans his arms on the wooden railing and rests his chin on his hand, gazing out at the sea.",
       "extras": {
         "floor": false,
-        "background": "Flat blue sea under a plain cream sky, with a wooden railing in the foreground",
+        "background": "Plain pale cream sky above a flat blue sea, with no other features",
         "morePeople": false,
         "readableText": ""
       },
@@ -3438,8 +3490,9 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": null,
-      "promptKey": "b35cad685b7aa871"
+      "promptKey": "98c96b8873f8f244"
     },
     "6": {
       "objects": [
@@ -3447,10 +3500,10 @@
           "name": "man",
           "adjectives": [
             "walking",
-            "seen from behind",
             "dark-haired",
-            "wearing a green jacket",
-            "wearing gray pants"
+            "wearing green jacket",
+            "wearing grey trousers",
+            "seen from behind"
           ]
         },
         {
@@ -3459,8 +3512,7 @@
             "wooden",
             "long",
             "brown",
-            "weathered",
-            "narrowing into the distance"
+            "planked"
           ]
         },
         {
@@ -3468,8 +3520,7 @@
           "adjectives": [
             "wooden",
             "short",
-            "brown",
-            "evenly spaced"
+            "brown"
           ]
         },
         {
@@ -3484,34 +3535,26 @@
           "name": "cloud",
           "adjectives": [
             "small",
-            "pale",
-            "blue-gray"
-          ]
-        },
-        {
-          "name": "sign",
-          "adjectives": [
-            "small",
-            "wooden",
-            "at the far end of the pier"
+            "grey-blue",
+            "pale"
           ]
         },
         {
           "name": "sky",
           "adjectives": [
             "pale",
-            "cream-colored",
+            "cream",
             "empty"
           ]
         }
       ],
       "shot": "wide",
-      "angle": "eye level",
+      "angle": "high angle",
       "step": "during",
-      "action": "The man walks away from the viewer along the pier toward the far end. He is not interacting with any other object.",
+      "action": "A man walks away from the viewer along the pier toward its far end; he does not interact with any other object.",
       "extras": {
         "floor": true,
-        "background": "A calm blue sea under a pale cream sky with one small cloud. The sea ends in a hard vertical edge on the right side of the picture.",
+        "background": "calm blue sea on the left under a pale cream sky with one small cloud; the pier narrows toward the far end",
         "morePeople": false,
         "readableText": ""
       },
@@ -3531,16 +3574,12 @@
         {
           "object": "calm sea",
           "mustSee": true,
-          "note": "The sea ends in a hard straight vertical edge on the right, and the sky continues beyond it. It looks like a pasted-on rectangle and does not meet the horizon naturally."
-        },
-        {
-          "object": "sign",
-          "mustSee": false,
-          "note": "The small sign at the end of the pier looks stuck on and is not clearly attached to a post."
+          "note": "The sea ends in a hard straight edge at the right of the pier and does not meet the horizon naturally, so the cream area on the right looks like flat paper instead of water or sky."
         }
       ],
+      "onlookers": [],
       "mainView": null,
-      "promptKey": "b35cad685b7aa871"
+      "promptKey": "98c96b8873f8f244"
     },
     "7": {
       "objects": [
@@ -3548,10 +3587,10 @@
           "name": "man",
           "adjectives": [
             "dark-haired",
-            "leaning forward",
-            "wearing green jacket",
-            "gray trousers",
-            "white shoes"
+            "leaning",
+            "green-jacketed",
+            "gray-trousered",
+            "bent forward"
           ]
         },
         {
@@ -3567,7 +3606,6 @@
           "name": "railing",
           "adjectives": [
             "wooden",
-            "short",
             "brown"
           ]
         },
@@ -3576,8 +3614,7 @@
           "adjectives": [
             "wooden",
             "thick",
-            "tall",
-            "partly submerged"
+            "standing in water"
           ]
         },
         {
@@ -3589,21 +3626,19 @@
           ]
         },
         {
-          "name": "reflections",
+          "name": "sneakers",
           "adjectives": [
-            "faint",
-            "wavy",
-            "in the water"
+            "white"
           ]
         }
       ],
       "shot": "wide",
       "angle": "high angle",
       "step": "during",
-      "action": "The man stands at the end of the pier, leaning on the railing and looking down at the water.",
+      "action": "A man leans on the pier railing at the end of the pier and looks down toward the water.",
       "extras": {
         "floor": true,
-        "background": "plain pale cream sky above a flat blue-gray sea with a hard straight edge on the right",
+        "background": "plain pale cream sky with a flat blue-gray sea below",
         "morePeople": false,
         "readableText": ""
       },
@@ -3614,7 +3649,7 @@
           "place": "front"
         },
         "calm sea": {
-          "mark": "partly cut",
+          "mark": "visible",
           "size": "large",
           "place": "back"
         }
@@ -3623,22 +3658,23 @@
         {
           "object": "calm sea",
           "mustSee": true,
-          "note": "The water ends in a hard, straight vertical edge on the right and a straight edge at the horizon, like a pasted flat panel, so it does not blend with the pale background."
+          "note": "The water has a hard, straight diagonal edge on the right side and ends abruptly against the cream background. It looks like a flat panel and not a sea that reaches a horizon."
         }
       ],
+      "onlookers": [],
       "mainView": null,
-      "promptKey": "b35cad685b7aa871"
+      "promptKey": "98c96b8873f8f244"
     },
     "8": {
       "objects": [
         {
           "name": "young man",
           "adjectives": [
-            "walking",
-            "smiling",
             "dark-haired",
-            "relaxed",
-            "casual"
+            "smiling",
+            "casual",
+            "walking",
+            "relaxed"
           ]
         },
         {
@@ -3649,10 +3685,9 @@
           ]
         },
         {
-          "name": "orange shirt",
+          "name": "mustard shirt",
           "adjectives": [
-            "mustard",
-            "plain"
+            "orange-yellow"
           ]
         },
         {
@@ -3675,22 +3710,21 @@
             "wooden",
             "long",
             "brown",
-            "planked"
+            "plank"
           ]
         },
         {
           "name": "wooden posts",
           "adjectives": [
-            "dark",
-            "short",
-            "weathered"
+            "brown",
+            "short"
           ]
         },
         {
           "name": "sea",
           "adjectives": [
             "calm",
-            "blue",
+            "blue-gray",
             "flat"
           ]
         },
@@ -3698,26 +3732,24 @@
           "name": "cloud",
           "adjectives": [
             "small",
-            "pale blue",
-            "wispy"
+            "pale blue"
           ]
         },
         {
           "name": "sky",
           "adjectives": [
-            "pale",
             "cream",
-            "clear"
+            "pale"
           ]
         }
       ],
       "shot": "wide",
       "angle": "high angle",
       "step": "during",
-      "action": "A man walks alone along the pier toward the viewer with his hands in his pockets, looking off to the side at the sea; he does not interact with any other object.",
+      "action": "A young man walks along the pier toward the viewer with his hands in his pockets, looking off to the side at the sea.",
       "extras": {
         "floor": true,
-        "background": "calm blue sea under a pale cream sky with one small cloud, the pier stretching toward the horizon",
+        "background": "calm blue-gray sea under a pale cream sky with one small cloud, and the far end of the pier in the distance",
         "morePeople": false,
         "readableText": ""
       },
@@ -3737,26 +3769,23 @@
         {
           "object": "calm sea",
           "mustSee": true,
-          "note": "The sea on the right side ends in a hard, vertical edge beside the pier, so the water looks cut off instead of continuing to the horizon."
+          "note": "The sea ends in an odd vertical edge on the right side of the pier, so it looks like a flat pasted block rather than water that meets the horizon."
         }
       ],
+      "onlookers": [],
       "mainView": null,
-      "promptKey": "b35cad685b7aa871"
+      "promptKey": "98c96b8873f8f244"
     },
     "9": {
       "objects": [
         {
           "name": "man",
           "adjectives": [
-            "young",
-            "dark-haired",
             "standing",
+            "dark-haired",
             "arms crossed",
-            "looking up",
-            "wearing green jacket",
-            "wearing mustard shirt",
-            "wearing gray pants",
-            "wearing white sneakers"
+            "thoughtful",
+            "casual"
           ]
         },
         {
@@ -3764,9 +3793,8 @@
           "adjectives": [
             "wooden",
             "long",
-            "brown",
             "weathered",
-            "extending into the sea"
+            "brown"
           ]
         },
         {
@@ -3774,15 +3802,7 @@
           "adjectives": [
             "wooden",
             "short",
-            "at the end of the pier"
-          ]
-        },
-        {
-          "name": "pier posts",
-          "adjectives": [
-            "wooden",
-            "tall",
-            "supporting the pier"
+            "brown"
           ]
         },
         {
@@ -3790,8 +3810,7 @@
           "adjectives": [
             "calm",
             "blue",
-            "still",
-            "wide"
+            "flat"
           ]
         },
         {
@@ -3799,34 +3818,31 @@
           "adjectives": [
             "small",
             "pale",
-            "light blue"
+            "blue-gray"
           ]
         },
         {
-          "name": "distant shore",
+          "name": "shoreline",
           "adjectives": [
-            "faint",
+            "distant",
             "green",
-            "low",
-            "far away"
+            "low"
           ]
         },
         {
-          "name": "sky",
+          "name": "sneakers",
           "adjectives": [
-            "pale",
-            "cream-colored",
-            "clear"
+            "white"
           ]
         }
       ],
       "shot": "wide",
-      "angle": "eye level",
+      "angle": "high angle",
       "step": "during",
-      "action": "A man stands at the end of a wooden pier with his arms crossed, looking up and away into the sky, and he does not touch anything else.",
+      "action": "A man stands alone at the end of the pier with arms crossed, looking up and away at the sky; he does not interact with anything else.",
       "extras": {
         "floor": true,
-        "background": "calm blue sea, a faint distant green shoreline, and a pale cream sky with one small cloud",
+        "background": "calm blue sea, pale cream sky with a small cloud, and a distant low green shoreline on the left",
         "morePeople": false,
         "readableText": ""
       },
@@ -3846,16 +3862,12 @@
         {
           "object": "calm sea",
           "mustSee": true,
-          "note": "The right edge of the sea has a hard, straight diagonal edge that looks like a pasted panel. It does not follow the horizon or the pier lines."
-        },
-        {
-          "object": "pier",
-          "mustSee": true,
-          "note": "The end of the pier has inconsistent perspective. The deck, railing and support posts do not line up, and the front posts look disconnected from the deck."
+          "note": "The sea ends in a hard, straight vertical edge on the right side, so it looks like a flat panel rather than water that continues to the picture edge."
         }
       ],
+      "onlookers": [],
       "mainView": null,
-      "promptKey": "b35cad685b7aa871"
+      "promptKey": "98c96b8873f8f244"
     }
   },
   "surgeon.grid.png": {
@@ -3865,10 +3877,10 @@
           "name": "surgeon",
           "adjectives": [
             "elderly",
-            "gray-haired",
             "focused",
-            "masked",
-            "bespectacled"
+            "gray-haired",
+            "bespectacled",
+            "masked"
           ]
         },
         {
@@ -3878,36 +3890,36 @@
           ]
         },
         {
+          "name": "headlamp",
+          "adjectives": [
+            "lit",
+            "yellow",
+            "bright"
+          ]
+        },
+        {
           "name": "surgical mask",
           "adjectives": [
             "light blue"
           ]
         },
         {
-          "name": "glasses",
+          "name": "eyeglasses",
           "adjectives": [
-            "round",
-            "wire-framed"
-          ]
-        },
-        {
-          "name": "headlamp",
-          "adjectives": [
-            "lit",
-            "bright",
-            "yellow"
+            "round"
           ]
         },
         {
           "name": "surgical gown",
           "adjectives": [
-            "green"
+            "green",
+            "loose"
           ]
         },
         {
           "name": "gloves",
           "adjectives": [
-            "pale",
+            "cream",
             "latex"
           ]
         },
@@ -3921,47 +3933,47 @@
         {
           "name": "patient",
           "adjectives": [
-            "covered",
-            "draped"
+            "draped",
+            "lying down"
           ]
         },
         {
           "name": "surgical drape",
           "adjectives": [
-            "gray-blue",
+            "blue-gray",
             "rumpled"
           ]
         },
         {
           "name": "operating table",
           "adjectives": [
-            "partly hidden"
+            "partly seen"
           ]
         },
         {
-          "name": "surgical lamp",
+          "name": "surgical light",
           "adjectives": [
             "large",
-            "overhead",
-            "dark"
+            "dark",
+            "overhead"
           ]
         },
         {
           "name": "monitor",
           "adjectives": [
-            "dark",
-            "black screen"
+            "black",
+            "flat-screen"
           ]
         },
         {
-          "name": "wall electrical panel",
+          "name": "electrical panel",
           "adjectives": [
             "gray",
             "wall-mounted"
           ]
         },
         {
-          "name": "lightning bolt spark",
+          "name": "electrical spark symbol",
           "adjectives": [
             "yellow",
             "zigzag"
@@ -3971,24 +3983,24 @@
           "name": "instrument tray",
           "adjectives": [
             "metal",
-            "partly cut"
+            "small"
           ]
         },
         {
-          "name": "light beam",
+          "name": "equipment cart",
           "adjectives": [
-            "yellow",
-            "translucent"
+            "dark",
+            "blurred"
           ]
         }
       ],
       "shot": "medium",
       "angle": "high angle",
       "step": "during",
-      "action": "The surgeon, wearing a lit headlamp, looks down and holds two thin instruments over the draped patient, operating on the area lit by the beam.",
+      "action": "The surgeon leans over the draped patient and holds two thin instruments against the lit surgical site, looking down at it under the beam from the headlamp.",
       "extras": {
         "floor": false,
-        "background": "dark blue-gray operating room with an overhead surgical lamp, a wall-mounted electrical panel with a yellow spark symbol, a dark monitor on a stand and equipment on the right",
+        "background": "A dim, dark blue-gray operating room with a large overhead surgical light, a black monitor on a stand, a wall-mounted electrical panel with a yellow lightning spark, and equipment on the left.",
         "morePeople": false,
         "readableText": ""
       },
@@ -4010,53 +4022,50 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "three-quarter",
-      "promptKey": "311ba6e4df638d63"
+      "promptKey": "2f256171f19e8b98"
     },
     "2": {
       "objects": [
         {
           "name": "surgeon",
           "adjectives": [
-            "focused",
             "masked",
+            "focused",
             "green-gowned",
-            "bending over"
+            "bent over",
+            "bespectacled"
           ]
         },
         {
           "name": "headlamp",
           "adjectives": [
             "lit",
-            "yellow beam",
-            "head-mounted"
+            "bright",
+            "yellow beam"
           ]
         },
         {
           "name": "surgical mask",
           "adjectives": [
-            "blue",
-            "worn"
+            "blue"
           ]
         },
         {
-          "name": "glasses",
+          "name": "patient",
           "adjectives": [
-            "round"
+            "draped",
+            "covered",
+            "lying down"
           ]
         },
         {
           "name": "operating table",
           "adjectives": [
             "draped",
-            "blue-gray"
-          ]
-        },
-        {
-          "name": "patient",
-          "adjectives": [
-            "covered by drape",
-            "mostly hidden"
+            "gray-blue",
+            "central"
           ]
         },
         {
@@ -4064,15 +4073,16 @@
           "adjectives": [
             "large",
             "overhead",
-            "round",
-            "unlit"
+            "switched off",
+            "round"
           ]
         },
         {
           "name": "IV stand",
           "adjectives": [
             "tall",
-            "metal"
+            "metal",
+            "thin"
           ]
         },
         {
@@ -4083,17 +4093,10 @@
           ]
         },
         {
-          "name": "IV tube",
+          "name": "IV tubing",
           "adjectives": [
             "thin",
-            "dark"
-          ]
-        },
-        {
-          "name": "monitor",
-          "adjectives": [
-            "dark",
-            "boxy"
+            "hanging"
           ]
         },
         {
@@ -4108,46 +4111,61 @@
           "name": "instrument table",
           "adjectives": [
             "draped",
-            "small"
+            "small",
+            "left side"
           ]
         },
         {
-          "name": "wall outlet panel",
+          "name": "surgical instruments",
           "adjectives": [
             "small",
-            "with yellow spark symbol"
+            "metal"
           ]
         },
         {
-          "name": "ceiling equipment",
+          "name": "monitor",
           "adjectives": [
-            "pipes",
-            "boom arms",
-            "dark"
-          ]
-        },
-        {
-          "name": "second IV stand",
-          "adjectives": [
-            "tall",
+            "dark",
+            "boxy",
             "right side"
           ]
         },
         {
-          "name": "cart",
+          "name": "wall panel",
+          "adjectives": [
+            "small",
+            "gray"
+          ]
+        },
+        {
+          "name": "warning spark symbol",
+          "adjectives": [
+            "yellow",
+            "lightning-shaped"
+          ]
+        },
+        {
+          "name": "ceiling pipes",
+          "adjectives": [
+            "gray",
+            "thick"
+          ]
+        },
+        {
+          "name": "equipment cart",
           "adjectives": [
             "metal",
-            "cluttered"
+            "right side"
           ]
         }
       ],
       "shot": "wide",
       "angle": "eye level",
       "step": "during",
-      "action": "The surgeon leans over the draped patient and operates by the light of the headlamp, looking down at the surgical site.",
+      "action": "The surgeon leans over the draped patient on the operating table and operates by the light of a headlamp. The headlamp beam falls on the surgical site.",
       "extras": {
         "floor": true,
-        "background": "A dim, bluish operating room with walls, ceiling pipes and boom arms, medical stands, a monitor and equipment carts",
+        "background": "A dim blue-gray operating room with walls, ceiling pipes and equipment. A large surgical light hangs from the ceiling. An IV stand and a monitor stand near the table. A small wall panel on the left has a yellow lightning-bolt symbol.",
         "morePeople": false,
         "readableText": ""
       },
@@ -4169,8 +4187,9 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "three-quarter",
-      "promptKey": "311ba6e4df638d63"
+      "promptKey": "2f256171f19e8b98"
     },
     "3": {
       "objects": [
@@ -4179,8 +4198,105 @@
           "adjectives": [
             "elderly",
             "gray-haired",
+            "bespectacled",
             "focused",
-            "wide-eyed",
+            "masked",
+            "wide-eyed"
+          ]
+        },
+        {
+          "name": "surgical mask",
+          "adjectives": [
+            "pale blue",
+            "white-green"
+          ]
+        },
+        {
+          "name": "glasses",
+          "adjectives": [
+            "round",
+            "dark-rimmed"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "lit",
+            "yellow",
+            "bright"
+          ]
+        },
+        {
+          "name": "surgical cap",
+          "adjectives": [
+            "green"
+          ]
+        },
+        {
+          "name": "surgical gown",
+          "adjectives": [
+            "green",
+            "wrinkled"
+          ]
+        },
+        {
+          "name": "surgical light",
+          "adjectives": [
+            "round",
+            "dark",
+            "multi-lamp"
+          ]
+        },
+        {
+          "name": "patient",
+          "adjectives": [
+            "partly visible",
+            "covered",
+            "blue-gray draped"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "low angle",
+      "step": "during",
+      "action": "The surgeon leans over the patient on the table and looks down at them, lighting the area with the headlamp beam.",
+      "extras": {
+        "floor": false,
+        "background": "dark gray-blue operating room wall with a large surgical light at the upper left",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "front",
+      "promptKey": "2f256171f19e8b98"
+    },
+    "4": {
+      "objects": [
+        {
+          "name": "surgeon",
+          "adjectives": [
+            "gray-haired",
+            "focused",
+            "wearing green scrubs",
+            "masked",
             "bespectacled"
           ]
         },
@@ -4194,115 +4310,14 @@
           "name": "headlamp",
           "adjectives": [
             "lit",
-            "yellow",
-            "bright"
+            "glowing yellow",
+            "strapped around head"
           ]
         },
         {
-          "name": "glasses",
+          "name": "surgical mask",
           "adjectives": [
-            "round",
-            "dark-rimmed"
-          ]
-        },
-        {
-          "name": "face mask",
-          "adjectives": [
-            "pale blue",
-            "surgical"
-          ]
-        },
-        {
-          "name": "surgical gown",
-          "adjectives": [
-            "green",
-            "loose"
-          ]
-        },
-        {
-          "name": "surgical light",
-          "adjectives": [
-            "dark",
-            "round",
-            "multi-lamp"
-          ]
-        },
-        {
-          "name": "patient",
-          "adjectives": [
-            "partly seen",
-            "covered",
-            "draped"
-          ]
-        },
-        {
-          "name": "hair bun",
-          "adjectives": [
-            "gray"
-          ]
-        }
-      ],
-      "shot": "medium",
-      "angle": "low angle",
-      "step": "during",
-      "action": "The surgeon looks down at the patient below the frame, with the headlamp beam lighting the area, while leaning over the draped patient.",
-      "extras": {
-        "floor": false,
-        "background": "dark teal wall and ceiling with a large surgical light at the upper left",
-        "morePeople": false,
-        "readableText": ""
-      },
-      "mustSee": {
-        "operating room": {
-          "mark": "visible",
-          "size": "large",
-          "place": "back"
-        },
-        "surgeon": {
-          "mark": "visible",
-          "size": "large",
-          "place": "front"
-        },
-        "headlamp": {
-          "mark": "visible",
-          "size": "small",
-          "place": "front"
-        }
-      },
-      "drawingErrors": [],
-      "mainView": "three-quarter",
-      "promptKey": "311ba6e4df638d63"
-    },
-    "4": {
-      "objects": [
-        {
-          "name": "surgeon",
-          "adjectives": [
-            "older",
-            "gray-haired",
-            "focused",
-            "seen from behind"
-          ]
-        },
-        {
-          "name": "surgical cap",
-          "adjectives": [
-            "green",
-            "tied"
-          ]
-        },
-        {
-          "name": "surgical gown",
-          "adjectives": [
-            "green",
-            "loose"
-          ]
-        },
-        {
-          "name": "face mask",
-          "adjectives": [
-            "light blue",
-            "pulled down below the nose"
+            "light blue"
           ]
         },
         {
@@ -4312,41 +4327,25 @@
           ]
         },
         {
-          "name": "headlamp",
+          "name": "surgical gloves",
           "adjectives": [
-            "black strap",
-            "glowing",
-            "yellow"
+            "pale",
+            "tan"
           ]
         },
         {
-          "name": "surgical glove",
-          "adjectives": [
-            "tan",
-            "thin"
-          ]
-        },
-        {
-          "name": "forceps",
+          "name": "scalpel",
           "adjectives": [
             "small",
-            "metal",
-            "held in the hand"
-          ]
-        },
-        {
-          "name": "patient",
-          "adjectives": [
-            "covered",
-            "lying down"
+            "held in hand"
           ]
         },
         {
           "name": "surgical drape",
           "adjectives": [
             "white",
-            "light blue",
-            "draped"
+            "blue-gray",
+            "draped over patient"
           ]
         },
         {
@@ -4360,27 +4359,32 @@
           "name": "bowl",
           "adjectives": [
             "small",
-            "round",
             "metal"
           ]
         },
         {
-          "name": "surgical instruments",
+          "name": "surgical scissors and clamps",
           "adjectives": [
-            "scissors-like",
-            "clamped",
             "metal",
-            "three"
+            "three pieces",
+            "laid out on tray"
+          ]
+        },
+        {
+          "name": "gown",
+          "adjectives": [
+            "green",
+            "tied at the back"
           ]
         }
       ],
       "shot": "medium",
       "angle": "high angle",
       "step": "during",
-      "action": "The surgeon looks down at the draped patient and works on them with forceps, lit by the headlamp beam, while the tray of instruments sits nearby.",
+      "action": "The surgeon, seen from behind and the side, holds a scalpel over the draped patient and looks down at the work, lit by the headlamp's yellow beam.",
       "extras": {
         "floor": false,
-        "background": "dark blue-gray room with a draped surface and a tray of instruments",
+        "background": "dim blue-gray operating room with a draped surgical table and an instrument tray",
         "morePeople": false,
         "readableText": ""
       },
@@ -4391,7 +4395,7 @@
           "place": "back"
         },
         "surgeon": {
-          "mark": "visible",
+          "mark": "partly cut",
           "size": "large",
           "place": "front"
         },
@@ -4402,8 +4406,9 @@
         }
       },
       "drawingErrors": [],
-      "mainView": "back",
-      "promptKey": "311ba6e4df638d63"
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "2f256171f19e8b98"
     },
     "5": {
       "objects": [
@@ -4411,7 +4416,7 @@
           "name": "surgeon",
           "adjectives": [
             "focused",
-            "masked",
+            "hunched",
             "hair in a bun",
             "wearing green scrubs"
           ]
@@ -4427,14 +4432,14 @@
           "adjectives": [
             "lit",
             "black",
-            "bright"
+            "bright yellow beam"
           ]
         },
         {
           "name": "surgical gloves",
           "adjectives": [
-            "pale",
-            "latex"
+            "beige",
+            "tight-fitting"
           ]
         },
         {
@@ -4445,7 +4450,7 @@
           ]
         },
         {
-          "name": "surgical forceps",
+          "name": "forceps",
           "adjectives": [
             "thin",
             "metal"
@@ -4455,57 +4460,65 @@
           "name": "patient",
           "adjectives": [
             "covered",
-            "lying down"
+            "still"
           ]
         },
         {
           "name": "surgical drape",
           "adjectives": [
-            "blue-gray",
+            "blue",
             "wrinkled"
           ]
         },
         {
-          "name": "light spot",
+          "name": "operating table",
           "adjectives": [
-            "round",
-            "yellow",
-            "glowing"
+            "long",
+            "covered in blue cloth"
           ]
         },
         {
           "name": "instrument tray",
           "adjectives": [
-            "blue-gray",
-            "side"
+            "blue",
+            "side-mounted"
           ]
         },
         {
-          "name": "scissors",
+          "name": "surgical scissors",
           "adjectives": [
             "metal",
-            "hinged"
+            "hanging on the tray"
           ]
         },
         {
           "name": "clamp",
           "adjectives": [
-            "metal"
+            "metal",
+            "hanging on the tray"
           ]
         },
         {
-          "name": "basin",
+          "name": "metal bowl",
           "adjectives": [
             "round",
-            "metal",
-            "dark"
+            "shiny",
+            "dark inside"
           ]
         },
         {
           "name": "monitor",
           "adjectives": [
             "dark",
-            "gray"
+            "boxy"
+          ]
+        },
+        {
+          "name": "medical equipment",
+          "adjectives": [
+            "dark",
+            "boxy",
+            "in the corners"
           ]
         },
         {
@@ -4519,10 +4532,10 @@
       "shot": "medium",
       "angle": "high angle",
       "step": "during",
-      "action": "The surgeon leans over the draped patient and holds two instruments over the lit area, working on the patient while the headlamp lights the spot.",
+      "action": "The surgeon leans over the covered patient and holds two thin instruments over the lit spot on the drape, looking down at it with the headlamp shining on it.",
       "extras": {
         "floor": false,
-        "background": "dark operating room with medical monitors and equipment at the top corners and a tray at the left side",
+        "background": "A dark operating room with monitors and medical equipment in the corners, and the lit operating table in the middle.",
         "morePeople": false,
         "readableText": ""
       },
@@ -4544,8 +4557,9 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "above",
-      "promptKey": "311ba6e4df638d63"
+      "promptKey": "2f256171f19e8b98"
     },
     "6": {
       "objects": [
@@ -4586,7 +4600,7 @@
           "name": "surgical mask",
           "adjectives": [
             "pale blue",
-            "light"
+            "pleated"
           ]
         },
         {
@@ -4600,17 +4614,18 @@
           "name": "light beam",
           "adjectives": [
             "yellow",
-            "translucent"
+            "translucent",
+            "angled"
           ]
         }
       ],
       "shot": "close-up",
       "angle": "eye level",
       "step": "during",
-      "action": "The surgeon wears the headlamp and looks down and to the side, shining its beam toward the lower left at something outside the picture.",
+      "action": "The surgeon looks down and to the side, lit by the headlamp, whose beam shines down to the left.",
       "extras": {
         "floor": false,
-        "background": "dark teal wall or shadow in the upper left corner; the rest is filled by the surgeon",
+        "background": "dark teal-blue wall at the upper left corner, mostly hidden by the face and the light beam",
         "morePeople": false,
         "readableText": ""
       },
@@ -4632,8 +4647,9 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "three-quarter",
-      "promptKey": "311ba6e4df638d63"
+      "promptKey": "2f256171f19e8b98"
     },
     "7": {
       "objects": [
@@ -4644,8 +4660,30 @@
             "gray-haired",
             "bespectacled",
             "masked",
-            "startled",
-            "focused"
+            "alert",
+            "startled"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "yellow",
+            "glowing",
+            "strapped on"
+          ]
+        },
+        {
+          "name": "surgical mask",
+          "adjectives": [
+            "pale blue",
+            "worn"
+          ]
+        },
+        {
+          "name": "glasses",
+          "adjectives": [
+            "round",
+            "wire-framed"
           ]
         },
         {
@@ -4655,37 +4693,16 @@
           ]
         },
         {
-          "name": "headlamp",
-          "adjectives": [
-            "yellow",
-            "glowing",
-            "head-mounted"
-          ]
-        },
-        {
-          "name": "glasses",
-          "adjectives": [
-            "round"
-          ]
-        },
-        {
-          "name": "surgical mask",
-          "adjectives": [
-            "pale blue",
-            "light"
-          ]
-        },
-        {
-          "name": "surgical gown",
+          "name": "scrubs",
           "adjectives": [
             "green",
             "loose"
           ]
         },
         {
-          "name": "gloves",
+          "name": "surgical gloves",
           "adjectives": [
-            "cream",
+            "cream-colored",
             "latex"
           ]
         },
@@ -4700,32 +4717,23 @@
           "name": "patient",
           "adjectives": [
             "covered",
-            "draped",
-            "lying down"
+            "draped"
           ]
         },
         {
           "name": "surgical drape",
           "adjectives": [
             "pale blue",
-            "lit",
-            "wrinkled"
+            "lit by a bright patch"
           ]
         },
         {
-          "name": "surgical light",
+          "name": "operating light",
           "adjectives": [
             "large",
             "round",
-            "overhead",
-            "dark"
-          ]
-        },
-        {
-          "name": "monitor",
-          "adjectives": [
             "dark",
-            "black screen"
+            "ceiling-mounted"
           ]
         },
         {
@@ -4736,34 +4744,34 @@
           ]
         },
         {
-          "name": "spark",
+          "name": "electric spark",
           "adjectives": [
             "yellow",
             "zigzag"
           ]
         },
         {
-          "name": "instrument trays",
+          "name": "monitor",
           "adjectives": [
-            "small",
-            "metal"
+            "black",
+            "dark screen"
           ]
         },
         {
-          "name": "equipment cabinet",
+          "name": "instrument trays",
           "adjectives": [
-            "dark",
-            "gray"
+            "metal",
+            "small"
           ]
         }
       ],
       "shot": "medium",
       "angle": "eye level",
       "step": "during",
-      "action": "The surgeon holds surgical instruments in both gloved hands over the draped patient while glancing to the left, startled by the sparking wall outlet.",
+      "action": "The surgeon holds two thin instruments over the draped patient and looks to the left toward the sparking wall outlet.",
       "extras": {
         "floor": false,
-        "background": "A dim, dark blue-gray operating room with a large overhead surgical light, a dark monitor on a stand, and a wall outlet panel giving off a yellow spark",
+        "background": "A dim blue-gray operating room with a large ceiling operating light, a wall outlet panel giving off a yellow spark, a dark monitor and equipment on the right, and metal trays at the lower left.",
         "morePeople": false,
         "readableText": ""
       },
@@ -4774,7 +4782,7 @@
           "place": "back"
         },
         "surgeon": {
-          "mark": "visible",
+          "mark": "partly cut",
           "size": "large",
           "place": "front"
         },
@@ -4785,19 +4793,20 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "three-quarter",
-      "promptKey": "311ba6e4df638d63"
+      "promptKey": "2f256171f19e8b98"
     },
     "8": {
       "objects": [
         {
           "name": "surgeon",
           "adjectives": [
-            "older",
+            "elderly",
             "gray-haired",
-            "focused",
             "masked",
-            "bespectacled"
+            "bespectacled",
+            "focused"
           ]
         },
         {
@@ -4815,17 +4824,16 @@
           ]
         },
         {
-          "name": "face mask",
+          "name": "surgical mask",
           "adjectives": [
-            "white",
-            "blue-trimmed"
+            "light blue",
+            "white"
           ]
         },
         {
-          "name": "glasses",
+          "name": "eyeglasses",
           "adjectives": [
-            "thin-framed",
-            "round"
+            "thin-rimmed"
           ]
         },
         {
@@ -4836,30 +4844,25 @@
           ]
         },
         {
-          "name": "surgical gloves",
+          "name": "gloves",
           "adjectives": [
             "pale",
             "latex"
           ]
         },
         {
-          "name": "forceps",
+          "name": "surgical instrument",
           "adjectives": [
+            "thin",
             "metal",
-            "slender"
+            "long"
           ]
         },
         {
-          "name": "assistant's hand",
+          "name": "second person's arm",
           "adjectives": [
             "gloved",
-            "partly visible"
-          ]
-        },
-        {
-          "name": "assistant's sleeve",
-          "adjectives": [
-            "green",
+            "green-sleeved",
             "partly visible"
           ]
         },
@@ -4867,6 +4870,7 @@
           "name": "patient",
           "adjectives": [
             "covered",
+            "draped",
             "lying down"
           ]
         },
@@ -4874,29 +4878,28 @@
           "name": "surgical drape",
           "adjectives": [
             "blue-gray",
-            "wrinkled"
+            "rumpled"
           ]
         },
         {
           "name": "monitor",
           "adjectives": [
             "dark",
-            "blank",
-            "wall-mounted"
+            "black screen"
           ]
         },
         {
-          "name": "metal basins",
+          "name": "metal bowls",
           "adjectives": [
             "silver",
-            "round"
+            "round",
+            "blurry"
           ]
         },
         {
           "name": "instrument tray",
           "adjectives": [
-            "metal",
-            "partly visible"
+            "metal"
           ]
         },
         {
@@ -4910,10 +4913,10 @@
       "shot": "medium",
       "angle": "eye level",
       "step": "during",
-      "action": "The surgeon leans over the draped patient and holds forceps in a gloved hand. A second gloved hand from the right edge reaches in to the same forceps. The headlamp lights the surgical area.",
+      "action": "The surgeon, wearing a headlamp, leans over a draped patient and takes a surgical instrument that another person's gloved hand passes to them, while the headlamp beam lights the surgical area.",
       "extras": {
         "floor": false,
-        "background": "dark blue-gray operating room wall with a blank monitor on an arm and a tray of instruments",
+        "background": "dark blue-gray operating room wall with a black monitor on a stand and equipment",
         "morePeople": true,
         "readableText": ""
       },
@@ -4935,8 +4938,15 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [
+        {
+          "who": "second person (only an arm in a green sleeve and glove is visible, handing over the instrument)",
+          "does": "other",
+          "view": "side"
+        }
+      ],
       "mainView": "side",
-      "promptKey": "311ba6e4df638d63"
+      "promptKey": "2f256171f19e8b98"
     },
     "9": {
       "objects": [
@@ -4944,15 +4954,28 @@
           "name": "surgeon",
           "adjectives": [
             "elderly",
-            "focused",
             "gray-haired",
-            "leaning forward"
+            "focused",
+            "masked",
+            "bespectacled"
           ]
         },
         {
           "name": "surgical cap",
           "adjectives": [
             "green"
+          ]
+        },
+        {
+          "name": "surgical mask",
+          "adjectives": [
+            "light blue"
+          ]
+        },
+        {
+          "name": "glasses",
+          "adjectives": [
+            "round"
           ]
         },
         {
@@ -4964,28 +4987,16 @@
           ]
         },
         {
-          "name": "glasses",
-          "adjectives": [
-            "round",
-            "wire-framed"
-          ]
-        },
-        {
-          "name": "surgical mask",
-          "adjectives": [
-            "pale blue"
-          ]
-        },
-        {
           "name": "surgical gown",
           "adjectives": [
-            "green"
+            "green",
+            "loose"
           ]
         },
         {
           "name": "surgical gloves",
           "adjectives": [
-            "cream-colored",
+            "white",
             "latex"
           ]
         },
@@ -4993,29 +5004,33 @@
           "name": "surgical instruments",
           "adjectives": [
             "thin",
-            "metallic"
+            "metal"
           ]
         },
         {
           "name": "patient",
           "adjectives": [
             "covered",
-            "lying down"
+            "draped"
           ]
         },
         {
           "name": "surgical drape",
           "adjectives": [
             "gray-blue",
-            "draped",
-            "lit"
+            "rumpled"
           ]
         },
         {
-          "name": "operating lamp",
+          "name": "operating table",
+          "adjectives": [
+            "partly hidden"
+          ]
+        },
+        {
+          "name": "surgical light",
           "adjectives": [
             "large",
-            "round",
             "dark",
             "overhead"
           ]
@@ -5044,25 +5059,18 @@
         {
           "name": "instrument tray",
           "adjectives": [
-            "metal",
-            "small"
-          ]
-        },
-        {
-          "name": "table",
-          "adjectives": [
-            "dark",
-            "side"
+            "small",
+            "metal"
           ]
         }
       ],
       "shot": "medium",
       "angle": "eye level",
       "step": "during",
-      "action": "The surgeon leans over the draped patient and holds two thin instruments against the surgical site. The headlamp beam lights the spot, and the surgeon looks down at it.",
+      "action": "The surgeon leans over the draped patient and holds two thin instruments in gloved hands to operate on the incision site, lit by the beam from the headlamp.",
       "extras": {
         "floor": false,
-        "background": "A dim, dark teal operating room with an IV stand on the left, a monitor on the right, equipment and an overhead surgical lamp.",
+        "background": "dim, dark blue-gray operating room with an overhead surgical light, an IV stand with a bag on the left, and a monitor on the right",
         "morePeople": false,
         "readableText": ""
       },
@@ -5084,54 +5092,72 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "three-quarter",
-      "promptKey": "311ba6e4df638d63"
+      "promptKey": "2f256171f19e8b98"
     }
   },
   "sweep.grid.png": {
     "1": {
       "objects": [
         {
-          "name": "elderly woman",
+          "name": "older woman",
           "adjectives": [
             "gray-haired",
-            "bun",
+            "elderly",
             "bespectacled",
             "lunging",
-            "stretching",
-            "wearing red-orange sweater",
-            "wearing olive green pants"
+            "stretching"
+          ]
+        },
+        {
+          "name": "hair bun",
+          "adjectives": [
+            "gray",
+            "messy"
           ]
         },
         {
           "name": "glasses",
           "adjectives": [
-            "round",
-            "thin-framed"
+            "small",
+            "round"
           ]
         },
         {
-          "name": "shoes",
+          "name": "red-orange sweater",
           "adjectives": [
-            "dark brown",
-            "flat"
+            "long-sleeved",
+            "salmon-colored"
+          ]
+        },
+        {
+          "name": "olive green pants",
+          "adjectives": [
+            "baggy",
+            "green"
+          ]
+        },
+        {
+          "name": "dark brown shoes",
+          "adjectives": [
+            "flat",
+            "dark"
           ]
         },
         {
           "name": "broom",
           "adjectives": [
-            "yellow",
-            "straw-bristled",
-            "wooden-handled",
             "upright",
-            "leaning"
+            "wooden-handled",
+            "yellow-bristled"
           ]
         },
         {
           "name": "wall",
           "adjectives": [
-            "light blue",
-            "flat"
+            "blue",
+            "gray-blue"
           ]
         },
         {
@@ -5140,15 +5166,22 @@
             "beige",
             "tan"
           ]
+        },
+        {
+          "name": "corner",
+          "adjectives": [
+            "vertical",
+            "where two walls meet"
+          ]
         }
       ],
-      "shot": "medium",
+      "shot": "wide",
       "angle": "eye level",
-      "step": "before",
-      "action": "The woman lunges toward the broom with her arm outstretched and looks at it, but she has not yet touched it; the broom leans in the corner.",
+      "step": "during",
+      "action": "The woman lunges toward the right with her arm stretched out to grab the broom leaning in the corner, and she looks at it.",
       "extras": {
         "floor": true,
-        "background": "A light blue wall meeting a second wall at a corner on the right, with a beige floor below",
+        "background": "A plain blue-gray wall meeting a second wall at a corner on the right, above a beige floor",
         "morePeople": false,
         "readableText": ""
       },
@@ -5165,8 +5198,9 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "side",
-      "promptKey": "ee1ec609c0c53503"
+      "promptKey": "089a37ad69eefde7"
     },
     "2": {
       "objects": [
@@ -5174,9 +5208,11 @@
           "name": "elderly woman",
           "adjectives": [
             "gray-haired",
+            "bun",
             "bespectacled",
             "crouching",
-            "reaching"
+            "reaching",
+            "focused"
           ]
         },
         {
@@ -5192,19 +5228,13 @@
           "name": "glasses",
           "adjectives": [
             "round",
-            "dark-rimmed"
+            "black-framed"
           ]
         },
         {
-          "name": "hair bun",
+          "name": "red-orange long-sleeved top",
           "adjectives": [
-            "gray"
-          ]
-        },
-        {
-          "name": "red-orange shirt",
-          "adjectives": [
-            "long-sleeved",
+            "rust-colored",
             "loose"
           ]
         },
@@ -5219,7 +5249,8 @@
           "name": "shoes",
           "adjectives": [
             "dark",
-            "black-brown"
+            "brown-black",
+            "flat"
           ]
         },
         {
@@ -5230,34 +5261,27 @@
           ]
         },
         {
-          "name": "corner",
-          "adjectives": [
-            "blue-gray",
-            "vertical"
-          ]
-        },
-        {
           "name": "floor",
           "adjectives": [
             "beige",
-            "flat"
+            "smooth"
           ]
         }
       ],
       "shot": "medium",
       "angle": "eye level",
       "step": "before",
-      "action": "The woman crouches low and stretches her right hand toward the broom leaning in the corner, looking at it as she is about to grab it.",
+      "action": "The woman crouches low and stretches her right arm toward the broom leaning in the corner, looking at it, but she has not grabbed it yet.",
       "extras": {
         "floor": true,
-        "background": "a blue-gray wall meeting at a corner, with a beige floor",
+        "background": "A blue-gray wall meeting at a corner, with a beige floor.",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
         "corner": {
           "mark": "visible",
-          "size": "large",
+          "size": "medium",
           "place": "back"
         },
         "broom": {
@@ -5267,55 +5291,52 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "side",
-      "promptKey": "ee1ec609c0c53503"
+      "promptKey": "089a37ad69eefde7"
     },
     "3": {
       "objects": [
         {
-          "name": "elderly woman",
+          "name": "older woman",
           "adjectives": [
             "gray-haired",
             "bun hairstyle",
-            "stretching",
             "wearing glasses",
-            "lunging"
+            "lunging",
+            "stretching",
+            "elderly"
           ]
         },
         {
           "name": "broom",
           "adjectives": [
-            "yellow-bristled",
-            "wooden-handled",
             "upright",
-            "leaning against wall"
+            "leaning",
+            "yellow bristles",
+            "wooden handle",
+            "standing in corner"
           ]
         },
         {
-          "name": "red sweater",
+          "name": "red-orange sweater",
           "adjectives": [
-            "rust-red",
-            "long-sleeved"
+            "long-sleeved",
+            "loose"
           ]
         },
         {
-          "name": "green pants",
+          "name": "olive green pants",
           "adjectives": [
-            "olive-green"
+            "baggy",
+            "green"
           ]
         },
         {
-          "name": "shoes",
+          "name": "dark shoe",
           "adjectives": [
-            "dark",
-            "black"
-          ]
-        },
-        {
-          "name": "glasses",
-          "adjectives": [
-            "thin-framed",
-            "small"
+            "black",
+            "stepping"
           ]
         },
         {
@@ -5335,11 +5356,11 @@
       ],
       "shot": "medium",
       "angle": "high angle",
-      "step": "before",
-      "action": "The woman lunges across the floor with her arm outstretched toward the broom leaning in the corner. Her hand is close to it but has not yet grabbed it.",
+      "step": "during",
+      "action": "The woman lunges across the floor and stretches her right arm toward the broom standing in the corner, reaching to grab it.",
       "extras": {
         "floor": true,
-        "background": "Blue-gray walls meeting in a corner above a beige floor",
+        "background": "A blue-gray wall corner with a beige floor",
         "morePeople": false,
         "readableText": ""
       },
@@ -5356,8 +5377,9 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "back",
-      "promptKey": "ee1ec609c0c53503"
+      "promptKey": "089a37ad69eefde7"
     },
     "4": {
       "objects": [
@@ -5368,8 +5390,7 @@
             "bun hairstyle",
             "stretching",
             "lunging",
-            "red-shirted",
-            "green-trousered"
+            "elderly"
           ]
         },
         {
@@ -5382,10 +5403,24 @@
           ]
         },
         {
-          "name": "wall corner",
+          "name": "red-pink shirt",
           "adjectives": [
-            "blue",
-            "bare"
+            "short-sleeved",
+            "loose"
+          ]
+        },
+        {
+          "name": "olive green pants",
+          "adjectives": [
+            "green",
+            "long"
+          ]
+        },
+        {
+          "name": "dark shoes",
+          "adjectives": [
+            "black",
+            "flat"
           ]
         },
         {
@@ -5396,27 +5431,27 @@
           ]
         },
         {
-          "name": "shoes",
+          "name": "wall",
           "adjectives": [
-            "dark",
-            "black"
+            "blue-gray",
+            "plain"
           ]
         }
       ],
       "shot": "wide",
       "angle": "high angle",
       "step": "during",
-      "action": "The woman lunges and reaches her arm out toward the broom leaning in the corner, swinging to grab it; motion lines show her movement.",
+      "action": "The woman lunges across the floor with her arm stretched out, reaching to grab the broom leaning in the corner; motion lines show her swing.",
       "extras": {
         "floor": true,
-        "background": "blue walls meeting in a corner at the top right, with a beige floor",
+        "background": "A beige floor meeting two blue-gray walls in a corner at the top right, with a broom leaning against the wall",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
         "corner": {
           "mark": "visible",
-          "size": "medium",
+          "size": "small",
           "place": "back"
         },
         "broom": {
@@ -5426,29 +5461,28 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "above",
-      "promptKey": "ee1ec609c0c53503"
+      "promptKey": "089a37ad69eefde7"
     },
     "5": {
       "objects": [
         {
-          "name": "elderly woman",
+          "name": "older woman",
           "adjectives": [
             "gray-haired",
             "bespectacled",
             "crouching",
-            "focused",
-            "cropped"
+            "focused"
           ]
         },
         {
           "name": "broom",
           "adjectives": [
-            "yellow",
             "straw",
+            "yellow",
             "long-handled",
-            "wooden-handled",
-            "black-banded"
+            "wooden"
           ]
         },
         {
@@ -5461,12 +5495,11 @@
         {
           "name": "hair bun",
           "adjectives": [
-            "gray",
-            "cropped"
+            "gray"
           ]
         },
         {
-          "name": "shirt",
+          "name": "sweater",
           "adjectives": [
             "red-brown",
             "long-sleeved"
@@ -5486,34 +5519,25 @@
           ]
         },
         {
-          "name": "wall",
-          "adjectives": [
-            "blue",
-            "plain"
-          ]
-        },
-        {
           "name": "floor",
           "adjectives": [
-            "beige",
-            "smooth"
+            "beige"
           ]
         },
         {
-          "name": "corner",
+          "name": "wall",
           "adjectives": [
-            "blue wall meeting beige floor",
-            "right side"
+            "light blue"
           ]
         }
       ],
       "shot": "medium",
       "angle": "eye level",
       "step": "during",
-      "action": "The woman crouches and grips the broom handle with her right hand while sweeping the broom bristles into the corner of the room, looking toward it.",
+      "action": "The woman crouches and grips the broom handle with one hand, looking toward the corner as she sweeps.",
       "extras": {
         "floor": true,
-        "background": "plain blue wall meeting a beige floor at a corner on the right side",
+        "background": "A light blue wall meeting a second wall at a corner on the right, above a beige floor",
         "morePeople": false,
         "readableText": ""
       },
@@ -5524,61 +5548,55 @@
           "place": "back"
         },
         "broom": {
-          "mark": "visible",
+          "mark": "partly cut",
           "size": "large",
           "place": "front"
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "side",
-      "promptKey": "ee1ec609c0c53503"
+      "promptKey": "089a37ad69eefde7"
     },
     "6": {
       "objects": [
         {
-          "name": "older woman",
+          "name": "elderly woman",
           "adjectives": [
             "gray-haired",
+            "bun",
             "bespectacled",
             "crouching",
-            "smiling",
-            "focused"
+            "red-shirted",
+            "smiling"
           ]
         },
         {
           "name": "broom",
           "adjectives": [
+            "long",
+            "wooden-handled",
             "yellow-bristled",
-            "long-handled",
-            "brown-handled",
             "upright"
           ]
         },
         {
           "name": "glasses",
           "adjectives": [
-            "round",
-            "thin-framed"
+            "round"
           ]
         },
         {
-          "name": "hair bun",
+          "name": "shirt",
           "adjectives": [
-            "gray",
-            "small"
-          ]
-        },
-        {
-          "name": "sweater",
-          "adjectives": [
-            "red-brown",
+            "rust-red",
             "long-sleeved"
           ]
         },
         {
           "name": "pants",
           "adjectives": [
-            "olive green",
+            "olive-green",
             "baggy"
           ]
         },
@@ -5586,14 +5604,14 @@
           "name": "shoes",
           "adjectives": [
             "dark",
-            "flat"
+            "brown"
           ]
         },
         {
-          "name": "walls",
+          "name": "wall corner",
           "adjectives": [
-            "light blue",
-            "meeting at a corner"
+            "blue-gray",
+            "vertical seam"
           ]
         },
         {
@@ -5607,17 +5625,17 @@
       "shot": "medium",
       "angle": "eye level",
       "step": "during",
-      "action": "The woman crouches low and stretches her right arm out to grab the upright broom by its handle, looking toward it.",
+      "action": "The woman crouches low and reaches out with one arm to grab the handle of the broom standing near the corner, looking toward it.",
       "extras": {
         "floor": true,
-        "background": "Plain light blue walls meeting at a corner, with a beige floor",
+        "background": "blue-gray walls meeting in a corner above a beige floor",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
         "corner": {
           "mark": "visible",
-          "size": "medium",
+          "size": "large",
           "place": "back"
         },
         "broom": {
@@ -5627,8 +5645,9 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "three-quarter",
-      "promptKey": "ee1ec609c0c53503"
+      "promptKey": "089a37ad69eefde7"
     },
     "7": {
       "objects": [
@@ -5636,6 +5655,7 @@
           "name": "elderly woman",
           "adjectives": [
             "gray-haired",
+            "bun",
             "bespectacled",
             "lunging",
             "stretching",
@@ -5659,73 +5679,66 @@
           ]
         },
         {
-          "name": "hair bun",
+          "name": "red-orange sweater",
           "adjectives": [
-            "gray",
-            "tied up"
-          ]
-        },
-        {
-          "name": "shirt",
-          "adjectives": [
-            "red-brown",
-            "long-sleeved"
-          ]
-        },
-        {
-          "name": "pants",
-          "adjectives": [
-            "olive green",
+            "long-sleeved",
             "loose"
           ]
         },
         {
-          "name": "shoes",
+          "name": "olive green pants",
           "adjectives": [
-            "dark brown",
-            "flat"
+            "baggy"
           ]
         },
         {
-          "name": "wall",
+          "name": "dark brown shoes",
           "adjectives": [
-            "light blue",
-            "flat"
+            "flat",
+            "dark"
+          ]
+        },
+        {
+          "name": "wall corner",
+          "adjectives": [
+            "blue",
+            "right-angled"
           ]
         },
         {
           "name": "floor",
           "adjectives": [
             "beige",
-            "smooth"
+            "flat"
           ]
         }
       ],
-      "shot": "medium",
+      "shot": "wide",
       "angle": "eye level",
       "step": "during",
-      "action": "The woman lunges to the right and reaches out with one arm to grab the upright broom standing in the corner. She looks toward it.",
+      "action": "The woman lunges sideways and stretches her right arm out to grab the broom handle standing in the corner.",
       "extras": {
         "floor": true,
-        "background": "A light blue wall with a corner on the right where two walls meet, above a beige floor",
+        "background": "light blue walls meeting in a corner on the right, beige floor",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
         "corner": {
           "mark": "visible",
-          "size": "medium",
+          "size": "large",
           "place": "back"
         },
         "broom": {
-          "mark": "visible",
+          "mark": "partly cut",
           "size": "medium",
           "place": "back"
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "side",
-      "promptKey": "ee1ec609c0c53503"
+      "promptKey": "089a37ad69eefde7"
     },
     "8": {
       "objects": [
@@ -5733,9 +5746,9 @@
           "name": "elderly woman",
           "adjectives": [
             "gray-haired",
-            "determined",
-            "frowning",
             "bespectacled",
+            "frowning",
+            "determined",
             "crouching"
           ]
         },
@@ -5744,8 +5757,9 @@
           "adjectives": [
             "yellow",
             "straw",
-            "large",
-            "wooden-handled"
+            "long-handled",
+            "wooden",
+            "bound with dark bands"
           ]
         },
         {
@@ -5756,23 +5770,25 @@
           ]
         },
         {
+          "name": "red-brown sweater",
+          "adjectives": [
+            "long-sleeved",
+            "rust-colored"
+          ]
+        },
+        {
+          "name": "green pants",
+          "adjectives": [
+            "olive",
+            "baggy"
+          ]
+        },
+        {
           "name": "shoe",
           "adjectives": [
-            "black",
-            "worn"
-          ]
-        },
-        {
-          "name": "sweater",
-          "adjectives": [
-            "red-brown",
-            "long-sleeved"
-          ]
-        },
-        {
-          "name": "pants",
-          "adjectives": [
-            "olive green"
+            "dark",
+            "brown",
+            "flat"
           ]
         },
         {
@@ -5785,17 +5801,25 @@
         {
           "name": "wall",
           "adjectives": [
-            "light blue"
+            "blue-gray",
+            "plain"
+          ]
+        },
+        {
+          "name": "corner",
+          "adjectives": [
+            "blue-gray",
+            "recessed"
           ]
         }
       ],
       "shot": "medium",
-      "angle": "low angle",
+      "angle": "high angle",
       "step": "during",
-      "action": "The woman crouches in a lunging stance and grips the broom handle with one hand, holding it up and forward as if swinging it.",
+      "action": "The elderly woman crouches in a lunging stance, glares forward and grips the broom handle tightly with one hand as she swings it.",
       "extras": {
         "floor": true,
-        "background": "light blue wall meeting a beige floor, with a darker blue doorway or corner edge at the upper right",
+        "background": "A plain blue-gray wall with a room corner or doorway edge behind the woman, above a beige floor",
         "morePeople": false,
         "readableText": ""
       },
@@ -5812,8 +5836,9 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "three-quarter",
-      "promptKey": "ee1ec609c0c53503"
+      "promptKey": "089a37ad69eefde7"
     },
     "9": {
       "objects": [
@@ -5822,25 +5847,28 @@
           "adjectives": [
             "gray-haired",
             "bespectacled",
-            "hunched",
-            "focused",
-            "smiling"
+            "smiling",
+            "wearing red-orange sweater",
+            "wearing olive green pants",
+            "crouching",
+            "focused"
           ]
         },
         {
           "name": "broom",
           "adjectives": [
-            "long",
             "wooden-handled",
-            "yellow-bristled",
-            "straw"
+            "yellow bristles",
+            "straw",
+            "large",
+            "angled"
           ]
         },
         {
-          "name": "hair bun",
+          "name": "shoes",
           "adjectives": [
-            "gray",
-            "small"
+            "dark brown",
+            "flat"
           ]
         },
         {
@@ -5850,25 +5878,10 @@
           ]
         },
         {
-          "name": "red-orange sweater",
+          "name": "hair bun",
           "adjectives": [
-            "long-sleeved",
-            "salmon-colored"
-          ]
-        },
-        {
-          "name": "green pants",
-          "adjectives": [
-            "olive",
-            "loose"
-          ]
-        },
-        {
-          "name": "shoes",
-          "adjectives": [
-            "dark",
-            "brown",
-            "flat"
+            "gray",
+            "topknot"
           ]
         },
         {
@@ -5879,28 +5892,28 @@
           ]
         },
         {
-          "name": "walls",
+          "name": "wall",
           "adjectives": [
             "blue",
             "pale"
           ]
         },
         {
-          "name": "sweep marks",
+          "name": "swoosh lines",
           "adjectives": [
             "curved",
             "gray",
-            "thin"
+            "motion"
           ]
         }
       ],
       "shot": "medium",
       "angle": "high angle",
       "step": "during",
-      "action": "The woman holds the broom with both hands, leaning into a wide stance and sweeping it in an arc across the floor.",
+      "action": "The woman holds the broom with both hands and sweeps it across the floor in a wide arc, looking down at it.",
       "extras": {
         "floor": true,
-        "background": "pale blue walls meeting in a corner above a beige floor",
+        "background": "A pale blue wall meeting another wall in a corner above a beige floor",
         "morePeople": false,
         "readableText": ""
       },
@@ -5917,8 +5930,9 @@
         }
       },
       "drawingErrors": [],
+      "onlookers": [],
       "mainView": "three-quarter",
-      "promptKey": "ee1ec609c0c53503"
+      "promptKey": "089a37ad69eefde7"
     }
   },
   "overreach.grid.png": {
