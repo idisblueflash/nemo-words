@@ -20,7 +20,7 @@
     },
     "isSequence": true,
     "angleCase": "none",
-    "promptKey": "b4d388043e154b2d"
+    "promptKey": "a05467beadfc283f"
   },
   "ventilator": {
     "story": "Nurse Venice returns later; the machine breathes for the newborn.",
@@ -30,7 +30,7 @@
         "adjectives": []
       },
       {
-        "name": "machine",
+        "name": "breathing machine",
         "adjectives": []
       },
       {
@@ -48,9 +48,9 @@
       "name": "nurse",
       "actor": false
     },
-    "isSequence": true,
+    "isSequence": false,
     "angleCase": "none",
-    "promptKey": "449353d8f9dcd8d6"
+    "promptKey": "83d00745b324ad0e"
   },
   "period": {
     "story": "Off the pier, an eon of peace stretched and ended.",
@@ -60,36 +60,30 @@
         "adjectives": []
       },
       {
-        "name": "calm sea",
+        "name": "calm water",
         "adjectives": [
-          "calm",
-          "wide"
+          "calm"
         ]
       }
     ],
     "nameSigns": [],
     "mainSubject": null,
     "isSequence": true,
-    "angleCase": "view",
-    "promptKey": "547dae132e0bf33a"
+    "angleCase": "none",
+    "promptKey": "5c247aec57210964"
   },
   "overreach": {
     "story": "Hanging over a peach tree, he stretches too far, falls.",
     "items": [
       {
-        "name": "man",
-        "adjectives": [
-          "stretching",
-          "falling"
-        ]
-      },
-      {
         "name": "peach tree",
         "adjectives": []
       },
       {
-        "name": "peach",
-        "adjectives": []
+        "name": "man",
+        "adjectives": [
+          "falling"
+        ]
       }
     ],
     "nameSigns": [],
@@ -99,19 +93,11 @@
     },
     "isSequence": true,
     "angleCase": "none",
-    "promptKey": "d066cca5c7493f9c"
+    "promptKey": "99f629c5ba2f25b5"
   },
   "anomaly": {
     "story": "A knock rattles the family's tiles; one's irregular.",
     "items": [
-      {
-        "name": "knock",
-        "adjectives": []
-      },
-      {
-        "name": "family",
-        "adjectives": []
-      },
       {
         "name": "tiles",
         "adjectives": [
@@ -123,16 +109,17 @@
         "adjectives": [
           "irregular"
         ]
+      },
+      {
+        "name": "family",
+        "adjectives": []
       }
     ],
     "nameSigns": [],
-    "mainSubject": {
-      "name": "family",
-      "actor": false
-    },
+    "mainSubject": null,
     "isSequence": false,
     "angleCase": "none",
-    "promptKey": "a39ed7457b4c2b09"
+    "promptKey": "3eb1eaa2b311fc91"
   },
   "surgeon": {
     "story": "Power surge! An OR goes dark; she operates by headlamp.",
@@ -149,7 +136,9 @@
       },
       {
         "name": "headlamp",
-        "adjectives": []
+        "adjectives": [
+          "lit"
+        ]
       }
     ],
     "nameSigns": [],
@@ -159,7 +148,7 @@
     },
     "isSequence": true,
     "angleCase": "none",
-    "promptKey": "590dcdf3fa67de7e"
+    "promptKey": "dd9e543ec2987da9"
   },
   "appeal": {
     "story": "A peal of bells attracts a curious crowd.",
@@ -167,7 +156,7 @@
       {
         "name": "bells",
         "adjectives": [
-          "ringing"
+          "pealing"
         ]
       },
       {
@@ -179,33 +168,33 @@
     ],
     "nameSigns": [],
     "mainSubject": {
-      "name": "crowd",
-      "actor": false
+      "name": "person who rings the bells",
+      "actor": true
     },
     "isSequence": false,
     "angleCase": "none",
-    "promptKey": "da9a9fcb860cd5a0"
+    "promptKey": "4133c44661c6e8b7"
   },
   "worn": {
     "story": "Warn the driver: that tire's tread is rubbed bald.",
     "items": [
       {
-        "name": "driver",
-        "adjectives": []
-      },
-      {
         "name": "tire",
         "adjectives": [
           "bald",
-          "rubbed"
+          "worn"
         ]
       },
       {
         "name": "tread",
         "adjectives": [
           "bald",
-          "worn smooth"
+          "rubbed smooth"
         ]
+      },
+      {
+        "name": "driver",
+        "adjectives": []
       }
     ],
     "nameSigns": [],
@@ -215,7 +204,7 @@
     },
     "isSequence": false,
     "angleCase": "one-object",
-    "promptKey": "932a9a632dde5cc2"
+    "promptKey": "dde38fe4a38759e1"
   },
   "cottage": {
     "story": "Rain caught us on the ridge, by a tiny house.",
@@ -242,7 +231,7 @@
     },
     "isSequence": false,
     "angleCase": "none",
-    "promptKey": "68dead08e972e7b4"
+    "promptKey": "9f57edf98340b899"
   },
   "rigged": {
     "story": "Wig-wearing clerk stuffs the fixed ballot box.",
@@ -254,11 +243,14 @@
         ]
       },
       {
+        "name": "wig",
+        "adjectives": []
+      },
+      {
         "name": "ballot box",
         "adjectives": [
-          "fixed",
           "stuffed",
-          "overflowing with ballots"
+          "fixed"
         ]
       },
       {
@@ -273,7 +265,7 @@
     },
     "isSequence": false,
     "angleCase": "none",
-    "promptKey": "7ad14d48c49162d2"
+    "promptKey": "bbfbe0f2eaecc441"
   },
   "cocked": {
     "story": "Carl knocked, and the cat tilted its head.",
@@ -283,14 +275,14 @@
         "adjectives": []
       },
       {
+        "name": "door",
+        "adjectives": []
+      },
+      {
         "name": "cat",
         "adjectives": [
           "head tilted"
         ]
-      },
-      {
-        "name": "door",
-        "adjectives": []
       }
     ],
     "nameSigns": [
@@ -305,19 +297,21 @@
     },
     "isSequence": true,
     "angleCase": "none",
-    "promptKey": "a4d9f5b4c59d100b"
+    "promptKey": "b50b62e3f96a8712"
   },
   "contest": {
     "story": "The con aces a spelling test to compete on TV.",
     "items": [
       {
-        "name": "con",
-        "adjectives": []
+        "name": "contestant",
+        "adjectives": [
+          "smiling"
+        ]
       },
       {
         "name": "spelling test",
         "adjectives": [
-          "aced"
+          "perfect score"
         ]
       },
       {
@@ -327,12 +321,12 @@
     ],
     "nameSigns": [],
     "mainSubject": {
-      "name": "con",
+      "name": "contestant",
       "actor": false
     },
     "isSequence": true,
     "angleCase": "none",
-    "promptKey": "773e5babe82fb35f"
+    "promptKey": "7e4b5791f9b2b332"
   },
   "concocted": {
     "story": "The chef cocked his head, stirring a devious scheme.",
@@ -352,7 +346,7 @@
     },
     "isSequence": false,
     "angleCase": "none",
-    "promptKey": "45a2f2dd9eadf7d6"
+    "promptKey": "e649255eda465ceb"
   },
   "spilled": {
     "story": "Spoon tips the filled mug; coffee floods the desk.",
@@ -371,8 +365,7 @@
       {
         "name": "coffee",
         "adjectives": [
-          "flooding",
-          "spilled"
+          "flooding"
         ]
       },
       {
@@ -386,7 +379,7 @@
     "mainSubject": null,
     "isSequence": false,
     "angleCase": "none",
-    "promptKey": "a3d8cead75fbdbb4"
+    "promptKey": "fb1ffeea416de862"
   },
   "wore": {
     "story": "War ended; the king strutted out dressed in pajamas.",
@@ -409,21 +402,25 @@
     },
     "isSequence": false,
     "angleCase": "none",
-    "promptKey": "7db9da525983482e"
+    "promptKey": "cc00b56e02c0d9e6"
   },
   "flustered": {
     "story": "Flipping the mustard, the waiter fumbles, red-faced and nervous.",
     "items": [
       {
-        "name": "waiter",
+        "name": "mustard",
         "adjectives": [
-          "red-faced",
-          "nervous"
+          "flipping",
+          "spilling"
         ]
       },
       {
-        "name": "mustard",
-        "adjectives": []
+        "name": "waiter",
+        "adjectives": [
+          "red-faced",
+          "nervous",
+          "fumbling"
+        ]
       }
     ],
     "nameSigns": [],
@@ -433,7 +430,7 @@
     },
     "isSequence": false,
     "angleCase": "none",
-    "promptKey": "09bb53195713664d"
+    "promptKey": "7c97643d16c56cf3"
   },
   "optimal": {
     "story": "At the shelter, she opts for an animal, the best.",
@@ -460,7 +457,7 @@
     },
     "isSequence": false,
     "angleCase": "none",
-    "promptKey": "4a3b4b43708cddac"
+    "promptKey": "3491e4fa66412fa9"
   },
   "hypernym": {
     "story": "High on a perch, nimble birds name one category.",
@@ -472,7 +469,7 @@
         ]
       },
       {
-        "name": "bird",
+        "name": "birds",
         "adjectives": [
           "nimble"
         ]
@@ -480,12 +477,12 @@
     ],
     "nameSigns": [],
     "mainSubject": {
-      "name": "bird",
+      "name": "birds",
       "actor": false
     },
     "isSequence": false,
-    "angleCase": "view",
-    "promptKey": "46fcb0447636d779"
+    "angleCase": "none",
+    "promptKey": "8721ca080a9c4cf7"
   },
   "saturation": {
     "story": "The satchel of rations soaked up rain until not one drop more would fit.",
@@ -494,8 +491,7 @@
         "name": "satchel",
         "adjectives": [
           "soaked",
-          "full",
-          "waterlogged"
+          "full"
         ]
       },
       {
@@ -511,7 +507,7 @@
     "mainSubject": null,
     "isSequence": false,
     "angleCase": "one-object",
-    "promptKey": "3d57d59967e6d81f"
+    "promptKey": "29e10abbfa3a9069"
   },
   "synonym": {
     "story": "The sinner watched his nimble mirror-twin mouth the same words.",
@@ -540,6 +536,6 @@
     },
     "isSequence": false,
     "angleCase": "none",
-    "promptKey": "28484d9d0082dfde"
+    "promptKey": "7f18b84a797b177e"
   }
 }

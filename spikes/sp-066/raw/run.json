@@ -12,26 +12,286 @@
         "scored": [
           1,
           3,
+          4,
           5,
+          6,
           7,
+          8,
           9
         ],
         "gatedOut": [
-          2,
-          4,
-          6,
-          8
+          2
         ],
         "gateSkipped": false,
         "scores": {
           "1": {
             "plausible": {
-              "score": 2.926667,
-              "confidence": 0.68,
+              "score": 2.92,
+              "confidence": 0.67,
               "parts": {
                 "setting": {
                   "score": 2.99,
                   "confidence": 0.98
+                },
+                "drawing": {
+                  "score": 2.99,
+                  "confidence": 1
+                },
+                "actions": {
+                  "score": 2.7800000000000002,
+                  "confidence": 0.67
+                }
+              }
+            },
+            "vivid": {
+              "score": 2.985,
+              "confidence": 0.97,
+              "parts": {
+                "scene": {
+                  "score": 2.98,
+                  "confidence": 0.97
+                },
+                "onlooker": {
+                  "score": 2.99,
+                  "confidence": 1
+                }
+              }
+            },
+            "clarity": {
+              "score": 2.726667,
+              "confidence": 0,
+              "parts": {
+                "completeness": {
+                  "score": 2.98,
+                  "confidence": 0.95
+                },
+                "size": {
+                  "score": 2.8899999999999997,
+                  "confidence": 0.82
+                },
+                "state": {
+                  "score": 2.31,
+                  "confidence": 0
+                }
+              }
+            }
+          },
+          "3": {
+            "plausible": {
+              "score": 2.5,
+              "confidence": 0,
+              "parts": {
+                "setting": {
+                  "score": 2.85,
+                  "confidence": 0.78
+                },
+                "drawing": {
+                  "score": 2.9699999999999998,
+                  "confidence": 0.95
+                },
+                "actions": {
+                  "score": 1.6800000000000002,
+                  "confidence": 0
+                }
+              }
+            },
+            "vivid": {
+              "score": 2.87,
+              "confidence": 0.79,
+              "parts": {
+                "scene": {
+                  "score": 2.88,
+                  "confidence": 0.83
+                },
+                "onlooker": {
+                  "score": 2.8600000000000003,
+                  "confidence": 0.79
+                }
+              }
+            },
+            "clarity": {
+              "score": 2.206667,
+              "confidence": 0,
+              "parts": {
+                "completeness": {
+                  "score": 1.6400000000000001,
+                  "confidence": 0.04
+                },
+                "size": {
+                  "score": 2.9299999999999997,
+                  "confidence": 0.9
+                },
+                "state": {
+                  "score": 2.05,
+                  "confidence": 0
+                }
+              }
+            }
+          },
+          "4": {
+            "plausible": {
+              "score": 2.33,
+              "confidence": 0.8,
+              "parts": {
+                "setting": {
+                  "score": 2.8899999999999997,
+                  "confidence": 0.83
+                },
+                "drawing": {
+                  "score": 2.9699999999999998,
+                  "confidence": 0.95
+                },
+                "actions": {
+                  "score": 1.13,
+                  "confidence": 0.8
+                }
+              }
+            },
+            "vivid": {
+              "score": 1.655,
+              "confidence": 0.35,
+              "parts": {
+                "scene": {
+                  "score": 1.88,
+                  "confidence": 0.37
+                },
+                "onlooker": {
+                  "score": 1.43,
+                  "confidence": 0.35
+                }
+              }
+            },
+            "clarity": {
+              "score": 1.886667,
+              "confidence": 0,
+              "parts": {
+                "completeness": {
+                  "score": 2.13,
+                  "confidence": 0.11
+                },
+                "size": {
+                  "score": 1.44,
+                  "confidence": 0.32
+                },
+                "state": {
+                  "score": 2.09,
+                  "confidence": 0
+                }
+              }
+            }
+          },
+          "5": {
+            "plausible": {
+              "score": 2.636667,
+              "confidence": 0,
+              "parts": {
+                "setting": {
+                  "score": 2.99,
+                  "confidence": 0.98
+                },
+                "drawing": {
+                  "score": 2.99,
+                  "confidence": 1
+                },
+                "actions": {
+                  "score": 1.9300000000000002,
+                  "confidence": 0
+                }
+              }
+            },
+            "vivid": {
+              "score": 2.94,
+              "confidence": 0.82,
+              "parts": {
+                "scene": {
+                  "score": 2.88,
+                  "confidence": 0.82
+                },
+                "onlooker": {
+                  "score": 3,
+                  "confidence": 1
+                }
+              }
+            },
+            "clarity": {
+              "score": 2.74,
+              "confidence": 0,
+              "parts": {
+                "completeness": {
+                  "score": 2.95,
+                  "confidence": 0.94
+                },
+                "size": {
+                  "score": 2.9699999999999998,
+                  "confidence": 0.95
+                },
+                "state": {
+                  "score": 2.3,
+                  "confidence": 0
+                }
+              }
+            }
+          },
+          "6": {
+            "plausible": {
+              "score": 2.503333,
+              "confidence": 0.22,
+              "parts": {
+                "setting": {
+                  "score": 2.98,
+                  "confidence": 0.97
+                },
+                "drawing": {
+                  "score": 3,
+                  "confidence": 1
+                },
+                "actions": {
+                  "score": 1.53,
+                  "confidence": 0.22
+                }
+              }
+            },
+            "vivid": {
+              "score": 2.37,
+              "confidence": 0.62,
+              "parts": {
+                "scene": {
+                  "score": 2.74,
+                  "confidence": 0.62
+                },
+                "onlooker": {
+                  "score": 2,
+                  "confidence": 1
+                }
+              }
+            },
+            "clarity": {
+              "score": 2.076667,
+              "confidence": 0,
+              "parts": {
+                "completeness": {
+                  "score": 2.1799999999999997,
+                  "confidence": 0
+                },
+                "size": {
+                  "score": 1.65,
+                  "confidence": 0.01
+                },
+                "state": {
+                  "score": 2.4,
+                  "confidence": 0.11
+                }
+              }
+            }
+          },
+          "7": {
+            "plausible": {
+              "score": 2.89,
+              "confidence": 0.68,
+              "parts": {
+                "setting": {
+                  "score": 2.88,
+                  "confidence": 0.83
                 },
                 "drawing": {
                   "score": 2.99,
@@ -44,205 +304,85 @@
               }
             },
             "vivid": {
-              "score": 2.505,
-              "confidence": 0.9,
-              "parts": {
-                "scene": {
-                  "score": 2.95,
-                  "confidence": 0.93
-                },
-                "onlooker": {
-                  "score": 2.06,
-                  "confidence": 0.9
-                }
-              }
-            },
-            "clarity": {
-              "score": 2.3475,
-              "confidence": 0,
-              "parts": {
-                "completeness": {
-                  "score": 2.96,
-                  "confidence": 0.93
-                },
-                "size": {
-                  "score": 1.9,
-                  "confidence": 0.46
-                },
-                "state": {
-                  "score": 2.1,
-                  "confidence": 0
-                },
-                "view": {
-                  "score": 2.4299999999999997,
-                  "confidence": 0.14
-                }
-              }
-            }
-          },
-          "3": {
-            "plausible": {
-              "score": 2.74,
-              "confidence": 0.44,
-              "parts": {
-                "setting": {
-                  "score": 2.77,
-                  "confidence": 0.64
-                },
-                "drawing": {
-                  "score": 2.8200000000000003,
-                  "confidence": 0.71
-                },
-                "actions": {
-                  "score": 2.63,
-                  "confidence": 0.44
-                }
-              }
-            },
-            "vivid": {
-              "score": 2.46,
-              "confidence": 0.8,
-              "parts": {
-                "scene": {
-                  "score": 2.87,
-                  "confidence": 0.8
-                },
-                "onlooker": {
-                  "score": 2.05,
-                  "confidence": 0.91
-                }
-              }
-            },
-            "clarity": {
-              "score": 1.795,
-              "confidence": 0,
-              "parts": {
-                "completeness": {
-                  "score": 1.49,
-                  "confidence": 0.25
-                },
-                "size": {
-                  "score": 1.87,
-                  "confidence": 0.59
-                },
-                "state": {
-                  "score": 1.55,
-                  "confidence": 0.17
-                },
-                "view": {
-                  "score": 2.27,
-                  "confidence": 0
-                }
-              }
-            }
-          },
-          "5": {
-            "plausible": {
-              "score": 2.92,
+              "score": 2.885,
               "confidence": 0.66,
               "parts": {
-                "setting": {
-                  "score": 2.99,
-                  "confidence": 0.98
-                },
-                "drawing": {
-                  "score": 2.99,
-                  "confidence": 1
-                },
-                "actions": {
-                  "score": 2.7800000000000002,
+                "scene": {
+                  "score": 2.77,
                   "confidence": 0.66
-                }
-              }
-            },
-            "vivid": {
-              "score": 2.955,
-              "confidence": 0.86,
-              "parts": {
-                "scene": {
-                  "score": 2.92,
-                  "confidence": 0.86
                 },
                 "onlooker": {
-                  "score": 2.99,
+                  "score": 3,
                   "confidence": 1
                 }
               }
             },
             "clarity": {
-              "score": 1.8325,
-              "confidence": 0,
+              "score": 1.843333,
+              "confidence": 0.05,
               "parts": {
                 "completeness": {
-                  "score": 1.69,
-                  "confidence": 0.23
-                },
-                "size": {
-                  "score": 1.88,
-                  "confidence": 0.55
-                },
-                "state": {
-                  "score": 1.6800000000000002,
-                  "confidence": 0
-                },
-                "view": {
-                  "score": 2.08,
-                  "confidence": 0
-                }
-              }
-            }
-          },
-          "7": {
-            "plausible": {
-              "score": 2.903333,
-              "confidence": 0.71,
-              "parts": {
-                "setting": {
-                  "score": 2.91,
-                  "confidence": 0.86
-                },
-                "drawing": {
-                  "score": 2.99,
-                  "confidence": 1
-                },
-                "actions": {
-                  "score": 2.81,
-                  "confidence": 0.71
-                }
-              }
-            },
-            "vivid": {
-              "score": 2.975,
-              "confidence": 0.94,
-              "parts": {
-                "scene": {
-                  "score": 2.96,
-                  "confidence": 0.94
-                },
-                "onlooker": {
-                  "score": 2.99,
-                  "confidence": 1
-                }
-              }
-            },
-            "clarity": {
-              "score": 2.0175,
-              "confidence": 0,
-              "parts": {
-                "completeness": {
-                  "score": 2.0300000000000002,
+                  "score": 1.6400000000000001,
                   "confidence": 0.41
                 },
                 "size": {
-                  "score": 1.8900000000000001,
-                  "confidence": 0.47
+                  "score": 1.51,
+                  "confidence": 0.23
                 },
                 "state": {
-                  "score": 2.2800000000000002,
-                  "confidence": 0
+                  "score": 2.38,
+                  "confidence": 0.05
+                }
+              }
+            }
+          },
+          "8": {
+            "plausible": {
+              "score": 2.463333,
+              "confidence": 0.35,
+              "parts": {
+                "setting": {
+                  "score": 2.9699999999999998,
+                  "confidence": 0.97
                 },
-                "view": {
-                  "score": 1.87,
+                "drawing": {
+                  "score": 2.99,
+                  "confidence": 1
+                },
+                "actions": {
+                  "score": 1.43,
+                  "confidence": 0.35
+                }
+              }
+            },
+            "vivid": {
+              "score": 2.08,
+              "confidence": 0.59,
+              "parts": {
+                "scene": {
+                  "score": 2.8899999999999997,
+                  "confidence": 0.82
+                },
+                "onlooker": {
+                  "score": 1.27,
+                  "confidence": 0.59
+                }
+              }
+            },
+            "clarity": {
+              "score": 2.76,
+              "confidence": 0,
+              "parts": {
+                "completeness": {
+                  "score": 2.99,
+                  "confidence": 0.97
+                },
+                "size": {
+                  "score": 2.99,
+                  "confidence": 0.98
+                },
+                "state": {
+                  "score": 2.3,
                   "confidence": 0
                 }
               }
@@ -250,56 +390,52 @@
           },
           "9": {
             "plausible": {
-              "score": 2.73,
-              "confidence": 0,
+              "score": 2.893333,
+              "confidence": 0.53,
               "parts": {
                 "setting": {
-                  "score": 2.98,
-                  "confidence": 0.97
+                  "score": 2.99,
+                  "confidence": 0.98
                 },
                 "drawing": {
-                  "score": 2.95,
-                  "confidence": 0.93
+                  "score": 3,
+                  "confidence": 1
                 },
                 "actions": {
-                  "score": 2.26,
-                  "confidence": 0
+                  "score": 2.69,
+                  "confidence": 0.53
                 }
               }
             },
             "vivid": {
-              "score": 1.62,
-              "confidence": 0.7,
+              "score": 2.26,
+              "confidence": 0.19,
               "parts": {
                 "scene": {
-                  "score": 1.21,
-                  "confidence": 0.7
+                  "score": 1.55,
+                  "confidence": 0.19
                 },
                 "onlooker": {
-                  "score": 2.0300000000000002,
-                  "confidence": 0.95
+                  "score": 2.9699999999999998,
+                  "confidence": 0.94
                 }
               }
             },
             "clarity": {
-              "score": 2.1675,
-              "confidence": 0,
+              "score": 1.956667,
+              "confidence": 0.13,
               "parts": {
                 "completeness": {
-                  "score": 2.95,
-                  "confidence": 0.93
+                  "score": 1.81,
+                  "confidence": 0.35
                 },
                 "size": {
-                  "score": 1.8199999999999998,
-                  "confidence": 0.4
+                  "score": 1.5899999999999999,
+                  "confidence": 0.13
                 },
                 "state": {
-                  "score": 1.99,
-                  "confidence": 0
-                },
-                "view": {
-                  "score": 1.9100000000000001,
-                  "confidence": 0.62
+                  "score": 2.4699999999999998,
+                  "confidence": 0.22
                 }
               }
             }
@@ -308,15 +444,21 @@
         "shots": {
           "1": "medium",
           "3": "medium",
+          "4": "medium",
           "5": "medium",
+          "6": "medium",
           "7": "medium",
+          "8": "medium",
           "9": "wide"
         },
         "steps": {
           "1": "during",
           "3": "during",
+          "4": "during",
           "5": "during",
+          "6": "during",
           "7": "during",
+          "8": "during",
           "9": "during"
         },
         "isSequence": false,
@@ -324,9 +466,9 @@
           2,
           3,
           4,
-          5,
           6,
-          7
+          7,
+          9
         ],
         "weights": {
           "plausible": 2,
@@ -334,22 +476,28 @@
           "clarity": 1
         },
         "totals": {
-          "1": 10.705834,
-          "3": 9.735,
-          "5": 10.6275,
-          "7": 10.799166,
-          "9": 9.2475
+          "1": 11.551667,
+          "3": 10.076667,
+          "4": 8.201667,
+          "5": 10.953334,
+          "6": 9.453333,
+          "7": 10.508333,
+          "8": 9.766666,
+          "9": 10.003333
         },
         "ranking": [
-          7,
           1,
           5,
+          7,
           3,
-          9
+          9,
+          8,
+          6,
+          4
         ],
-        "mainCell": 7,
-        "alternativeCell": 1,
-        "margin": 0.093332,
+        "mainCell": 1,
+        "alternativeCell": 5,
+        "margin": 0.598333,
         "weakestConfidence": 0,
         "tie": false,
         "answers": {
@@ -385,38 +533,38 @@
           },
           "cell_1_plausible_actions": {
             "type": "score",
-            "score": 1.8,
-            "confidence": 0.68,
+            "score": 1.78,
+            "confidence": 0.67,
             "legend": {
               "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
               "1": "the cell shows some of the story's beginning actions",
               "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
             },
             "probabilities": {
-              "0": 0.07,
-              "1": 0.07,
+              "0": 0.08,
+              "1": 0.06,
               "2": 0.86
             }
           },
           "cell_1_vivid_scene": {
             "type": "score",
-            "score": 1.95,
-            "confidence": 0.93,
+            "score": 1.98,
+            "confidence": 0.97,
             "legend": {
               "0": "the story objects are small, far away or apart from each other",
               "1": "the story objects are clear, but they don't act on each other as the story says",
               "2": "the story objects are large and act on each other as the story says"
             },
             "probabilities": {
-              "0": 0.01,
-              "1": 0.03,
-              "2": 0.96
+              "0": 0,
+              "1": 0.02,
+              "2": 0.98
             }
           },
           "cell_1_vivid_onlooker": {
             "type": "score",
-            "score": 1.06,
-            "confidence": 0.9,
+            "score": 1.99,
+            "confidence": 1,
             "legend": {
               "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
               "1": "no onlooker, or an onlooker that adds nothing to the story",
@@ -424,43 +572,283 @@
             },
             "probabilities": {
               "0": 0,
-              "1": 0.93,
-              "2": 0.07
+              "1": 0,
+              "2": 1
             }
           },
           "cell_1_clarity_completeness": {
             "type": "score",
-            "score": 1.96,
-            "confidence": 0.93,
+            "score": 1.98,
+            "confidence": 0.95,
             "legend": {
               "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
               "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
               "2": "every must-see item is fully visible"
             },
             "probabilities": {
-              "0": 0.02,
+              "0": 0.01,
               "1": 0.01,
-              "2": 0.97
+              "2": 0.98
             }
           },
           "cell_1_clarity_size": {
             "type": "score",
-            "score": 0.9,
-            "confidence": 0.46,
+            "score": 1.89,
+            "confidence": 0.82,
             "legend": {
               "0": "a story item is too small to see what it does",
               "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
               "2": "every must-see item is large enough to see"
             },
             "probabilities": {
-              "0": 0.23,
-              "1": 0.64,
-              "2": 0.13
+              "0": 0.03,
+              "1": 0.06,
+              "2": 0.91
             }
           },
           "cell_1_clarity_state": {
             "type": "score",
-            "score": 1.1,
+            "score": 1.31,
+            "confidence": 0,
+            "legend": {
+              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
+              "1": "the state of some must-see items is unclear",
+              "2": "every must-see item is in the state its adjectives give"
+            },
+            "probabilities": {
+              "0": 0.31,
+              "1": 0.07,
+              "2": 0.62
+            }
+          },
+          "cell_3_plausible_setting": {
+            "type": "score",
+            "score": 1.85,
+            "confidence": 0.78,
+            "legend": {
+              "0": "no setting clues: nothing shows where the scene happens",
+              "1": "a few setting clues",
+              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.15,
+              "2": 0.85
+            }
+          },
+          "cell_3_plausible_drawing": {
+            "type": "score",
+            "score": 1.97,
+            "confidence": 0.95,
+            "legend": {
+              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
+              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
+              "2": "no drawing error"
+            },
+            "probabilities": {
+              "0": 0.01,
+              "1": 0.01,
+              "2": 0.98
+            }
+          },
+          "cell_3_plausible_actions": {
+            "type": "score",
+            "score": 0.68,
+            "confidence": 0,
+            "legend": {
+              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
+              "1": "the cell shows some of the story's beginning actions",
+              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
+            },
+            "probabilities": {
+              "0": 0.54,
+              "1": 0.25,
+              "2": 0.21
+            }
+          },
+          "cell_3_vivid_scene": {
+            "type": "score",
+            "score": 1.88,
+            "confidence": 0.83,
+            "legend": {
+              "0": "the story objects are small, far away or apart from each other",
+              "1": "the story objects are clear, but they don't act on each other as the story says",
+              "2": "the story objects are large and act on each other as the story says"
+            },
+            "probabilities": {
+              "0": 0.01,
+              "1": 0.09,
+              "2": 0.9
+            }
+          },
+          "cell_3_vivid_onlooker": {
+            "type": "score",
+            "score": 1.86,
+            "confidence": 0.79,
+            "legend": {
+              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
+              "1": "no onlooker, or an onlooker that adds nothing to the story",
+              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
+            },
+            "probabilities": {
+              "0": 0.07,
+              "1": 0,
+              "2": 0.93
+            }
+          },
+          "cell_3_clarity_completeness": {
+            "type": "score",
+            "score": 0.64,
+            "confidence": 0.04,
+            "legend": {
+              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
+              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
+              "2": "every must-see item is fully visible"
+            },
+            "probabilities": {
+              "0": 0.48,
+              "1": 0.4,
+              "2": 0.12
+            }
+          },
+          "cell_3_clarity_size": {
+            "type": "score",
+            "score": 1.93,
+            "confidence": 0.9,
+            "legend": {
+              "0": "a story item is too small to see what it does",
+              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
+              "2": "every must-see item is large enough to see"
+            },
+            "probabilities": {
+              "0": 0.03,
+              "1": 0.01,
+              "2": 0.96
+            }
+          },
+          "cell_3_clarity_state": {
+            "type": "score",
+            "score": 1.05,
+            "confidence": 0,
+            "legend": {
+              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
+              "1": "the state of some must-see items is unclear",
+              "2": "every must-see item is in the state its adjectives give"
+            },
+            "probabilities": {
+              "0": 0.46,
+              "1": 0.03,
+              "2": 0.51
+            }
+          },
+          "cell_4_plausible_setting": {
+            "type": "score",
+            "score": 1.89,
+            "confidence": 0.83,
+            "legend": {
+              "0": "no setting clues: nothing shows where the scene happens",
+              "1": "a few setting clues",
+              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.11,
+              "2": 0.89
+            }
+          },
+          "cell_4_plausible_drawing": {
+            "type": "score",
+            "score": 1.97,
+            "confidence": 0.95,
+            "legend": {
+              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
+              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
+              "2": "no drawing error"
+            },
+            "probabilities": {
+              "0": 0.01,
+              "1": 0.01,
+              "2": 0.98
+            }
+          },
+          "cell_4_plausible_actions": {
+            "type": "score",
+            "score": 0.13,
+            "confidence": 0.8,
+            "legend": {
+              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
+              "1": "the cell shows some of the story's beginning actions",
+              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
+            },
+            "probabilities": {
+              "0": 0.91,
+              "1": 0.05,
+              "2": 0.04
+            }
+          },
+          "cell_4_vivid_scene": {
+            "type": "score",
+            "score": 0.88,
+            "confidence": 0.37,
+            "legend": {
+              "0": "the story objects are small, far away or apart from each other",
+              "1": "the story objects are clear, but they don't act on each other as the story says",
+              "2": "the story objects are large and act on each other as the story says"
+            },
+            "probabilities": {
+              "0": 0.27,
+              "1": 0.58,
+              "2": 0.15
+            }
+          },
+          "cell_4_vivid_onlooker": {
+            "type": "score",
+            "score": 0.43,
+            "confidence": 0.35,
+            "legend": {
+              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
+              "1": "no onlooker, or an onlooker that adds nothing to the story",
+              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
+            },
+            "probabilities": {
+              "0": 0.62,
+              "1": 0.33,
+              "2": 0.05
+            }
+          },
+          "cell_4_clarity_completeness": {
+            "type": "score",
+            "score": 1.13,
+            "confidence": 0.11,
+            "legend": {
+              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
+              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
+              "2": "every must-see item is fully visible"
+            },
+            "probabilities": {
+              "0": 0.23,
+              "1": 0.41,
+              "2": 0.36
+            }
+          },
+          "cell_4_clarity_size": {
+            "type": "score",
+            "score": 0.44,
+            "confidence": 0.32,
+            "legend": {
+              "0": "a story item is too small to see what it does",
+              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
+              "2": "every must-see item is large enough to see"
+            },
+            "probabilities": {
+              "0": 0.71,
+              "1": 0.13,
+              "2": 0.16
+            }
+          },
+          "cell_4_clarity_state": {
+            "type": "score",
+            "score": 1.09,
             "confidence": 0,
             "legend": {
               "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
@@ -469,158 +857,8 @@
             },
             "probabilities": {
               "0": 0.43,
-              "1": 0.04,
-              "2": 0.53
-            }
-          },
-          "cell_1_clarity_view": {
-            "type": "score",
-            "score": 1.43,
-            "confidence": 0.14,
-            "legend": {
-              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
-              "1": "the main subject is seen from the side",
-              "2": "the main subject is seen from the front or in three-quarter view"
-            },
-            "probabilities": {
-              "0": 0.27,
-              "1": 0.03,
-              "2": 0.7
-            }
-          },
-          "cell_3_plausible_setting": {
-            "type": "score",
-            "score": 1.77,
-            "confidence": 0.64,
-            "legend": {
-              "0": "no setting clues: nothing shows where the scene happens",
-              "1": "a few setting clues",
-              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
-            },
-            "probabilities": {
-              "0": 0.01,
-              "1": 0.22,
-              "2": 0.77
-            }
-          },
-          "cell_3_plausible_drawing": {
-            "type": "score",
-            "score": 1.82,
-            "confidence": 0.71,
-            "legend": {
-              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
-              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
-              "2": "no drawing error"
-            },
-            "probabilities": {
-              "0": 0.09,
-              "1": 0.01,
-              "2": 0.9
-            }
-          },
-          "cell_3_plausible_actions": {
-            "type": "score",
-            "score": 1.63,
-            "confidence": 0.44,
-            "legend": {
-              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
-              "1": "the cell shows some of the story's beginning actions",
-              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
-            },
-            "probabilities": {
-              "0": 0.13,
-              "1": 0.11,
-              "2": 0.76
-            }
-          },
-          "cell_3_vivid_scene": {
-            "type": "score",
-            "score": 1.87,
-            "confidence": 0.8,
-            "legend": {
-              "0": "the story objects are small, far away or apart from each other",
-              "1": "the story objects are clear, but they don't act on each other as the story says",
-              "2": "the story objects are large and act on each other as the story says"
-            },
-            "probabilities": {
-              "0": 0.01,
-              "1": 0.11,
-              "2": 0.88
-            }
-          },
-          "cell_3_vivid_onlooker": {
-            "type": "score",
-            "score": 1.05,
-            "confidence": 0.91,
-            "legend": {
-              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
-              "1": "no onlooker, or an onlooker that adds nothing to the story",
-              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
-            },
-            "probabilities": {
-              "0": 0,
-              "1": 0.94,
-              "2": 0.06
-            }
-          },
-          "cell_3_clarity_completeness": {
-            "type": "score",
-            "score": 0.49,
-            "confidence": 0.25,
-            "legend": {
-              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
-              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
-              "2": "every must-see item is fully visible"
-            },
-            "probabilities": {
-              "0": 0.56,
-              "1": 0.38,
-              "2": 0.06
-            }
-          },
-          "cell_3_clarity_size": {
-            "type": "score",
-            "score": 0.87,
-            "confidence": 0.59,
-            "legend": {
-              "0": "a story item is too small to see what it does",
-              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
-              "2": "every must-see item is large enough to see"
-            },
-            "probabilities": {
-              "0": 0.2,
-              "1": 0.73,
-              "2": 0.07
-            }
-          },
-          "cell_3_clarity_state": {
-            "type": "score",
-            "score": 0.55,
-            "confidence": 0.17,
-            "legend": {
-              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
-              "1": "the state of some must-see items is unclear",
-              "2": "every must-see item is in the state its adjectives give"
-            },
-            "probabilities": {
-              "0": 0.7,
               "1": 0.05,
-              "2": 0.25
-            }
-          },
-          "cell_3_clarity_view": {
-            "type": "score",
-            "score": 1.27,
-            "confidence": 0,
-            "legend": {
-              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
-              "1": "the main subject is seen from the side",
-              "2": "the main subject is seen from the front or in three-quarter view"
-            },
-            "probabilities": {
-              "0": 0.34,
-              "1": 0.05,
-              "2": 0.61
+              "2": 0.52
             }
           },
           "cell_5_plausible_setting": {
@@ -655,23 +893,23 @@
           },
           "cell_5_plausible_actions": {
             "type": "score",
-            "score": 1.78,
-            "confidence": 0.66,
+            "score": 0.93,
+            "confidence": 0,
             "legend": {
               "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
               "1": "the cell shows some of the story's beginning actions",
               "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
             },
             "probabilities": {
-              "0": 0.08,
-              "1": 0.07,
-              "2": 0.85
+              "0": 0.42,
+              "1": 0.23,
+              "2": 0.35
             }
           },
           "cell_5_vivid_scene": {
             "type": "score",
-            "score": 1.92,
-            "confidence": 0.86,
+            "score": 1.88,
+            "confidence": 0.82,
             "legend": {
               "0": "the story objects are small, far away or apart from each other",
               "1": "the story objects are clear, but they don't act on each other as the story says",
@@ -679,13 +917,13 @@
             },
             "probabilities": {
               "0": 0.01,
-              "1": 0.07,
-              "2": 0.92
+              "1": 0.1,
+              "2": 0.89
             }
           },
           "cell_5_vivid_onlooker": {
             "type": "score",
-            "score": 1.99,
+            "score": 2,
             "confidence": 1,
             "legend": {
               "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
@@ -700,37 +938,37 @@
           },
           "cell_5_clarity_completeness": {
             "type": "score",
-            "score": 0.69,
-            "confidence": 0.23,
+            "score": 1.95,
+            "confidence": 0.94,
             "legend": {
               "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
               "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
               "2": "every must-see item is fully visible"
             },
             "probabilities": {
-              "0": 0.41,
-              "1": 0.49,
-              "2": 0.1
+              "0": 0.01,
+              "1": 0.02,
+              "2": 0.97
             }
           },
           "cell_5_clarity_size": {
             "type": "score",
-            "score": 0.88,
-            "confidence": 0.55,
+            "score": 1.97,
+            "confidence": 0.95,
             "legend": {
               "0": "a story item is too small to see what it does",
               "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
               "2": "every must-see item is large enough to see"
             },
             "probabilities": {
-              "0": 0.21,
-              "1": 0.7,
-              "2": 0.09
+              "0": 0.01,
+              "1": 0.01,
+              "2": 0.98
             }
           },
           "cell_5_clarity_state": {
             "type": "score",
-            "score": 0.68,
+            "score": 1.3,
             "confidence": 0,
             "legend": {
               "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
@@ -738,30 +976,15 @@
               "2": "every must-see item is in the state its adjectives give"
             },
             "probabilities": {
-              "0": 0.64,
-              "1": 0.03,
-              "2": 0.33
+              "0": 0.32,
+              "1": 0.05,
+              "2": 0.63
             }
           },
-          "cell_5_clarity_view": {
+          "cell_6_plausible_setting": {
             "type": "score",
-            "score": 1.08,
-            "confidence": 0,
-            "legend": {
-              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
-              "1": "the main subject is seen from the side",
-              "2": "the main subject is seen from the front or in three-quarter view"
-            },
-            "probabilities": {
-              "0": 0.42,
-              "1": 0.08,
-              "2": 0.5
-            }
-          },
-          "cell_7_plausible_setting": {
-            "type": "score",
-            "score": 1.91,
-            "confidence": 0.86,
+            "score": 1.98,
+            "confidence": 0.97,
             "legend": {
               "0": "no setting clues: nothing shows where the scene happens",
               "1": "a few setting clues",
@@ -769,8 +992,128 @@
             },
             "probabilities": {
               "0": 0,
+              "1": 0.02,
+              "2": 0.98
+            }
+          },
+          "cell_6_plausible_drawing": {
+            "type": "score",
+            "score": 2,
+            "confidence": 1,
+            "legend": {
+              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
+              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
+              "2": "no drawing error"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0,
+              "2": 1
+            }
+          },
+          "cell_6_plausible_actions": {
+            "type": "score",
+            "score": 0.53,
+            "confidence": 0.22,
+            "legend": {
+              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
+              "1": "the cell shows some of the story's beginning actions",
+              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
+            },
+            "probabilities": {
+              "0": 0.64,
+              "1": 0.2,
+              "2": 0.16
+            }
+          },
+          "cell_6_vivid_scene": {
+            "type": "score",
+            "score": 1.74,
+            "confidence": 0.62,
+            "legend": {
+              "0": "the story objects are small, far away or apart from each other",
+              "1": "the story objects are clear, but they don't act on each other as the story says",
+              "2": "the story objects are large and act on each other as the story says"
+            },
+            "probabilities": {
+              "0": 0.08,
               "1": 0.09,
-              "2": 0.91
+              "2": 0.83
+            }
+          },
+          "cell_6_vivid_onlooker": {
+            "type": "score",
+            "score": 1,
+            "confidence": 1,
+            "legend": {
+              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
+              "1": "no onlooker, or an onlooker that adds nothing to the story",
+              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 1,
+              "2": 0
+            }
+          },
+          "cell_6_clarity_completeness": {
+            "type": "score",
+            "score": 1.18,
+            "confidence": 0,
+            "legend": {
+              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
+              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
+              "2": "every must-see item is fully visible"
+            },
+            "probabilities": {
+              "0": 0.26,
+              "1": 0.29,
+              "2": 0.45
+            }
+          },
+          "cell_6_clarity_size": {
+            "type": "score",
+            "score": 0.65,
+            "confidence": 0.01,
+            "legend": {
+              "0": "a story item is too small to see what it does",
+              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
+              "2": "every must-see item is large enough to see"
+            },
+            "probabilities": {
+              "0": 0.6,
+              "1": 0.14,
+              "2": 0.26
+            }
+          },
+          "cell_6_clarity_state": {
+            "type": "score",
+            "score": 1.4,
+            "confidence": 0.11,
+            "legend": {
+              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
+              "1": "the state of some must-see items is unclear",
+              "2": "every must-see item is in the state its adjectives give"
+            },
+            "probabilities": {
+              "0": 0.26,
+              "1": 0.07,
+              "2": 0.67
+            }
+          },
+          "cell_7_plausible_setting": {
+            "type": "score",
+            "score": 1.88,
+            "confidence": 0.83,
+            "legend": {
+              "0": "no setting clues: nothing shows where the scene happens",
+              "1": "a few setting clues",
+              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.11,
+              "2": 0.89
             }
           },
           "cell_7_plausible_drawing": {
@@ -790,37 +1133,37 @@
           },
           "cell_7_plausible_actions": {
             "type": "score",
-            "score": 1.81,
-            "confidence": 0.71,
+            "score": 1.8,
+            "confidence": 0.68,
             "legend": {
               "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
               "1": "the cell shows some of the story's beginning actions",
               "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
             },
             "probabilities": {
-              "0": 0.07,
+              "0": 0.08,
               "1": 0.05,
-              "2": 0.88
+              "2": 0.87
             }
           },
           "cell_7_vivid_scene": {
             "type": "score",
-            "score": 1.96,
-            "confidence": 0.94,
+            "score": 1.77,
+            "confidence": 0.66,
             "legend": {
               "0": "the story objects are small, far away or apart from each other",
               "1": "the story objects are clear, but they don't act on each other as the story says",
               "2": "the story objects are large and act on each other as the story says"
             },
             "probabilities": {
-              "0": 0,
-              "1": 0.04,
-              "2": 0.96
+              "0": 0.07,
+              "1": 0.09,
+              "2": 0.84
             }
           },
           "cell_7_vivid_onlooker": {
             "type": "score",
-            "score": 1.99,
+            "score": 2,
             "confidence": 1,
             "legend": {
               "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
@@ -835,7 +1178,7 @@
           },
           "cell_7_clarity_completeness": {
             "type": "score",
-            "score": 1.03,
+            "score": 0.64,
             "confidence": 0.41,
             "legend": {
               "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
@@ -843,59 +1186,44 @@
               "2": "every must-see item is fully visible"
             },
             "probabilities": {
-              "0": 0.18,
+              "0": 0.38,
               "1": 0.61,
-              "2": 0.21
+              "2": 0.01
             }
           },
           "cell_7_clarity_size": {
             "type": "score",
-            "score": 0.89,
-            "confidence": 0.47,
+            "score": 0.51,
+            "confidence": 0.23,
             "legend": {
               "0": "a story item is too small to see what it does",
               "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
               "2": "every must-see item is large enough to see"
             },
             "probabilities": {
-              "0": 0.23,
-              "1": 0.65,
-              "2": 0.12
+              "0": 0.66,
+              "1": 0.17,
+              "2": 0.17
             }
           },
           "cell_7_clarity_state": {
             "type": "score",
-            "score": 1.28,
-            "confidence": 0,
+            "score": 1.38,
+            "confidence": 0.05,
             "legend": {
               "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
               "1": "the state of some must-see items is unclear",
               "2": "every must-see item is in the state its adjectives give"
             },
             "probabilities": {
-              "0": 0.33,
-              "1": 0.06,
-              "2": 0.61
-            }
-          },
-          "cell_7_clarity_view": {
-            "type": "score",
-            "score": 0.87,
-            "confidence": 0,
-            "legend": {
-              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
-              "1": "the main subject is seen from the side",
-              "2": "the main subject is seen from the front or in three-quarter view"
-            },
-            "probabilities": {
-              "0": 0.54,
+              "0": 0.29,
               "1": 0.05,
-              "2": 0.41
+              "2": 0.66
             }
           },
-          "cell_9_plausible_setting": {
+          "cell_8_plausible_setting": {
             "type": "score",
-            "score": 1.98,
+            "score": 1.97,
             "confidence": 0.97,
             "legend": {
               "0": "no setting clues: nothing shows where the scene happens",
@@ -908,99 +1236,99 @@
               "2": 0.98
             }
           },
-          "cell_9_plausible_drawing": {
+          "cell_8_plausible_drawing": {
             "type": "score",
-            "score": 1.95,
-            "confidence": 0.93,
+            "score": 1.99,
+            "confidence": 1,
             "legend": {
               "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
               "1": "another object is drawn wrong (a drawing error with mustSee false only)",
               "2": "no drawing error"
             },
             "probabilities": {
-              "0": 0.02,
-              "1": 0.01,
-              "2": 0.97
+              "0": 0,
+              "1": 0,
+              "2": 1
             }
           },
-          "cell_9_plausible_actions": {
+          "cell_8_plausible_actions": {
             "type": "score",
-            "score": 1.26,
-            "confidence": 0,
+            "score": 0.43,
+            "confidence": 0.35,
             "legend": {
               "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
               "1": "the cell shows some of the story's beginning actions",
               "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
             },
             "probabilities": {
-              "0": 0.32,
-              "1": 0.11,
-              "2": 0.57
+              "0": 0.71,
+              "1": 0.15,
+              "2": 0.14
             }
           },
-          "cell_9_vivid_scene": {
+          "cell_8_vivid_scene": {
             "type": "score",
-            "score": 0.21,
-            "confidence": 0.7,
+            "score": 1.89,
+            "confidence": 0.82,
             "legend": {
               "0": "the story objects are small, far away or apart from each other",
               "1": "the story objects are clear, but they don't act on each other as the story says",
               "2": "the story objects are large and act on each other as the story says"
             },
             "probabilities": {
-              "0": 0.84,
-              "1": 0.12,
-              "2": 0.04
+              "0": 0.01,
+              "1": 0.1,
+              "2": 0.89
             }
           },
-          "cell_9_vivid_onlooker": {
+          "cell_8_vivid_onlooker": {
             "type": "score",
-            "score": 1.03,
-            "confidence": 0.95,
+            "score": 0.27,
+            "confidence": 0.59,
             "legend": {
               "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
               "1": "no onlooker, or an onlooker that adds nothing to the story",
               "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
             },
             "probabilities": {
-              "0": 0,
-              "1": 0.97,
-              "2": 0.03
+              "0": 0.86,
+              "1": 0.01,
+              "2": 0.13
             }
           },
-          "cell_9_clarity_completeness": {
+          "cell_8_clarity_completeness": {
             "type": "score",
-            "score": 1.95,
-            "confidence": 0.93,
+            "score": 1.99,
+            "confidence": 0.97,
             "legend": {
               "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
               "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
               "2": "every must-see item is fully visible"
             },
             "probabilities": {
-              "0": 0.02,
-              "1": 0.01,
-              "2": 0.97
+              "0": 0.01,
+              "1": 0,
+              "2": 0.99
             }
           },
-          "cell_9_clarity_size": {
+          "cell_8_clarity_size": {
             "type": "score",
-            "score": 0.82,
-            "confidence": 0.4,
+            "score": 1.99,
+            "confidence": 0.98,
             "legend": {
               "0": "a story item is too small to see what it does",
               "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
               "2": "every must-see item is large enough to see"
             },
             "probabilities": {
-              "0": 0.29,
-              "1": 0.6,
-              "2": 0.11
+              "0": 0,
+              "1": 0.01,
+              "2": 0.99
             }
           },
-          "cell_9_clarity_state": {
+          "cell_8_clarity_state": {
             "type": "score",
-            "score": 0.99,
+            "score": 1.3,
             "confidence": 0,
             "legend": {
               "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
@@ -1008,24 +1336,129 @@
               "2": "every must-see item is in the state its adjectives give"
             },
             "probabilities": {
-              "0": 0.49,
-              "1": 0.02,
-              "2": 0.49
+              "0": 0.33,
+              "1": 0.04,
+              "2": 0.63
             }
           },
-          "cell_9_clarity_view": {
+          "cell_9_plausible_setting": {
             "type": "score",
-            "score": 0.91,
-            "confidence": 0.62,
+            "score": 1.99,
+            "confidence": 0.98,
             "legend": {
-              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
-              "1": "the main subject is seen from the side",
-              "2": "the main subject is seen from the front or in three-quarter view"
+              "0": "no setting clues: nothing shows where the scene happens",
+              "1": "a few setting clues",
+              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
             },
             "probabilities": {
-              "0": 0.17,
-              "1": 0.75,
-              "2": 0.08
+              "0": 0,
+              "1": 0.01,
+              "2": 0.99
+            }
+          },
+          "cell_9_plausible_drawing": {
+            "type": "score",
+            "score": 2,
+            "confidence": 1,
+            "legend": {
+              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
+              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
+              "2": "no drawing error"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0,
+              "2": 1
+            }
+          },
+          "cell_9_plausible_actions": {
+            "type": "score",
+            "score": 1.69,
+            "confidence": 0.53,
+            "legend": {
+              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
+              "1": "the cell shows some of the story's beginning actions",
+              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
+            },
+            "probabilities": {
+              "0": 0.12,
+              "1": 0.07,
+              "2": 0.81
+            }
+          },
+          "cell_9_vivid_scene": {
+            "type": "score",
+            "score": 0.55,
+            "confidence": 0.19,
+            "legend": {
+              "0": "the story objects are small, far away or apart from each other",
+              "1": "the story objects are clear, but they don't act on each other as the story says",
+              "2": "the story objects are large and act on each other as the story says"
+            },
+            "probabilities": {
+              "0": 0.7,
+              "1": 0.06,
+              "2": 0.24
+            }
+          },
+          "cell_9_vivid_onlooker": {
+            "type": "score",
+            "score": 1.97,
+            "confidence": 0.94,
+            "legend": {
+              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
+              "1": "no onlooker, or an onlooker that adds nothing to the story",
+              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
+            },
+            "probabilities": {
+              "0": 0.01,
+              "1": 0.02,
+              "2": 0.97
+            }
+          },
+          "cell_9_clarity_completeness": {
+            "type": "score",
+            "score": 0.81,
+            "confidence": 0.35,
+            "legend": {
+              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
+              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
+              "2": "every must-see item is fully visible"
+            },
+            "probabilities": {
+              "0": 0.31,
+              "1": 0.57,
+              "2": 0.12
+            }
+          },
+          "cell_9_clarity_size": {
+            "type": "score",
+            "score": 0.59,
+            "confidence": 0.13,
+            "legend": {
+              "0": "a story item is too small to see what it does",
+              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
+              "2": "every must-see item is large enough to see"
+            },
+            "probabilities": {
+              "0": 0.63,
+              "1": 0.16,
+              "2": 0.21
+            }
+          },
+          "cell_9_clarity_state": {
+            "type": "score",
+            "score": 1.47,
+            "confidence": 0.22,
+            "legend": {
+              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
+              "1": "the state of some must-see items is unclear",
+              "2": "every must-see item is in the state its adjectives give"
+            },
+            "probabilities": {
+              "0": 0.24,
+              "1": 0.04,
+              "2": 0.72
             }
           }
         }
@@ -3008,6 +3441,1621 @@
               "0": 0.6,
               "1": 0.02,
               "2": 0.38
+            }
+          }
+        }
+      }
+    },
+    {
+      "word": "worn",
+      "grid": "worn.grid.png",
+      "flashCell": 1,
+      "story": "Warn the driver: that tire's tread is rubbed bald.",
+      "tuning": true,
+      "pick": {
+        "scored": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "gatedOut": [
+          4
+        ],
+        "gateSkipped": false,
+        "scores": {
+          "1": {
+            "plausible": {
+              "score": 2.846667,
+              "confidence": 0.51,
+              "parts": {
+                "setting": {
+                  "score": 2.67,
+                  "confidence": 0.51
+                },
+                "drawing": {
+                  "score": 2.99,
+                  "confidence": 0.97
+                },
+                "actions": {
+                  "score": 2.88,
+                  "confidence": 0.82
+                }
+              }
+            },
+            "vivid": {
+              "score": 2.505,
+              "confidence": 0.94,
+              "parts": {
+                "scene": {
+                  "score": 2.9699999999999998,
+                  "confidence": 0.95
+                },
+                "onlooker": {
+                  "score": 2.04,
+                  "confidence": 0.94
+                }
+              }
+            },
+            "clarity": {
+              "score": 2.19,
+              "confidence": 0,
+              "parts": {
+                "completeness": {
+                  "score": 1.53,
+                  "confidence": 0.19
+                },
+                "size": {
+                  "score": 2.4299999999999997,
+                  "confidence": 0.13
+                },
+                "state": {
+                  "score": 1.9100000000000001,
+                  "confidence": 0
+                },
+                "view": {
+                  "score": 2.8899999999999997,
+                  "confidence": 0.82
+                }
+              }
+            }
+          },
+          "2": {
+            "plausible": {
+              "score": 2.803333,
+              "confidence": 0.38,
+              "parts": {
+                "setting": {
+                  "score": 2.8200000000000003,
+                  "confidence": 0.74
+                },
+                "drawing": {
+                  "score": 3,
+                  "confidence": 1
+                },
+                "actions": {
+                  "score": 2.59,
+                  "confidence": 0.38
+                }
+              }
+            },
+            "vivid": {
+              "score": 2.695,
+              "confidence": 0.22,
+              "parts": {
+                "scene": {
+                  "score": 2.48,
+                  "confidence": 0.22
+                },
+                "onlooker": {
+                  "score": 2.91,
+                  "confidence": 0.86
+                }
+              }
+            },
+            "clarity": {
+              "score": 1.7075,
+              "confidence": 0,
+              "parts": {
+                "completeness": {
+                  "score": 1.9,
+                  "confidence": 0.85
+                },
+                "size": {
+                  "score": 2,
+                  "confidence": 0
+                },
+                "state": {
+                  "score": 1.72,
+                  "confidence": 0
+                },
+                "view": {
+                  "score": 1.21,
+                  "confidence": 0.67
+                }
+              }
+            }
+          },
+          "3": {
+            "plausible": {
+              "score": 2.736667,
+              "confidence": 0.19,
+              "parts": {
+                "setting": {
+                  "score": 2.4699999999999998,
+                  "confidence": 0.19
+                },
+                "drawing": {
+                  "score": 3,
+                  "confidence": 1
+                },
+                "actions": {
+                  "score": 2.74,
+                  "confidence": 0.59
+                }
+              }
+            },
+            "vivid": {
+              "score": 2.915,
+              "confidence": 0.79,
+              "parts": {
+                "scene": {
+                  "score": 2.9699999999999998,
+                  "confidence": 0.95
+                },
+                "onlooker": {
+                  "score": 2.8600000000000003,
+                  "confidence": 0.79
+                }
+              }
+            },
+            "clarity": {
+              "score": 2.625,
+              "confidence": 0,
+              "parts": {
+                "completeness": {
+                  "score": 2.98,
+                  "confidence": 0.98
+                },
+                "size": {
+                  "score": 1.8599999999999999,
+                  "confidence": 0
+                },
+                "state": {
+                  "score": 2.69,
+                  "confidence": 0.55
+                },
+                "view": {
+                  "score": 2.9699999999999998,
+                  "confidence": 0.95
+                }
+              }
+            }
+          },
+          "5": {
+            "plausible": {
+              "score": 2.586667,
+              "confidence": 0.51,
+              "parts": {
+                "setting": {
+                  "score": 2.0300000000000002,
+                  "confidence": 0.51
+                },
+                "drawing": {
+                  "score": 3,
+                  "confidence": 1
+                },
+                "actions": {
+                  "score": 2.73,
+                  "confidence": 0.59
+                }
+              }
+            },
+            "vivid": {
+              "score": 2.49,
+              "confidence": 0.94,
+              "parts": {
+                "scene": {
+                  "score": 2.9699999999999998,
+                  "confidence": 0.94
+                },
+                "onlooker": {
+                  "score": 2.01,
+                  "confidence": 0.98
+                }
+              }
+            },
+            "clarity": {
+              "score": 1.77,
+              "confidence": 0,
+              "parts": {
+                "completeness": {
+                  "score": 1.46,
+                  "confidence": 0.32
+                },
+                "size": {
+                  "score": 2.02,
+                  "confidence": 0
+                },
+                "state": {
+                  "score": 2.59,
+                  "confidence": 0.38
+                },
+                "view": {
+                  "score": 1.01,
+                  "confidence": 1
+                }
+              }
+            }
+          },
+          "6": {
+            "plausible": {
+              "score": 2.746667,
+              "confidence": 0.32,
+              "parts": {
+                "setting": {
+                  "score": 2.69,
+                  "confidence": 0.55
+                },
+                "drawing": {
+                  "score": 2.99,
+                  "confidence": 1
+                },
+                "actions": {
+                  "score": 2.56,
+                  "confidence": 0.32
+                }
+              }
+            },
+            "vivid": {
+              "score": 2.32,
+              "confidence": 0.47,
+              "parts": {
+                "scene": {
+                  "score": 2.6399999999999997,
+                  "confidence": 0.47
+                },
+                "onlooker": {
+                  "score": 2,
+                  "confidence": 1
+                }
+              }
+            },
+            "clarity": {
+              "score": 2.15,
+              "confidence": 0.1,
+              "parts": {
+                "completeness": {
+                  "score": 1.3599999999999999,
+                  "confidence": 0.46
+                },
+                "size": {
+                  "score": 2.73,
+                  "confidence": 0.61
+                },
+                "state": {
+                  "score": 1.6,
+                  "confidence": 0.1
+                },
+                "view": {
+                  "score": 2.91,
+                  "confidence": 0.88
+                }
+              }
+            }
+          },
+          "7": {
+            "plausible": {
+              "score": 2.16,
+              "confidence": 0.29,
+              "parts": {
+                "setting": {
+                  "score": 2.4299999999999997,
+                  "confidence": 0.29
+                },
+                "drawing": {
+                  "score": 2.96,
+                  "confidence": 0.94
+                },
+                "actions": {
+                  "score": 1.09,
+                  "confidence": 0.86
+                }
+              }
+            },
+            "vivid": {
+              "score": 2.605,
+              "confidence": 0.55,
+              "parts": {
+                "scene": {
+                  "score": 2.3,
+                  "confidence": 0.55
+                },
+                "onlooker": {
+                  "score": 2.91,
+                  "confidence": 0.85
+                }
+              }
+            },
+            "clarity": {
+              "score": 2.0075,
+              "confidence": 0,
+              "parts": {
+                "completeness": {
+                  "score": 1.27,
+                  "confidence": 0.58
+                },
+                "size": {
+                  "score": 2.25,
+                  "confidence": 0
+                },
+                "state": {
+                  "score": 1.74,
+                  "confidence": 0
+                },
+                "view": {
+                  "score": 2.77,
+                  "confidence": 0.64
+                }
+              }
+            }
+          },
+          "8": {
+            "plausible": {
+              "score": 2.716667,
+              "confidence": 0.2,
+              "parts": {
+                "setting": {
+                  "score": 2.4699999999999998,
+                  "confidence": 0.2
+                },
+                "drawing": {
+                  "score": 2.99,
+                  "confidence": 1
+                },
+                "actions": {
+                  "score": 2.69,
+                  "confidence": 0.55
+                }
+              }
+            },
+            "vivid": {
+              "score": 2.445,
+              "confidence": 0.79,
+              "parts": {
+                "scene": {
+                  "score": 2.87,
+                  "confidence": 0.79
+                },
+                "onlooker": {
+                  "score": 2.02,
+                  "confidence": 0.97
+                }
+              }
+            },
+            "clarity": {
+              "score": 2.2075,
+              "confidence": 0,
+              "parts": {
+                "completeness": {
+                  "score": 1.47,
+                  "confidence": 0.3
+                },
+                "size": {
+                  "score": 2.4,
+                  "confidence": 0.08
+                },
+                "state": {
+                  "score": 2.2,
+                  "confidence": 0
+                },
+                "view": {
+                  "score": 2.76,
+                  "confidence": 0.66
+                }
+              }
+            }
+          },
+          "9": {
+            "plausible": {
+              "score": 2.11,
+              "confidence": 0.22,
+              "parts": {
+                "setting": {
+                  "score": 2.3,
+                  "confidence": 0.22
+                },
+                "drawing": {
+                  "score": 3,
+                  "confidence": 1
+                },
+                "actions": {
+                  "score": 1.03,
+                  "confidence": 0.95
+                }
+              }
+            },
+            "vivid": {
+              "score": 2.135,
+              "confidence": 0.56,
+              "parts": {
+                "scene": {
+                  "score": 2.27,
+                  "confidence": 0.56
+                },
+                "onlooker": {
+                  "score": 2,
+                  "confidence": 0.98
+                }
+              }
+            },
+            "clarity": {
+              "score": 2.4,
+              "confidence": 0,
+              "parts": {
+                "completeness": {
+                  "score": 1.48,
+                  "confidence": 0.27
+                },
+                "size": {
+                  "score": 2.99,
+                  "confidence": 1
+                },
+                "state": {
+                  "score": 2.29,
+                  "confidence": 0
+                },
+                "view": {
+                  "score": 2.84,
+                  "confidence": 0.74
+                }
+              }
+            }
+          }
+        },
+        "shots": {
+          "1": "medium",
+          "2": "close-up",
+          "3": "medium",
+          "5": "medium",
+          "6": "medium",
+          "7": "medium",
+          "8": "medium",
+          "9": "medium"
+        },
+        "steps": {
+          "1": "during",
+          "2": "during",
+          "3": "during",
+          "5": "during",
+          "6": "during",
+          "7": "during",
+          "8": "during",
+          "9": "during"
+        },
+        "isSequence": false,
+        "partlyCut": [
+          1,
+          2,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "weights": {
+          "plausible": 2,
+          "vivid": 1,
+          "clarity": 1
+        },
+        "totals": {
+          "1": 10.388334,
+          "2": 10.009166,
+          "3": 11.013334,
+          "5": 9.433334,
+          "6": 9.963334,
+          "7": 8.9325,
+          "8": 10.085834,
+          "9": 8.755
+        },
+        "ranking": [
+          3,
+          1,
+          8,
+          2,
+          6,
+          5,
+          7,
+          9
+        ],
+        "mainCell": 3,
+        "alternativeCell": 1,
+        "margin": 0.625,
+        "weakestConfidence": 0,
+        "tie": false,
+        "answers": {
+          "cell_1_plausible_setting": {
+            "type": "score",
+            "score": 1.67,
+            "confidence": 0.51,
+            "legend": {
+              "0": "no setting clues: nothing shows where the scene happens",
+              "1": "a few setting clues",
+              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
+            },
+            "probabilities": {
+              "0": 0.02,
+              "1": 0.29,
+              "2": 0.69
+            }
+          },
+          "cell_1_plausible_drawing": {
+            "type": "score",
+            "score": 1.99,
+            "confidence": 0.97,
+            "legend": {
+              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
+              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
+              "2": "no drawing error"
+            },
+            "probabilities": {
+              "0": 0.01,
+              "1": 0,
+              "2": 0.99
+            }
+          },
+          "cell_1_plausible_actions": {
+            "type": "score",
+            "score": 1.88,
+            "confidence": 0.82,
+            "legend": {
+              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
+              "1": "the cell shows some of the story's beginning actions",
+              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
+            },
+            "probabilities": {
+              "0": 0.05,
+              "1": 0.02,
+              "2": 0.93
+            }
+          },
+          "cell_1_vivid_scene": {
+            "type": "score",
+            "score": 1.97,
+            "confidence": 0.95,
+            "legend": {
+              "0": "the story objects are small, far away or apart from each other",
+              "1": "the story objects are clear, but they don't act on each other as the story says",
+              "2": "the story objects are large and act on each other as the story says"
+            },
+            "probabilities": {
+              "0": 0.01,
+              "1": 0.01,
+              "2": 0.98
+            }
+          },
+          "cell_1_vivid_onlooker": {
+            "type": "score",
+            "score": 1.04,
+            "confidence": 0.94,
+            "legend": {
+              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
+              "1": "no onlooker, or an onlooker that adds nothing to the story",
+              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.96,
+              "2": 0.04
+            }
+          },
+          "cell_1_clarity_completeness": {
+            "type": "score",
+            "score": 0.53,
+            "confidence": 0.19,
+            "legend": {
+              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
+              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
+              "2": "every must-see item is fully visible"
+            },
+            "probabilities": {
+              "0": 0.49,
+              "1": 0.48,
+              "2": 0.03
+            }
+          },
+          "cell_1_clarity_size": {
+            "type": "score",
+            "score": 1.43,
+            "confidence": 0.13,
+            "legend": {
+              "0": "a story item is too small to see what it does",
+              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
+              "2": "every must-see item is large enough to see"
+            },
+            "probabilities": {
+              "0": 0.24,
+              "1": 0.1,
+              "2": 0.66
+            }
+          },
+          "cell_1_clarity_state": {
+            "type": "score",
+            "score": 0.91,
+            "confidence": 0,
+            "legend": {
+              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
+              "1": "the state of some must-see items is unclear",
+              "2": "every must-see item is in the state its adjectives give"
+            },
+            "probabilities": {
+              "0": 0.5,
+              "1": 0.09,
+              "2": 0.41
+            }
+          },
+          "cell_1_clarity_view": {
+            "type": "score",
+            "score": 1.89,
+            "confidence": 0.82,
+            "legend": {
+              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
+              "1": "the main subject is seen from the side",
+              "2": "the main subject is seen from the front or in three-quarter view"
+            },
+            "probabilities": {
+              "0": 0.05,
+              "1": 0.02,
+              "2": 0.93
+            }
+          },
+          "cell_2_plausible_setting": {
+            "type": "score",
+            "score": 1.82,
+            "confidence": 0.74,
+            "legend": {
+              "0": "no setting clues: nothing shows where the scene happens",
+              "1": "a few setting clues",
+              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.17,
+              "2": 0.83
+            }
+          },
+          "cell_2_plausible_drawing": {
+            "type": "score",
+            "score": 2,
+            "confidence": 1,
+            "legend": {
+              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
+              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
+              "2": "no drawing error"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0,
+              "2": 1
+            }
+          },
+          "cell_2_plausible_actions": {
+            "type": "score",
+            "score": 1.59,
+            "confidence": 0.38,
+            "legend": {
+              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
+              "1": "the cell shows some of the story's beginning actions",
+              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
+            },
+            "probabilities": {
+              "0": 0.16,
+              "1": 0.09,
+              "2": 0.75
+            }
+          },
+          "cell_2_vivid_scene": {
+            "type": "score",
+            "score": 1.48,
+            "confidence": 0.22,
+            "legend": {
+              "0": "the story objects are small, far away or apart from each other",
+              "1": "the story objects are clear, but they don't act on each other as the story says",
+              "2": "the story objects are large and act on each other as the story says"
+            },
+            "probabilities": {
+              "0": 0.21,
+              "1": 0.1,
+              "2": 0.69
+            }
+          },
+          "cell_2_vivid_onlooker": {
+            "type": "score",
+            "score": 1.91,
+            "confidence": 0.86,
+            "legend": {
+              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
+              "1": "no onlooker, or an onlooker that adds nothing to the story",
+              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
+            },
+            "probabilities": {
+              "0": 0.01,
+              "1": 0.07,
+              "2": 0.92
+            }
+          },
+          "cell_2_clarity_completeness": {
+            "type": "score",
+            "score": 0.9,
+            "confidence": 0.85,
+            "legend": {
+              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
+              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
+              "2": "every must-see item is fully visible"
+            },
+            "probabilities": {
+              "0": 0.1,
+              "1": 0.9,
+              "2": 0
+            }
+          },
+          "cell_2_clarity_size": {
+            "type": "score",
+            "score": 1,
+            "confidence": 0,
+            "legend": {
+              "0": "a story item is too small to see what it does",
+              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
+              "2": "every must-see item is large enough to see"
+            },
+            "probabilities": {
+              "0": 0.38,
+              "1": 0.24,
+              "2": 0.38
+            }
+          },
+          "cell_2_clarity_state": {
+            "type": "score",
+            "score": 0.72,
+            "confidence": 0,
+            "legend": {
+              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
+              "1": "the state of some must-see items is unclear",
+              "2": "every must-see item is in the state its adjectives give"
+            },
+            "probabilities": {
+              "0": 0.6,
+              "1": 0.09,
+              "2": 0.31
+            }
+          },
+          "cell_2_clarity_view": {
+            "type": "score",
+            "score": 0.21,
+            "confidence": 0.67,
+            "legend": {
+              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
+              "1": "the main subject is seen from the side",
+              "2": "the main subject is seen from the front or in three-quarter view"
+            },
+            "probabilities": {
+              "0": 0.79,
+              "1": 0.2,
+              "2": 0.01
+            }
+          },
+          "cell_3_plausible_setting": {
+            "type": "score",
+            "score": 1.47,
+            "confidence": 0.19,
+            "legend": {
+              "0": "no setting clues: nothing shows where the scene happens",
+              "1": "a few setting clues",
+              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
+            },
+            "probabilities": {
+              "0": 0.05,
+              "1": 0.44,
+              "2": 0.51
+            }
+          },
+          "cell_3_plausible_drawing": {
+            "type": "score",
+            "score": 2,
+            "confidence": 1,
+            "legend": {
+              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
+              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
+              "2": "no drawing error"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0,
+              "2": 1
+            }
+          },
+          "cell_3_plausible_actions": {
+            "type": "score",
+            "score": 1.74,
+            "confidence": 0.59,
+            "legend": {
+              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
+              "1": "the cell shows some of the story's beginning actions",
+              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
+            },
+            "probabilities": {
+              "0": 0.12,
+              "1": 0.03,
+              "2": 0.85
+            }
+          },
+          "cell_3_vivid_scene": {
+            "type": "score",
+            "score": 1.97,
+            "confidence": 0.95,
+            "legend": {
+              "0": "the story objects are small, far away or apart from each other",
+              "1": "the story objects are clear, but they don't act on each other as the story says",
+              "2": "the story objects are large and act on each other as the story says"
+            },
+            "probabilities": {
+              "0": 0.01,
+              "1": 0.01,
+              "2": 0.98
+            }
+          },
+          "cell_3_vivid_onlooker": {
+            "type": "score",
+            "score": 1.86,
+            "confidence": 0.79,
+            "legend": {
+              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
+              "1": "no onlooker, or an onlooker that adds nothing to the story",
+              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
+            },
+            "probabilities": {
+              "0": 0.02,
+              "1": 0.1,
+              "2": 0.88
+            }
+          },
+          "cell_3_clarity_completeness": {
+            "type": "score",
+            "score": 1.98,
+            "confidence": 0.98,
+            "legend": {
+              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
+              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
+              "2": "every must-see item is fully visible"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.01,
+              "2": 0.99
+            }
+          },
+          "cell_3_clarity_size": {
+            "type": "score",
+            "score": 0.86,
+            "confidence": 0,
+            "legend": {
+              "0": "a story item is too small to see what it does",
+              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
+              "2": "every must-see item is large enough to see"
+            },
+            "probabilities": {
+              "0": 0.43,
+              "1": 0.28,
+              "2": 0.29
+            }
+          },
+          "cell_3_clarity_state": {
+            "type": "score",
+            "score": 1.69,
+            "confidence": 0.55,
+            "legend": {
+              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
+              "1": "the state of some must-see items is unclear",
+              "2": "every must-see item is in the state its adjectives give"
+            },
+            "probabilities": {
+              "0": 0.11,
+              "1": 0.08,
+              "2": 0.81
+            }
+          },
+          "cell_3_clarity_view": {
+            "type": "score",
+            "score": 1.97,
+            "confidence": 0.95,
+            "legend": {
+              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
+              "1": "the main subject is seen from the side",
+              "2": "the main subject is seen from the front or in three-quarter view"
+            },
+            "probabilities": {
+              "0": 0.01,
+              "1": 0.01,
+              "2": 0.98
+            }
+          },
+          "cell_5_plausible_setting": {
+            "type": "score",
+            "score": 1.03,
+            "confidence": 0.51,
+            "legend": {
+              "0": "no setting clues: nothing shows where the scene happens",
+              "1": "a few setting clues",
+              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
+            },
+            "probabilities": {
+              "0": 0.15,
+              "1": 0.67,
+              "2": 0.18
+            }
+          },
+          "cell_5_plausible_drawing": {
+            "type": "score",
+            "score": 2,
+            "confidence": 1,
+            "legend": {
+              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
+              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
+              "2": "no drawing error"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0,
+              "2": 1
+            }
+          },
+          "cell_5_plausible_actions": {
+            "type": "score",
+            "score": 1.73,
+            "confidence": 0.59,
+            "legend": {
+              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
+              "1": "the cell shows some of the story's beginning actions",
+              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
+            },
+            "probabilities": {
+              "0": 0.11,
+              "1": 0.05,
+              "2": 0.84
+            }
+          },
+          "cell_5_vivid_scene": {
+            "type": "score",
+            "score": 1.97,
+            "confidence": 0.94,
+            "legend": {
+              "0": "the story objects are small, far away or apart from each other",
+              "1": "the story objects are clear, but they don't act on each other as the story says",
+              "2": "the story objects are large and act on each other as the story says"
+            },
+            "probabilities": {
+              "0": 0.01,
+              "1": 0.02,
+              "2": 0.97
+            }
+          },
+          "cell_5_vivid_onlooker": {
+            "type": "score",
+            "score": 1.01,
+            "confidence": 0.98,
+            "legend": {
+              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
+              "1": "no onlooker, or an onlooker that adds nothing to the story",
+              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.99,
+              "2": 0.01
+            }
+          },
+          "cell_5_clarity_completeness": {
+            "type": "score",
+            "score": 0.46,
+            "confidence": 0.32,
+            "legend": {
+              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
+              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
+              "2": "every must-see item is fully visible"
+            },
+            "probabilities": {
+              "0": 0.56,
+              "1": 0.43,
+              "2": 0.01
+            }
+          },
+          "cell_5_clarity_size": {
+            "type": "score",
+            "score": 1.02,
+            "confidence": 0,
+            "legend": {
+              "0": "a story item is too small to see what it does",
+              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
+              "2": "every must-see item is large enough to see"
+            },
+            "probabilities": {
+              "0": 0.41,
+              "1": 0.16,
+              "2": 0.43
+            }
+          },
+          "cell_5_clarity_state": {
+            "type": "score",
+            "score": 1.59,
+            "confidence": 0.38,
+            "legend": {
+              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
+              "1": "the state of some must-see items is unclear",
+              "2": "every must-see item is in the state its adjectives give"
+            },
+            "probabilities": {
+              "0": 0.17,
+              "1": 0.07,
+              "2": 0.76
+            }
+          },
+          "cell_5_clarity_view": {
+            "type": "score",
+            "score": 0.01,
+            "confidence": 1,
+            "legend": {
+              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
+              "1": "the main subject is seen from the side",
+              "2": "the main subject is seen from the front or in three-quarter view"
+            },
+            "probabilities": {
+              "0": 1,
+              "1": 0,
+              "2": 0
+            }
+          },
+          "cell_6_plausible_setting": {
+            "type": "score",
+            "score": 1.69,
+            "confidence": 0.55,
+            "legend": {
+              "0": "no setting clues: nothing shows where the scene happens",
+              "1": "a few setting clues",
+              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.3,
+              "2": 0.7
+            }
+          },
+          "cell_6_plausible_drawing": {
+            "type": "score",
+            "score": 1.99,
+            "confidence": 1,
+            "legend": {
+              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
+              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
+              "2": "no drawing error"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0,
+              "2": 1
+            }
+          },
+          "cell_6_plausible_actions": {
+            "type": "score",
+            "score": 1.56,
+            "confidence": 0.32,
+            "legend": {
+              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
+              "1": "the cell shows some of the story's beginning actions",
+              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
+            },
+            "probabilities": {
+              "0": 0.2,
+              "1": 0.05,
+              "2": 0.75
+            }
+          },
+          "cell_6_vivid_scene": {
+            "type": "score",
+            "score": 1.64,
+            "confidence": 0.47,
+            "legend": {
+              "0": "the story objects are small, far away or apart from each other",
+              "1": "the story objects are clear, but they don't act on each other as the story says",
+              "2": "the story objects are large and act on each other as the story says"
+            },
+            "probabilities": {
+              "0": 0.02,
+              "1": 0.31,
+              "2": 0.67
+            }
+          },
+          "cell_6_vivid_onlooker": {
+            "type": "score",
+            "score": 1,
+            "confidence": 1,
+            "legend": {
+              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
+              "1": "no onlooker, or an onlooker that adds nothing to the story",
+              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 1,
+              "2": 0
+            }
+          },
+          "cell_6_clarity_completeness": {
+            "type": "score",
+            "score": 0.36,
+            "confidence": 0.46,
+            "legend": {
+              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
+              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
+              "2": "every must-see item is fully visible"
+            },
+            "probabilities": {
+              "0": 0.65,
+              "1": 0.34,
+              "2": 0.01
+            }
+          },
+          "cell_6_clarity_size": {
+            "type": "score",
+            "score": 1.73,
+            "confidence": 0.61,
+            "legend": {
+              "0": "a story item is too small to see what it does",
+              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
+              "2": "every must-see item is large enough to see"
+            },
+            "probabilities": {
+              "0": 0.09,
+              "1": 0.08,
+              "2": 0.83
+            }
+          },
+          "cell_6_clarity_state": {
+            "type": "score",
+            "score": 0.6,
+            "confidence": 0.1,
+            "legend": {
+              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
+              "1": "the state of some must-see items is unclear",
+              "2": "every must-see item is in the state its adjectives give"
+            },
+            "probabilities": {
+              "0": 0.67,
+              "1": 0.06,
+              "2": 0.27
+            }
+          },
+          "cell_6_clarity_view": {
+            "type": "score",
+            "score": 1.91,
+            "confidence": 0.88,
+            "legend": {
+              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
+              "1": "the main subject is seen from the side",
+              "2": "the main subject is seen from the front or in three-quarter view"
+            },
+            "probabilities": {
+              "0": 0.03,
+              "1": 0.02,
+              "2": 0.95
+            }
+          },
+          "cell_7_plausible_setting": {
+            "type": "score",
+            "score": 1.43,
+            "confidence": 0.29,
+            "legend": {
+              "0": "no setting clues: nothing shows where the scene happens",
+              "1": "a few setting clues",
+              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
+            },
+            "probabilities": {
+              "0": 0.02,
+              "1": 0.53,
+              "2": 0.45
+            }
+          },
+          "cell_7_plausible_drawing": {
+            "type": "score",
+            "score": 1.96,
+            "confidence": 0.94,
+            "legend": {
+              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
+              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
+              "2": "no drawing error"
+            },
+            "probabilities": {
+              "0": 0.02,
+              "1": 0,
+              "2": 0.98
+            }
+          },
+          "cell_7_plausible_actions": {
+            "type": "score",
+            "score": 0.09,
+            "confidence": 0.86,
+            "legend": {
+              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
+              "1": "the cell shows some of the story's beginning actions",
+              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
+            },
+            "probabilities": {
+              "0": 0.93,
+              "1": 0.05,
+              "2": 0.02
+            }
+          },
+          "cell_7_vivid_scene": {
+            "type": "score",
+            "score": 1.3,
+            "confidence": 0.55,
+            "legend": {
+              "0": "the story objects are small, far away or apart from each other",
+              "1": "the story objects are clear, but they don't act on each other as the story says",
+              "2": "the story objects are large and act on each other as the story says"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.7,
+              "2": 0.3
+            }
+          },
+          "cell_7_vivid_onlooker": {
+            "type": "score",
+            "score": 1.91,
+            "confidence": 0.85,
+            "legend": {
+              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
+              "1": "no onlooker, or an onlooker that adds nothing to the story",
+              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
+            },
+            "probabilities": {
+              "0": 0.04,
+              "1": 0.02,
+              "2": 0.94
+            }
+          },
+          "cell_7_clarity_completeness": {
+            "type": "score",
+            "score": 0.27,
+            "confidence": 0.58,
+            "legend": {
+              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
+              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
+              "2": "every must-see item is fully visible"
+            },
+            "probabilities": {
+              "0": 0.76,
+              "1": 0.2,
+              "2": 0.04
+            }
+          },
+          "cell_7_clarity_size": {
+            "type": "score",
+            "score": 1.25,
+            "confidence": 0,
+            "legend": {
+              "0": "a story item is too small to see what it does",
+              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
+              "2": "every must-see item is large enough to see"
+            },
+            "probabilities": {
+              "0": 0.35,
+              "1": 0.05,
+              "2": 0.6
+            }
+          },
+          "cell_7_clarity_state": {
+            "type": "score",
+            "score": 0.74,
+            "confidence": 0,
+            "legend": {
+              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
+              "1": "the state of some must-see items is unclear",
+              "2": "every must-see item is in the state its adjectives give"
+            },
+            "probabilities": {
+              "0": 0.59,
+              "1": 0.08,
+              "2": 0.33
+            }
+          },
+          "cell_7_clarity_view": {
+            "type": "score",
+            "score": 1.77,
+            "confidence": 0.64,
+            "legend": {
+              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
+              "1": "the main subject is seen from the side",
+              "2": "the main subject is seen from the front or in three-quarter view"
+            },
+            "probabilities": {
+              "0": 0.1,
+              "1": 0.04,
+              "2": 0.86
+            }
+          },
+          "cell_8_plausible_setting": {
+            "type": "score",
+            "score": 1.47,
+            "confidence": 0.2,
+            "legend": {
+              "0": "no setting clues: nothing shows where the scene happens",
+              "1": "a few setting clues",
+              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
+            },
+            "probabilities": {
+              "0": 0.07,
+              "1": 0.39,
+              "2": 0.54
+            }
+          },
+          "cell_8_plausible_drawing": {
+            "type": "score",
+            "score": 1.99,
+            "confidence": 1,
+            "legend": {
+              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
+              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
+              "2": "no drawing error"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0,
+              "2": 1
+            }
+          },
+          "cell_8_plausible_actions": {
+            "type": "score",
+            "score": 1.69,
+            "confidence": 0.55,
+            "legend": {
+              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
+              "1": "the cell shows some of the story's beginning actions",
+              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
+            },
+            "probabilities": {
+              "0": 0.13,
+              "1": 0.04,
+              "2": 0.83
+            }
+          },
+          "cell_8_vivid_scene": {
+            "type": "score",
+            "score": 1.87,
+            "confidence": 0.79,
+            "legend": {
+              "0": "the story objects are small, far away or apart from each other",
+              "1": "the story objects are clear, but they don't act on each other as the story says",
+              "2": "the story objects are large and act on each other as the story says"
+            },
+            "probabilities": {
+              "0": 0.02,
+              "1": 0.1,
+              "2": 0.88
+            }
+          },
+          "cell_8_vivid_onlooker": {
+            "type": "score",
+            "score": 1.02,
+            "confidence": 0.97,
+            "legend": {
+              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
+              "1": "no onlooker, or an onlooker that adds nothing to the story",
+              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.98,
+              "2": 0.02
+            }
+          },
+          "cell_8_clarity_completeness": {
+            "type": "score",
+            "score": 0.47,
+            "confidence": 0.3,
+            "legend": {
+              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
+              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
+              "2": "every must-see item is fully visible"
+            },
+            "probabilities": {
+              "0": 0.53,
+              "1": 0.47,
+              "2": 0
+            }
+          },
+          "cell_8_clarity_size": {
+            "type": "score",
+            "score": 1.4,
+            "confidence": 0.08,
+            "legend": {
+              "0": "a story item is too small to see what it does",
+              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
+              "2": "every must-see item is large enough to see"
+            },
+            "probabilities": {
+              "0": 0.21,
+              "1": 0.19,
+              "2": 0.6
+            }
+          },
+          "cell_8_clarity_state": {
+            "type": "score",
+            "score": 1.2,
+            "confidence": 0,
+            "legend": {
+              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
+              "1": "the state of some must-see items is unclear",
+              "2": "every must-see item is in the state its adjectives give"
+            },
+            "probabilities": {
+              "0": 0.31,
+              "1": 0.17,
+              "2": 0.52
+            }
+          },
+          "cell_8_clarity_view": {
+            "type": "score",
+            "score": 1.76,
+            "confidence": 0.66,
+            "legend": {
+              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
+              "1": "the main subject is seen from the side",
+              "2": "the main subject is seen from the front or in three-quarter view"
+            },
+            "probabilities": {
+              "0": 0.08,
+              "1": 0.07,
+              "2": 0.85
+            }
+          },
+          "cell_9_plausible_setting": {
+            "type": "score",
+            "score": 1.3,
+            "confidence": 0.22,
+            "legend": {
+              "0": "no setting clues: nothing shows where the scene happens",
+              "1": "a few setting clues",
+              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
+            },
+            "probabilities": {
+              "0": 0.11,
+              "1": 0.48,
+              "2": 0.41
+            }
+          },
+          "cell_9_plausible_drawing": {
+            "type": "score",
+            "score": 2,
+            "confidence": 1,
+            "legend": {
+              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
+              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
+              "2": "no drawing error"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0,
+              "2": 1
+            }
+          },
+          "cell_9_plausible_actions": {
+            "type": "score",
+            "score": 0.03,
+            "confidence": 0.95,
+            "legend": {
+              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
+              "1": "the cell shows some of the story's beginning actions",
+              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
+            },
+            "probabilities": {
+              "0": 0.98,
+              "1": 0.01,
+              "2": 0.01
+            }
+          },
+          "cell_9_vivid_scene": {
+            "type": "score",
+            "score": 1.27,
+            "confidence": 0.56,
+            "legend": {
+              "0": "the story objects are small, far away or apart from each other",
+              "1": "the story objects are clear, but they don't act on each other as the story says",
+              "2": "the story objects are large and act on each other as the story says"
+            },
+            "probabilities": {
+              "0": 0.01,
+              "1": 0.71,
+              "2": 0.28
+            }
+          },
+          "cell_9_vivid_onlooker": {
+            "type": "score",
+            "score": 1,
+            "confidence": 0.98,
+            "legend": {
+              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
+              "1": "no onlooker, or an onlooker that adds nothing to the story",
+              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.99,
+              "2": 0.01
+            }
+          },
+          "cell_9_clarity_completeness": {
+            "type": "score",
+            "score": 0.48,
+            "confidence": 0.27,
+            "legend": {
+              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
+              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
+              "2": "every must-see item is fully visible"
+            },
+            "probabilities": {
+              "0": 0.53,
+              "1": 0.45,
+              "2": 0.02
+            }
+          },
+          "cell_9_clarity_size": {
+            "type": "score",
+            "score": 1.99,
+            "confidence": 1,
+            "legend": {
+              "0": "a story item is too small to see what it does",
+              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
+              "2": "every must-see item is large enough to see"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0,
+              "2": 1
+            }
+          },
+          "cell_9_clarity_state": {
+            "type": "score",
+            "score": 1.29,
+            "confidence": 0,
+            "legend": {
+              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
+              "1": "the state of some must-see items is unclear",
+              "2": "every must-see item is in the state its adjectives give"
+            },
+            "probabilities": {
+              "0": 0.32,
+              "1": 0.07,
+              "2": 0.61
+            }
+          },
+          "cell_9_clarity_view": {
+            "type": "score",
+            "score": 1.84,
+            "confidence": 0.74,
+            "legend": {
+              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
+              "1": "the main subject is seen from the side",
+              "2": "the main subject is seen from the front or in three-quarter view"
+            },
+            "probabilities": {
+              "0": 0.07,
+              "1": 0.03,
+              "2": 0.9
             }
           }
         }
@@ -13102,1621 +15150,6 @@
               "0": 0.16,
               "1": 0.03,
               "2": 0.8099999999999999
-            }
-          }
-        }
-      }
-    },
-    {
-      "word": "worn",
-      "grid": "worn.grid.png",
-      "flashCell": 1,
-      "story": "Warn the driver: that tire's tread is rubbed bald.",
-      "tuning": true,
-      "pick": {
-        "scored": [
-          1,
-          2,
-          3,
-          5,
-          6,
-          7,
-          8,
-          9
-        ],
-        "gatedOut": [
-          4
-        ],
-        "gateSkipped": false,
-        "scores": {
-          "1": {
-            "plausible": {
-              "score": 2.846667,
-              "confidence": 0.51,
-              "parts": {
-                "setting": {
-                  "score": 2.67,
-                  "confidence": 0.51
-                },
-                "drawing": {
-                  "score": 2.99,
-                  "confidence": 0.97
-                },
-                "actions": {
-                  "score": 2.88,
-                  "confidence": 0.82
-                }
-              }
-            },
-            "vivid": {
-              "score": 2.505,
-              "confidence": 0.94,
-              "parts": {
-                "scene": {
-                  "score": 2.9699999999999998,
-                  "confidence": 0.95
-                },
-                "onlooker": {
-                  "score": 2.04,
-                  "confidence": 0.94
-                }
-              }
-            },
-            "clarity": {
-              "score": 2.19,
-              "confidence": 0,
-              "parts": {
-                "completeness": {
-                  "score": 1.53,
-                  "confidence": 0.19
-                },
-                "size": {
-                  "score": 2.4299999999999997,
-                  "confidence": 0.13
-                },
-                "state": {
-                  "score": 1.9100000000000001,
-                  "confidence": 0
-                },
-                "view": {
-                  "score": 2.8899999999999997,
-                  "confidence": 0.82
-                }
-              }
-            }
-          },
-          "2": {
-            "plausible": {
-              "score": 2.803333,
-              "confidence": 0.38,
-              "parts": {
-                "setting": {
-                  "score": 2.8200000000000003,
-                  "confidence": 0.74
-                },
-                "drawing": {
-                  "score": 3,
-                  "confidence": 1
-                },
-                "actions": {
-                  "score": 2.59,
-                  "confidence": 0.38
-                }
-              }
-            },
-            "vivid": {
-              "score": 2.695,
-              "confidence": 0.22,
-              "parts": {
-                "scene": {
-                  "score": 2.48,
-                  "confidence": 0.22
-                },
-                "onlooker": {
-                  "score": 2.91,
-                  "confidence": 0.86
-                }
-              }
-            },
-            "clarity": {
-              "score": 1.7075,
-              "confidence": 0,
-              "parts": {
-                "completeness": {
-                  "score": 1.9,
-                  "confidence": 0.85
-                },
-                "size": {
-                  "score": 2,
-                  "confidence": 0
-                },
-                "state": {
-                  "score": 1.72,
-                  "confidence": 0
-                },
-                "view": {
-                  "score": 1.21,
-                  "confidence": 0.67
-                }
-              }
-            }
-          },
-          "3": {
-            "plausible": {
-              "score": 2.736667,
-              "confidence": 0.19,
-              "parts": {
-                "setting": {
-                  "score": 2.4699999999999998,
-                  "confidence": 0.19
-                },
-                "drawing": {
-                  "score": 3,
-                  "confidence": 1
-                },
-                "actions": {
-                  "score": 2.74,
-                  "confidence": 0.59
-                }
-              }
-            },
-            "vivid": {
-              "score": 2.915,
-              "confidence": 0.79,
-              "parts": {
-                "scene": {
-                  "score": 2.9699999999999998,
-                  "confidence": 0.95
-                },
-                "onlooker": {
-                  "score": 2.8600000000000003,
-                  "confidence": 0.79
-                }
-              }
-            },
-            "clarity": {
-              "score": 2.625,
-              "confidence": 0,
-              "parts": {
-                "completeness": {
-                  "score": 2.98,
-                  "confidence": 0.98
-                },
-                "size": {
-                  "score": 1.8599999999999999,
-                  "confidence": 0
-                },
-                "state": {
-                  "score": 2.69,
-                  "confidence": 0.55
-                },
-                "view": {
-                  "score": 2.9699999999999998,
-                  "confidence": 0.95
-                }
-              }
-            }
-          },
-          "5": {
-            "plausible": {
-              "score": 2.586667,
-              "confidence": 0.51,
-              "parts": {
-                "setting": {
-                  "score": 2.0300000000000002,
-                  "confidence": 0.51
-                },
-                "drawing": {
-                  "score": 3,
-                  "confidence": 1
-                },
-                "actions": {
-                  "score": 2.73,
-                  "confidence": 0.59
-                }
-              }
-            },
-            "vivid": {
-              "score": 2.49,
-              "confidence": 0.94,
-              "parts": {
-                "scene": {
-                  "score": 2.9699999999999998,
-                  "confidence": 0.94
-                },
-                "onlooker": {
-                  "score": 2.01,
-                  "confidence": 0.98
-                }
-              }
-            },
-            "clarity": {
-              "score": 1.77,
-              "confidence": 0,
-              "parts": {
-                "completeness": {
-                  "score": 1.46,
-                  "confidence": 0.32
-                },
-                "size": {
-                  "score": 2.02,
-                  "confidence": 0
-                },
-                "state": {
-                  "score": 2.59,
-                  "confidence": 0.38
-                },
-                "view": {
-                  "score": 1.01,
-                  "confidence": 1
-                }
-              }
-            }
-          },
-          "6": {
-            "plausible": {
-              "score": 2.746667,
-              "confidence": 0.32,
-              "parts": {
-                "setting": {
-                  "score": 2.69,
-                  "confidence": 0.55
-                },
-                "drawing": {
-                  "score": 2.99,
-                  "confidence": 1
-                },
-                "actions": {
-                  "score": 2.56,
-                  "confidence": 0.32
-                }
-              }
-            },
-            "vivid": {
-              "score": 2.32,
-              "confidence": 0.47,
-              "parts": {
-                "scene": {
-                  "score": 2.6399999999999997,
-                  "confidence": 0.47
-                },
-                "onlooker": {
-                  "score": 2,
-                  "confidence": 1
-                }
-              }
-            },
-            "clarity": {
-              "score": 2.15,
-              "confidence": 0.1,
-              "parts": {
-                "completeness": {
-                  "score": 1.3599999999999999,
-                  "confidence": 0.46
-                },
-                "size": {
-                  "score": 2.73,
-                  "confidence": 0.61
-                },
-                "state": {
-                  "score": 1.6,
-                  "confidence": 0.1
-                },
-                "view": {
-                  "score": 2.91,
-                  "confidence": 0.88
-                }
-              }
-            }
-          },
-          "7": {
-            "plausible": {
-              "score": 2.16,
-              "confidence": 0.29,
-              "parts": {
-                "setting": {
-                  "score": 2.4299999999999997,
-                  "confidence": 0.29
-                },
-                "drawing": {
-                  "score": 2.96,
-                  "confidence": 0.94
-                },
-                "actions": {
-                  "score": 1.09,
-                  "confidence": 0.86
-                }
-              }
-            },
-            "vivid": {
-              "score": 2.605,
-              "confidence": 0.55,
-              "parts": {
-                "scene": {
-                  "score": 2.3,
-                  "confidence": 0.55
-                },
-                "onlooker": {
-                  "score": 2.91,
-                  "confidence": 0.85
-                }
-              }
-            },
-            "clarity": {
-              "score": 2.0075,
-              "confidence": 0,
-              "parts": {
-                "completeness": {
-                  "score": 1.27,
-                  "confidence": 0.58
-                },
-                "size": {
-                  "score": 2.25,
-                  "confidence": 0
-                },
-                "state": {
-                  "score": 1.74,
-                  "confidence": 0
-                },
-                "view": {
-                  "score": 2.77,
-                  "confidence": 0.64
-                }
-              }
-            }
-          },
-          "8": {
-            "plausible": {
-              "score": 2.716667,
-              "confidence": 0.2,
-              "parts": {
-                "setting": {
-                  "score": 2.4699999999999998,
-                  "confidence": 0.2
-                },
-                "drawing": {
-                  "score": 2.99,
-                  "confidence": 1
-                },
-                "actions": {
-                  "score": 2.69,
-                  "confidence": 0.55
-                }
-              }
-            },
-            "vivid": {
-              "score": 2.445,
-              "confidence": 0.79,
-              "parts": {
-                "scene": {
-                  "score": 2.87,
-                  "confidence": 0.79
-                },
-                "onlooker": {
-                  "score": 2.02,
-                  "confidence": 0.97
-                }
-              }
-            },
-            "clarity": {
-              "score": 2.2075,
-              "confidence": 0,
-              "parts": {
-                "completeness": {
-                  "score": 1.47,
-                  "confidence": 0.3
-                },
-                "size": {
-                  "score": 2.4,
-                  "confidence": 0.08
-                },
-                "state": {
-                  "score": 2.2,
-                  "confidence": 0
-                },
-                "view": {
-                  "score": 2.76,
-                  "confidence": 0.66
-                }
-              }
-            }
-          },
-          "9": {
-            "plausible": {
-              "score": 2.11,
-              "confidence": 0.22,
-              "parts": {
-                "setting": {
-                  "score": 2.3,
-                  "confidence": 0.22
-                },
-                "drawing": {
-                  "score": 3,
-                  "confidence": 1
-                },
-                "actions": {
-                  "score": 1.03,
-                  "confidence": 0.95
-                }
-              }
-            },
-            "vivid": {
-              "score": 2.135,
-              "confidence": 0.56,
-              "parts": {
-                "scene": {
-                  "score": 2.27,
-                  "confidence": 0.56
-                },
-                "onlooker": {
-                  "score": 2,
-                  "confidence": 0.98
-                }
-              }
-            },
-            "clarity": {
-              "score": 2.4,
-              "confidence": 0,
-              "parts": {
-                "completeness": {
-                  "score": 1.48,
-                  "confidence": 0.27
-                },
-                "size": {
-                  "score": 2.99,
-                  "confidence": 1
-                },
-                "state": {
-                  "score": 2.29,
-                  "confidence": 0
-                },
-                "view": {
-                  "score": 2.84,
-                  "confidence": 0.74
-                }
-              }
-            }
-          }
-        },
-        "shots": {
-          "1": "medium",
-          "2": "close-up",
-          "3": "medium",
-          "5": "medium",
-          "6": "medium",
-          "7": "medium",
-          "8": "medium",
-          "9": "medium"
-        },
-        "steps": {
-          "1": "during",
-          "2": "during",
-          "3": "during",
-          "5": "during",
-          "6": "during",
-          "7": "during",
-          "8": "during",
-          "9": "during"
-        },
-        "isSequence": false,
-        "partlyCut": [
-          1,
-          2,
-          5,
-          6,
-          7,
-          8,
-          9
-        ],
-        "weights": {
-          "plausible": 2,
-          "vivid": 1,
-          "clarity": 1
-        },
-        "totals": {
-          "1": 10.388334,
-          "2": 10.009166,
-          "3": 11.013334,
-          "5": 9.433334,
-          "6": 9.963334,
-          "7": 8.9325,
-          "8": 10.085834,
-          "9": 8.755
-        },
-        "ranking": [
-          3,
-          1,
-          8,
-          2,
-          6,
-          5,
-          7,
-          9
-        ],
-        "mainCell": 3,
-        "alternativeCell": 1,
-        "margin": 0.625,
-        "weakestConfidence": 0,
-        "tie": false,
-        "answers": {
-          "cell_1_plausible_setting": {
-            "type": "score",
-            "score": 1.67,
-            "confidence": 0.51,
-            "legend": {
-              "0": "no setting clues: nothing shows where the scene happens",
-              "1": "a few setting clues",
-              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
-            },
-            "probabilities": {
-              "0": 0.02,
-              "1": 0.29,
-              "2": 0.69
-            }
-          },
-          "cell_1_plausible_drawing": {
-            "type": "score",
-            "score": 1.99,
-            "confidence": 0.97,
-            "legend": {
-              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
-              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
-              "2": "no drawing error"
-            },
-            "probabilities": {
-              "0": 0.01,
-              "1": 0,
-              "2": 0.99
-            }
-          },
-          "cell_1_plausible_actions": {
-            "type": "score",
-            "score": 1.88,
-            "confidence": 0.82,
-            "legend": {
-              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
-              "1": "the cell shows some of the story's beginning actions",
-              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
-            },
-            "probabilities": {
-              "0": 0.05,
-              "1": 0.02,
-              "2": 0.93
-            }
-          },
-          "cell_1_vivid_scene": {
-            "type": "score",
-            "score": 1.97,
-            "confidence": 0.95,
-            "legend": {
-              "0": "the story objects are small, far away or apart from each other",
-              "1": "the story objects are clear, but they don't act on each other as the story says",
-              "2": "the story objects are large and act on each other as the story says"
-            },
-            "probabilities": {
-              "0": 0.01,
-              "1": 0.01,
-              "2": 0.98
-            }
-          },
-          "cell_1_vivid_onlooker": {
-            "type": "score",
-            "score": 1.04,
-            "confidence": 0.94,
-            "legend": {
-              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
-              "1": "no onlooker, or an onlooker that adds nothing to the story",
-              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
-            },
-            "probabilities": {
-              "0": 0,
-              "1": 0.96,
-              "2": 0.04
-            }
-          },
-          "cell_1_clarity_completeness": {
-            "type": "score",
-            "score": 0.53,
-            "confidence": 0.19,
-            "legend": {
-              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
-              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
-              "2": "every must-see item is fully visible"
-            },
-            "probabilities": {
-              "0": 0.49,
-              "1": 0.48,
-              "2": 0.03
-            }
-          },
-          "cell_1_clarity_size": {
-            "type": "score",
-            "score": 1.43,
-            "confidence": 0.13,
-            "legend": {
-              "0": "a story item is too small to see what it does",
-              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
-              "2": "every must-see item is large enough to see"
-            },
-            "probabilities": {
-              "0": 0.24,
-              "1": 0.1,
-              "2": 0.66
-            }
-          },
-          "cell_1_clarity_state": {
-            "type": "score",
-            "score": 0.91,
-            "confidence": 0,
-            "legend": {
-              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
-              "1": "the state of some must-see items is unclear",
-              "2": "every must-see item is in the state its adjectives give"
-            },
-            "probabilities": {
-              "0": 0.5,
-              "1": 0.09,
-              "2": 0.41
-            }
-          },
-          "cell_1_clarity_view": {
-            "type": "score",
-            "score": 1.89,
-            "confidence": 0.82,
-            "legend": {
-              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
-              "1": "the main subject is seen from the side",
-              "2": "the main subject is seen from the front or in three-quarter view"
-            },
-            "probabilities": {
-              "0": 0.05,
-              "1": 0.02,
-              "2": 0.93
-            }
-          },
-          "cell_2_plausible_setting": {
-            "type": "score",
-            "score": 1.82,
-            "confidence": 0.74,
-            "legend": {
-              "0": "no setting clues: nothing shows where the scene happens",
-              "1": "a few setting clues",
-              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
-            },
-            "probabilities": {
-              "0": 0,
-              "1": 0.17,
-              "2": 0.83
-            }
-          },
-          "cell_2_plausible_drawing": {
-            "type": "score",
-            "score": 2,
-            "confidence": 1,
-            "legend": {
-              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
-              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
-              "2": "no drawing error"
-            },
-            "probabilities": {
-              "0": 0,
-              "1": 0,
-              "2": 1
-            }
-          },
-          "cell_2_plausible_actions": {
-            "type": "score",
-            "score": 1.59,
-            "confidence": 0.38,
-            "legend": {
-              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
-              "1": "the cell shows some of the story's beginning actions",
-              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
-            },
-            "probabilities": {
-              "0": 0.16,
-              "1": 0.09,
-              "2": 0.75
-            }
-          },
-          "cell_2_vivid_scene": {
-            "type": "score",
-            "score": 1.48,
-            "confidence": 0.22,
-            "legend": {
-              "0": "the story objects are small, far away or apart from each other",
-              "1": "the story objects are clear, but they don't act on each other as the story says",
-              "2": "the story objects are large and act on each other as the story says"
-            },
-            "probabilities": {
-              "0": 0.21,
-              "1": 0.1,
-              "2": 0.69
-            }
-          },
-          "cell_2_vivid_onlooker": {
-            "type": "score",
-            "score": 1.91,
-            "confidence": 0.86,
-            "legend": {
-              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
-              "1": "no onlooker, or an onlooker that adds nothing to the story",
-              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
-            },
-            "probabilities": {
-              "0": 0.01,
-              "1": 0.07,
-              "2": 0.92
-            }
-          },
-          "cell_2_clarity_completeness": {
-            "type": "score",
-            "score": 0.9,
-            "confidence": 0.85,
-            "legend": {
-              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
-              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
-              "2": "every must-see item is fully visible"
-            },
-            "probabilities": {
-              "0": 0.1,
-              "1": 0.9,
-              "2": 0
-            }
-          },
-          "cell_2_clarity_size": {
-            "type": "score",
-            "score": 1,
-            "confidence": 0,
-            "legend": {
-              "0": "a story item is too small to see what it does",
-              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
-              "2": "every must-see item is large enough to see"
-            },
-            "probabilities": {
-              "0": 0.38,
-              "1": 0.24,
-              "2": 0.38
-            }
-          },
-          "cell_2_clarity_state": {
-            "type": "score",
-            "score": 0.72,
-            "confidence": 0,
-            "legend": {
-              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
-              "1": "the state of some must-see items is unclear",
-              "2": "every must-see item is in the state its adjectives give"
-            },
-            "probabilities": {
-              "0": 0.6,
-              "1": 0.09,
-              "2": 0.31
-            }
-          },
-          "cell_2_clarity_view": {
-            "type": "score",
-            "score": 0.21,
-            "confidence": 0.67,
-            "legend": {
-              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
-              "1": "the main subject is seen from the side",
-              "2": "the main subject is seen from the front or in three-quarter view"
-            },
-            "probabilities": {
-              "0": 0.79,
-              "1": 0.2,
-              "2": 0.01
-            }
-          },
-          "cell_3_plausible_setting": {
-            "type": "score",
-            "score": 1.47,
-            "confidence": 0.19,
-            "legend": {
-              "0": "no setting clues: nothing shows where the scene happens",
-              "1": "a few setting clues",
-              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
-            },
-            "probabilities": {
-              "0": 0.05,
-              "1": 0.44,
-              "2": 0.51
-            }
-          },
-          "cell_3_plausible_drawing": {
-            "type": "score",
-            "score": 2,
-            "confidence": 1,
-            "legend": {
-              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
-              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
-              "2": "no drawing error"
-            },
-            "probabilities": {
-              "0": 0,
-              "1": 0,
-              "2": 1
-            }
-          },
-          "cell_3_plausible_actions": {
-            "type": "score",
-            "score": 1.74,
-            "confidence": 0.59,
-            "legend": {
-              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
-              "1": "the cell shows some of the story's beginning actions",
-              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
-            },
-            "probabilities": {
-              "0": 0.12,
-              "1": 0.03,
-              "2": 0.85
-            }
-          },
-          "cell_3_vivid_scene": {
-            "type": "score",
-            "score": 1.97,
-            "confidence": 0.95,
-            "legend": {
-              "0": "the story objects are small, far away or apart from each other",
-              "1": "the story objects are clear, but they don't act on each other as the story says",
-              "2": "the story objects are large and act on each other as the story says"
-            },
-            "probabilities": {
-              "0": 0.01,
-              "1": 0.01,
-              "2": 0.98
-            }
-          },
-          "cell_3_vivid_onlooker": {
-            "type": "score",
-            "score": 1.86,
-            "confidence": 0.79,
-            "legend": {
-              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
-              "1": "no onlooker, or an onlooker that adds nothing to the story",
-              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
-            },
-            "probabilities": {
-              "0": 0.02,
-              "1": 0.1,
-              "2": 0.88
-            }
-          },
-          "cell_3_clarity_completeness": {
-            "type": "score",
-            "score": 1.98,
-            "confidence": 0.98,
-            "legend": {
-              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
-              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
-              "2": "every must-see item is fully visible"
-            },
-            "probabilities": {
-              "0": 0,
-              "1": 0.01,
-              "2": 0.99
-            }
-          },
-          "cell_3_clarity_size": {
-            "type": "score",
-            "score": 0.86,
-            "confidence": 0,
-            "legend": {
-              "0": "a story item is too small to see what it does",
-              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
-              "2": "every must-see item is large enough to see"
-            },
-            "probabilities": {
-              "0": 0.43,
-              "1": 0.28,
-              "2": 0.29
-            }
-          },
-          "cell_3_clarity_state": {
-            "type": "score",
-            "score": 1.69,
-            "confidence": 0.55,
-            "legend": {
-              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
-              "1": "the state of some must-see items is unclear",
-              "2": "every must-see item is in the state its adjectives give"
-            },
-            "probabilities": {
-              "0": 0.11,
-              "1": 0.08,
-              "2": 0.81
-            }
-          },
-          "cell_3_clarity_view": {
-            "type": "score",
-            "score": 1.97,
-            "confidence": 0.95,
-            "legend": {
-              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
-              "1": "the main subject is seen from the side",
-              "2": "the main subject is seen from the front or in three-quarter view"
-            },
-            "probabilities": {
-              "0": 0.01,
-              "1": 0.01,
-              "2": 0.98
-            }
-          },
-          "cell_5_plausible_setting": {
-            "type": "score",
-            "score": 1.03,
-            "confidence": 0.51,
-            "legend": {
-              "0": "no setting clues: nothing shows where the scene happens",
-              "1": "a few setting clues",
-              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
-            },
-            "probabilities": {
-              "0": 0.15,
-              "1": 0.67,
-              "2": 0.18
-            }
-          },
-          "cell_5_plausible_drawing": {
-            "type": "score",
-            "score": 2,
-            "confidence": 1,
-            "legend": {
-              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
-              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
-              "2": "no drawing error"
-            },
-            "probabilities": {
-              "0": 0,
-              "1": 0,
-              "2": 1
-            }
-          },
-          "cell_5_plausible_actions": {
-            "type": "score",
-            "score": 1.73,
-            "confidence": 0.59,
-            "legend": {
-              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
-              "1": "the cell shows some of the story's beginning actions",
-              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
-            },
-            "probabilities": {
-              "0": 0.11,
-              "1": 0.05,
-              "2": 0.84
-            }
-          },
-          "cell_5_vivid_scene": {
-            "type": "score",
-            "score": 1.97,
-            "confidence": 0.94,
-            "legend": {
-              "0": "the story objects are small, far away or apart from each other",
-              "1": "the story objects are clear, but they don't act on each other as the story says",
-              "2": "the story objects are large and act on each other as the story says"
-            },
-            "probabilities": {
-              "0": 0.01,
-              "1": 0.02,
-              "2": 0.97
-            }
-          },
-          "cell_5_vivid_onlooker": {
-            "type": "score",
-            "score": 1.01,
-            "confidence": 0.98,
-            "legend": {
-              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
-              "1": "no onlooker, or an onlooker that adds nothing to the story",
-              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
-            },
-            "probabilities": {
-              "0": 0,
-              "1": 0.99,
-              "2": 0.01
-            }
-          },
-          "cell_5_clarity_completeness": {
-            "type": "score",
-            "score": 0.46,
-            "confidence": 0.32,
-            "legend": {
-              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
-              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
-              "2": "every must-see item is fully visible"
-            },
-            "probabilities": {
-              "0": 0.56,
-              "1": 0.43,
-              "2": 0.01
-            }
-          },
-          "cell_5_clarity_size": {
-            "type": "score",
-            "score": 1.02,
-            "confidence": 0,
-            "legend": {
-              "0": "a story item is too small to see what it does",
-              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
-              "2": "every must-see item is large enough to see"
-            },
-            "probabilities": {
-              "0": 0.41,
-              "1": 0.16,
-              "2": 0.43
-            }
-          },
-          "cell_5_clarity_state": {
-            "type": "score",
-            "score": 1.59,
-            "confidence": 0.38,
-            "legend": {
-              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
-              "1": "the state of some must-see items is unclear",
-              "2": "every must-see item is in the state its adjectives give"
-            },
-            "probabilities": {
-              "0": 0.17,
-              "1": 0.07,
-              "2": 0.76
-            }
-          },
-          "cell_5_clarity_view": {
-            "type": "score",
-            "score": 0.01,
-            "confidence": 1,
-            "legend": {
-              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
-              "1": "the main subject is seen from the side",
-              "2": "the main subject is seen from the front or in three-quarter view"
-            },
-            "probabilities": {
-              "0": 1,
-              "1": 0,
-              "2": 0
-            }
-          },
-          "cell_6_plausible_setting": {
-            "type": "score",
-            "score": 1.69,
-            "confidence": 0.55,
-            "legend": {
-              "0": "no setting clues: nothing shows where the scene happens",
-              "1": "a few setting clues",
-              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
-            },
-            "probabilities": {
-              "0": 0,
-              "1": 0.3,
-              "2": 0.7
-            }
-          },
-          "cell_6_plausible_drawing": {
-            "type": "score",
-            "score": 1.99,
-            "confidence": 1,
-            "legend": {
-              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
-              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
-              "2": "no drawing error"
-            },
-            "probabilities": {
-              "0": 0,
-              "1": 0,
-              "2": 1
-            }
-          },
-          "cell_6_plausible_actions": {
-            "type": "score",
-            "score": 1.56,
-            "confidence": 0.32,
-            "legend": {
-              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
-              "1": "the cell shows some of the story's beginning actions",
-              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
-            },
-            "probabilities": {
-              "0": 0.2,
-              "1": 0.05,
-              "2": 0.75
-            }
-          },
-          "cell_6_vivid_scene": {
-            "type": "score",
-            "score": 1.64,
-            "confidence": 0.47,
-            "legend": {
-              "0": "the story objects are small, far away or apart from each other",
-              "1": "the story objects are clear, but they don't act on each other as the story says",
-              "2": "the story objects are large and act on each other as the story says"
-            },
-            "probabilities": {
-              "0": 0.02,
-              "1": 0.31,
-              "2": 0.67
-            }
-          },
-          "cell_6_vivid_onlooker": {
-            "type": "score",
-            "score": 1,
-            "confidence": 1,
-            "legend": {
-              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
-              "1": "no onlooker, or an onlooker that adds nothing to the story",
-              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
-            },
-            "probabilities": {
-              "0": 0,
-              "1": 1,
-              "2": 0
-            }
-          },
-          "cell_6_clarity_completeness": {
-            "type": "score",
-            "score": 0.36,
-            "confidence": 0.46,
-            "legend": {
-              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
-              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
-              "2": "every must-see item is fully visible"
-            },
-            "probabilities": {
-              "0": 0.65,
-              "1": 0.34,
-              "2": 0.01
-            }
-          },
-          "cell_6_clarity_size": {
-            "type": "score",
-            "score": 1.73,
-            "confidence": 0.61,
-            "legend": {
-              "0": "a story item is too small to see what it does",
-              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
-              "2": "every must-see item is large enough to see"
-            },
-            "probabilities": {
-              "0": 0.09,
-              "1": 0.08,
-              "2": 0.83
-            }
-          },
-          "cell_6_clarity_state": {
-            "type": "score",
-            "score": 0.6,
-            "confidence": 0.1,
-            "legend": {
-              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
-              "1": "the state of some must-see items is unclear",
-              "2": "every must-see item is in the state its adjectives give"
-            },
-            "probabilities": {
-              "0": 0.67,
-              "1": 0.06,
-              "2": 0.27
-            }
-          },
-          "cell_6_clarity_view": {
-            "type": "score",
-            "score": 1.91,
-            "confidence": 0.88,
-            "legend": {
-              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
-              "1": "the main subject is seen from the side",
-              "2": "the main subject is seen from the front or in three-quarter view"
-            },
-            "probabilities": {
-              "0": 0.03,
-              "1": 0.02,
-              "2": 0.95
-            }
-          },
-          "cell_7_plausible_setting": {
-            "type": "score",
-            "score": 1.43,
-            "confidence": 0.29,
-            "legend": {
-              "0": "no setting clues: nothing shows where the scene happens",
-              "1": "a few setting clues",
-              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
-            },
-            "probabilities": {
-              "0": 0.02,
-              "1": 0.53,
-              "2": 0.45
-            }
-          },
-          "cell_7_plausible_drawing": {
-            "type": "score",
-            "score": 1.96,
-            "confidence": 0.94,
-            "legend": {
-              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
-              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
-              "2": "no drawing error"
-            },
-            "probabilities": {
-              "0": 0.02,
-              "1": 0,
-              "2": 0.98
-            }
-          },
-          "cell_7_plausible_actions": {
-            "type": "score",
-            "score": 0.09,
-            "confidence": 0.86,
-            "legend": {
-              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
-              "1": "the cell shows some of the story's beginning actions",
-              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
-            },
-            "probabilities": {
-              "0": 0.93,
-              "1": 0.05,
-              "2": 0.02
-            }
-          },
-          "cell_7_vivid_scene": {
-            "type": "score",
-            "score": 1.3,
-            "confidence": 0.55,
-            "legend": {
-              "0": "the story objects are small, far away or apart from each other",
-              "1": "the story objects are clear, but they don't act on each other as the story says",
-              "2": "the story objects are large and act on each other as the story says"
-            },
-            "probabilities": {
-              "0": 0,
-              "1": 0.7,
-              "2": 0.3
-            }
-          },
-          "cell_7_vivid_onlooker": {
-            "type": "score",
-            "score": 1.91,
-            "confidence": 0.85,
-            "legend": {
-              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
-              "1": "no onlooker, or an onlooker that adds nothing to the story",
-              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
-            },
-            "probabilities": {
-              "0": 0.04,
-              "1": 0.02,
-              "2": 0.94
-            }
-          },
-          "cell_7_clarity_completeness": {
-            "type": "score",
-            "score": 0.27,
-            "confidence": 0.58,
-            "legend": {
-              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
-              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
-              "2": "every must-see item is fully visible"
-            },
-            "probabilities": {
-              "0": 0.76,
-              "1": 0.2,
-              "2": 0.04
-            }
-          },
-          "cell_7_clarity_size": {
-            "type": "score",
-            "score": 1.25,
-            "confidence": 0,
-            "legend": {
-              "0": "a story item is too small to see what it does",
-              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
-              "2": "every must-see item is large enough to see"
-            },
-            "probabilities": {
-              "0": 0.35,
-              "1": 0.05,
-              "2": 0.6
-            }
-          },
-          "cell_7_clarity_state": {
-            "type": "score",
-            "score": 0.74,
-            "confidence": 0,
-            "legend": {
-              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
-              "1": "the state of some must-see items is unclear",
-              "2": "every must-see item is in the state its adjectives give"
-            },
-            "probabilities": {
-              "0": 0.59,
-              "1": 0.08,
-              "2": 0.33
-            }
-          },
-          "cell_7_clarity_view": {
-            "type": "score",
-            "score": 1.77,
-            "confidence": 0.64,
-            "legend": {
-              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
-              "1": "the main subject is seen from the side",
-              "2": "the main subject is seen from the front or in three-quarter view"
-            },
-            "probabilities": {
-              "0": 0.1,
-              "1": 0.04,
-              "2": 0.86
-            }
-          },
-          "cell_8_plausible_setting": {
-            "type": "score",
-            "score": 1.47,
-            "confidence": 0.2,
-            "legend": {
-              "0": "no setting clues: nothing shows where the scene happens",
-              "1": "a few setting clues",
-              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
-            },
-            "probabilities": {
-              "0": 0.07,
-              "1": 0.39,
-              "2": 0.54
-            }
-          },
-          "cell_8_plausible_drawing": {
-            "type": "score",
-            "score": 1.99,
-            "confidence": 1,
-            "legend": {
-              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
-              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
-              "2": "no drawing error"
-            },
-            "probabilities": {
-              "0": 0,
-              "1": 0,
-              "2": 1
-            }
-          },
-          "cell_8_plausible_actions": {
-            "type": "score",
-            "score": 1.69,
-            "confidence": 0.55,
-            "legend": {
-              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
-              "1": "the cell shows some of the story's beginning actions",
-              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
-            },
-            "probabilities": {
-              "0": 0.13,
-              "1": 0.04,
-              "2": 0.83
-            }
-          },
-          "cell_8_vivid_scene": {
-            "type": "score",
-            "score": 1.87,
-            "confidence": 0.79,
-            "legend": {
-              "0": "the story objects are small, far away or apart from each other",
-              "1": "the story objects are clear, but they don't act on each other as the story says",
-              "2": "the story objects are large and act on each other as the story says"
-            },
-            "probabilities": {
-              "0": 0.02,
-              "1": 0.1,
-              "2": 0.88
-            }
-          },
-          "cell_8_vivid_onlooker": {
-            "type": "score",
-            "score": 1.02,
-            "confidence": 0.97,
-            "legend": {
-              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
-              "1": "no onlooker, or an onlooker that adds nothing to the story",
-              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
-            },
-            "probabilities": {
-              "0": 0,
-              "1": 0.98,
-              "2": 0.02
-            }
-          },
-          "cell_8_clarity_completeness": {
-            "type": "score",
-            "score": 0.47,
-            "confidence": 0.3,
-            "legend": {
-              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
-              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
-              "2": "every must-see item is fully visible"
-            },
-            "probabilities": {
-              "0": 0.53,
-              "1": 0.47,
-              "2": 0
-            }
-          },
-          "cell_8_clarity_size": {
-            "type": "score",
-            "score": 1.4,
-            "confidence": 0.08,
-            "legend": {
-              "0": "a story item is too small to see what it does",
-              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
-              "2": "every must-see item is large enough to see"
-            },
-            "probabilities": {
-              "0": 0.21,
-              "1": 0.19,
-              "2": 0.6
-            }
-          },
-          "cell_8_clarity_state": {
-            "type": "score",
-            "score": 1.2,
-            "confidence": 0,
-            "legend": {
-              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
-              "1": "the state of some must-see items is unclear",
-              "2": "every must-see item is in the state its adjectives give"
-            },
-            "probabilities": {
-              "0": 0.31,
-              "1": 0.17,
-              "2": 0.52
-            }
-          },
-          "cell_8_clarity_view": {
-            "type": "score",
-            "score": 1.76,
-            "confidence": 0.66,
-            "legend": {
-              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
-              "1": "the main subject is seen from the side",
-              "2": "the main subject is seen from the front or in three-quarter view"
-            },
-            "probabilities": {
-              "0": 0.08,
-              "1": 0.07,
-              "2": 0.85
-            }
-          },
-          "cell_9_plausible_setting": {
-            "type": "score",
-            "score": 1.3,
-            "confidence": 0.22,
-            "legend": {
-              "0": "no setting clues: nothing shows where the scene happens",
-              "1": "a few setting clues",
-              "2": "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
-            },
-            "probabilities": {
-              "0": 0.11,
-              "1": 0.48,
-              "2": 0.41
-            }
-          },
-          "cell_9_plausible_drawing": {
-            "type": "score",
-            "score": 2,
-            "confidence": 1,
-            "legend": {
-              "0": "a must-see item is drawn wrong (a drawing error with mustSee true)",
-              "1": "another object is drawn wrong (a drawing error with mustSee false only)",
-              "2": "no drawing error"
-            },
-            "probabilities": {
-              "0": 0,
-              "1": 0,
-              "2": 1
-            }
-          },
-          "cell_9_plausible_actions": {
-            "type": "score",
-            "score": 0.03,
-            "confidence": 0.95,
-            "legend": {
-              "0": "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
-              "1": "the cell shows some of the story's beginning actions",
-              "2": "the cell shows the story's beginning actions in the story's order (the result may be left out)"
-            },
-            "probabilities": {
-              "0": 0.98,
-              "1": 0.01,
-              "2": 0.01
-            }
-          },
-          "cell_9_vivid_scene": {
-            "type": "score",
-            "score": 1.27,
-            "confidence": 0.56,
-            "legend": {
-              "0": "the story objects are small, far away or apart from each other",
-              "1": "the story objects are clear, but they don't act on each other as the story says",
-              "2": "the story objects are large and act on each other as the story says"
-            },
-            "probabilities": {
-              "0": 0.01,
-              "1": 0.71,
-              "2": 0.28
-            }
-          },
-          "cell_9_vivid_onlooker": {
-            "type": "score",
-            "score": 1,
-            "confidence": 0.98,
-            "legend": {
-              "0": "an onlooker looks away or does something else, so it draws the eye away from the story's action",
-              "1": "no onlooker, or an onlooker that adds nothing to the story",
-              "2": "an onlooker watches or reacts to the action and makes the story's feeling stronger"
-            },
-            "probabilities": {
-              "0": 0,
-              "1": 0.99,
-              "2": 0.01
-            }
-          },
-          "cell_9_clarity_completeness": {
-            "type": "score",
-            "score": 0.48,
-            "confidence": 0.27,
-            "legend": {
-              "0": "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
-              "1": "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
-              "2": "every must-see item is fully visible"
-            },
-            "probabilities": {
-              "0": 0.53,
-              "1": 0.45,
-              "2": 0.02
-            }
-          },
-          "cell_9_clarity_size": {
-            "type": "score",
-            "score": 1.99,
-            "confidence": 1,
-            "legend": {
-              "0": "a story item is too small to see what it does",
-              "1": "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
-              "2": "every must-see item is large enough to see"
-            },
-            "probabilities": {
-              "0": 0,
-              "1": 0,
-              "2": 1
-            }
-          },
-          "cell_9_clarity_state": {
-            "type": "score",
-            "score": 1.29,
-            "confidence": 0,
-            "legend": {
-              "0": "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
-              "1": "the state of some must-see items is unclear",
-              "2": "every must-see item is in the state its adjectives give"
-            },
-            "probabilities": {
-              "0": 0.32,
-              "1": 0.07,
-              "2": 0.61
-            }
-          },
-          "cell_9_clarity_view": {
-            "type": "score",
-            "score": 1.84,
-            "confidence": 0.74,
-            "legend": {
-              "0": "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
-              "1": "the main subject is seen from the side",
-              "2": "the main subject is seen from the front or in three-quarter view"
-            },
-            "probabilities": {
-              "0": 0.07,
-              "1": 0.03,
-              "2": 0.9
             }
           }
         }
