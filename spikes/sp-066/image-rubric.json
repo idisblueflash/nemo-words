@@ -1,0 +1,31 @@
+{
+  "_comment": "SP-066: the image pick's rubric, read by lib/pick.js (Jev), shaped like scripts/story-rubric.json's axes. One Score question per scored cell and axis; Jev answers a level 0-2, and the axis score is that + 1 (decimals kept, as US-038 keeps them). An axis's optional \"check\" is added to its question. SP-066 changes SP-064's rubric in two places only (ADR-0033): vivid scores the scene (what the story objects do to each other), not the camera, with the angle exception of C-042; and must-see clarity uses each item's size from the caption, so a small item gets the lowest level. Must-see clarity still checks the items with their adjectives (ADR-0032).",
+  "axes": {
+    "plausible": {
+      "label": "Plausible",
+      "levels": [
+        "the scene makes little sense: no setting clues, or the action happens in an order that doesn't fit the story",
+        "the scene makes some sense: a few setting clues, or a mostly sensible order of action",
+        "the scene makes sense: clear setting clues such as a floor, a hand or a height, and a sensible order of action"
+      ]
+    },
+    "vivid": {
+      "label": "Vivid",
+      "check": "Score the scene, not the camera: what the story objects do to each other, from the cell's action line and the sizes of its must-see items. An eye-level, medium shot is the normal view, and an extreme close-up or a strong camera angle adds nothing. An unusual camera angle lowers vivid only when it hides the action; an unusual angle never lowers vivid when the state's angle_case is \"view\" (the story is about a view) or \"one-object\" (the story has one main object).",
+      "levels": [
+        "the story objects are small, far away or apart from each other",
+        "the story objects are clear, but they don't act on each other as the story says",
+        "the story objects are large and act on each other as the story says"
+      ]
+    },
+    "clarity": {
+      "label": "Must-see clarity",
+      "check": "Check each must-see item with its adjectives: the item must be shown in the state its adjectives give (a bare cob, a nametag that reads \"Venice\"). The cell's must-see marks say whether the item itself is visible, partly cut or hidden, and give its size (large / medium / small) and place (front / back); they don't check its state. Use each item's size: a small item gets the lowest level.",
+      "levels": [
+        "a must-see item is small, is partly cut off by the edge of the picture, or is not in the state its adjectives give (a cob that isn't bare yet, a nametag that doesn't read \"Venice\")",
+        "every must-see item is shown in full and in the state its adjectives give, and none is small, but some are only medium or unclear",
+        "every must-see item is shown in full, in the state its adjectives give, large and clear"
+      ]
+    }
+  }
+}

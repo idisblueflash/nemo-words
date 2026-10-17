@@ -5,7 +5,7 @@ parent: E01
 status: done
 qa_status: passing
 timebox: 1d
-concepts: [C-001, C-002, C-004, C-030]
+concepts: [C-001, C-002, C-004, C-030, C-040]
 ---
 # SP-029 Does an auto image pick agree with Flash's picks?
 

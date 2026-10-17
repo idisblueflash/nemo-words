@@ -6,7 +6,7 @@ status: done
 qa_status: passing
 timebox: 1d
 depends_on: [SP-029]
-concepts: [C-002, C-004, C-030, C-034, C-035, C-036, C-037]
+concepts: [C-002, C-004, C-030, C-034, C-035, C-036, C-037, C-039, C-040]
 ---
 # SP-064 Does Jev agree with Flash's image pick once it checks the must-see objects and the camera shot?
 

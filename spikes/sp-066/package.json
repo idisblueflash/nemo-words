@@ -1,0 +1,9 @@
+{
+  "name": "sp-066-scene-vivid-image-pick",
+  "private": true,
+  "version": "0.0.0",
+  "description": "SP-066 throwaway spike: does Jev agree with Flash's image pick when vivid scores the scene, not the camera?",
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  }
+}
