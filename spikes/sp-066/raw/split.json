@@ -114,23 +114,26 @@
     {
       "word": "anomaly",
       "roles": [
-        "SP-064 hit"
+        "SP-064 hit",
+        "main subject"
       ]
     },
     {
       "word": "ventilator",
       "roles": [
-        "name anchor"
+        "name anchor",
+        "main subject"
       ]
     },
     {
       "word": "period",
       "roles": [
         "angleCase view or one-object",
-        "gate skipped in SP-064"
+        "gate skipped in SP-064",
+        "main subject"
       ]
     }
   ],
   "missingEarlyPicks": [],
-  "listPromptKey": "3589febf3d0d7dc5"
+  "listPromptKey": "a46f799f47180eb9"
 }
