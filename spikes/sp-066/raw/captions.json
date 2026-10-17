@@ -1078,108 +1078,132 @@
             "dark-haired",
             "walking",
             "wearing blue scrubs",
-            "wearing a white cap"
+            "wearing a white cap",
+            "wearing a nametag"
           ]
         },
         {
-          "name": "nametag",
+          "name": "machine",
+          "adjectives": [
+            "orange-red",
+            "medical",
+            "boxy",
+            "with a green waveform screen",
+            "with a round gauge",
+            "with colored buttons",
+            "with a corrugated black bellows"
+          ]
+        },
+        {
+          "name": "newborn",
           "adjectives": [
             "small",
-            "white"
+            "sleeping",
+            "swaddled",
+            "wearing a pacifier",
+            "lying in a clear bassinet"
+          ]
+        },
+        {
+          "name": "bassinet",
+          "adjectives": [
+            "clear",
+            "transparent",
+            "plastic",
+            "on a stand"
+          ]
+        },
+        {
+          "name": "breathing tube",
+          "adjectives": [
+            "gray",
+            "corrugated",
+            "flexible",
+            "curved"
           ]
         },
         {
           "name": "door",
           "adjectives": [
-            "open",
             "wooden",
+            "open",
             "brown"
-          ]
-        },
-        {
-          "name": "breathing machine",
-          "adjectives": [
-            "red-orange",
-            "boxy",
-            "has a screen and a dial",
-            "has a corrugated hose"
-          ]
-        },
-        {
-          "name": "newborn baby",
-          "adjectives": [
-            "sleeping",
-            "swaddled",
-            "small",
-            "has a pacifier"
-          ]
-        },
-        {
-          "name": "incubator",
-          "adjectives": [
-            "clear",
-            "plastic",
-            "has a tube attached"
-          ]
-        },
-        {
-          "name": "hose",
-          "adjectives": [
-            "gray",
-            "corrugated",
-            "flexible"
           ]
         },
         {
           "name": "wall clock",
           "adjectives": [
             "round",
-            "white"
+            "white",
+            "analog"
           ]
         },
         {
           "name": "window",
           "adjectives": [
-            "night-time",
-            "has a crescent moon"
+            "framed",
+            "showing night sky"
           ]
         },
         {
-          "name": "machine stand",
+          "name": "crescent moon",
           "adjectives": [
-            "dark gray",
-            "metal"
+            "pale",
+            "night"
+          ]
+        },
+        {
+          "name": "trees",
+          "adjectives": [
+            "dark",
+            "silhouetted"
+          ]
+        },
+        {
+          "name": "cart",
+          "adjectives": [
+            "gray",
+            "metal",
+            "low"
+          ]
+        },
+        {
+          "name": "pacifier",
+          "adjectives": [
+            "small",
+            "white"
           ]
         }
       ],
       "shot": "medium",
       "angle": "eye level",
       "step": "during",
-      "action": "The nurse steps through the open door and holds it with one hand while looking toward the baby. The baby lies in the incubator, connected to the breathing machine by a hose.",
+      "action": "The nurse walks in through the open door, holding it with one hand and looking toward the newborn, while the machine is connected to the newborn's bassinet by a tube.",
       "extras": {
         "floor": true,
-        "background": "A hospital nursery room with pale green walls, an open door, a wall clock, and a window showing a night sky with a crescent moon and dark trees",
+        "background": "A pale green hospital room wall with an open wooden door, a round wall clock, and a window showing a crescent moon and dark trees at night.",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "nurse with a nametag that reads \"Venice\"": {
-          "mark": "hidden",
-          "size": null,
-          "place": null
+        "nurse": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
         },
-        "breathing machine (ventilator)": {
+        "machine": {
           "mark": "visible",
           "size": "large",
           "place": "front"
         },
-        "newborn baby": {
+        "newborn": {
           "mark": "partly cut",
           "size": "medium",
           "place": "front"
         }
       },
-      "promptKey": "caa7b74bcd2880de"
+      "drawingErrors": [],
+      "promptKey": "3f971eb345b0b756"
     },
     "2": {
       "objects": [
@@ -1197,43 +1221,62 @@
           "name": "nametag",
           "adjectives": [
             "white",
-            "small",
-            "reads Venice"
+            "small"
           ]
         },
         {
-          "name": "breathing machine",
+          "name": "ventilator machine",
           "adjectives": [
+            "red-orange",
             "large",
-            "orange-red",
+            "cartoon",
             "with screen",
-            "with gauge",
-            "with corrugated bellows"
+            "with gauge"
           ]
         },
         {
-          "name": "newborn baby",
+          "name": "monitor screen",
           "adjectives": [
-            "small",
-            "sleeping",
-            "swaddled",
-            "wearing breathing mask"
+            "teal",
+            "green waveform"
           ]
         },
         {
-          "name": "breathing hose",
+          "name": "pressure gauge",
+          "adjectives": [
+            "round",
+            "white"
+          ]
+        },
+        {
+          "name": "corrugated breathing hose",
           "adjectives": [
             "gray",
-            "corrugated",
-            "flexible"
+            "flexible",
+            "ribbed"
           ]
         },
         {
-          "name": "incubator",
+          "name": "newborn",
+          "adjectives": [
+            "sleeping",
+            "small",
+            "wrapped in blanket"
+          ]
+        },
+        {
+          "name": "breathing mask",
+          "adjectives": [
+            "small",
+            "gray"
+          ]
+        },
+        {
+          "name": "bassinet",
           "adjectives": [
             "clear",
             "white",
-            "bassinet-like"
+            "hospital"
           ]
         },
         {
@@ -1244,32 +1287,17 @@
           ]
         },
         {
-          "name": "monitor screen",
-          "adjectives": [
-            "dark teal",
-            "showing green waveform"
-          ]
-        },
-        {
-          "name": "pressure gauge",
+          "name": "green and orange indicator lights",
           "adjectives": [
             "round",
-            "white-faced"
-          ]
-        },
-        {
-          "name": "indicator lights",
-          "adjectives": [
-            "green",
-            "yellow",
-            "round"
+            "small"
           ]
         }
       ],
       "shot": "medium",
       "angle": "high angle",
       "step": "during",
-      "action": "The nurse looks down at the newborn baby in the incubator, while the breathing machine's hose connects to the baby's mask to assist breathing.",
+      "action": "The nurse looks down at the newborn in the bassinet while a hose from the ventilator machine delivers breathing support through a mask on the newborn's face.",
       "extras": {
         "floor": false,
         "background": "pale green hospital room wall and ceiling corner",
@@ -1277,23 +1305,24 @@
         "readableText": "Venice"
       },
       "mustSee": {
-        "nurse with a nametag that reads \"Venice\"": {
+        "nurse": {
           "mark": "visible",
           "size": "large",
           "place": "back"
         },
-        "breathing machine (ventilator)": {
+        "machine": {
           "mark": "partly cut",
           "size": "large",
           "place": "front"
         },
-        "newborn baby": {
+        "newborn": {
           "mark": "partly cut",
-          "size": "small",
-          "place": "front"
+          "size": "medium",
+          "place": "back"
         }
       },
-      "promptKey": "caa7b74bcd2880de"
+      "drawingErrors": [],
+      "promptKey": "3f971eb345b0b756"
     },
     "3": {
       "objects": [
@@ -1304,17 +1333,27 @@
             "hair in a bun",
             "wearing a white cap",
             "wearing a blue top",
-            "attentive",
-            "seen from behind and the side"
+            "seen from behind and the side",
+            "attentive"
           ]
         },
         {
-          "name": "newborn baby",
+          "name": "newborn",
           "adjectives": [
-            "swaddled",
             "small",
+            "swaddled",
             "sleeping",
-            "connected to a breathing tube"
+            "has a breathing tube or mask on the face"
+          ]
+        },
+        {
+          "name": "machine",
+          "adjectives": [
+            "red-orange",
+            "large",
+            "has a screen showing a waveform",
+            "has dials and buttons",
+            "has a corrugated hose"
           ]
         },
         {
@@ -1326,19 +1365,10 @@
           ]
         },
         {
-          "name": "breathing machine",
-          "adjectives": [
-            "red-orange",
-            "large",
-            "has a green waveform screen",
-            "has a gray corrugated hose"
-          ]
-        },
-        {
-          "name": "corrugated hose",
+          "name": "hose",
           "adjectives": [
             "gray",
-            "ribbed",
+            "corrugated",
             "flexible"
           ]
         },
@@ -1346,7 +1376,7 @@
           "name": "wall clock",
           "adjectives": [
             "round",
-            "white-faced",
+            "white",
             "analog"
           ]
         },
@@ -1354,46 +1384,45 @@
           "name": "window",
           "adjectives": [
             "dark",
-            "night-time",
             "framed"
           ]
         },
         {
-          "name": "gauge",
+          "name": "wall",
           "adjectives": [
-            "round",
-            "partly cut off"
+            "pale green"
           ]
         }
       ],
       "shot": "medium",
-      "angle": "eye level",
+      "angle": "high angle",
       "step": "during",
-      "action": "The nurse looks down at the newborn baby in the bassinet. The baby is connected by a tube to the breathing machine beside them.",
+      "action": "The nurse looks down at the newborn in the clear bassinet. The newborn is connected by a hose to the breathing machine beside it.",
       "extras": {
         "floor": false,
-        "background": "A hospital nursery room with a pale green wall, a dark window and a round wall clock.",
+        "background": "A pale green hospital room wall with a dark window and a round wall clock",
         "morePeople": false,
-        "readableText": "The clock shows the numbers 1 to 12. No other words are readable."
+        "readableText": ""
       },
       "mustSee": {
-        "nurse with a nametag that reads \"Venice\"": {
-          "mark": "hidden",
-          "size": null,
-          "place": null
-        },
-        "breathing machine (ventilator)": {
+        "nurse": {
           "mark": "partly cut",
           "size": "large",
           "place": "front"
         },
-        "newborn baby": {
+        "machine": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "newborn": {
           "mark": "visible",
           "size": "medium",
           "place": "back"
         }
       },
-      "promptKey": "caa7b74bcd2880de"
+      "drawingErrors": [],
+      "promptKey": "3f971eb345b0b756"
     },
     "4": {
       "objects": [
@@ -1401,9 +1430,9 @@
           "name": "nurse",
           "adjectives": [
             "dark-haired",
-            "wearing blue scrubs",
-            "wearing white cap",
             "hair in a bun",
+            "wearing a white cap",
+            "wearing blue scrubs",
             "looking down",
             "leaning over"
           ]
@@ -1412,12 +1441,11 @@
           "name": "nametag",
           "adjectives": [
             "white",
-            "small",
-            "reads 'Venice' or similar (hard to read)"
+            "small"
           ]
         },
         {
-          "name": "newborn baby",
+          "name": "newborn",
           "adjectives": [
             "small",
             "swaddled",
@@ -1436,12 +1464,13 @@
           ]
         },
         {
-          "name": "breathing machine",
+          "name": "machine",
           "adjectives": [
             "red-orange",
-            "boxy",
-            "with screen and dial",
-            "on a stand"
+            "medical",
+            "with a screen",
+            "with a pressure gauge",
+            "with colored buttons"
           ]
         },
         {
@@ -1453,71 +1482,42 @@
           ]
         },
         {
-          "name": "breathing mask",
-          "adjectives": [
-            "small",
-            "on the baby's face"
-          ]
-        },
-        {
-          "name": "monitor screen",
-          "adjectives": [
-            "teal",
-            "showing waveform"
-          ]
-        },
-        {
-          "name": "dial",
-          "adjectives": [
-            "round",
-            "white-faced"
-          ]
-        },
-        {
-          "name": "indicator lights",
-          "adjectives": [
-            "green",
-            "red",
-            "yellow",
-            "small"
-          ]
-        },
-        {
           "name": "machine stand",
           "adjectives": [
-            "dark",
-            "gray"
+            "dark gray",
+            "metal"
           ]
         }
       ],
       "shot": "medium",
       "angle": "high angle",
       "step": "during",
-      "action": "The nurse leans over the bassinet, looking down at the baby, with one hand on the bassinet rim and the other resting on the breathing machine, while the machine's tube runs to the baby's face.",
+      "action": "The nurse leans over the bassinet, looking down at the newborn, with one hand on the machine and the other on the bassinet's edge. The machine's tube runs to the newborn's face.",
       "extras": {
         "floor": true,
-        "background": "beige tiled hospital floor with a pale teal wall corner at top right",
+        "background": "beige floor seen from above, with a pale teal wall corner at the top right",
         "morePeople": false,
-        "readableText": "The nametag is small and the lettering is hard to make out; it looks like 'Venice' or 'Vonnz'."
+        "readableText": "Vonz"
       },
       "mustSee": {
-        "nurse with a nametag that reads \"Venice\"": {
+        "nurse": {
           "mark": "visible",
           "size": "large",
           "place": "front"
         },
-        "breathing machine (ventilator)": {
+        "machine": {
           "mark": "partly cut",
           "size": "medium",
           "place": "back"
         },
-        "newborn baby": {
+        "newborn": {
           "mark": "visible",
-          "size": "medium",
+          "size": "large",
           "place": "front"
         }
       },
-      "promptKey": "caa7b74bcd2880de"
+      "drawingErrors": [],
+      "promptKey": "3f971eb345b0b756"
     },
     "5": {
       "objects": [
@@ -1526,61 +1526,27 @@
           "adjectives": [
             "smiling",
             "dark-haired",
-            "cartoon",
             "wearing blue scrubs",
-            "wearing a white nurse cap"
+            "wearing a white cap"
           ]
         },
         {
-          "name": "nametag",
-          "adjectives": [
-            "white",
-            "reads Venice"
-          ]
-        },
-        {
-          "name": "breathing machine",
+          "name": "machine",
           "adjectives": [
             "red-orange",
             "large",
-            "has a screen, pressure gauge, buttons and corrugated bellows"
+            "has a monitor screen",
+            "has a gauge",
+            "has buttons",
+            "has a corrugated bellows"
           ]
         },
         {
-          "name": "monitor screen",
+          "name": "newborn",
           "adjectives": [
-            "blue",
-            "shows a wave line"
-          ]
-        },
-        {
-          "name": "pressure gauge",
-          "adjectives": [
-            "round",
-            "white-faced"
-          ]
-        },
-        {
-          "name": "green button",
-          "adjectives": [
+            "sleeping",
             "small",
-            "round"
-          ]
-        },
-        {
-          "name": "yellow button",
-          "adjectives": [
-            "small",
-            "round",
-            "being pressed"
-          ]
-        },
-        {
-          "name": "corrugated tube",
-          "adjectives": [
-            "gray",
-            "flexible",
-            "ribbed"
+            "swaddled in a white blanket"
           ]
         },
         {
@@ -1591,42 +1557,71 @@
           ]
         },
         {
-          "name": "newborn baby",
+          "name": "breathing tube",
           "adjectives": [
-            "sleeping",
-            "small",
-            "swaddled in white blanket"
+            "gray",
+            "corrugated",
+            "flexible"
+          ]
+        },
+        {
+          "name": "name tag",
+          "adjectives": [
+            "white",
+            "small"
+          ]
+        },
+        {
+          "name": "monitor screen",
+          "adjectives": [
+            "blue",
+            "showing a green wave line"
+          ]
+        },
+        {
+          "name": "pressure gauge",
+          "adjectives": [
+            "round",
+            "white"
+          ]
+        },
+        {
+          "name": "buttons",
+          "adjectives": [
+            "green",
+            "yellow"
           ]
         }
       ],
       "shot": "medium",
       "angle": "eye level",
       "step": "during",
-      "action": "The nurse smiles and looks at the breathing machine while pressing its yellow button with her finger; a tube connects the machine to the baby lying in the incubator.",
+      "action": "The nurse presses a button on the machine with her finger while looking at the newborn. The machine's tube runs to the newborn lying in the incubator.",
       "extras": {
         "floor": false,
-        "background": "pale green-gray backdrop",
+        "background": "plain pale green-gray wall",
         "morePeople": false,
         "readableText": "Venice"
       },
       "mustSee": {
-        "nurse with a nametag that reads \"Venice\"": {
-          "mark": "partly cut",
-          "size": "large",
-          "place": "back"
-        },
-        "breathing machine (ventilator)": {
+        "nurse": {
           "mark": "partly cut",
           "size": "large",
           "place": "front"
         },
-        "newborn baby": {
+        "machine": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "newborn": {
           "mark": "partly cut",
           "size": "small",
-          "place": "front"
+          "place": "back"
         }
       },
-      "promptKey": "caa7b74bcd2880de"
+      "drawingErrors": [],
+      "promptKey": "3f971eb345b0b756"
     },
     "6": {
       "objects": [
@@ -1636,30 +1631,17 @@
             "smiling",
             "dark-haired",
             "young",
-            "focused"
+            "wearing a white cap",
+            "wearing blue scrubs"
           ]
         },
         {
-          "name": "nurse's cap",
+          "name": "newborn",
           "adjectives": [
-            "white",
-            "small"
-          ]
-        },
-        {
-          "name": "blue scrubs",
-          "adjectives": [
-            "light blue",
-            "short-sleeved"
-          ]
-        },
-        {
-          "name": "newborn baby",
-          "adjectives": [
-            "tiny",
+            "small",
             "swaddled",
-            "sleeping",
-            "wrapped in white blanket"
+            "lying down",
+            "wearing a breathing mask"
           ]
         },
         {
@@ -1671,34 +1653,11 @@
           ]
         },
         {
-          "name": "breathing machine",
+          "name": "machine",
           "adjectives": [
             "red-orange",
-            "boxy",
-            "with screen and gauge"
-          ]
-        },
-        {
-          "name": "ventilator screen",
-          "adjectives": [
-            "small",
-            "green",
-            "showing a waveform"
-          ]
-        },
-        {
-          "name": "pressure gauge",
-          "adjectives": [
-            "round",
-            "white"
-          ]
-        },
-        {
-          "name": "indicator lights",
-          "adjectives": [
-            "green",
-            "yellow",
-            "small"
+            "large",
+            "with a screen and dial"
           ]
         },
         {
@@ -1713,15 +1672,21 @@
           "name": "wall clock",
           "adjectives": [
             "round",
-            "white",
-            "analog"
+            "white"
           ]
         },
         {
-          "name": "metal stand",
+          "name": "blanket",
+          "adjectives": [
+            "white",
+            "soft"
+          ]
+        },
+        {
+          "name": "table",
           "adjectives": [
             "gray",
-            "dark"
+            "metal"
           ]
         },
         {
@@ -1735,31 +1700,32 @@
       "shot": "medium",
       "angle": "eye level",
       "step": "during",
-      "action": "The nurse leans over the bassinet and presses the touchscreen on the breathing machine with one finger, while the machine's tube runs to the sleeping baby's face.",
+      "action": "The nurse leans over the bassinet, looks at the newborn and presses the screen of the machine. The machine's tube runs to the newborn's face.",
       "extras": {
         "floor": false,
-        "background": "Pale green hospital room wall with a wall clock, a wall outlet and a gray fixture",
+        "background": "A pale green hospital room wall with a round wall clock, a wall outlet and a small wall fixture",
         "morePeople": false,
         "readableText": ""
       },
       "mustSee": {
-        "nurse with a nametag that reads \"Venice\"": {
-          "mark": "hidden",
-          "size": null,
-          "place": null
-        },
-        "breathing machine (ventilator)": {
+        "nurse": {
           "mark": "partly cut",
-          "size": "medium",
+          "size": "large",
           "place": "front"
         },
-        "newborn baby": {
+        "machine": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "back"
+        },
+        "newborn": {
           "mark": "visible",
           "size": "medium",
           "place": "front"
         }
       },
-      "promptKey": "caa7b74bcd2880de"
+      "drawingErrors": [],
+      "promptKey": "3f971eb345b0b756"
     },
     "7": {
       "objects": [
@@ -1770,42 +1736,40 @@
             "dark-haired",
             "young",
             "wearing blue scrubs",
-            "wearing a white nurse cap"
+            "wearing white cap",
+            "wearing nametag"
           ]
         },
         {
-          "name": "nametag",
+          "name": "newborn",
           "adjectives": [
-            "white",
+            "sleeping",
             "small",
-            "reads Venice"
+            "swaddled",
+            "wrapped in white blanket",
+            "lying in bassinet",
+            "wearing breathing mask"
           ]
         },
         {
-          "name": "breathing machine",
+          "name": "machine",
           "adjectives": [
             "orange-red",
             "large",
-            "with a green waveform screen",
-            "with a pressure gauge",
-            "with green and yellow indicator lights"
+            "cartoon-style",
+            "with a screen showing a green wave",
+            "with a round gauge",
+            "with green and yellow lights",
+            "with accordion bellows"
           ]
         },
         {
-          "name": "ventilator tube",
+          "name": "breathing tube",
           "adjectives": [
             "gray",
             "corrugated",
-            "curved"
-          ]
-        },
-        {
-          "name": "newborn baby",
-          "adjectives": [
-            "small",
-            "sleeping",
-            "swaddled",
-            "wearing a breathing mask"
+            "curved",
+            "connected to the machine and the baby's mask"
           ]
         },
         {
@@ -1817,17 +1781,10 @@
           ]
         },
         {
-          "name": "blanket",
-          "adjectives": [
-            "white",
-            "thick"
-          ]
-        },
-        {
           "name": "window",
           "adjectives": [
-            "tall",
-            "dark"
+            "dark",
+            "showing night sky"
           ]
         },
         {
@@ -1838,48 +1795,56 @@
           ]
         },
         {
-          "name": "door",
+          "name": "nametag",
           "adjectives": [
-            "wooden",
-            "open"
+            "white",
+            "small"
           ]
         },
         {
-          "name": "wall",
+          "name": "nurse cap",
           "adjectives": [
-            "pale green",
-            "light teal"
+            "white"
+          ]
+        },
+        {
+          "name": "door",
+          "adjectives": [
+            "wooden",
+            "brown",
+            "partly visible"
           ]
         }
       ],
       "shot": "medium",
       "angle": "high angle",
       "step": "during",
-      "action": "The nurse stands behind the bassinet and looks down at the baby with a smile, resting her hand on the bassinet rail, while the breathing machine's tube is attached to the baby's mask.",
+      "action": "The nurse stands behind the bassinet, rests her hand on its rail and looks down at the newborn. The machine is connected to the newborn's mask by a tube.",
       "extras": {
         "floor": false,
-        "background": "A hospital nursery room at night, with a window showing a crescent moon in a dark blue sky, a wooden door frame, and pale green walls.",
+        "background": "A hospital room at night with a window showing a crescent moon and dark trees, pale green walls, a door frame, and a wall fixture on the right",
         "morePeople": false,
         "readableText": "Venice"
       },
       "mustSee": {
-        "nurse with a nametag that reads \"Venice\"": {
+        "nurse": {
           "mark": "visible",
-          "size": "large",
+          "size": "medium",
           "place": "back"
         },
-        "breathing machine (ventilator)": {
+        "machine": {
           "mark": "partly cut",
           "size": "large",
           "place": "front"
         },
-        "newborn baby": {
+        "newborn": {
           "mark": "visible",
           "size": "medium",
           "place": "front"
         }
       },
-      "promptKey": "caa7b74bcd2880de"
+      "drawingErrors": [],
+      "promptKey": "3f971eb345b0b756"
     },
     "8": {
       "objects": [
@@ -1888,25 +1853,18 @@
           "adjectives": [
             "smiling",
             "dark-haired",
-            "gentle",
-            "wearing blue scrubs",
-            "looking down"
+            "young",
+            "attentive",
+            "wearing blue scrubs"
           ]
         },
         {
-          "name": "nametag",
-          "adjectives": [
-            "white",
-            "partly legible"
-          ]
-        },
-        {
-          "name": "newborn baby",
+          "name": "newborn",
           "adjectives": [
             "sleeping",
-            "swaddled",
             "small",
-            "wrapped in white blanket"
+            "swaddled",
+            "dark-haired"
           ]
         },
         {
@@ -1918,11 +1876,42 @@
           ]
         },
         {
-          "name": "breathing machine",
+          "name": "blanket",
+          "adjectives": [
+            "white",
+            "cream",
+            "soft"
+          ]
+        },
+        {
+          "name": "machine",
           "adjectives": [
             "red-orange",
-            "boxy",
-            "has screen and dial"
+            "medical",
+            "large"
+          ]
+        },
+        {
+          "name": "screen",
+          "adjectives": [
+            "small",
+            "dark",
+            "green waveform"
+          ]
+        },
+        {
+          "name": "dial gauge",
+          "adjectives": [
+            "round",
+            "white"
+          ]
+        },
+        {
+          "name": "buttons",
+          "adjectives": [
+            "green",
+            "yellow",
+            "small"
           ]
         },
         {
@@ -1934,45 +1923,24 @@
           ]
         },
         {
-          "name": "machine screen",
+          "name": "name tag",
           "adjectives": [
-            "dark green",
-            "showing wave line"
-          ]
-        },
-        {
-          "name": "machine dial",
-          "adjectives": [
-            "round",
-            "white"
-          ]
-        },
-        {
-          "name": "machine buttons",
-          "adjectives": [
-            "green",
-            "yellow"
+            "white",
+            "small"
           ]
         },
         {
           "name": "nurse's hand",
           "adjectives": [
             "resting",
-            "on bassinet edge"
-          ]
-        },
-        {
-          "name": "nurse's cap",
-          "adjectives": [
-            "white",
-            "partly cut off"
+            "on the bassinet edge"
           ]
         }
       ],
       "shot": "medium",
       "angle": "high angle",
       "step": "during",
-      "action": "The nurse leans over the bassinet and looks down at the baby, resting a hand on the bassinet edge, while the breathing machine's tube runs to the baby's face.",
+      "action": "The nurse leans over the bassinet with a hand on its edge and looks down at the newborn, who sleeps while a tube from the machine reaches the baby's face.",
       "extras": {
         "floor": false,
         "background": "plain pale green-gray wall",
@@ -1980,23 +1948,24 @@
         "readableText": "Venice"
       },
       "mustSee": {
-        "nurse with a nametag that reads \"Venice\"": {
+        "nurse": {
           "mark": "partly cut",
           "size": "large",
           "place": "back"
         },
-        "breathing machine (ventilator)": {
+        "machine": {
           "mark": "partly cut",
           "size": "medium",
           "place": "back"
         },
-        "newborn baby": {
+        "newborn": {
           "mark": "partly cut",
           "size": "medium",
           "place": "front"
         }
       },
-      "promptKey": "caa7b74bcd2880de"
+      "drawingErrors": [],
+      "promptKey": "3f971eb345b0b756"
     },
     "9": {
       "objects": [
@@ -2006,31 +1975,26 @@
             "smiling",
             "dark-haired",
             "wearing blue scrubs",
-            "wearing a white cap"
+            "wearing a white cap",
+            "looking down"
           ]
         },
         {
-          "name": "nametag",
-          "adjectives": [
-            "white",
-            "small",
-            "reads Venice"
-          ]
-        },
-        {
-          "name": "newborn baby",
+          "name": "newborn",
           "adjectives": [
             "sleeping",
+            "small",
             "swaddled",
-            "small"
+            "wearing a mask"
           ]
         },
         {
-          "name": "breathing machine",
+          "name": "machine",
           "adjectives": [
             "red-orange",
             "large",
-            "has a screen and a gauge"
+            "retro-styled",
+            "has a screen and dial"
           ]
         },
         {
@@ -2038,7 +2002,7 @@
           "adjectives": [
             "gray",
             "corrugated",
-            "flexible"
+            "curved"
           ]
         },
         {
@@ -2057,62 +2021,70 @@
           ]
         },
         {
+          "name": "nametag",
+          "adjectives": [
+            "white",
+            "small"
+          ]
+        },
+        {
           "name": "wall clock",
           "adjectives": [
             "round",
-            "white"
+            "white-faced"
           ]
         },
         {
           "name": "window",
           "adjectives": [
-            "night-time",
-            "framed"
+            "dark",
+            "night-time"
           ]
         },
         {
-          "name": "moon",
+          "name": "crescent moon",
           "adjectives": [
-            "crescent",
-            "pale yellow"
+            "pale",
+            "yellow"
           ]
         },
         {
-          "name": "wall outlets and switches",
+          "name": "wall panel with outlets and switches",
           "adjectives": [
-            "small",
-            "white"
+            "gray",
+            "small"
           ]
         }
       ],
       "shot": "medium",
-      "angle": "high angle",
+      "angle": "eye level",
       "step": "during",
-      "action": "The nurse looks down at the baby and rests her hands on the edge of the bassinet. The breathing machine is connected to the baby by a tube.",
+      "action": "The nurse leans over the clear bassinet with both hands resting on its edge and looks down at the newborn. A tube runs from the machine to the newborn's face mask.",
       "extras": {
         "floor": false,
-        "background": "A hospital nursery room with pale green walls, a window showing a night sky with a crescent moon, a wall clock and wall outlets",
+        "background": "A pale green hospital room wall. A window shows a night sky with a crescent moon on the left. A round wall clock and a panel with outlets and switches are on the right.",
         "morePeople": false,
         "readableText": "Venice"
       },
       "mustSee": {
-        "nurse with a nametag that reads \"Venice\"": {
+        "nurse": {
           "mark": "visible",
           "size": "large",
           "place": "back"
         },
-        "breathing machine (ventilator)": {
+        "machine": {
           "mark": "partly cut",
           "size": "large",
           "place": "front"
         },
-        "newborn baby": {
+        "newborn": {
           "mark": "visible",
           "size": "medium",
           "place": "front"
         }
       },
-      "promptKey": "caa7b74bcd2880de"
+      "drawingErrors": [],
+      "promptKey": "3f971eb345b0b756"
     }
   },
   "worn.grid.png": {
@@ -3039,6 +3011,849 @@
         }
       },
       "promptKey": "69448656a0ae8839"
+    }
+  },
+  "period.grid.png": {
+    "1": {
+      "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "small",
+            "distant",
+            "standing",
+            "wearing green jacket",
+            "wearing gray pants",
+            "dark-haired"
+          ]
+        },
+        {
+          "name": "pier",
+          "adjectives": [
+            "wooden",
+            "long",
+            "brown",
+            "weathered",
+            "extending into the sea"
+          ]
+        },
+        {
+          "name": "pier posts",
+          "adjectives": [
+            "wooden",
+            "thick",
+            "reflected in water"
+          ]
+        },
+        {
+          "name": "railing",
+          "adjectives": [
+            "wooden",
+            "short",
+            "at the end of the pier"
+          ]
+        },
+        {
+          "name": "sea",
+          "adjectives": [
+            "calm",
+            "blue-gray",
+            "flat"
+          ]
+        },
+        {
+          "name": "cloud",
+          "adjectives": [
+            "small",
+            "pale blue",
+            "flat"
+          ]
+        },
+        {
+          "name": "sky",
+          "adjectives": [
+            "pale",
+            "cream-colored",
+            "empty"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "high angle",
+      "step": "during",
+      "action": "A person stands at the far end of the pier and shades their eyes with one hand to look out over the sea.",
+      "extras": {
+        "floor": false,
+        "background": "Calm blue-gray sea under a pale cream sky with one small cloud, and no visible horizon line beyond the water's edge.",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "sea": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [
+        {
+          "object": "sea",
+          "mustSee": true,
+          "note": "The right edge of the water ends in a sharp vertical edge, and a cream strip runs down the right side. This looks like a cut-off panel and breaks the continuity of the sea."
+        }
+      ],
+      "promptKey": "273a885134bc5ecc"
+    },
+    "2": {
+      "objects": [
+        {
+          "name": "young man",
+          "adjectives": [
+            "dark-haired",
+            "standing",
+            "looking up",
+            "hands in pockets",
+            "casual"
+          ]
+        },
+        {
+          "name": "green jacket",
+          "adjectives": [
+            "olive green",
+            "open"
+          ]
+        },
+        {
+          "name": "mustard shirt",
+          "adjectives": [
+            "yellow-orange"
+          ]
+        },
+        {
+          "name": "gray pants",
+          "adjectives": [
+            "gray"
+          ]
+        },
+        {
+          "name": "wooden pier",
+          "adjectives": [
+            "wooden",
+            "raised",
+            "weathered",
+            "brown"
+          ]
+        },
+        {
+          "name": "wooden posts",
+          "adjectives": [
+            "thick",
+            "tall",
+            "brown"
+          ]
+        },
+        {
+          "name": "railing",
+          "adjectives": [
+            "wooden",
+            "short"
+          ]
+        },
+        {
+          "name": "sea",
+          "adjectives": [
+            "blue",
+            "flat",
+            "calm",
+            "partly hidden"
+          ]
+        },
+        {
+          "name": "cloud",
+          "adjectives": [
+            "small",
+            "pale blue"
+          ]
+        },
+        {
+          "name": "sky",
+          "adjectives": [
+            "cream",
+            "pale",
+            "empty"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "low angle",
+      "step": "during",
+      "action": "The young man stands on the edge of the raised pier with hands in his pockets and looks up and to the right at the sky; he does not interact with anything else.",
+      "extras": {
+        "floor": false,
+        "background": "plain cream sky with a small pale blue cloud and a block of blue sea at the bottom right behind the pier posts",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "sea": {
+          "mark": "partly cut",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [
+        {
+          "object": "sea",
+          "mustSee": true,
+          "note": "The sea is drawn as a flat blue rectangular block with a hard straight top edge and vertical right edge, so it looks pasted on and does not read as water meeting a horizon."
+        }
+      ],
+      "promptKey": "273a885134bc5ecc"
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "dark-haired",
+            "messy-haired",
+            "seen from behind",
+            "facing away"
+          ]
+        },
+        {
+          "name": "green jacket",
+          "adjectives": [
+            "olive green",
+            "collared",
+            "wrinkled"
+          ]
+        },
+        {
+          "name": "pier",
+          "adjectives": [
+            "wooden",
+            "long",
+            "brown",
+            "narrow",
+            "weathered"
+          ]
+        },
+        {
+          "name": "sea",
+          "adjectives": [
+            "blue",
+            "calm",
+            "flat"
+          ]
+        },
+        {
+          "name": "cloud",
+          "adjectives": [
+            "small",
+            "pale",
+            "blue-grey"
+          ]
+        },
+        {
+          "name": "pier posts",
+          "adjectives": [
+            "wooden",
+            "short"
+          ]
+        },
+        {
+          "name": "pier end railing",
+          "adjectives": [
+            "wooden",
+            "distant"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "before",
+      "action": "A man stands at the start of a pier, seen from behind, looking out along it toward the sea; he does not touch anything.",
+      "extras": {
+        "floor": false,
+        "background": "Calm blue sea under a pale cream sky with one small cloud, seen past the end of the pier",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "sea": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "promptKey": "273a885134bc5ecc"
+    },
+    "4": {
+      "objects": [
+        {
+          "name": "pier",
+          "adjectives": [
+            "wooden",
+            "long",
+            "brown",
+            "horizontal",
+            "plank-built"
+          ]
+        },
+        {
+          "name": "sea",
+          "adjectives": [
+            "blue",
+            "calm",
+            "flat",
+            "wide"
+          ]
+        },
+        {
+          "name": "person",
+          "adjectives": [
+            "small",
+            "dark-haired",
+            "seen from above",
+            "standing at the pier's end"
+          ]
+        },
+        {
+          "name": "posts",
+          "adjectives": [
+            "wooden",
+            "small",
+            "brown"
+          ]
+        },
+        {
+          "name": "shore or sand strip",
+          "adjectives": [
+            "cream",
+            "pale",
+            "blank",
+            "flat"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "overhead",
+      "step": "during",
+      "action": "A single person stands at the far right end of the pier and looks out over the sea. They don't interact with anything else.",
+      "extras": {
+        "floor": false,
+        "background": "Blue sea fills most of the frame. A pale cream strip, probably sand or empty space, runs down the right edge.",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "partly cut",
+          "size": "medium",
+          "place": "front"
+        },
+        "sea": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "promptKey": "273a885134bc5ecc"
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "young",
+            "dark-haired",
+            "messy-haired",
+            "smiling",
+            "relaxed",
+            "thoughtful"
+          ]
+        },
+        {
+          "name": "jacket",
+          "adjectives": [
+            "olive green",
+            "loose"
+          ]
+        },
+        {
+          "name": "shirt",
+          "adjectives": [
+            "orange",
+            "mustard"
+          ]
+        },
+        {
+          "name": "wooden railing",
+          "adjectives": [
+            "brown",
+            "weathered",
+            "thick"
+          ]
+        },
+        {
+          "name": "sea",
+          "adjectives": [
+            "blue",
+            "calm",
+            "flat"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The person leans their folded arms on a wooden railing, rests their chin on one hand, and gazes to the right toward the sea.",
+      "extras": {
+        "floor": false,
+        "background": "flat blue sea under a plain cream sky",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "partly cut",
+          "size": "medium",
+          "place": "front"
+        },
+        "sea": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "promptKey": "273a885134bc5ecc"
+    },
+    "6": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "walking",
+            "dark-haired",
+            "seen from behind",
+            "wearing green jacket",
+            "wearing gray pants"
+          ]
+        },
+        {
+          "name": "pier",
+          "adjectives": [
+            "wooden",
+            "long",
+            "brown",
+            "narrow"
+          ]
+        },
+        {
+          "name": "posts",
+          "adjectives": [
+            "wooden",
+            "short",
+            "brown"
+          ]
+        },
+        {
+          "name": "sea",
+          "adjectives": [
+            "blue",
+            "calm",
+            "flat"
+          ]
+        },
+        {
+          "name": "cloud",
+          "adjectives": [
+            "small",
+            "pale",
+            "blue-gray"
+          ]
+        },
+        {
+          "name": "sky",
+          "adjectives": [
+            "pale",
+            "cream-colored",
+            "empty"
+          ]
+        },
+        {
+          "name": "sign",
+          "adjectives": [
+            "small",
+            "wooden",
+            "tiny"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "high angle",
+      "step": "during",
+      "action": "A man walks away from the camera along the wooden pier toward its far end, with the sea on both sides of him.",
+      "extras": {
+        "floor": true,
+        "background": "calm blue sea under a pale cream sky with one small cloud; the sea ends in a sharp straight edge on the right side",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "sea": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [
+        {
+          "object": "sea",
+          "mustSee": true,
+          "note": "The sea has a hard, straight, vertical right edge that ends abruptly against the pale sky and cream background. It looks like a flat panel and does not blend into a horizon or shoreline."
+        },
+        {
+          "object": "pier",
+          "mustSee": true,
+          "note": "The pier's perspective is inconsistent. The planks and posts converge toward a vanishing point, but the far end of the pier stops abruptly in the middle of the sea, and its right-side posts do not line up with the sea's edge."
+        }
+      ],
+      "promptKey": "273a885134bc5ecc"
+    },
+    "7": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "dark-haired",
+            "leaning",
+            "green-jacketed",
+            "gray-trousered",
+            "alone"
+          ]
+        },
+        {
+          "name": "pier",
+          "adjectives": [
+            "wooden",
+            "brown",
+            "weathered",
+            "long"
+          ]
+        },
+        {
+          "name": "railing",
+          "adjectives": [
+            "wooden",
+            "brown"
+          ]
+        },
+        {
+          "name": "pier posts",
+          "adjectives": [
+            "wooden",
+            "tall",
+            "partly submerged"
+          ]
+        },
+        {
+          "name": "sea",
+          "adjectives": [
+            "blue",
+            "calm",
+            "flat"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "high angle",
+      "step": "during",
+      "action": "The man stands at the end of the pier and leans on the railing, looking down at the sea.",
+      "extras": {
+        "floor": false,
+        "background": "plain cream sky with a blue sea that ends in a sharp edge on the right side",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "sea": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [
+        {
+          "object": "sea",
+          "mustSee": true,
+          "note": "The water ends in a hard, straight edge on the right and top, like a flat blue panel. It does not look like open sea meeting a horizon."
+        },
+        {
+          "object": "pier",
+          "mustSee": true,
+          "note": "The left end of the pier is cut by the picture edge. The posts on the right sit at slightly inconsistent angles to the deck."
+        }
+      ],
+      "promptKey": "273a885134bc5ecc"
+    },
+    "8": {
+      "objects": [
+        {
+          "name": "young man",
+          "adjectives": [
+            "walking",
+            "dark-haired",
+            "smiling",
+            "casual",
+            "relaxed"
+          ]
+        },
+        {
+          "name": "green jacket",
+          "adjectives": [
+            "olive",
+            "open"
+          ]
+        },
+        {
+          "name": "orange shirt",
+          "adjectives": [
+            "mustard",
+            "plain"
+          ]
+        },
+        {
+          "name": "gray pants",
+          "adjectives": [
+            "dark gray",
+            "loose"
+          ]
+        },
+        {
+          "name": "sneakers",
+          "adjectives": [
+            "white",
+            "worn"
+          ]
+        },
+        {
+          "name": "pier",
+          "adjectives": [
+            "wooden",
+            "long",
+            "brown",
+            "plank-built"
+          ]
+        },
+        {
+          "name": "wooden posts",
+          "adjectives": [
+            "short",
+            "brown",
+            "weathered"
+          ]
+        },
+        {
+          "name": "sea",
+          "adjectives": [
+            "calm",
+            "blue",
+            "flat"
+          ]
+        },
+        {
+          "name": "cloud",
+          "adjectives": [
+            "small",
+            "pale",
+            "white"
+          ]
+        },
+        {
+          "name": "sky",
+          "adjectives": [
+            "pale",
+            "cream",
+            "empty"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "high angle",
+      "step": "during",
+      "action": "A young man walks along the pier toward the viewer with his hands in his pockets, looking off to the side at the sea, and he touches nothing else.",
+      "extras": {
+        "floor": true,
+        "background": "A calm blue sea on both sides of the pier under a pale cream sky with one small cloud",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "partly cut",
+          "size": "large",
+          "place": "front"
+        },
+        "sea": {
+          "mark": "partly cut",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [
+        {
+          "object": "sea",
+          "mustSee": true,
+          "note": "On the right side the water ends in a hard vertical edge, like a cliff or pasted block, instead of continuing to a horizon line. It doesn't match the left side, which has a normal horizon."
+        }
+      ],
+      "promptKey": "273a885134bc5ecc"
+    },
+    "9": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "standing",
+            "arms crossed",
+            "dark-haired",
+            "looking up",
+            "calm"
+          ]
+        },
+        {
+          "name": "green jacket",
+          "adjectives": [
+            "olive",
+            "open"
+          ]
+        },
+        {
+          "name": "orange shirt",
+          "adjectives": [
+            "mustard"
+          ]
+        },
+        {
+          "name": "gray pants",
+          "adjectives": [
+            "gray"
+          ]
+        },
+        {
+          "name": "white sneakers",
+          "adjectives": [
+            "white"
+          ]
+        },
+        {
+          "name": "pier",
+          "adjectives": [
+            "wooden",
+            "long",
+            "weathered",
+            "brown"
+          ]
+        },
+        {
+          "name": "railing",
+          "adjectives": [
+            "wooden",
+            "brown"
+          ]
+        },
+        {
+          "name": "pier pilings",
+          "adjectives": [
+            "wooden",
+            "vertical",
+            "brown"
+          ]
+        },
+        {
+          "name": "sea",
+          "adjectives": [
+            "blue",
+            "calm",
+            "wide"
+          ]
+        },
+        {
+          "name": "cloud",
+          "adjectives": [
+            "small",
+            "pale blue"
+          ]
+        },
+        {
+          "name": "distant shoreline",
+          "adjectives": [
+            "low",
+            "green",
+            "far away"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "eye level",
+      "step": "during",
+      "action": "A man stands at the end of a wooden pier with his arms crossed, looking up and out over the sea, not touching anything but the pier under his feet.",
+      "extras": {
+        "floor": true,
+        "background": "calm sea with a distant green shoreline under a pale cream sky with one small cloud",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "sea": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [
+        {
+          "object": "sea",
+          "mustSee": true,
+          "note": "The right edge of the sea ends in a hard, straight vertical edge with a darker blue strip, so the water looks like a flat panel and breaks the horizon and the edge of the scene."
+        }
+      ],
+      "promptKey": "273a885134bc5ecc"
     }
   }
 }
