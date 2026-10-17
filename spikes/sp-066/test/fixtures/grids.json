@@ -1,0 +1,10 @@
+{
+  "kept": [
+    { "word": "alpha", "grid": "alpha.grid.png", "flashCell": 5, "story": "Alpha story, lightness 120." },
+    { "word": "eta", "grid": "eta.grid.png", "flashCell": 1, "story": "Eta story, lightness 150." },
+    { "word": "gamma", "grid": "gamma.grid-2.png", "flashCell": 7, "story": "Gamma story, lightness 70." },
+    { "word": "theta", "grid": "theta.grid.png", "flashCell": 8, "story": "Theta story, lightness 30." },
+    { "word": "nu", "grid": "nu.grid.png", "flashCell": 5, "story": "Nurse Venice checks the monitor, lightness 120." }
+  ],
+  "leftOut": [{ "word": "beta", "grid": "beta.grid.png", "reason": "no clear match" }]
+}
