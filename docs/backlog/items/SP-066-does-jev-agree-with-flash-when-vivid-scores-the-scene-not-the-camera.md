@@ -146,16 +146,16 @@ Given  Claude answers that the usage limit is reached
 - [ ] SP-064's analysis looked at all 82 words (exotic was a measure word), so the 62 measure words aren't fully unseen.
 - [ ] The name-sign match is plain text, so a drawn name that the captioner misreads ("Venise") counts as unreadable.
 - [ ] The captioner may miss a drawing error, or call a crooked story object an error; the spike measures it once.
-- [ ] For ventilator, Flash now thinks cells 1 and 7 are better than cell 8 (after stage 2). The label stays 8, so the comparison with SP-064 and SP-029 stays fair.
+- [ ] For ventilator, Flash now likes other cells better than the label (CASE-002). The label stays 8, so the comparison with SP-064 and SP-029 stays fair.
 - [ ] The gate is noisy from run to run, and the spike measures it one time only.
 - [ ] Captions still sit between the picture and Jev.
 - [ ] The view order (front or three-quarter best, side in between, back or from above worst) comes from one grid (surgeon, Flash after stage 5); the tuning words test it.
 - [ ] The clarity parts count equally in the mean; that is a guess, and 20 tuning words are too few to set their weights.
 - [ ] A clarity part that only reads a caption field (completeness, name sign, view) can vary a little from run to run with Jev, which a code lookup wouldn't.
-- [ ] After stage 5, Flash thinks anomaly cell 7 would be the most plausible cell without its drawing error (the crack is near the door that is knocked on). The label stays 1.
+- [ ] For anomaly, Flash thinks cell 7 would be the most plausible cell without its drawing error (CASE-003). The label stays 1.
 - [ ] The rule "the one that does the action" comes from 5 words (Flash, after the second stage 5); a story where two people act equally may still give either one.
 - [ ] period's drawing-error marks are still uneven (the sea's edge marked in 4 of 9 cells); stage 20 shows whether this decides more words.
-- [ ] The five ADR-0039 rules come from 4 words that Flash looked at (overreach, flustered, appeal, cottage); keeping the best change on 20 tuning words fits the rules to them, so only the measure words show whether they hold.
+- [ ] The five ADR-0039 rules come from 4 words that Flash looked at (overreach, flustered, appeal (CASE-001), cottage); keeping the best change on 20 tuning words fits the rules to them, so only the measure words show whether they hold.
 - [ ] A change that remakes captions also changes captions that the change doesn't target, so part of its effect is run-to-run noise.
 - [ ] The story-actions rule ("the result can be left out") and the onlooker rule come from Flash's picks on 2 words each.
 - [ ] After ADR-0039 (changes 1, 2 and 4 kept), the 20 tuning words give exact 5 and in-three 14 at the start weights (2·1·1), and exact 6 and in-three 15 at the tuned weights (3·2·3). Jev alone moves exact + in-three by 2 from run to run, and a remade caption set by up to 5.

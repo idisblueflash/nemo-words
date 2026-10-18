@@ -1,4 +1,4 @@
-# The appeal case in detail
+# SP-066 The appeal case in detail
 
 **Story:** A peal of bells attracts a curious crowd.
 
@@ -10,7 +10,7 @@
 
 **The picture:** the map can't show images. Open `images/mnemonic/appeal.grid.png` to see the 9 cells (1–3 on the top row, 7–9 on the bottom row).
 
-All numbers come from the cached results after change 4 (changes 1, 2 and 4 kept). Each score is on a 1–3 scale.
+All numbers come from the cached results after change 4 (changes 1, 2 and 4 kept), on 2026-10-18. The case's history is in CASE-001. Each score is on a 1–3 scale.
 
 ## Ranking
 
