@@ -1,0 +1,696 @@
+{
+  "anomaly.grid.png": {
+    "1": {
+      "failed": "unusable caption: onlooker {\"who\":\"boy\",\"does\":\"points at the cracked tile\",\"view\":\"front\"}",
+      "raw": "{\n  \"objects\": [\n    {\n      \"name\": \"man\",\n      \"adjectives\": [\"adult\", \"knocking\"]\n    },\n    {\n      \"name\": \"woman\",\n      \"adjectives\": [\"adult\", \"smiling\"]\n    },\n    {\n      \"name\": \"boy\",\n      \"adjectives\": [\"child\", \"pointing\"]\n    },\n    {\n      \"name\": \"girl\",\n      \"adjectives\": [\"child\", \"clapping hands\"]\n    },\n    {\n      \"name\": \"door\",\n      \"adjectives\": [\"blue\", \"knocked on\"]\n    },\n    {\n      \"name\": \"irregular tile\",\n      \"adjectives\": [\"cracked\", \"on floor\"]\n    },\n    {\n      \"name\": \"tiles\",\n      \"adjectives\": [\"floor\", \"square\"]\n    }\n  ],\n  \"shot\": \"medium\",\n  \"angle\": \"eye level\",\n  \"step\": \"before\",\n  \"extras\": {\n    \"floor\": true,\n    \"background\": \"wall with tiles\",\n    \"morePeople\": false,\n    \"readableText\": \"\"\n  },\n  \"action\": \"The man knocks on the door while the children and woman watch; the boy points at the cracked tile.\",\n  \"mustSee\": {\n    \"knock\": {\n      \"mark\": \"visible\",\n      \"size\": \"medium\",\n      \"place\": \"front\"\n    },\n    \"family\": {\n      \"mark\": \"visible\",\n      \"size\": \"large\",\n      \"place\": \"front\"\n    },\n    \"tiles\": {\n      \"mark\": \"visible\",\n      \"size\": \"medium\",\n      \"place\": \"front\"\n    },\n    \"irregular tile\": {\n      \"mark\": \"visible\",\n      \"size\": \"medium\",\n      \"place\": \"front\"\n    }\n  },\n  \"drawingErrors\": [],\n  \"onlookers\": [\n    {\n      \"who\": \"boy\",\n      \"does\": \"points at the cracked tile\",\n      \"view\": \"front\"\n    },\n    {\n      \"who\": \"girl\",\n      \"does\": \"claps hands\",\n      \"view\": \"front\"\n    },\n    {\n      \"who\": \"woman\",\n      \"does\": \"smiles\",\n      \"view\": \"front\"\n    }\n  ],\n  \"mainView\": \"back\"\n}",
+      "ms": 28826,
+      "costUsd": 0
+    },
+    "2": {
+      "objects": [
+        {
+          "name": "hand",
+          "adjectives": [
+            "clenched",
+            "punching"
+          ]
+        },
+        {
+          "name": "door",
+          "adjectives": [
+            "blue",
+            "with ring"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "beige",
+            "cracked"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "orange",
+            "cracked"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "Hand knocks on door with ring, while irregular tile cracks nearby",
+      "extras": {
+        "floor": false,
+        "background": "wall with tiles",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "family": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "1092038888934fea",
+      "ms": 12246,
+      "costUsd": 0
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "adult",
+            "dressed in green"
+          ]
+        },
+        {
+          "name": "child",
+          "adjectives": [
+            "small",
+            "wearing yellow hoodie"
+          ]
+        },
+        {
+          "name": "woman",
+          "adjectives": [
+            "adult",
+            "with brown hair"
+          ]
+        },
+        {
+          "name": "girl",
+          "adjectives": [
+            "small",
+            "wearing pink shirt"
+          ]
+        },
+        {
+          "name": "door",
+          "adjectives": [
+            "blue",
+            "with ring"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "white",
+            "square"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "orange",
+            "floating"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "side",
+      "step": "during",
+      "action": "Child knocks on the door while family members watch and react",
+      "extras": {
+        "floor": false,
+        "background": "wall with tiles",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [
+        {
+          "who": "woman",
+          "does": "reacts",
+          "view": "three-quarter"
+        },
+        {
+          "who": "girl",
+          "does": "reacts",
+          "view": "three-quarter"
+        }
+      ],
+      "mainView": "side",
+      "promptKey": "1092038888934fea",
+      "ms": 17280,
+      "costUsd": 0
+    },
+    "4": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "multi-member"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "square",
+            "beige"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "orange"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "overhead",
+      "step": "before",
+      "action": "family members stand apart on either side of an irregular tile, facing it",
+      "extras": {
+        "floor": true,
+        "background": "blue door",
+        "morePeople": true,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        },
+        "family": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "above",
+      "promptKey": "1092038888934fea",
+      "ms": 11600,
+      "costUsd": 0
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "adult",
+            "knocking"
+          ]
+        },
+        {
+          "name": "woman",
+          "adjectives": [
+            "adult",
+            "surprised"
+          ]
+        },
+        {
+          "name": "boy",
+          "adjectives": [
+            "child",
+            "surprised",
+            "crouching"
+          ]
+        },
+        {
+          "name": "girl",
+          "adjectives": [
+            "child",
+            "surprised"
+          ]
+        },
+        {
+          "name": "door",
+          "adjectives": [
+            "blue",
+            "knocked on"
+          ]
+        },
+        {
+          "name": "carpet",
+          "adjectives": [
+            "orange",
+            "cracked"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "white",
+            "floor"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The man knocks on the door while the boy, girl, and woman watch in surprise.",
+      "extras": {
+        "floor": true,
+        "background": "wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "irregular tile": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [
+        {
+          "who": "woman",
+          "does": "watches",
+          "view": "three-quarter"
+        },
+        {
+          "who": "boy",
+          "does": "watches",
+          "view": "front"
+        },
+        {
+          "who": "girl",
+          "does": "watches",
+          "view": "front"
+        }
+      ],
+      "mainView": "side",
+      "promptKey": "1092038888934fea",
+      "ms": 16234,
+      "costUsd": 0
+    },
+    "6": {
+      "objects": [
+        {
+          "name": "woman",
+          "adjectives": [
+            "older",
+            "wearing pink top",
+            "wearing brown skirt"
+          ]
+        },
+        {
+          "name": "man",
+          "adjectives": [
+            "older",
+            "wearing green sweater",
+            "wearing brown pants"
+          ]
+        },
+        {
+          "name": "boy",
+          "adjectives": [
+            "young",
+            "wearing yellow hoodie",
+            "wearing blue pants"
+          ]
+        },
+        {
+          "name": "girl",
+          "adjectives": [
+            "young",
+            "wearing pink dress",
+            "wearing white socks"
+          ]
+        },
+        {
+          "name": "door",
+          "adjectives": [
+            "blue",
+            "with handle"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "light beige",
+            "with one irregular tile"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "orange",
+            "with crack"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "high angle",
+      "step": "before",
+      "action": "The family stands together facing the door, with the irregular tile in front of them.",
+      "extras": {
+        "floor": true,
+        "background": "blue door",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        },
+        "family": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "back",
+      "promptKey": "1092038888934fea",
+      "ms": 15932,
+      "costUsd": 0
+    },
+    "7": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "surprised",
+            "curious"
+          ]
+        },
+        {
+          "name": "knock",
+          "adjectives": [
+            "loud"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "square",
+            "beige"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "cracked"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The family knocks on a door while looking at a cracked irregular tile on the wall.",
+      "extras": {
+        "floor": false,
+        "background": "wall with tiles",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [
+        {
+          "who": "woman",
+          "does": "watches",
+          "view": "three-quarter"
+        },
+        {
+          "who": "child",
+          "does": "watches",
+          "view": "three-quarter"
+        },
+        {
+          "who": "child",
+          "does": "watches",
+          "view": "three-quarter"
+        }
+      ],
+      "mainView": "side",
+      "promptKey": "1092038888934fea",
+      "ms": 14617,
+      "costUsd": 0
+    },
+    "8": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "smiling",
+            "standing",
+            "wearing green sweater"
+          ]
+        },
+        {
+          "name": "woman",
+          "adjectives": [
+            "smiling",
+            "wearing pink dress",
+            "standing"
+          ]
+        },
+        {
+          "name": "boy",
+          "adjectives": [
+            "crouching",
+            "wearing yellow hoodie",
+            "pointing"
+          ]
+        },
+        {
+          "name": "girl",
+          "adjectives": [
+            "standing",
+            "wearing pink dress",
+            "smiling"
+          ]
+        },
+        {
+          "name": "door",
+          "adjectives": [
+            "blue",
+            "open",
+            "with man holding it"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "light beige",
+            "with one cracked tile"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "cracked",
+            "orange",
+            "on floor"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The family gathers around a cracked tile on the floor, the boy points at it, and the girl looks at it with excitement while the man and woman smile and look at the tile.",
+      "extras": {
+        "floor": true,
+        "background": "wall with tiles, open door leading to outside",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        },
+        "family": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "front",
+      "promptKey": "1092038888934fea",
+      "ms": 15623,
+      "costUsd": 0
+    },
+    "9": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "standing",
+            "curious"
+          ]
+        },
+        {
+          "name": "knock",
+          "adjectives": [
+            "on door"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "wall",
+            "cracked"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "cracked",
+            "orange"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "Family knocks on door while irregular tile cracks on wall",
+      "extras": {
+        "floor": true,
+        "background": "hallway",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "1092038888934fea",
+      "ms": 12244,
+      "costUsd": 0
+    }
+  }
+}

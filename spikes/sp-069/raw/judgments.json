@@ -1,0 +1,333 @@
+{
+  "sonnet|anomaly.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error; calling the peach-tan hand 'pale' is a slight stretch.",
+    "costUsd": 0.27170900000000003
+  },
+  "sonnet|anomaly.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "mainView 'three-quarter' only partly fits: the father and boy are seen mostly from behind, while the girl and mother are in three-quarter view",
+    "costUsd": 0.27847360000000004
+  },
+  "sonnet|anomaly.grid.png|1": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The family is marked 'visible', but the left edge of the picture cuts off part of the mother's arm and body, so it should be 'partly cut'.",
+    "costUsd": 0.0741954
+  },
+  "sonnet|anomaly.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The orange square is likely the irregular tile, not a doormat: it sits exactly in one tile space with knock marks around it. The caption marks 'irregular tile' as hidden and calls it a mat.",
+    "costUsd": 0.0779584
+  },
+  "sonnet|anomaly.grid.png|8": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The action line says the father looks outside, but he holds the door and turns back to look at the family.",
+    "costUsd": 0.0731404
+  },
+  "sonnet|anomaly.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The mother, boy and girl are part of the main subject 'family' but are listed as onlookers; the right edge cuts the wall tiles, yet they are marked 'visible'; and the orange tile is off the tile grid and looks pasted on, but drawingErrors is empty.",
+    "costUsd": 0.28552160000000004
+  },
+  "sonnet|anomaly.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The boy, mother and girl are listed as onlookers, but they belong to the main subject (the family) and are doing the main action of staring at the cracked tile.",
+    "costUsd": 0.0779984
+  },
+  "sonnet|anomaly.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Only a small detail is off: the cracked orange tile is a wide rectangle, not a square; everything else matches the picture.",
+    "costUsd": 0.07349460000000001
+  },
+  "qwen/qwen3-vl-4b|anomaly.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The plain beige tiles are marked visible but the right and bottom edges cut them off, and they are called cracked when only the orange tile has a crack; the knock (hand and arm) also looks large, not medium.",
+    "costUsd": 0.07521
+  },
+  "sonnet|anomaly.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption puts the tiles at the back and the family at the front, but the tiled wall runs from the foreground to the back while the family stands further back, and the family is seen in a back three-quarter view rather than from the side.",
+    "costUsd": 0.076676
+  },
+  "qwen/qwen3-vl-4b|anomaly.grid.png|4": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The family is marked fully visible, but the picture edges cut off their legs, and the knock is marked hidden even though motion lines beside the tile show it shaking.",
+    "costUsd": 0.0734502
+  },
+  "qwen/qwen3-vl-4b|anomaly.grid.png|3": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 1,
+      "onlookers": 2,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The orange tile is tilted and looks pasted onto the tiled wall, but drawingErrors is empty even though the caption itself calls the tile 'floating'. The main view is also wrong: it says 'side', but the man and child are seen from the back and the woman and girl from three-quarter. The family is marked 'visible' when the picture's edges cut off part of the man and the woman. The action misses that the woman and girl are reacting to the wobbling tile.",
+    "costUsd": 0.080257
+  },
+  "qwen/qwen3-vl-4b|anomaly.grid.png|5": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 1,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 1,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The cracked orange tile in the front is the big, plainly visible 'irregular tile', but the caption marks it hidden and calls it a carpet; it also puts the floor tiles in back and the knock in front, which is reversed.",
+    "costUsd": 0.0795738
+  },
+  "qwen/qwen3-vl-4b|anomaly.grid.png|8": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The man is not looking at the tile. He is opening the door and looking outside, so he should be listed as an onlooker, not as part of the family's main action.",
+    "costUsd": 0.0721364
+  },
+  "qwen/qwen3-vl-4b|anomaly.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The irregular tile is small, not medium, and it lies behind the family as they walk toward the door, not in front of them; the family is walking, not standing, and the woman and man are partly cut by the picture's edges.",
+    "costUsd": 0.0751048
+  },
+  "qwen/qwen3-vl-4b|anomaly.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks the family as fully visible, but the left and bottom edges of the picture cut off the mother and children. It also calls the main view 'side' when the family is mostly seen in three-quarter view, with the father from behind.",
+    "costUsd": 0.0817782
+  },
+  "haiku|anomaly.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [
+      "window"
+    ],
+    "note": "The caption calls the cracked orange tile a 'window' with a frame and glass, but the picture has no window; it's an irregular tile in a cream tile wall.",
+    "costUsd": 0.0742598
+  },
+  "qwen/qwen3-vl-4b|anomaly.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 1,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "Worst error: the tiled wall and the orange irregular tile are on the near wall in the front of the picture, but the caption places both in the back. It also puts the family in front, when they stand farther down the hallway, and it says the whole family knocks when only the father does.",
+    "costUsd": 0.0768232
+  },
+  "haiku|anomaly.grid.png|1": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [
+      "window"
+    ],
+    "note": "The caption says the boy and girl are watching the knock, but the boy points at the cracked orange floor tile and both children look at it; it also names a window that isn't in the picture.",
+    "costUsd": 0.08021
+  },
+  "haiku|anomaly.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 1,
+      "drawingErrors": 3,
+      "onlookers": 1,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The action line leaves out the main event: the child in yellow knocking on the door, which makes the tile jolt loose. The caption also calls the knocking child an onlooker, calls the woman in pink a 'child' seen from the back when she faces three-quarter, and leaves the father out.",
+    "costUsd": 0.08152400000000001
+  },
+  "haiku|anomaly.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The action line says the family stands at the door about to knock, but they are walking toward it while the children lean over and point at the cracked orange tile, which the caption leaves out.",
+    "costUsd": 0.07349359999999999
+  },
+  "haiku|anomaly.grid.png|5": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption misses that the children are staring down at the cracked orange tile (they aren't just watching the father knock), and it calls all the tiles orange when only the irregular tile is orange and the rest are grey-white. The knock is also at the back, not the front.",
+    "costUsd": 0.0788156
+  },
+  "haiku|anomaly.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [
+      "window"
+    ],
+    "note": "The door is open, not closed, with no window. The man is opening the door and looking outside, not down at the tile. The family is marked visible, but the left edge cuts off part of the woman.",
+    "costUsd": 0.073561
+  },
+  "haiku|anomaly.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption calls all four family members children, but the one knocking is an adult man and the woman in pink at front left is also an adult. The others are watching the shaking cracked tile, not the door. The family is also cut off by the picture's edges but is marked visible.",
+    "costUsd": 0.07968120000000001
+  },
+  "haiku|anomaly.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 1,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The family is small to medium and stands at the back of the hallway, not large and at the front. The knock is small and at the back. The cracked tile is nearer the viewer than the family. The action line also leaves out the cracked tile shaking.",
+    "costUsd": 0.0973386
+  }
+}
