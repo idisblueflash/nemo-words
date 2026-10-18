@@ -2,7 +2,7 @@
 id: SP-069
 type: spike
 parent: E01
-status: ready
+status: done
 timebox: 1d
 depends_on: [SP-066]
 ---

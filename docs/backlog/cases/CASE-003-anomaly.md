@@ -4,7 +4,7 @@ type: case
 status: open
 subject: anomaly
 label: "1"
-items: [SP-029, SP-064, SP-066]
+items: [SP-029, SP-064, SP-066, SP-069]
 ---
 # CASE-003 anomaly
 
@@ -25,3 +25,7 @@ items: [SP-029, SP-064, SP-066]
 | 2026-10-16 | SP-064 | measure, weights 3·1·3 | 1 | 1, 9, 2 | 1 of 6 | 0 | reports/SP-064-must-see-image-pick.md |
 | 2026-10-18 | SP-066 | change 4 (1, 2, 4 kept), weights 2·1·1 | 7 | 7, 1, 5 | 2 of 5 | 0.11 | reports/SP-066-tuning-five-changes.md |
 | 2026-10-18 | SP-066 | change 4, weights 3·2·3 | 1 | 1, 7, 5 | 1 of 5 | 0 | reports/SP-066-tuning-five-changes.md |
+| 2026-10-19 | SP-069 | captions by `qwen3-vl-4b`: Opus mean 2.19 (Sonnet 2.80), 8 of 9 parse | — | — | — | — | reports/SP-069-cheaper-caption-models.md |
+| 2026-10-19 | SP-069 | captions by Haiku: Opus mean 2.46 (Sonnet 2.80), 8 of 9 parse, 3 invented objects | — | — | — | — | reports/SP-069-cheaper-caption-models.md |
+| 2026-10-19 | SP-069 | captions by `qwen3-vl-8b`: Opus mean 2.54 (Sonnet 2.80), 8 of 9 parse | — | — | — | — | reports/SP-069-cheaper-caption-models.md |
+| 2026-10-19 | SP-069 | captions by `qwen3-vl-8b` + JSON schema: Opus mean 2.46 (Sonnet 2.80), 9 of 9 parse | — | — | — | — | reports/SP-069-cheaper-caption-models.md |
