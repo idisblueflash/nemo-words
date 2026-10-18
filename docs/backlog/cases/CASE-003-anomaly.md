@@ -4,7 +4,7 @@ type: case
 status: open
 subject: anomaly
 label: "1"
-items: [SP-029, SP-064, SP-066, SP-069]
+items: [SP-029, SP-064, SP-066, SP-069, SP-070]
 ---
 # CASE-003 anomaly
 
@@ -30,3 +30,5 @@ items: [SP-029, SP-064, SP-066, SP-069]
 | 2026-10-19 | SP-069 | captions by Haiku: Opus mean 2.46 (Sonnet 2.80), 8 of 9 parse, 3 invented objects | — | — | — | — | reports/SP-069-cheaper-caption-models.md |
 | 2026-10-19 | SP-069 | captions by `qwen3-vl-8b`: Opus mean 2.54 (Sonnet 2.80), 8 of 9 parse | — | — | — | — | reports/SP-069-cheaper-caption-models.md |
 | 2026-10-19 | SP-069 | captions by `qwen3-vl-8b` + JSON schema: Opus mean 2.46 (Sonnet 2.80), 9 of 9 parse | — | — | — | — | reports/SP-069-cheaper-caption-models.md |
+| 2026-10-19 | SP-070 | stage 1: Sonnet captions with the new mark (visible / part only / hidden), weights 2·1·1; cell 4: family `part only`, knock `part only` | 7 | 7, 1, 5 | 2 of 5 | 0.32 | reports/SP-070-must-see-mark-asks-about-the-action.md |
+| 2026-10-19 | SP-070 | stage 1: Sonnet captions with the new marks of `qwen3-vl-8b` + schema, weights 2·1·1; cell 4: family `visible`; no cell gated | 7 | 7, 1, 3 | 2 of 9 | 0.28 | reports/SP-070-must-see-mark-asks-about-the-action.md |
