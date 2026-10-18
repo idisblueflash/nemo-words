@@ -5809,5 +5809,590 @@
     "invented": [],
     "note": "The sinner and the mirror-twin should both be 'partly cut' and 'large', not 'visible' and 'medium'. The edges cut off the sinner's left side and both bodies at the bottom. The mirror-twin is inside the mirror, so it is at the back, not the front.",
     "costUsd": 0.0759692
+  },
+  "qwen/qwen3-vl-8b+schema|anomaly.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The 'family' item (the hand and arm) is marked visible, but the left edge of the picture cuts off the sleeve. The tiles are also cut by the right edge, and the small door knocker is called medium.",
+    "costUsd": 0.2761908
+  },
+  "qwen/qwen3-vl-8b+schema|anomaly.grid.png|4": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The family and the tiles are both cut off by the picture's edges but are marked fully visible, and no knock is shown on the door; the small motion lines are around the rug-like tile.",
+    "costUsd": 0.27730740000000004
+  },
+  "qwen/qwen3-vl-8b+schema|anomaly.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The action line says the whole family knocks, but only the father knocks; the others watch, and the boy points at the cracked tile. The small knocker is on the door at the back, not the front.",
+    "costUsd": 0.2750378
+  },
+  "qwen/qwen3-vl-8b+schema|anomaly.grid.png|3": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The main view is wrong: the man and the boy who is knocking are seen from the back, not the side. The caption also counts only one adult when there are two, and the man is left out of the onlookers.",
+    "costUsd": 0.2782128
+  },
+  "qwen/qwen3-vl-8b+schema|anomaly.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks 'knock' as a visible small blue object, but no knock is drawn; only the blue door is shown, so it should be hidden.",
+    "costUsd": 0.0717462
+  },
+  "qwen/qwen3-vl-8b+schema|anomaly.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error: the caption calls the cream tiles white and says both children point at the tile, but the girl only reaches toward the floor. The family of four is seen from behind walking toward a blue door, the orange tile is cracked and in front, and no knock is shown.",
+    "costUsd": 0.0738442
+  },
+  "qwen/qwen3-vl-8b+schema|anomaly.grid.png|5": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "Only one floor tile is cracked, not several, and the family is partly cut off on the left edge. The caption marks the knock at the door as 'front' when it is at the back, and calls the girl's view three-quarter when she faces the front.",
+    "costUsd": 0.0785772
+  },
+  "qwen/qwen3-vl-8b+schema|anomaly.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 1,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption lists the mother, boy and girl as onlookers, but they belong to the main subject (the family). It also marks the family as fully visible when the left and bottom edges cut it off, and calls it medium when it fills a large part of the picture.",
+    "costUsd": 0.0769414
+  },
+  "qwen/qwen3-vl-8b+schema|ventilator.grid.png|2": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the nurse and the machine as fully visible, but the bottom edge cuts off the nurse's lower body and the machine's base and legs, so both should be partly cut; it also places the nurse in front when she stands behind the machine.",
+    "costUsd": 0.0727356
+  },
+  "qwen/qwen3-vl-8b+schema|ventilator.grid.png|1": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The machine's stand is cut off by the bottom edge, so it should be marked partly cut, not visible. The nurse stands behind the machine, so her place is back, not front.",
+    "costUsd": 0.07455139999999999
+  },
+  "qwen/qwen3-vl-8b+schema|anomaly.grid.png|9": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The family stands at the far left, deeper in the scene than the large tile wall, so 'front' is wrong for them. The tile wall is also cut off by the picture's edges, yet the caption marks it fully visible.",
+    "costUsd": 0.0783306
+  },
+  "qwen/qwen3-vl-8b+schema|ventilator.grid.png|3": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks the nurse and the machine as fully visible, but the picture's edges cut off both (the nurse at the left and bottom, the machine at the right); it also calls the nurse medium when she is large, and gives 'side' for what is a rear three-quarter view.",
+    "costUsd": 0.0734716
+  },
+  "qwen/qwen3-vl-8b+schema|ventilator.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The caption gives the nurse's view as 'side', but she is seen from above and from the front as she leans over the bassinet. Also, the right edge cuts off part of the machine, and the nurse is behind the bassinet, not in front.",
+    "costUsd": 0.073064
+  },
+  "qwen/qwen3-vl-8b+schema|ventilator.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks the machine as visible, but the left and bottom edges of the picture cut it off; the nurse's view is closer to front than three-quarter.",
+    "costUsd": 0.0719424
+  },
+  "qwen/qwen3-vl-8b+schema|ventilator.grid.png|5": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Nurse and machine are both marked 'visible', but the picture's edges cut both off (machine at left/top, nurse at right/bottom). The newborn is also placed 'back' when it sits in the lower front corner, and the nurse looks at the button, not the newborn.",
+    "costUsd": 0.0736886
+  },
+  "qwen/qwen3-vl-8b+schema|ventilator.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the machine as visible, but the right edge of the picture cuts it off (partly cut). It also calls the nurse medium and front, when she is large and stands behind the crib.",
+    "costUsd": 0.0710036
+  },
+  "qwen/qwen3-vl-8b+schema|ventilator.grid.png|9": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The nurse is not holding the tube: her hands rest on the crib's edge while the tube runs from the machine to the baby. The bottom edge also cuts off the machine, so it should be marked partly cut, and the nurse looks mostly front-on rather than three-quarter.",
+    "costUsd": 0.0794468
+  },
+  "qwen/qwen3-vl-8b+schema|ventilator.grid.png|8": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "All three items are marked 'visible', but the top and left edges cut off the nurse, the right edge cuts off the machine, and the bottom edge cuts off the newborn and incubator.",
+    "costUsd": 0.0750904
+  },
+  "qwen/qwen3-vl-8b+schema|period.grid.png|1": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked visible, but the left edge of the picture cuts off the pier and the sea, so both should be partly cut; the caption also misses that the sea stops in a straight vertical line near the right side.",
+    "costUsd": 0.07295280000000001
+  },
+  "qwen/qwen3-vl-8b+schema|period.grid.png|2": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 1,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption marks both items as visible, but the picture's edges cut off the pier (left and bottom) and the sea (bottom); it also misses that the sea is a flat block with a hard edge that looks pasted on.",
+    "costUsd": 0.0708436
+  },
+  "qwen/qwen3-vl-8b+schema|period.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The pier is marked visible, but the left edge of the picture cuts it off, so it should be partly cut.",
+    "costUsd": 0.069223
+  },
+  "qwen/qwen3-vl-8b+schema|period.grid.png|3": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked 'visible', but the bottom edge cuts off the pier and the left edge cuts off the sea, which also takes up only a medium band of the picture, not a large one.",
+    "costUsd": 0.07256499999999999
+  },
+  "qwen/qwen3-vl-8b+schema|period.grid.png|6": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 1,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption marks both items as visible, but the bottom edge cuts off the pier and the left edge cuts off the sea. It also misses a drawing error: the sea's right side ends in a hard straight vertical line, so the water looks pasted on.",
+    "costUsd": 0.070026
+  },
+  "qwen/qwen3-vl-8b+schema|period.grid.png|5": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The pier railing is cut off by the bottom and left edges of the picture, so it should be marked 'partly cut', not 'visible'. Also, the sea is a blue block that stops with a hard straight edge on the right, so it looks pasted on, and the drawingErrors list should have named it.",
+    "costUsd": 0.0752478
+  },
+  "qwen/qwen3-vl-8b+schema|period.grid.png|8": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked 'visible', but the picture's edges cut both of them off: the pier at the bottom and sides, and the sea at the left. The sea also ends in an odd straight vertical edge on the right, and the drawingErrors list leaves this out.",
+    "costUsd": 0.0709086
+  },
+  "qwen/qwen3-vl-8b+schema|period.grid.png|7": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both the pier and the sea are marked 'visible', but the picture's left and bottom edges cut both of them off, so both should be 'partly cut'. The drawing-error list is also empty, though the sea stops at an unnatural straight vertical edge on the right.",
+    "costUsd": 0.07259499999999999
+  },
+  "qwen/qwen3-vl-8b+schema|period.grid.png|9": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked 'visible', but the left edge of the picture cuts off the pier and the left and bottom edges cut off the sea, so both should be 'partly cut'. The empty drawingErrors list also misses the sea, which stops at a hard straight edge on the right and leaves blank space.",
+    "costUsd": 0.0732724
+  },
+  "qwen/qwen3-vl-8b+schema|surgeon.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The surgeon takes up most of the panel, so the size should be large, not medium. The caption also leaves out the sparking wall outlet.",
+    "costUsd": 0.0766836
+  },
+  "qwen/qwen3-vl-8b+schema|surgeon.grid.png|3": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks the surgeon as visible and medium, but the bottom edge cuts off her body and she fills most of the frame, so she is partly cut and large. The overhead surgical light is dark, so it does not light her, and her face is seen nearly from the front and from below.",
+    "costUsd": 0.0723026
+  },
+  "qwen/qwen3-vl-8b+schema|surgeon.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The surgeon is shown in a three-quarter view, angled toward the viewer, but the caption says side view.",
+    "costUsd": 0.0744792
+  },
+  "qwen/qwen3-vl-8b+schema|surgeon.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The caption gives the surgeon's view as 'side', but the picture shows the surgeon from directly above.",
+    "costUsd": 0.0726856
+  },
+  "qwen/qwen3-vl-8b+schema|surgeon.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The surgeon is marked visible, but the bottom and left edges of the picture cut off their body, so the mark should be partly cut.",
+    "costUsd": 0.0719616
+  },
+  "qwen/qwen3-vl-8b+schema|surgeon.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The surgeon is cut off by the frame (cap at the top, shoulders at the bottom) but is marked 'visible'; the head is turned a little (three-quarter, not front) and the eyes look down to the side, not forward.",
+    "costUsd": 0.0723142
+  },
+  "qwen/qwen3-vl-8b+schema|surgeon.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The action line leaves out the main event: the surgeon turns away, startled, to look at the sparking wall outlet. Also, the operating room fills the whole background, so it is large rather than medium.",
+    "costUsd": 0.0727308
+  },
+  "qwen/qwen3-vl-8b+schema|surgeon.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The surgeon is marked 'visible', but the left and bottom edges of the picture cut off her body, so it should be 'partly cut'; the operating room fills the whole background and is closer to large than medium.",
+    "costUsd": 0.0731418
+  },
+  "qwen/qwen3-vl-8b+schema|surgeon.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The surgeon faces the viewer almost straight on with the head bent down, so the view is front rather than three-quarter.",
+    "costUsd": 0.0745248
+  },
+  "qwen/qwen3-vl-8b+schema|sweep.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Minor: the caption says she swings both arms forward, but only her right arm reaches for the broom while her left arm stretches back.",
+    "costUsd": 0.069761
+  },
+  "qwen/qwen3-vl-8b+schema|sweep.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The broom is called 'front', but it leans in the back corner against the wall. The open hand only reaches for the broom and has not grabbed it, and the person is shown in three-quarter view, not side.",
+    "costUsd": 0.0717904
+  },
+  "qwen/qwen3-vl-8b+schema|sweep.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The broom leans in the corner at the back, not the front, and the woman is lunging to reach it, not swinging it or holding it yet.",
+    "costUsd": 0.0701562
+  },
+  "qwen/qwen3-vl-8b+schema|sweep.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The main view is wrong: the woman is drawn from directly above (top-down), not from the side. Also, the broom is small and at the back by the wall, not medium and in front, and she is only reaching for it, not yet grabbing it.",
+    "costUsd": 0.0733444
+  },
+  "qwen/qwen3-vl-8b+schema|sweep.grid.png|5": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the corner as hidden, but the wall corner and floor line show clearly on the right; it also marks the broom as fully visible when the top edge cuts off its handle.",
+    "costUsd": 0.0715142
+  },
+  "qwen/qwen3-vl-8b+schema|sweep.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption says she leans against the wall, but she is lunging across the floor and not touching it. It also places the broom in front, but it stands at the back in the corner.",
+    "costUsd": 0.06965280000000001
+  },
+  "qwen/qwen3-vl-8b+schema|sweep.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The action line says she is reaching toward the corner, but she is crouching and grabbing a broom that leans against the wall near the corner.",
+    "costUsd": 0.070222
+  },
+  "qwen/qwen3-vl-8b+schema|sweep.grid.png|8": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The broom is marked visible, but the top and bottom edges cut it off. The corner is marked hidden, but a wall corner shows at the top right, with the line between wall and floor.",
+    "costUsd": 0.0717248
+  },
+  "qwen/qwen3-vl-8b+schema|sweep.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "There is no real error; the action line says she swings the broom but doesn't say she grips it with both hands.",
+    "costUsd": 0.0659414
   }
 }

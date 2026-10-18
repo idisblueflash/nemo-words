@@ -1,0 +1,2745 @@
+{
+  "anomaly.grid.png": {
+    "1": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "four",
+            "people",
+            "excited"
+          ]
+        },
+        {
+          "name": "knock",
+          "adjectives": [
+            "metal",
+            "on",
+            "door"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "floor",
+            "white",
+            "square"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "orange",
+            "cracked",
+            "center"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "low angle",
+      "step": "during",
+      "action": "The family is knocking on a door while a cracked tile on the floor vibrates.",
+      "extras": {
+        "floor": true,
+        "background": "wall with tiles",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "1092038888934fea",
+      "ms": 26691,
+      "costUsd": 0
+    },
+    "2": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "hand",
+            "holding"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "A hand holds a door knocker, knocking on a door next to a cracked tile.",
+      "extras": {
+        "floor": false,
+        "background": "wall with tiles",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "1092038888934fea",
+      "ms": 15650,
+      "costUsd": 0
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "adult",
+            "child",
+            "child"
+          ]
+        },
+        {
+          "name": "knock",
+          "adjectives": [
+            "brown",
+            "square"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "white",
+            "grid"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "brown",
+            "square"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "A family is knocking on a door while a brown square tile appears to be flying off the wall.",
+      "extras": {
+        "floor": false,
+        "background": "wall with tiles",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [
+        {
+          "who": "woman",
+          "does": "reacts",
+          "view": "side"
+        },
+        {
+          "who": "girl",
+          "does": "reacts",
+          "view": "side"
+        }
+      ],
+      "mainView": "side",
+      "promptKey": "1092038888934fea",
+      "ms": 20716,
+      "costUsd": 0
+    },
+    "4": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "four",
+            "people"
+          ]
+        },
+        {
+          "name": "knock",
+          "adjectives": [
+            "on",
+            "door"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "white",
+            "square"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "brown",
+            "center"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "overhead",
+      "step": "during",
+      "action": "Four people stand around a brown irregular tile on the floor, as if they are knocking on a door.",
+      "extras": {
+        "floor": true,
+        "background": "blue door",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "above",
+      "promptKey": "1092038888934fea",
+      "ms": 18717,
+      "costUsd": 0
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "four",
+            "people",
+            "surprised"
+          ]
+        },
+        {
+          "name": "knock",
+          "adjectives": [
+            "on",
+            "door"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "floor",
+            "cracked"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "cracked",
+            "center"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "low angle",
+      "step": "during",
+      "action": "A family stands at a door, with one member knocking, while the floor tiles crack open in front of them.",
+      "extras": {
+        "floor": true,
+        "background": "wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [
+        {
+          "who": "boy",
+          "does": "reacts",
+          "view": "three-quarter"
+        },
+        {
+          "who": "girl",
+          "does": "reacts",
+          "view": "three-quarter"
+        },
+        {
+          "who": "woman",
+          "does": "reacts",
+          "view": "three-quarter"
+        }
+      ],
+      "mainView": "three-quarter",
+      "promptKey": "1092038888934fea",
+      "ms": 22191,
+      "costUsd": 0
+    },
+    "6": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "four",
+            "adults",
+            "children"
+          ]
+        },
+        {
+          "name": "knock",
+          "adjectives": [
+            "on",
+            "door"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "floor",
+            "white"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "orange",
+            "cracked"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "before",
+      "action": "The family is walking toward the door, with the children pointing at a cracked tile on the floor.",
+      "extras": {
+        "floor": true,
+        "background": "blue door",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        },
+        "family": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "back",
+      "promptKey": "1092038888934fea",
+      "ms": 18691,
+      "costUsd": 0
+    },
+    "7": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "four",
+            "people",
+            "surprised"
+          ]
+        },
+        {
+          "name": "knock",
+          "adjectives": [
+            "metal",
+            "door"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "wall",
+            "white"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "cracked",
+            "brown"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "A family is knocking on a door, and a cracked tile on the wall vibrates in response.",
+      "extras": {
+        "floor": false,
+        "background": "wall with tiles",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [
+        {
+          "who": "mother",
+          "does": "reacts",
+          "view": "three-quarter"
+        },
+        {
+          "who": "boy",
+          "does": "reacts",
+          "view": "three-quarter"
+        },
+        {
+          "who": "girl",
+          "does": "reacts",
+          "view": "three-quarter"
+        }
+      ],
+      "mainView": "three-quarter",
+      "promptKey": "1092038888934fea",
+      "ms": 22236,
+      "costUsd": 0
+    },
+    "8": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "happy",
+            "excited"
+          ]
+        },
+        {
+          "name": "knock",
+          "adjectives": [
+            "blue"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "white",
+            "square"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "orange",
+            "cracked"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "after",
+      "action": "The family is looking at a cracked orange tile on the floor, with the man opening the door.",
+      "extras": {
+        "floor": true,
+        "background": "green trees outside a door",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "1092038888934fea",
+      "ms": 18633,
+      "costUsd": 0
+    },
+    "9": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "four",
+            "people",
+            "standing",
+            "in line"
+          ]
+        },
+        {
+          "name": "knock",
+          "adjectives": [
+            "on",
+            "door"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "wall",
+            "white",
+            "grid"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "orange",
+            "cracked",
+            "center"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "A family is knocking on a door while an irregular tile on the wall vibrates.",
+      "extras": {
+        "floor": true,
+        "background": "hallway",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "1092038888934fea",
+      "ms": 19048,
+      "costUsd": 0
+    }
+  },
+  "ventilator.grid.png": {
+    "1": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "female",
+            "smiling",
+            "in scrubs"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "sleeping",
+            "wrapped"
+          ]
+        },
+        {
+          "name": "machine",
+          "adjectives": [
+            "medical",
+            "orange",
+            "with tubes"
+          ]
+        },
+        {
+          "name": "clock",
+          "adjectives": [
+            "wall-mounted",
+            "round"
+          ]
+        },
+        {
+          "name": "window",
+          "adjectives": [
+            "showing night sky"
+          ]
+        },
+        {
+          "name": "door",
+          "adjectives": [
+            "open"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The nurse walks into the room, approaching the newborn who is in an incubator connected to a machine.",
+      "extras": {
+        "floor": true,
+        "background": "hospital room",
+        "morePeople": false,
+        "readableText": "nurse"
+      },
+      "mustSee": {
+        "nurse": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "machine": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "newborn": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "9a133c611ab9b993",
+      "ms": 19735,
+      "costUsd": 0
+    },
+    "2": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "female",
+            "smiling",
+            "in scrubs"
+          ]
+        },
+        {
+          "name": "machine",
+          "adjectives": [
+            "orange",
+            "medical",
+            "with screen"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "sleeping",
+            "in incubator"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The nurse stands beside the machine, looking at the newborn in the incubator while the machine provides ventilation.",
+      "extras": {
+        "floor": false,
+        "background": "hospital room",
+        "morePeople": false,
+        "readableText": "Venice"
+      },
+      "mustSee": {
+        "nurse": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "machine": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "newborn": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "9a133c611ab9b993",
+      "ms": 17295,
+      "costUsd": 0
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "female",
+            "in scrubs",
+            "with headband"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "sleeping",
+            "in incubator"
+          ]
+        },
+        {
+          "name": "machine",
+          "adjectives": [
+            "medical",
+            "orange",
+            "with screen"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "high angle",
+      "step": "during",
+      "action": "The nurse watches the newborn in the incubator while a machine monitors the baby.",
+      "extras": {
+        "floor": false,
+        "background": "hospital room wall",
+        "morePeople": false,
+        "readableText": "12 1 2 3 4 5 6 7 8 9 10 11"
+      },
+      "mustSee": {
+        "nurse": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "machine": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "newborn": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "9a133c611ab9b993",
+      "ms": 18347,
+      "costUsd": 0
+    },
+    "4": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "female",
+            "wearing cap",
+            "wearing blue scrubs"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "wrapped",
+            "sleeping"
+          ]
+        },
+        {
+          "name": "machine",
+          "adjectives": [
+            "orange",
+            "with screen",
+            "with tubes"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "high angle",
+      "step": "during",
+      "action": "The nurse is attending to the newborn who is connected to a machine.",
+      "extras": {
+        "floor": true,
+        "background": "hospital room",
+        "morePeople": false,
+        "readableText": "Wanda"
+      },
+      "mustSee": {
+        "nurse": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "machine": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "newborn": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "9a133c611ab9b993",
+      "ms": 17118,
+      "costUsd": 0
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "female",
+            "smiling",
+            "in scrubs"
+          ]
+        },
+        {
+          "name": "machine",
+          "adjectives": [
+            "medical",
+            "orange",
+            "with screen and gauges"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "sleeping",
+            "in incubator"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The nurse presses a button on the machine while looking at the newborn in the incubator.",
+      "extras": {
+        "floor": false,
+        "background": "light green wall",
+        "morePeople": false,
+        "readableText": "Venice"
+      },
+      "mustSee": {
+        "nurse": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "machine": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "newborn": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "9a133c611ab9b993",
+      "ms": 17832,
+      "costUsd": 0
+    },
+    "6": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "female",
+            "young",
+            "in scrubs",
+            "attentive"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "sleeping",
+            "in crib",
+            "with breathing tube"
+          ]
+        },
+        {
+          "name": "machine",
+          "adjectives": [
+            "medical",
+            "orange",
+            "with screen",
+            "with gauge"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The nurse points at the screen of the medical machine while attending to the newborn in the crib.",
+      "extras": {
+        "floor": false,
+        "background": "hospital room wall",
+        "morePeople": false,
+        "readableText": "11 12 1 2 3 4 5 6 7 8 9 10"
+      },
+      "mustSee": {
+        "nurse": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "machine": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "newborn": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "9a133c611ab9b993",
+      "ms": 24233,
+      "costUsd": 0
+    },
+    "7": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "female",
+            "smiling",
+            "in scrubs"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "sleeping",
+            "in crib"
+          ]
+        },
+        {
+          "name": "machine",
+          "adjectives": [
+            "orange",
+            "medical",
+            "with tubes"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The nurse stands beside the crib, looking at the newborn who is connected to a machine.",
+      "extras": {
+        "floor": false,
+        "background": "hospital room with a window showing a crescent moon",
+        "morePeople": false,
+        "readableText": "Venice"
+      },
+      "mustSee": {
+        "nurse": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "machine": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "newborn": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "9a133c611ab9b993",
+      "ms": 21788,
+      "costUsd": 0
+    },
+    "8": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "female",
+            "smiling",
+            "in scrubs"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "sleeping",
+            "in incubator"
+          ]
+        },
+        {
+          "name": "machine",
+          "adjectives": [
+            "orange",
+            "medical",
+            "with screen"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The nurse leans over the newborn in the incubator, looking at the baby while the machine monitors the baby's vitals.",
+      "extras": {
+        "floor": false,
+        "background": "light green wall",
+        "morePeople": false,
+        "readableText": "Vanessa"
+      },
+      "mustSee": {
+        "nurse": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "machine": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "newborn": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "9a133c611ab9b993",
+      "ms": 22035,
+      "costUsd": 0
+    },
+    "9": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "female",
+            "smiling",
+            "in scrubs"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "sleeping",
+            "in crib"
+          ]
+        },
+        {
+          "name": "machine",
+          "adjectives": [
+            "orange",
+            "with screen",
+            "respirator"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The nurse holds a tube connected to a machine, which is delivering air to the newborn in the crib.",
+      "extras": {
+        "floor": false,
+        "background": "hospital room with window, clock, and wall outlets",
+        "morePeople": false,
+        "readableText": "Venice"
+      },
+      "mustSee": {
+        "nurse": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "machine": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "newborn": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "9a133c611ab9b993",
+      "ms": 22424,
+      "costUsd": 0
+    }
+  },
+  "period.grid.png": {
+    "1": {
+      "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "standing",
+            "alone",
+            "looking out"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The person stands at the end of the pier, looking out at the calm sea.",
+      "extras": {
+        "floor": false,
+        "background": "sky with one cloud, calm sea",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "calm sea": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "98c96b8873f8f244",
+      "ms": 16559,
+      "costUsd": 0
+    },
+    "2": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "standing",
+            "looking up",
+            "wearing jacket",
+            "wearing orange shirt",
+            "wearing gray pants"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "low angle",
+      "step": "before",
+      "action": "The man stands on a pier, looking up at the sky.",
+      "extras": {
+        "floor": false,
+        "background": "sky with a cloud",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "calm sea": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "98c96b8873f8f244",
+      "ms": 17004,
+      "costUsd": 0
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "young",
+            "with dark hair",
+            "wearing green jacket"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "back",
+      "step": "before",
+      "action": "The man stands at the beginning of a wooden pier, looking out at the calm sea.",
+      "extras": {
+        "floor": false,
+        "background": "sky and sea",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "calm sea": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "98c96b8873f8f244",
+      "ms": 16260,
+      "costUsd": 0
+    },
+    "4": {
+      "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "small",
+            "standing",
+            "on pier"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "high angle",
+      "step": "before",
+      "action": "The person stands at the end of the pier, looking out at the calm sea.",
+      "extras": {
+        "floor": false,
+        "background": "calm sea",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "calm sea": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "98c96b8873f8f244",
+      "ms": 16390,
+      "costUsd": 0
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "boy",
+          "adjectives": [
+            "young",
+            "curious",
+            "looking out"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The boy leans on a pier, looking out at the calm sea.",
+      "extras": {
+        "floor": false,
+        "background": "calm sea",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "calm sea": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "98c96b8873f8f244",
+      "ms": 16014,
+      "costUsd": 0
+    },
+    "6": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "walking",
+            "alone",
+            "dressed"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "high angle",
+      "step": "during",
+      "action": "The man walks along the pier toward the horizon.",
+      "extras": {
+        "floor": false,
+        "background": "calm sea",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "calm sea": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "98c96b8873f8f244",
+      "ms": 15678,
+      "costUsd": 0
+    },
+    "7": {
+      "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "standing",
+            "alone",
+            "looking out"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "high angle",
+      "step": "before",
+      "action": "The person stands on the pier, looking out at the calm sea.",
+      "extras": {
+        "floor": false,
+        "background": "calm sea",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "calm sea": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "98c96b8873f8f244",
+      "ms": 16185,
+      "costUsd": 0
+    },
+    "8": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "young",
+            "smiling",
+            "walking"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The man walks along the pier.",
+      "extras": {
+        "floor": false,
+        "background": "calm sea",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "calm sea": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "98c96b8873f8f244",
+      "ms": 14812,
+      "costUsd": 0
+    },
+    "9": {
+      "objects": [
+        {
+          "name": "boy",
+          "adjectives": [
+            "standing",
+            "looking up",
+            "arms crossed"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The boy stands on the pier, looking up at the sky.",
+      "extras": {
+        "floor": false,
+        "background": "calm sea and distant land",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "calm sea": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "98c96b8873f8f244",
+      "ms": 13084,
+      "costUsd": 0
+    }
+  },
+  "surgeon.grid.png": {
+    "1": {
+      "objects": [
+        {
+          "name": "the main subject of the picture (the one thing or person the scene is about)",
+          "adjectives": [
+            "elderly",
+            "female",
+            "surgeon",
+            "focused",
+            "wearing",
+            "surgical cap",
+            "glasses",
+            "mask",
+            "gloves"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "attached",
+            "glowing",
+            "on",
+            "head"
+          ]
+        },
+        {
+          "name": "operating room",
+          "adjectives": [
+            "dark",
+            "medical",
+            "sterile",
+            "with",
+            "equipment"
+          ]
+        },
+        {
+          "name": "surgical instruments",
+          "adjectives": [
+            "metal",
+            "in",
+            "hands"
+          ]
+        },
+        {
+          "name": "surgical drape",
+          "adjectives": [
+            "covering",
+            "patient",
+            "white"
+          ]
+        },
+        {
+          "name": "surgical light",
+          "adjectives": [
+            "overhead",
+            "round",
+            "dark"
+          ]
+        },
+        {
+          "name": "wall outlet",
+          "adjectives": [
+            "electrical",
+            "on",
+            "wall"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "the main subject of the picture (the one thing or person the scene is about) performs surgery, holding instruments and looking down at the surgical site.",
+      "extras": {
+        "floor": false,
+        "background": "operating room",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "2f256171f19e8b98",
+      "ms": 26297,
+      "costUsd": 0
+    },
+    "2": {
+      "objects": [
+        {
+          "name": "the main subject of the picture (the one thing or person the scene is about)",
+          "adjectives": [
+            "surgeon",
+            "elderly",
+            "wearing",
+            "cap",
+            "glasses",
+            "headlamp"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "worn",
+            "on",
+            "head"
+          ]
+        },
+        {
+          "name": "operating room",
+          "adjectives": [
+            "dark",
+            "sterile",
+            "medical",
+            "equipment-filled"
+          ]
+        },
+        {
+          "name": "surgical lamp",
+          "adjectives": [
+            "overhead",
+            "large",
+            "round",
+            "lighting"
+          ]
+        },
+        {
+          "name": "surgical table",
+          "adjectives": [
+            "covered",
+            "with",
+            "drape"
+          ]
+        },
+        {
+          "name": "IV pole",
+          "adjectives": [
+            "metal",
+            "with",
+            "bag"
+          ]
+        },
+        {
+          "name": "stool",
+          "adjectives": [
+            "black",
+            "with",
+            "wheel"
+          ]
+        },
+        {
+          "name": "monitor",
+          "adjectives": [
+            "black",
+            "screen",
+            "off"
+          ]
+        },
+        {
+          "name": "wall",
+          "adjectives": [
+            "bare",
+            "dark"
+          ]
+        },
+        {
+          "name": "light switch",
+          "adjectives": [
+            "on",
+            "wall",
+            "with",
+            "flash"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "high angle",
+      "step": "during",
+      "action": "The surgeon, wearing a headlamp, is performing surgery under a surgical lamp, with medical equipment surrounding the surgical table.",
+      "extras": {
+        "floor": false,
+        "background": "dark operating room",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "2f256171f19e8b98",
+      "ms": 28170,
+      "costUsd": 0
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "the main subject of the picture (the one thing or person the scene is about)",
+          "adjectives": [
+            "elderly",
+            "female",
+            "surgeon",
+            "wearing",
+            "surgical cap",
+            "glasses",
+            "mask",
+            "headlamp"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "worn",
+            "on",
+            "head",
+            "glowing"
+          ]
+        },
+        {
+          "name": "operating room",
+          "adjectives": [
+            "dark",
+            "with",
+            "surgical lights"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "the main subject of the picture (the one thing or person the scene is about) is focused on a surgical procedure, illuminated by her headlamp and overhead surgical lights.",
+      "extras": {
+        "floor": false,
+        "background": "dark operating room",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "2f256171f19e8b98",
+      "ms": 21183,
+      "costUsd": 0
+    },
+    "4": {
+      "objects": [
+        {
+          "name": "the main subject of the picture (the one thing or person the scene is about)",
+          "adjectives": [
+            "elderly",
+            "female",
+            "surgeon",
+            "focused"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "worn",
+            "on head"
+          ]
+        },
+        {
+          "name": "operating room",
+          "adjectives": [
+            "dark",
+            "clinical"
+          ]
+        },
+        {
+          "name": "surgical tools",
+          "adjectives": [
+            "on tray",
+            "metal"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "overhead",
+      "step": "during",
+      "action": "the surgeon uses a surgical instrument on a patient under a headlamp",
+      "extras": {
+        "floor": false,
+        "background": "dark operating room",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "back",
+      "promptKey": "2f256171f19e8b98",
+      "ms": 19695,
+      "costUsd": 0
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "the main subject of the picture (the one thing or person the scene is about)",
+          "adjectives": [
+            "surgeon",
+            "wearing",
+            "green scrubs",
+            "headlamp",
+            "focused"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "worn",
+            "on head",
+            "illuminating"
+          ]
+        },
+        {
+          "name": "operating room",
+          "adjectives": [
+            "dark",
+            "medical equipment",
+            "sterile"
+          ]
+        },
+        {
+          "name": "scissors",
+          "adjectives": [
+            "on tray",
+            "metal",
+            "medical"
+          ]
+        },
+        {
+          "name": "surgical tray",
+          "adjectives": [
+            "with instruments",
+            "blue"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "high angle",
+      "step": "during",
+      "action": "The surgeon, wearing a headlamp, performs surgery with precision using surgical instruments.",
+      "extras": {
+        "floor": false,
+        "background": "dark operating room with medical equipment",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "2f256171f19e8b98",
+      "ms": 21932,
+      "costUsd": 0
+    },
+    "6": {
+      "objects": [
+        {
+          "name": "the main subject of the picture (the one thing or person the scene is about)",
+          "adjectives": [
+            "elderly",
+            "wearing",
+            "surgical cap",
+            "glasses",
+            "mask",
+            "headlamp"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "attached to head",
+            "shining"
+          ]
+        }
+      ],
+      "shot": "extreme close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "the main subject of the picture (the one thing or person the scene is about) shines a headlamp while looking forward.",
+      "extras": {
+        "floor": false,
+        "background": "dark",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "front",
+      "promptKey": "2f256171f19e8b98",
+      "ms": 18724,
+      "costUsd": 0
+    },
+    "7": {
+      "objects": [
+        {
+          "name": "the main subject of the picture (the one thing or person the scene is about)",
+          "adjectives": [
+            "elderly",
+            "female",
+            "surgeon",
+            "wearing",
+            "surgical gown",
+            "mask",
+            "glasses",
+            "headlamp"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "worn",
+            "on head",
+            "glowing"
+          ]
+        },
+        {
+          "name": "operating room",
+          "adjectives": [
+            "dark",
+            "medical",
+            "with equipment"
+          ]
+        },
+        {
+          "name": "surgical lamp",
+          "adjectives": [
+            "above",
+            "ceiling-mounted"
+          ]
+        },
+        {
+          "name": "medical monitor",
+          "adjectives": [
+            "black screen"
+          ]
+        },
+        {
+          "name": "wall outlet",
+          "adjectives": [
+            "on wall",
+            "with plugs"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "the main subject of the picture (the one thing or person the scene is about) is performing surgery, holding a surgical instrument.",
+      "extras": {
+        "floor": false,
+        "background": "operating room",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "2f256171f19e8b98",
+      "ms": 23586,
+      "costUsd": 0
+    },
+    "8": {
+      "objects": [
+        {
+          "name": "the main subject of the picture (the one thing or person the scene is about)",
+          "adjectives": [
+            "elderly",
+            "female",
+            "surgeon",
+            "wearing",
+            "scrubs",
+            "mask",
+            "headlamp"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "attached",
+            "to",
+            "head"
+          ]
+        },
+        {
+          "name": "operating room",
+          "adjectives": [
+            "dark",
+            "with",
+            "medical",
+            "equipment"
+          ]
+        },
+        {
+          "name": "medical instruments",
+          "adjectives": [
+            "held",
+            "by",
+            "assistants"
+          ]
+        },
+        {
+          "name": "assistant",
+          "adjectives": [
+            "wearing",
+            "gloves",
+            "handing",
+            "instrument"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "side",
+      "step": "during",
+      "action": "The main subject, a surgeon, is operating while an assistant hands her an instrument.",
+      "extras": {
+        "floor": false,
+        "background": "dark operating room",
+        "morePeople": true,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "2f256171f19e8b98",
+      "ms": 22313,
+      "costUsd": 0
+    },
+    "9": {
+      "objects": [
+        {
+          "name": "the main subject of the picture (the one thing or person the scene is about)",
+          "adjectives": [
+            "elderly",
+            "female",
+            "surgeon",
+            "wearing",
+            "surgical gown",
+            "mask",
+            "cap",
+            "gloves"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "worn",
+            "on",
+            "head"
+          ]
+        },
+        {
+          "name": "operating room",
+          "adjectives": [
+            "dark",
+            "medical",
+            "equipped"
+          ]
+        },
+        {
+          "name": "surgical lamp",
+          "adjectives": [
+            "overhead",
+            "large",
+            "dark"
+          ]
+        },
+        {
+          "name": "IV pole",
+          "adjectives": [
+            "metal",
+            "with",
+            "bag"
+          ]
+        },
+        {
+          "name": "patient",
+          "adjectives": [
+            "covered",
+            "in",
+            "drape"
+          ]
+        },
+        {
+          "name": "monitor",
+          "adjectives": [
+            "black",
+            "screen",
+            "off"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "the main subject of the picture (the one thing or person the scene is about) performs surgery, using a scalpel on a patient under a surgical lamp.",
+      "extras": {
+        "floor": false,
+        "background": "dark operating room",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "2f256171f19e8b98",
+      "ms": 25366,
+      "costUsd": 0
+    }
+  },
+  "sweep.grid.png": {
+    "1": {
+      "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "elderly",
+            "gray-haired",
+            "wearing glasses",
+            "in red shirt",
+            "in green pants"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The person swings their arms forward to grab the broom leaning against the wall.",
+      "extras": {
+        "floor": true,
+        "background": "light blue wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "089a37ad69eefde7",
+      "ms": 14341,
+      "costUsd": 0
+    },
+    "2": {
+      "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "elderly",
+            "wearing glasses",
+            "in red shirt",
+            "in green pants",
+            "with gray hair"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "low angle",
+      "step": "during",
+      "action": "The person swings and grabs the broom.",
+      "extras": {
+        "floor": true,
+        "background": "light blue wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "089a37ad69eefde7",
+      "ms": 14120,
+      "costUsd": 0
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "elderly",
+            "gray-haired",
+            "wearing glasses",
+            "in red shirt",
+            "in green pants"
+          ]
+        },
+        {
+          "name": "broom",
+          "adjectives": [
+            "yellow bristles",
+            "wooden handle"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "low angle",
+      "step": "during",
+      "action": "The person swings and grabs the broom.",
+      "extras": {
+        "floor": true,
+        "background": "blue wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "back",
+      "promptKey": "089a37ad69eefde7",
+      "ms": 15043,
+      "costUsd": 0
+    },
+    "4": {
+      "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "elderly",
+            "gray-haired",
+            "wearing glasses",
+            "in red shirt",
+            "in green pants"
+          ]
+        },
+        {
+          "name": "broom",
+          "adjectives": [
+            "yellow bristles",
+            "wooden handle"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "high angle",
+      "step": "during",
+      "action": "The person swings and grabs the broom as it leans against the corner.",
+      "extras": {
+        "floor": true,
+        "background": "blue wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "089a37ad69eefde7",
+      "ms": 15318,
+      "costUsd": 0
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "elderly",
+            "wearing glasses",
+            "in red shirt",
+            "in green pants"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "low angle",
+      "step": "during",
+      "action": "The person holds the broom and sweeps the floor.",
+      "extras": {
+        "floor": true,
+        "background": "blue wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "089a37ad69eefde7",
+      "ms": 14195,
+      "costUsd": 0
+    },
+    "6": {
+      "objects": [
+        {
+          "name": "person who swings and grabs the broom",
+          "adjectives": [
+            "elderly",
+            "wearing glasses",
+            "in red shirt",
+            "in green pants",
+            "holding broom"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "low angle",
+      "step": "during",
+      "action": "The person who swings and grabs the broom is lunging forward with a broom in hand, reaching toward a corner.",
+      "extras": {
+        "floor": true,
+        "background": "blue wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "089a37ad69eefde7",
+      "ms": 15132,
+      "costUsd": 0
+    },
+    "7": {
+      "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "elderly",
+            "gray-haired",
+            "wearing glasses",
+            "in red shirt",
+            "in green pants"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The person swings and grabs the broom with one hand while leaning against the wall.",
+      "extras": {
+        "floor": true,
+        "background": "blue wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "089a37ad69eefde7",
+      "ms": 14573,
+      "costUsd": 0
+    },
+    "8": {
+      "objects": [
+        {
+          "name": "person who swings and grabs the broom",
+          "adjectives": [
+            "elderly",
+            "wearing glasses",
+            "smiling",
+            "holding broom"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "low angle",
+      "step": "during",
+      "action": "The person who swings and grabs the broom holds a broom tightly with both hands, leaning forward as if sweeping.",
+      "extras": {
+        "floor": true,
+        "background": "blue wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "089a37ad69eefde7",
+      "ms": 14973,
+      "costUsd": 0
+    },
+    "9": {
+      "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "elderly",
+            "wearing glasses",
+            "swinging broom"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The person swings a broom across the floor.",
+      "extras": {
+        "floor": true,
+        "background": "blue wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "089a37ad69eefde7",
+      "ms": 13664,
+      "costUsd": 0
+    }
+  }
+}
