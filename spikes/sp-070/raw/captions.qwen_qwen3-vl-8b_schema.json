@@ -1,0 +1,639 @@
+{
+  "anomaly.grid.png": {
+    "1": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "four",
+            "people",
+            "waiting",
+            "at",
+            "door"
+          ]
+        },
+        {
+          "name": "knock",
+          "adjectives": [
+            "on",
+            "door"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "floor",
+            "white"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "orange",
+            "cracked",
+            "falling"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "before",
+      "action": "A family knocks on a door while a cracked tile falls on the floor.",
+      "extras": {
+        "floor": true,
+        "background": "wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "back",
+      "promptKey": "b1d0aaee11a6fe1a",
+      "ms": 27215,
+      "costUsd": 0
+    },
+    "2": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "hand"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "beige",
+            "square"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "orange",
+            "cracked"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "A hand knocks on a door, causing a cracked tile to vibrate.",
+      "extras": {
+        "floor": false,
+        "background": "wall with tiles",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "part only",
+          "size": "small",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "b1d0aaee11a6fe1a",
+      "ms": 18030,
+      "costUsd": 0
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "adult",
+            "child",
+            "child"
+          ]
+        },
+        {
+          "name": "knock",
+          "adjectives": [
+            "action"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "wall"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "brown",
+            "floating"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "A family is knocking on a door while an irregular tile floats away from the wall.",
+      "extras": {
+        "floor": false,
+        "background": "wall with tiles",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "b1d0aaee11a6fe1a",
+      "ms": 19032,
+      "costUsd": 0
+    },
+    "4": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "four",
+            "people"
+          ]
+        },
+        {
+          "name": "knock",
+          "adjectives": [
+            "on",
+            "door"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "white",
+            "square"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "brown",
+            "center"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "overhead",
+      "step": "before",
+      "action": "Four people stand around a doormat, about to knock on the door.",
+      "extras": {
+        "floor": true,
+        "background": "blue door",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "part only",
+          "size": "small",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "above",
+      "promptKey": "b1d0aaee11a6fe1a",
+      "ms": 19040,
+      "costUsd": 0
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "four",
+            "people",
+            "surprised"
+          ]
+        },
+        {
+          "name": "knock",
+          "adjectives": [
+            "on",
+            "door"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "floor",
+            "cracked"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "cracked",
+            "center"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "low angle",
+      "step": "during",
+      "action": "A family stands at a door, with one member knocking, while the floor tiles crack open in front of them.",
+      "extras": {
+        "floor": true,
+        "background": "wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "b1d0aaee11a6fe1a",
+      "ms": 19568,
+      "costUsd": 0
+    },
+    "6": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "four",
+            "adults",
+            "children"
+          ]
+        },
+        {
+          "name": "knock",
+          "adjectives": [
+            "on",
+            "door"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "floor",
+            "white"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "orange",
+            "cracked"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "before",
+      "action": "The family is walking toward the door, with the children looking at a cracked tile on the floor.",
+      "extras": {
+        "floor": true,
+        "background": "blue door",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "part only",
+          "size": "small",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "back",
+      "promptKey": "b1d0aaee11a6fe1a",
+      "ms": 19739,
+      "costUsd": 0
+    },
+    "7": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "four",
+            "people",
+            "surprised"
+          ]
+        },
+        {
+          "name": "knock",
+          "adjectives": [
+            "on",
+            "door"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "wall",
+            "white"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "cracked",
+            "brown"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "A family is knocking on a door, and a cracked tile on the wall vibrates in response.",
+      "extras": {
+        "floor": false,
+        "background": "wall with tiles",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "b1d0aaee11a6fe1a",
+      "ms": 19548,
+      "costUsd": 0
+    },
+    "8": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "four",
+            "smiling",
+            "excited"
+          ]
+        },
+        {
+          "name": "knock",
+          "adjectives": [
+            "on",
+            "door"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "floor",
+            "white",
+            "square"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "orange",
+            "cracked",
+            "center"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "after",
+      "action": "The family is gathered at the door, looking at a cracked orange tile on the floor, with the man knocking on the door.",
+      "extras": {
+        "floor": true,
+        "background": "green trees outside",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "part only",
+          "size": "small",
+          "place": "back"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "b1d0aaee11a6fe1a",
+      "ms": 20244,
+      "costUsd": 0
+    },
+    "9": {
+      "objects": [
+        {
+          "name": "family",
+          "adjectives": [
+            "four",
+            "people",
+            "standing",
+            "in line"
+          ]
+        },
+        {
+          "name": "knock",
+          "adjectives": [
+            "on",
+            "door"
+          ]
+        },
+        {
+          "name": "tiles",
+          "adjectives": [
+            "wall",
+            "white",
+            "grid"
+          ]
+        },
+        {
+          "name": "irregular tile",
+          "adjectives": [
+            "orange",
+            "cracked",
+            "center"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "A family knocks on a door while an irregular tile on the wall vibrates.",
+      "extras": {
+        "floor": true,
+        "background": "hallway",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "knock": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        },
+        "family": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "tiles": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "irregular tile": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "b1d0aaee11a6fe1a",
+      "ms": 19473,
+      "costUsd": 0
+    }
+  }
+}
