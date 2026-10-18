@@ -7,6 +7,7 @@
 //
 //   node spikes/sp-069/run.js --models qwen/qwen3-vl-4b[,haiku] [--grids N | --words a,b] [--no-judge]
 //   node spikes/sp-069/run.js --report     # write the report from the cache
+//   a local model named <id>+schema writes its caption under the JSON schema (lib/schema.js)
 //
 // Grids go in SP-066's order: its early picks first, then its tuning order.
 // Everything is cached in spikes/sp-069/raw/, so a re-run pays only for new
@@ -20,6 +21,7 @@ const { cropCell } = require("../sp-029/lib/caption");
 const { prompt, parseCaption, promptKey } = require("../sp-066/lib/caption");
 const { ClaudeError, UsageLimitError, pool } = require("../sp-066/lib/claude");
 const { captioner, claudeVision, isLocal } = require("./lib/models");
+const { captionSchema } = require("./lib/schema");
 const { PARTS, judgePrompt, parseJudgment, meanScore } = require("./lib/judge");
 
 const HERE = __dirname;
@@ -72,7 +74,7 @@ async function captionModel(model, ws, lists, cellsDir) {
     const p = prompt(list.items, word, main);
     let entry;
     try {
-      const r = await ask(p, cellPicture(cellsDir, grid, cell));
+      const r = await ask(p, cellPicture(cellsDir, grid, cell), model.endsWith("+schema") ? captionSchema(list.items, word, main) : undefined);
       try {
         entry = { ...parseCaption(r.text, list.items, word, main), promptKey: promptKey(list.items, word, main), ms: r.ms, costUsd: r.costUsd };
       } catch (err) {

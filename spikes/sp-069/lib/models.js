@@ -54,16 +54,19 @@ function claudeVision(model, { timeout = 300000 } = {}) {
 }
 
 // A local LM Studio model. The prompt's first line (the Read-tool line) is
-// swapped for one that points at the attached picture.
+// swapped for one that points at the attached picture. A model named
+// "<id>+schema" is <id> with the caption's JSON schema as response_format.
 function localVision(model, { timeout = 600, tries = 3, gapMs = 20000 } = {}) {
-  return (prompt, picture) =>
+  const id = model.replace(/\+schema$/, "");
+  return (prompt, picture, schema) =>
     withPicture(picture, async (dir) => {
       const text = prompt.replace(/^Use the Read tool to look at the image file picture\.png in the current folder\./, "Look at the attached picture.");
       const b64 = fs.readFileSync(path.join(dir, "picture.png")).toString("base64");
       const body = {
-        model,
+        model: id,
         temperature: 0,
         max_tokens: 4000,
+        ...(schema ? { response_format: { type: "json_schema", json_schema: schema } } : {}),
         messages: [{ role: "user", content: [{ type: "text", text }, { type: "image_url", image_url: { url: `data:image/png;base64,${b64}` } }] }],
       };
       fs.writeFileSync(path.join(dir, "body.json"), JSON.stringify(body));
