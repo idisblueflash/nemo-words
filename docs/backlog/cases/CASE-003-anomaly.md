@@ -9,6 +9,9 @@ items: [SP-029, SP-064, SP-066]
 # CASE-003 anomaly
 
 **Input:** the story "A knock rattles the family's tiles; one's irregular." and the grid `images/mnemonic/anomaly.grid.png`.
+
+![The anomaly grid: cells 1–3 on the top row, 7–9 on the bottom row](../../../images/mnemonic/anomaly.grid.png)
+
 **Label:** cell 1, Flash's pick for the card. In cells 3 and 7 the orange tile sits on top of the wall's grout lines, which is a drawing error.
 
 ## Reviews

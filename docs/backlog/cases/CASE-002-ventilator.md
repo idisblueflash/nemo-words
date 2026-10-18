@@ -9,6 +9,9 @@ items: [SP-029, SP-064, SP-066]
 # CASE-002 ventilator
 
 **Input:** the story "Nurse Venice returns later; the machine breathes for the newborn." and the grid `images/mnemonic/ventilator.grid.png`.
+
+![The ventilator grid: cells 1–3 on the top row, 7–9 on the bottom row](../../../images/mnemonic/ventilator.grid.png)
+
 **Label:** cell 8, Flash's pick for the card. After SP-066 stage 2, Flash thinks cells 1 and 7 are better (see Reviews). The label stays 8 until Flash changes it, so the trials of SP-029, SP-064 and SP-066 compare.
 
 ## Reviews
