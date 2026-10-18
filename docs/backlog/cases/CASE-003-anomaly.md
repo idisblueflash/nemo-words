@@ -17,6 +17,7 @@ items: [SP-029, SP-064, SP-066, SP-069]
 ## Reviews
 - 2026-10-15, SP-029: Flash's pick for the card is cell 1. (Found again by a pixel match with the final crop.)
 - 2026-10-17, after SP-066 stage 5 (in the agent's words, from SP-066's open questions, not Flash's): "Flash thinks anomaly cell 7 would be the most plausible cell without its drawing error (the crack is near the door that is knocked on)." Label stays 1.
+- 2026-10-19, after SP-069 (about cell 4, where only the family's feet show): "This case is a partly cut, and it removed the action of people." Label stays 1.
 
 ## Trials
 | Date | Item | Run | Answer | Top 3 | Label's rank | Below the pick by | Report |
