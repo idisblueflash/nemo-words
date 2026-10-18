@@ -1540,5 +1540,1219 @@
       "ms": 15559,
       "costUsd": 0
     }
+  },
+  "surgeon.grid.png": {
+    "1": {
+      "objects": [
+        {
+          "name": "the main subject of the picture (the one thing or person the scene is about)",
+          "adjectives": [
+            "elderly",
+            "female",
+            "surgeon",
+            "focused",
+            "wearing scrubs"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "attached to head",
+            "glowing",
+            "yellow light"
+          ]
+        },
+        {
+          "name": "operating room",
+          "adjectives": [
+            "dark",
+            "medical",
+            "sterile"
+          ]
+        },
+        {
+          "name": "surgical instruments",
+          "adjectives": [
+            "held",
+            "metal",
+            "in hands"
+          ]
+        },
+        {
+          "name": "surgical drape",
+          "adjectives": [
+            "covering patient",
+            "gray"
+          ]
+        },
+        {
+          "name": "surgical light",
+          "adjectives": [
+            "overhead",
+            "circular",
+            "dark"
+          ]
+        },
+        {
+          "name": "wall outlet",
+          "adjectives": [
+            "electrical",
+            "gray"
+          ]
+        },
+        {
+          "name": "monitor",
+          "adjectives": [
+            "black screen",
+            "medical equipment"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The surgeon is performing surgery, holding instruments and looking down at the patient.",
+      "extras": {
+        "floor": false,
+        "background": "operating room",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "2f256171f19e8b98",
+      "ms": 31412,
+      "costUsd": 0
+    },
+    "2": {
+      "objects": [
+        {
+          "name": "the main subject of the picture (the one thing or person the scene is about)",
+          "adjectives": [
+            "surgeon",
+            "elderly",
+            "focused"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "worn",
+            "glowing"
+          ]
+        },
+        {
+          "name": "operating room",
+          "adjectives": [
+            "dark",
+            "sterile",
+            "clinical"
+          ]
+        },
+        {
+          "name": "surgical table",
+          "adjectives": [
+            "covered",
+            "centered"
+          ]
+        },
+        {
+          "name": "surgical light",
+          "adjectives": [
+            "overhead",
+            "bright",
+            "focused"
+          ]
+        },
+        {
+          "name": "IV pole",
+          "adjectives": [
+            "metal",
+            "tall"
+          ]
+        },
+        {
+          "name": "stool",
+          "adjectives": [
+            "black",
+            "medical"
+          ]
+        },
+        {
+          "name": "monitor",
+          "adjectives": [
+            "black",
+            "unlit"
+          ]
+        },
+        {
+          "name": "wall panel",
+          "adjectives": [
+            "with switch",
+            "with lightning bolt"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "high angle",
+      "step": "during",
+      "action": "The surgeon, wearing a headlamp, performs surgery on a patient under a surgical light.",
+      "extras": {
+        "floor": false,
+        "background": "operating room",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "2f256171f19e8b98",
+      "ms": 32037,
+      "costUsd": 0
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "the main subject of the picture (the one thing or person the scene is about)",
+          "adjectives": [
+            "elderly",
+            "female",
+            "surgeon",
+            "focused",
+            "wearing mask"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "worn",
+            "glowing",
+            "yellow light"
+          ]
+        },
+        {
+          "name": "operating room",
+          "adjectives": [
+            "dark",
+            "surgical",
+            "with surgical lights"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The elderly female surgeon, wearing a headlamp, is focused on a surgical procedure in the dark operating room.",
+      "extras": {
+        "floor": false,
+        "background": "dark operating room with surgical lights",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "2f256171f19e8b98",
+      "ms": 24234,
+      "costUsd": 0
+    },
+    "4": {
+      "objects": [
+        {
+          "name": "the main subject of the picture (the one thing or person the scene is about)",
+          "adjectives": [
+            "elderly",
+            "female",
+            "surgeon",
+            "focused"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "worn",
+            "on head"
+          ]
+        },
+        {
+          "name": "operating room",
+          "adjectives": [
+            "dark",
+            "clinical"
+          ]
+        },
+        {
+          "name": "surgical tools",
+          "adjectives": [
+            "on tray",
+            "metal"
+          ]
+        },
+        {
+          "name": "patient",
+          "adjectives": [
+            "underdrape",
+            "not visible"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "overhead",
+      "step": "during",
+      "action": "the main subject of the picture (the one thing or person the scene is about) performs surgery using surgical tools.",
+      "extras": {
+        "floor": false,
+        "background": "dark operating room",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "back",
+      "promptKey": "2f256171f19e8b98",
+      "ms": 26224,
+      "costUsd": 0
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "the main subject of the picture (the one thing or person the scene is about)",
+          "adjectives": [
+            "surgeon",
+            "focused",
+            "wearing",
+            "green scrubs",
+            "headlamp"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "worn",
+            "on head",
+            "emitting light"
+          ]
+        },
+        {
+          "name": "operating room",
+          "adjectives": [
+            "dark",
+            "medical equipment",
+            "sterile"
+          ]
+        },
+        {
+          "name": "surgical instruments",
+          "adjectives": [
+            "on tray",
+            "scissors",
+            "metal"
+          ]
+        },
+        {
+          "name": "patient",
+          "adjectives": [
+            "covered",
+            "blue drape",
+            "under light"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "high angle",
+      "step": "during",
+      "action": "The surgeon, wearing a headlamp, performs surgery on a patient under a focused light.",
+      "extras": {
+        "floor": false,
+        "background": "dark operating room with medical equipment",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "2f256171f19e8b98",
+      "ms": 26401,
+      "costUsd": 0
+    },
+    "6": {
+      "objects": [
+        {
+          "name": "the main subject of the picture (the one thing or person the scene is about)",
+          "adjectives": [
+            "elderly",
+            "medical",
+            "focused",
+            "wearing glasses",
+            "wearing a mask"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "attached to head",
+            "bright",
+            "yellow light"
+          ]
+        }
+      ],
+      "shot": "extreme close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "the main subject of the picture (the one thing or person the scene is about) looks intently forward while wearing a headlamp.",
+      "extras": {
+        "floor": false,
+        "background": "dark",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "front",
+      "promptKey": "2f256171f19e8b98",
+      "ms": 21494,
+      "costUsd": 0
+    },
+    "7": {
+      "objects": [
+        {
+          "name": "the main subject of the picture (the one thing or person the scene is about)",
+          "adjectives": [
+            "elderly",
+            "female",
+            "surgeon",
+            "focused",
+            "wearing mask",
+            "wearing glasses"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "attached to head",
+            "glowing",
+            "yellow light"
+          ]
+        },
+        {
+          "name": "operating room",
+          "adjectives": [
+            "dark",
+            "medical",
+            "with equipment"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The surgeon is performing surgery, using a scalpel on a patient under a headlamp.",
+      "extras": {
+        "floor": false,
+        "background": "medical room with surgical lights and monitors",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "2f256171f19e8b98",
+      "ms": 24670,
+      "costUsd": 0
+    },
+    "8": {
+      "objects": [
+        {
+          "name": "the main subject of the picture (the one thing or person the scene is about)",
+          "adjectives": [
+            "elderly",
+            "female",
+            "surgeon",
+            "focused"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "attached",
+            "glowing",
+            "head-mounted"
+          ]
+        },
+        {
+          "name": "operating room",
+          "adjectives": [
+            "dark",
+            "clinical",
+            "sterile"
+          ]
+        },
+        {
+          "name": "patient",
+          "adjectives": [
+            "covered",
+            "lying down",
+            "under surgery"
+          ]
+        },
+        {
+          "name": "surgical instrument",
+          "adjectives": [
+            "metal",
+            "held",
+            "in use"
+          ]
+        },
+        {
+          "name": "surgical glove",
+          "adjectives": [
+            "white",
+            "worn",
+            "on hand"
+          ]
+        },
+        {
+          "name": "surgical mask",
+          "adjectives": [
+            "covering mouth",
+            "covering nose",
+            "on face"
+          ]
+        },
+        {
+          "name": "surgical cap",
+          "adjectives": [
+            "green",
+            "covering hair",
+            "on head"
+          ]
+        },
+        {
+          "name": "surgical tray",
+          "adjectives": [
+            "metal",
+            "in foreground",
+            "empty"
+          ]
+        },
+        {
+          "name": "monitor",
+          "adjectives": [
+            "black screen",
+            "on wall",
+            "inactive"
+          ]
+        },
+        {
+          "name": "another person",
+          "adjectives": [
+            "assistant",
+            "partially visible",
+            "hand extended"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "side",
+      "step": "during",
+      "action": "The main subject, a surgeon, holds a surgical instrument while another person hands it over.",
+      "extras": {
+        "floor": false,
+        "background": "dark operating room with medical equipment",
+        "morePeople": true,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "2f256171f19e8b98",
+      "ms": 37261,
+      "costUsd": 0
+    },
+    "9": {
+      "objects": [
+        {
+          "name": "the main subject of the picture (the one thing or person the scene is about)",
+          "adjectives": [
+            "elderly",
+            "female",
+            "surgeon",
+            "focused"
+          ]
+        },
+        {
+          "name": "headlamp",
+          "adjectives": [
+            "worn",
+            "glowing",
+            "head-mounted"
+          ]
+        },
+        {
+          "name": "operating room",
+          "adjectives": [
+            "dark",
+            "medical",
+            "sterile"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The surgeon, wearing a headlamp, performs surgery on a patient under the operating room lights.",
+      "extras": {
+        "floor": false,
+        "background": "dark operating room with medical equipment",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "operating room": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "surgeon": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "headlamp": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "2f256171f19e8b98",
+      "ms": 23847,
+      "costUsd": 0
+    }
+  },
+  "sweep.grid.png": {
+    "1": {
+      "objects": [
+        {
+          "name": "person who swings and grabs the broom",
+          "adjectives": [
+            "elderly",
+            "gray-haired",
+            "wearing glasses",
+            "in red shirt",
+            "in green pants"
+          ]
+        },
+        {
+          "name": "broom",
+          "adjectives": [
+            "wooden-handled",
+            "yellow bristles"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The person swings their arms forward to grab the broom that is leaning against the wall.",
+      "extras": {
+        "floor": true,
+        "background": "light blue wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "089a37ad69eefde7",
+      "ms": 19035,
+      "costUsd": 0
+    },
+    "2": {
+      "objects": [
+        {
+          "name": "person who swings and grabs the broom",
+          "adjectives": [
+            "elderly",
+            "wearing glasses",
+            "with gray hair in a bun",
+            "in a red shirt",
+            "in green pants",
+            "in black slippers"
+          ]
+        },
+        {
+          "name": "broom",
+          "adjectives": [
+            "wooden handle",
+            "yellow bristles",
+            "leaning against wall"
+          ]
+        },
+        {
+          "name": "corner",
+          "adjectives": [
+            "wall corner"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "low angle",
+      "step": "during",
+      "action": "The elderly person is crouching low, reaching out with both hands to grab the broom that is leaning against the wall.",
+      "extras": {
+        "floor": true,
+        "background": "light blue wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "089a37ad69eefde7",
+      "ms": 21494,
+      "costUsd": 0
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "person who swings and grabs the broom",
+          "adjectives": [
+            "elderly",
+            "female",
+            "wearing glasses",
+            "with gray hair in a bun",
+            "in red shirt",
+            "in green pants"
+          ]
+        },
+        {
+          "name": "broom",
+          "adjectives": [
+            "yellow bristles",
+            "wooden handle",
+            "leaning against wall"
+          ]
+        },
+        {
+          "name": "corner",
+          "adjectives": [
+            "inside room",
+            "formed by two walls"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "low angle",
+      "step": "during",
+      "action": "The person swings their body forward and reaches out to grab the broom that is leaning in the corner.",
+      "extras": {
+        "floor": true,
+        "background": "blue walls",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "back",
+      "promptKey": "089a37ad69eefde7",
+      "ms": 21493,
+      "costUsd": 0
+    },
+    "4": {
+      "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "elderly",
+            "gray-haired",
+            "wearing glasses",
+            "wearing a red shirt",
+            "wearing green pants"
+          ]
+        },
+        {
+          "name": "broom",
+          "adjectives": [
+            "yellow bristles",
+            "wooden handle"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "high angle",
+      "step": "during",
+      "action": "The person swings their body and reaches out to grab the broom as it flies away.",
+      "extras": {
+        "floor": true,
+        "background": "blue wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "089a37ad69eefde7",
+      "ms": 18752,
+      "costUsd": 0
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "person who swings and grabs the broom",
+          "adjectives": [
+            "elderly",
+            "wearing glasses",
+            "in red shirt",
+            "in green pants"
+          ]
+        },
+        {
+          "name": "broom",
+          "adjectives": [
+            "yellow bristles",
+            "wooden handle"
+          ]
+        },
+        {
+          "name": "corner",
+          "adjectives": [
+            "wall corner"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "low angle",
+      "step": "during",
+      "action": "The person holds the broom and sweeps near the wall corner.",
+      "extras": {
+        "floor": true,
+        "background": "blue wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "089a37ad69eefde7",
+      "ms": 19685,
+      "costUsd": 0
+    },
+    "6": {
+      "objects": [
+        {
+          "name": "person who swings and grabs the broom",
+          "adjectives": [
+            "elderly",
+            "wearing glasses",
+            "with gray hair",
+            "in a red shirt",
+            "in green pants"
+          ]
+        },
+        {
+          "name": "broom",
+          "adjectives": [
+            "wooden handle",
+            "yellow bristles"
+          ]
+        },
+        {
+          "name": "corner",
+          "adjectives": [
+            "wall corner"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "low angle",
+      "step": "during",
+      "action": "The elderly person swings and grabs the broom with one hand while crouching.",
+      "extras": {
+        "floor": true,
+        "background": "blue wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "089a37ad69eefde7",
+      "ms": 20414,
+      "costUsd": 0
+    },
+    "7": {
+      "objects": [
+        {
+          "name": "person who swings and grabs the broom",
+          "adjectives": [
+            "elderly",
+            "female",
+            "wearing glasses",
+            "gray hair in bun",
+            "in red shirt",
+            "in green pants"
+          ]
+        },
+        {
+          "name": "broom",
+          "adjectives": [
+            "wooden handle",
+            "yellow bristles"
+          ]
+        },
+        {
+          "name": "corner",
+          "adjectives": [
+            "wall corner"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The person swings their body and grabs the broom with one hand while leaning against the wall corner.",
+      "extras": {
+        "floor": true,
+        "background": "light blue wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "side",
+      "promptKey": "089a37ad69eefde7",
+      "ms": 21085,
+      "costUsd": 0
+    },
+    "8": {
+      "objects": [
+        {
+          "name": "person who swings and grabs the broom",
+          "adjectives": [
+            "elderly",
+            "wearing glasses",
+            "smiling",
+            "holding broom"
+          ]
+        },
+        {
+          "name": "broom",
+          "adjectives": [
+            "yellow",
+            "wooden handle",
+            "straw bristles"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "low angle",
+      "step": "during",
+      "action": "The elderly person holds the broom tightly with both hands, leaning forward as if sweeping or about to swing it.",
+      "extras": {
+        "floor": true,
+        "background": "light blue wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "hidden",
+          "size": null,
+          "place": null
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "089a37ad69eefde7",
+      "ms": 18415,
+      "costUsd": 0
+    },
+    "9": {
+      "objects": [
+        {
+          "name": "person who swings and grabs the broom",
+          "adjectives": [
+            "elderly",
+            "wearing glasses",
+            "wearing a red sweater",
+            "wearing green pants",
+            "smiling"
+          ]
+        },
+        {
+          "name": "broom",
+          "adjectives": [
+            "wooden handle",
+            "yellow bristles",
+            "in motion"
+          ]
+        },
+        {
+          "name": "corner",
+          "adjectives": [
+            "inside",
+            "blue wall"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The person holds and swings the broom across the floor.",
+      "extras": {
+        "floor": true,
+        "background": "blue wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "corner": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        },
+        "broom": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "089a37ad69eefde7",
+      "ms": 20681,
+      "costUsd": 0
+    }
   }
 }

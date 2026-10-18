@@ -2085,5 +2085,239 @@
     "invented": [],
     "note": "Both items are marked 'visible', but the picture's edges cut them off: the pier runs off the bottom and sides, and the sea runs off the left edge. The caption also calls the sea large when it is a medium band, and the drawingErrors list leaves out the sea ending in an odd straight edge on the right.",
     "costUsd": 0.0735248
+  },
+  "qwen/qwen3-vl-8b|surgeon.grid.png|3": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The surgeon fills most of the frame and the bottom edge cuts her off, so she should be marked large and partly cut, not medium and visible.",
+    "costUsd": 0.070295
+  },
+  "qwen/qwen3-vl-8b|surgeon.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The drawingErrors list is empty, but a yellow lightning-bolt symbol floats beside the wall outlet and should have been listed.",
+    "costUsd": 0.0742016
+  },
+  "qwen/qwen3-vl-8b|surgeon.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The surgeon is marked 'visible', but the bottom and left edges cut off her body. The view is a three-quarter back (over-the-shoulder) view with part of her face showing, not a full back view.",
+    "costUsd": 0.0711744
+  },
+  "qwen/qwen3-vl-8b|surgeon.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The surgeon is drawn in three-quarter view, not side view, and stands behind the table in the middle of the picture, not at the front; the overhead surgical light is off, and the only light comes from the headlamp.",
+    "costUsd": 0.0764698
+  },
+  "qwen/qwen3-vl-8b|surgeon.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The caption gives mainView as 'side', but the picture shows the surgeon from above, looking down from overhead at the head and shoulders.",
+    "costUsd": 0.0694302
+  },
+  "qwen/qwen3-vl-8b|surgeon.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The surgeon is marked visible, but the top and right edges cut the head off, so it should be partly cut; the surgeon also looks down and to the left, not forward, in a three-quarter view.",
+    "costUsd": 0.0712796
+  },
+  "qwen/qwen3-vl-8b|surgeon.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The action line leaves out that the surgeon has stopped and is looking at the sparking wall outlet. It says only that she is operating.",
+    "costUsd": 0.0707068
+  },
+  "qwen/qwen3-vl-8b|surgeon.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The surgeon is marked 'visible', but the left and bottom edges of the picture cut off her body, so she is partly cut. The operating room fills the whole background, so it is large, not medium.",
+    "costUsd": 0.073209
+  },
+  "qwen/qwen3-vl-8b|surgeon.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The surgeon faces almost straight forward with the head bent down, not in three-quarter view, and the light comes from the headlamp because the overhead operating room lamp looks dark.",
+    "costUsd": 0.071172
+  },
+  "qwen/qwen3-vl-8b|sweep.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The woman lunges and reaches toward the broom with one outstretched arm and hasn't touched it yet, so 'swings their arms forward to grab' is a little off.",
+    "costUsd": 0.072285
+  },
+  "qwen/qwen3-vl-8b|sweep.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption says she reaches with both hands, but only her right hand reaches for the broom; her left arm swings back behind her.",
+    "costUsd": 0.072828
+  },
+  "qwen/qwen3-vl-8b|sweep.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The scored parts are accurate. The worst error is the unscored 'low angle': the scene is seen from above. The broom also leans on the right wall just beside the corner, not in it.",
+    "costUsd": 0.0707942
+  },
+  "qwen/qwen3-vl-8b|sweep.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The person is drawn from directly above, not from the side. The broom also sits at the back against the corner wall, not in front, and it leans there rather than clearly flying away.",
+    "costUsd": 0.07293
+  },
+  "qwen/qwen3-vl-8b|sweep.grid.png|5": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the broom as visible, but the top edge of the picture cuts off the top of its handle, so it should be partly cut.",
+    "costUsd": 0.0728068
+  },
+  "qwen/qwen3-vl-8b|sweep.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error: the caption matches the picture well. At most, the broom's 'front' place is arguable, since it stands near the wall corner.",
+    "costUsd": 0.0716336
+  },
+  "qwen/qwen3-vl-8b|sweep.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The action says she leans against the wall corner, but she is lunging and reaching for the broom without touching the wall; also, the broom stands in the back corner, not in front.",
+    "costUsd": 0.0704912
+  },
+  "qwen/qwen3-vl-8b|sweep.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error found: the elderly woman sweeps with a yellow broom in front of a blue-walled corner, and the caption describes this correctly.",
+    "costUsd": 0.0665702
+  },
+  "qwen/qwen3-vl-8b|sweep.grid.png|8": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks the corner as hidden, but you can see the wall corner behind the broom handle at upper right. It marks the broom as fully visible, but the picture's top and bottom edges cut it off.",
+    "costUsd": 0.0727072
   }
 }
