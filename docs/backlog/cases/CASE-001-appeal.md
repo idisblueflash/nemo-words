@@ -4,7 +4,7 @@ type: case
 status: open
 subject: appeal
 label: "9"
-items: [SP-029, SP-064, SP-066]
+items: [SP-029, SP-064, SP-066, SP-069]
 ---
 # CASE-001 appeal
 
@@ -26,3 +26,4 @@ items: [SP-029, SP-064, SP-066]
 | 2026-10-16 | SP-064 | tuning, weights 3·1·3 | 5 | 5, 1, 6 | 4 of 7 | 2.27 | reports/SP-064-must-see-image-pick.md |
 | 2026-10-18 | SP-066 | change 4 (1, 2, 4 kept), weights 2·1·1 | 1 | 1, 6, 5 | 4 of 7 | 0.81 | reports/SP-066-appeal-case.md |
 | 2026-10-18 | SP-066 | change 4, weights 3·2·3 | 6 | 6, 1, 5 | 4 of 7 | 1.94 | reports/SP-066-tuning-five-changes.md |
+| 2026-10-19 | SP-069 | captions by `qwen3-vl-8b`: Opus mean 2.45 (Sonnet 2.85), 7 of 9 parse | — | — | — | — | reports/SP-069-cheaper-caption-models.md |
