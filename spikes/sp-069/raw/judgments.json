@@ -2319,5 +2319,3495 @@
     "invented": [],
     "note": "The caption marks the corner as hidden, but you can see the wall corner behind the broom handle at upper right. It marks the broom as fully visible, but the picture's top and bottom edges cut it off.",
     "costUsd": 0.0727072
+  },
+  "sonnet|overreach.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The main view is labelled 'side', but we see the back of the hand and the arm from behind the man, so 'back' (or three-quarter back) fits better.",
+    "costUsd": 0.270612
+  },
+  "sonnet|overreach.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the caption matches the picture well, though calling the peach tree 'back' is a loose call since the branch holds the man up front.",
+    "costUsd": 0.2701716
+  },
+  "sonnet|overreach.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the peach the man reaches for as partly cut, but the edge of the picture doesn't cut it, so it is fully visible.",
+    "costUsd": 0.2713562
+  },
+  "sonnet|overreach.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption calls the peach medium, but it takes up a large part of the lower right of the picture.",
+    "costUsd": 0.2718482
+  },
+  "sonnet|overreach.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the man lies on a branch, his boots are cut off by the top edge, and he reaches down toward the small peach, all seen from above.",
+    "costUsd": 0.069135
+  },
+  "sonnet|overreach.grid.png|8": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the man falls headfirst from the peach tree as peaches and leaves drop around him, and the tree is partly cut by the left and top edges.",
+    "costUsd": 0.07104060000000001
+  },
+  "sonnet|overreach.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the peach as partly cut, but it is fully visible at the upper right.",
+    "costUsd": 0.0713268
+  },
+  "sonnet|overreach.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error. The thin strip of peaches and leaves cut off at the bottom edge looks like it bled in from another panel, but the caption describes it correctly.",
+    "costUsd": 0.07410939999999999
+  },
+  "sonnet|appeal.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The crowd is drawn mostly from the front (the boy, the elderly woman and the hatted man face the viewer), so 'three-quarter' for the main view and some onlooker views is slightly off.",
+    "costUsd": 0.0743516
+  },
+  "sonnet|appeal.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The auburn-haired woman is mostly seen from behind (a back three-quarter view), not the plain three-quarter view the caption gives.",
+    "costUsd": 0.07750960000000001
+  },
+  "sonnet|appeal.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the caption gets the swinging bell (cut off at the top), the startled boy at lower right and the missing crowd right.",
+    "costUsd": 0.0696116
+  },
+  "sonnet|overreach.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the dazed man on his back, the fallen peach between his feet and the partly cut peach tree all match the picture.",
+    "costUsd": 0.0696004
+  },
+  "sonnet|appeal.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the caption matches the picture. The bell, the frame, the rope, the ringer and the three watchers seen from behind and the side are all described correctly.",
+    "costUsd": 0.0728232
+  },
+  "sonnet|appeal.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The crowd is labelled 'back', but it surrounds the bell on all sides and the rope-puller stands in front of it, so 'back' is only partly right.",
+    "costUsd": 0.0761886
+  },
+  "sonnet|appeal.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The crowd is called large and in front, but it stands behind the bell ringer in the middle of the picture and takes up only a medium amount of it.",
+    "costUsd": 0.0765794
+  },
+  "sonnet|appeal.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 1,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The boy, the woman and the older woman are part of the crowd, which is the main subject, and they react to the bell along with the old man, so they should not be listed as onlookers.",
+    "costUsd": 0.07745859999999999
+  },
+  "sonnet|appeal.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors. At most a nitpick: the red-haired woman is seen mostly from behind, so 'three-quarter' is slightly generous, but it is acceptable as a rear three-quarter view.",
+    "costUsd": 0.0750956
+  },
+  "sonnet|appeal.grid.png|8": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The onlookers list is empty, but the boy only watches the bell from a front three-quarter view and does not pull the rope, so he should be listed as an onlooker.",
+    "costUsd": 0.0717466
+  },
+  "sonnet|rigged.grid-2.png|1": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The clerk and the ballot box are marked 'partly cut', but no picture edge cuts either one: the clerk's lower body is only hidden behind the box and table, and the box sits fully inside the frame.",
+    "costUsd": 0.0752376
+  },
+  "sonnet|rigged.grid-2.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error; the caption could call the ballots small rather than medium, but that is a borderline call.",
+    "costUsd": 0.070959
+  },
+  "sonnet|rigged.grid-2.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The clerk faces the viewer almost head-on from a high angle, so 'front' fits better than 'three-quarter'; everything else matches the picture.",
+    "costUsd": 0.0713482
+  },
+  "sonnet|rigged.grid-2.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The clerk is looking toward the ballots and the box slot, not glancing sideways at the viewer.",
+    "costUsd": 0.07353019999999999
+  },
+  "sonnet|rigged.grid-2.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors. Calling the ballots 'crumpled' is a stretch, since they look more fanned than crumpled.",
+    "costUsd": 0.0676834
+  },
+  "sonnet|rigged.grid-2.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The clerk is marked 'visible', but the bottom edge of the picture cuts off the lower body, so it should be 'partly cut'. The box base may also touch the edge.",
+    "costUsd": 0.0741238
+  },
+  "sonnet|rigged.grid-2.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The ballot box is marked visible, but the bottom edge of the picture cuts it off, so it should be partly cut.",
+    "costUsd": 0.07176740000000001
+  },
+  "sonnet|rigged.grid-2.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The clerk faces almost straight at the viewer with the head only slightly turned, so 'three-quarter' is a little off; 'front' fits better.",
+    "costUsd": 0.0728226
+  },
+  "sonnet|rigged.grid-2.png|9": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The ballot box is marked 'partly cut', but the whole box is inside the frame with a little floor showing below it.",
+    "costUsd": 0.071095
+  },
+  "sonnet|worn.grid.png|1": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The tire and tread are marked 'partly cut', but the picture shows the whole front tire and tread with no edge cutting them off.",
+    "costUsd": 0.07684540000000001
+  },
+  "sonnet|worn.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 1,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The driver is listed as an onlooker, but the driver is the one being warned, so the onlookers list should be empty.",
+    "costUsd": 0.0773204
+  },
+  "sonnet|worn.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The driver is listed as an onlooker, but the mechanic is warning the driver, so the driver takes part in the main action.",
+    "costUsd": 0.07270940000000001
+  },
+  "sonnet|worn.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 1,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The driver is listed as an onlooker, but the driver is the one being warned, so they take part in the main action and the list should be empty.",
+    "costUsd": 0.0765092
+  },
+  "sonnet|worn.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the caption matches the picture, and calling the bright red-orange tread band 'worn' is only a small stretch.",
+    "costUsd": 0.0726774
+  },
+  "sonnet|worn.grid.png|5": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The tread is marked visible, but the bottom edge of the picture cuts it off along with the tire, so it should be partly cut. The driver also seems to look at the mechanic more than at the tire.",
+    "costUsd": 0.074608
+  },
+  "sonnet|worn.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 1,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The man in yellow is the driver being warned, so he is part of the main action, but the caption lists him as an onlooker; it also misses the right edge cutting off his back (should be partly cut).",
+    "costUsd": 0.0777422
+  },
+  "sonnet|worn.grid.png|8": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The red tread fills much of the bottom of the frame, so it is large rather than medium; the huge tire across the dashboard also looks pasted on, but drawingErrors is empty.",
+    "costUsd": 0.07704659999999999
+  },
+  "sonnet|cottage.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors; at most, calling the chimney 'tall' is a slight stretch.",
+    "costUsd": 0.0696814
+  },
+  "sonnet|worn.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error: the caption matches the picture. The only weak point is that the tire is described as both black and red-orange, but the picture does show a black tire with a red-orange tread.",
+    "costUsd": 0.0741454
+  },
+  "sonnet|cottage.grid.png|1": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The distant ridge runs off the left and right edges of the panel, so it should be marked partly cut rather than visible.",
+    "costUsd": 0.0736276
+  },
+  "sonnet|cottage.grid.png|3": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The ridge is marked 'visible' but it runs past the picture's edges, so 'partly cut' fits better; the rest matches the picture.",
+    "costUsd": 0.0728402
+  },
+  "sonnet|cottage.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the man, red hooded jacket, backpack, shielding hand, rain, thatched cottage with chimney, red door and lit window, ridge and storm clouds are all in the picture as described.",
+    "costUsd": 0.07231
+  },
+  "sonnet|cottage.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The tiny house is placed in the front, but both hikers overlap it, so it sits behind them. Also, the red hiker is seen more from a back three-quarter view than a pure side view.",
+    "costUsd": 0.07443559999999999
+  },
+  "sonnet|cottage.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No significant errors; at most, placing the house in the 'back' is debatable because it sits in the midground on the ridge.",
+    "costUsd": 0.0715418
+  },
+  "sonnet|cottage.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error: the hooded hikers, the thatched stone cottage with its glowing window and chimney, the slanting rain at upper right and the small green patch all match; the ridge is correctly marked hidden.",
+    "costUsd": 0.0721548
+  },
+  "sonnet|cottage.grid.png|8": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the caption matches the picture well. At most, the ridge could be called small rather than medium.",
+    "costUsd": 0.0725884
+  },
+  "sonnet|cottage.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error: the caption matches the picture closely. The only doubtful mark is the ridge as 'hidden', since the grassy slope behind the man could pass for a ridge.",
+    "costUsd": 0.077272
+  },
+  "sonnet|cocked.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The man is drawn in a three-quarter back view with only his face in profile, not a plain side view, and the cat faces mostly front rather than three-quarter.",
+    "costUsd": 0.073866
+  },
+  "sonnet|cocked.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors; at most, the cat's view could be read as nearly front instead of three-quarter because its head is tilted.",
+    "costUsd": 0.0698024
+  },
+  "sonnet|cocked.grid.png|3": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The door is marked visible, but the top edge of the picture cuts it off, so it should be partly cut. The cat's view is closer to front than three-quarter.",
+    "costUsd": 0.0741212
+  },
+  "sonnet|cocked.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Small slip only: the man is called 'small' in his adjectives but 'medium' in mustSee, and the 'high angle' does not match the eye-level view.",
+    "costUsd": 0.07247
+  },
+  "sonnet|cocked.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error: the man, cat on the mat, door and knocking action all match; the cat's 'back' place is a judgment call since it sits beside the man.",
+    "costUsd": 0.07116700000000001
+  },
+  "sonnet|cocked.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Small error: the caption calls the door 'partly open', but it looks closed while the man knocks on it; everything else matches.",
+    "costUsd": 0.0714976
+  },
+  "sonnet|cocked.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "Only the man's arm and fist show, so his body view can't really be judged; 'side' is a guess and null would fit better.",
+    "costUsd": 0.2754856
+  },
+  "sonnet|cocked.grid.png|8": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The man's face is in profile, but his body is turned partly away from us, so 'side' is close but closer to a back three-quarter view.",
+    "costUsd": 0.0727366
+  },
+  "sonnet|cocked.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The cat is listed as an onlooker, but the man is smiling at it and it is looking up at his knock, so it is part of the main action.",
+    "costUsd": 0.07213
+  },
+  "sonnet|contest.grid.png|1": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The audience is drawn as flat silhouettes, so their 'back' view can't be confirmed. The con faces the viewer almost straight on, which is closer to a front view than three-quarter. The spelling test looks fully shown, not cut by the edge.",
+    "costUsd": 0.0754956
+  },
+  "sonnet|contest.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error; the caption matches the picture closely. The audience silhouettes' 'back' view is only a slight uncertainty.",
+    "costUsd": 0.072528
+  },
+  "sonnet|contest.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors. The con is seen over the shoulder from behind and a little to the side, so 'back' is close enough to count as correct.",
+    "costUsd": 0.07131799999999999
+  },
+  "sonnet|contest.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The con is marked 'visible', but the left edge of the picture cuts off his striped left shoulder and sleeve, so 'partly cut' fits better.",
+    "costUsd": 0.0714254
+  },
+  "sonnet|contest.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors. The caption matches the picture, though the face could be called slightly three-quarter instead of front.",
+    "costUsd": 0.0686612
+  },
+  "sonnet|contest.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the faint audience silhouettes behind the TV are there, though it is hard to tell which way they face.",
+    "costUsd": 0.09300359999999999
+  },
+  "sonnet|contest.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error; at most, 'dark' and 'blank-screened' undersell the TV, whose blank screen is light blue inside a dark frame.",
+    "costUsd": 0.0722124
+  },
+  "sonnet|contest.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error: the silhouettes' back view is hard to confirm, but every listed item matches the picture.",
+    "costUsd": 0.0697422
+  },
+  "sonnet|contest.grid.png|8": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The con's body and face point almost straight at the viewer with only a slight head tilt, so 'three-quarter' is a borderline call; 'front' fits better.",
+    "costUsd": 0.0733066
+  },
+  "sonnet|concocted.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Minor: the chef is called 'mustachioed', but he has no clear mustache; everything else matches the picture.",
+    "costUsd": 0.0750436
+  },
+  "sonnet|concocted.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The action says the chef looks sideways toward the viewer, but his eyes look off to the right side, not at the viewer.",
+    "costUsd": 0.0707744
+  },
+  "sonnet|concocted.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the caption matches the picture of the chef seen from above, smirking and stirring orange soup in a large pot. The hat nearly touches the top edge, but it still counts as visible.",
+    "costUsd": 0.0698062
+  },
+  "sonnet|concocted.grid.png|3": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The chef is marked 'visible', but the bottom and right edges of the picture cut off the body, so the mark should be 'partly cut'.",
+    "costUsd": 0.0722718
+  },
+  "sonnet|concocted.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error: the chef is partly cut, large and in front, stirring the orange soup with a wooden spoon while glancing sideways with a sly smile; at most, 'double-breasted' is a stretch since only one button shows.",
+    "costUsd": 0.0698166
+  },
+  "sonnet|concocted.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the chef as visible, but the right edge cuts off their shoulder and the bottom edge cuts off their body, so it should be partly cut. The raised hand is cupped beside the face like a secretive gesture, not clearly wafting steam.",
+    "costUsd": 0.0776856
+  },
+  "sonnet|concocted.grid.png|8": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Mostly accurate; the only slip is the 'mustached' adjective, since the chef shows no clear mustache.",
+    "costUsd": 0.0699308
+  },
+  "sonnet|concocted.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error: the chef is correctly partly cut, large and in front, and the spoon dripping sauce over the steaming pot is described accurately.",
+    "costUsd": 0.0715968
+  },
+  "sonnet|concocted.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the chef stirs orange soup with a wooden spoon, holds a blank paper and gives it a skeptical side glance, with a window, a tree and a potted plant behind; the only doubt is that the pot and the bottom edge hide the chef's lower body, which still fits 'visible'.",
+    "costUsd": 0.072802
+  },
+  "sonnet|spilled.grid-2.png|1": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The desk is marked 'visible', but the picture's left, right and bottom edges cut it off, so it should be 'partly cut'; the mug is also called 'empty' while coffee is still pouring out of it.",
+    "costUsd": 0.0728202
+  },
+  "sonnet|spilled.grid-2.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "No real errors. The caption calls the mug 'empty', which the picture can't confirm, but every listed object is shown.",
+    "costUsd": 0.0687734
+  },
+  "sonnet|spilled.grid-2.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "No real errors; the mug's 'back' place is arguable, since it sits near the front edge of the desk, but this is minor.",
+    "costUsd": 0.0717936
+  },
+  "sonnet|spilled.grid-2.png|5": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption marks the desk as visible, but the left and right edges of the picture cut it off, so it should be partly cut.",
+    "costUsd": 0.0718506
+  },
+  "sonnet|spilled.grid-2.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption places the spoon in the back, but it flies beside the mug on about the same plane, so 'back' is doubtful.",
+    "costUsd": 0.07219600000000001
+  },
+  "sonnet|spilled.grid-2.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption marks the desk as visible, but it runs off both the left and right edges of the panel, so it should be partly cut.",
+    "costUsd": 0.0729852
+  },
+  "sonnet|spilled.grid-2.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption puts the desk in the back, but the desk runs to the bottom edge of the panel under the mug and the spill, so it is in the front.",
+    "costUsd": 0.0742732
+  },
+  "sonnet|spilled.grid-2.png|8": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "No real error: the man, tipped white mug, silver spoon, coffee spilling onto the floor and the partly cut desk are all described correctly.",
+    "costUsd": 0.07587959999999999
+  },
+  "sonnet|spilled.grid-2.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "No real error: the caption says the man 'stands apart from the desk', but he stands just behind it. That wording is a little loose but not wrong.",
+    "costUsd": 0.0725746
+  },
+  "sonnet|flustered.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption puts the mustard in the back, but the airborne bottle and its spray are at the waiter's depth, right by his raised hand, not behind him.",
+    "costUsd": 0.0716366
+  },
+  "sonnet|flustered.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The mustard is placed in the 'back', but it flies in mid-air at about the same depth as the waiter, and 'medium' overstates its size a little.",
+    "costUsd": 0.074099
+  },
+  "sonnet|flustered.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The mustard stream and drops take up only a medium share of the picture, not a large one. The rest of the caption matches the picture.",
+    "costUsd": 0.0714692
+  },
+  "sonnet|flustered.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the waiter, the mustard squirting off the top edge, the vest, the shirt, the hand and the flying droplets all match the picture.",
+    "costUsd": 0.0689384
+  },
+  "sonnet|flustered.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the waiter as fully visible, but the right edge of the picture cuts off part of his shoulder and arm, so he is partly cut.",
+    "costUsd": 0.0731236
+  },
+  "sonnet|flustered.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The action says the waiter looks at the mustard, but he stares straight ahead at the viewer, and the 'rolled-cuff' shirt detail is not clearly shown.",
+    "costUsd": 0.07322619999999999
+  },
+  "sonnet|flustered.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Small issue only: calling the bottle 'empty-looking' and 'tipped over' is a guess, since it sits upright at a slant in the splash, but the main facts are correct.",
+    "costUsd": 0.07605880000000001
+  },
+  "sonnet|flustered.grid.png|8": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Small adjective error: the shirt cuffs are buttoned, not rolled; otherwise the caption matches the picture",
+    "costUsd": 0.0697306
+  },
+  "sonnet|flustered.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption says the waiter is looking down at the fallen bottle, but he is looking forward, toward the viewer.",
+    "costUsd": 0.0757068
+  },
+  "sonnet|wore.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the striped pajamas, closed-eye smiling king, lion banner, archway, fallen helmet and partly cut sword all match the picture.",
+    "costUsd": 0.0699626
+  },
+  "sonnet|wore.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption says the king walks away from the battlefield, but he walks right, out from the castle and toward it; his body is also in three-quarter view, not side view.",
+    "costUsd": 0.0728232
+  },
+  "sonnet|wore.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the caption matches the picture (the king strides from a low angle, the bottom edge cuts off him and his pajamas, and the tower with its banner stands at the left).",
+    "costUsd": 0.0683604
+  },
+  "sonnet|wore.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors; at most, the king is seen from slightly to the side of straight behind, but 'back' is still a fair label.",
+    "costUsd": 0.0725522
+  },
+  "sonnet|wore.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the king's hair and beard are reddish-brown rather than clearly red, and the caption names only one slipper because only one shows.",
+    "costUsd": 0.0693894
+  },
+  "sonnet|wore.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error: the only doubtful detail is 'buttoned', because the buttons on the pajamas are hard to see.",
+    "costUsd": 0.07209
+  },
+  "sonnet|wore.grid.png|8": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The action says the king 'looks at neither', but only his legs and feet are shown, so we can't see where he is looking.",
+    "costUsd": 0.0682672
+  },
+  "sonnet|wore.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the caption matches the sleeping, crowned king in striped pajamas, cut off at the bottom edge.",
+    "costUsd": 0.068161
+  },
+  "sonnet|wore.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The foreground soldiers are seen mostly from behind or the side (back three-quarter), not in three-quarter front view as the onlooker list says.",
+    "costUsd": 0.0764822
+  },
+  "sonnet|hypernym.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error: the orange bird stands a little left of the perch's center, but this is minor and the rest of the caption matches the picture.",
+    "costUsd": 0.0727708
+  },
+  "sonnet|hypernym.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the perch as visible, but the bottom edge of the picture cuts off its base, so it should be partly cut.",
+    "costUsd": 0.071015
+  },
+  "sonnet|hypernym.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the orange bird stands on the partly cut tan perch and sings upward with one wing raised, and three gray birds look up at it.",
+    "costUsd": 0.0720342
+  },
+  "sonnet|hypernym.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the 'perch' looks more like a round wooden nest or platform, but the caption still describes it fairly.",
+    "costUsd": 0.0730298
+  },
+  "sonnet|hypernym.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The orange bird takes up a medium share of the picture, not a large one. The gray birds are seen more from behind (three-quarter back) than in three-quarter view.",
+    "costUsd": 0.0741316
+  },
+  "sonnet|hypernym.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The small gray bird half hidden behind the right bird faces left toward the orange bird in side or three-quarter view, but the caption gives its view as 'back' and its action as 'other'.",
+    "costUsd": 0.0729408
+  },
+  "sonnet|hypernym.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The action line says the orange bird is turned toward the gray bird on its right, but it mostly faces the viewer.",
+    "costUsd": 0.07385900000000001
+  },
+  "sonnet|hypernym.grid.png|8": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The marks are swapped: the orange bird is fully shown, not partly cut, and the perch's post is cut off by the bottom edge, so the perch is partly cut, not fully visible.",
+    "costUsd": 0.0732248
+  },
+  "sonnet|optimal.grid.png|1": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The shelter is marked fully visible, but the picture's left edge cuts off part of the cage row. The cat and rabbit are also called three-quarter view when they face mostly front.",
+    "costUsd": 0.074835
+  },
+  "sonnet|hypernym.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error: the caption matches the picture well, and the orange bird's head being close to side view is still a fair fit for three-quarter.",
+    "costUsd": 0.072594
+  },
+  "sonnet|optimal.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The shelter is marked 'visible', but the picture's edges cut off its cages on both sides, so it should be 'partly cut'.",
+    "costUsd": 0.0727478
+  },
+  "sonnet|optimal.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The dog is what the woman points at, so it is part of the main action and should not be listed as an onlooker.",
+    "costUsd": 0.0704742
+  },
+  "sonnet|optimal.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The shelter's kennels are cut off by the left and right edges of the picture, so its mark should be partly cut, not visible.",
+    "costUsd": 0.0716778
+  },
+  "sonnet|optimal.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption calls the fluffy animal in the foreground 'medium', but it fills about the bottom half of the panel, so 'large' fits better.",
+    "costUsd": 0.0711664
+  },
+  "sonnet|optimal.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "Only the woman's hand shows, so 'front' describes the dog, not her; the hand is also about medium size, not small.",
+    "costUsd": 0.0720908
+  },
+  "sonnet|optimal.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The rabbit faces the viewer from the front; it does not look away in three-quarter view. The picture's edges also cut off the kennels, so the shelter is partly cut rather than visible.",
+    "costUsd": 0.075879
+  },
+  "sonnet|optimal.grid.png|8": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The woman is drawn almost in side profile, not three-quarter, and the cat faces the viewer (front view), not three-quarter.",
+    "costUsd": 0.0763656
+  },
+  "sonnet|optimal.grid.png|9": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The shelter is marked 'visible', but the building runs past the edges of the picture, so it should be 'partly cut'.",
+    "costUsd": 0.072427
+  },
+  "sonnet|saturation.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The rain is placed 'back', but it falls across the whole picture, in front of the satchel as well as behind it.",
+    "costUsd": 0.0731408
+  },
+  "sonnet|saturation.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "No real errors. At most, the rations could be called medium rather than small, and they sit inside the satchel rather than clearly in the back.",
+    "costUsd": 0.0713768
+  },
+  "sonnet|saturation.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "No real errors: the satchel, the paper-wrapped rations, the canteen, the tent, the puddle, the rain and the grass are all shown and described correctly.",
+    "costUsd": 0.07069700000000001
+  },
+  "sonnet|saturation.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "No real errors: the open satchel in a puddle with four string-tied ration packs, a bottle, a tin can and falling rain is described correctly.",
+    "costUsd": 0.0695498
+  },
+  "sonnet|saturation.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption calls the rain medium, but the falling streaks fill only a small strip in the upper-right corner, so it should be small.",
+    "costUsd": 0.07188
+  },
+  "sonnet|saturation.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "No real errors: the satchel, rations, canteen, puddle, fence and rain all match the picture. Calling the rations 'back' is a loose fit, since they sit in the bag's open top behind the flap.",
+    "costUsd": 0.0721436
+  },
+  "sonnet|saturation.grid.png|8": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "No real error; rain is labeled 'back' even though it falls across the whole picture, including in front of the satchel, but this is minor.",
+    "costUsd": 0.0715026
+  },
+  "sonnet|saturation.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "No real errors; the caption matches the picture: an open satchel holding rations, a tin and a canteen, two packages in the puddle, and rain falling.",
+    "costUsd": 0.0710456
+  },
+  "sonnet|saturation.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The action line says water drips from the flap onto the packages and bottle inside, but the packages and bottle stick up above the flap, so water drips from the flap only onto the puddle below.",
+    "costUsd": 0.0744756
+  },
+  "sonnet|synonym.grid.png|1": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 1,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The drawingErrors list wrongly names the mirror-twin: it sits naturally inside the glass, and the picture's edge does not cut it, so its mark should be 'visible', not 'partly cut'.",
+    "costUsd": 0.0795284
+  },
+  "sonnet|synonym.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The mirror-twin is marked 'visible', but the bottom edge of the picture cuts off the lower part of the reflection, so it should be 'partly cut'.",
+    "costUsd": 0.0770878
+  },
+  "sonnet|synonym.grid.png|3": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks mirror-twin as 'visible', but the bottom edge of the picture cuts off its body at the waist, so it should be 'partly cut'.",
+    "costUsd": 0.07409400000000001
+  },
+  "sonnet|synonym.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Only a small error: the caption calls the floor 'tiled', but it is plain with no tiles.",
+    "costUsd": 0.0712024
+  },
+  "sonnet|synonym.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The mirror-twin's outstretched hand reaches out past the mirror frame, breaking its lines, but drawingErrors is empty.",
+    "costUsd": 0.0737264
+  },
+  "sonnet|synonym.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the caption matches the picture, though it doesn't say whose hand the gesturing hand at the bottom is.",
+    "costUsd": 0.0700098
+  },
+  "sonnet|synonym.grid.png|7": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 1,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The mirror-twin is listed as an onlooker, but it takes part in the main action. Also, sinner and mirror-twin are marked visible though the bottom edge cuts them off, and the sinner's mouth is hidden behind a fist rather than cut by the edge.",
+    "costUsd": 0.0777456
+  },
+  "sonnet|synonym.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The sinner's mouth is mostly hidden behind their hand, but the caption marks it visible and places it in the back, not the front.",
+    "costUsd": 0.0734998
+  },
+  "sonnet|synonym.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption says the man reaches toward the mirror, but the only reaching hand has a teal sleeve. It belongs to the reflection, whose arm sticks out past the mirror frame, and drawingErrors misses that.",
+    "costUsd": 0.075366
+  },
+  "qwen/qwen3-vl-8b|overreach.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the peach tree as visible and medium, but the top edge cuts it off and it is a large part of the picture.",
+    "costUsd": 0.0698832
+  },
+  "qwen/qwen3-vl-8b|overreach.grid.png|1": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks both the man and the peach tree as fully visible, but the left edge cuts off part of the man's body and the tree's branches and trunk run off the edges; the tree is also large rather than medium.",
+    "costUsd": 0.0745996
+  },
+  "qwen/qwen3-vl-8b|overreach.grid.png|3": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The top edge of the picture cuts off the peach tree branch, so its mark should be 'partly cut', not 'visible'. Also, only the man's hand and arm show, seen from behind, so 'side' is not accurate.",
+    "costUsd": 0.0702862
+  },
+  "qwen/qwen3-vl-8b|overreach.grid.png|5": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The man is seen from above (we look down at the top of his head as he lies along the branch), not from the side. Both the man (boots cut off at the top edge) and the tree (cut off on several sides) are partly cut, not visible.",
+    "costUsd": 0.0726306
+  },
+  "qwen/qwen3-vl-8b|overreach.grid.png|6": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the man and the peach tree as 'visible', but the picture's edges cut both off: the man at the bottom and left, the branch at the top and right.",
+    "costUsd": 0.07095699999999999
+  },
+  "qwen/qwen3-vl-8b|overreach.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The peach tree runs past the top, left and bottom edges, so it should be marked partly cut, not visible; it also fills a large part of the picture, not a medium part.",
+    "costUsd": 0.0739462
+  },
+  "qwen/qwen3-vl-8b|overreach.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The caption says the man is seen from the side, but he falls head-first toward the viewer in front or three-quarter view. It also marks the tree as visible when the top and left edges cut it off, and calls the man medium when he fills much of the panel.",
+    "costUsd": 0.07126940000000001
+  },
+  "qwen/qwen3-vl-8b|overreach.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks the peach tree as visible and medium, but the top, left and bottom edges cut it off and it is large. The man is shown in three-quarter view, not side view.",
+    "costUsd": 0.070343
+  },
+  "qwen/qwen3-vl-8b|overreach.grid.png|9": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The caption gives the man a side view, but he lies on his back facing the viewer and is seen from above. It also misses that the frame cuts off the tree and calls the man medium when he fills most of the picture.",
+    "costUsd": 0.0717064
+  },
+  "qwen/qwen3-vl-8b|appeal.grid.png|1": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The views are wrong: the caption calls every onlooker and the crowd 'front', but they are mostly three-quarter or side (the woman in the apron is seen from behind and the side), and the crowd is partly cut by the right edge, not fully visible.",
+    "costUsd": 0.0813048
+  },
+  "qwen/qwen3-vl-8b|appeal.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption calls the crowd 'medium', but its five people are spread around the whole picture, so 'large' fits better.",
+    "costUsd": 0.0730244
+  },
+  "qwen/qwen3-vl-8b|appeal.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The crowd is shown from behind, not from the side, and the picture's edges cut off the crowd members, so it should be marked 'partly cut' and large rather than 'visible' and medium.",
+    "costUsd": 0.0751312
+  },
+  "qwen/qwen3-vl-8b|appeal.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The crowd is marked 'visible' but the picture's left, right and bottom edges cut off the old man and the gray-haired woman, so it should be 'partly cut'. The crowd also fills most of the panel, so 'medium' undersells its size.",
+    "costUsd": 0.0731592
+  },
+  "qwen/qwen3-vl-8b|appeal.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The caption gives the crowd a side view, but the crowd faces the viewer in front or three-quarter view. The onlookers list also leaves out the red-haired woman in the apron and gives her apron to the gray-haired woman.",
+    "costUsd": 0.07763819999999999
+  },
+  "qwen/qwen3-vl-8b|appeal.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 1,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Only the old man pulls the rope. The child just looks up at the bell, so the action line is wrong and the child should be listed as an onlooker. The bell is also cut off by the picture's edge, not fully visible.",
+    "costUsd": 0.0694534
+  },
+  "qwen/qwen3-vl-8b|appeal.grid.png|9": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the crowd as visible, but the picture's left, right and bottom edges cut it off. The crowd also fills a large share of the front, not a medium one. Some onlooker views are wrong too: the gray-haired woman is seen from the back, not three-quarter.",
+    "costUsd": 0.0781546
+  },
+  "qwen/qwen3-vl-8b|rigged.grid-2.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The ballots are a small stack in the clerk's hand, not medium-sized, and the clerk stands behind the box rather than in front.",
+    "costUsd": 0.0699454
+  },
+  "qwen/qwen3-vl-8b|rigged.grid-2.png|1": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The clerk is marked medium but fills most of the panel, so large fits better; also, the stack of ballots at the bottom left is cut by the picture's edge but is marked visible.",
+    "costUsd": 0.0700436
+  },
+  "qwen/qwen3-vl-8b|rigged.grid-2.png|3": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks the clerk and the ballot box as visible, but the picture's edges cut both of them off (the clerk at the left and bottom, the box at the right and bottom). It also calls the box medium when it is large, and the clerk is seen from a three-quarter back view over the shoulder, not from the side.",
+    "costUsd": 0.0738358
+  },
+  "qwen/qwen3-vl-8b|rigged.grid-2.png|4": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "Two of the three marks are wrong: the clerk's curly hair is cut off by the top edge, and the stacks of ballots are cut off at the left and right edges, yet the caption marks both as fully visible.",
+    "costUsd": 0.0758056
+  },
+  "qwen/qwen3-vl-8b|rigged.grid-2.png|5": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The clerk and the ballot box are both cut off by the picture's edges but marked 'visible', and the box takes up the lower third of the picture, so it is large, not medium.",
+    "costUsd": 0.0709764
+  },
+  "qwen/qwen3-vl-8b|rigged.grid-2.png|6": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 1,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the clerk and ballot box as fully visible, but the bottom edge cuts both off; it also calls the clerk medium when the clerk fills most of the panel, and calls the ballots medium when they are small.",
+    "costUsd": 0.074242
+  },
+  "qwen/qwen3-vl-8b|rigged.grid-2.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The ballot box fills about a third of the picture, so 'large' fits better than 'medium'; the clerk's look is also more sly than angry.",
+    "costUsd": 0.07139380000000001
+  },
+  "qwen/qwen3-vl-8b|rigged.grid-2.png|8": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks the clerk and ballot box as visible, but the picture's edges cut both off: the clerk at the left and bottom, the box at the bottom. The ballots are small, not medium, and the clerk is seen more from the side than in three-quarter view.",
+    "costUsd": 0.0725784
+  },
+  "qwen/qwen3-vl-8b|rigged.grid-2.png|9": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the clerk as fully visible, but the right edge of the picture cuts off the clerk's shoulder and arm. It also says the clerk is retrieving ballots, but the clerk's sneaky, worried look and grip on the papers could just as well mean stuffing them in.",
+    "costUsd": 0.0739348
+  },
+  "qwen/qwen3-vl-8b|worn.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The tire and its red tread are large in the front of the picture, but the caption calls them medium.",
+    "costUsd": 0.0699626
+  },
+  "qwen/qwen3-vl-8b|worn.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 1,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The driver is small and toward the back, not medium and in front, and the large tire up front is marked medium; the caption also calls the tire flat when it looks inflated with a red tread.",
+    "costUsd": 0.07080020000000001
+  },
+  "qwen/qwen3-vl-8b|worn.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The worker is seen from above at a three-quarter angle while running, not from the side. The red-marked tire is a thin strip, so 'small' fits it better than 'medium'.",
+    "costUsd": 0.072209
+  },
+  "qwen/qwen3-vl-8b|worn.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The tire is called fully visible, but the bottom and left edges of the picture cut it off. The driver is called medium when they are small, and the tread is called medium when it is large.",
+    "costUsd": 0.0753106
+  },
+  "qwen/qwen3-vl-8b|worn.grid.png|5": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks the tire and tread as fully visible, but the bottom edge of the picture cuts both off. The driver is also small, not medium, and the man pointing is seen mostly from behind, not three-quarter.",
+    "costUsd": 0.0758428
+  },
+  "qwen/qwen3-vl-8b|worn.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The tire and its red tread are marked fully visible, but the bottom edge of the picture cuts them off. The tire also fills a large part of the picture, not a medium part.",
+    "costUsd": 0.0744572
+  },
+  "qwen/qwen3-vl-8b|worn.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 1,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Most size and place calls are wrong: the driver stands in the back, not the front, and the tire is large, not medium. The tire is also partly cut by the left edge, and the mechanic touches the red tread rather than pointing at it.",
+    "costUsd": 0.0724792
+  },
+  "qwen/qwen3-vl-8b|worn.grid.png|8": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks all three items as visible, but the picture's edges cut off the driver, the tire and the tread. The driver is also large, not medium, and the man points off to the side rather than at the driver.",
+    "costUsd": 0.0728434
+  },
+  "qwen/qwen3-vl-8b|worn.grid.png|9": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the tire as visible, but the left edge of the picture cuts part of it off (partly cut).",
+    "costUsd": 0.0734702
+  },
+  "qwen/qwen3-vl-8b|cottage.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption puts the ridge in the back, but the grassy slope runs into the foreground under the walkers' feet, so it should be front.",
+    "costUsd": 0.0690634
+  },
+  "qwen/qwen3-vl-8b|cottage.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Minor: the caption calls the ridge 'stone', but the roof ridge is thatch; only the chimney is stone.",
+    "costUsd": 0.06922
+  },
+  "qwen/qwen3-vl-8b|cottage.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "mainView is wrong: the caption says 'side', but the two runners are seen from behind and above as they run away from the viewer toward the house.",
+    "costUsd": 0.071293
+  },
+  "qwen/qwen3-vl-8b|cottage.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the ridge as visible, but the right and bottom edges of the picture cut off part of the green hill, so it should be partly cut.",
+    "costUsd": 0.0703674
+  },
+  "qwen/qwen3-vl-8b|cottage.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The tiny house is called medium and in the back, but it fills about half the picture and stands in the middle ground beside the hikers, so it is large.",
+    "costUsd": 0.0714388
+  },
+  "qwen/qwen3-vl-8b|cottage.grid.png|5": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 1,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The tiny house fills most of the picture and the top and right edges cut it off, so it is large and partly cut, not medium and visible. The roof ridge is also cut off. The rain is in the back (sky at top left), not the front.",
+    "costUsd": 0.07636380000000001
+  },
+  "qwen/qwen3-vl-8b|cottage.grid.png|7": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 1,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The ridge is marked visible but the picture doesn't show one. The house isn't tiny and the picture's edge cuts it off (it should be large and partly cut). The rain is small, in the back and partly cut. The two people look off to the right, not at each other.",
+    "costUsd": 0.07399939999999999
+  },
+  "qwen/qwen3-vl-8b|cottage.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The tiny house is marked 'visible' and 'medium', but the top and left edges of the picture cut it off and it takes up most of the frame (large).",
+    "costUsd": 0.07196240000000001
+  },
+  "qwen/qwen3-vl-8b|cottage.grid.png|9": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the tiny house and the thatched ridge as visible, but the right and top edges of the picture cut off part of both.",
+    "costUsd": 0.0735342
+  },
+  "qwen/qwen3-vl-8b|cocked.grid.png|1": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 1,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The man and the door are each large in the frame, but the caption calls them medium; also, the top edge cuts off the door, so it is partly cut, not fully visible.",
+    "costUsd": 0.0730102
+  },
+  "qwen/qwen3-vl-8b|cocked.grid.png|3": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The cat looks out at the viewer with its head tilted, not up at the man. The door's top is cut off by the picture's edge, so it should be marked partly cut, not visible. The man is seen mostly from the back, not a true three-quarter view.",
+    "costUsd": 0.07161819999999999
+  },
+  "qwen/qwen3-vl-8b|cocked.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 1,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The cat watches the knock but isn't listed as an onlooker. Also, the cat is cut off at the bottom and right edges, and the door, which fills most of the picture, should be large, not medium.",
+    "costUsd": 0.27423439999999993
+  },
+  "qwen/qwen3-vl-8b|cocked.grid.png|5": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 1,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The caption says the man is seen from the side, but the picture shows his back. Also, the picture's edges cut off the cat and the door, yet both are marked visible, and the cat, which only looks on, is missing from the onlookers list.",
+    "costUsd": 0.0782022
+  },
+  "qwen/qwen3-vl-8b|cocked.grid.png|4": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 1,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The cat is not listed as an onlooker, even though it sits on the mat and looks up instead of knocking. The man and door are marked visible, but the picture's edges cut both off.",
+    "costUsd": 0.0759
+  },
+  "qwen/qwen3-vl-8b|cocked.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The door is marked visible but the top edge of the picture cuts it off, and the cat is called medium even though it fills a large part of the frame.",
+    "costUsd": 0.07404160000000001
+  },
+  "qwen/qwen3-vl-8b|cocked.grid.png|6": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 1,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The man has a raised fist with motion lines, so he is knocking on the door, not holding it open. His back faces the viewer, not his side. The frame edges cut off part of both the man and the door, but the caption marks them as fully visible.",
+    "costUsd": 0.077219
+  },
+  "qwen/qwen3-vl-8b|cocked.grid.png|9": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the man and the door as fully visible, but the left edge cuts off the man and the top and right edges cut off the door; the man is also large, not medium, and his raised hand is by the door frame with motion lines, so it is not clearly petting the cat.",
+    "costUsd": 0.073274
+  },
+  "qwen/qwen3-vl-8b|cocked.grid.png|8": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 1,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The man is knocking on the door, with motion lines by his fist, not about to punch the cat. The cat is a startled onlooker, and the top and right edges cut off both the man and the door.",
+    "costUsd": 0.0741974
+  },
+  "qwen/qwen3-vl-8b|contest.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The onlookers list is empty, but the silhouetted audience in the background is a group of people who don't do the main action. The con's body faces nearly straight on, so 'front' fits better than 'three-quarter'.",
+    "costUsd": 0.073199
+  },
+  "qwen/qwen3-vl-8b|contest.grid.png|3": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The con is seen from behind, over his shoulder, not from the side. He is also cut off by the left and bottom edges and takes up a large part of the picture, but the caption calls him fully visible and medium.",
+    "costUsd": 0.0697822
+  },
+  "qwen/qwen3-vl-8b|contest.grid.png|2": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 1,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The audience silhouettes in the back left watch the man, but the caption says morePeople false and leaves the onlookers list empty. It also marks the con and the spelling test as visible, though the bottom edge of the picture cuts both off.",
+    "costUsd": 0.0778518
+  },
+  "qwen/qwen3-vl-8b|contest.grid.png|4": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The TV is cut off at the top-right edge and the con's striped arms reach the side edges, so neither is fully 'visible'. The con fills most of the panel (large, not medium), and he is seen from above with his head bent down, not in three-quarter view.",
+    "costUsd": 0.07123760000000001
+  },
+  "qwen/qwen3-vl-8b|contest.grid.png|5": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks all three items as fully visible, but the picture's edges cut off part of each one: the con's body and hands at the bottom, the spelling test at the bottom, and the TV at the right.",
+    "costUsd": 0.0713636
+  },
+  "qwen/qwen3-vl-8b|contest.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 1,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the con as visible and medium, but the left and bottom edges cut him off and he fills a large part of the frame. It also calls the TV medium when it is small, and it leaves out the shadowy figures in the background studio.",
+    "costUsd": 0.0731116
+  },
+  "qwen/qwen3-vl-8b|contest.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The TV is marked visible, but the bottom-right edge of the picture cuts it off. The caption says the con stands in front of the TV when the TV is actually in front of him, and it leaves out the silhouetted audience watching in the background.",
+    "costUsd": 0.073194
+  },
+  "qwen/qwen3-vl-8b|contest.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks the TV as visible, but the right edge of the picture cuts part of it off. It also leaves the silhouetted audience out of the onlookers list.",
+    "costUsd": 0.07240759999999999
+  },
+  "qwen/qwen3-vl-8b|contest.grid.png|9": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The TV is marked 'visible', but the right edge of the picture cuts it off ('partly cut'). The shadowy people in the background are not listed as onlookers.",
+    "costUsd": 0.0702268
+  },
+  "qwen/qwen3-vl-8b|concocted.grid.png|1": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The chef fills most of the frame and the picture's edges cut off his hat top and lower body, so the caption is wrong to call him 'medium' and 'visible' instead of large and partly cut.",
+    "costUsd": 0.06977900000000001
+  },
+  "qwen/qwen3-vl-8b|concocted.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The chef's eyes look sideways to the right, not at the dripping sauce, and the left and bottom edges cut off the chef's body, so the mark should be 'partly cut', not 'visible'.",
+    "costUsd": 0.0689802
+  },
+  "qwen/qwen3-vl-8b|concocted.grid.png|3": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks the chef as visible, but the bottom and right edges cut off the body, and the view is closer to a back three-quarter over-the-shoulder pose than a plain three-quarter view.",
+    "costUsd": 0.0689064
+  },
+  "qwen/qwen3-vl-8b|concocted.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 1,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption says the chef tastes the soup with delight, but the chef is stirring the pot and holding a hand to his face with a sly smirk, not tasting it; the right edge also cuts off his shoulder, so he is partly cut, not fully visible.",
+    "costUsd": 0.272665
+  },
+  "qwen/qwen3-vl-8b|concocted.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The chef is drawn from above (top-down view, head tilted up toward the viewer), so 'three-quarter' doesn't quite match the main view.",
+    "costUsd": 0.0701762
+  },
+  "qwen/qwen3-vl-8b|concocted.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The chef is marked fully visible and medium, but the top, right and bottom edges cut him off and he fills a large part of the panel. The action line also leaves out the steaming pot: the steam rises from the pot, not the dripping sauce on the spoon.",
+    "costUsd": 0.0689446
+  },
+  "qwen/qwen3-vl-8b|concocted.grid.png|5": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the chef as visible, but the picture's top, left and bottom edges cut off the hat and body, so the chef is partly cut. The action also leaves out that the chef is stirring and glancing sideways with a sly look.",
+    "costUsd": 0.0675072
+  },
+  "qwen/qwen3-vl-8b|concocted.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The chef is marked 'visible', but the top and right edges of the picture cut off the chef's hat and shoulder, so the mark should be 'partly cut'.",
+    "costUsd": 0.067218
+  },
+  "qwen/qwen3-vl-8b|spilled.grid-2.png|1": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The desk is marked 'visible', but the left, right and bottom edges of the picture cut it off, so it should be 'partly cut'.",
+    "costUsd": 0.0718744
+  },
+  "qwen/qwen3-vl-8b|concocted.grid.png|9": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The chef fills most of the frame, so the size should be large, not medium. The bottom of the chef's body runs past the frame behind the pot, so the mark is closer to partly cut than visible.",
+    "costUsd": 0.0721682
+  },
+  "qwen/qwen3-vl-8b|spilled.grid-2.png|2": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption marks the mug and desk as fully visible, but the left edge of the picture cuts both of them off. The spoon is also small, not medium, and the sleeve is green, not brown.",
+    "costUsd": 0.0766196
+  },
+  "qwen/qwen3-vl-8b|spilled.grid-2.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The worst error is a small one: the mug's adjective 'upside-down' is wrong, since the mug lies on its side as the action line says, and it is cream rather than white. The caption also leaves out the laptop, papers and plant.",
+    "costUsd": 0.0696946
+  },
+  "qwen/qwen3-vl-8b|spilled.grid-2.png|4": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [
+      "desk"
+    ],
+    "note": "The caption marks the desk as visible, but the picture has no desk, only a plain beige background. The coffee pool is also cut off by the bottom edge, not fully visible, and the mug hangs tipped in mid-air with nothing under it.",
+    "costUsd": 0.0744548
+  },
+  "qwen/qwen3-vl-8b|spilled.grid-2.png|5": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 1,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption puts the mug and spoon in front, but they sit at the back of the desk. It also calls the desk medium when it is large and cut off by the edges, so it should be marked partly cut.",
+    "costUsd": 0.0720864
+  },
+  "qwen/qwen3-vl-8b|spilled.grid-2.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The desk is marked visible, but the left and right edges of the picture cut it off, so it should be partly cut. The mug is also sitting at the back of the desk, not the front, and it lies on its side rather than upside down.",
+    "costUsd": 0.0720404
+  },
+  "qwen/qwen3-vl-8b|spilled.grid-2.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 1,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Most of the sizes are wrong: the mug, coffee and desk are large, not medium, and the spoon is small. The desk and the spilled coffee are partly cut by the picture's edges, not fully visible. The mug is tipped on its side, not upside-down.",
+    "costUsd": 0.0750644
+  },
+  "qwen/qwen3-vl-8b|flustered.grid.png|1": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The bottom edge cuts off the waiter, so he should be marked partly cut, not visible. He fills most of the panel, so his size is large, not medium. The mustard also sprays up and away from him, not towards him.",
+    "costUsd": 0.0712184
+  },
+  "qwen/qwen3-vl-8b|spilled.grid-2.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption marks the desk as visible, but the left edge of the picture cuts it off; it also calls the tipped mug medium when it is small and the desk medium when it is large.",
+    "costUsd": 0.07541900000000001
+  },
+  "qwen/qwen3-vl-8b|spilled.grid-2.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 1,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption gets two sizes wrong: the mug is small, not medium, and the desk spans most of the panel, so it is large, not medium. The mug is also tipped on its side, not upside down.",
+    "costUsd": 0.0742044
+  },
+  "qwen/qwen3-vl-8b|flustered.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The mustard bottle is small, not medium. The onlooker customer is shown from the back, not the side. The splash goes up into the air, not toward the table.",
+    "costUsd": 0.0735506
+  },
+  "qwen/qwen3-vl-8b|flustered.grid.png|3": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The mustard stream falls beside the waiter, not 'directly onto his head', and the waiter is partly cut off by the bottom and side edges and is large, not medium.",
+    "costUsd": 0.0740538
+  },
+  "qwen/qwen3-vl-8b|flustered.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The waiter is shown from overhead, at a three-quarter angle from above. Only the top of the head, a cheek and the hands are visible, so calling the view 'side' is not quite right.",
+    "costUsd": 0.0701492
+  },
+  "qwen/qwen3-vl-8b|flustered.grid.png|4": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "Both items are marked 'visible', but the frame cuts them off: the waiter's hair and body run past the top and bottom edges, and the mustard bottle's base and its stream run past the bottom and top-right edges. The waiter is also large, not medium.",
+    "costUsd": 0.069708
+  },
+  "qwen/qwen3-vl-8b|flustered.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The waiter fills almost the whole height of the panel, so their size should be large, not medium.",
+    "costUsd": 0.06711299999999999
+  },
+  "qwen/qwen3-vl-8b|flustered.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The seated customer watches the scene and should be listed as an onlooker. Also, the waiter stands behind the table and is partly cut at the right edge, and the mustard bottle is small, not medium.",
+    "costUsd": 0.0784848
+  },
+  "qwen/qwen3-vl-8b|flustered.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks the waiter as visible, but the picture's edges cut off the top of his head and his body, so he is partly cut.",
+    "costUsd": 0.0721056
+  },
+  "qwen/qwen3-vl-8b|flustered.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the waiter as fully visible and medium-sized, but the bottom and left edges cut him off and he fills most of the picture (large).",
+    "costUsd": 0.06880800000000001
+  },
+  "qwen/qwen3-vl-8b|wore.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error; the caption leaves out the knight's helmet and the sword lying on the floor at the lower right.",
+    "costUsd": 0.0704068
+  },
+  "qwen/qwen3-vl-8b|wore.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption gives the king's view as side, but his body and face are turned partly toward the viewer, so it is closer to three-quarter.",
+    "costUsd": 0.0681904
+  },
+  "qwen/qwen3-vl-8b|wore.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The bottom edge of the picture cuts off the king and his pajamas at the legs, so they should be marked partly cut, not visible. The onlookers list also names only three soldiers, but about six are shown, most of them facing the front.",
+    "costUsd": 0.0736896
+  },
+  "qwen/qwen3-vl-8b|wore.grid.png|3": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Both the king and the pajamas are marked 'visible', but the bottom edge of the picture cuts off the king's legs, pajama trousers and slipper, so both should be 'partly cut'.",
+    "costUsd": 0.072231
+  },
+  "qwen/qwen3-vl-8b|wore.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The king and his pajamas fill most of the panel's height, so they should be 'large', not 'medium'.",
+    "costUsd": 0.065938
+  },
+  "qwen/qwen3-vl-8b|wore.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the pajamas (and the king's body) as fully visible, but the bottom and right edges of the picture cut them off, so they should be 'partly cut'.",
+    "costUsd": 0.0704588
+  },
+  "qwen/qwen3-vl-8b|wore.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the king in striped pajamas is fully shown, large and in front, walking in side view past a battlefield with broken spears and flags.",
+    "costUsd": 0.06850980000000001
+  },
+  "qwen/qwen3-vl-8b|wore.grid.png|8": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the king and the pajamas as fully visible, but the top edge of the picture cuts them off: only his legs and one slippered foot show.",
+    "costUsd": 0.07112160000000001
+  },
+  "qwen/qwen3-vl-8b|wore.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 1,
+      "mainView": 3
+    },
+    "invented": [
+      "shield"
+    ],
+    "note": "The soldiers react to the king, waving and raising their hands, so they are part of the main action, not onlookers who just watch. Their views are also wrong: the front soldier is seen from behind, not from the front.",
+    "costUsd": 0.0779372
+  },
+  "qwen/qwen3-vl-8b|hypernym.grid.png|1": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The perch is marked visible, but the bottom edge of the picture cuts off its post. The perch takes up more of the picture than 'medium' because it runs from the middle to the bottom. The gray onlookers face more three-quarter than side.",
+    "costUsd": 0.0736356
+  },
+  "qwen/qwen3-vl-8b|hypernym.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the perch as visible, but the bottom edge of the picture cuts off the post, so it should be partly cut. The gray onlookers are closer to three-quarter view than side view.",
+    "costUsd": 0.0699372
+  },
+  "qwen/qwen3-vl-8b|hypernym.grid.png|3": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the wooden perch as fully visible and medium, but it is a thin strip cut off by the bottom edge. The action line says the gray birds watch from the perch, but they sit in front of it while the orange bird stands on it.",
+    "costUsd": 0.072767
+  },
+  "qwen/qwen3-vl-8b|hypernym.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 1,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "There are four gray birds, not three, and the center one is seen from the back, not the side. The orange bird stands behind the gray birds (back, not front), and the wooden nest/perch is cut off by the picture's edges.",
+    "costUsd": 0.0767416
+  },
+  "qwen/qwen3-vl-8b|hypernym.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption's object list names only two gray birds, but the picture shows four, two on each side of the orange bird.",
+    "costUsd": 0.0685382
+  },
+  "qwen/qwen3-vl-8b|hypernym.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The scene is drawn from high above, but the caption says 'eye level' and gives a plain 'front' view; it also calls the round perch medium when it fills a large part of the picture.",
+    "costUsd": 0.0739376
+  },
+  "qwen/qwen3-vl-8b|hypernym.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Four gray birds watch, but the onlookers list names only three. The perch's post is also cut off by the bottom edge, so the perch should be marked partly cut, not visible.",
+    "costUsd": 0.0738262
+  },
+  "qwen/qwen3-vl-8b|optimal.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 1,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The onlookers list is empty, yet the caption's own action line says the cat and rabbit look on, so they should be listed; also, the dog sits in front of the bars, not in the cage.",
+    "costUsd": 0.0726204
+  },
+  "qwen/qwen3-vl-8b|hypernym.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The perch is marked visible, but the bottom edge of the picture cuts off its wooden post, so it should be partly cut. The gray onlookers are shown more in three-quarter view than pure side view.",
+    "costUsd": 0.071637
+  },
+  "qwen/qwen3-vl-8b|hypernym.grid.png|9": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [
+      "fourth gray bird"
+    ],
+    "note": "The action line says four gray birds listen, but the picture has only three. The perch is also marked visible, though the left and right edges of the picture cut it off.",
+    "costUsd": 0.0754976
+  },
+  "qwen/qwen3-vl-8b|optimal.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The woman takes up a large part of the picture, not a medium one. The shelter cages are cut off by the picture's edges, so they are partly cut, not visible. The cat and rabbit face the front, not the side. The woman is seen mostly from the side.",
+    "costUsd": 0.07192319999999999
+  },
+  "qwen/qwen3-vl-8b|optimal.grid.png|3": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The woman is drawn from behind (back view, not three-quarter), and she is cut off by the bottom edge rather than fully visible; the shelter cages are also cut off at the edges.",
+    "costUsd": 0.07144
+  },
+  "qwen/qwen3-vl-8b|optimal.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The woman is seen from above and behind, not in three-quarter view, and she is sitting and holding the dog's paw, not kneeling and petting a dog that jumps up.",
+    "costUsd": 0.0737444
+  },
+  "qwen/qwen3-vl-8b|optimal.grid.png|5": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The woman is marked 'visible' but the left and bottom edges cut off her body. She is also called 'medium' when she takes up a large part of the panel.",
+    "costUsd": 0.0704546
+  },
+  "qwen/qwen3-vl-8b|optimal.grid.png|6": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 1,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The woman is marked hidden, but her hand reaches in from the right edge, so she is partly cut. The dog fills most of the panel, so it is large, not medium. The edges cut off the shelter bars.",
+    "costUsd": 0.0757252
+  },
+  "qwen/qwen3-vl-8b|optimal.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks the shelter as 'visible', but the picture's left and right edges cut off the cages, so it should be 'partly cut'. The woman is closer to a side view than three-quarter, and the cat faces the viewer instead of being seen from the side.",
+    "costUsd": 0.0745246
+  },
+  "qwen/qwen3-vl-8b|optimal.grid.png|9": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the woman and the shelter as fully visible, but the bottom edge cuts off the woman's legs and the side and top edges crop the shelter building; it also says the cat and rabbit face sideways when both face the front.",
+    "costUsd": 0.0741076
+  },
+  "qwen/qwen3-vl-8b|optimal.grid.png|7": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks the woman and the shelter as fully visible, but the bottom edge cuts off the woman's legs and the picture's edges cut off the cages. The woman is also large, not medium. The cat and rabbit face the front, not the side, and the woman is shown mostly from the front.",
+    "costUsd": 0.0774384
+  },
+  "qwen/qwen3-vl-8b|saturation.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The rain is marked medium and in the back, but it falls across the whole picture, in front of the satchel too, so it is large.",
+    "costUsd": 0.067324
+  },
+  "qwen/qwen3-vl-8b|saturation.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The satchel fills most of the frame, so it should be large, not medium.",
+    "costUsd": 0.0681986
+  },
+  "qwen/qwen3-vl-8b|saturation.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The rations are only a small stack of wrapped packages peeking out of the satchel, so they should be small, not medium.",
+    "costUsd": 0.0713196
+  },
+  "qwen/qwen3-vl-8b|saturation.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption says the satchel is 'submerged', but it only sits in a shallow puddle. The rain is slanted, not vertical, and falls in front of the satchel as well as behind it. The ration boxes look like cardboard, not wood, and they are fairly small.",
+    "costUsd": 0.07208880000000001
+  },
+  "qwen/qwen3-vl-8b|saturation.grid.png|5": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption marks the satchel and rations as visible, but the picture's edges cut off part of both; it also calls the rain medium when it is only a few small streaks in the top-right corner.",
+    "costUsd": 0.0705576
+  },
+  "qwen/qwen3-vl-8b|saturation.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Rain falls across the whole picture, front and back, so it should be marked large and in front, not medium and in back.",
+    "costUsd": 0.0711606
+  },
+  "qwen/qwen3-vl-8b|saturation.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The satchel fills most of the frame and should be 'large', not 'medium'; rain covering the whole scene is also arguably 'large'.",
+    "costUsd": 0.0679342
+  },
+  "qwen/qwen3-vl-8b|saturation.grid.png|8": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The rain falls across the whole picture, so it should be large and not only in the back; the rations packages inside the bag are closer to small than medium.",
+    "costUsd": 0.069881
+  },
+  "qwen/qwen3-vl-8b|saturation.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption calls the satchel 'submerged', but it only stands in a shallow puddle. The rain covers the whole picture, front and back, so 'medium/back' is too small and too narrow.",
+    "costUsd": 0.07311500000000001
+  },
+  "qwen/qwen3-vl-8b|synonym.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 1,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The sinner is large and the left and bottom edges cut him off, but the caption calls him medium and fully visible. The mirror-twin is in the mirror at the back, not the front. The action also leaves out that the sinner says the same words himself.",
+    "costUsd": 0.0770668
+  },
+  "qwen/qwen3-vl-8b|synonym.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The sinner is seen mostly from behind (a back three-quarter view), not a plain three-quarter view; also the mirror-twin inside the mirror sits a little further back than the 'front' the caption gives it.",
+    "costUsd": 0.0721128
+  },
+  "qwen/qwen3-vl-8b|synonym.grid.png|3": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 1,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The sinner is seen from behind in the foreground, large and cut off by the left edge, not a medium three-quarter view; the mirror-twin and mouth are in the back, inside the mirror, not the front.",
+    "costUsd": 0.071868
+  },
+  "qwen/qwen3-vl-8b|synonym.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The caption gives the sinner's view as side, but we see him from behind (a three-quarter back view); it also marks his covered mouth as visible and puts the mirror-twin in front when it is in back, inside the mirror.",
+    "costUsd": 0.0739762
+  },
+  "qwen/qwen3-vl-8b|synonym.grid.png|5": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 1,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The caption marks both men as fully visible and medium-sized, but the frame edges cut off both faces and they fill most of the panel; they are also shown in side profile, not three-quarter view, and the left man is not smiling.",
+    "costUsd": 0.0711834
+  },
+  "qwen/qwen3-vl-8b|synonym.grid.png|6": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The bottom edge of the picture cuts off both the sinner and the mirror-twin, but the caption marks both as fully visible; the sinner is also large, not medium.",
+    "costUsd": 0.073667
+  },
+  "qwen/qwen3-vl-8b|synonym.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 1,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption gets size and place wrong: the sinner is large, not medium, and the bottom edge of the picture cuts him off. The mirror-twin stands in the back, inside the mirror, not in the front. Also, the sinner is seen from behind at a three-quarter angle, not a plain three-quarter view.",
+    "costUsd": 0.075109
+  },
+  "qwen/qwen3-vl-8b|synonym.grid.png|8": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 1,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The sinner is cut off by the left and bottom edges and the mirror-twin by the bottom edge, so neither is fully visible; the twin is also in the back, inside the mirror, not in front, and the sinner is large, not medium.",
+    "costUsd": 0.0749952
+  },
+  "qwen/qwen3-vl-8b|synonym.grid.png|9": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 1,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The sinner and the mirror-twin should both be 'partly cut' and 'large', not 'visible' and 'medium'. The edges cut off the sinner's left side and both bodies at the bottom. The mirror-twin is inside the mirror, so it is at the back, not the front.",
+    "costUsd": 0.0759692
   }
 }
