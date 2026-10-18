@@ -1035,5 +1035,717 @@
     "invented": [],
     "note": "Both items are marked 'visible', but the picture's edges cut them off. The pier runs off the left and bottom edges, and the sea is cut at the edges and stops in an odd vertical line on the right. The caption also missed that sea edge as a drawing error and says the man looks at the horizon, but he looks up at the sky.",
     "costUsd": 0.0765426
+  },
+  "sonnet|surgeon.grid.png|3": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the surgeon as fully visible, but the bottom and left edges of the picture cut off her gown and body, so she should be partly cut.",
+    "costUsd": 0.0724944
+  },
+  "sonnet|surgeon.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Only a minor issue: the angle is closer to eye level than high angle, and the patient appears only as a draped mound, not a clearly shown body.",
+    "costUsd": 0.075113
+  },
+  "sonnet|surgeon.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Minor gap: the picture has two IV stands (one on the left, one on the right), but the caption names only one; the patient is entirely under the drape, so 'patient' is inferred from the shape.",
+    "costUsd": 0.075621
+  },
+  "sonnet|surgeon.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Minor uncertainty: the small tool in the surgeon's hand could be forceps rather than a scalpel; otherwise the caption matches the picture",
+    "costUsd": 0.0743376
+  },
+  "sonnet|surgeon.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error: the patient is only suggested by the shape under the drape, and the caption says this by calling the patient covered and draped.",
+    "costUsd": 0.0715542
+  },
+  "sonnet|surgeon.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error. The caption names a 'patient', but the picture shows only a blue drape with no clear body shape under it.",
+    "costUsd": 0.073837
+  },
+  "sonnet|surgeon.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error: the caption matches the picture, though the headlamp could also be called small rather than medium.",
+    "costUsd": 0.0695114
+  },
+  "sonnet|surgeon.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 2,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The second person is listed as an onlooker even though their hand passing the instrument is part of the main action; also, the left edge and the drape cut off part of the surgeon, so the surgeon is 'partly cut', not 'visible'.",
+    "costUsd": 0.07908520000000001
+  },
+  "sonnet|surgeon.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The surgeon is shown almost straight from the front, not in three-quarter view; the rest of the caption matches the picture.",
+    "costUsd": 0.0757328
+  },
+  "sonnet|sweep.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption gives the woman's view as side, but her face and body are turned partly toward the viewer, so it is a three-quarter view.",
+    "costUsd": 0.0772592
+  },
+  "sonnet|sweep.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Only small quibbles: the woman's view is more of a back three-quarter view than a straight back view, and the broom leans against the right wall near the corner rather than standing right in it.",
+    "costUsd": 0.071369
+  },
+  "sonnet|sweep.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors. The worst is a small one: the broom is thin, so 'medium' may overstate its size, and her hand is still reaching, not yet grabbing.",
+    "costUsd": 0.07602139999999999
+  },
+  "sonnet|sweep.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors. The caption matches the picture: the crouching woman grips the broom (its handle is cut by the top edge) near the wall corner on the right.",
+    "costUsd": 0.07127220000000001
+  },
+  "sonnet|sweep.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The corner is marked visible, but the top edge of the picture cuts off where the walls meet, so it should be partly cut.",
+    "costUsd": 0.0725802
+  },
+  "sonnet|sweep.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Only a minor adjective slip: the caption calls the broom 'upright', but she holds it tilted at an angle.",
+    "costUsd": 0.071554
+  },
+  "sonnet|sweep.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The broom is marked 'partly cut', but the whole broom is in the picture: the top of the handle stops just below the top edge and the bristles are fully shown.",
+    "costUsd": 0.0725228
+  },
+  "sonnet|sweep.grid.png|8": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors. The broom is correctly marked partly cut, large and in front. The only small issue is that the woman looks slightly smirking rather than frowning, which none of the scored parts depend on.",
+    "costUsd": 0.07112399999999999
+  },
+  "sonnet|sweep.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error: the corner and broom marks, sizes and places are right, and the sweeping action is described correctly; the woman's view is nearly frontal, but three-quarter is a fair call.",
+    "costUsd": 0.0683396
+  },
+  "qwen/qwen3-vl-4b|surgeon.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The headlamp is small, not medium, and the surgeon is drawn nearly front-on, so the view is closer to front than three-quarter.",
+    "costUsd": 0.0730468
+  },
+  "qwen/qwen3-vl-4b|surgeon.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [
+      "patient"
+    ],
+    "note": "The headlamp is a small lamp worn on the surgeon's head, not a medium lamp hanging from the ceiling (that is the surgical light), and no patient can be seen under the drape.",
+    "costUsd": 0.0761552
+  },
+  "qwen/qwen3-vl-4b|surgeon.grid.png|3": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The operating room is marked hidden, but its round surgical light shows at the top left, so it is partly visible. The surgeon's body is also cut by the picture's edge, so it is partly cut rather than visible.",
+    "costUsd": 0.0710016
+  },
+  "qwen/qwen3-vl-4b|surgeon.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [
+      "patient"
+    ],
+    "note": "The surgeon is marked visible, but the left and bottom edges cut her off, so she is partly cut. The action also names a patient, yet only a draped cloth shows, and the tool looks more like forceps than a scalpel.",
+    "costUsd": 0.07345779999999999
+  },
+  "qwen/qwen3-vl-4b|surgeon.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The surgeon is marked 'visible', but this extreme close-up has the frame edges cutting off the cap, shoulders and sides of the head, so it should be 'partly cut'.",
+    "costUsd": 0.0719964
+  },
+  "qwen/qwen3-vl-4b|surgeon.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The caption gives the surgeon's view as 'back', but the picture shows the surgeon from above and in front, with the bowed head, mask and headlamp facing the viewer. It also calls the headlamp medium when it is small.",
+    "costUsd": 0.0721554
+  },
+  "qwen/qwen3-vl-4b|surgeon.grid.png|8": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The surgeon is shown almost in profile (side view), not three-quarter, and the operating room fills the whole background, so it is large rather than medium.",
+    "costUsd": 0.0710388
+  },
+  "qwen/qwen3-vl-4b|surgeon.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 1,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption says the surgeon looks at the operating table, but they turn their head to look over at the sparking wall outlet. The surgeon also takes up closer to a large part of the frame than a medium one.",
+    "costUsd": 0.07098660000000001
+  },
+  "qwen/qwen3-vl-4b|surgeon.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The headlamp is only a small item, not medium, and the surgeon faces almost straight to the front rather than in three-quarter view.",
+    "costUsd": 0.072762
+  },
+  "qwen/qwen3-vl-4b|sweep.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption puts the broom in the front, but it leans in the back corner against the wall. The action is also off: the woman lunges and reaches toward the broom but hasn't grabbed it yet.",
+    "costUsd": 0.070757
+  },
+  "qwen/qwen3-vl-4b|sweep.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The broom is placed 'front', but it leans against the wall in the back corner, behind the woman's reaching hand.",
+    "costUsd": 0.0695906
+  },
+  "qwen/qwen3-vl-4b|sweep.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 1,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The main view is from above, not from the side, and the broom is small and at the back by the wall, not medium and in front.",
+    "costUsd": 0.0708344
+  },
+  "qwen/qwen3-vl-4b|sweep.grid.png|5": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the broom as visible, but the top edge of the picture cuts off the top of its handle, so it should be partly cut.",
+    "costUsd": 0.0703472
+  },
+  "qwen/qwen3-vl-4b|sweep.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The broom leans in the corner at the back of the room, not the front, and the woman is only reaching for it with her right hand, not yet grabbing it.",
+    "costUsd": 0.0727812
+  },
+  "qwen/qwen3-vl-4b|sweep.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption says she crouches to sweep, but she is lunging to grab a broom standing by the wall. The broom is near the back corner, not at the front.",
+    "costUsd": 0.0739798
+  },
+  "qwen/qwen3-vl-4b|sweep.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The caption calls the main view 'side', but the woman faces the viewer in a front or three-quarter view.",
+    "costUsd": 0.0669784
+  },
+  "qwen/qwen3-vl-4b|sweep.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption says her other hand pushes against the wall corner, but in the picture that arm reaches back into the air and touches nothing; the broom also stands in the back corner, not in front.",
+    "costUsd": 0.0710028
+  },
+  "qwen/qwen3-vl-4b|sweep.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the broom as visible, but the picture's top and right edges cut off its handle and bristles. The action is also off: she grips the broom with one visible hand and lunges, but the caption says she holds it with both hands and sweeps.",
+    "costUsd": 0.0715098
+  },
+  "haiku|surgeon.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The object details are a little off: the overhead light is off rather than lighting the room, there is only one monitor and not several, and the instruments are in the surgeon's hands, not on a tray. The caption also misses the electrical spark at the wall outlet.",
+    "costUsd": 0.0727788
+  },
+  "haiku|surgeon.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [
+      "medical gas container"
+    ],
+    "note": "The caption says the overhead surgical light is lit and lights the surgeon, but it is off and only the headlamp gives light. It also names a medical gas container the picture doesn't show, and the surgeon is in three-quarter view, not front.",
+    "costUsd": 0.0753022
+  },
+  "haiku|surgeon.grid.png|3": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The surgeon is marked 'visible', but the bottom and left edges cut off the torso (partly cut). The headlamp is small, not medium.",
+    "costUsd": 0.07155159999999999
+  },
+  "haiku|surgeon.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The surgeon is marked 'visible' but the bottom and left edges cut off their body, so it should be 'partly cut'. The view is also more three-quarter back than straight back, since part of the face shows.",
+    "costUsd": 0.0759568
+  },
+  "haiku|surgeon.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [
+      "overhead lights"
+    ],
+    "note": "The caption calls the surgeon a bearded male, but a mask covers the face and the hair is in a bun. It also adds overhead surgical lights and a yellow drape, but the only light is the headlamp and the drape is blue-gray.",
+    "costUsd": 0.0749196
+  },
+  "haiku|surgeon.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 1,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The surgeon is an older woman with a grey bun, not a middle-aged man. The action says she is focused on the surgery, but she is actually looking away at a sparking wall outlet.",
+    "costUsd": 0.0738678
+  },
+  "haiku|surgeon.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks the surgeon as fully visible, but the top and right edges cut off the head and cap. The surgeon also looks down and to the left along the light beam, not straight at the viewer, and the face is turned slightly (closer to three-quarter than front).",
+    "costUsd": 0.0748338
+  },
+  "haiku|surgeon.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 1,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The surgical assistant is listed as an onlooker, but their gloved hand is passing the instrument to the surgeon, so they take part in the main action. Also, the surgeon is seen closer to side view than three-quarter, and the left edge cuts off part of the surgeon.",
+    "costUsd": 0.0769774
+  },
+  "haiku|surgeon.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The surgeon faces the viewer almost straight on, so the view is front, not three-quarter. The operating room fills the whole background, so it is large, not medium. The surgeon also looks older and possibly female, not a middle-aged man.",
+    "costUsd": 0.0746566
+  },
+  "haiku|sweep.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the woman crouches and reaches for the broom leaning in the wall corner, and the corner and broom are both fully shown at the back.",
+    "costUsd": 0.06893780000000001
+  },
+  "haiku|sweep.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 1,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "drawingErrors wrongly lists the broom: the gap between the hand and the handle is not a drawing error, because the broom stands normally in the corner and does not float, look pasted on or break any lines.",
+    "costUsd": 0.073276
+  },
+  "haiku|sweep.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption says the broom is hanging and the person reaches up for it, but the broom leans against the wall on the floor and the person lunges forward at it, seen mostly from behind.",
+    "costUsd": 0.070911
+  },
+  "haiku|sweep.grid.png|5": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The broom is marked visible, but the top edge of the picture cuts off its handle, so it should be partly cut. The corner is also more of a small thin line than medium-sized.",
+    "costUsd": 0.072059
+  },
+  "haiku|sweep.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The woman grabs the broom with one hand while it leans in the corner, but the caption says she holds it raised with both hands; the broom also stands at the back wall, not in front.",
+    "costUsd": 0.0724452
+  },
+  "haiku|sweep.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [
+      "headphones"
+    ],
+    "note": "The caption says the woman is lying on the floor with headphones on, but she is standing and lunging toward the broom, she wears no headphones, and the broom is at the back in the corner, not the front.",
+    "costUsd": 0.072287
+  },
+  "haiku|sweep.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The broom stands upright in the back corner while she reaches out and grips it; she does not swing it horizontally, and it is in the back, not the front.",
+    "costUsd": 0.0738084
+  },
+  "haiku|sweep.grid.png|8": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Both marks are wrong: the wall corner shows behind the broom but the caption calls it hidden, and the frame edges cut off the broom's handle and bristles, so it is partly cut, not fully visible. Also, only one hand is seen gripping the broom, not both.",
+    "costUsd": 0.0730452
+  },
+  "haiku|sweep.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 1,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption wrongly lists the elderly woman as a drawing error. Her feet are firmly on the floor and nothing floats or looks pasted on, so the list should be empty.",
+    "costUsd": 0.0709914
   }
 }
