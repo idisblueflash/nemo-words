@@ -1,6 +1,6 @@
 "use strict";
 
-// SP-066 AC3 (after stage 20, ADR-0039, C-049) — Given the captions, the
+// SP-066 AC3 (after stage 20, ADR-0041, C-053) — Given the captions, the
 // compare lines and the story of a word, when Jev picks a cell, then Jev
 // scores plausible in parts, one question each: setting, drawing and story
 // actions; plausible is the mean of its parts, with the lowest confidence of
@@ -30,7 +30,7 @@ async function pickRun(kept, { byWord = {} } = {}) {
   }
 }
 
-test("AC3 (ADR-0039): the rubric gives plausible 3 parts, each with a label and 3 levels", () => {
+test("AC3 (ADR-0041): the rubric gives plausible 3 parts, each with a label and 3 levels", () => {
   const rubric = loadRubric();
   const p = rubric.axes.plausible;
   assert.deepEqual(Object.keys(p.parts), ["setting", "drawing", "actions"]);
@@ -44,7 +44,7 @@ test("AC3 (ADR-0039): the rubric gives plausible 3 parts, each with a label and 
   assert.deepEqual(axisParts(rubric, { mainSubject: null }).plausible, ["setting", "drawing", "actions"]);
 });
 
-test("AC3 (ADR-0039): Jev answers one question per plausible part, and plausible is their mean with the lowest confidence", async () => {
+test("AC3 (ADR-0041): Jev answers one question per plausible part, and plausible is their mean with the lowest confidence", async () => {
   const { run, calls } = await pickRun([TILE], {
     byWord: { anomaly: { cell_5_plausible_setting: { score: 2, confidence: 0.9 }, cell_5_plausible_drawing: { score: 2, confidence: 0.6 }, cell_5_plausible_actions: { score: 0, confidence: 0.8 } } },
   });
@@ -57,7 +57,7 @@ test("AC3 (ADR-0039): Jev answers one question per plausible part, and plausible
   assert.deepEqual(s.parts.actions, { score: 1, confidence: 0.8 });
 });
 
-test("toScores (ADR-0039): an axis in parts is their mean; a missing part answer is a JevError", () => {
+test("toScores (ADR-0041): an axis in parts is their mean; a missing part answer is a JevError", () => {
   const a = (score, confidence = 0.9) => ({ score, confidence });
   const answers = {
     cell_1_plausible_setting: a(2),

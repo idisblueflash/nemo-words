@@ -1,6 +1,6 @@
 "use strict";
 
-// SP-066 AC2 and AC3 (after stage 20, ADR-0039, C-048, C-049) — the caption
+// SP-066 AC2 and AC3 (after stage 20, ADR-0041, C-052, C-053) — the caption
 // lists the onlookers: each person or animal that doesn't do the story's
 // action, with what it does and its view; a cell with none has an empty
 // list, and a caption with no list is unusable. Jev scores vivid in parts,
@@ -40,13 +40,13 @@ const base = {
 };
 const items = [{ name: "waiter", adjectives: ["red-faced"] }];
 
-test("AC2 (ADR-0039): the caption prompt asks for the onlookers, what they do and their view", () => {
+test("AC2 (ADR-0041): the caption prompt asks for the onlookers, what they do and their view", () => {
   const p = prompt(items, "flustered");
   assert.match(p, /"onlookers": each person or animal in the picture that doesn't do the main action/);
   assert.match(p, /"watches", "reacts", "looks away", "other"/);
 });
 
-test("AC2 (ADR-0039): a caption keeps its onlookers; an empty list is fine; no list or a bad onlooker is unusable", () => {
+test("AC2 (ADR-0041): a caption keeps its onlookers; an empty list is fine; no list or a bad onlooker is unusable", () => {
   const one = [{ who: "customer", does: "watches", view: "back" }];
   assert.deepEqual(parseCaption(JSON.stringify({ ...base, onlookers: one }), items).onlookers, one);
   assert.deepEqual(parseCaption(JSON.stringify({ ...base, onlookers: [] }), items).onlookers, []);
@@ -56,7 +56,7 @@ test("AC2 (ADR-0039): a caption keeps its onlookers; an empty list is fine; no l
   assert.throws(() => parseCaption(JSON.stringify({ ...base, onlookers: [{ who: "customer", does: "watches", view: "upside" }] }), items), /onlooker/);
 });
 
-test("AC3 (ADR-0039): the rubric gives vivid 2 parts, scene and onlooker", () => {
+test("AC3 (ADR-0041): the rubric gives vivid 2 parts, scene and onlooker", () => {
   const v = loadRubric().axes.vivid;
   assert.deepEqual(Object.keys(v.parts), ["scene", "onlooker"]);
   assert.match(v.parts.scene.levels[2], /large and act on each other as the story says/);
@@ -66,7 +66,7 @@ test("AC3 (ADR-0039): the rubric gives vivid 2 parts, scene and onlooker", () =>
   assert.match(v.parts.onlooker.check, /from the back, it also leads the eye to the action/);
 });
 
-test("AC3 (ADR-0039): Jev sees each cell's onlookers and scores vivid as the mean of scene and onlooker", async () => {
+test("AC3 (ADR-0041): Jev sees each cell's onlookers and scores vivid as the mean of scene and onlooker", async () => {
   const { r, out, calls } = await pickRun([WAITER]);
   assert.equal(r.code, 0, r.stderr);
   const { state, questions } = calls[0].body;
@@ -82,7 +82,7 @@ test("AC3 (ADR-0039): Jev sees each cell's onlookers and scores vivid as the mea
   assert.equal(p.scores[1].vivid.parts.onlooker.score, 1);
 });
 
-test("AC2 (ADR-0039): a grid whose captions have no onlookers list is unjudged", async () => {
+test("AC2 (ADR-0041): a grid whose captions have no onlookers list is unjudged", async () => {
   const { r, out } = await pickRun([{ ...WAITER, word: "plain", story: "The waiter nolookers, lightness 120." }]);
   assert.equal(r.code, 0, r.stderr);
   assert.match(r.stderr, /no onlookers list/);

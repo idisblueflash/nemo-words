@@ -87,7 +87,7 @@ So these 20 words can't show small effects.
 
 - QA passed all 7 scenarios with the fake Claude and the mock Jev.
 - The spike tests pass: 153 of 153.
-- I wrote ADR-0039 and two concepts: C-048 (onlooker) and C-049 (axis part).
+- I wrote ADR-0041 and two concepts: C-052 (onlooker) and C-053 (axis part).
 - The item's scenarios now describe only the 3 changes that I kept.
 - Every stage has its own commit. Each roll-back also has its own commit.
 

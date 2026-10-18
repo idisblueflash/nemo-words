@@ -8,12 +8,12 @@
 // vivid alone next to the chance rate, and the angleCase counts. After the
 // stage-2 refine also: whether every caption has a drawing-errors list, for
 // the name-anchor words the cells gated out only because the name can't be
-// read (should be 0, ADR-0035), and how many cells have a drawing error
-// (most cells → stop for design, ADR-0036). After the stage-5 refine
-// (ADR-0037): the captions that show the main subject but give no mainView
+// read (should be 0, ADR-0037), and how many cells have a drawing error
+// (most cells → stop for design, ADR-0038). After the stage-5 refine
+// (ADR-0039): the captions that show the main subject but give no mainView
 // (should be 0), and clarity's mean spread inside a grid (max − min over the
 // scored cells, then the mean over the judged words), next to stage 5's value
-// before the refine. After the second stage 5 (ADR-0038, C-047): each word's
+// before the refine. After the second stage 5 (ADR-0040, C-051): each word's
 // main subject, marked "(actor)" when it is one, or "none"; for an actor a
 // null mainView means the cell doesn't show it, so it isn't counted as a
 // missing view, and the cells where an actor isn't shown get a line of their own.
@@ -78,7 +78,7 @@ const hasDrawingErrorLists = (cells) => {
   return all.length === 9 && all.every((c) => Array.isArray(c.drawingErrors));
 };
 
-// An item that holds the name (ADR-0035 says it shouldn't): its name holds a
+// An item that holds the name (ADR-0037 says it shouldn't): its name holds a
 // name sign's text, or names a nametag, badge, label or sign.
 const NAME_ITEM = /name\s?tag|badge|label|\bsign\b/i;
 function holdsName(itemName, nameSigns) {
@@ -151,7 +151,7 @@ function stageSummary({ stage, words, total, split, outcomes, lists, captions, c
     `Captions with a drawing-errors list: ${withErrorLists.length} of ${judged.length} judged grids`,
     `Name-anchor words: ${nameWords.length}; cells gated out only because the name can't be read: ${nForName}${forName.length ? ` (${forName.map(([w, cells]) => `${w}: ${cells.join(", ")}`).join("; ")})` : ""}`,
     `Cells with a drawing error: ${of(errorCells.length, judgedCells.length)}; on a must-see item: ${mustSeeErrorCells.length}`,
-    `Cells with an onlooker (ADR-0039): ${of(judgedCells.filter((c) => (c.onlookers || []).length).length, judgedCells.length)}; one that watches or reacts: ${judgedCells.filter((c) => (c.onlookers || []).some((o) => ["watches", "reacts"].includes(o.does))).length}`,
+    `Cells with an onlooker (ADR-0041): ${of(judgedCells.filter((c) => (c.onlookers || []).length).length, judgedCells.length)}; one that watches or reacts: ${judgedCells.filter((c) => (c.onlookers || []).some((o) => ["watches", "reacts"].includes(o.does))).length}`,
     `Main-subject words: ${mainWords.length}; captions that show the main subject with no mainView: ${nNoView} of ${showing}${noView.length ? ` (${noView.map(([w, cells]) => `${w}: ${cells.join(", ")}`).join("; ")})` : ""}`,
     `Actor words: ${actorWords.length}; cells where the actor isn't shown: ${nNotShown} of ${actorCells}${notShown.length ? ` (${notShown.map(([w, cells]) => `${w}: ${cells.join(", ")}`).join("; ")})` : ""}`,
     `Clarity's spread inside a grid (max − min): mean ${meanSpread} over ${judged.length} judged grids; stage 5 before the refine: ${SPREAD_BEFORE}`,

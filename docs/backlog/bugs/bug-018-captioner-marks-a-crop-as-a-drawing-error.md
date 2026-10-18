@@ -8,7 +8,7 @@ found: 2026-10-17
 # bug-018 The captioner marks an object cut off by the cell edge as a drawing error
 
 ## Bug
-Expected: The captioner does not mark a crop as a drawing error, because concept C-044 says a drawing error is only an object that floats, looks pasted on, or breaks the lines of the wall or floor. An object that the edge of the cell cuts off (for example in a close-up), an object drawn small, and an object in the wrong state are not drawing errors. Flash said: "a crop because of the extreme close-up shot is reasonable".
+Expected: The captioner does not mark a crop as a drawing error, because concept C-048 says a drawing error is only an object that floats, looks pasted on, or breaks the lines of the wall or floor. An object that the edge of the cell cuts off (for example in a close-up), an object drawn small, and an object in the wrong state are not drawing errors. Flash said: "a crop because of the extreme close-up shot is reasonable".
 
 Actual: The captioner marks a cut-off object as a drawing error. On ventilator cell 1, it marked the machine as a drawing error on a must-see item ("cut off by the right edge… looks small"). That drawing error then capped plausible at 1.
 

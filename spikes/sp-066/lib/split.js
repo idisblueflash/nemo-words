@@ -73,10 +73,10 @@ function drawSplit(words, hits, { seed = SEED, size = TUNING_SIZE } = {}) {
   return { seed, size: n, tuning, measure: words.filter((w) => !inTuning.has(w)), tuningHits: nHits };
 }
 
-// A name anchor: the must-see list gives a name sign (ADR-0035, C-043).
+// A name anchor: the must-see list gives a name sign (ADR-0037, C-047).
 const hasNameAnchor = (list) => !!list && Array.isArray(list.nameSigns) && list.nameSigns.length > 0;
 
-// A main subject: the must-see list names one, { name, actor } (ADR-0037, ADR-0038, C-045); an actor counts.
+// A main subject: the must-see list names one, { name, actor } (ADR-0039, ADR-0040, C-049); an actor counts.
 const hasMainSubject = (list) => !!list && !!list.mainSubject && typeof list.mainSubject.name === "string" && list.mainSubject.name !== "";
 
 // The early picks the Staged run asks for, in this order; one word can meet several.

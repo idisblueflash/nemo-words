@@ -179,7 +179,7 @@ test("AC2: the caption prompt asks for the action line and a size and place per 
   assert.match(prompt, /"mark": "visible"/);
 });
 
-// After stage 2 (ADR-0036, C-044): the caption lists the cell's drawing errors.
+// After stage 2 (ADR-0038, C-048): the caption lists the cell's drawing errors.
 // The fake captioner: with a "tile" item, a cell from lightness 210 draws the
 // tile wrong (a must-see item), a cell at 150–209 draws a lamp wrong (another
 // object), and a darker cell has no error. With a "nurse" item, a cell from

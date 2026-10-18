@@ -1,7 +1,7 @@
 "use strict";
 
-// SP-066 AC3 (after stage 5, ADR-0037, which replaces the caps of ADR-0035 and
-// ADR-0036) — Given the captions, the compare lines and the story of a word,
+// SP-066 AC3 (after stage 5, ADR-0039, which replaces the caps of ADR-0037 and
+// ADR-0038) — Given the captions, the compare lines and the story of a word,
 // when Jev picks a cell, then a name sign that can't be read never takes a
 // cell out; Jev sees the cell's drawing errors and gives plausible a lower
 // score for them, and code doesn't cap plausible; the name sign is a clarity
@@ -46,7 +46,7 @@ test("AC3: a name sign that can't be read never takes a cell out; it is one clar
   assert.deepEqual(p.scored, [1, 2, 3, 4, 5, 6, 7, 8, 9]);
   assert.equal(p.gateSkipped, false);
   assert.equal(p.scores["1"].clarity.parts.nameSign.score, 1, "cell 1 can't read Venice: the lowest name-sign level");
-  assert.equal(p.scores["1"].clarity.score, 2.5, "the mean of 3, 3, 3 and 1: above ADR-0035's old cap of 2");
+  assert.equal(p.scores["1"].clarity.score, 2.5, "the mean of 3, 3, 3 and 1: above ADR-0037's old cap of 2");
   assert.equal(p.scores["8"].clarity.parts.nameSign.score, 3, "cell 8 reads VENICE, R.N.");
   assert.equal(p.caps, undefined, "code caps nothing");
 
@@ -76,7 +76,7 @@ test("AC3: Jev scores plausible with the drawing errors in its state, and code d
   assert.equal(state.cells.cell_1.name_sign_readable, undefined, "no name sign: no name_sign_readable");
 });
 
-test("AC3 (ADR-0039): the questions tell Jev about the name sign and the drawing errors; the drawing part of plausible ranks an error on a must-see item lowest", async () => {
+test("AC3 (ADR-0041): the questions tell Jev about the name sign and the drawing errors; the drawing part of plausible ranks an error on a must-see item lowest", async () => {
   const text = (q) => q.prompt || JSON.stringify(q);
   const { calls } = await pickRun([TILE]);
   const q = calls[0].body.questions.cell_1_plausible_drawing;

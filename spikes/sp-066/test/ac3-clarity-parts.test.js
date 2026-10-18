@@ -1,12 +1,12 @@
 "use strict";
 
-// SP-066 AC3 (after stage 5, ADR-0037, C-046) — Jev scores must-see clarity in
+// SP-066 AC3 (after stage 5, ADR-0039, C-050) — Jev scores must-see clarity in
 // parts, one Score question each per scored cell, with the full caption in the
 // state: completeness, size, state, name sign (only for a name anchor) and the
 // main subject's view (only when the story has a main subject: front or
 // three-quarter 3, side 2, back or from above 1). Must-see clarity is the
 // mean of the parts that apply, its confidence the lowest of theirs, and code
-// doesn't cap it. After the second stage 5 (ADR-0038, C-047): the view part
+// doesn't cap it. After the second stage 5 (ADR-0040, C-051): the view part
 // applies whenever there is a main subject, an actor too; Jev's state gives
 // the main subject as { name, actor }. An actor is never a must-see item, so
 // the gate never checks it: a cell that doesn't show the actor stays scored,

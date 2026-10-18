@@ -39,9 +39,9 @@ async function report(run, sp029 = syntheticSp029Run(run), { weights, sp064 = sy
 
 const lastLines = (text, n) => text.trim().split("\n").slice(-n).join("\n");
 
-test("AC5 (after the second stage 5, ADR-0038): the method text gives the main subject rule and the actor", async () => {
+test("AC5 (after the second stage 5, ADR-0040): the method text gives the main subject rule and the actor", async () => {
   const md = await report(syntheticRun());
-  assert.match(md, /the main subject's view when the story has one \(the person, animal or group that does the story's action, never an object; when the story names no person, the person who does it: the actor, which the gate never checks\) \(ADR-0037, ADR-0038\)/);
+  assert.match(md, /the main subject's view when the story has one \(the person, animal or group that does the story's action, never an object; when the story names no person, the person who does it: the actor, which the gate never checks\) \(ADR-0039, ADR-0040\)/);
 });
 
 test("AC5: exact and in-three rates over the 62 measured words, next to SP-064, SP-029, chance and the always-cell-1 rule on the same words", async () => {

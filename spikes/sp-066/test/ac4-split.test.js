@@ -72,7 +72,7 @@ test("AC4: the real 82 words split into 20 tuning words, 4 or 5 of them SP-064 h
   assert.ok(hits === 4 || hits === 5, `${hits} SP-064 hits in the tuning set`);
 });
 
-test("AC4 (early picks): a name anchor is a must-see list with a name sign (ADR-0035)", () => {
+test("AC4 (early picks): a name anchor is a must-see list with a name sign (ADR-0037)", () => {
   const { hasNameAnchor } = require("../lib/split");
   assert.equal(hasNameAnchor({ items: [{ name: "nurse", adjectives: [] }], nameSigns: [{ item: "nurse", text: "Venice" }] }), true);
   // no name sign: not a name anchor, even with a sign-like item

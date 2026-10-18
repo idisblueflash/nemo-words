@@ -1,7 +1,7 @@
 "use strict";
 
-// SP-066 AC1 (after stage 5, ADR-0037, C-045; after the second stage 5,
-// ADR-0038, C-047) — the must-see list names the main subject as
+// SP-066 AC1 (after stage 5, ADR-0039, C-049; after the second stage 5,
+// ADR-0040, C-051) — the must-see list names the main subject as
 // { name, actor } or null: the one person, animal or group of them that does
 // the story's action (one of the items, actor false); one that only receives
 // the action is not it, and an object is never it. When the story names no
@@ -138,7 +138,7 @@ test("mustSeeLists: the main-subject repair and the name repair go in one repair
 });
 
 test("the must-see prompt changes, so every list made under the old prompt is made again", () => {
-  // the key of the prompt before ADR-0038, for this story
+  // the key of the prompt before ADR-0040, for this story
   assert.notEqual(require("../lib/must-see").promptKey("A star shines."), "2e80671e70d0c711");
   assert.doesNotMatch(prompt("A star shines."), /the one person or object that the story is about/);
 });

@@ -2,10 +2,10 @@
 status: superseded
 deciders: Flash Hu
 date: 2026-10-17
-backlog: [SP-066, C-044]
+backlog: [SP-066, C-048]
 ---
 
-# 0036. SP-066 lowers plausible for a drawing error
+# 0038. SP-066 lowers plausible for a drawing error
 
 Technical Story: SP-066 (staged run, after stage 2, 2026-10-17)
 
@@ -58,5 +58,5 @@ The caption lists each object that doesn't fit the picture: it floats, looks pas
 
 ## Links
 
-* ADR-0035: the other decision made after stage 2
-* Superseded by ADR-0037
+* ADR-0037: the other decision made after stage 2
+* Superseded by ADR-0039

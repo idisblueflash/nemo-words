@@ -9,7 +9,7 @@
 //              line says the objects act on each other and every shown item
 //              is large; else 1. An angle other than eye level costs one
 //              level (not below 0) unless angle_case is view or one-object.
-// and the must-see clarity parts (`cell_<N>_clarity_<part>`, ADR-0037):
+// and the must-see clarity parts (`cell_<N>_clarity_<part>`, ADR-0039):
 //   completeness  0 when a must-see item is partly cut (1 in a close-up or
 //                 an extreme close-up, where the crop fits the shot), else 2
 //   size          0 when a shown item is small; 2 when every shown item is
@@ -29,14 +29,14 @@ const path = require("node:path");
 
 const lightness = (x) => Number((/lightness (\d+)/.exec(typeof x === "string" ? x : JSON.stringify(x)) || [])[1]);
 
-// After ADR-0039 (C-049) plausible and vivid can be scored in parts
+// After ADR-0041 (C-053) plausible and vivid can be scored in parts
 // (`cell_<N>_plausible_<part>`, `cell_<N>_vivid_<part>`): each part answers
 // its axis's level above, so the axis (their mean) keeps it, and an override
 // of the axis question (`cell_5_plausible`) sets every one of its parts; an
 // override of one part (`cell_5_plausible_actions`) sets that part only.
 const SPLIT_AXIS = /^(cell_\d+_(?:plausible|vivid))_\w+$/;
 
-// The vivid onlooker part (C-048) of a cell with onlookers: 0 when one looks
+// The vivid onlooker part (C-052) of a cell with onlookers: 0 when one looks
 // away or does something else, else 2 (one watches or reacts); a cell with no
 // onlooker answers its vivid level, as the other parts do.
 function answer(name, state) {

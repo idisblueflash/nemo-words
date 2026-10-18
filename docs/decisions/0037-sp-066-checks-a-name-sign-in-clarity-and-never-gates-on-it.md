@@ -2,10 +2,10 @@
 status: superseded
 deciders: Flash Hu
 date: 2026-10-17
-backlog: [SP-066, C-034, C-043]
+backlog: [SP-066, C-034, C-047]
 ---
 
-# 0035. SP-066 checks a name sign in must-see clarity and never gates a cell on it
+# 0037. SP-066 checks a name sign in must-see clarity and never gates a cell on it
 
 Technical Story: SP-066 (staged run, after stage 2, 2026-10-17)
 
@@ -59,5 +59,5 @@ The must-see list gives the carrier as a must-see item (`nurse`) and the name as
 ## Links
 
 * ADR-0032: the must-see gate checks item names only (still true; a name sign is not an item)
-* ADR-0036: the other decision made after stage 2
-* Superseded by ADR-0037
+* ADR-0038: the other decision made after stage 2
+* Superseded by ADR-0039

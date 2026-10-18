@@ -19,7 +19,7 @@
 // (an SP-064 hit, a name anchor, an angleCase view or one-object, an SP-064
 // gate skip, and after the stage-5 refine a word with a main subject); the order is saved in raw/split.json and doesn't change while
 // the must-see prompt stays the same (listPromptKey; after the stage-2 refine
-// the old order is made again from the new lists, ADR-0035). Then
+// the old order is made again from the new lists, ADR-0037). Then
 // it runs the chosen words and prints a stage summary (stdout). The measure
 // stage refuses to run until every tuning word has run; it then fixes the
 // weights on the tuning words (raw/weights.json), after which the tuning

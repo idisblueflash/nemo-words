@@ -6,7 +6,7 @@
 // large and acting on each other as the story says, 2 = clear but not
 // acting, 1 = small, far or apart); an unusual angle lowers vivid only when
 // it hides the action, and not when the story is about a view or has one
-// main object (C-042); must-see clarity is the mean of its parts (ADR-0037:
+// main object (C-042); must-see clarity is the mean of its parts (ADR-0039:
 // completeness, size and state here, with no name sign and no main subject);
 // and code adds the weighted scores and picks the main
 // cell and the alternative cell as in SP-064.
@@ -89,7 +89,7 @@ test("AC3: Jev's state holds each cell's action line, each item's mark, size and
 });
 
 test("AC3: the vivid axis scores the scene, not the camera", () => {
-  const vivid = readJson(path.join(SPIKE, "image-rubric.json")).axes.vivid.parts.scene; // ADR-0039: the scene part
+  const vivid = readJson(path.join(SPIKE, "image-rubric.json")).axes.vivid.parts.scene; // ADR-0041: the scene part
   assert.match(vivid.levels[0], /small, far away or apart/);
   assert.match(vivid.levels[1], /clear, but .*don't act on each other/);
   assert.match(vivid.levels[2], /large and act on each other as the story says/);
@@ -114,7 +114,7 @@ test("AC3: an unusual angle lowers vivid when the story is neither about a view 
 });
 
 test("AC3: must-see clarity's size part uses each item's size, so a small story item gets its lowest level", async () => {
-  // since the stage-5 refine (ADR-0037), the size is one clarity part, not the whole score
+  // since the stage-5 refine (ADR-0039), the size is one clarity part, not the whole score
   const { size, state, completeness } = readJson(path.join(SPIKE, "image-rubric.json")).axes.clarity.parts;
   assert.match(size.check, /size \(large \/ medium \/ small\)/);
   assert.match(size.levels[0], /too small/);

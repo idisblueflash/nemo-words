@@ -4,7 +4,7 @@
 // run makes its must-see list, then one text-only Claude call lists only
 // objects that a drawing can show, each with its adjectives; it lists no
 // abstract items (a time, a relation, a feeling with no visible sign); a name
-// anchor gives its carrier as an item and its name as a name sign (ADR-0035);
+// anchor gives its carrier as an item and its name as a name sign (ADR-0037);
 // it says if the story is about a view, has one main object, or neither
 // (angleCase, C-042); and the list is cached, so a re-run doesn't call Claude
 // again.

@@ -1,7 +1,7 @@
 "use strict";
 
 // SP-066 AC2 (bug-018) — a crop, a small object or a wrong state is not a
-// drawing error (C-044). Only an object that floats, looks pasted on, or
+// drawing error (C-048). Only an object that floats, looks pasted on, or
 // breaks the lines of the wall or floor is one.
 
 const test = require("node:test");

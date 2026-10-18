@@ -1,6 +1,6 @@
 "use strict";
 
-// SP-066 AC1 (after stage 2, ADR-0035, C-043) — a name anchor gives the person
+// SP-066 AC1 (after stage 2, ADR-0037, C-047) — a name anchor gives the person
 // or thing that carries the name as a must-see item (a nurse), and its name
 // sign: the text that the picture should show ("Venice"). A name sign is not a
 // must-see item, so the gate never checks it. A list that leaves the name in

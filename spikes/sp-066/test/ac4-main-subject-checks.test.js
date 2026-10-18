@@ -1,11 +1,11 @@
 "use strict";
 
-// SP-066 AC4 (after stage 5, ADR-0037) — the Staged run's early picks gain one
+// SP-066 AC4 (after stage 5, ADR-0039) — the Staged run's early picks gain one
 // word with a main subject, and the summary after each stage gives the two new
 // checks: the captions that show the main subject but have no mainView
 // (should be 0), and clarity's mean spread inside a grid (max − min over the
 // scored cells, then the mean over the judged words), next to 0.71, stage 5's
-// value before the refine. After the second stage 5 (ADR-0038, C-047): the
+// value before the refine. After the second stage 5 (ADR-0040, C-051): the
 // summary prints each word's main subject, marked "(actor)" when it is one, or
 // "none"; for an actor, a null mainView means the cell doesn't show it, which
 // isn't counted as a missing view but counted on its own line.

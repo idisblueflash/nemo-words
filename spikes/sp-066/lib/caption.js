@@ -12,18 +12,18 @@
 // hidden item has no size or place (null). The prompt names the must-see items by name only,
 // without their adjectives (ADR-0032): the adjectives can describe the story's
 // last step and so hide an earlier step's cell; they count only toward the
-// clarity score. After stage 2 (ADR-0036, C-044) it also lists the cell's
+// clarity score. After stage 2 (ADR-0038, C-048) it also lists the cell's
 // drawing errors, drawingErrors [{ object, mustSee: true|false, note }]: an
 // object that floats, looks pasted on, or breaks the lines of the wall or
 // floor (not one the scene shows broken on purpose); an empty list when there
 // is none, and a caption without the list is unusable. The text it can read
-// stays in extras.readableText (the name-sign check, ADR-0035). After stage 5
-// (ADR-0037, C-045): when the list has a main subject, the prompt names it (as
+// stays in extras.readableText (the name-sign check, ADR-0037). After stage 5
+// (ADR-0039, C-049): when the list has a main subject, the prompt names it (as
 // the captioner may see it, without the headword) and asks for its view,
 // mainView: front, three-quarter, side, back or above; null when the cell hides
 // it. A caption with no usable mainView then is unusable. With no main subject
 // the prompt has no view question, and mainView is null. After the second
-// stage 5 (ADR-0038, C-047) the main subject is { name, actor }; the prompt
+// stage 5 (ADR-0040, C-051) the main subject is { name, actor }; the prompt
 // gives its name, masked as item names are. An actor isn't an item: null then
 // means the cell doesn't show the person, and is usable.
 // Cached in <out>/captions.json (grid → cell → caption); each
@@ -44,7 +44,7 @@ const EXTRAS = ["floor", "background", "morePeople", "readableText"];
 const SIZES = ["large", "medium", "small"];
 const PLACES = ["front", "back"];
 const VIEWS = ["front", "three-quarter", "side", "back", "above"];
-// What an onlooker does (ADR-0039, C-048).
+// What an onlooker does (ADR-0041, C-052).
 const ONLOOKER_DOES = ["watches", "reacts", "looks away", "other"];
 
 // The must-see item names, once each, in list order.
@@ -60,7 +60,7 @@ const shownMain = (name, word) => (word ? describeBareName(word, name) || maskNa
 
 const hasMain = (mainSubject) => mainSubject !== null && mainSubject !== undefined;
 
-// mainSubject: { name, actor } or null (ADR-0038). A non-actor main subject's
+// mainSubject: { name, actor } or null (ADR-0040). A non-actor main subject's
 // prompt is the one it had as a bare name, so its cached captions stay valid;
 // an actor's view question says to give null when the cell doesn't show it.
 function prompt(items, word, mainSubject = null) {

@@ -1,13 +1,13 @@
 "use strict";
 
-// SP-066 AC2 (after stage 5, ADR-0037, C-045) — when the story has a main
+// SP-066 AC2 (after stage 5, ADR-0039, C-049) — when the story has a main
 // subject, each caption gives the view of the main subject: front,
 // three-quarter, side, back or from above (null when the cell hides it). A
 // caption with no mainView then is unusable. A story with no main subject
 // gets no mainView question, and its captions have mainView null. The main
 // subject reaches the captioner without the headword (bug-016, bug-020).
 //
-// After the second stage 5 (ADR-0038, C-047): the main subject is { name,
+// After the second stage 5 (ADR-0040, C-051): the main subject is { name,
 // actor } and the MAIN SUBJECT line gives its name, masked as item names are
 // (an actor's name too). For an actor (not an item), the caption may give
 // null when the cell doesn't show the person, and that is usable; any other
@@ -124,10 +124,10 @@ test("a caption made under the prompt without the main subject is made again onc
   assert.equal(caption.prompt(list, "starry", null), caption.prompt(list, "starry"));
 });
 
-test("an actor's caption prompt differs from a non-actor's with the same name (ADR-0038); the onlookers line (ADR-0039) makes every caption again", () => {
+test("an actor's caption prompt differs from a non-actor's with the same name (ADR-0040); the onlookers line (ADR-0041) makes every caption again", () => {
   const star = caption.promptKey(items("square", "star"), "starry", { name: "star", actor: false });
   assert.notEqual(caption.promptKey(items("square", "star"), "starry", { name: "star", actor: true }), star);
-  // the keys of the prompt before ADR-0039 no longer match
+  // the keys of the prompt before ADR-0041 no longer match
   assert.notEqual(star, "ee4f54b0bd53a688");
   assert.notEqual(caption.promptKey(items("square", "star"), "starry", null), "edb2d63ba9cb649f");
   assert.match(caption.prompt(items("square", "star"), "starry", null), /"onlookers"/);

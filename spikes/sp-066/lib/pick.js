@@ -10,16 +10,16 @@
 //   Jev:  one systemOne request per grid, the way judge-stories scores
 //         stories (US-038): per scored cell one Score question for plausible
 //         (`cell_<N>_plausible`) and vivid (`cell_<N>_vivid`), and one per
-//         must-see clarity part (`cell_<N>_clarity_<part>`, ADR-0037, C-046):
+//         must-see clarity part (`cell_<N>_clarity_<part>`, ADR-0039, C-050):
 //         completeness, size and state always, nameSign only with a name sign,
-//         view only with a main subject (ADR-0038: { name, actor }, an
+//         view only with a main subject (ADR-0040: { name, actor }, an
 //         actor too; an actor is never a must-see item, so the gate never
 //         checks it, and a cell that doesn't show it has main_view null and
 //         the lowest view level). A score is Jev's level + 1 (1–3,
 //         decimals kept), with Jev's confidence; clarity is the mean of its
 //         parts, with the lowest confidence of its parts (for C-037). Each
 //         question gets the full captions in the state. Code caps no score
-//         (ADR-0037): Jev's state holds each cell's drawing errors and, with
+//         (ADR-0039): Jev's state holds each cell's drawing errors and, with
 //         a name sign, name_sign_readable (a name sign never gates a cell).
 //   Code: total = Σ weight·score; the highest total is the main cell (ties:
 //         higher plausible, then lower cell). The alternative cell, margin and
@@ -39,7 +39,7 @@ const PARTS = ["completeness", "size", "state", "nameSign", "view"];
 const START_WEIGHTS = { plausible: 2, vivid: 1, clarity: 1 };
 const CELLS = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-// After stage 20 (ADR-0039, C-049) plausible and vivid may be scored in parts
+// After stage 20 (ADR-0041, C-053) plausible and vivid may be scored in parts
 // too: an axis with "parts" in the rubric (and no levels of its own) gets one
 // Score question per part (`cell_<N>_<axis>_<part>`), and its score is their
 // mean, as for clarity. An axis with levels stays one question.
@@ -58,7 +58,7 @@ function loadRubric(file = RUBRIC_FILE) {
   return rubric;
 }
 
-// The clarity parts that apply to a story (C-046): the name sign only with
+// The clarity parts that apply to a story (C-050): the name sign only with
 // one, the view only with a main subject.
 const clarityParts = ({ nameSigns = [], mainSubject = null } = {}) =>
   PARTS.filter((p) => (p === "nameSign" ? nameSigns.length > 0 : p === "view" ? mainSubject !== null && mainSubject !== undefined : true));
@@ -74,7 +74,7 @@ function axisParts(rubric, input = {}) {
   return parts;
 }
 
-// An axis-parts argument: a map as axisParts gives it, or (as before ADR-0039)
+// An axis-parts argument: a map as axisParts gives it, or (as before ADR-0041)
 // a list of the clarity parts, with plausible and vivid one question each.
 const partsMap = (parts) => (Array.isArray(parts) ? { plausible: null, vivid: null, clarity: parts } : parts);
 
@@ -125,7 +125,7 @@ const plainText = (t) =>
     .replace(/[^\p{L}\p{N}]+/gu, " ")
     .trim()} `;
 
-// Whether the cell's readable text shows every name sign (ADR-0035): true or
+// Whether the cell's readable text shows every name sign (ADR-0037): true or
 // false, or null when the story has no name sign.
 function nameSignReadable(nameSigns, caption) {
   if (!nameSigns || !nameSigns.length) return null;
@@ -156,7 +156,7 @@ const usable = (x, lo, hi) => typeof x === "number" && Number.isFinite(x) && x >
 const round6 = (x) => Math.round(x * 1e6) / 1e6;
 
 // Jev's answers → cell → axis → { score: 1–3, confidence }; an axis in parts
-// (clarity, and after ADR-0039 plausible and vivid) also holds its parts
+// (clarity, and after ADR-0041 plausible and vivid) also holds its parts
 // (part → { score, confidence }), its score is their mean and its confidence
 // their lowest. parts: as buildQuestions takes it.
 function toScores(answers, cells, parts = clarityParts()) {

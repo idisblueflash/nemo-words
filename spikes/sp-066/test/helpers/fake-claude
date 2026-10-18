@@ -10,16 +10,16 @@
 // A fixture cell is flat gray; the fake reads its gray level back with magick.
 //
 // Story words drive the must-see list, and list items drive the captions:
-//   "Venice"        → item "nurse" and the name sign { item: "nurse", text: "Venice" } (ADR-0035)
+//   "Venice"        → item "nurse" and the name sign { item: "nurse", text: "Venice" } (ADR-0037)
 //   "then"          → isSequence true
 //   "view" / "lone" → angleCase "view" / "one-object" (else "none")
 //   "moon"          → item "moon": hidden in cells darker than 100, partly cut below 150
 //   "operates"      → item "surgeon" (bug-020), and the main subject "surgeon"
-//   "star"          → item "star", and the main subject "star" (C-045; else null)
+//   "star"          → item "star", and the main subject "star" (C-049; else null)
 //   "haunts"        → the main subject "ghost" (with "ghost": hidden in every cell)
-//   (a main subject is { name, actor: false }, ADR-0038)
+//   (a main subject is { name, actor: false }, ADR-0040)
 //   "grab"          → the actor { name: "person who grabs the broom", actor: true }
-//                     (C-047), not an item; a caption doesn't show it below lightness 90
+//                     (C-051), not an item; a caption doesn't show it below lightness 90
 //   "bad-main"      → the main subject "dragon" (no item) until the repair
 //                     prompt, then "star"; "bad-main-always": "dragon" every time
 //   "malformed-main" → the main subject as the old bare string ("star") until
@@ -32,7 +32,7 @@
 //   "split"         → item "split": the differences call fails
 //   "waiter"        → item "waiter": each caption has an onlooker, a customer
 //                     seen from the back, who watches from lightness 150 and
-//                     looks away below (ADR-0039, C-048); every other caption
+//                     looks away below (ADR-0041, C-052); every other caption
 //                     has an empty onlookers list
 //   "nolookers"     → item "nolookers": the captions have no onlookers list
 //   "tile"          → item "tile": a drawing error on the tile (a must-see
@@ -73,7 +73,7 @@ if (process.env.FAKE_CLAUDE_LIMIT_AFTER !== undefined && callsBefore >= Number(p
   process.exit(1);
 }
 
-// The actor that a "grab" story gives (C-047): not an item, shown only in cells from lightness 90.
+// The actor that a "grab" story gives (C-051): not an item, shown only in cells from lightness 90.
 const ACTOR = "person who grabs the broom";
 
 const level = (file) => Math.round(Number(execFileSync("magick", [path.join(cwd, file), "-format", "%[fx:mean*255]", "info:"]).toString()));
@@ -156,10 +156,10 @@ if (mode === "must-see") {
     extras: { floor: false, background: "plain", morePeople: false, readableText: names.includes("nurse") && l >= 150 ? "VENICE, R.N." : "" },
     mustSee: Object.fromEntries(names.map((n) => [n, mark(n)])),
     drawingErrors: !names.includes("tile") ? [] : l >= 210 ? [{ object: "tile", mustSee: true, note: "sits on top of the grout lines" }] : l >= 150 ? [{ object: "lamp", mustSee: false, note: "floats above the table" }] : [],
-    // onlookers (C-048): with a "waiter" item, a customer seen from the back
+    // onlookers (C-052): with a "waiter" item, a customer seen from the back
     // who watches from lightness 150 and looks away below; "nolookers": no list
     ...(names.includes("nolookers") ? {} : { onlookers: names.includes("waiter") ? [{ who: "customer", does: l >= 150 ? "watches" : "looks away", view: "back" }] : [] }),
-    // the main subject's view (C-045), only when the prompt names one
+    // the main subject's view (C-049), only when the prompt names one
     // an actor ("person who …", maybe masked; not an item) isn't shown below lightness 90: mainView null
     ...(main === null || main === "noview" ? {} : { mainView: status(main) === "hidden" || (/^person who/.test(main) && l < 90) ? null : l < 60 ? "above" : l < 90 ? "back" : l < 150 ? "side" : l < 210 ? "three-quarter" : "front" }),
   });

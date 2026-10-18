@@ -2,16 +2,16 @@
 status: accepted
 deciders: Flash Hu
 date: 2026-10-17
-backlog: [SP-066, C-034, C-043, C-044, C-045, C-046]
+backlog: [SP-066, C-034, C-047, C-048, C-049, C-050]
 ---
 
-# 0037. SP-066 scores must-see clarity in parts and drops the code caps
+# 0039. SP-066 scores must-see clarity in parts and drops the code caps
 
 Technical Story: SP-066 (staged run, after stage 5, 2026-10-17)
 
 ## Context and Problem Statement
 
-After stage 5 of SP-066's staged run (5 tuning words), three things showed that the code caps of ADR-0035 and ADR-0036 and the one clarity question don't separate the cells:
+After stage 5 of SP-066's staged run (5 tuning words), three things showed that the code caps of ADR-0037 and ADR-0038 and the one clarity question don't separate the cells:
 
 - **The plausible cap made period a miss.** In almost every cell of period, the sea is a flat block that ends in a straight edge. The captioner marked this drawing error in 6 of 9 cells, and the cap set plausible to 1 in those 6. Jev had already lowered them to about 2. Flash's cell 9, the only cell that shows every must-see item, lost to cell 5 because of the cap. Without the cap, cell 9's total is 9.60, more than cell 5's 9.49.
 - **Clarity sits at its lowest level.** The lowest clarity level covers a small or partly cut item, and 39 of the 46 scored cells (85%) have one: their mean clarity is 1.17, against 1.99 for the other 7. Every surgeon cell has a headlamp, which is small by nature, so all of them got the lowest level. A crop that fits a close-up costs the same as one that cuts the story.
@@ -24,7 +24,7 @@ Plausible and vivid sit at the top of the scale (2.8–3.0) in most cells, so to
 For the drawing error:
 * Jev decides plausible from the drawing errors, with no code cap
 * Keep the code cap only for an error marked in fewer than half of the grid's cells
-* Keep the cap (ADR-0036)
+* Keep the cap (ADR-0038)
 
 For must-see clarity:
 * One Jev question per clarity part, clarity = the mean of the parts
@@ -40,7 +40,7 @@ The caption still lists drawing errors, and Jev's state still holds them, but co
 
 Must-see clarity has five parts, each a Jev Score question with the full caption: completeness, size, state, name sign (only for a name anchor) and main-subject view (only when the story has a main subject: front or three-quarter 3, side 2, back or from above 1). The must-see list names the main subject, and the caption gives its view. Clarity is the mean of the parts that apply. Jev, not code, scores the parts, because some need judgment that a caption field can't give: a crop that fits a close-up and a headlamp that is small by nature cost less than a crop or a small item that hides the story. The mean keeps clarity on the 1–3 scale of the other axes, so the weight search keeps 3 weights.
 
-This replaces both ADR-0036 (the plausible cap) and ADR-0035. ADR-0035's other half stays true and is restated here: the gate checks the carrier of a name (`nurse`), and a name sign never takes a cell out.
+This replaces both ADR-0038 (the plausible cap) and ADR-0037. ADR-0037's other half stays true and is restated here: the gate checks the carrier of a name (`nurse`), and a name sign never takes a cell out.
 
 ### Positive Consequences
 
@@ -69,7 +69,7 @@ This replaces both ADR-0036 (the plausible cap) and ADR-0035. ADR-0035's other h
 * Good, because an error shared by most cells counts as the grid's style.
 * Bad, because the half is a guess, and the captioner's uneven marks still decide which cells are capped.
 
-### Keep the cap (ADR-0036)
+### Keep the cap (ADR-0038)
 
 * Good, because a drawing error on a must-see item always costs a lot.
 * Bad, because period stays a miss through cells that the captioner marked unevenly.
@@ -96,7 +96,7 @@ This replaces both ADR-0036 (the plausible cap) and ADR-0035. ADR-0035's other h
 
 ## Links
 
-* Supersedes ADR-0035
-* Supersedes ADR-0036
+* Supersedes ADR-0037
+* Supersedes ADR-0038
 * ADR-0033: vivid scores the scene, not the camera (still true)
 * ADR-0032: the must-see gate checks item names only (still true)

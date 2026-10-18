@@ -5,12 +5,12 @@
 // adjectives, and says whether the story is a sequence. SP-066: it lists only
 // what a drawing can show (no abstract item: a time, a relation, a feeling
 // with no visible sign), and it says if the story is about a view, has one
-// main object, or neither (angleCase, C-042). After stage 2 (ADR-0035, C-043):
+// main object, or neither (angleCase, C-042). After stage 2 (ADR-0037, C-047):
 // a name used as a sound anchor gives the person or thing that carries it as
 // a must-see item ("nurse") and the name as a name sign ({ item: "nurse",
 // text: "Venice" }); a name sign is not a must-see item, so the gate never
-// checks it. After stage 5 (ADR-0037, C-045): it names the main subject. After
-// the second stage 5 (ADR-0038, C-047) that is { name, actor } or null: the
+// checks it. After stage 5 (ADR-0039, C-049): it names the main subject. After
+// the second stage 5 (ADR-0040, C-051) that is { name, actor } or null: the
 // one person, animal or group of them that does the story's action (an item,
 // actor false; never an object, never one that only receives the action), or,
 // when the story names no person but has an action, the person who does it
@@ -71,13 +71,13 @@ function parseList(text) {
   return { items, nameSigns, mainSubject, isSequence: j.isSequence === true, angleCase: j.angleCase };
 }
 
-// A main subject's shape (ADR-0038): { name: a non-empty string, actor: true | false }.
+// A main subject's shape (ADR-0040): { name: a non-empty string, actor: true | false }.
 const wellFormedMain = (m) => isObject(m) && isText(m.name) && typeof m.actor === "boolean";
 
 // What is wrong with a list's main subject: "malformed" (not null and not
 // { name, actor }; a missing one isn't named), "not an item" (a non-actor main
-// subject that isn't one of the items, C-045), or null when it is fine. An
-// actor is never an item (C-047), so any actor name is fine.
+// subject that isn't one of the items, C-049), or null when it is fine. An
+// actor is never an item (C-051), so any actor name is fine.
 function mainSubjectProblem(list) {
   const m = list.mainSubject;
   if (m === null) return null;
@@ -101,7 +101,7 @@ function storyNames(story, nameSigns = []) {
   return [...new Set(names)];
 }
 
-// A name sign is not a must-see item (ADR-0035): the name must not be in an
+// A name sign is not a must-see item (ADR-0037): the name must not be in an
 // item's name, bare ("Victor") or as SP-064's nametag item ('man with a
 // nametag reading "Victor"'), and each name sign's carrier must be an item of
 // the list. list: { items, nameSigns } → the names that need the repair.

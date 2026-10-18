@@ -16,7 +16,7 @@ items: [SP-029, SP-064, SP-066]
 
 ## Reviews
 - 2026-10-15, SP-029: Flash's pick for the card is cell 9. (Found again by a pixel match with the final crop.)
-- 2026-10-17, after SP-066 stage 20 (ADR-0039, in the agent's words, not Flash's): "the main actor is the old man who pulls the bell rope, and the crowd is the onlooker; the back of the crowd leads the eye to him and hides the odd faces of cell 6." Label stays 9.
+- 2026-10-17, after SP-066 stage 20 (ADR-0041, in the agent's words, not Flash's): "the main actor is the old man who pulls the bell rope, and the crowd is the onlooker; the back of the crowd leads the eye to him and hides the odd faces of cell 6." Label stays 9.
 - 2026-10-18, after SP-066 (Flash's words, grammar fixed): "Cells 6 and 1 show the crowd's side, or its front and quarter faces. This makes the whole image look like people are interested in the old man who pulls the bell, instead of the sound of the bell attracting the crowd. Another benefit of the back of the crowd is that it reduces the chance of odd looks, because AI-generated images have flaws. The third benefit is that the back of the crowd moves the reader's attention to the object that the crowd is focused on (the bell here), so it improves the storytelling." Label stays 9.
 
 ## Trials
