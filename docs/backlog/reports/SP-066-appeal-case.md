@@ -1,4 +1,4 @@
-# SP-066: the appeal case in detail
+# The appeal case in detail
 
 **Story:** A peal of bells attracts a curious crowd.
 
