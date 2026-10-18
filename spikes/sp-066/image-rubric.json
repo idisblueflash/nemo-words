@@ -1,0 +1,113 @@
+{
+  "_comment": "SP-066: the image pick's rubric, read by lib/pick.js (Jev), shaped like scripts/story-rubric.json's axes. One Score question per scored cell and axis; Jev answers a level 0-2, and the axis score is that + 1 (decimals kept, as US-038 keeps them). An axis's optional \"check\" is added to its question. SP-066 changes SP-064's rubric so that vivid scores the scene (what the story objects do to each other), not the camera, with the angle exception of C-042 (ADR-0033). After stage 5 (ADR-0037), must-see clarity has no levels of its own: it is scored in parts (C-046), one Score question per scored cell and part, each with its own levels and check (the clarity check comes first), and clarity is the mean of the parts that apply: completeness, size and state always, nameSign only for a name anchor, view only when the story has a main subject (C-045). Code caps no score: Jev sees the drawing errors when it scores plausible, and name_sign_readable when it scores the name sign. After stage 20 (ADR-0039, C-049): plausible is scored in parts too, setting, drawing and story actions, one Score question each (the plausible check comes first), and plausible is their mean. Vivid is scored in 2 parts too (ADR-0039): scene (the vivid question before ADR-0039) and onlooker (C-048, from the caption's onlookers), and vivid is their mean.",
+  "axes": {
+    "plausible": {
+      "label": "Plausible",
+      "check": "Plausible is scored in parts, one question each; this question scores one part only, from the cell's full description.",
+      "parts": {
+        "setting": {
+          "label": "Plausible: setting",
+          "check": "Use the cell's objects, extras (floor, background) and action line: does the cell show where the scene happens, so that the action makes sense there?",
+          "levels": [
+            "no setting clues: nothing shows where the scene happens",
+            "a few setting clues",
+            "clear setting clues that fit the story, such as a floor, a hand, a height or a place"
+          ]
+        },
+        "drawing": {
+          "label": "Plausible: drawing",
+          "check": "Use the cell's drawing_errors (objects that float, look pasted on, or break the lines of the wall or floor; mustSee says if the object is a must-see item). An empty list means no drawing error.",
+          "levels": [
+            "a must-see item is drawn wrong (a drawing error with mustSee true)",
+            "another object is drawn wrong (a drawing error with mustSee false only)",
+            "no drawing error"
+          ]
+        },
+        "actions": {
+          "label": "Plausible: story actions",
+          "check": "Use the cell's action line and step, and the story. The picture is an anchor for the story, so a cell that shows more of the story's actions, in the story's order, is better. The result (the story's last action, such as a fall or a mess) can be left out: the reader imagines it from the actions before it. When the word itself names the result (the word is \"spilled\" and the result is the spill), a cell that shows the result is good. A story with one action: a cell that shows that action gets the top level.",
+          "levels": [
+            "the cell shows only one action, or only the result, of a story with more actions; or its actions don't fit the story's order",
+            "the cell shows some of the story's beginning actions",
+            "the cell shows the story's beginning actions in the story's order (the result may be left out)"
+          ]
+        }
+      }
+    },
+    "vivid": {
+      "label": "Vivid",
+      "check": "Vivid is scored in parts, one question each; this question scores one part only, from the cell's full description.",
+      "parts": {
+        "scene": {
+          "label": "Vivid: scene",
+          "check": "Score the scene, not the camera: what the story objects do to each other, from the cell's action line and the sizes of its must-see items. An eye-level, medium shot is the normal view, and an extreme close-up or a strong camera angle adds nothing. An unusual camera angle lowers vivid only when it hides the action; an unusual angle never lowers vivid when the state's angle_case is \"view\" (the story is about a view) or \"one-object\" (the story has one main object). When a must-see item has a size word such as tiny, little or huge in its adjectives, or the story is about a place or the shape of the land (a ridge), a wide shot that shows the whole place, with the small item small next to a larger story item, is not \"small, far away\": score it on what its story objects do, as for any other shot (ADR-0039).",
+          "levels": [
+            "the story objects are small, far away or apart from each other",
+            "the story objects are clear, but they don't act on each other as the story says",
+            "the story objects are large and act on each other as the story says"
+          ]
+        },
+        "onlooker": {
+          "label": "Vivid: onlooker",
+          "check": "Use the cell's onlookers: the people or animals that are there but don't do the main action. A group in the story that only reacts to the action (a curious crowd that bells attract) is an onlooker too. An onlooker that watches or reacts makes the story's feeling stronger (a customer who sees a nervous waiter fumble); seen from the back, it also leads the eye to the action. An onlooker that looks away or does something else draws the eye away from the action. A cell with no onlooker gets the middle level.",
+          "levels": [
+            "an onlooker looks away or does something else, so it draws the eye away from the story's action",
+            "no onlooker, or an onlooker that adds nothing to the story",
+            "an onlooker watches or reacts to the action and makes the story's feeling stronger"
+          ]
+        }
+      }
+    },
+    "clarity": {
+      "label": "Must-see clarity",
+      "check": "Must-see clarity is scored in parts, one question each; this question scores one part only, from the cell's full description. A name sign is not a must-see item.",
+      "parts": {
+        "completeness": {
+          "label": "Must-see clarity: completeness",
+          "check": "Use each must-see item's mark (visible / partly cut / hidden) and the cell's shot. A crop that fits the shot, as when a close-up cuts the edge of an item, costs less than a crop that cuts off part of the story (the hand that acts, the thing it acts on).",
+          "levels": [
+            "a crop cuts off part of the story: a must-see item that the story needs is partly cut off by the edge of the picture",
+            "a must-see item is partly cut, but the crop fits the shot (as in a close-up)",
+            "every must-see item is fully visible"
+          ]
+        },
+        "size": {
+          "label": "Must-see clarity: size",
+          "check": "Use each must-see item's size (large / medium / small). An item that is small by nature, such as a headlamp or a ring, costs less than a story item drawn too small to see what it does. A must-see item that the story calls small (tiny, little) and that is drawn small or medium next to a larger story item costs nothing: that is its state (ADR-0039).",
+          "levels": [
+            "a story item is too small to see what it does",
+            "an item is small by nature (such as a headlamp), and every other must-see item is large enough to see",
+            "every must-see item is large enough to see"
+          ]
+        },
+        "state": {
+          "label": "Must-see clarity: state",
+          "check": "Check each must-see item with its adjectives: the item must be shown in the state its adjectives give (a bare cob). The cell's must-see marks say only whether an item is there, not its state: use the cell's objects and their adjectives. An item with a size word such as tiny, little or huge is in its state only when it looks that size next to another story item (a tiny house that is small next to a large ridge); a tiny house drawn large in the front of the cell is not in its state (ADR-0039).",
+          "levels": [
+            "a must-see item is not in the state its adjectives give (a cob that isn't bare yet)",
+            "the state of some must-see items is unclear",
+            "every must-see item is in the state its adjectives give"
+          ]
+        },
+        "nameSign": {
+          "label": "Must-see clarity: name sign",
+          "check": "Use the cell's readable text (extras.readableText) and its name_sign_readable: can every name sign (name_signs) be read on the item that carries it, such as \"Venice\" on the nurse's nametag?",
+          "levels": [
+            "a name sign can't be read (no \"Venice\" on the nurse's nametag)",
+            "a name sign is partly readable or misread",
+            "every name sign can be read"
+          ]
+        },
+        "view": {
+          "label": "Must-see clarity: main-subject view",
+          "check": "Use the cell's main_view, the view of the story's main subject (main_subject): where its face and body point. When main_view is null (the main subject is hidden, or the cell doesn't show the actor: main_subject.actor is true), give the lowest level.",
+          "levels": [
+            "the main subject is seen from the back or from above, or is hidden, or it is an actor that the cell doesn't show",
+            "the main subject is seen from the side",
+            "the main subject is seen from the front or in three-quarter view"
+          ]
+        }
+      }
+    }
+  }
+}

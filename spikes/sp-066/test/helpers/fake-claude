@@ -1,0 +1,172 @@
+#!/usr/bin/env node
+"use strict";
+
+// Stands in for `claude -p` in all three SP-064 text steps. It tells them
+// apart by the files in its working folder, the only files the real calls
+// are pointed at:
+//   none                    → must-see list (text only); the story is in the prompt
+//   picture.png             → cell caption; the must-see item names are in the prompt
+//   cell-1.png … cell-9.png → grid differences
+// A fixture cell is flat gray; the fake reads its gray level back with magick.
+//
+// Story words drive the must-see list, and list items drive the captions:
+//   "Venice"        → item "nurse" and the name sign { item: "nurse", text: "Venice" } (ADR-0037)
+//   "then"          → isSequence true
+//   "view" / "lone" → angleCase "view" / "one-object" (else "none")
+//   "moon"          → item "moon": hidden in cells darker than 100, partly cut below 150
+//   "operates"      → item "surgeon" (bug-020), and the main subject "surgeon"
+//   "star"          → item "star", and the main subject "star" (C-049; else null)
+//   "haunts"        → the main subject "ghost" (with "ghost": hidden in every cell)
+//   (a main subject is { name, actor: false }, ADR-0040)
+//   "grab"          → the actor { name: "person who grabs the broom", actor: true }
+//                     (C-051), not an item; a caption doesn't show it below lightness 90
+//   "bad-main"      → the main subject "dragon" (no item) until the repair
+//                     prompt, then "star"; "bad-main-always": "dragon" every time
+//   "malformed-main" → the main subject as the old bare string ("star") until
+//                     the repair prompt; "malformed-main-always": every time
+//   "ghost"         → item "ghost": hidden in every cell
+//   "claude-fails"  → the must-see call fails (exit 1)
+//   "garbled-list"  → the must-see call prints something that isn't JSON
+//   "crash"         → item "crash": every caption call fails
+//   "garble"        → item "garble": every caption prints something that isn't JSON
+//   "split"         → item "split": the differences call fails
+//   "waiter"        → item "waiter": each caption has an onlooker, a customer
+//                     seen from the back, who watches from lightness 150 and
+//                     looks away below (ADR-0041, C-052); every other caption
+//                     has an empty onlookers list
+//   "nolookers"     → item "nolookers": the captions have no onlookers list
+//   "tile"          → item "tile": a drawing error on the tile (a must-see
+//                     item) from lightness 210, on a lamp (not one) at 150–209
+// A caption whose prompt names a main subject (MAIN SUBJECT: "…") gives its
+// view by lightness: below 60 above, below 90 back, below 150 side, below 210
+// three-quarter, else front (null when it's hidden); for "noview" it leaves
+// mainView out ("noview" in a story → that item and main subject).
+// A caption with a "nurse" item reads "VENICE, R.N." from lightness 150, else
+// nothing (extras.readableText); every other caption has no drawing error.
+// Shot: extreme close-up at levels ≥ 200, else medium. Step: before below 90,
+// during below 180, after from 180. Action: the objects act on each other at
+// levels 100–199, else they stand apart. A shown item's size: small below 80,
+// medium below 160, else large; place: front below 128, else back. Angle: eye
+// level, or "high angle" from level $FAKE_CLAUDE_HIGH_ANGLE when that is set.
+// Each call is appended to $FAKE_CLAUDE_LOG as JSON (argv, cwd, files, mode).
+//
+// $FAKE_CLAUDE_LIMIT_AFTER=N (needs $FAKE_CLAUDE_LOG): once N calls are in the
+// log, every further call answers as claude -p does at its usage limit
+// (exit 1, the text on stdout); $FAKE_CLAUDE_LIMIT_TEXT overrides that text.
+
+const fs = require("node:fs");
+const path = require("node:path");
+const { execFileSync } = require("node:child_process");
+
+const argv = process.argv.slice(2);
+const prompt = argv[argv.indexOf("-p") + 1] || "";
+const cwd = process.cwd();
+const files = fs.readdirSync(cwd).sort();
+const mode = files.includes("picture.png") ? "caption" : files.some((f) => /^cell-\d\.png$/.test(f)) ? "differences" : "must-see";
+
+const log = process.env.FAKE_CLAUDE_LOG;
+const callsBefore = log && fs.existsSync(log) ? fs.readFileSync(log, "utf8").split("\n").filter(Boolean).length : 0;
+if (log) fs.appendFileSync(log, JSON.stringify({ argv, cwd, files, mode }) + "\n");
+
+if (process.env.FAKE_CLAUDE_LIMIT_AFTER !== undefined && callsBefore >= Number(process.env.FAKE_CLAUDE_LIMIT_AFTER)) {
+  process.stdout.write(`${process.env.FAKE_CLAUDE_LIMIT_TEXT || "You've hit your session limit · resets 1:10pm (Asia/Shanghai)"}\n`);
+  process.exit(1);
+}
+
+// The actor that a "grab" story gives (C-051): not an item, shown only in cells from lightness 90.
+const ACTOR = "person who grabs the broom";
+
+const level = (file) => Math.round(Number(execFileSync("magick", [path.join(cwd, file), "-format", "%[fx:mean*255]", "info:"]).toString()));
+const fail = (why) => {
+  process.stdout.write(`${why}\n`);
+  process.exit(1);
+};
+const out = (obj) => process.stdout.write("```json\n" + JSON.stringify(obj, null, 2) + "\n```\n");
+
+// The must-see list as the prompt shows it: a JSON line after "MUST-SEE LIST:".
+function listFromPrompt() {
+  const m = /MUST-SEE LIST: (\[.*\])/.exec(prompt);
+  return m ? JSON.parse(m[1]) : [];
+}
+
+// The caption prompt's item names: a JSON line after "MUST-SEE ITEMS:".
+function namesFromPrompt() {
+  const m = /MUST-SEE ITEMS: (\[.*\])/.exec(prompt);
+  return m ? JSON.parse(m[1]) : [];
+}
+
+// The caption prompt's main subject: a JSON string after "MAIN SUBJECT:", or null.
+function mainFromPrompt() {
+  const m = /^MAIN SUBJECT: (".*")$/m.exec(prompt);
+  return m ? JSON.parse(m[1]) : null;
+}
+
+if (mode === "must-see") {
+  const story = (/STORY: (.*)/.exec(prompt) || [])[1] || "";
+  if (story.includes("claude-fails")) fail("API Error: 500 Internal server error");
+  if (story.includes("garbled-list")) {
+    process.stdout.write("Sure! Here are the objects.\n");
+    process.exit(0);
+  }
+  const items = [{ name: "square", adjectives: ["flat", "gray"] }];
+  const nameSigns = [];
+  if (story.includes("Venice")) {
+    items.push({ name: "nurse", adjectives: ["tired"] });
+    nameSigns.push({ item: "nurse", text: "Venice" });
+  }
+  for (const special of ["moon", "ghost", "crash", "garble", "split", "tile", "waiter", "nolookers"]) {
+    if (story.includes(special)) items.push({ name: special, adjectives: ["round"] });
+  }
+  // bug-020: the headword as an item name (the fake caption hides "key item", what a blind captioner can't read)
+  if (story.includes("operates")) items.push({ name: "surgeon", adjectives: [] });
+  if (/\bstar\b/.test(story)) items.push({ name: "star", adjectives: ["bright"] });
+  if (story.includes("noview")) items.push({ name: "noview", adjectives: [] });
+  const angleCase = /\bview\b/.test(story) ? "view" : /\blone\b/.test(story) ? "one-object" : "none";
+  const repair = /Your last list named the main subject/.test(prompt);
+  const name = story.includes("operates") ? "surgeon" : /\bstar\b/.test(story) ? "star" : story.includes("noview") ? "noview" : /\bhaunts\b/.test(story) ? "ghost" : null;
+  let mainSubject = /\bgrab\b/.test(story) ? { name: ACTOR, actor: true } : name === null ? null : { name, actor: false };
+  if (story.includes("bad-main-always") || (story.includes("bad-main") && !repair)) mainSubject = { name: "dragon", actor: false };
+  if (story.includes("malformed-main-always") || (story.includes("malformed-main") && !repair)) mainSubject = name;
+  out({ items, nameSigns, isSequence: /\bthen\b/.test(story), angleCase, mainSubject });
+} else if (mode === "caption") {
+  const names = namesFromPrompt();
+  const main = mainFromPrompt();
+  if (names.includes("crash")) fail("API Error: 500 Internal server error");
+  if (names.includes("garble")) {
+    process.stdout.write("a gray square, nothing else\n");
+    process.exit(0);
+  }
+  const l = level("picture.png");
+  const status = (name) => {
+    if (name === "ghost" || name === "key item") return "hidden";
+    if (name === "moon") return l < 100 ? "hidden" : l < 150 ? "partly cut" : "visible";
+    return "visible";
+  };
+  const mark = (name) => {
+    const m = status(name);
+    if (m === "hidden") return { mark: m, size: null, place: null };
+    return { mark: m, size: l < 80 ? "small" : l < 160 ? "medium" : "large", place: l < 128 ? "front" : "back" };
+  };
+  out({
+    objects: [{ name: "square", adjectives: ["flat", "gray", `lightness ${l}`] }],
+    shot: l >= 200 ? "extreme close-up" : "medium",
+    angle: process.env.FAKE_CLAUDE_HIGH_ANGLE && l >= Number(process.env.FAKE_CLAUDE_HIGH_ANGLE) ? "high angle" : "eye level",
+    action: l >= 100 && l < 200 ? "the square pushes the moon: the objects act on each other" : "the objects stand apart",
+    step: l < 90 ? "before" : l < 180 ? "during" : "after",
+    extras: { floor: false, background: "plain", morePeople: false, readableText: names.includes("nurse") && l >= 150 ? "VENICE, R.N." : "" },
+    mustSee: Object.fromEntries(names.map((n) => [n, mark(n)])),
+    drawingErrors: !names.includes("tile") ? [] : l >= 210 ? [{ object: "tile", mustSee: true, note: "sits on top of the grout lines" }] : l >= 150 ? [{ object: "lamp", mustSee: false, note: "floats above the table" }] : [],
+    // onlookers (C-052): with a "waiter" item, a customer seen from the back
+    // who watches from lightness 150 and looks away below; "nolookers": no list
+    ...(names.includes("nolookers") ? {} : { onlookers: names.includes("waiter") ? [{ who: "customer", does: l >= 150 ? "watches" : "looks away", view: "back" }] : [] }),
+    // the main subject's view (C-049), only when the prompt names one
+    // an actor ("person who …", maybe masked; not an item) isn't shown below lightness 90: mainView null
+    ...(main === null || main === "noview" ? {} : { mainView: status(main) === "hidden" || (/^person who/.test(main) && l < 90) ? null : l < 60 ? "above" : l < 90 ? "back" : l < 150 ? "side" : l < 210 ? "three-quarter" : "front" }),
+  });
+} else {
+  const names = listFromPrompt().map((i) => i.name);
+  if (names.includes("split")) fail("API Error: 500 Internal server error");
+  const levels = [1, 2, 3, 4, 5, 6, 7, 8, 9].map((c) => level(`cell-${c}.png`));
+  const mean = levels.reduce((s, x) => s + x, 0) / 9;
+  out({ lines: levels.map((l) => (l > mean ? `lighter than most cells (lightness ${l})` : `darker than most cells (lightness ${l})`)) });
+}

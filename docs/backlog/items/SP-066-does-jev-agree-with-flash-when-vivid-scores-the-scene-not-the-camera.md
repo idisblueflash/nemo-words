@@ -2,10 +2,11 @@
 id: SP-066
 type: spike
 parent: E01
-status: ready
+status: in-progress
+qa_status: passing
 timebox: 1d
 depends_on: [SP-064]
-concepts: [C-004, C-034, C-035, C-036, C-037, C-039, C-040, C-041, C-042]
+concepts: [C-004, C-034, C-035, C-036, C-037, C-039, C-040, C-041, C-042, C-047, C-048, C-049, C-050, C-051, C-052, C-053]
 ---
 # SP-066 Does Jev agree with Flash's image pick when vivid scores the scene, not the camera?
 
@@ -16,8 +17,11 @@ concepts: [C-004, C-034, C-035, C-036, C-037, C-039, C-040, C-041, C-042]
 **Changes to SP-064's run (to refine):**
 - The vivid axis scores the scene: story objects that act on each other as the story says score highest; an angle scores lower only when it hides the action. An unusual angle is right when the story is about a view (the angle exception from the must-see call) or has one main object.
 - The caption call adds one action line (what the story objects do to each other) and a size (large / medium / small) and place (front / back) for each must-see item.
-- The must-see list comes from what the grid can show: no abstract items. A name anchor stays its nametag, as in SP-064 (Flash, 2026-10-17).
-- The missing compare lines are filled in.
+- The must-see list comes from what the grid can show: no abstract items. A name anchor gives its carrier (a nurse) as a must-see item and the name as a name sign, which counts in must-see clarity and never gates a cell (Flash, after stage 2, ADR-0037).
+- The caption lists drawing errors (an object that floats, looks pasted on, or breaks the lines of the wall or floor), and Jev sees them when it scores plausible (Flash, after stage 2, ADR-0038; after stage 5, ADR-0039 removed the code cap).
+- Must-see clarity is scored in parts, one Jev question each: completeness, size, state, name sign and the view of the main subject; clarity is their mean (Flash, after stage 5, ADR-0039). The main subject is the person, animal or group that does the story's action, or the actor when the story names no person; never an object (Flash, after the second stage 5, ADR-0040).
+- Plausible and vivid are scored in parts, as must-see clarity is: plausible = setting, drawing and story actions; vivid = scene and onlooker. An item that the story calls small (tiny) is in its state when it looks small next to another story item. The five changes are tested one at a time on the tuning words; a change that makes the pick worse is taken back (Flash, after stage 20, ADR-0041). Kept: plausible parts, vivid parts and the size word. Taken back: the main-subject rule for a group that reacts (two ways tried) and odd faces as drawing errors (two ways tried).
+- The missing compare lines are filled in. (Stage 1 found that SP-064 already has 9 compare lines for all 82 grids.)
 - The tuning set mixes hits and misses, not only SP-029's misses: a seeded draw of 20 of the 82 words, and the other 62 are measured (Flash, 2026-10-17).
 
 **Done when:** measured on the 62 words outside the new tuning set, we have the exact and in-three rates next to SP-064, SP-029, the chance rate and the always-cell-1 rule on those same 62 words; the vivid axis's own exact rate next to SP-064's 6%; how often the gate is skipped next to SP-064's 31 of 82; and go / no-go against the same bar.
@@ -29,17 +33,23 @@ Given  a story of one of the 82 judged words
   - When  the spike run makes its must-see list
     - Then  one text-only Claude call lists only objects that a drawing can show, each with its adjectives
     - And   it lists no abstract items (a time, a relation, a feeling with no visible sign)
-    - And   a name anchor stays its visible sign (a nametag that reads "Venice"), as in SP-064
+    - And   a name anchor gives the person or thing that carries the name as a must-see item (a nurse), and its name sign: the text that the picture should show ("Venice")
     - And   it says if the story is about a view, has one main object, or neither
+    - And   it names the main subject: the one person, animal or group of them (a family) that does the story's action; one that only receives the action (the newborn) is not the main subject; an object (a tile, a pier, a broom) is never the main subject
+    - And   when the story names no person but has an action that a person does (sweep: "grab the broom"), the main subject is that person, the actor; an actor is not a must-see item, so the gate never checks it
     - And   the list is cached, so a re-run doesn't call Claude again
 ```
 
 ```gherkin
 Given  a cell of a kept grid and its word's must-see list
   - When  the spike run captions the cell and compares the grid's cells
-    - Then  the caption gives everything that SP-064's caption gave, and also one action line: what the story objects do to each other
+    - Then  the caption gives everything that SP-064's caption gave, including the text that it can read in the cell, and also one action line: what the story objects do to each other
     - And   for each must-see item it gives a size (large / medium / small) and a place (front / back), next to visible / partly cut / hidden
-    - And   every kept grid has 9 compare lines, including the 20 grids that had none in SP-064
+    - And   it lists the cell's drawing errors: each object that doesn't fit the picture (it floats, looks pasted on, or breaks the lines of the wall or floor), and whether that object is a must-see item
+    - And   an object that the scene shows as broken or crooked on purpose is not a drawing error, and a cell with no errors has an empty list
+    - And   it lists the onlookers: each person or animal that doesn't do the story's action, with what it does (watches, reacts, looks away, does something else) and its view; a cell with none has an empty list
+    - And   when the story has a main subject, it gives the view of the main subject (front, three-quarter, side, back, or from above), or none when the cell doesn't show it
+    - And   every kept grid has 9 compare lines
     - And   the captioner and the comparer see no word, no story and no Flash's cell
 ```
 
@@ -47,9 +57,20 @@ Given  a cell of a kept grid and its word's must-see list
 Given  the captions, the compare lines and the story of a word
   - When  Jev picks a cell
     - Then  the gate takes out a cell with a hidden must-see item, as in SP-064 (all 9 are scored when every cell is gated out)
-    - And   vivid scores the scene: 3 = story objects large and acting on each other as the story says, 2 = clear but not acting, 1 = small, far or apart
+    - And   a name sign that can't be read never takes a cell out
+    - And   Jev scores plausible in parts, one question each: setting (clues to where the scene happens), drawing (1 = a drawing error on a must-see item, 2 = on another object, 3 = none) and story actions (1 = one action or only the result of a story with more actions, 2 = some actions, 3 = the beginning actions in the story's order; the result can be left out, but when the word names the result a cell that shows it is good); plausible is the mean of its parts
+    - And   Jev scores vivid in parts: scene (below) and onlooker (1 = a person draws the eye away from the action, 2 = no onlooker, 3 = an onlooker watches or reacts and makes the feeling stronger); vivid is the mean of its parts
+    - And   the scene part: 3 = story objects large and acting on each other as the story says, 2 = clear but not acting, 1 = small, far or apart
+    - And   an item that the story calls small (tiny) is in its state when it looks small next to another story item, and a wide shot that shows it so is not "small, far away" for the scene part or the size part
     - And   an unusual angle lowers vivid only when it hides the action, and not when the story is about a view or has one main object
-    - And   must-see clarity uses each item's size, so a small item scores lowest
+    - And   code doesn't cap plausible
+    - And   Jev scores must-see clarity in parts, one question each with the full caption:
+            completeness (a crop that fits the shot, as in a close-up, costs less than a crop that cuts the story),
+            size (an item that is small by nature, such as a headlamp, costs less than a small story item),
+            state (each item in the state that its adjectives give),
+            name sign (only for a name anchor: can the name be read),
+            main-subject view (only when the story has a main subject: front or three-quarter 3, side 2, back or from above 1; an actor that the cell doesn't show 1)
+    - And   must-see clarity is the mean of the parts that apply, and code doesn't cap it
     - And   code adds the weighted scores and picks the main cell and the alternative cell as in SP-064
 ```
 
@@ -89,33 +110,52 @@ Given  Claude answers that the usage limit is reached
 ## Logic sketch
 - **Approach:** throwaway prototype under `spikes/sp-066/`, copied from `spikes/sp-064/` and changed only where this spike says. It reuses SP-029's grid list and Flash's cells (`spikes/sp-029/raw/grids.json`), SP-064's 62 cached compare lines, and SP-064's saved picks (`spikes/sp-064/raw/run.json`) for the baselines and each word's hit or miss. Claude calls go through `claude -p` and are cached; Jev uses the `.env` key and `NODE_USE_ENV_PROXY=1`.
 - **Entities:**
-  - MustSeeList: word, items [{name, adjectives}], isSequence, angleCase (view | one-object | none)
-  - CellCaption: SP-064's fields + action (one line), mustSee {item name → {mark: visible | partly cut | hidden, size: large | medium | small, place: front | back}}
+  - MustSeeList: word, items [{name, adjectives}], nameSigns [{item, text}], mainSubject ({name, actor: true | false} or null), isSequence, angleCase (view | one-object | none)
+  - CellCaption: SP-064's fields (with extras.readableText) + action (one line), mustSee {item name → {mark: visible | partly cut | hidden, size: large | medium | small, place: front | back}}, drawingErrors [{object, mustSee: true | false, note}], onlookers [{who, does, view}] (ADR-0041), mainView (front | three-quarter | side | back | above; null when the story has no main subject or the cell doesn't show it)
   - GridDifferences: grid, lines [9]
-  - CellScore, ImagePick: as in SP-064
+  - CellScore: as in SP-064, and clarity also holds its parts {completeness, size, state, nameSign?, view?}, each with Jev's score and confidence; after ADR-0041, plausible holds its parts {setting, drawing, actions} and vivid its parts {scene, onlooker} the same way
+  - ImagePick: as in SP-064
   - WordSplit: seed, tuning [20 words], measure [62 words]
 - **Rules:**
   - Split: a fixed seed draws 20 of the 82 words, stratified so 4 or 5 are SP-064 hits (SP-064's saved main cell is Flash's cell); the other 62 are the measure set.
-  - Must-see list: only concrete objects a drawing can show. A name anchor stays a nametag item (Flash, 2026-10-17). angleCase comes from the same call.
+  - Must-see list: only concrete objects a drawing can show. A name anchor gives its carrier as a must-see item (`nurse`) and the name as a name sign (`{item: nurse, text: Venice}`); a name sign is not a must-see item, so the gate never checks it. The repair prompt turns a bare name into its carrier plus a name sign. angleCase and mainSubject come from the same call. Main subject (ADR-0040): the person, animal or group of them that does the story's action (an item, `actor: false`); one that only receives the action is not it; when the story names no person but has an action that a person does, the person who does it (`actor: true`, a name such as "person who grabs the broom", not an item); otherwise null; an object is never the main subject. Code can't tell a person from an object, so the prompt gives the rule and the stage summary prints each main subject. A non-actor mainSubject that isn't one of the items gets the repair prompt once, and the word fails if it is still wrong. The captioner sees an actor's name, masked as item names are.
+  - Name-sign check: code looks for each sign's text in the cell's readableText, ignoring case and punctuation, and a possessive ('s) counts as the name (bug-019). Jev's state gets `name_sign_readable`; it informs the name-sign part, and code caps nothing (ADR-0039).
+  - Drawing error: Jev's state gets the cell's list, and Jev scores plausible with it; code caps nothing (ADR-0039). An object that the story shows as broken or crooked on purpose, or that the cell's edge cuts off, is not a drawing error (bug-018).
   - Vivid levels (ADR-0033): 3 = story objects large and acting on each other as the story says; 2 = clear but not acting on each other; 1 = small, far away or apart. An unusual angle lowers vivid only when it hides the action, never when angleCase is `view` or `one-object`.
-  - Must-see clarity: SP-064's levels, with "small" taken from the caption's size; a `small` item gets the lowest level.
+  - Must-see clarity (ADR-0039): one Score question per scored cell and clarity part, each with the full caption; level 0–2 plus 1, as for the other axes. Parts: completeness (1 = a crop cuts off part of the story, 2 = an item partly cut but the crop fits the shot, 3 = every item fully visible); size (1 = a story item too small to see what it does, 2 = an item small by nature, such as a headlamp, 3 = every item large enough); state (1 = an item not in the state its adjectives give, 2 = some states unclear, 3 = every item in its state); name sign, only with a name sign (1 = can't be read, 2 = partly readable or misread, 3 = readable); view, only with a main subject (1 = back or from above, or an actor that the cell doesn't show; 2 = side; 3 = front or three-quarter). Clarity is the mean of the parts that apply; its confidence (for C-037) is the lowest confidence of its parts.
+  - Axis parts (ADR-0041, C-053): plausible = mean of setting, drawing and story actions; vivid = mean of scene and onlooker; each part is one Score question with the full caption, level 0–2 plus 1; an axis's confidence is the lowest confidence of its parts. Drawing: 1 = a drawing error on a must-see item, 2 = on another object, 3 = none. Story actions: 1 = one action or only the result of a story with more actions, 2 = some actions, 3 = the beginning actions in the story's order; the result (the last action) can be left out, because the reader imagines it; when the word names the result (spilled), a cell that shows it is good. Onlooker (C-052): from the caption's onlookers; 1 = an onlooker looks away or does something else, so it draws the eye from the action; 2 = no onlooker; 3 = an onlooker watches or reacts and makes the story's feeling stronger (a back view leads the eye to the action).
+  - Taken back (ADR-0041): the must-see rule that a group that only reacts is an onlooker and the person who works a thing is the actor (appeal's main subject became the bell ringer, but the remade captions moved other words: mean rank 2.95 → 3.45); a view-part check that gives a reacting group's back view the top level (Jev kept 1.09 for appeal cell 9); odd faces and hands as drawing errors (the captioner found none in appeal, and the remade captions gave 14, below 19).
+  - Size word (ADR-0041): an item that the story calls small (tiny) is in its state when it looks small next to another story item; its small caption size costs nothing in the size part, and a wide shot that shows it so is not "small, far away" in the scene part.
+  - Change order (ADR-0041): the five changes are made one at a time, in the order plausible parts, vivid parts, main subject, size word, odd faces; after each, the 20 tuning words run. A change is better when exact + in-three at the start weights goes up, or stays equal with a lower mean rank of Flash's cell; it is taken back (code and cached answers) when that count goes down, and one other way is tried. Jev alone, run twice on the same captions, gave 16 and 14 (2026-10-17), so a change of 2 or less is noise: such a change is kept only when it moves the miss it was made for toward Flash's cell.
   - Gate, total, tie-break, alternative cell, margin and weakest confidence: as in SP-064 (ADR-0032).
   - Weights: SP-064's search (each weight 0–3; most exact, then most in-three, then nearest 2·1·1), on the 20 tuning words only.
   - Vivid alone: the scored cell with the highest vivid score (ties: lower cell); given for SP-066 and for SP-064 (from its saved scores) on the same 62 words.
   - Baselines on the 62 words: SP-064 and SP-029 from their saved results, chance 1/9 and 3/9, the always-cell-1 rule.
   - Gate skipped: counted over all 82 words, next to SP-064's 31 of 82.
   - Go bar (ADR-0031): exact ≥ 45% and in-three ≥ 70%.
-- **Edge cases:** every cell gated out → all 9 scored; empty must-see list → no gate; fewer than 3 scored cells → in-three over the scored cells only; Claude or Jev failure → unjudged (scenario 6); usage limit → clean stop, no report (scenario 7).
+- **Edge cases:** an actor that the cell doesn't show → the cell stays in, mainView null, view part at the lowest level; two people who both act → the one that does the main action of the story; the main subject hidden → the cell is gated out, and when every cell is gated out its view part gets the lowest level; a caption with no mainView while the list has a main subject → unusable; no name sign and no main subject → clarity is the mean of 3 parts; empty readableText → the name sign isn't readable; a carrier that the cell doesn't draw → hidden, gated as usual; two name signs → the cap applies if either one can't be read; a caption with no drawingErrors list → unusable (made again, or the word is unjudged); every cell gated out → all 9 scored; empty must-see list → no gate; fewer than 3 scored cells → in-three over the scored cells only; Claude or Jev failure → unjudged (scenario 6); usage limit → clean stop, no report (scenario 7).
 
 ## Staged run
-- **Cases:** 82 words, about 82 must-see lists, 738 captions, 20 compare lines and 82 Jev requests (about 2,200 Score questions); tuning: the 20 drawn words; measure: the other 62.
-- **Stages:** 1 → 3 → 5 → rest of tuning (20) → measure (62)
-- **Early picks:** tuning words only: one SP-064 hit, one word with a name anchor, one word whose angleCase is `view` or `one-object`, and one word that skipped the gate in SP-064.
-- **Check after each stage:** answers parse; every caption has the action line and a size and place per item; a re-run makes no new Claude calls for cached words; the gate-skip count is lower than SP-064's on the same words.
-- **Stop for design if:** most tuning words still skip the gate; vivid alone stays below the chance rate on the tuning words; or angleCase is `none` for nearly every word, so the angle exceptions never apply.
+- **Cases:** 82 words, about 82 must-see lists, 738 captions, 20 compare lines and 82 Jev requests (about 2,200 Score questions); after the stage-2 refine, the 20 must-see lists, the 27 captions of stages 1–2 and their 3 Jev requests are made again, because the prompts changed; after the stage-5 refine, the 20 must-see lists, the 45 captions of stages 1–5 and their 5 Jev requests are made again, and a Jev request has about 4 more questions per cell (about 6,000 Score questions in all); after the second stage 5 (ADR-0040), the 20 must-see lists, the captions of words whose main subject changes and the 5 Jev requests are made again; after stage 20 (ADR-0041), each of the five changes makes the 20 Jev requests again, with about 3 more questions per cell, and changes 2, 3 and 5 make the captions (and change 3 the lists) again; tuning: the 20 drawn words; measure: the other 62.
+- **Stages:** 1 → 3 → 5 → rest of tuning (20) → measure (62); after the stage-2 refine, the stage-5 refine and the second stage-5 refine, they start again at 1; after the ADR-0041 refine, each change runs stages 1 → 3 → 5 → 20 on the tuning words, and the measure stage waits for Flash
+- **Early picks:** tuning words only: one SP-064 hit, one word with a name anchor, one word whose angleCase is `view` or `one-object`, one word that skipped the gate in SP-064, and one word with a main subject.
+- **Check after each stage:** answers parse; every caption has the action line and a size and place per item; a re-run makes no new Claude calls for cached words; the gate-skip count is lower than SP-064's on the same words; every caption has a drawing-errors list; for name-anchor words, no cell is gated out only because its name can't be read; the count of cells with a drawing error; every caption that shows a main subject has a mainView; clarity's spread inside a grid is wider than in stage 5 before the stage-5 refine (mean 0.71); each word's main subject, marked when it is an actor, is a person, an animal or a group.
+- **Stop for design if:** most tuning words still skip the gate; vivid alone stays below the chance rate on the tuning words; or angleCase is `none` for nearly every word, so the angle exceptions never apply; or drawing errors are marked in most cells, so the captioner can't tell them from the scene; or clarity still scores almost every cell of a grid the same; or the captioner gives most cells of a grid the same view; or Jev's clarity parts disagree with the caption (a partly cut mark with completeness 3); or most tuning words have no main subject; or the captioner leaves out the actor in most cells; or every one of the five changes makes the pick worse.
 
 ## Open questions
 - [ ] SP-064's analysis looked at all 82 words (exotic was a measure word), so the 62 measure words aren't fully unseen.
-- [ ] Name anchors stay nametag items (Flash, 2026-10-17), so the gate may still be skipped often; the report shows the count.
+- [ ] The name-sign match is plain text, so a drawn name that the captioner misreads ("Venise") counts as unreadable.
+- [ ] The captioner may miss a drawing error, or call a crooked story object an error; the spike measures it once.
+- [ ] For ventilator, Flash now likes other cells better than the label (CASE-002). The label stays 8, so the comparison with SP-064 and SP-029 stays fair.
 - [ ] The gate is noisy from run to run, and the spike measures it one time only.
 - [ ] Captions still sit between the picture and Jev.
+- [ ] The view order (front or three-quarter best, side in between, back or from above worst) comes from one grid (surgeon, Flash after stage 5); the tuning words test it.
+- [ ] The clarity parts count equally in the mean; that is a guess, and 20 tuning words are too few to set their weights.
+- [ ] A clarity part that only reads a caption field (completeness, name sign, view) can vary a little from run to run with Jev, which a code lookup wouldn't.
+- [ ] For anomaly, Flash thinks cell 7 would be the most plausible cell without its drawing error (CASE-003). The label stays 1.
+- [ ] The rule "the one that does the action" comes from 5 words (Flash, after the second stage 5); a story where two people act equally may still give either one.
+- [ ] period's drawing-error marks are still uneven (the sea's edge marked in 4 of 9 cells); stage 20 shows whether this decides more words.
+- [ ] The five ADR-0041 rules come from 4 words that Flash looked at (overreach, flustered, appeal (CASE-001), cottage); keeping the best change on 20 tuning words fits the rules to them, so only the measure words show whether they hold.
+- [ ] A change that remakes captions also changes captions that the change doesn't target, so part of its effect is run-to-run noise.
+- [ ] The story-actions rule ("the result can be left out") and the onlooker rule come from Flash's picks on 2 words each.
+- [ ] After ADR-0041 (changes 1, 2 and 4 kept), the 20 tuning words give exact 5 and in-three 14 at the start weights (2·1·1), and exact 6 and in-three 15 at the tuned weights (3·2·3). Jev alone moves exact + in-three by 2 from run to run, and a remade caption set by up to 5.
