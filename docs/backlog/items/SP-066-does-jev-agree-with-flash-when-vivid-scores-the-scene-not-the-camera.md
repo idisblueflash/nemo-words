@@ -2,7 +2,7 @@
 id: SP-066
 type: spike
 parent: E01
-status: in-progress
+status: done
 qa_status: passing
 timebox: 1d
 depends_on: [SP-064]
@@ -159,3 +159,9 @@ Given  Claude answers that the usage limit is reached
 - [ ] A change that remakes captions also changes captions that the change doesn't target, so part of its effect is run-to-run noise.
 - [ ] The story-actions rule ("the result can be left out") and the onlooker rule come from Flash's picks on 2 words each.
 - [ ] After ADR-0041 (changes 1, 2 and 4 kept), the 20 tuning words give exact 5 and in-three 14 at the start weights (2·1·1), and exact 6 and in-three 15 at the tuned weights (3·2·3). Jev alone moves exact + in-three by 2 from run to run, and a remade caption set by up to 5.
+
+## Result
+Closed on the tuning words only (Flash, 2026-10-18). The measure stage on the 62 measure words was not run, so the go / no-go against ADR-0031 is not measured.
+- Tuning words (20), after ADR-0041 (changes 1, 2 and 4 kept): exact 5 and in-three 14 at the start weights 2·1·1; exact 6 (30%) and in-three 15 (75%) at the tuned weights 3·2·3. Exact stays below the 45% bar. Detail: `reports/SP-066-tuning-five-changes.md`.
+- Why closed now: CASE-001 (appeal, `reports/SP-066-appeal-case.md`) shows that the view part works against a group that only reacts to a cause. SP-068 changes that first, so the measure words, which can run only one time, are kept for the pick after SP-068.
+- The code and cached answers stay in `spikes/sp-066/`, and SP-068 reuses them.
