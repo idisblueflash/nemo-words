@@ -3,7 +3,7 @@ id: E01
 type: epic
 status: active
 persona: Flash
-concepts: [C-001, C-004, C-017, C-019]
+concepts: [C-001, C-004, C-017, C-019, C-043]
 ---
 # E01 Walking skeleton: Flash types a word and a finished card lands in Anki, nothing to pick
 

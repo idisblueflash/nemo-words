@@ -39,7 +39,9 @@ you, and delivers the finished card into Anki (live sync or an importable deck f
    review and pictures largely close that gap — so the bet is really "mnemonic + image
    + spaced review in Anki" beats "definition + spaced review", which no study found
    tests directly. Details:
-   [investigation-005](../investigations/investigation-005-mnemonic-vs-definition-retention.md).)*
+   [investigation-005](../investigations/investigation-005-mnemonic-vs-definition-retention.md).
+   Review 2026-10-17: E02 needs about 80 cards per arm, not 30, to see a lapse rate of 20%
+   against 40%. With 30 cards per arm the Wilson intervals overlap (C-043, ADR-0036).)*
 2. The app can auto-pick the story and image (no human pick) with good-enough quality,
    and can improve that pick quality over time. · hypothesis
    *(SP-037: Jev didn't predict Flash's old story picks (no-go), but those old picks were
@@ -47,7 +49,11 @@ you, and delivers the finished card into Anki (live sync or an importable deck f
    check is the better evidence: Flash accepted Jev's pick or rated it about the same on
    17 of 20 words. Jev's decomposed judgment (one small question per rubric gate and
    axis) hallucinates less than a single Claude pick. US-033's kept-count is the ongoing
-   test. Image pick is untested (SP-029).)*
+   test. Image pick: SP-029 and SP-064 were no-go, and SP-066 runs now. Review 2026-10-17:
+   62 measure words show only differences of about 15 points or more, and the kept count on
+   20 words is a weak signal (14 of 20 has a Wilson interval of 48% – 85%, C-043). From the
+   next image-pick spike after SP-066, go also needs the exact range above the always-cell-1
+   rule (ADR-0035).)*
 3. AI-drafted stories and images are good enough to learn from, and the app can improve
    them. · hypothesis
    *(Review 2026-10-12: building US-041 showed that a rule written from intuition can

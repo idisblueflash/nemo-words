@@ -2,7 +2,7 @@
 status: accepted
 deciders: Flash Hu
 date: 2026-10-15
-backlog: [US-060, US-063, C-011, C-030]
+backlog: [US-060, US-063, C-011, C-046]
 ---
 
 # 0028. An open short-vowel chunk gets no rhyme, and des is never a keyword
