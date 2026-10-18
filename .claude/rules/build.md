@@ -6,8 +6,9 @@ description: How backlog items get built here — stack, test commands and conve
 
 `/backlog:implement <ID>` (the `backlog` plugin, phase 6) builds one `ready` item from
 `docs/backlog/items/`: `backlog:teddy` implements it test-first, `backlog:qa` checks it
-black-box, `backlog:buzz` fixes what `qa` flags. `backlog:david` measures an item on real data
-before it is refined. These are the repo-specific facts they need.
+black-box, `backlog:buzz` fixes what `qa` flags. `backlog:david` measures a story or enabler on
+real data before it is refined; a spike doesn't go to him, since its run is the investigation.
+These are the repo-specific facts they need.
 
 ## Stack
 

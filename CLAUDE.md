@@ -174,8 +174,9 @@ Planning and building go through the `backlog` plugin (`backlog@blueflash`): sto
 `docs/backlog/items/`, and `/backlog:implement <ID>` builds a `ready` one in its own worktree
 with the plugin's `teddy` / `qa` / `buzz` agents, then opens a PR. `/backlog:next` says what to
 do next. The stack, test commands and bug-numbering rule those agents need are in
-`.claude/rules/build.md`. Before `/backlog:refine` sets an item that changes a story
-step's rules to `ready`, have `backlog:david` measure it on real data first (see `build.md`).
+`.claude/rules/build.md`. Before `/backlog:refine` sets a story or enabler that changes a
+story step's rules to `ready`, have `backlog:david` measure it on real data first (see `build.md`).
+A spike doesn't need it: its run is the investigation.
 
 ## Rules
 
