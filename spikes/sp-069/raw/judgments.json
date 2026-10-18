@@ -1851,5 +1851,239 @@
     "invented": [],
     "note": "The action line says the whole family is looking at the cracked tile, but the father is opening the door and looking outside; also, the top edge of the picture cuts off the door ('knock'), and the orange tile is closer to medium than small.",
     "costUsd": 0.0751344
+  },
+  "qwen/qwen3-vl-8b|ventilator.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the machine as fully visible, but the left and bottom edges of the picture cut it off. The nurse's lower body is also cut off at the bottom.",
+    "costUsd": 0.07380980000000001
+  },
+  "qwen/qwen3-vl-8b|ventilator.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption puts the nurse in front, but she is at the doorway behind the machine and incubator, so she is in the back.",
+    "costUsd": 0.0698426
+  },
+  "qwen/qwen3-vl-8b|ventilator.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The machine is marked visible, but the right edge of the picture cuts part of it off; the nurse is also marked front, though she stands behind the bassinet and is seen mostly from above.",
+    "costUsd": 0.0732746
+  },
+  "qwen/qwen3-vl-8b|ventilator.grid.png|3": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks the nurse and the machine as visible, but the left and bottom edges cut off the nurse and the right edge cuts off the machine. The nurse also takes up a large part of the picture, not a medium part.",
+    "costUsd": 0.0727444
+  },
+  "qwen/qwen3-vl-8b|ventilator.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The machine is marked visible, but the left and bottom edges of the picture cut it off, so it is partly cut. The nurse is closer to a front view than three-quarter.",
+    "costUsd": 0.0717144
+  },
+  "qwen/qwen3-vl-8b|ventilator.grid.png|8": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "All three items are marked fully visible, but the top edge cuts off the nurse's cap, the right edge cuts off the machine and the bottom edge cuts off the newborn's blanket. The nurse is also large, not medium.",
+    "costUsd": 0.2771354
+  },
+  "qwen/qwen3-vl-8b|ventilator.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 1,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The right edge of the picture cuts off part of the machine, so it is 'partly cut', not 'visible'. The nurse is also large, not medium, and the newborn is small, not medium.",
+    "costUsd": 0.0748144
+  },
+  "qwen/qwen3-vl-8b|ventilator.grid.png|5": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 1,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The machine and the nurse are both cut off by the picture's edges, so 'visible' is wrong for them. The newborn is small and sits in the front, not medium in the back. The nurse looks at the button she presses, not at the newborn.",
+    "costUsd": 0.0769074
+  },
+  "qwen/qwen3-vl-8b|period.grid.png|2": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked 'visible', but the picture's edges cut off the pier (left side and bottom of the legs) and the sea (bottom), so both should be 'partly cut'. The drawing-errors list also leaves out the sea, a flat block with a hard straight edge that looks pasted on.",
+    "costUsd": 0.0738618
+  },
+  "qwen/qwen3-vl-8b|ventilator.grid.png|9": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The nurse does not hold the tube; her hands rest on the crib's edge while the tube runs from the machine to the baby. Also, the bottom edge cuts off the machine, and the nurse stands behind the crib, not in front.",
+    "costUsd": 0.07657900000000001
+  },
+  "qwen/qwen3-vl-8b|period.grid.png|1": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The pier and the sea are both marked visible, but the left and bottom edges of the picture cut them off. The list of drawing errors also misses the sea's hard vertical edge at the right, where it ends against the background.",
+    "costUsd": 0.0739952
+  },
+  "qwen/qwen3-vl-8b|period.grid.png|3": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked 'visible', but the bottom edge cuts off the pier and the left edge cuts off the sea, so both should be 'partly cut'; the caption also misses that the sea stops short of the right edge and looks pasted on.",
+    "costUsd": 0.0727364
+  },
+  "qwen/qwen3-vl-8b|period.grid.png|4": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked 'visible', but the left edge cuts off the pier and the top, left and bottom edges cut off the sea, so both should be 'partly cut'.",
+    "costUsd": 0.0695796
+  },
+  "qwen/qwen3-vl-8b|period.grid.png|5": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked 'visible', but the picture's edges cut off part of each: the bottom and left edges cut the pier railing, and the left edge cuts the sea, so both should be 'partly cut'. The sea is also drawn as a blue block that stops sharply at the right side, so it looks pasted on, and the caption does not list it as a drawing error.",
+    "costUsd": 0.072994
+  },
+  "qwen/qwen3-vl-8b|period.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The calm sea is marked fully visible, but the left edge of the picture cuts it off, and the sea also stops abruptly in a straight edge on the right, leaving bare background. That broken edge is a drawing error the caption does not list.",
+    "costUsd": 0.0755082
+  },
+  "qwen/qwen3-vl-8b|period.grid.png|7": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 1,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption marks both the pier and the sea as fully visible, but the picture's left and bottom edges cut both off. The drawingErrors list is also empty, yet the sea is drawn as a flat block that stops partway across the picture with a hard edge on the right.",
+    "costUsd": 0.072905
+  },
+  "qwen/qwen3-vl-8b|period.grid.png|9": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption marks the pier as 'visible', but the left edge and the bottom edge of the picture cut it off. The caption also leaves the sea's sharp, unnatural right edge out of drawingErrors.",
+    "costUsd": 0.0734146
+  },
+  "qwen/qwen3-vl-8b|period.grid.png|8": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked 'visible', but the picture's edges cut them off: the pier runs off the bottom and sides, and the sea runs off the left edge. The caption also calls the sea large when it is a medium band, and the drawingErrors list leaves out the sea ending in an odd straight edge on the right.",
+    "costUsd": 0.0735248
   }
 }
