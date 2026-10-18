@@ -817,5 +817,1296 @@
       "ms": 18706,
       "costUsd": 0.0215268
     }
+  },
+  "ventilator.grid.png": {
+    "1": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "female",
+            "young",
+            "in blue uniform",
+            "entering"
+          ]
+        },
+        {
+          "name": "machine",
+          "adjectives": [
+            "red",
+            "medical monitoring",
+            "with tubes",
+            "on stand"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "sleeping",
+            "in clear crib",
+            "connected to tubes"
+          ]
+        },
+        {
+          "name": "door",
+          "adjectives": [
+            "wooden",
+            "open",
+            "with handle"
+          ]
+        },
+        {
+          "name": "clock",
+          "adjectives": [
+            "round",
+            "wall-mounted",
+            "white face"
+          ]
+        },
+        {
+          "name": "window",
+          "adjectives": [
+            "large",
+            "night view",
+            "with moon",
+            "dark sky"
+          ]
+        },
+        {
+          "name": "crib",
+          "adjectives": [
+            "hospital",
+            "clear plastic cover",
+            "white frame"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "eye level",
+      "step": "during",
+      "action": "nurse entering the hospital room to check on newborn connected to monitoring machine",
+      "extras": {
+        "floor": true,
+        "background": "hospital room with pale green walls, clock showing 10:10, window showing night sky with moon and silhouettes",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "nurse": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "machine": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "newborn": {
+          "mark": "visible",
+          "size": "small",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "front",
+      "promptKey": "9a133c611ab9b993",
+      "ms": 18675,
+      "costUsd": 0.0213135
+    },
+    "2": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "smiling",
+            "attentive",
+            "in scrubs"
+          ]
+        },
+        {
+          "name": "machine",
+          "adjectives": [
+            "red",
+            "medical",
+            "monitoring"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "small",
+            "in bed",
+            "monitored"
+          ]
+        },
+        {
+          "name": "bed",
+          "adjectives": [
+            "medical",
+            "white",
+            "with railings"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The nurse attends to the newborn, holding a monitoring tube connected to the baby while the medical machine on the left tracks vital signs",
+      "extras": {
+        "floor": false,
+        "background": "Hospital room with light ceiling and walls",
+        "morePeople": false,
+        "readableText": "Nurse"
+      },
+      "mustSee": {
+        "nurse": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "machine": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "newborn": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "9a133c611ab9b993",
+      "ms": 19717,
+      "costUsd": 0.0211463
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "female",
+            "Black",
+            "dark-haired",
+            "in-scrubs",
+            "focused"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "sleeping",
+            "swaddled",
+            "tiny"
+          ]
+        },
+        {
+          "name": "medical monitor",
+          "adjectives": [
+            "red-orange",
+            "digital",
+            "with-screen"
+          ]
+        },
+        {
+          "name": "tube",
+          "adjectives": [
+            "clear",
+            "connected"
+          ]
+        },
+        {
+          "name": "clock",
+          "adjectives": [
+            "wall-mounted",
+            "round"
+          ]
+        },
+        {
+          "name": "crib",
+          "adjectives": [
+            "white",
+            "hospital-style"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The nurse looks down and monitors the newborn's vital signs using the medical machine, which displays a blue waveform on its screen",
+      "extras": {
+        "floor": true,
+        "background": "hospital room with light green walls and window",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "nurse": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "machine": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "newborn": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "9a133c611ab9b993",
+      "ms": 19834,
+      "costUsd": 0.020955500000000002
+    },
+    "4": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "caring",
+            "focused",
+            "leaning"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "swaddled",
+            "small",
+            "sleeping"
+          ]
+        },
+        {
+          "name": "machine",
+          "adjectives": [
+            "red",
+            "medical",
+            "monitoring"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "overhead",
+      "step": "during",
+      "action": "The nurse leans over and attends to the newborn, using a tube from the medical machine to monitor or treat the baby",
+      "extras": {
+        "floor": true,
+        "background": "light green wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "nurse": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "machine": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "newborn": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "front",
+      "promptKey": "9a133c611ab9b993",
+      "ms": 18905,
+      "costUsd": 0.020605599999999998
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "smiling",
+            "professional",
+            "attentive"
+          ]
+        },
+        {
+          "name": "medical machine",
+          "adjectives": [
+            "red",
+            "electronic",
+            "large"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "swaddled",
+            "sleeping",
+            "small"
+          ]
+        },
+        {
+          "name": "nametag",
+          "adjectives": [
+            "white",
+            "visible"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The nurse adjusts and points at controls on the medical machine while monitoring the newborn",
+      "extras": {
+        "floor": false,
+        "background": "hospital wall, light green/gray",
+        "morePeople": false,
+        "readableText": "Venice"
+      },
+      "mustSee": {
+        "nurse": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "machine": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "newborn": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "9a133c611ab9b993",
+      "ms": 17876,
+      "costUsd": 0.0201415
+    },
+    "6": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "adult",
+            "female",
+            "dark-haired",
+            "blue-shirted"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "infant",
+            "sleeping",
+            "swaddled"
+          ]
+        },
+        {
+          "name": "machine",
+          "adjectives": [
+            "red",
+            "medical",
+            "electronic"
+          ]
+        },
+        {
+          "name": "hospital bed",
+          "adjectives": [
+            "white",
+            "crib-like",
+            "transparent sides"
+          ]
+        },
+        {
+          "name": "clock",
+          "adjectives": [
+            "round",
+            "wall-mounted",
+            "white face"
+          ]
+        },
+        {
+          "name": "wall outlet",
+          "adjectives": [
+            "gray",
+            "electrical"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The nurse operates the medical machine while monitoring the newborn baby in the crib",
+      "extras": {
+        "floor": true,
+        "background": "light green hospital wall with clock and window",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "nurse": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "machine": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "newborn": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "9a133c611ab9b993",
+      "ms": 19721,
+      "costUsd": 0.030543
+    },
+    "7": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "smiling",
+            "attentive",
+            "professional"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "sleeping",
+            "swaddled",
+            "connected"
+          ]
+        },
+        {
+          "name": "medical machine",
+          "adjectives": [
+            "red",
+            "electronic",
+            "monitoring"
+          ]
+        },
+        {
+          "name": "hospital crib",
+          "adjectives": [
+            "white",
+            "metal-framed"
+          ]
+        },
+        {
+          "name": "heartbeat monitor display",
+          "adjectives": [
+            "digital",
+            "showing waveform"
+          ]
+        },
+        {
+          "name": "tubes",
+          "adjectives": [
+            "gray",
+            "connected to newborn"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The nurse monitors and cares for the newborn connected to the medical machine via tubes, watching the heartbeat monitor display",
+      "extras": {
+        "floor": true,
+        "background": "hospital room with pale green walls, door with window showing moon and night sky, electrical outlet on wall",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "nurse": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "machine": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "newborn": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "9a133c611ab9b993",
+      "ms": 18956,
+      "costUsd": 0.0210485
+    },
+    "8": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "smiling",
+            "female",
+            "dark-haired",
+            "in-blue-scrubs"
+          ]
+        },
+        {
+          "name": "machine",
+          "adjectives": [
+            "red-orange",
+            "medical",
+            "with-display-screen",
+            "tall"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "small",
+            "swaddled",
+            "in-bassinet",
+            "brown-skinned"
+          ]
+        },
+        {
+          "name": "bassinet",
+          "adjectives": [
+            "white",
+            "with-crib-bars"
+          ]
+        },
+        {
+          "name": "tubing",
+          "adjectives": [
+            "medical",
+            "connecting-machine-to-baby"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The nurse attends to and examines the newborn in the bassinet using the medical monitoring machine, with tubing connecting the equipment to the baby",
+      "extras": {
+        "floor": true,
+        "background": "light-colored wall",
+        "morePeople": false,
+        "readableText": "Vitals"
+      },
+      "mustSee": {
+        "nurse": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "machine": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        },
+        "newborn": {
+          "mark": "visible",
+          "size": "small",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "9a133c611ab9b993",
+      "ms": 21156,
+      "costUsd": 0.0219887
+    },
+    "9": {
+      "objects": [
+        {
+          "name": "nurse",
+          "adjectives": [
+            "female",
+            "attentive",
+            "caring"
+          ]
+        },
+        {
+          "name": "newborn",
+          "adjectives": [
+            "tiny",
+            "sleeping",
+            "swaddled"
+          ]
+        },
+        {
+          "name": "medical machine",
+          "adjectives": [
+            "red",
+            "monitoring",
+            "beeping"
+          ]
+        },
+        {
+          "name": "crib",
+          "adjectives": [
+            "white",
+            "hospital",
+            "padded"
+          ]
+        },
+        {
+          "name": "clock",
+          "adjectives": [
+            "wall-mounted",
+            "analog"
+          ]
+        },
+        {
+          "name": "window",
+          "adjectives": [
+            "nighttime",
+            "moon-visible"
+          ]
+        },
+        {
+          "name": "electrical outlets",
+          "adjectives": [
+            "wall-mounted"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "The nurse looks down attentively at the newborn baby in the crib while monitoring vital signs on the medical machine",
+      "extras": {
+        "floor": true,
+        "background": "hospital room with light green walls, window showing night sky with moon, wall clock, electrical outlets",
+        "morePeople": false,
+        "readableText": "CARE"
+      },
+      "mustSee": {
+        "nurse": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "machine": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        },
+        "newborn": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": "three-quarter",
+      "promptKey": "9a133c611ab9b993",
+      "ms": 20897,
+      "costUsd": 0.021455500000000002
+    }
+  },
+  "period.grid.png": {
+    "1": {
+      "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "standing",
+            "small",
+            "distant"
+          ]
+        },
+        {
+          "name": "pier",
+          "adjectives": [
+            "wooden",
+            "long",
+            "extending"
+          ]
+        },
+        {
+          "name": "sea",
+          "adjectives": [
+            "calm",
+            "light blue",
+            "still"
+          ]
+        },
+        {
+          "name": "sky",
+          "adjectives": [
+            "light",
+            "beige",
+            "cloudy"
+          ]
+        },
+        {
+          "name": "clouds",
+          "adjectives": [
+            "light blue",
+            "wispy"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "eye level",
+      "step": "during",
+      "action": "person stands alone at the end of the pier, gazing out at the calm sea",
+      "extras": {
+        "floor": true,
+        "background": "calm sea and sky",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "calm sea": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "98c96b8873f8f244",
+      "ms": 22511,
+      "costUsd": 0.019407
+    },
+    "2": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "dark-haired",
+            "standing",
+            "contemplative"
+          ]
+        },
+        {
+          "name": "pier",
+          "adjectives": [
+            "wooden",
+            "sturdy",
+            "weathered"
+          ]
+        },
+        {
+          "name": "wooden posts",
+          "adjectives": [
+            "vertical",
+            "brown",
+            "supporting"
+          ]
+        },
+        {
+          "name": "water",
+          "adjectives": [
+            "calm",
+            "blue",
+            "distant"
+          ]
+        },
+        {
+          "name": "sky",
+          "adjectives": [
+            "light",
+            "hazy",
+            "peaceful"
+          ]
+        },
+        {
+          "name": "clouds",
+          "adjectives": [
+            "light",
+            "wispy"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "low angle",
+      "step": "during",
+      "action": "A man stands alone on the wooden pier, gazing toward the horizon over the calm sea",
+      "extras": {
+        "floor": true,
+        "background": "calm water and light sky with wispy clouds",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "calm sea": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "98c96b8873f8f244",
+      "ms": 21277,
+      "costUsd": 0.020963
+    },
+    "3": {
+      "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "young",
+            "dark-haired",
+            "wearing-green-jacket"
+          ]
+        },
+        {
+          "name": "pier",
+          "adjectives": [
+            "wooden",
+            "brown",
+            "extending-into-water"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "person stands on pier and gazes out at the calm sea",
+      "extras": {
+        "floor": true,
+        "background": "blue sea with light cloud",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "calm sea": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "98c96b8873f8f244",
+      "ms": 15918,
+      "costUsd": 0.0191873
+    },
+    "4": {
+      "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "standing",
+            "solitary",
+            "contemplative"
+          ]
+        },
+        {
+          "name": "pier",
+          "adjectives": [
+            "wooden",
+            "long",
+            "horizontal"
+          ]
+        },
+        {
+          "name": "metal cleats",
+          "adjectives": [
+            "dark",
+            "evenly-spaced",
+            "cylindrical"
+          ]
+        },
+        {
+          "name": "sea",
+          "adjectives": [
+            "calm",
+            "blue",
+            "rippled"
+          ]
+        },
+        {
+          "name": "sky",
+          "adjectives": [
+            "pale",
+            "blue",
+            "overcast"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "person stands on pier looking down at the calm sea",
+      "extras": {
+        "floor": false,
+        "background": "calm blue sea and pale sky",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "calm sea": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "98c96b8873f8f244",
+      "ms": 21796,
+      "costUsd": 0.0207961
+    },
+    "5": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "young",
+            "contemplative",
+            "pensive"
+          ]
+        },
+        {
+          "name": "wooden railing",
+          "adjectives": [
+            "weathered",
+            "sturdy"
+          ]
+        }
+      ],
+      "shot": "close-up",
+      "angle": "eye level",
+      "step": "during",
+      "action": "A man leans on a wooden pier railing, gazing pensively out toward the calm sea",
+      "extras": {
+        "floor": false,
+        "background": "calm blue sea and sky",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "front"
+        },
+        "calm sea": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "98c96b8873f8f244",
+      "ms": 18187,
+      "costUsd": 0.019673200000000002
+    },
+    "6": {
+      "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "walking",
+            "solitary",
+            "small"
+          ]
+        },
+        {
+          "name": "pier",
+          "adjectives": [
+            "wooden",
+            "long",
+            "receding"
+          ]
+        },
+        {
+          "name": "sea",
+          "adjectives": [
+            "calm",
+            "blue",
+            "expansive"
+          ]
+        },
+        {
+          "name": "cloud",
+          "adjectives": [
+            "small",
+            "wispy"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "low angle",
+      "step": "during",
+      "action": "person walks alone along the pier toward the open sea",
+      "extras": {
+        "floor": true,
+        "background": "calm sea extending to horizon",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "calm sea": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "98c96b8873f8f244",
+      "ms": 17434,
+      "costUsd": 0.028314
+    },
+    "7": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "dark-haired",
+            "sitting",
+            "contemplative"
+          ]
+        },
+        {
+          "name": "pier",
+          "adjectives": [
+            "wooden",
+            "extending",
+            "brown"
+          ]
+        },
+        {
+          "name": "sea",
+          "adjectives": [
+            "calm",
+            "blue",
+            "still"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "A man sits on a wooden pier, leaning forward with his elbows on his knees, gazing out at the calm sea below",
+      "extras": {
+        "floor": true,
+        "background": "light cream sky",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "calm sea": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "98c96b8873f8f244",
+      "ms": 18460,
+      "costUsd": 0.020232
+    },
+    "8": {
+      "objects": [
+        {
+          "name": "person",
+          "adjectives": [
+            "young",
+            "dark-haired",
+            "casual",
+            "walking"
+          ]
+        },
+        {
+          "name": "pier",
+          "adjectives": [
+            "wooden",
+            "long",
+            "receding"
+          ]
+        },
+        {
+          "name": "sea",
+          "adjectives": [
+            "calm",
+            "blue"
+          ]
+        },
+        {
+          "name": "chairs",
+          "adjectives": [
+            "wooden",
+            "empty"
+          ]
+        },
+        {
+          "name": "cloud",
+          "adjectives": [
+            "light",
+            "distant"
+          ]
+        }
+      ],
+      "shot": "medium",
+      "angle": "eye level",
+      "step": "during",
+      "action": "A person walks along a wooden pier extending over calm sea",
+      "extras": {
+        "floor": true,
+        "background": "calm blue sea and sky with a light cloud",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "calm sea": {
+          "mark": "visible",
+          "size": "medium",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "98c96b8873f8f244",
+      "ms": 24520,
+      "costUsd": 0.023235899999999997
+    },
+    "9": {
+      "objects": [
+        {
+          "name": "man",
+          "adjectives": [
+            "contemplative",
+            "standing",
+            "casual"
+          ]
+        },
+        {
+          "name": "pier",
+          "adjectives": [
+            "wooden",
+            "long",
+            "extending"
+          ]
+        },
+        {
+          "name": "sea",
+          "adjectives": [
+            "calm",
+            "blue"
+          ]
+        },
+        {
+          "name": "sky",
+          "adjectives": [
+            "light",
+            "pale blue"
+          ]
+        },
+        {
+          "name": "cloud",
+          "adjectives": [
+            "small",
+            "white"
+          ]
+        }
+      ],
+      "shot": "wide",
+      "angle": "eye level",
+      "step": "during",
+      "action": "A man stands on a wooden pier with arms crossed, gazing toward the horizon over the calm sea",
+      "extras": {
+        "floor": true,
+        "background": "calm sea under light blue sky with a white cloud",
+        "morePeople": false,
+        "readableText": ""
+      },
+      "mustSee": {
+        "pier": {
+          "mark": "visible",
+          "size": "large",
+          "place": "front"
+        },
+        "calm sea": {
+          "mark": "visible",
+          "size": "large",
+          "place": "back"
+        }
+      },
+      "drawingErrors": [],
+      "onlookers": [],
+      "mainView": null,
+      "promptKey": "98c96b8873f8f244",
+      "ms": 17798,
+      "costUsd": 0.0204442
+    }
   }
 }

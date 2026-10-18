@@ -329,5 +329,711 @@
     "invented": [],
     "note": "The family is small to medium and stands at the back of the hallway, not large and at the front. The knock is small and at the back. The cracked tile is nearer the viewer than the family. The action line also leaves out the cracked tile shaking.",
     "costUsd": 0.0973386
+  },
+  "sonnet|ventilator.grid.png|3": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors. The clock reads closer to 11:10 than 11:05, and the swaddled newborn is between small and medium in size.",
+    "costUsd": 0.0735046
+  },
+  "sonnet|ventilator.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption marks the nurse as fully visible, but the bottom edge of the picture cuts off her lower body. It also calls the newborn medium when it takes up only a small part of the picture.",
+    "costUsd": 0.0737842
+  },
+  "sonnet|ventilator.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The newborn is labelled medium, but it takes up only a small part of the picture in the corner of the incubator.",
+    "costUsd": 0.07510220000000001
+  },
+  "sonnet|ventilator.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The newborn is called large, but the swaddled baby fills only a medium part of the panel. The bassinet is the large shape.",
+    "costUsd": 0.0758606
+  },
+  "sonnet|ventilator.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real error; the caption leaves out the machine's large gray bellows, but it isn't required.",
+    "costUsd": 0.0725668
+  },
+  "sonnet|ventilator.grid.png|7": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors; the nurse is nearly front-facing, so calling the view three-quarter is borderline but acceptable.",
+    "costUsd": 0.0712508
+  },
+  "sonnet|ventilator.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption says the nurse looks at the newborn, but she is looking at the machine screen while she presses it.",
+    "costUsd": 0.0764908
+  },
+  "sonnet|ventilator.grid.png|8": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors; the caption only leaves out the nurse's cap, which the picture's top edge cuts off.",
+    "costUsd": 0.0735638
+  },
+  "sonnet|period.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "No real errors: the left edge cuts off the pier, and the sea's sharp vertical right edge is a real drawing error; at most, the cloud is a little bigger than 'small'.",
+    "costUsd": 0.0686428
+  },
+  "sonnet|ventilator.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "No real errors: the caption matches the picture. Calling the newborn 'medium' is borderline, since it is a fairly small part of the frame.",
+    "costUsd": 0.07516980000000001
+  },
+  "sonnet|period.grid.png|2": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 1,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The drawingErrors list is empty, but the sea is drawn as a flat rectangular block with a hard vertical edge on the right that stops short of the horizon, so it looks pasted on.",
+    "costUsd": 0.071657
+  },
+  "sonnet|period.grid.png|3": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 1,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The sea stops in a sharp vertical edge on the right and leaves the cream background showing, so it looks pasted on, but drawingErrors is empty. Both items are also marked visible, yet the bottom edge cuts off the pier and the left edge cuts off the sea.",
+    "costUsd": 0.07453599999999999
+  },
+  "sonnet|period.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Only a small detail is missing: the caption leaves out the small orange thing at the person's head, at the end of the pier.",
+    "costUsd": 0.0733596
+  },
+  "sonnet|period.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The sea is a flat blue block that stops short of the right edge, so it looks pasted on, but drawingErrors is empty.",
+    "costUsd": 0.0707136
+  },
+  "sonnet|period.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption marks the calm sea as visible, but the left edge of the picture cuts it off, so it should be partly cut.",
+    "costUsd": 0.07007440000000001
+  },
+  "sonnet|period.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The calm sea is marked 'visible', but the left and bottom edges of the picture cut it off, so it should be 'partly cut'.",
+    "costUsd": 0.07174040000000001
+  },
+  "sonnet|period.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The calm sea is marked visible, but the left edge of the picture cuts it off, so it should be partly cut; also, the man looks up and to the right toward the sky rather than at the sea.",
+    "costUsd": 0.0742222
+  },
+  "qwen/qwen3-vl-4b|ventilator.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The nurse is shown in three-quarter front view, not side view, and she stands in the doorway behind the machine, so 'front' is the wrong place for her.",
+    "costUsd": 0.0715026
+  },
+  "sonnet|period.grid.png|9": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked 'visible', but the left and bottom edges cut off the pier, and the picture's edges also cut off the sea, so both should be 'partly cut'.",
+    "costUsd": 0.074291
+  },
+  "qwen/qwen3-vl-4b|ventilator.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The nurse is not holding the hose; she is leaning over the bassinet watching the baby. Also, the machine's base is cut off by the bottom edge, so it is partly cut, not visible.",
+    "costUsd": 0.0759744
+  },
+  "qwen/qwen3-vl-4b|ventilator.grid.png|3": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks the nurse and machine as visible, but the left and bottom edges cut off the nurse and the right edge cuts off the machine.",
+    "costUsd": 0.069963
+  },
+  "qwen/qwen3-vl-4b|ventilator.grid.png|5": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "All three items are marked 'visible', but the picture's edges cut each one: the top edge cuts the nurse's cap and the right and bottom edges cut her body, the left and bottom edges cut the machine, and the right edge cuts the incubator holding the newborn.",
+    "costUsd": 0.073521
+  },
+  "qwen/qwen3-vl-4b|ventilator.grid.png|4": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The action line leaves out the nurse's other hand, which rests on top of the machine, and the main view is closer to front-from-above than three-quarter.",
+    "costUsd": 0.0740886
+  },
+  "qwen/qwen3-vl-4b|ventilator.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 1,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption puts the newborn in the back, but the baby and its crib are in the front at the bottom of the picture. It also calls the nurse medium when she fills about half the frame, and it leaves out the tube that connects the machine to the baby.",
+    "costUsd": 0.077255
+  },
+  "qwen/qwen3-vl-4b|ventilator.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 1
+    },
+    "invented": [],
+    "note": "The nurse is drawn from the front, looking toward the viewer, not from the side; the machine is also cut off by the left and bottom edges, not fully visible.",
+    "costUsd": 0.0704044
+  },
+  "qwen/qwen3-vl-4b|ventilator.grid.png|8": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "All items are marked visible, but the right edge cuts off the machine, the top edge cuts the nurse's cap and the bottom edge cuts the newborn's blanket, so all three should be partly cut.",
+    "costUsd": 0.0745436
+  },
+  "qwen/qwen3-vl-4b|ventilator.grid.png|9": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 1,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "Places are reversed: the nurse stands behind the incubator (back), while the newborn lies in the front; the action also wrongly says the nurse holds the tubing, but her hands rest on the incubator's edge.",
+    "costUsd": 0.0753626
+  },
+  "qwen/qwen3-vl-4b|period.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption marks the pier as fully visible, but the left and bottom edges of the picture cut it off. The sea is drawn as a flat rectangle that looks pasted on, and the drawingErrors list leaves it out.",
+    "costUsd": 0.0718164
+  },
+  "qwen/qwen3-vl-4b|period.grid.png|1": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The calm sea is marked 'visible', but the left and bottom edges of the picture cut it off. The drawingErrors list is empty, but the sea ends in an unnatural straight vertical edge on the right.",
+    "costUsd": 0.07312
+  },
+  "qwen/qwen3-vl-4b|period.grid.png|3": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked 'visible', but the bottom edge cuts off the pier and the left edge cuts off the sea, so both should be 'partly cut'. The empty drawingErrors list also misses the sea, which stops abruptly before the right edge and looks pasted on.",
+    "costUsd": 0.074113
+  },
+  "qwen/qwen3-vl-4b|period.grid.png|4": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked 'visible', but the left edge cuts off the pier and the frame edges cut off the sea, so both should be 'partly cut'; the front/back places are also doubtful, since the pier lies on top of the sea in this overhead view.",
+    "costUsd": 0.0729628
+  },
+  "qwen/qwen3-vl-4b|period.grid.png|6": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked fully visible, but the picture's edges cut them: the bottom edge cuts off the pier and the left edge cuts off the sea. The sea also ends in an unnatural straight vertical edge on the right, and drawingErrors does not list it.",
+    "costUsd": 0.0714316
+  },
+  "qwen/qwen3-vl-4b|period.grid.png|7": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption marks both the pier and the calm sea as fully visible, but the picture's left and bottom edges cut both of them off. It also misses that the sea stops at a hard straight edge on the right, so it looks like a pasted-on block.",
+    "costUsd": 0.07361380000000001
+  },
+  "qwen/qwen3-vl-4b|period.grid.png|5": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked 'visible', but the left and bottom edges of the picture cut off the wooden railing and the left edge cuts off the sea, so both should be 'partly cut'. The sea is also a flat blue block that stops short of the right side with a cream border around it, so it looks pasted on and should be in drawingErrors.",
+    "costUsd": 0.07931559999999999
+  },
+  "qwen/qwen3-vl-4b|period.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked 'visible', but the picture's bottom and side edges cut off the pier, so it should be 'partly cut'. The boy looks up and to the side, not ahead. The drawing-errors list misses the sea, which stops at a hard vertical edge on the right.",
+    "costUsd": 0.0736414
+  },
+  "qwen/qwen3-vl-4b|period.grid.png|9": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked 'visible', but the left and bottom edges cut off the pier and the sea. The drawing-errors list also leaves out the sea's unnatural vertical edge on the right side.",
+    "costUsd": 0.0732128
+  },
+  "haiku|ventilator.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 1,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption puts the machine in the back, but it is the large object in the front and the nurse stands behind it; the nurse also isn't holding the tube, which runs from the machine to the baby's face.",
+    "costUsd": 0.0762646
+  },
+  "haiku|ventilator.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 1,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The caption gets front and back wrong: the nurse is at the back in the doorway, while the machine and the newborn's incubator are in the front.",
+    "costUsd": 0.0753786
+  },
+  "haiku|ventilator.grid.png|3": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The nurse and the machine are both cut off by the picture's edges (nurse at the left and bottom, machine at the right), but the caption marks both as fully visible. The caption also calls the nurse Black when her skin is drawn light, and her view is closer to a back three-quarter view seen over her shoulder.",
+    "costUsd": 0.0764688
+  },
+  "haiku|ventilator.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The right edge cuts off part of the machine, so it should be marked partly cut, not visible. The nurse stands behind the bassinet, so 'front' is doubtful, and the view is more from above than front.",
+    "costUsd": 0.07313220000000001
+  },
+  "haiku|ventilator.grid.png|5": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "All three items are marked 'visible', but the picture's edges cut off part of each one: the machine at the left and bottom, the nurse's cap and body at the top and right, and the newborn's bassinet at the right and bottom. The caption also puts the machine in the back when it is in the front, and the nurse is looking at the button she presses, not at the newborn.",
+    "costUsd": 0.0754018
+  },
+  "haiku|ventilator.grid.png|7": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 1,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The machine is large and in the front, not the back, and the picture's left and bottom edges cut it off, so it is not fully visible. The nurse stands behind the crib, not in the front.",
+    "costUsd": 0.0759768
+  },
+  "haiku|ventilator.grid.png|6": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The right edge of the picture cuts off the machine, so it should be 'partly cut', not 'visible'. The nurse takes up more of the picture than 'medium'. The action line leaves out the tube that runs from the machine to the baby's mask, and the nurse is looking at the screen, not the baby.",
+    "costUsd": 0.0762712
+  },
+  "haiku|ventilator.grid.png|8": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "All three items are marked 'visible', but the picture's edges cut each one: the top of the nurse's cap and her arm at the left, the machine at the top and right, and the swaddled baby at the bottom.",
+    "costUsd": 0.0745378
+  },
+  "haiku|ventilator.grid.png|9": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The machine sits in the front-left foreground and the picture's left and bottom edges cut it off, but the caption calls it fully visible and in the back. The action also misses the tube connecting the machine to the baby and wrongly says the nurse watches the machine.",
+    "costUsd": 0.0760882
+  },
+  "haiku|period.grid.png|1": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked 'visible', but the left and bottom edges cut off the pier and the frame edges cut off the sea, so both should be 'partly cut'. The sea's odd vertical right edge, which looks pasted on, is also left out of drawingErrors.",
+    "costUsd": 0.0736604
+  },
+  "haiku|period.grid.png|2": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 1,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption marks the pier and the sea as fully visible, but the picture's edges cut off both. It also misses the sea, which looks like a pasted-on block that stops sharply in mid-air. The man looks up at the sky, not toward the horizon.",
+    "costUsd": 0.0714306
+  },
+  "haiku|period.grid.png|3": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked 'visible', but the bottom edge cuts off the pier and the left edge cuts off the sea. The empty drawingErrors list also misses the sea, which stops in a hard vertical edge against the blank right side, and the man looks like he stands beside the pier's start, not on it.",
+    "costUsd": 0.0739112
+  },
+  "haiku|period.grid.png|6": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked visible, but the bottom edge cuts off the pier and the left edge cuts off the sea, so both should be partly cut. The sea also looks pasted on, ending at a sharp straight line on the right, and this is not listed.",
+    "costUsd": 0.07355980000000001
+  },
+  "haiku|period.grid.png|5": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 1,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The sea is a hard-edged blue block that stops short of the right side and looks pasted on, but drawingErrors is empty; the pier railing is also cut off by the left and bottom edges, so it should be marked partly cut, not visible.",
+    "costUsd": 0.07593559999999999
+  },
+  "haiku|period.grid.png|4": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [
+      "sky"
+    ],
+    "note": "Both items are marked 'visible', but the left edge cuts off the pier and the picture's edges cut off the sea, so both are 'partly cut'. Also, this is a top-down view with no sky; the right side is a beige shore or blank strip.",
+    "costUsd": 0.0775624
+  },
+  "haiku|period.grid.png|7": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 1,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "The caption says the man sits with his elbows on his knees, but he stands and leans on the pier railing. Both the pier and the sea are cut by the picture's edges, so neither should be marked 'visible'. The sea also ends in a hard, pasted-looking edge on the right, and the drawingErrors list leaves it out.",
+    "costUsd": 0.07365
+  },
+  "haiku|period.grid.png|8": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [
+      "chairs"
+    ],
+    "note": "Both items are marked 'visible', but the bottom edge cuts off the pier and the side edges cut off the sea, so both should be 'partly cut'; the caption also names wooden chairs, but the picture has none (the thing at the far end is a railing).",
+    "costUsd": 0.0738406
+  },
+  "haiku|period.grid.png|9": {
+    "scores": {
+      "mustSee": 1,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 2,
+      "onlookers": 3,
+      "mainView": null
+    },
+    "invented": [],
+    "note": "Both items are marked 'visible', but the picture's edges cut them off. The pier runs off the left and bottom edges, and the sea is cut at the edges and stops in an odd vertical line on the right. The caption also missed that sea edge as a drawing error and says the man looks at the horizon, but he looks up at the sky.",
+    "costUsd": 0.0765426
   }
 }
