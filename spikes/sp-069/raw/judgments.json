@@ -1747,5 +1747,109 @@
     "invented": [],
     "note": "The caption wrongly lists the elderly woman as a drawing error. Her feet are firmly on the floor and nothing floats or looks pasted on, so the list should be empty.",
     "costUsd": 0.0709914
+  },
+  "qwen/qwen3-vl-8b|anomaly.grid.png|2": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption marks the family (hand and arm) and the tiles as fully visible, but the left and right picture edges cut them off. The action also leaves out that the hand knocks with a ring knocker, not its bare knuckles.",
+    "costUsd": 0.2749912
+  },
+  "qwen/qwen3-vl-8b|anomaly.grid.png|1": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The action line misses that the boy points at the cracked tile and that the girl looks at it with worry; it says the children only watch the knock with excitement. The knocker is also placed in front, but it sits on the door at the back.",
+    "costUsd": 0.27402360000000003
+  },
+  "qwen/qwen3-vl-8b|anomaly.grid.png|4": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 3,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The family is marked fully visible, but the picture's edges cut off their legs. The action also calls the orange irregular tile a doormat, and it misses that the motion lines show the knock coming from the tile itself.",
+    "costUsd": 0.073322
+  },
+  "qwen/qwen3-vl-8b|anomaly.grid.png|3": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 1,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 1,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The caption has no onlookers, but the mother and girl are not knocking; they stare in surprise at the tilted orange tile. It also calls the family medium-sized and fully visible when they are large and cut off by the edges, and describes the knock as a brown floating square instead of the boy using the ring knocker.",
+    "costUsd": 0.2815862
+  },
+  "qwen/qwen3-vl-8b|anomaly.grid.png|6": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The family fills most of the picture, so its size should be large, not medium.",
+    "costUsd": 0.0694852
+  },
+  "qwen/qwen3-vl-8b|anomaly.grid.png|5": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The action line leaves out that three family members are bent over staring at the cracked tile while the father knocks, and the family (shown in the middle and taking up much of the panel) and the knock (at the back door) are mis-sized or mis-placed as medium/front.",
+    "costUsd": 0.0760306
+  },
+  "qwen/qwen3-vl-8b|anomaly.grid.png|9": {
+    "scores": {
+      "mustSee": 3,
+      "sizePlace": 2,
+      "action": 3,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 2
+    },
+    "invented": [],
+    "note": "The family is drawn mostly from behind (three-quarter back) and stands at the back left by the door, so 'three-quarter' and 'front' are slightly off; the orange tile sits right of centre, not centred.",
+    "costUsd": 0.0742742
+  },
+  "qwen/qwen3-vl-8b|anomaly.grid.png|8": {
+    "scores": {
+      "mustSee": 2,
+      "sizePlace": 2,
+      "action": 2,
+      "drawingErrors": 3,
+      "onlookers": 3,
+      "mainView": 3
+    },
+    "invented": [],
+    "note": "The action line says the whole family is looking at the cracked tile, but the father is opening the door and looking outside; also, the top edge of the picture cuts off the door ('knock'), and the orange tile is closer to medium than small.",
+    "costUsd": 0.0751344
   }
 }
