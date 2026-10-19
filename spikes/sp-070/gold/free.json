@@ -1,0 +1,707 @@
+{
+  "-glob-": {
+    "story": "Spilled mercury beads into one glob, a shiny rolling ball.",
+    "items": [
+      {
+        "name": "mercury beads",
+        "adjectives": [
+          "spilled",
+          "small"
+        ]
+      },
+      {
+        "name": "mercury glob",
+        "adjectives": [
+          "shiny",
+          "round",
+          "rolling"
+        ]
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": null,
+    "isSequence": true,
+    "angleCase": "one-object",
+    "promptKey": "86a9567fcf301969",
+    "grids": [
+      "-glob-.grid.png"
+    ]
+  },
+  "-tomy": {
+    "story": "\"Scalpel to me,\" the surgeon says, cutting the skin.",
+    "items": [
+      {
+        "name": "surgeon",
+        "adjectives": []
+      },
+      {
+        "name": "scalpel",
+        "adjectives": []
+      },
+      {
+        "name": "skin",
+        "adjectives": [
+          "cut"
+        ]
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": {
+      "name": "surgeon",
+      "actor": false
+    },
+    "isSequence": false,
+    "angleCase": "none",
+    "promptKey": "d1249722b4bf0c0f",
+    "grids": [
+      "-tomy.grid.png"
+    ]
+  },
+  "-esce": {
+    "story": "Stray raindrops merge into one big mess.",
+    "items": [
+      {
+        "name": "raindrop",
+        "adjectives": [
+          "stray"
+        ]
+      },
+      {
+        "name": "puddle",
+        "adjectives": [
+          "big",
+          "messy"
+        ]
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": null,
+    "isSequence": true,
+    "angleCase": "none",
+    "promptKey": "7b980cd9d68ab8ed",
+    "grids": [
+      "-esce.grid.png"
+    ]
+  },
+  "-cy": {
+    "story": "See the calm street flip into an urgent state.",
+    "items": [
+      {
+        "name": "street",
+        "adjectives": [
+          "calm"
+        ]
+      },
+      {
+        "name": "street",
+        "adjectives": [
+          "urgent"
+        ]
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": null,
+    "isSequence": true,
+    "angleCase": "none",
+    "promptKey": "bd88d01c133a4792",
+    "grids": [
+      "-cy.grid.png"
+    ]
+  },
+  "-ence": {
+    "story": "The tightrope walker's balance stays in perfect condition.",
+    "items": [
+      {
+        "name": "tightrope walker",
+        "adjectives": [
+          "balanced"
+        ]
+      },
+      {
+        "name": "tightrope",
+        "adjectives": [
+          "taut"
+        ]
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": {
+      "name": "tightrope walker",
+      "actor": false
+    },
+    "isSequence": false,
+    "angleCase": "none",
+    "promptKey": "68ff87a7cad079ac",
+    "grids": [
+      "-ence.grid.png"
+    ]
+  },
+  "crest": {
+    "story": "Crew, get some rest: you've reached the ridge's top.",
+    "items": [
+      {
+        "name": "crew",
+        "adjectives": [
+          "resting"
+        ]
+      },
+      {
+        "name": "ridge",
+        "adjectives": [
+          "top"
+        ]
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": {
+      "name": "crew",
+      "actor": false
+    },
+    "isSequence": false,
+    "angleCase": "view",
+    "promptKey": "9279e8f240586619",
+    "grids": [
+      "crest.grid.png"
+    ]
+  },
+  "coaster": {
+    "story": "Cup on the toaster? She slides a mat beneath it.",
+    "items": [
+      {
+        "name": "cup",
+        "adjectives": []
+      },
+      {
+        "name": "toaster",
+        "adjectives": []
+      },
+      {
+        "name": "mat",
+        "adjectives": []
+      },
+      {
+        "name": "woman",
+        "adjectives": []
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": {
+      "name": "woman",
+      "actor": false
+    },
+    "isSequence": true,
+    "angleCase": "none",
+    "promptKey": "d8377164628f4eb9",
+    "grids": [
+      "coaster.grid.png"
+    ]
+  },
+  "creak": {
+    "story": "Beside the creek, the rotten dock groans under my boots.",
+    "items": [
+      {
+        "name": "creek",
+        "adjectives": []
+      },
+      {
+        "name": "dock",
+        "adjectives": [
+          "rotten"
+        ]
+      },
+      {
+        "name": "boots",
+        "adjectives": []
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": {
+      "name": "person who wears the boots",
+      "actor": true
+    },
+    "isSequence": false,
+    "angleCase": "none",
+    "promptKey": "730f5139c7b80599",
+    "grids": [
+      "creak.grid.png"
+    ]
+  },
+  "faint": {
+    "story": "Faye, a saint, lights a candle that barely glows.",
+    "items": [
+      {
+        "name": "saint",
+        "adjectives": []
+      },
+      {
+        "name": "candle",
+        "adjectives": [
+          "lit",
+          "dim"
+        ]
+      }
+    ],
+    "nameSigns": [
+      {
+        "item": "saint",
+        "text": "Faye"
+      }
+    ],
+    "mainSubject": {
+      "name": "saint",
+      "actor": false
+    },
+    "isSequence": false,
+    "angleCase": "none",
+    "promptKey": "da203a5895e6a763",
+    "grids": [
+      "faint.grid.png",
+      "faint.scenes.grid.png"
+    ]
+  },
+  "fus-": {
+    "story": "Nephews giggle as uncle pours grape juice.",
+    "items": [
+      {
+        "name": "nephews",
+        "adjectives": [
+          "giggling"
+        ]
+      },
+      {
+        "name": "uncle",
+        "adjectives": []
+      },
+      {
+        "name": "grape juice",
+        "adjectives": [
+          "purple"
+        ]
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": {
+      "name": "uncle",
+      "actor": false
+    },
+    "isSequence": false,
+    "angleCase": "none",
+    "promptKey": "675e458897592cf9",
+    "grids": [
+      "fus-.grid.png"
+    ]
+  },
+  "intra-": {
+    "story": "In the gym, we play inside our own school walls.",
+    "items": [
+      {
+        "name": "gym",
+        "adjectives": []
+      },
+      {
+        "name": "school walls",
+        "adjectives": []
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": {
+      "name": "person who plays",
+      "actor": true
+    },
+    "isSequence": false,
+    "angleCase": "none",
+    "promptKey": "7b7e1f7a3c5a6c8c",
+    "grids": [
+      "intra-.grid.png"
+    ]
+  },
+  "ladles": {
+    "story": "Lay noodles in, then scoop soup into bowls.",
+    "items": [
+      {
+        "name": "noodles",
+        "adjectives": []
+      },
+      {
+        "name": "soup",
+        "adjectives": []
+      },
+      {
+        "name": "bowls",
+        "adjectives": []
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": {
+      "name": "person who lays the noodles and scoops the soup",
+      "actor": true
+    },
+    "isSequence": true,
+    "angleCase": "none",
+    "promptKey": "79ff785cc2858e52",
+    "grids": [
+      "ladles.grid.png",
+      "ladles.noodles.grid.png"
+    ]
+  },
+  "per-": {
+    "story": "Purple arrow punches through the paper target.",
+    "items": [
+      {
+        "name": "arrow",
+        "adjectives": [
+          "purple"
+        ]
+      },
+      {
+        "name": "paper target",
+        "adjectives": [
+          "punched through",
+          "torn hole"
+        ]
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": null,
+    "isSequence": false,
+    "angleCase": "none",
+    "promptKey": "c563bcbcaaa8b744",
+    "grids": [
+      "per-.grid.png"
+    ]
+  },
+  "para-": {
+    "story": "A parrot squawks for crackers, then hops beside me.",
+    "items": [
+      {
+        "name": "parrot",
+        "adjectives": [
+          "squawking"
+        ]
+      },
+      {
+        "name": "crackers",
+        "adjectives": []
+      },
+      {
+        "name": "narrator",
+        "adjectives": []
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": {
+      "name": "parrot",
+      "actor": false
+    },
+    "isSequence": true,
+    "angleCase": "none",
+    "promptKey": "b4616edaf4fa2a47",
+    "grids": [
+      "para-.grid.png"
+    ]
+  },
+  "devastating": {
+    "story": "Dev stating \"Mom's gone\" leaves the whole family shattered.",
+    "items": [
+      {
+        "name": "man",
+        "adjectives": []
+      },
+      {
+        "name": "family",
+        "adjectives": [
+          "shattered",
+          "grieving"
+        ]
+      }
+    ],
+    "nameSigns": [
+      {
+        "item": "man",
+        "text": "Dev"
+      }
+    ],
+    "mainSubject": {
+      "name": "man",
+      "actor": false
+    },
+    "isSequence": false,
+    "angleCase": "none",
+    "promptKey": "54413f73e58bafa4",
+    "grids": [
+      "devastating.grid.png"
+    ]
+  },
+  "pre-": {
+    "story": "The prince bows before the crowd arrives.",
+    "items": [
+      {
+        "name": "prince",
+        "adjectives": [
+          "bowing"
+        ]
+      },
+      {
+        "name": "crowd",
+        "adjectives": []
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": {
+      "name": "prince",
+      "actor": false
+    },
+    "isSequence": true,
+    "angleCase": "none",
+    "promptKey": "0723a590ad35c9f2",
+    "grids": [
+      "pre-.grid.png"
+    ]
+  },
+  "rattles": {
+    "story": "Rat battles Cat at chess; Cat looks shaken.",
+    "items": [
+      {
+        "name": "rat",
+        "adjectives": []
+      },
+      {
+        "name": "cat",
+        "adjectives": [
+          "shaken"
+        ]
+      },
+      {
+        "name": "chess board",
+        "adjectives": []
+      },
+      {
+        "name": "chess pieces",
+        "adjectives": []
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": {
+      "name": "rat",
+      "actor": false
+    },
+    "isSequence": false,
+    "angleCase": "none",
+    "promptKey": "a978738bc0443d53",
+    "grids": [
+      "rattles.grid.png"
+    ]
+  },
+  "ruffled": {
+    "story": "Rough roller coaster messed up her hair; she looked flustered.",
+    "items": [
+      {
+        "name": "roller coaster",
+        "adjectives": [
+          "rough"
+        ]
+      },
+      {
+        "name": "woman",
+        "adjectives": [
+          "flustered",
+          "messy-haired"
+        ]
+      },
+      {
+        "name": "hair",
+        "adjectives": [
+          "messy",
+          "tangled"
+        ]
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": {
+      "name": "woman",
+      "actor": false
+    },
+    "isSequence": false,
+    "angleCase": "none",
+    "promptKey": "fc21b655d04cd84d",
+    "grids": [
+      "ruffled.before.grid.png",
+      "ruffled.grid.png"
+    ]
+  },
+  "stray": {
+    "story": "Bus tray clattering, a homeless dog wanders the street.",
+    "items": [
+      {
+        "name": "dog",
+        "adjectives": [
+          "homeless",
+          "stray"
+        ]
+      },
+      {
+        "name": "bus tray",
+        "adjectives": []
+      },
+      {
+        "name": "street",
+        "adjectives": []
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": {
+      "name": "dog",
+      "actor": false
+    },
+    "isSequence": false,
+    "angleCase": "none",
+    "promptKey": "246453c6c1770870",
+    "grids": [
+      "stray.grid.png"
+    ]
+  },
+  "tax-": {
+    "story": "The tax clerk lines up folders in alphabetical order.",
+    "items": [
+      {
+        "name": "tax clerk",
+        "adjectives": []
+      },
+      {
+        "name": "folders",
+        "adjectives": [
+          "lined up",
+          "alphabetical"
+        ]
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": {
+      "name": "tax clerk",
+      "actor": false
+    },
+    "isSequence": false,
+    "angleCase": "none",
+    "promptKey": "e1a30179541ab959",
+    "grids": [
+      "tax-.grid.png"
+    ]
+  },
+  "trans-": {
+    "story": "Traffic parts as dancers glide across the street.",
+    "items": [
+      {
+        "name": "traffic",
+        "adjectives": [
+          "parted"
+        ]
+      },
+      {
+        "name": "dancers",
+        "adjectives": []
+      },
+      {
+        "name": "street",
+        "adjectives": []
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": {
+      "name": "dancers",
+      "actor": false
+    },
+    "isSequence": false,
+    "angleCase": "none",
+    "promptKey": "f907088ae463ee39",
+    "grids": [
+      "trans-.grid.png"
+    ]
+  },
+  "val-": {
+    "story": "Deep in the valley, she convalesces and grows strong.",
+    "items": [
+      {
+        "name": "valley",
+        "adjectives": [
+          "deep"
+        ]
+      },
+      {
+        "name": "woman",
+        "adjectives": [
+          "strong"
+        ]
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": {
+      "name": "woman",
+      "actor": false
+    },
+    "isSequence": true,
+    "angleCase": "none",
+    "promptKey": "74bc0a40200dac8e",
+    "grids": [
+      "val-.grid.png"
+    ]
+  },
+  "weathered": {
+    "story": "Wind ruffled the feathered scarecrow's hat, worn and faded.",
+    "items": [
+      {
+        "name": "scarecrow",
+        "adjectives": [
+          "feathered"
+        ]
+      },
+      {
+        "name": "hat",
+        "adjectives": [
+          "worn",
+          "faded",
+          "ruffled"
+        ]
+      },
+      {
+        "name": "wind",
+        "adjectives": []
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": null,
+    "isSequence": false,
+    "angleCase": "none",
+    "promptKey": "2ebd5bc57b91f3df",
+    "grids": [
+      "weathered.grid.png"
+    ]
+  },
+  "-meter": {
+    "story": "Try the mitt on; er, she measures your hand.",
+    "items": [
+      {
+        "name": "mitt",
+        "adjectives": []
+      },
+      {
+        "name": "hand",
+        "adjectives": []
+      },
+      {
+        "name": "she",
+        "adjectives": []
+      }
+    ],
+    "nameSigns": [],
+    "mainSubject": {
+      "name": "she",
+      "actor": false
+    },
+    "isSequence": false,
+    "angleCase": "none",
+    "promptKey": "a80c9ba2470d1088",
+    "grids": [
+      "-meter.grid.png"
+    ]
+  }
+}

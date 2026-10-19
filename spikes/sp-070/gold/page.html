@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SP-070 Gold Marks</title>
+<style>
+  :root { --bg:#f7f6f2; --card:#fff; --ink:#1f1f1c; --muted:#6b6a64; --line:#dddbd3; --accent:#2f6fdf; --done:#2e8b57; --warn:#c07a12; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#191917; --card:#24241f; --ink:#ecebe6; --muted:#a3a198; --line:#3a3933; --accent:#7aa7ff; --done:#5fc28a; --warn:#e2a54a; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.45 system-ui, sans-serif; }
+  header { position:sticky; top:0; background:var(--bg); border-bottom:1px solid var(--line); padding:10px 16px; z-index:2; }
+  header h1 { font-size:17px; margin:0 0 4px; }
+  .defs { font-size:13px; color:var(--muted); }
+  .defs b { color:var(--ink); }
+  .progress { font-size:13px; margin-top:4px; }
+  main { max-width:980px; margin:0 auto; padding:16px; }
+  .cell { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px; margin-bottom:18px; display:grid; grid-template-columns: minmax(0,420px) 1fr; gap:16px; }
+  @media (max-width:760px) { .cell { grid-template-columns: 1fr; } }
+  .cell.complete { border-color: var(--done); }
+  .pic { width:100%; aspect-ratio:1/1; background-size:300% 300%; background-repeat:no-repeat; border-radius:6px; border:1px solid var(--line); cursor:zoom-in; }
+  .meta { font-size:13px; color:var(--muted); margin-bottom:6px; }
+  .story { font-style:italic; margin-bottom:10px; }
+  .item { border-top:1px solid var(--line); padding:8px 0; }
+  .item .name { font-weight:600; margin-bottom:4px; }
+  .opts { display:flex; flex-wrap:wrap; gap:6px; }
+  .opts button { border:1px solid var(--line); background:transparent; color:var(--ink); border-radius:16px; padding:4px 12px; font:inherit; font-size:14px; cursor:pointer; }
+  .opts button.on { background:var(--accent); border-color:var(--accent); color:#fff; }
+  .opts button.unsure.on { background:var(--warn); border-color:var(--warn); }
+  .note { width:100%; margin-top:6px; font:inherit; font-size:13px; padding:4px 6px; border:1px solid var(--line); border-radius:6px; background:transparent; color:var(--ink); }
+  .models { font-size:12px; color:var(--muted); margin-top:4px; }
+  .models[hidden] { display:none; }
+  #zoom { position:fixed; inset:0; background:rgba(0,0,0,.8); display:none; align-items:center; justify-content:center; z-index:5; cursor:zoom-out; }
+  #zoom img { max-width:95vw; max-height:95vh; }
+  label.toggle { font-size:13px; color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1>SP-070 gold set: mark each must-see item</h1>
+  <div class="defs">
+    <b>visible</b>: the cell shows the item and the part that does the story's action (for a person: the body, hands or face).
+    <b>part only</b>: the cell shows the item, but not the part that acts (feet only, a hand with no person).
+    <b>hidden</b>: the cell does not show the item.
+    <b>not sure</b>: add a note.
+  </div>
+  <div class="progress"><span id="count"></span> · each answer is saved at once ·
+    <label class="toggle"><input type="checkbox" id="showall"> show the models' old marks for all items</label></div>
+</header>
+<main id="cells"></main>
+<div id="zoom"><img alt=""></div>
+<script>
+const MARKS = ["visible", "part only", "hidden", "not sure"];
+let labels = {};
+const keyOf = (c, name) => `${c.grid}|${c.cell}|${name}`;
+
+async function save(key, value) {
+  if (value) labels[key] = value; else delete labels[key];
+  await fetch("/label", { method: "POST", body: JSON.stringify({ key, value }) });
+  update();
+}
+
+function update() {
+  let done = 0, total = 0;
+  document.querySelectorAll(".cell").forEach((el) => {
+    const items = el.querySelectorAll(".item");
+    let n = 0;
+    items.forEach((it) => {
+      const lab = labels[it.dataset.key];
+      total++; if (lab?.mark) { n++; done++; }
+      it.querySelectorAll(".opts button").forEach((b) => b.classList.toggle("on", lab?.mark === b.dataset.mark));
+      it.querySelector(".models").hidden = !(lab?.mark || document.getElementById("showall").checked);
+    });
+    el.classList.toggle("complete", n === items.length);
+  });
+  document.getElementById("count").textContent = `${done} of ${total} items marked`;
+}
+
+function render(cells) {
+  const main = document.getElementById("cells");
+  cells.forEach((c, i) => {
+    const idx = c.cell - 1, col = idx % 3, row = Math.floor(idx / 3);
+    const el = document.createElement("section");
+    el.className = "cell";
+    el.innerHTML = `
+      <div><div class="pic" style="background-image:url('/grid/${encodeURIComponent(c.grid)}');background-position:${col * 50}% ${row * 50}%"></div></div>
+      <div>
+        <div class="meta">${i + 1} of ${cells.length} · ${c.word} · cell ${c.cell}</div>
+        <div class="story">${c.story}</div>
+        <div class="items"></div>
+      </div>`;
+    el.querySelector(".pic").onclick = () => zoom(c);
+    const box = el.querySelector(".items");
+    c.items.forEach((it) => {
+      const key = keyOf(c, it.name);
+      const d = document.createElement("div");
+      d.className = "item"; d.dataset.key = key;
+      d.innerHTML = `<div class="name"></div><div class="opts"></div>
+        <input class="note" placeholder="note (optional)">
+        <div class="models" hidden>Old marks: Sonnet <b></b> · 8B model <b></b></div>`;
+      d.querySelector(".name").textContent = it.name;
+      const [sb, qb] = d.querySelectorAll(".models b");
+      sb.textContent = it.sonnet; qb.textContent = it.qwen8b;
+      if (!it.sonnet && !it.qwen8b) d.querySelector(".models").textContent = "No old marks: a free grid with no captions.";
+      MARKS.forEach((m) => {
+        const b = document.createElement("button");
+        b.textContent = m; b.dataset.mark = m;
+        if (m === "not sure") b.classList.add("unsure");
+        b.onclick = () => {
+          const cur = labels[key];
+          save(key, cur?.mark === m ? (cur.note ? { mark: null, note: cur.note } : null) : { mark: m, note: cur?.note || "" });
+        };
+        d.querySelector(".opts").appendChild(b);
+      });
+      const note = d.querySelector(".note");
+      note.value = labels[key]?.note || "";
+      note.onchange = () => save(key, { mark: labels[key]?.mark || null, note: note.value });
+      box.appendChild(d);
+    });
+    main.appendChild(el);
+  });
+}
+
+function zoom(c) {
+  const z = document.getElementById("zoom"), img = z.querySelector("img");
+  const src = new Image();
+  src.onload = () => {
+    const w = src.width / 3, h = src.height / 3, idx = c.cell - 1;
+    const cv = document.createElement("canvas"); cv.width = w; cv.height = h;
+    cv.getContext("2d").drawImage(src, (idx % 3) * w, Math.floor(idx / 3) * h, w, h, 0, 0, w, h);
+    img.src = cv.toDataURL(); z.style.display = "flex";
+  };
+  src.src = `/grid/${encodeURIComponent(c.grid)}`;
+}
+document.getElementById("zoom").onclick = (e) => (e.currentTarget.style.display = "none");
+document.getElementById("showall").onchange = update;
+
+fetch("/data.json").then((r) => r.json()).then((d) => { labels = d.labels; render(d.cells); update(); });
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+[
+  {
+    "word": "anomaly",
+    "flashCell": 1,
+    "mainCell": 7,
+    "ranking": [
+      7,
+      1,
+      5,
+      3,
+      9
+    ],
+    "gatedOut": [
+      2,
+      4,
+      6,
+      8
+    ],
+    "gateSkipped": false,
+    "partOnly": [
+      4
+    ],
+    "totals": {
+      "1": 10.594166,
+      "3": 10.185,
+      "5": 10.265834,
+      "7": 10.911666,
+      "9": 9.77
+    }
+  }
+]

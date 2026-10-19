@@ -4,7 +4,7 @@ type: case
 status: open
 subject: anomaly
 label: "1"
-items: [SP-029, SP-064, SP-066, SP-069]
+items: [SP-029, SP-064, SP-066, SP-069, SP-070]
 ---
 # CASE-003 anomaly
 
@@ -17,6 +17,7 @@ items: [SP-029, SP-064, SP-066, SP-069]
 ## Reviews
 - 2026-10-15, SP-029: Flash's pick for the card is cell 1. (Found again by a pixel match with the final crop.)
 - 2026-10-17, after SP-066 stage 5 (in the agent's words, from SP-066's open questions, not Flash's): "Flash thinks anomaly cell 7 would be the most plausible cell without its drawing error (the crack is near the door that is knocked on)." Label stays 1.
+- 2026-10-19, after SP-069 (about cell 4, where only the family's feet show): "This case is a partly cut, and it removed the action of people." Label stays 1.
 
 ## Trials
 | Date | Item | Run | Answer | Top 3 | Label's rank | Below the pick by | Report |
@@ -29,3 +30,5 @@ items: [SP-029, SP-064, SP-066, SP-069]
 | 2026-10-19 | SP-069 | captions by Haiku: Opus mean 2.46 (Sonnet 2.80), 8 of 9 parse, 3 invented objects | — | — | — | — | reports/SP-069-cheaper-caption-models.md |
 | 2026-10-19 | SP-069 | captions by `qwen3-vl-8b`: Opus mean 2.54 (Sonnet 2.80), 8 of 9 parse | — | — | — | — | reports/SP-069-cheaper-caption-models.md |
 | 2026-10-19 | SP-069 | captions by `qwen3-vl-8b` + JSON schema: Opus mean 2.46 (Sonnet 2.80), 9 of 9 parse | — | — | — | — | reports/SP-069-cheaper-caption-models.md |
+| 2026-10-19 | SP-070 | stage 1: Sonnet captions with the new mark (visible / part only / hidden), weights 2·1·1; cell 4: family `part only`, knock `part only` | 7 | 7, 1, 5 | 2 of 5 | 0.32 | reports/SP-070-must-see-mark-asks-about-the-action.md |
+| 2026-10-19 | SP-070 | stage 1: Sonnet captions with the new marks of `qwen3-vl-8b` + schema, weights 2·1·1; cell 4: family `visible`; no cell gated | 7 | 7, 1, 3 | 2 of 9 | 0.28 | reports/SP-070-must-see-mark-asks-about-the-action.md |

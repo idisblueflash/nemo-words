@@ -1,0 +1,2662 @@
+[
+  {
+    "grid": "anomaly.grid.png",
+    "word": "anomaly",
+    "story": "A knock rattles the family's tiles; one's irregular.",
+    "cell": 4,
+    "items": [
+      {
+        "name": "knock",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "family",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "tiles",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "irregular tile",
+        "sonnet": "hidden",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "fixed",
+    "batch": 1
+  },
+  {
+    "grid": "flustered.grid.png",
+    "word": "flustered",
+    "story": "Flipping the mustard, the waiter fumbles, red-faced and nervous.",
+    "cell": 5,
+    "items": [
+      {
+        "name": "waiter",
+        "sonnet": "partly cut",
+        "qwen8b": "partly cut"
+      },
+      {
+        "name": "mustard",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "bothCut",
+    "batch": 1
+  },
+  {
+    "grid": "optimal.grid.png",
+    "word": "optimal",
+    "story": "At the shelter, she opts for an animal, the best.",
+    "cell": 5,
+    "items": [
+      {
+        "name": "shelter",
+        "sonnet": "hidden",
+        "qwen8b": "hidden"
+      },
+      {
+        "name": "woman",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "animal",
+        "sonnet": "partly cut",
+        "qwen8b": "partly cut"
+      }
+    ],
+    "group": "bothCut",
+    "batch": 1
+  },
+  {
+    "grid": "worn.grid.png",
+    "word": "worn",
+    "story": "Warn the driver: that tire's tread is rubbed bald.",
+    "cell": 4,
+    "items": [
+      {
+        "name": "driver",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "tire",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "tread",
+        "sonnet": "hidden",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "hidden",
+    "batch": 1
+  },
+  {
+    "grid": "cottage.grid.png",
+    "word": "cottage",
+    "story": "Rain caught us on the ridge, by a tiny house.",
+    "cell": 9,
+    "items": [
+      {
+        "name": "rain",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "ridge",
+        "sonnet": "hidden",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "tiny house",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "hidden",
+    "batch": 1
+  },
+  {
+    "grid": "sweep.grid.png",
+    "word": "sweep",
+    "story": "Swing deep into the corner; grab the broom.",
+    "cell": 8,
+    "items": [
+      {
+        "name": "corner",
+        "sonnet": "visible",
+        "qwen8b": "hidden"
+      },
+      {
+        "name": "broom",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "hidden",
+    "batch": 1
+  },
+  {
+    "grid": "worn.grid.png",
+    "word": "worn",
+    "story": "Warn the driver: that tire's tread is rubbed bald.",
+    "cell": 6,
+    "items": [
+      {
+        "name": "driver",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "tire",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "tread",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 1
+  },
+  {
+    "grid": "cottage.grid.png",
+    "word": "cottage",
+    "story": "Rain caught us on the ridge, by a tiny house.",
+    "cell": 2,
+    "items": [
+      {
+        "name": "rain",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "ridge",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "tiny house",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 1
+  },
+  {
+    "grid": "sweep.grid.png",
+    "word": "sweep",
+    "story": "Swing deep into the corner; grab the broom.",
+    "cell": 7,
+    "items": [
+      {
+        "name": "corner",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "broom",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 1
+  },
+  {
+    "grid": "wore.grid.png",
+    "word": "wore",
+    "story": "War ended; the king strutted out dressed in pajamas.",
+    "cell": 6,
+    "items": [
+      {
+        "name": "king",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "pajamas",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 1
+  },
+  {
+    "grid": "saturation.grid.png",
+    "word": "saturation",
+    "story": "The satchel of rations soaked up rain until not one drop more would fit.",
+    "cell": 5,
+    "items": [
+      {
+        "name": "satchel",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "rations",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "rain",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 1
+  },
+  {
+    "grid": "ventilator.grid.png",
+    "word": "ventilator",
+    "story": "Nurse Venice returns later; the machine breathes for the newborn.",
+    "cell": 7,
+    "items": [
+      {
+        "name": "nurse",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "machine",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "newborn",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 1
+  },
+  {
+    "grid": "overreach.grid.png",
+    "word": "overreach",
+    "story": "Hanging over a peach tree, he stretches too far, falls.",
+    "cell": 2,
+    "items": [
+      {
+        "name": "man",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "peach tree",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "peach",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 1
+  },
+  {
+    "grid": "cocked.grid.png",
+    "word": "cocked",
+    "story": "Carl knocked, and the cat tilted its head.",
+    "cell": 9,
+    "items": [
+      {
+        "name": "man",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "cat",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "door",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 1
+  },
+  {
+    "grid": "spilled.grid-2.png",
+    "word": "spilled",
+    "story": "Spoon tips the filled mug; coffee floods the desk.",
+    "cell": 1,
+    "items": [
+      {
+        "name": "spoon",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "mug",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "coffee",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "desk",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "bothVis",
+    "batch": 1
+  },
+  {
+    "grid": "spilled.grid-2.png",
+    "word": "spilled",
+    "story": "Spoon tips the filled mug; coffee floods the desk.",
+    "cell": 5,
+    "items": [
+      {
+        "name": "spoon",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "mug",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "coffee",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "desk",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "bothVis",
+    "batch": 1
+  },
+  {
+    "grid": "surgeon.grid.png",
+    "word": "surgeon",
+    "story": "Power surge! An OR goes dark; she operates by headlamp.",
+    "cell": 9,
+    "items": [
+      {
+        "name": "operating room",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "surgeon",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "headlamp",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "bothVis",
+    "batch": 1
+  },
+  {
+    "grid": "synonym.grid.png",
+    "word": "synonym",
+    "story": "The sinner watched his nimble mirror-twin mouth the same words.",
+    "cell": 4,
+    "items": [
+      {
+        "name": "sinner",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "mirror-twin",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "mouth",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "bothVis",
+    "batch": 1
+  },
+  {
+    "grid": "surgeon.grid.png",
+    "word": "surgeon",
+    "story": "Power surge! An OR goes dark; she operates by headlamp.",
+    "cell": 1,
+    "items": [
+      {
+        "name": "operating room",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "surgeon",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "headlamp",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "bothVis",
+    "batch": 1
+  },
+  {
+    "grid": "concocted.grid.png",
+    "word": "concocted",
+    "story": "The chef cocked his head, stirring a devious scheme.",
+    "cell": 9,
+    "items": [
+      {
+        "name": "chef",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "bothVis",
+    "batch": 1
+  },
+  {
+    "grid": "cocked.grid.png",
+    "word": "cocked",
+    "story": "Carl knocked, and the cat tilted its head.",
+    "cell": 7,
+    "items": [
+      {
+        "name": "man",
+        "sonnet": "partly cut",
+        "qwen8b": "partly cut"
+      },
+      {
+        "name": "cat",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "door",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "bothCut",
+    "batch": 2
+  },
+  {
+    "grid": "overreach.grid.png",
+    "word": "overreach",
+    "story": "Hanging over a peach tree, he stretches too far, falls.",
+    "cell": 3,
+    "items": [
+      {
+        "name": "man",
+        "sonnet": "partly cut",
+        "qwen8b": "partly cut"
+      },
+      {
+        "name": "peach tree",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "peach",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "bothCut",
+    "batch": 2
+  },
+  {
+    "grid": "cocked.grid.png",
+    "word": "cocked",
+    "story": "Carl knocked, and the cat tilted its head.",
+    "cell": 5,
+    "items": [
+      {
+        "name": "man",
+        "sonnet": "partly cut",
+        "qwen8b": "partly cut"
+      },
+      {
+        "name": "cat",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "door",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "bothCut",
+    "batch": 2
+  },
+  {
+    "grid": "cocked.grid.png",
+    "word": "cocked",
+    "story": "Carl knocked, and the cat tilted its head.",
+    "cell": 2,
+    "items": [
+      {
+        "name": "man",
+        "sonnet": "partly cut",
+        "qwen8b": "partly cut"
+      },
+      {
+        "name": "cat",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "door",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "bothCut",
+    "batch": 2
+  },
+  {
+    "grid": "cottage.grid.png",
+    "word": "cottage",
+    "story": "Rain caught us on the ridge, by a tiny house.",
+    "cell": 5,
+    "items": [
+      {
+        "name": "rain",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "ridge",
+        "sonnet": "hidden",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "tiny house",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "hidden",
+    "batch": 2
+  },
+  {
+    "grid": "cottage.grid.png",
+    "word": "cottage",
+    "story": "Rain caught us on the ridge, by a tiny house.",
+    "cell": 7,
+    "items": [
+      {
+        "name": "rain",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "ridge",
+        "sonnet": "hidden",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "tiny house",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "hidden",
+    "batch": 2
+  },
+  {
+    "grid": "anomaly.grid.png",
+    "word": "anomaly",
+    "story": "A knock rattles the family's tiles; one's irregular.",
+    "cell": 2,
+    "items": [
+      {
+        "name": "knock",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "family",
+        "sonnet": "hidden",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "tiles",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "irregular tile",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "hidden",
+    "batch": 2
+  },
+  {
+    "grid": "spilled.grid-2.png",
+    "word": "spilled",
+    "story": "Spoon tips the filled mug; coffee floods the desk.",
+    "cell": 9,
+    "items": [
+      {
+        "name": "spoon",
+        "sonnet": "hidden",
+        "qwen8b": "hidden"
+      },
+      {
+        "name": "mug",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "coffee",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "desk",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "hidden",
+    "batch": 2
+  },
+  {
+    "grid": "surgeon.grid.png",
+    "word": "surgeon",
+    "story": "Power surge! An OR goes dark; she operates by headlamp.",
+    "cell": 6,
+    "items": [
+      {
+        "name": "operating room",
+        "sonnet": "hidden",
+        "qwen8b": "hidden"
+      },
+      {
+        "name": "surgeon",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "headlamp",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "hidden",
+    "batch": 2
+  },
+  {
+    "grid": "anomaly.grid.png",
+    "word": "anomaly",
+    "story": "A knock rattles the family's tiles; one's irregular.",
+    "cell": 6,
+    "items": [
+      {
+        "name": "knock",
+        "sonnet": "hidden",
+        "qwen8b": "hidden"
+      },
+      {
+        "name": "family",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "tiles",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "irregular tile",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "hidden",
+    "batch": 2
+  },
+  {
+    "grid": "appeal.grid.png",
+    "word": "appeal",
+    "story": "A peal of bells attracts a curious crowd.",
+    "cell": 8,
+    "items": [
+      {
+        "name": "bells",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "crowd",
+        "sonnet": "hidden",
+        "qwen8b": "hidden"
+      }
+    ],
+    "group": "hidden",
+    "batch": 2
+  },
+  {
+    "grid": "anomaly.grid.png",
+    "word": "anomaly",
+    "story": "A knock rattles the family's tiles; one's irregular.",
+    "cell": 8,
+    "items": [
+      {
+        "name": "knock",
+        "sonnet": "hidden",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "family",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "tiles",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "irregular tile",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "hidden",
+    "batch": 2
+  },
+  {
+    "grid": "optimal.grid.png",
+    "word": "optimal",
+    "story": "At the shelter, she opts for an animal, the best.",
+    "cell": 6,
+    "items": [
+      {
+        "name": "shelter",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "woman",
+        "sonnet": "partly cut",
+        "qwen8b": "hidden"
+      },
+      {
+        "name": "animal",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "hidden",
+    "batch": 2
+  },
+  {
+    "grid": "spilled.grid-2.png",
+    "word": "spilled",
+    "story": "Spoon tips the filled mug; coffee floods the desk.",
+    "cell": 4,
+    "items": [
+      {
+        "name": "spoon",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "mug",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "coffee",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "desk",
+        "sonnet": "hidden",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "hidden",
+    "batch": 2
+  },
+  {
+    "grid": "worn.grid.png",
+    "word": "worn",
+    "story": "Warn the driver: that tire's tread is rubbed bald.",
+    "cell": 8,
+    "items": [
+      {
+        "name": "driver",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "tire",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "tread",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "sweep.grid.png",
+    "word": "sweep",
+    "story": "Swing deep into the corner; grab the broom.",
+    "cell": 5,
+    "items": [
+      {
+        "name": "corner",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "broom",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "worn.grid.png",
+    "word": "worn",
+    "story": "Warn the driver: that tire's tread is rubbed bald.",
+    "cell": 1,
+    "items": [
+      {
+        "name": "driver",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "tire",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "tread",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "rigged.grid-2.png",
+    "word": "rigged",
+    "story": "Wig-wearing clerk stuffs the fixed ballot box.",
+    "cell": 2,
+    "items": [
+      {
+        "name": "clerk",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "ballot box",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "ballots",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "concocted.grid.png",
+    "word": "concocted",
+    "story": "The chef cocked his head, stirring a devious scheme.",
+    "cell": 2,
+    "items": [
+      {
+        "name": "chef",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "flustered.grid.png",
+    "word": "flustered",
+    "story": "Flipping the mustard, the waiter fumbles, red-faced and nervous.",
+    "cell": 8,
+    "items": [
+      {
+        "name": "waiter",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "mustard",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "overreach.grid.png",
+    "word": "overreach",
+    "story": "Hanging over a peach tree, he stretches too far, falls.",
+    "cell": 7,
+    "items": [
+      {
+        "name": "man",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "peach tree",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "peach",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "ventilator.grid.png",
+    "word": "ventilator",
+    "story": "Nurse Venice returns later; the machine breathes for the newborn.",
+    "cell": 8,
+    "items": [
+      {
+        "name": "nurse",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "machine",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "newborn",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "synonym.grid.png",
+    "word": "synonym",
+    "story": "The sinner watched his nimble mirror-twin mouth the same words.",
+    "cell": 2,
+    "items": [
+      {
+        "name": "sinner",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "mirror-twin",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "mouth",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "rigged.grid-2.png",
+    "word": "rigged",
+    "story": "Wig-wearing clerk stuffs the fixed ballot box.",
+    "cell": 9,
+    "items": [
+      {
+        "name": "clerk",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "ballot box",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "ballots",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "appeal.grid.png",
+    "word": "appeal",
+    "story": "A peal of bells attracts a curious crowd.",
+    "cell": 4,
+    "items": [
+      {
+        "name": "bells",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "crowd",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "concocted.grid.png",
+    "word": "concocted",
+    "story": "The chef cocked his head, stirring a devious scheme.",
+    "cell": 8,
+    "items": [
+      {
+        "name": "chef",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "overreach.grid.png",
+    "word": "overreach",
+    "story": "Hanging over a peach tree, he stretches too far, falls.",
+    "cell": 6,
+    "items": [
+      {
+        "name": "man",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "peach tree",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "peach",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "hypernym.grid.png",
+    "word": "hypernym",
+    "story": "High on a perch, nimble birds name one category.",
+    "cell": 6,
+    "items": [
+      {
+        "name": "perch",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "bird",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "rigged.grid-2.png",
+    "word": "rigged",
+    "story": "Wig-wearing clerk stuffs the fixed ballot box.",
+    "cell": 1,
+    "items": [
+      {
+        "name": "clerk",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "ballot box",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "ballots",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "hypernym.grid.png",
+    "word": "hypernym",
+    "story": "High on a perch, nimble birds name one category.",
+    "cell": 7,
+    "items": [
+      {
+        "name": "perch",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "bird",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "hypernym.grid.png",
+    "word": "hypernym",
+    "story": "High on a perch, nimble birds name one category.",
+    "cell": 8,
+    "items": [
+      {
+        "name": "perch",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "bird",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "appeal.grid.png",
+    "word": "appeal",
+    "story": "A peal of bells attracts a curious crowd.",
+    "cell": 7,
+    "items": [
+      {
+        "name": "bells",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "crowd",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "period.grid.png",
+    "word": "period",
+    "story": "Off the pier, an eon of peace stretched and ended.",
+    "cell": 6,
+    "items": [
+      {
+        "name": "pier",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "calm sea",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "contest.grid.png",
+    "word": "contest",
+    "story": "The con aces a spelling test to compete on TV.",
+    "cell": 4,
+    "items": [
+      {
+        "name": "con",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "spelling test",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "TV",
+        "sonnet": "partly cut",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "cutVis",
+    "batch": 2
+  },
+  {
+    "grid": "sweep.grid.png",
+    "word": "sweep",
+    "story": "Swing deep into the corner; grab the broom.",
+    "cell": 3,
+    "items": [
+      {
+        "name": "corner",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "broom",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "bothVis",
+    "batch": 2
+  },
+  {
+    "grid": "concocted.grid.png",
+    "word": "concocted",
+    "story": "The chef cocked his head, stirring a devious scheme.",
+    "cell": 6,
+    "items": [
+      {
+        "name": "chef",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "bothVis",
+    "batch": 2
+  },
+  {
+    "grid": "rigged.grid-2.png",
+    "word": "rigged",
+    "story": "Wig-wearing clerk stuffs the fixed ballot box.",
+    "cell": 7,
+    "items": [
+      {
+        "name": "clerk",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "ballot box",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "ballots",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "bothVis",
+    "batch": 2
+  },
+  {
+    "grid": "saturation.grid.png",
+    "word": "saturation",
+    "story": "The satchel of rations soaked up rain until not one drop more would fit.",
+    "cell": 6,
+    "items": [
+      {
+        "name": "satchel",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "rations",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "rain",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "bothVis",
+    "batch": 2
+  },
+  {
+    "grid": "appeal.grid.png",
+    "word": "appeal",
+    "story": "A peal of bells attracts a curious crowd.",
+    "cell": 6,
+    "items": [
+      {
+        "name": "bells",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "crowd",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "bothVis",
+    "batch": 2
+  },
+  {
+    "grid": "period.grid.png",
+    "word": "period",
+    "story": "Off the pier, an eon of peace stretched and ended.",
+    "cell": 9,
+    "items": [
+      {
+        "name": "pier",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      },
+      {
+        "name": "calm sea",
+        "sonnet": "visible",
+        "qwen8b": "visible"
+      }
+    ],
+    "group": "bothVis",
+    "batch": 2
+  },
+  {
+    "grid": "-cy.grid.png",
+    "word": "-cy",
+    "story": "See the calm street flip into an urgent state.",
+    "cell": 6,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "calm street",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "urgent street",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "-cy.grid.png",
+    "word": "-cy",
+    "story": "See the calm street flip into an urgent state.",
+    "cell": 4,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "calm street",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "urgent street",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "-ence.grid.png",
+    "word": "-ence",
+    "story": "The tightrope walker's balance stays in perfect condition.",
+    "cell": 2,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "tightrope walker",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "tightrope",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "-ence.grid.png",
+    "word": "-ence",
+    "story": "The tightrope walker's balance stays in perfect condition.",
+    "cell": 7,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "tightrope walker",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "tightrope",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "-esce.grid.png",
+    "word": "-esce",
+    "story": "Stray raindrops merge into one big mess.",
+    "cell": 2,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "raindrop",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "puddle",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "-esce.grid.png",
+    "word": "-esce",
+    "story": "Stray raindrops merge into one big mess.",
+    "cell": 3,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "raindrop",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "puddle",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "-glob-.grid.png",
+    "word": "-glob-",
+    "story": "Spilled mercury beads into one glob, a shiny rolling ball.",
+    "cell": 6,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "mercury beads",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "mercury glob",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "-glob-.grid.png",
+    "word": "-glob-",
+    "story": "Spilled mercury beads into one glob, a shiny rolling ball.",
+    "cell": 9,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "mercury beads",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "mercury glob",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "-meter.grid.png",
+    "word": "-meter",
+    "story": "Try the mitt on; er, she measures your hand.",
+    "cell": 9,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "mitt",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "hand",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "she",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "-meter.grid.png",
+    "word": "-meter",
+    "story": "Try the mitt on; er, she measures your hand.",
+    "cell": 4,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "mitt",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "hand",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "she",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "-tomy.grid.png",
+    "word": "-tomy",
+    "story": "\"Scalpel to me,\" the surgeon says, cutting the skin.",
+    "cell": 3,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "surgeon",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "scalpel",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "skin",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "-tomy.grid.png",
+    "word": "-tomy",
+    "story": "\"Scalpel to me,\" the surgeon says, cutting the skin.",
+    "cell": 7,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "surgeon",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "scalpel",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "skin",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "coaster.grid.png",
+    "word": "coaster",
+    "story": "Cup on the toaster? She slides a mat beneath it.",
+    "cell": 9,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "cup",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "toaster",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "mat",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "woman",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "coaster.grid.png",
+    "word": "coaster",
+    "story": "Cup on the toaster? She slides a mat beneath it.",
+    "cell": 6,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "cup",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "toaster",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "mat",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "woman",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "creak.grid.png",
+    "word": "creak",
+    "story": "Beside the creek, the rotten dock groans under my boots.",
+    "cell": 5,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "creek",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "dock",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "boots",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "creak.grid.png",
+    "word": "creak",
+    "story": "Beside the creek, the rotten dock groans under my boots.",
+    "cell": 8,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "creek",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "dock",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "boots",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "crest.grid.png",
+    "word": "crest",
+    "story": "Crew, get some rest: you've reached the ridge's top.",
+    "cell": 7,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "crew",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "ridge",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "crest.grid.png",
+    "word": "crest",
+    "story": "Crew, get some rest: you've reached the ridge's top.",
+    "cell": 1,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "crew",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "ridge",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "devastating.grid.png",
+    "word": "devastating",
+    "story": "Dev stating \"Mom's gone\" leaves the whole family shattered.",
+    "cell": 9,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "man",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "family",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "devastating.grid.png",
+    "word": "devastating",
+    "story": "Dev stating \"Mom's gone\" leaves the whole family shattered.",
+    "cell": 6,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "man",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "family",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "faint.grid.png",
+    "word": "faint",
+    "story": "Faye, a saint, lights a candle that barely glows.",
+    "cell": 4,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "saint",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "candle",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "faint.grid.png",
+    "word": "faint",
+    "story": "Faye, a saint, lights a candle that barely glows.",
+    "cell": 9,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "saint",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "candle",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "faint.scenes.grid.png",
+    "word": "faint",
+    "story": "Faye, a saint, lights a candle that barely glows.",
+    "cell": 4,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "saint",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "candle",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "faint.scenes.grid.png",
+    "word": "faint",
+    "story": "Faye, a saint, lights a candle that barely glows.",
+    "cell": 5,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "saint",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "candle",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "fus-.grid.png",
+    "word": "fus-",
+    "story": "Nephews giggle as uncle pours grape juice.",
+    "cell": 5,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "nephews",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "uncle",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "grape juice",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "fus-.grid.png",
+    "word": "fus-",
+    "story": "Nephews giggle as uncle pours grape juice.",
+    "cell": 8,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "nephews",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "uncle",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "grape juice",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "intra-.grid.png",
+    "word": "intra-",
+    "story": "In the gym, we play inside our own school walls.",
+    "cell": 4,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "gym",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "school walls",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "intra-.grid.png",
+    "word": "intra-",
+    "story": "In the gym, we play inside our own school walls.",
+    "cell": 5,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "gym",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "school walls",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "ladles.grid.png",
+    "word": "ladles",
+    "story": "Lay noodles in, then scoop soup into bowls.",
+    "cell": 3,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "noodles",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "soup",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "bowls",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "ladles.grid.png",
+    "word": "ladles",
+    "story": "Lay noodles in, then scoop soup into bowls.",
+    "cell": 2,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "noodles",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "soup",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "bowls",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "ladles.noodles.grid.png",
+    "word": "ladles",
+    "story": "Lay noodles in, then scoop soup into bowls.",
+    "cell": 5,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "noodles",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "soup",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "bowls",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "ladles.noodles.grid.png",
+    "word": "ladles",
+    "story": "Lay noodles in, then scoop soup into bowls.",
+    "cell": 6,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "noodles",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "soup",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "bowls",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "para-.grid.png",
+    "word": "para-",
+    "story": "A parrot squawks for crackers, then hops beside me.",
+    "cell": 1,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "parrot",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "crackers",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "narrator",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "para-.grid.png",
+    "word": "para-",
+    "story": "A parrot squawks for crackers, then hops beside me.",
+    "cell": 7,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "parrot",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "crackers",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "narrator",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "per-.grid.png",
+    "word": "per-",
+    "story": "Purple arrow punches through the paper target.",
+    "cell": 4,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "arrow",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "paper target",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "per-.grid.png",
+    "word": "per-",
+    "story": "Purple arrow punches through the paper target.",
+    "cell": 7,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "arrow",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "paper target",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "pre-.grid.png",
+    "word": "pre-",
+    "story": "The prince bows before the crowd arrives.",
+    "cell": 4,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "prince",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "crowd",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "pre-.grid.png",
+    "word": "pre-",
+    "story": "The prince bows before the crowd arrives.",
+    "cell": 6,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "prince",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "crowd",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "rattles.grid.png",
+    "word": "rattles",
+    "story": "Rat battles Cat at chess; Cat looks shaken.",
+    "cell": 2,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "rat",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "cat",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "chess board",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "chess pieces",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "rattles.grid.png",
+    "word": "rattles",
+    "story": "Rat battles Cat at chess; Cat looks shaken.",
+    "cell": 7,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "rat",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "cat",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "chess board",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "chess pieces",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "ruffled.before.grid.png",
+    "word": "ruffled",
+    "story": "Rough roller coaster messed up her hair; she looked flustered.",
+    "cell": 5,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "roller coaster",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "woman",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "hair",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "ruffled.before.grid.png",
+    "word": "ruffled",
+    "story": "Rough roller coaster messed up her hair; she looked flustered.",
+    "cell": 1,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "roller coaster",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "woman",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "hair",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "ruffled.grid.png",
+    "word": "ruffled",
+    "story": "Rough roller coaster messed up her hair; she looked flustered.",
+    "cell": 2,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "roller coaster",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "woman",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "hair",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "ruffled.grid.png",
+    "word": "ruffled",
+    "story": "Rough roller coaster messed up her hair; she looked flustered.",
+    "cell": 8,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "roller coaster",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "woman",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "hair",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "stray.grid.png",
+    "word": "stray",
+    "story": "Bus tray clattering, a homeless dog wanders the street.",
+    "cell": 6,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "dog",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "bus tray",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "street",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "stray.grid.png",
+    "word": "stray",
+    "story": "Bus tray clattering, a homeless dog wanders the street.",
+    "cell": 7,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "dog",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "bus tray",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "street",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "tax-.grid.png",
+    "word": "tax-",
+    "story": "The tax clerk lines up folders in alphabetical order.",
+    "cell": 6,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "tax clerk",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "folders",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "tax-.grid.png",
+    "word": "tax-",
+    "story": "The tax clerk lines up folders in alphabetical order.",
+    "cell": 1,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "tax clerk",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "folders",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "trans-.grid.png",
+    "word": "trans-",
+    "story": "Traffic parts as dancers glide across the street.",
+    "cell": 8,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "traffic",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "dancers",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "street",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "trans-.grid.png",
+    "word": "trans-",
+    "story": "Traffic parts as dancers glide across the street.",
+    "cell": 1,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "traffic",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "dancers",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "street",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "val-.grid.png",
+    "word": "val-",
+    "story": "Deep in the valley, she convalesces and grows strong.",
+    "cell": 7,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "valley",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "woman",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "val-.grid.png",
+    "word": "val-",
+    "story": "Deep in the valley, she convalesces and grows strong.",
+    "cell": 6,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "valley",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "woman",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "weathered.grid.png",
+    "word": "weathered",
+    "story": "Wind ruffled the feathered scarecrow's hat, worn and faded.",
+    "cell": 5,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "scarecrow",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "hat",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "wind",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  },
+  {
+    "grid": "weathered.grid.png",
+    "word": "weathered",
+    "story": "Wind ruffled the feathered scarecrow's hat, worn and faded.",
+    "cell": 9,
+    "group": "free",
+    "batch": 3,
+    "items": [
+      {
+        "name": "scarecrow",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "hat",
+        "sonnet": null,
+        "qwen8b": null
+      },
+      {
+        "name": "wind",
+        "sonnet": null,
+        "qwen8b": null
+      }
+    ]
+  }
+]

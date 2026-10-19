@@ -19,6 +19,7 @@
 1. [SP-066](items/SP-066-does-jev-agree-with-flash-when-vivid-scores-the-scene-not-the-camera.md) Does Jev agree with Flash's image pick when vivid scores the scene, not the camera? · E01 · done
 1. [SP-068](items/SP-068-does-jev-agree-with-flash-when-a-reacting-group-is-best-seen-from-the-back.md) Does Jev agree with Flash's image pick when a reacting group is best seen from the back? · E01 · ready
 1. [SP-069](items/SP-069-can-a-cheaper-model-caption-grid-cells-as-well-as-sonnet.md) Can a cheaper model caption the grid cells as well as Sonnet? · E01 · done
+1. [SP-070](items/SP-070-does-a-mark-that-asks-about-the-action-catch-cells-that-cut-off-the-action.md) Does a must-see mark that asks about the action catch the cells that cut off the action? · E01 · ready
 1. [US-061](items/US-061-the-story-drafter-picks-an-anchor-for-words-that-still-stop.md) The story drafter picks an anchor for words that still stop · E01 · idea
 1. [US-065](items/US-065-jev-knows-when-a-keyword-is-a-rhyme.md) Jev knows when a keyword is a rhyme · E01 · idea
 1. [US-067](items/US-067-the-kept-count-shows-how-sure-it-is.md) The kept count shows how sure it is · E01 · idea
