@@ -1,0 +1,292 @@
+{
+  "G001": {
+    "cells": {
+      "1": "weak",
+      "2": "weak",
+      "3": "weak",
+      "4": "weak",
+      "5": "ok",
+      "6": "ok",
+      "7": "best",
+      "8": "weak",
+      "9": "wrong"
+    },
+    "notes": {
+      "1": "Deep lunge toward the corner, but the hand is still open and short of the broom. Nothing is grabbed yet.",
+      "2": "Crouched reach with an open hand near the broom. No grab, and the big shoe crowds the frame.",
+      "3": "Corner and lunge are clear, but the hand only reaches toward the broom. The view is from behind, and the face and grab are not visible.",
+      "4": "Motion lines give a sense of swing, but the hand is open and not on the broom. The tilted view is confusing.",
+      "5": "Hand clearly grips the broom. The close crop hides most of the body, so the deep swing and the corner are weak.",
+      "6": "Deep crouch, hand gripping the broom, corner visible and face readable. Almost as good as 7, but the lunge is less stretched.",
+      "7": "Full-body deep lunge into the corner with the hand on the broom handle. Corner, broom and grab are all clear.",
+      "8": "Grab is clear, but this is a tight close-up. There is no corner or swing, and the intense face is off-tone.",
+      "9": "She is sweeping the floor with the broom. That is the wrong action: it is not a deep swing into the corner and not a grab."
+    },
+    "reason": "Cell 7 matches both parts of the sentence in one readable frame. The deep, stretched lunge goes into the corner, and the hand is closed on the broom handle. The whole body, the corner and the broom are all visible. Cell 6 is the closest rival: it also shows a grab with the corner in view, but the crouch is less deep and the lunge is less clear. Cell 5 is cropped too tightly to show the swing or the corner. Cells 1 to 4 only reach for the broom without grabbing it.",
+    "model": "sonnet",
+    "ms": 18994,
+    "costUsd": 0.1514318,
+    "at": "2026-10-19T01:39:55.715Z"
+  },
+  "G002": {
+    "cells": {
+      "1": "ok",
+      "2": "ok",
+      "3": "weak",
+      "4": "weak",
+      "5": "weak",
+      "6": "weak",
+      "7": "weak",
+      "8": "weak",
+      "9": "best"
+    },
+    "notes": {
+      "1": "Long pier stretches out and ends with a small figure at the tip, so 'stretched and ended' is clear. The peace is weak because the figure is tiny and shading their eyes.",
+      "2": "Calm figure at the pier end looking up, hands in pockets. The pier is short and foreshortened, so the 'stretched' part is lost.",
+      "3": "Back of the head dominates. The pier does run away, but there is no clear mood and the figure is not at the end.",
+      "4": "Odd top-down view. The pier stretches, but the tiny figure is hard to read and shows no peace.",
+      "5": "Peaceful face resting on the rail, but there is no pier length or end. It is a mood close-up only.",
+      "6": "Figure walks along the pier, which gives motion rather than peace. The end is barely shown.",
+      "7": "Figure leans over the rail at the end, looking down. This reads as tense or curious, not peaceful, and the stretch is not shown.",
+      "8": "Figure walks toward the viewer along a long pier. The pier stretches but the end is behind them, and the mood is casual rather than at peace.",
+      "9": "Relaxed figure with arms crossed stands at the pier's end, over the water. The long pier stretches behind them and a distant shore is visible, so peace, stretch and end are all shown."
+    },
+    "reason": "Cell 9 shows all three parts of the sentence in one frame: the long pier stretching back, the end of the pier with the figure standing off it, and a calm mood from the relaxed pose and open sea. Cell 1 shows the stretch and the end just as well, but the figure is tiny and not clearly at peace, so the mood is weaker than in 9.",
+    "model": "sonnet",
+    "ms": 20829,
+    "costUsd": 0.055347400000000005,
+    "at": "2026-10-19T01:40:42.552Z"
+  },
+  "G003": {
+    "cells": {
+      "1": "best",
+      "2": "weak",
+      "3": "ok",
+      "4": "ok",
+      "5": "ok",
+      "6": "ok",
+      "7": "weak",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "Whole scene is clear: Carl in profile knocking at the door with knock lines, and the cat on the mat with its head tilted. Both parts of the sentence show, and the door is there.",
+      "2": "Only Carl's fist and arm show, and the cat is cropped at the corner. The tilt is readable but the framing is tight.",
+      "3": "The cat's head tilt is very clear, and Carl is knocking in the background. Carl is small and partly hidden behind the cat.",
+      "4": "Carl is seen from behind and above, knocking, and the cat looks up. The tilt is slight and Carl's face is hidden.",
+      "5": "The cat's head tilt is a strong close-up, and Carl knocks in the background. The knock is small and the door is cropped.",
+      "6": "Carl's fist is knocking and the cat's head is tilted. His head is cropped and large, and he covers part of the scene.",
+      "7": "The cat's tilt is clear, but Carl is only an arm. The question mark is an extra element that the sentence does not mention.",
+      "8": "Carl knocks with motion lines and the cat tilts its head at lower left. Both are readable, but the fist is not clearly on the door and the cat is pushed to the edge.",
+      "9": "Carl is kneeling and knocking, and the cat tilts its head. He looks at the cat, not the door, and the pose is a little awkward."
+    },
+    "reason": "Cell 1 shows both parts of the sentence most clearly and in one frame. Carl is fully visible and knocking on the door, and the cat sits on the mat with an obvious head tilt. Cell 3 is the next best, because its cat tilt is stronger. But Carl is small and half hidden behind the cat there, so the knock reads less clearly than in cell 1.",
+    "model": "sonnet",
+    "ms": 21527,
+    "costUsd": 0.055512599999999995,
+    "at": "2026-10-19T01:41:04.087Z"
+  },
+  "G004": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "weak",
+      "4": "ok",
+      "5": "ok",
+      "6": "weak",
+      "7": "weak",
+      "8": "weak",
+      "9": "weak"
+    },
+    "notes": {
+      "1": "Whole wig and face show. The clerk is in a suit and smirking, pushing a thick stack of ballots into the slot. Spare stacks sit on the table. Reads as stuffing at once.",
+      "2": "Wig, suit and ballots in the slot are clear. The worried look and the single hand make it read as sneaking, not stuffing.",
+      "3": "The wig fills the frame and the box is barely visible. The action is there but the cell is cramped and not clear.",
+      "4": "Both hands jam a wad of ballots into the slot, with spare stacks on the table. Sly look. The wig is partly cropped and the box is tilted, so it is a little less clear than 1.",
+      "5": "Close-up of a big wad going in, with a scheming face. Wig and ballots are clear. The tongue-out look is odd and the box is mostly cut off, so there is no sense of a clerk's setting.",
+      "6": "Small figure that glances back furtively. Only a few ballots go in and the wig is small. The stuffing is weak.",
+      "7": "Wig and hands on the ballots are fine, but the face is mostly hidden behind the hands. Little character and no clerk setting.",
+      "8": "Awkward crop. The face is partly cut off, the ballots are few and the box is hidden. It reads as peeking at the box, not stuffing it.",
+      "9": "The box lid is lifted and the papers look messy. It reads more like breaking into the box than stuffing a fixed one. The clerk looks anxious."
+    },
+    "reason": "Cell 1 wins because every part of the sentence can be seen in one view. The wig is complete, the suit says clerk, and the smirk shows the cheating. A thick stack is being pushed into the slot, and the spare stacks on the table suggest the vote is rigged. The next best, cell 4, also shows stuffing with both hands, but its wig is cropped, the box is tilted and the face is less readable.",
+    "model": "sonnet",
+    "ms": 29024,
+    "costUsd": 0.056029800000000005,
+    "at": "2026-10-19T01:41:33.118Z"
+  },
+  "G005": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "weak",
+      "4": "weak",
+      "5": "ok",
+      "6": "weak",
+      "7": "ok",
+      "8": "weak",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "Surge bolt on the wall box, dark OR, headlamp beam on her hands, and she is operating. All three story parts are clear.",
+      "2": "Wide shot with the bolt, dark OR and headlamp. She is small and the action is hard to read.",
+      "3": "Close-up of her face. No surge and no operating action visible.",
+      "4": "Over-the-shoulder view with headlamp and instruments. No surge cue and the dark OR is less clear.",
+      "5": "Top-down view with the headlamp pool of light on the patient and her hands working. No surge cue.",
+      "6": "Extreme close-up of face and lamp. No OR, no surge, no operating.",
+      "7": "Bolt and a startled look, with headlamp and hands on the patient. She looks at the box rather than the work, so it shows the moment of surprise more than operating.",
+      "8": "A second person hands her an instrument, which the sentence does not mention. No surge cue.",
+      "9": "Dark OR, she works by headlamp. No surge cue, and she is small in the frame."
+    },
+    "reason": "Cell 1 beats the next best (cell 7 or cell 2) because it shows everything in the sentence at once. The bolt on the box marks the power surge. The dark OR with a monitor and light fixture is visible. The headlamp beam falls on her hands, and she is actively operating with instruments. Cell 7 has the bolt too, but her gaze is on the box and not the work. Cell 2 has the bolt but is a wide shot, so she and the operating are tiny.",
+    "model": "sonnet",
+    "ms": 20001,
+    "costUsd": 0.05283,
+    "at": "2026-10-19T01:41:53.123Z"
+  },
+  "G006": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "weak",
+      "4": "ok",
+      "5": "weak",
+      "6": "wrong",
+      "7": "weak",
+      "8": "wrong",
+      "9": "weak"
+    },
+    "notes": {
+      "1": "All three people show. He reaches for the tab. The two others sit with quiet, unspoken looks. The tab and its $42 are clear.",
+      "2": "He grabs the tab and both others show. It is a close crop, so the table and the sense of sitting are lost.",
+      "3": "Only a hand and the tab. The 'they sit unspoken' half is missing.",
+      "4": "He grabs the tab and the others sit with their backs to us. Their silence is hard to read without their faces.",
+      "5": "Top-down view. The grab is clear, but the people are hard to read and their mood does not show.",
+      "6": "He stands and holds the tab up. That is not a grab from the table.",
+      "7": "Only the woman and a hand with the tab. The second person is missing and so is the full table.",
+      "8": "He walks away to the counter. This is a different action, and the grab does not show.",
+      "9": "He already holds the tab. It is a tight crop, with only one other person and no grabbing action."
+    },
+    "reason": "Cell 1 shows the whole sentence. The grab is visible, with his hand on the $42 tab on the table. All three people are in the frame, and the other two sit still and silent, which is the 'unspoken' part. Cell 2 is the next best, because the grab is bigger and clearer. But its tight crop hides the table and the sense of the two sitting. Cell 4 shows both actions but hides the faces.",
+    "model": "sonnet",
+    "ms": 16249,
+    "costUsd": 0.049524799999999994,
+    "at": "2026-10-19T01:42:09.378Z"
+  },
+  "G007": {
+    "cells": {
+      "1": "best",
+      "2": "weak",
+      "3": "ok",
+      "4": "weak",
+      "5": "ok",
+      "6": "weak",
+      "7": "wrong",
+      "8": "wrong",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "Boss smiles, arm extended after a gentle toss, keys in a short arc, Tom reaching. Both people and the action are clear.",
+      "2": "Boss's smile and the keys are clear, but Tom is missing, so it isn't thrown 'to him'.",
+      "3": "Boss smiles and Tom catches, but the keys fly high, which reads as a big throw rather than a light one.",
+      "4": "Hand, keys and Tom's hands show, but there are no faces, so the boss's smile is missing.",
+      "5": "Boss smiles and points at the keys, with Tom's back and hand in front. The framing is awkward but it works.",
+      "6": "Only keys and blurry hands. No boss, no smile, no Tom.",
+      "7": "Boss dangles the keys. Nothing is thrown, so the action is wrong.",
+      "8": "Tom has already caught the keys, so the throw is over and the action is wrong.",
+      "9": "Wide shot shows the toss to Tom clearly, but the boss's smile is tiny and the keys are small."
+    },
+    "reason": "Cell 1 shows every part of the sentence: the boss's visible smile, a light underhand toss with the keys in a short arc, and Tom ready to catch them. Cell 3 is the next best, but its high keys read as a big throw, not a light one. Cell 9 shows the toss too, but the smile can barely be seen. Cell 5 has an awkward angle.",
+    "model": "sonnet",
+    "ms": 18205,
+    "costUsd": 0.0526558,
+    "at": "2026-10-19T01:42:27.588Z"
+  },
+  "G008": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "weak",
+      "4": "weak",
+      "5": "weak",
+      "6": "ok",
+      "7": "ok",
+      "8": "ok",
+      "9": "weak"
+    },
+    "notes": {
+      "1": "Full-body trip with the untied lace visible, and his shocked face is clear. The woman waits at the door, so it reads as before the date.",
+      "2": "Dramatic foot and hand close-up, and the woman is watching. The cause of the trip is less clear.",
+      "3": "The woman's back fills the frame and the man is small and far away. The trip and his face are hard to read.",
+      "4": "Overhead view with his face hidden. The untied lace shows, but the scene is confusing and the woman is cropped.",
+      "5": "Extreme close-up of his face and hand. The woman is partly cut off, and there is no trip cause or setting.",
+      "6": "He trips over a hose and the woman reacts. The cause is clear, but his face is hidden and the hose is a different cause from a lace.",
+      "7": "Clear mid-trip pose with an untied lace, and the woman has a hand over her mouth. His expression is smaller than in cell 1.",
+      "8": "Clear stumble with an untied lace, and the woman is laughing at the door. It is a bit busier, with the background crowd.",
+      "9": "The focus is on the woman's smile and the man is blurred. The clumsiness is not the subject."
+    },
+    "reason": "Cell 1 wins because the whole trip reads at a glance. His body is mid-stumble, the untied lace is visible as the cause, his surprised face is clear, and the woman is waiting at the door. The next best, cells 7 and 8, show the same idea, but his face is smaller, the framing is less clean, or the background is busier. Cell 6 has a clear cause too, but his face is hidden.",
+    "model": "sonnet",
+    "ms": 19656,
+    "costUsd": 0.055721200000000005,
+    "at": "2026-10-19T01:42:47.251Z"
+  },
+  "G009": {
+    "cells": {
+      "1": "ok",
+      "2": "weak",
+      "3": "weak",
+      "4": "weak",
+      "5": "wrong",
+      "6": "best",
+      "7": "ok",
+      "8": "ok",
+      "9": "weak"
+    },
+    "notes": {
+      "1": "Performer shows a small card and the judge laughs. Both are clear. The judge looks amused more than charmed.",
+      "2": "Only a hand and the card show, with no performer. The judge's laugh is clear.",
+      "3": "The card and hand are huge and the judge is tiny. The act looks major and the judge's face is hard to read.",
+      "4": "The judge is seen from behind, so the charm and joviality are not visible.",
+      "5": "The card lies on the desk and the judge hides his head. The judge does not look charmed and the performer is cut off.",
+      "6": "Performer holds out a small card. The judge has his hands on his cheeks and looks delighted. Both are fully visible.",
+      "7": "The card is tossed and the judge claps with delight. It reads as a trick, but the toss feels bigger than a minor act.",
+      "8": "Performer bows with the card and the jovial judge laughs. It is a good scene, but the judge looks hearty-amused more than charmed.",
+      "9": "Wide shot with tiny figures. The judge's delight is hard to see and the scene is too far away."
+    },
+    "reason": "Cell 6 beats cell 8 and cell 1 because it shows all the parts of the sentence in one frame. The performer holds out a small card, which fits 'minor act'. The judge has his hands on his cheeks with wide, happy eyes, which reads as charmed more than just laughing. Cell 8 is close, but the judge there looks hearty-amused more than charmed. Cell 1 is also good, but the judge only smiles politely.",
+    "model": "sonnet",
+    "ms": 21231,
+    "costUsd": 0.0534632,
+    "at": "2026-10-19T01:43:08.488Z"
+  },
+  "G010": {
+    "cells": {
+      "1": "ok",
+      "2": "ok",
+      "3": "weak",
+      "4": "best",
+      "5": "weak",
+      "6": "weak",
+      "7": "weak",
+      "8": "weak",
+      "9": "weak"
+    },
+    "notes": {
+      "1": "Surgeon, thin blade touching the scalp and a gleaming bald head are all clear. The cut is barely visible and the patient's face pulls focus.",
+      "2": "Thin blade, visible cut line, glossy scalp highlight and focused surgeon eye. Close second; the blurred surgeon and cropped framing make it less complete than 4.",
+      "3": "Blade is raised in the air and not cutting. The scalp is a small cropped dome at the bottom.",
+      "4": "Top-down view. The scalp is large and gleaming with clear highlights, the thin blade is at the start of a long straight incision, and the surgeon's gloved hands and mask are visible.",
+      "5": "Blade is near the scalp but no cut is visible. The surgeon is mostly cropped out and the scalp is partly hidden.",
+      "6": "Wide shot with a tiny scalp and blade. The blade is on the forehead, the gleam is weak and the cut is not readable.",
+      "7": "Surgeon's eyes and blade dominate. The blade touches the scalp, but the cut is not visible and the scalp barely shows.",
+      "8": "Thin cut line and a sparkle on a glossy scalp, but the surgeon is blurred and the blade is only touching the surface.",
+      "9": "Blade is raised and not cutting. The surgeon is clear but the action is missing."
+    },
+    "reason": "Cell 4 shows every part of the sentence at once. The bald scalp is large and glossy, the thin blade sits at the end of a clean straight incision, and the surgeon's mask and gloved hands are in frame, so the precise cut is easy to read. Cell 2 is the next best: it has the thin blade, a cut line and a gleam. But the surgeon is blurred and cropped, and the scalp is less complete.",
+    "model": "sonnet",
+    "ms": 22585,
+    "costUsd": 0.056261000000000005,
+    "at": "2026-10-19T01:43:31.079Z"
+  }
+}

@@ -1,7 +1,7 @@
 'use strict';
 const test = require('node:test');
 const assert = require('node:assert');
-const { labelProblems, okSet, summarize } = require('../scripts/lib/gold-image-pick');
+const { labelProblems, okSet, summarize, agreement } =require('../scripts/lib/gold-image-pick');
 
 const good = { cells: { 1: 'weak', 2: 'best', 3: 'weak', 4: 'weak', 5: 'ok', 6: 'weak', 7: 'weak', 8: 'weak', 9: 'wrong' }, notes: { 9: 'no broom' }, reason: 'the broom is clear' };
 
@@ -44,4 +44,16 @@ test('summarize compares the labels with the earlier pick', () => {
   assert.strictEqual(s.labeled, 3);
   assert.deepStrictEqual(s.bySplit, { dev: 1, test: 2 });
   assert.deepStrictEqual(s.earlier, { compared: 3, sameBest: 1, inOk: 2, markedWrong: 1 });
+});
+
+test('agreement counts the same marks, the best cell and the gaps', () => {
+  const grids = [{ id: 'G1' }];
+  const b = { G1: { cells: { ...good.cells, 2: 'ok', 5: 'best', 9: 'weak' } } };
+  const r = agreement(grids, { G1: good }, b);
+  assert.strictEqual(r.cells, 9);
+  assert.strictEqual(r.same, 6);
+  assert.deepStrictEqual(r.best, { of: 1, same: 0, inOk: 1, wrong: 0 });
+  assert.deepStrictEqual(r.wrongRecall, { of: 1, hit: 0 });
+  assert.deepStrictEqual(r.gaps.map(([k]) => k).sort(), ['best → ok', 'ok → best', 'wrong → weak']);
+  assert.strictEqual(agreement(grids, { G1: good }, { G1: good }).kappa, 1);
 });

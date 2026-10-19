@@ -1,0 +1,292 @@
+{
+  "G001": {
+    "cells": {
+      "1": "weak",
+      "2": "weak",
+      "3": "weak",
+      "4": "weak",
+      "5": "weak",
+      "6": "best",
+      "7": "ok",
+      "8": "weak",
+      "9": "wrong"
+    },
+    "notes": {
+      "1": "Side view and the woman is small. Her hand is open and short of the broom, so the grab has not happened.",
+      "2": "Face and corner are clear, but she is only reaching. The hand is open and not on the broom. The shoe is oversized.",
+      "3": "We see her back and cannot read her face. She reaches toward the broom without gripping it.",
+      "4": "Top-down view from behind, so no face. The hand does not hold the broom. The motion lines help only a little.",
+      "5": "The grip on the broom is clear, but it is an extreme close-up. Her face is cropped and the corner is mostly cut off.",
+      "6": "Quarter view with the face visible. Deep lunge into the corner and a clear hand gripping the broom. The corner and the whole action show.",
+      "7": "Side view of a deep lunge with a clear grab on the broom, and the corner shows. Her face is small and in profile, and the pose is less dynamic than in 6.",
+      "8": "Extreme close-up that cuts off the place and the lunge. The angry face does not fit the story.",
+      "9": "She is sweeping in open floor, not grabbing the broom in a corner. The action and setting are different."
+    },
+    "reason": "Cell 6 wins because it shows the full story in one view. She lunges deep into the corner, the corner is visible, and her hand grips the broom. A quarter view shows her face and the action together. Cell 7 also shows a clear grab in the corner, but it is a side view with a small face and a weaker lunge. Cells 1–4 only reach and do not grab, and cells 5 and 8 are too tight to show the place.",
+    "model": "sonnet",
+    "ms": 20643,
+    "costUsd": 0.0573038,
+    "at": "2026-10-19T01:59:17.020Z"
+  },
+  "G002": {
+    "cells": {
+      "1": "weak",
+      "2": "ok",
+      "3": "weak",
+      "4": "weak",
+      "5": "ok",
+      "6": "weak",
+      "7": "weak",
+      "8": "ok",
+      "9": "best"
+    },
+    "notes": {
+      "1": "The figure is tiny and far away, so you cannot read the face or the feeling. The long pier does show the stretch.",
+      "2": "Quarter view of the man at the pier end, calm and looking up. The pier and sea show. The pier is short, so the stretch is weak.",
+      "3": "The main actor shows only the back and is very big. The face is hidden and the sea is barely there.",
+      "4": "Top view and the figure is tiny. The face is hidden and the story does not read.",
+      "5": "Calm, smiling face on a rail, so the peace reads well. The extreme close-up cuts most of the pier and the stretch.",
+      "6": "The man walks away and shows the back. The long pier is clear, but the face and the peaceful feeling are hidden.",
+      "7": "The man leans on the rail and shows the back. The face is hidden, so the peace does not read.",
+      "8": "The man strolls on the pier with a calm smile, and the face is clear. He walks toward the viewer, not off the pier into the sea, so the sea and the stretch are weaker.",
+      "9": "Quarter view of the man at the end of the pier, arms crossed, calm and looking out. The long pier, the open sea and a far shore show, so peace and its stretch read together."
+    },
+    "reason": "Cell 9 wins because the face and the calm pose are clear in a quarter view, and the long pier running into the sea, plus the far shore, show 'off the pier' and the stretch of time. Cell 5 has a clear peaceful face, but the extreme close-up cuts most of the pier and the sea. Cell 8 is clear too, but the man walks along the pier and the sea is less visible. Cell 2 is similar to 9, but its pier is short and the man looks up, so the stretch reads less. No cell shows the 'ended' part, so I picked the cell that carries the peace and the pier best.",
+    "model": "sonnet",
+    "ms": 20003,
+    "costUsd": 0.058496400000000004,
+    "at": "2026-10-19T01:59:37.031Z"
+  },
+  "G003": {
+    "cells": {
+      "1": "ok",
+      "2": "weak",
+      "3": "weak",
+      "4": "weak",
+      "5": "weak",
+      "6": "weak",
+      "7": "weak",
+      "8": "ok",
+      "9": "best"
+    },
+    "notes": {
+      "1": "Carl is in side or quarter view, the knock is clear and the cat tilts its head, with the whole scene in view. The shot is wide, so both actors are fairly small.",
+      "2": "Extreme close-up of the fist. Carl is cut off and has no face, and the cat is pushed into the corner.",
+      "3": "Carl shows his back and is small, and the cat is much bigger than him. The knock hardly reads.",
+      "4": "Top-down view, so only the back of Carl's head shows and you cannot see his face.",
+      "5": "The cat's face is huge and Carl is a small figure seen from behind. The knock barely reads.",
+      "6": "Back of Carl's head fills the frame, so his face is hidden. The cat is clear but small.",
+      "7": "The cat with a question mark is clear, but Carl is only a cropped arm. The knocker is not shown as a person.",
+      "8": "Carl's face is in quarter view and the knock has motion marks. The cat tilts its head with a small spark, but it sits far from Carl, so the action and the reaction read as two parts.",
+      "9": "Carl is in quarter view, his face is visible and his hand is on the door with knock marks. The cat sits close beside him and tilts its head, so the action and the reaction read as one scene."
+    },
+    "reason": "Cell 9 wins because Carl's face, his knocking hand and the cat's head tilt all show in one medium shot, and the cat is close enough to Carl that the knock and the tilt read together. Cell 1 is the next best: the knock is clear, but the shot is wide, and Carl and the cat are small. Cell 8 is third, because the cat is far from Carl and his face is turned down toward the door.",
+    "model": "sonnet",
+    "ms": 24618,
+    "costUsd": 0.062168,
+    "at": "2026-10-19T02:00:01.655Z"
+  },
+  "G004": {
+    "cells": {
+      "1": "best",
+      "2": "weak",
+      "3": "weak",
+      "4": "ok",
+      "5": "weak",
+      "6": "ok",
+      "7": "weak",
+      "8": "weak",
+      "9": "wrong"
+    },
+    "notes": {
+      "1": "Three-quarter view with a clear sly smirk. Both hands push ballots into the slot, and the wig, box and ballot stacks on the table all read.",
+      "2": "The box has an odd, distorted shape and the ballots are held above it. The worried face fits less well than a sly one, and the stuffing action is less clear.",
+      "3": "The wig and back of the head dominate the cell and the face is mostly hidden. The actor is too large and the setting is lost.",
+      "4": "Both hands stuff the ballots and the sly face shows. The camera looks down from above, so the face is partly hidden.",
+      "5": "Extreme close-up that cuts off the place. The tongue-out face reads more as comic than as sly.",
+      "6": "Side view with a clear action and the room visible. The nervous look fits a fixed ballot, but the figure and box are smaller.",
+      "7": "The hands cover the mouth and the face is hidden. It is not clear whether the ballots go into the box.",
+      "8": "The face is turned down and the open-mouth expression is odd. The action is hard to read and the face is awkward.",
+      "9": "The box lid is broken and lifted, so the box is a broken object. The scene is cluttered and the face is worried."
+    },
+    "reason": "Cell 1 wins because the face is a clear sly smirk in three-quarter view and the action reads at once. Both hands stuff ballots into the slot, and the wig, the box and the ballot stacks on the table all show. The next best, cell 4, shows the same action but looks down from above, so the face is partly hidden and the setting is thinner. Cell 6 shows the setting but the actor and box are smaller and the face is nervous rather than sly.",
+    "model": "sonnet",
+    "ms": 23443,
+    "costUsd": 0.058655000000000006,
+    "at": "2026-10-19T02:00:25.105Z"
+  },
+  "G005": {
+    "cells": {
+      "1": "best",
+      "2": "weak",
+      "3": "weak",
+      "4": "weak",
+      "5": "weak",
+      "6": "weak",
+      "7": "weak",
+      "8": "weak",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "Quarter view of her face. She operates with scalpels under the headlamp beam. The spark by the wall box shows the power cut. The dark OR with its monitor and lamp is visible.",
+      "2": "Wide shot with a spark and the whole room, but she is too small to read her face or the action.",
+      "3": "Extreme close-up. It cuts off the hands and the surgery, and shows little of the OR.",
+      "4": "We see the back of her head, so her face is hidden.",
+      "5": "Top-down camera, so no face. The beam on the patient reads well, but the OR and the power cut are barely shown.",
+      "6": "Extreme close-up of the eyes and headlamp. No operating action and no OR.",
+      "7": "The spark is clear, but her startled glance away from the patient is the wrong feeling. The story needs her calmly operating.",
+      "8": "A second hand hands her an instrument, so the action is less clear. There is no spark, and the setting reads less clearly.",
+      "9": "Quarter view, medium shot. She operates by headlamp in a dark OR with an IV pole and monitor. There is no spark, and she is smaller than in cell 1."
+    },
+    "reason": "Cell 1 wins because it shows every part of the sentence in one frame. It has the main actor in quarter view with her face visible, the headlamp beam, hands operating, the dark OR, and the spark that marks the power surge. Cell 9 is the next best: it also shows her operating by headlamp in a dark OR. But it has no spark, so the power cut is not clear, and she is smaller in the frame.",
+    "model": "sonnet",
+    "ms": 20058,
+    "costUsd": 0.057679,
+    "at": "2026-10-19T02:00:45.169Z"
+  },
+  "G006": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "wrong",
+      "4": "weak",
+      "5": "weak",
+      "6": "weak",
+      "7": "wrong",
+      "8": "weak",
+      "9": "wrong"
+    },
+    "notes": {
+      "1": "Three-quarter view of the man reaching for the $42 tab. The two others sit quiet beside him. The table is visible and the faces are clean.",
+      "2": "Clear grab, and both quiet people are visible. The hand and arm are large and crowd the others. The close framing shows less of the table.",
+      "3": "Only a hand and the tab show. Neither of the two quiet people is there, and the man's face is missing.",
+      "4": "The man grabs the tab, but the other two show their backs and their faces are hidden. Their silence does not read.",
+      "5": "Top-down view. No faces show, and the people at the table are cropped and hard to read.",
+      "6": "He stands and holds the tab up, so the action reads as holding or showing rather than grabbing. The others are visible, but the action is not clear.",
+      "7": "Only one of the others is shown, and the man's face is cut off. 'They' needs two or more people.",
+      "8": "He walks away to the counter. The action is not grabbing, the actors are small and far apart, and his back is to the camera.",
+      "9": "Only one other person is shown, so the count for 'they' is wrong. The man also holds the tab rather than grabbing it."
+    },
+    "reason": "Cell 1 shows the whole story in one frame. The man's face is in three-quarter view, his hand is on the tab, and both quiet people are at the table with calm faces. Cell 2 is the next best. It shows the same grab and both people, but the large arm and tight crop squeeze the others and the table. Cell 4 has the same action, but two actors show their backs.",
+    "model": "sonnet",
+    "ms": 18836,
+    "costUsd": 0.055765600000000005,
+    "at": "2026-10-19T02:01:04.012Z"
+  },
+  "G007": {
+    "cells": {
+      "1": "best",
+      "2": "wrong",
+      "3": "weak",
+      "4": "weak",
+      "5": "weak",
+      "6": "wrong",
+      "7": "wrong",
+      "8": "weak",
+      "9": "weak"
+    },
+    "notes": {
+      "1": "Boss in three-quarter view, eyes closed in a smile, arm out after a light toss. Keys are in the air between the two men. Tom is in side view with hands up, so the throw and the catch read as one scene.",
+      "2": "Extreme close-up of the boss. Tom is missing and the keys are not going to anyone.",
+      "3": "Boss is small and his throwing hand is not shown. Tom is bigger, with an open-mouth joy face. The action is mostly the catch.",
+      "4": "Top-down view. Tom shows only his hair and hands, and the boss is only a hand. No smile can be seen.",
+      "5": "Tom's back and a large hand dominate the cell. The boss is small and behind him, so the throw is unclear.",
+      "6": "Only keys and two blurred hands. No boss or Tom is shown, and no smile.",
+      "7": "Boss holds the keys dangling from his fingers. He is handing them over, not throwing them.",
+      "8": "Tom already holds the keys with a joy face, and he is bigger than the boss. The throw is not shown.",
+      "9": "Wide shot with the office setting. Both men are small and far apart, and the boss's smile cannot be read."
+    },
+    "reason": "Cell 1 wins because the smile, the light throw, the keys in flight and Tom's reaching hands all show in one medium shot. The two actors are of similar size and in a good view. The next best choice, cell 9, shows the same action but the actors are too small to read the face, so it is weak. Cells 3, 5 and 8 hide the boss's action or make Tom the larger actor, and 7 shows a different action, handing over the keys.",
+    "model": "sonnet",
+    "ms": 21206,
+    "costUsd": 0.058924800000000006,
+    "at": "2026-10-19T02:01:25.223Z"
+  },
+  "G008": {
+    "cells": {
+      "1": "best",
+      "2": "weak",
+      "3": "weak",
+      "4": "weak",
+      "5": "weak",
+      "6": "ok",
+      "7": "ok",
+      "8": "ok",
+      "9": "weak"
+    },
+    "notes": {
+      "1": "Three-quarter view of the man mid-trip. The untied lace, his shocked face and the woman at the doorway all read in one scene.",
+      "2": "The huge foot and hand in the foreground hide the body and the action. The tangle of limbs is hard to read, and the woman is small.",
+      "3": "The woman's back fills the frame and the man is small and far away. We see no face and no clear trip.",
+      "4": "Top-down view hides both faces. The man is on the ground and the scene is hard to read.",
+      "5": "Extreme close-up of his face and hand. There is no trip, no place, and the woman is cut off.",
+      "6": "Side view with the foot caught on a hose, so the trip is clear. The woman reacts, though his face is mostly hidden.",
+      "7": "Clear stumble with the lace loose, and the woman laughs behind her hand. The man's pose is a little less clear than in cell 1.",
+      "8": "Good face and untied lace, and the woman is laughing. The pose reads more as a wobble than a trip, and he is small.",
+      "9": "The woman's close-up is bigger than the man, who is small and blurred. Her smile pulls focus from the clumsy trip."
+    },
+    "reason": "Cell 1 wins because the whole trip shows at once. He is in three-quarter view with a clear shocked face, the untied lace under his foot is visible, and the woman and the doorway are in the same frame, so the action, the clumsiness and the date all read together. Cell 7 is the next best, but the man's pose is less clear and the woman's face is partly covered. Cell 6 shows the trip well, but his face is mostly hidden.",
+    "model": "sonnet",
+    "ms": 19046,
+    "costUsd": 0.0576206,
+    "at": "2026-10-19T02:01:44.275Z"
+  },
+  "G009": {
+    "cells": {
+      "1": "ok",
+      "2": "weak",
+      "3": "weak",
+      "4": "weak",
+      "5": "weak",
+      "6": "best",
+      "7": "ok",
+      "8": "ok",
+      "9": "weak"
+    },
+    "notes": {
+      "1": "Quarter view of the performer holding up the card, and the judge is clearly in the courtroom. The judge's hearty laugh reads as joy more than charm.",
+      "2": "Only the performer's hand and arm show, so the main actor has no face. The judge is large and the trick is just a card held up.",
+      "3": "Extreme close-up of a hand and card cuts off the performer and most of the place. The judge is small and the scene is hard to read.",
+      "4": "The judge's head is large in the foreground and seen from behind, so the judge is bigger than the main actor and the judge's reaction is hidden.",
+      "5": "Top-down camera, with the judge's back to us and the card lying on the desk. The trick and the charmed reaction are not shown.",
+      "6": "Side or quarter view of the performer showing the card, and the judge has hands on cheeks and wide delighted eyes. This reads as charmed. The bench and gavel show the setting, and the faces and hands look fine.",
+      "7": "The performer tosses the card and the judge claps with delight, so the trick is clear. The judge's face is more joy or surprise than charm.",
+      "8": "The performer bows with the card and the judge laughs, and the setting shows. The performer's face is turned down and the judge's laugh is more joy than charm.",
+      "9": "Wide shot with both actors small and far apart, and their faces and feelings are hard to read."
+    },
+    "reason": "Cell 6 wins because it shows the performer's card and gesture and the judge's charmed face together in one medium shot. The judge's hands on cheeks and wide, delighted eyes fit 'charmed' better than a belly laugh. The bench and gavel show the courtroom, and both actors are about the same size. Cell 1 is the next best, with a clear action and setting, but the judge's open-mouth laugh reads as joy, and the performer's face is mostly turned away.",
+    "model": "sonnet",
+    "ms": 22960,
+    "costUsd": 0.0609136,
+    "at": "2026-10-19T02:02:07.241Z"
+  },
+  "G010": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "wrong",
+      "4": "weak",
+      "5": "weak",
+      "6": "weak",
+      "7": "weak",
+      "8": "ok",
+      "9": "weak"
+    },
+    "notes": {
+      "1": "Three-quarter view of the surgeon. The thin blade is on the scalp at the incision line, and the glossy bald head and the patient's closed eye both show. Action, result and both actors read as one scene.",
+      "2": "The blade, the incision and the gleaming scalp are clear, and the surgeon's eye is readable. It is a tight close-up, so the place and the patient are lost.",
+      "3": "The blade is held up in the air, away from the scalp, and there is no cut. The cutting action is missing.",
+      "4": "Top-down camera. The surgeon's face is hidden behind the hands and eyes cast down. The incision and gleam are visible but the surgeon is not readable.",
+      "5": "Surgeon seen from behind, so no face. The blade touches the scalp but the view is cramped and the action is hard to read.",
+      "6": "The operating room is shown, but the surgeon is small. The blade sits at the forehead, no clear cut is visible, and the scalp gleam is weak.",
+      "7": "Extreme close-up of the eyes with a fierce look. The blade tip is at the scalp, but the incision, the place and the patient are cut off.",
+      "8": "The blade is sharp and the sparkle sign suggests the gleam, with a faint cut line on the scalp. The surgeon is blurred and the shot is a close-up, so it is weaker than cell 1.",
+      "9": "The blade is raised with motion lines, not cutting. The cut line is only faintly visible on the scalp, so the action is unclear."
+    },
+    "reason": "Cell 1 wins because it combines a three-quarter view of the surgeon with the blade touching the scalp at a visible incision. The gleaming bald head and the patient's face show, so the whole sentence reads in one image. Cells 2 and 8 are the next best, but both are tight close-ups that lose the patient and the place, and the surgeon is blurred in cell 8.",
+    "model": "sonnet",
+    "ms": 23172,
+    "costUsd": 0.0632814,
+    "at": "2026-10-19T02:02:30.418Z"
+  }
+}
