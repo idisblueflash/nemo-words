@@ -1,0 +1,52 @@
+{
+  "G001": {
+    "main_actor": "a person who sweeps (1)",
+    "must": ["a person (1)", "the person swings a broom into a corner", "a broom", "the place: a corner of a room"],
+    "details": ["the swing goes deep into the corner"]
+  },
+  "G002": {
+    "main_actor": "the sea and the sky seen from a pier",
+    "must": ["a pier", "a calm, peaceful view out from the pier", "a sign that the calm ends (a change in the sky or the sea)", "the place: the end of a pier"],
+    "details": ["the peace lasts a very long time"]
+  },
+  "G003": {
+    "main_actor": "a cat (1)",
+    "must": ["Carl (1 man)", "a cat (1)", "Carl knocks on a door with his fist", "the cat tilts its head", "a door"],
+    "details": []
+  },
+  "G004": {
+    "main_actor": "a clerk who wears a wig (1)",
+    "must": ["a clerk (1 person)", "the clerk wears a wig", "the clerk stuffs papers into a ballot box", "a ballot box", "ballot papers"],
+    "details": ["the vote is fixed (a cheat)"]
+  },
+  "G005": {
+    "main_actor": "a woman surgeon (1)",
+    "must": ["a woman surgeon (1)", "the surgeon operates on a patient", "a headlamp on the surgeon's head, lit", "the place: an operating room that is dark"],
+    "details": ["a power surge made the lights go out"]
+  },
+  "G006": {
+    "main_actor": "a man who grabs the bill (1)",
+    "must": ["a man (1)", "2 or more other people (they), besides the man", "the man grabs the bill (the tab)", "they sit", "a bill (the tab)"],
+    "details": ["no one speaks"]
+  },
+  "G007": {
+    "main_actor": "Tom's boss (1 person)",
+    "must": ["Tom (1 person)", "Tom's boss (1 person)", "the boss smiles", "the boss throws keys to Tom", "keys"],
+    "details": ["the throw is light and gentle"]
+  },
+  "G008": {
+    "main_actor": "a man who trips (1)",
+    "must": ["a man (1)", "his date (1 person)", "the man trips in front of his date"],
+    "details": ["the trip shows that he is clumsy"]
+  },
+  "G009": {
+    "main_actor": "a jolly judge (1)",
+    "must": ["a judge (1 person)", "a person who does a trick (1)", "the person does a small trick", "the judge is charmed and smiles"],
+    "details": ["the judge is jolly", "the trick is a minor act"]
+  },
+  "G010": {
+    "main_actor": "the surgeon (1 person)",
+    "must": ["the surgeon (1 person)", "a scalp (the top of a head)", "the surgeon cuts the scalp with a blade", "a thin blade (a scalpel)"],
+    "details": ["the scalp is bald", "the scalp gleams", "the cut is precise"]
+  }
+}

@@ -1,0 +1,4537 @@
+{
+  "G003": {
+    "cells": {
+      "1": "wrong",
+      "2": "wrong",
+      "3": "weak",
+      "4": "wrong",
+      "5": "wrong",
+      "6": "wrong",
+      "7": "wrong",
+      "8": "wrong",
+      "9": "wrong"
+    },
+    "notes": {
+      "1": "missing: the cat tilts its head",
+      "2": "missing: the cat tilts its head; size smaller",
+      "3": "view back; size smaller; unsure: must2",
+      "4": "missing: the cat tilts its head; view back",
+      "5": "missing: the cat tilts its head; view back; size smaller",
+      "6": "missing: the cat tilts its head; view back; unsure: must2",
+      "7": "missing: the cat tilts its head; size smaller; unsure: must3",
+      "8": "missing: the cat tilts its head; feeling; unsure: must0 must3",
+      "9": "different: Carl knocks; missing: the cat tilts its head; unsure: must3"
+    },
+    "reason": "no cell passed the rules",
+    "points": {
+      "main_actor": "Carl (1 man)",
+      "must": [
+        "Carl (1 man)",
+        "a cat (1)",
+        "Carl knocks",
+        "the cat tilts its head"
+      ],
+      "details": []
+    },
+    "descriptions": {
+      "1": "People and animals: One person, one cat.\nAction: The person is pressing their fist against the door. The cat is sitting still.\nObjects: Door, doorknob, doormat, shoes, pants, sweater.\nPlace: Inside a house, near an entrance door.\nView: Person: side view. Cat: front view.\nSize: The person is biggest. The cat is small.\nShot: Medium shot. The frame cuts off the bottom of the person's feet and the top of the door.\nFaces: The person's face is turned away. The cat's face is visible, with wide eyes.\nSigns: Spark lines emanate from where the person's fist touches the door.\nEyes and hands: The person's eyes are not visible. The cat's eyes are large and round. The person's hand is a closed fist pressing against the door.\nStrange parts: None.",
+      "2": "People and animals: One person (partial view, arm and hand visible), one cat (full view).\nAction: The person's hand is clenched into a fist and is striking or knocking on a door. The cat is looking up at the hand and the door.\nObjects: A light blue wooden door, a brass-colored doorknob, a person's arm in a yellow sweater, a cat's head and shoulders.\nPlace: No place shown.\nView: The person is viewed from the side, partially. The cat faces the camera front-on.\nSize: The cat appears larger in the frame than the person's visible arm. The person's arm is partially cut off, so the cat appears more prominent.\nShot: Close-up. The frame cuts off the top of the person's head and the bottom of the cat's body.\nFaces: The cat's face shows wide, startled eyes. The person's face is not visible.\nSigns: There are small lines radiating from the point of impact between the fist and the door, suggesting a knock or a sound.\nEyes and hands: The cat has large, round, wide-open eyes. The person's hand is clenched into a fist, with the thumb tucked in and fingers curled.\nStrange parts: None apparent. All parts appear normal.",
+      "3": "People and animals: One person and one cat.\nAction: The person stands with their back to the camera, right hand on the door. The cat sits, head tilted up, looking at the person.\nObjects: A door, a rug, a yellow sweater, grey pants, brown shoes.\nPlace: Inside a house, near a doorway.\nView: The person is viewed from the back. The cat is viewed from the front.\nSize: The cat appears biggest in the picture. The person is far away and appears smaller.\nShot: Medium shot. The frame cuts off the top of the person's head and the bottom of the cat's tail.\nFaces: The person's face is not visible. The cat's face is visible, with wide, alert eyes.\nSigns: No symbols, question marks, sparkles, lines, or text.\nEyes and hands: The cat has large, round, black eyes. The person's right hand is flat against the door. The left hand is not visible.\nStrange parts: No broken or unidentifiable parts.",
+      "4": "People and animals: One person, one cat.\nAction: The person has their right hand raised and is hitting the door. The cat is sitting still.\nObjects: A blue door, a brass doorknob, a brown doormat, a yellow sweater, dark pants.\nPlace: Inside a house, at the front door.\nView: The person is viewed from behind. The cat is viewed from the front.\nSize: The person appears larger due to perspective. The cat is smaller.\nShot: Medium shot, cutting off the top of the person's head and the bottom of the door.\nFaces: The person's face is not visible. The cat's face is visible, with large, round, unblinking eyes.\nSigns: There are small lines near the door indicating a knock or impact.\nEyes and hands: The cat has large, round, unblinking eyes. The person's right hand is a clenched fist, raised to strike the door. The left hand is not visible.\nStrange parts: None.",
+      "5": "People and animals: One person and one animal. The person is a man in a yellow sweater and grey pants. The animal is an orange tabby cat.\nAction: The man has his right hand raised and is knocking on a door. The cat is looking forward, presumably at the man or the door.\nObjects: A light blue door with a brass doorknob, a person's back, a cat's face, and a small portion of a floor visible at the bottom.\nPlace: Inside a house, near a door.\nView: The cat faces the camera directly. The man's back is to the camera.\nSize: The cat appears largest in the frame, occupying the foreground. The man is smaller and farther away.\nShot: Close-up, focusing on the cat's face, with the man's back visible in the background. The frame cuts off the bottom of the man's legs and the floor.\nFaces: The cat's face shows wide, alert eyes. The man's face is not visible.\nSigns: No symbols, text, or question marks.\nEyes and hands: The cat has large, round, black eyes with white highlights. The man's right hand is clenched into a fist, pressing against the doorknob. The left hand is not visible.\nStrange parts: No broken or strange parts visible.",
+      "6": "People and animals: One person, one cat.\nAction: The person has their right hand on a door, fingers spread. The cat sits still, facing the person.\nObjects: A door, a mat on the floor, a yellow sweater.\nPlace: Inside a room, near a door.\nView: The person is seen from the back and side. The cat faces the person, so it's seen from the front.\nSize: The person is biggest. The cat is small.\nShot: Medium shot. The frame cuts off the top of the person's head and the bottom of the cat's body.\nFaces: The cat has wide, surprised eyes. The person's face is not visible.\nSigns: There are three short, vertical lines on the door, suggesting a doorbell or a knock.\nEyes and hands: The cat's eyes are large and round, looking directly at the person. The person's right hand is on the door, fingers spread, not clenched into a fist.\nStrange parts: None.",
+      "7": "People and animals: One animal (a cat) and one person (partially visible).\nAction: The cat sits still, looking up. The person's hand is raised, knocking on the door.\nObjects: A cat, a door, a doormat, a doorknob, a person's arm and hand, a question mark.\nPlace: Inside a house, at the front door.\nView: The cat faces front, slightly turned. The camera looks from the front.\nSize: The cat appears largest. The person is partially shown, so appears smaller or farther away.\nShot: Medium shot. The frame cuts off the person's head and the top of the door.\nFaces: The cat has a confused or curious expression. The person's face is not visible.\nSigns: A question mark appears above the cat's head.\nEyes and hands: The cat's eyes are large and round, looking upward. The person's hand is a clenched fist, knocking on the door.\nStrange parts: None apparent.",
+      "8": "People and animals: One person, one cat.\nAction: The person has a clenched fist raised as if to strike. The cat is sitting still, looking up.\nObjects: A light blue door, a brass doorknob, a brown doormat, a wall.\nPlace: Inside a doorway, near a door.\nView: The person is viewed from the side, facing the cat. The cat is viewed from the front, facing the person.\nSize: The person appears larger due to perspective, though the cat is physically smaller. The cat is closer to the camera.\nShot: Medium shot, cutting off the top of the person's head and the bottom of the cat's paws.\nFaces: The person's face is tense, eyes wide. The cat's face is wide-eyed and startled.\nSigns: Lines above the cat's head indicate shock or fear. Curved lines above the person's fist suggest motion.\nEyes and hands: The person's eyes are wide and focused on the cat. The hand is a clenched fist. The cat's eyes are wide and round, looking up. No hands are visible on the cat.\nStrange parts: None.",
+      "9": "People and animals: One person, one cat.\nAction: The person kneels, reaching out with their right hand toward the cat. The cat sits, facing the person.\nObjects: A light blue door with a brass doorknob, a brown doormat, a yellow sweater, dark pants, a wooden floor.\nPlace: Inside a house, near a door.\nView: The person faces the camera with a slight side angle. The cat faces the person, so its back is mostly to the camera.\nSize: The person appears bigger than the cat. The cat is small and close to the camera.\nShot: Medium shot. The frame cuts off the top of the person's head and the top of the door.\nFaces: The person has a happy, smiling expression. The cat has wide, alert eyes.\nSigns: There are small lines near the person's hand, suggesting a touch or a spark.\nEyes and hands: The person's eyes are wide and smiling. Their right hand is open, fingers slightly curled as if reaching. The left hand is on the floor. The cat's eyes are large and round, looking up at the person. Both hands are visible, and none are broken or strange.\nStrange parts: None. All parts appear normal."
+    },
+    "checks": {
+      "1": {
+        "must0": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.55,
+          "probabilities": {
+            "shown": 0.64,
+            "other_words": 0.35,
+            "different": 0,
+            "missing": 0.01,
+            "not_described": 0
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.91,
+          "probabilities": {
+            "shown": 0.93,
+            "other_words": 0.07,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.81,
+          "probabilities": {
+            "shown": 0.15,
+            "other_words": 0.85,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must3": {
+          "type": "choice",
+          "choice": "missing",
+          "confidence": 0.7,
+          "probabilities": {
+            "shown": 0,
+            "other_words": 0.01,
+            "different": 0.18,
+            "missing": 0.76,
+            "not_described": 0.05
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "side",
+          "confidence": 1,
+          "probabilities": {
+            "front": 0,
+            "quarter": 0,
+            "side": 1,
+            "back": 0,
+            "top": 0,
+            "not_shown": 0
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "biggest",
+          "confidence": 1,
+          "probabilities": {
+            "biggest": 1,
+            "smaller": 0,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "medium",
+          "confidence": 1,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 0,
+            "medium": 1,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.08
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.19
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 0.02,
+          "confidence": 0.97,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.98,
+            "1": 0.02,
+            "2": 0
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.79,
+          "confidence": 0.67,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.18,
+            "2": 0.8
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 1.95,
+          "confidence": 0.93,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0.05,
+            "2": 0.95
+          }
+        }
+      },
+      "2": {
+        "must0": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.52,
+          "probabilities": {
+            "shown": 0.34,
+            "other_words": 0.62,
+            "different": 0.01,
+            "missing": 0.03,
+            "not_described": 0
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.94,
+          "probabilities": {
+            "shown": 0.95,
+            "other_words": 0.05,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.51,
+          "probabilities": {
+            "shown": 0.39,
+            "other_words": 0.61,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must3": {
+          "type": "choice",
+          "choice": "missing",
+          "confidence": 0.56,
+          "probabilities": {
+            "shown": 0.04,
+            "other_words": 0.11,
+            "different": 0.14,
+            "missing": 0.65,
+            "not_described": 0.06
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "side",
+          "confidence": 0.58,
+          "probabilities": {
+            "front": 0,
+            "quarter": 0,
+            "side": 0.65,
+            "back": 0,
+            "top": 0,
+            "not_shown": 0.35
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "smaller",
+          "confidence": 1,
+          "probabilities": {
+            "biggest": 0,
+            "smaller": 1,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "close_up",
+          "confidence": 0.97,
+          "probabilities": {
+            "extreme_close_up": 0.02,
+            "close_up": 0.98,
+            "medium": 0,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.06
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 0,
+          "confidence": 1,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 1,
+            "1": 0,
+            "2": 0
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.94,
+          "confidence": 0.9,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.05,
+            "2": 0.94
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 1.03,
+          "confidence": 0.91,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.94,
+            "2": 0.05
+          }
+        }
+      },
+      "3": {
+        "must0": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.64,
+          "probabilities": {
+            "shown": 0.71,
+            "other_words": 0.26,
+            "different": 0.02,
+            "missing": 0.01,
+            "not_described": 0
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.92,
+          "probabilities": {
+            "shown": 0.94,
+            "other_words": 0.06,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.45,
+          "probabilities": {
+            "shown": 0.21,
+            "other_words": 0.56,
+            "different": 0.17,
+            "missing": 0,
+            "not_described": 0.05
+          }
+        },
+        "must3": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.75,
+          "probabilities": {
+            "shown": 0.8,
+            "other_words": 0.2,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "back",
+          "confidence": 1,
+          "probabilities": {
+            "front": 0,
+            "quarter": 0,
+            "side": 0,
+            "back": 1,
+            "top": 0,
+            "not_shown": 0
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "smaller",
+          "confidence": 0.79,
+          "probabilities": {
+            "biggest": 0,
+            "smaller": 0.84,
+            "tiny": 0.16,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "medium",
+          "confidence": 1,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 0,
+            "medium": 1,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.11
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.08
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 0,
+          "confidence": 1,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 1,
+            "1": 0,
+            "2": 0
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.84,
+          "confidence": 0.76,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.12,
+            "2": 0.86
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 1.92,
+          "confidence": 0.88,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0.08,
+            "2": 0.92
+          }
+        }
+      },
+      "4": {
+        "must0": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.52,
+          "probabilities": {
+            "shown": 0.62,
+            "other_words": 0.37,
+            "different": 0,
+            "missing": 0.01,
+            "not_described": 0
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.94,
+          "probabilities": {
+            "shown": 0.95,
+            "other_words": 0.05,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.78,
+          "probabilities": {
+            "shown": 0.18,
+            "other_words": 0.8200000000000001,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must3": {
+          "type": "choice",
+          "choice": "missing",
+          "confidence": 0.74,
+          "probabilities": {
+            "shown": 0.01,
+            "other_words": 0.01,
+            "different": 0.14,
+            "missing": 0.79,
+            "not_described": 0.05
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "back",
+          "confidence": 1,
+          "probabilities": {
+            "front": 0,
+            "quarter": 0,
+            "side": 0,
+            "back": 1,
+            "top": 0,
+            "not_shown": 0
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "biggest",
+          "confidence": 1,
+          "probabilities": {
+            "biggest": 1,
+            "smaller": 0,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "medium",
+          "confidence": 1,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 0,
+            "medium": 1,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.18
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.08
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 0,
+          "confidence": 1,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 1,
+            "1": 0,
+            "2": 0
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.93,
+          "confidence": 0.9,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.05,
+            "2": 0.94
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 1.97,
+          "confidence": 0.95,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0.03,
+            "2": 0.97
+          }
+        }
+      },
+      "5": {
+        "must0": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.7,
+          "probabilities": {
+            "shown": 0.76,
+            "other_words": 0.24,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.89,
+          "probabilities": {
+            "shown": 0.91,
+            "other_words": 0.09,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.68,
+          "probabilities": {
+            "shown": 0.26,
+            "other_words": 0.74,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must3": {
+          "type": "choice",
+          "choice": "missing",
+          "confidence": 0.66,
+          "probabilities": {
+            "shown": 0.01,
+            "other_words": 0.02,
+            "different": 0.16,
+            "missing": 0.73,
+            "not_described": 0.08
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "back",
+          "confidence": 1,
+          "probabilities": {
+            "front": 0,
+            "quarter": 0,
+            "side": 0,
+            "back": 1,
+            "top": 0,
+            "not_shown": 0
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "smaller",
+          "confidence": 0.97,
+          "probabilities": {
+            "biggest": 0,
+            "smaller": 0.98,
+            "tiny": 0.02,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "close_up",
+          "confidence": 0.97,
+          "probabilities": {
+            "extreme_close_up": 0.02,
+            "close_up": 0.98,
+            "medium": 0,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.15
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.11
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 0,
+          "confidence": 1,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 1,
+            "1": 0,
+            "2": 0
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.77,
+          "confidence": 0.64,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.18,
+            "2": 0.79
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 1.85,
+          "confidence": 0.78,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0.15,
+            "2": 0.85
+          }
+        }
+      },
+      "6": {
+        "must0": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.65,
+          "probabilities": {
+            "shown": 0.72,
+            "other_words": 0.21,
+            "different": 0.06,
+            "missing": 0,
+            "not_described": 0.01
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.94,
+          "probabilities": {
+            "shown": 0.95,
+            "other_words": 0.04,
+            "different": 0.01,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.31,
+          "probabilities": {
+            "shown": 0.16,
+            "other_words": 0.45,
+            "different": 0.38,
+            "missing": 0,
+            "not_described": 0.01
+          }
+        },
+        "must3": {
+          "type": "choice",
+          "choice": "missing",
+          "confidence": 0.61,
+          "probabilities": {
+            "shown": 0.01,
+            "other_words": 0.01,
+            "different": 0.2,
+            "missing": 0.69,
+            "not_described": 0.09
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "back",
+          "confidence": 0.92,
+          "probabilities": {
+            "front": 0,
+            "quarter": 0.02,
+            "side": 0.05,
+            "back": 0.93,
+            "top": 0,
+            "not_shown": 0
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "biggest",
+          "confidence": 1,
+          "probabilities": {
+            "biggest": 1,
+            "smaller": 0,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "medium",
+          "confidence": 1,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 0,
+            "medium": 1,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.07
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 0,
+          "confidence": 1,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 1,
+            "1": 0,
+            "2": 0
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.74,
+          "confidence": 0.62,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.21,
+            "2": 0.77
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 1.95,
+          "confidence": 0.93,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0.05,
+            "2": 0.95
+          }
+        }
+      },
+      "7": {
+        "must0": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.51,
+          "probabilities": {
+            "shown": 0.36,
+            "other_words": 0.61,
+            "different": 0.01,
+            "missing": 0.02,
+            "not_described": 0
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.9,
+          "probabilities": {
+            "shown": 0.92,
+            "other_words": 0.08,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.81,
+          "probabilities": {
+            "shown": 0.15,
+            "other_words": 0.85,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must3": {
+          "type": "choice",
+          "choice": "missing",
+          "confidence": 0.44,
+          "probabilities": {
+            "shown": 0.08,
+            "other_words": 0.17,
+            "different": 0.14,
+            "missing": 0.55,
+            "not_described": 0.05
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "not_shown",
+          "confidence": 1,
+          "probabilities": {
+            "front": 0,
+            "quarter": 0,
+            "side": 0,
+            "back": 0,
+            "top": 0,
+            "not_shown": 1
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "smaller",
+          "confidence": 1,
+          "probabilities": {
+            "biggest": 0,
+            "smaller": 1,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "medium",
+          "confidence": 1,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 0,
+            "medium": 1,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.1
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 0,
+          "confidence": 1,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 1,
+            "1": 0,
+            "2": 0
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.93,
+          "confidence": 0.9,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.05,
+            "2": 0.94
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 1.89,
+          "confidence": 0.83,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0.11,
+            "2": 0.89
+          }
+        }
+      },
+      "8": {
+        "must0": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.41,
+          "probabilities": {
+            "shown": 0.53,
+            "other_words": 0.34,
+            "different": 0.11,
+            "missing": 0.01,
+            "not_described": 0
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.89,
+          "probabilities": {
+            "shown": 0.91,
+            "other_words": 0.08,
+            "different": 0.01,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.59,
+          "probabilities": {
+            "shown": 0.01,
+            "other_words": 0.67,
+            "different": 0.27,
+            "missing": 0.03,
+            "not_described": 0.02
+          }
+        },
+        "must3": {
+          "type": "choice",
+          "choice": "missing",
+          "confidence": 0.45,
+          "probabilities": {
+            "shown": 0.01,
+            "other_words": 0.02,
+            "different": 0.39,
+            "missing": 0.56,
+            "not_described": 0.01
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "side",
+          "confidence": 0.99,
+          "probabilities": {
+            "front": 0,
+            "quarter": 0.01,
+            "side": 0.99,
+            "back": 0,
+            "top": 0,
+            "not_shown": 0
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "biggest",
+          "confidence": 0.99,
+          "probabilities": {
+            "biggest": 0.99,
+            "smaller": 0.01,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "medium",
+          "confidence": 1,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 0,
+            "medium": 1,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.84
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.08
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.06
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 1.5,
+          "confidence": 0.25,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.07,
+            "1": 0.36,
+            "2": 0.57
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 0.81,
+          "confidence": 0.16,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.37,
+            "1": 0.44,
+            "2": 0.19
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 1.97,
+          "confidence": 0.95,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0.03,
+            "2": 0.97
+          }
+        }
+      },
+      "9": {
+        "must0": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.6,
+          "probabilities": {
+            "shown": 0.68,
+            "other_words": 0.12,
+            "different": 0.18,
+            "missing": 0.01,
+            "not_described": 0.01
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.91,
+          "probabilities": {
+            "shown": 0.93,
+            "other_words": 0.04,
+            "different": 0.02,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "different",
+          "confidence": 0.85,
+          "probabilities": {
+            "shown": 0,
+            "other_words": 0.03,
+            "different": 0.88,
+            "missing": 0.04,
+            "not_described": 0.05
+          }
+        },
+        "must3": {
+          "type": "choice",
+          "choice": "missing",
+          "confidence": 0.39,
+          "probabilities": {
+            "shown": 0.01,
+            "other_words": 0.01,
+            "different": 0.41,
+            "missing": 0.51,
+            "not_described": 0.06
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "quarter",
+          "confidence": 0.92,
+          "probabilities": {
+            "front": 0.07,
+            "quarter": 0.93,
+            "side": 0,
+            "back": 0,
+            "top": 0,
+            "not_shown": 0
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "biggest",
+          "confidence": 1,
+          "probabilities": {
+            "biggest": 1,
+            "smaller": 0,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "medium",
+          "confidence": 1,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 0,
+            "medium": 1,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.23
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 1.95,
+          "confidence": 0.94,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.02,
+            "2": 0.97
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.03,
+          "confidence": 0.2,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.25,
+            "1": 0.47,
+            "2": 0.28
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 1.98,
+          "confidence": 0.97,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0.02,
+            "2": 0.98
+          }
+        }
+      }
+    },
+    "ms": 5309,
+    "costUsd": 0,
+    "model": "qwen/qwen3-vl-8b",
+    "at": "2026-10-19T04:35:16.547Z"
+  },
+  "G006": {
+    "cells": {
+      "1": "weak",
+      "2": "best",
+      "3": "wrong",
+      "4": "weak",
+      "5": "weak",
+      "6": "weak",
+      "7": "weak",
+      "8": "weak",
+      "9": "wrong"
+    },
+    "notes": {
+      "1": "feeling; unsure: must0 must2 detail0",
+      "2": "unsure: must0",
+      "3": "different: they (2 or more people); different: they sit; unsure: must3",
+      "4": "feeling; unsure: must3",
+      "5": "view top; unsure: must0 detail0",
+      "6": "feeling",
+      "7": "size smaller; unsure: must3 shot",
+      "8": "size smaller; unsure: must1",
+      "9": "missing: they sit; feeling; unsure: must0 detail0"
+    },
+    "reason": "highest fit 4.40",
+    "points": {
+      "main_actor": "He (1 person)",
+      "must": [
+        "He (1 person)",
+        "they (2 or more people)",
+        "He grabs a tab",
+        "they sit",
+        "a tab"
+      ],
+      "details": [
+        "unspoken"
+      ]
+    },
+    "descriptions": {
+      "1": "People and animals: Three people, all human, no animals. Left: a man with spiky brown hair. Center: a woman with brown hair in a bun. Right: a man with curly brown hair, glasses, and a beard.\n\nAction: Left man: extends his right hand, pointing at a yellow slip. Center woman: rests her chin on her right hand, elbow on table. Right man: hands clasped together on the table.\n\nObjects: Three white plates with food remnants, three clear glasses (two full, one empty), a yellow paper slip with \"$42\" printed, a plant visible on the far left.\n\nPlace: A dining table inside a room, likely a restaurant or home dining area.\n\nView: Left man: front view. Center woman: front view. Right man: front view. Camera is at eye level, looking directly at the subjects.\n\nSize: All three people are depicted at similar sizes, appearing to be of comparable height. No one is clearly bigger or smaller than the others.\n\nShot: Medium shot. The frame cuts off the top of the heads and the very bottom of the table and floor.\n\nFaces: Left man: smiling, looking at the bill. Center woman: neutral to slightly amused, looking at the bill. Right man: smiling, looking at the bill.\n\nSigns: A yellow slip of paper with \"$42\" written on it.\n\nEyes and hands: Left man: both eyes wide and looking at the bill. Right hand extended, index finger pointing at the bill. Center woman: both eyes looking at the bill, right hand supporting her chin. Right man: both eyes looking at the bill, hands clasped. All eyes are normal. All hands are normal.\n\nStrange parts: None. All elements appear consistent and normal.",
+      "2": "People and animals: Three people are shown: a man in the foreground, a woman in the middle, and a bearded man on the right. No animals.\n\nAction: The man in the foreground holds out a yellow slip of paper with his right hand. The woman and bearded man are seated and looking forward.\n\nObjects: A yellow slip of paper with \"$42\" written on it, a clear glass, plates (partially visible), and a table.\n\nPlace: No place shown.\n\nView: The camera looks at the people from the front, slightly elevated. The man in the foreground is viewed from a front-quarter angle. The woman is viewed from a front-quarter angle. The bearded man is viewed from a front-quarter angle.\n\nSize: The man in the foreground is the biggest. The woman and bearded man are smaller and appear farther away.\n\nShot: Medium shot. The frame cuts off the top of the people's heads and the table edge.\n\nFaces: The man in the foreground has a smug, self-satisfied expression. The woman has a calm, slightly amused expression. The bearded man has a neutral, perhaps slightly amused expression.\n\nSigns: The text \"$42\" is written on the yellow slip of paper.\n\nEyes and hands: The man's eyes are wide and looking down at the paper. His right hand holds the paper. The woman's eyes are looking up at the man. Her hands are not visible. The bearded man's eyes are looking forward. His hands are not visible.\n\nStrange parts: None.",
+      "3": "People and animals: One person, partially visible, wearing a dark green sleeve. No animals.\nAction: The person’s right hand is holding and placing a yellow slip of paper on a table.\nObjects: A yellow paper slip with \"$42\" printed on it, a clear drinking glass, a white plate with a small amount of green food on it, a table surface.\nPlace: A table, likely in a restaurant or dining setting.\nView: The camera is looking down at the scene from a slightly elevated angle, focusing on the hand and the table.\nSize: The hand and the paper slip are the most prominent objects in the frame. The glass and plate are smaller and slightly farther away.\nShot: Close-up. The frame cuts off the person’s arm above the elbow and the top of the table.\nFaces: No faces are visible.\nSigns: The text \"$42\" is clearly visible on the yellow paper.\nEyes and hands: The hand is visible, with fingers gripping the paper. The thumb is on the left side of the paper, and the index finger is on the right. The other fingers are curled around the paper. The hand appears normal. No eyes are visible.\nStrange parts: No broken or strange parts are visible. The paper has three horizontal lines above the \"$42\", but it is unclear what they represent.",
+      "4": "People and animals: Three people are shown, all human. One man is facing the camera, another is seen from the back, and a third is seen from the side. No animals.\n\nAction: The man facing the camera holds a yellow slip of paper with his right hand. The other two people have their hands out of view or are resting on the table.\n\nObjects: A yellow slip of paper with \"$42\" written on it, a glass of water, a plate with food, chairs, a table, and a white wall in the background.\n\nPlace: The scene is indoors, likely at a restaurant or cafe.\n\nView: The man facing the camera is seen from the front. The person on the left is seen from the back. The person on the right is seen from the side.\n\nSize: The man facing the camera appears largest due to his position and direct gaze. The person on the right appears slightly smaller due to perspective. The person on the left is partially obscured.\n\nShot: Medium shot. The frame cuts off the top of the heads and the floor.\n\nFaces: The man facing the camera has a smiling expression. The other two faces are not visible.\n\nSigns: The text \"$42\" is written on the yellow slip of paper.\n\nEyes and hands: The man facing the camera has large, round eyes and is holding the yellow slip with his right hand. His left hand is not visible. The other people's eyes and hands are not visible.\n\nStrange parts: None. All parts appear normal.",
+      "5": "People and animals: Two people are shown, both human. One is on the left, the other on the right. No animals.\n\nAction: The person on the left has their hands clasped together, elbows on the table, looking up. The person on the right has their hands clasped together, elbows on the table, looking down. The arm extending from above has a hand holding a bill.\n\nObjects: A round table, plates with food remnants and forks, three glasses of water, a yellow bill with \"$42\" written on it, a fork on a plate.\n\nPlace: A dining table, likely in a restaurant or home.\n\nView: The camera looks down from above, showing the top view of the table and the people's heads and upper bodies.\n\nSize: The table is the largest object in the picture. The people are medium-sized. The bill is small.\n\nShot: Medium shot, cutting off the tops of the people's heads and the bottom of the table.\n\nFaces: The faces are not clearly visible, but the person on the left appears to be looking up with a neutral or concerned expression. The person on the right is looking down, so their expression is not visible.\n\nSigns: The text \"$42\" is written on the yellow bill.\n\nEyes and hands: The eyes are not clearly visible. The left person's hands are clasped. The right person's hands are clasped. The hand extending from above is holding the bill.\n\nStrange parts: None.",
+      "6": "People and animals: Three people, all human. A standing man, a seated woman, and a seated bearded man.\nAction: The standing man holds a yellow card up with his right hand. The woman rests her chin on her left hand. The bearded man has his hands clasped together on the table.\nObjects: A yellow card, two glasses of water, two plates with food, a chair, and plants in the background.\nPlace: A dining room or similar indoor setting.\nView: The standing man faces front. The woman faces front, slightly turned. The bearded man faces front. The camera looks from the front, level with the subjects.\nSize: The standing man appears biggest due to his height and position. The seated people are smaller in comparison.\nShot: Medium shot. The frame cuts off the top of the standing man's head and the bottom of the seated people's legs.\nFaces: The standing man has a smiling, confident expression. The woman has a curious, attentive expression. The bearded man has a calm, slightly amused expression.\nSigns: The yellow card has three horizontal lines, possibly indicating a menu or list.\nEyes and hands: The standing man's eyes are wide and looking down at the card. His right hand holds the card. The woman's eyes are wide and looking up at the standing man. Her left hand is supporting her chin. The bearded man's eyes are looking up at the standing man. His hands are clasped together. All eyes and hands appear normal.\nStrange parts: None.",
+      "7": "People and animals: Two people are shown. One is a woman with brown hair in a bun, wearing a green shirt. The other is a person whose only visible part is an arm and hand, wearing a dark blue or green sleeve.\nAction: The woman rests her chin on her hand, looking up at the hand holding the bill. The hand is holding a yellow receipt or bill.\nObjects: A yellow receipt or bill with \"$42\" printed on it, a clear glass of water, a white plate with a small amount of food (possibly broccoli and a spoon), and a table.\nPlace: The scene is indoors, likely at a restaurant or cafe, based on the table, food, and bill.\nView: The woman faces the camera at a three-quarter angle, looking up. The camera appears to be at eye level with her.\nSize: The woman appears to be the biggest subject in the frame. The hand holding the bill is also large in the frame, but the person it belongs to is not visible. The bill is small, and the food on the plate is small.\nShot: Medium close-up. The frame cuts off the top of the woman's head and the bottom of the table and the person's arm.\nFaces: The woman has a slightly surprised or amused expression, with wide eyes and a small smile. The other person's face is not visible.\nSigns: The text \"$42\" is visible on the yellow receipt/bill. There are three horizontal lines above the text, possibly indicating a total or a line item.\nEyes and hands: The woman's eyes are large and round, looking upward. Her left hand is resting under her chin. The hand holding the bill is open, with fingers gripping the top edge of the yellow receipt/bill. The thumb is on the left side of the bill, and the fingers are on the right side, holding it up.\nStrange parts: None. All parts appear normal. The bill is a standard-sized receipt or bill. The woman's hair is in a bun, and her eyes are drawn in a cartoon style. The hand is a normal human hand.",
+      "8": "People and animals: Four people. A man with a beard and glasses sits at a table. A woman with her hair in a bun sits beside him. A man in a teal shirt walks toward the counter. A woman in an apron stands behind the counter.\nAction: The man at the table looks toward the walking man. The bearded man has his hands clasped. The walking man holds a yellow card or ticket in his right hand and gestures with his left. The woman at the counter looks toward the walking man. The seated woman looks toward the walking man.\nObjects: A white tablecloth, a glass of water, a potted plant, a counter, a menu board, a hanging lamp, a small container on the counter, a yellow card or ticket.\nPlace: A cafe or restaurant interior.\nView: The bearded man faces slightly left of center, seen in a three-quarter view. The woman beside him faces slightly left of center, seen in a three-quarter view. The walking man faces right, seen from the back. The woman at the counter faces left, seen in a three-quarter view.\nSize: The walking man appears largest due to his position closer to the camera. The woman at the counter appears smaller due to distance. The seated couple appears medium-sized.\nShot: Medium shot. The frame cuts off the top of the scene and the bottom edge of the floor.\nFaces: The bearded man has a neutral expression. The woman beside him looks attentive. The walking man has a neutral expression. The woman at the counter has a neutral or slightly attentive expression.\nSigns: The menu board has lines of text, but the text is illegible. No other symbols are visible.\nEyes and hands: The bearded man's eyes are open and looking toward the walking man. The woman beside him has her eyes open and looking toward the walking man. The walking man's eyes are open and looking toward the woman at the counter. The woman at the counter has her eyes open and looking toward the walking man. The bearded man's hands are clasped. The woman beside him has her hands resting on her lap. The walking man's right hand holds a yellow card or ticket. His left hand is open and gesturing. The woman at the counter has her hands resting on the counter.\nStrange parts: None. All objects and body parts appear normal.",
+      "9": "People and animals: Two men are shown. One has messy brown hair and is smiling, holding a receipt. The other has a beard, glasses, and is looking at the first man with a slight smile.\nAction: The man on the left holds a yellow receipt with his right hand, fingers curled around it. The man on the right has his hands down by his sides, not visible in action.\nObjects: A yellow receipt with \"$42\" printed on it, and three horizontal lines above the price. The men are wearing shirts.\nPlace: No place shown.\nView: The man on the left faces the camera frontally. The man on the right faces slightly to his left, so the camera sees him in a three-quarter view.\nSize: Both men appear to be the same size, occupying roughly equal space in the frame.\nShot: Medium shot. The frame cuts off just below the men's waists and above their heads.\nFaces: The man on the left has a happy, excited expression. The man on the right has a calm, slightly amused or knowing expression.\nSigns: The text \"$42\" is visible on the receipt. Three horizontal lines are printed above the price.\nEyes and hands: The man on the left has large, round, white eyes with black pupils, looking directly at the viewer. His right hand holds the receipt. The man on the right has round, white eyes with black pupils, looking at the man on the left. His hands are not visible.\nStrange parts: None. All parts appear normal."
+    },
+    "checks": {
+      "1": {
+        "must0": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.3,
+          "probabilities": {
+            "shown": 0.23,
+            "other_words": 0.44,
+            "different": 0.29,
+            "missing": 0.02,
+            "not_described": 0.02
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.73,
+          "probabilities": {
+            "shown": 0.78,
+            "other_words": 0.08,
+            "different": 0.01,
+            "missing": 0.01,
+            "not_described": 0.12
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.39,
+          "probabilities": {
+            "shown": 0.06,
+            "other_words": 0.51,
+            "different": 0.26,
+            "missing": 0.16,
+            "not_described": 0.01
+          }
+        },
+        "must3": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.56,
+          "probabilities": {
+            "shown": 0.65,
+            "other_words": 0.21,
+            "different": 0.02,
+            "missing": 0.05,
+            "not_described": 0.07
+          }
+        },
+        "must4": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.65,
+          "probabilities": {
+            "shown": 0.27,
+            "other_words": 0.72,
+            "different": 0.01,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "detail0": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.41,
+          "probabilities": {
+            "shown": 0.17,
+            "other_words": 0.21,
+            "different": 0.02,
+            "missing": 0.07,
+            "not_described": 0.53
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "front",
+          "confidence": 0.99,
+          "probabilities": {
+            "front": 0.99,
+            "quarter": 0.01,
+            "side": 0,
+            "back": 0,
+            "top": 0,
+            "not_shown": 0
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "biggest",
+          "confidence": 0.99,
+          "probabilities": {
+            "biggest": 0.99,
+            "smaller": 0.01,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "medium",
+          "confidence": 1,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 0,
+            "medium": 1,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.65
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.06
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.02
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 1.93,
+          "confidence": 0.88,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.04,
+            "2": 0.94
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.61,
+          "confidence": 0.43,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.06,
+            "1": 0.26,
+            "2": 0.68
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 2,
+          "confidence": 1,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0,
+            "2": 1
+          }
+        }
+      },
+      "2": {
+        "must0": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.34,
+          "probabilities": {
+            "shown": 0.46,
+            "other_words": 0.47,
+            "different": 0.05,
+            "missing": 0.01,
+            "not_described": 0.01
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.54,
+          "probabilities": {
+            "shown": 0.63,
+            "other_words": 0.12,
+            "different": 0.01,
+            "missing": 0.03,
+            "not_described": 0.21
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.86,
+          "probabilities": {
+            "shown": 0.11,
+            "other_words": 0.89,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must3": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.69,
+          "probabilities": {
+            "shown": 0.75,
+            "other_words": 0.23,
+            "different": 0.01,
+            "missing": 0,
+            "not_described": 0.01
+          }
+        },
+        "must4": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.77,
+          "probabilities": {
+            "shown": 0.18,
+            "other_words": 0.82,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "detail0": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.56,
+          "probabilities": {
+            "shown": 0.12,
+            "other_words": 0.14,
+            "different": 0.01,
+            "missing": 0.08,
+            "not_described": 0.65
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "quarter",
+          "confidence": 0.96,
+          "probabilities": {
+            "front": 0.03,
+            "quarter": 0.97,
+            "side": 0,
+            "back": 0,
+            "top": 0,
+            "not_shown": 0
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "biggest",
+          "confidence": 1,
+          "probabilities": {
+            "biggest": 1,
+            "smaller": 0,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "medium",
+          "confidence": 1,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 0,
+            "medium": 1,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.49
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.06
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 1.97,
+          "confidence": 0.95,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.01,
+            "2": 0.98
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.89,
+          "confidence": 0.83,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.07,
+            "2": 0.91
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 1.08,
+          "confidence": 0.88,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0.92,
+            "2": 0.08
+          }
+        }
+      },
+      "3": {
+        "must0": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.6,
+          "probabilities": {
+            "shown": 0.68,
+            "other_words": 0.32,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "different",
+          "confidence": 0.81,
+          "probabilities": {
+            "shown": 0,
+            "other_words": 0,
+            "different": 0.85,
+            "missing": 0.12,
+            "not_described": 0.03
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.77,
+          "probabilities": {
+            "shown": 0.15,
+            "other_words": 0.82,
+            "different": 0.02,
+            "missing": 0.01,
+            "not_described": 0
+          }
+        },
+        "must3": {
+          "type": "choice",
+          "choice": "different",
+          "confidence": 0.25,
+          "probabilities": {
+            "shown": 0,
+            "other_words": 0.02,
+            "different": 0.4,
+            "missing": 0.39,
+            "not_described": 0.19
+          }
+        },
+        "must4": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.71,
+          "probabilities": {
+            "shown": 0.23,
+            "other_words": 0.77,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "detail0": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.51,
+          "probabilities": {
+            "shown": 0.02,
+            "other_words": 0.03,
+            "different": 0.17,
+            "missing": 0.17,
+            "not_described": 0.61
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "not_shown",
+          "confidence": 0.94,
+          "probabilities": {
+            "front": 0,
+            "quarter": 0,
+            "side": 0,
+            "back": 0,
+            "top": 0.05,
+            "not_shown": 0.95
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "biggest",
+          "confidence": 0.97,
+          "probabilities": {
+            "biggest": 0.98,
+            "smaller": 0,
+            "tiny": 0,
+            "not_shown": 0.02
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "close_up",
+          "confidence": 0.68,
+          "probabilities": {
+            "extreme_close_up": 0.24,
+            "close_up": 0.76,
+            "medium": 0,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.06
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.27
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 0,
+          "confidence": 1,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 1,
+            "1": 0,
+            "2": 0
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.88,
+          "confidence": 0.8,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.07,
+            "2": 0.9
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 0.99,
+          "confidence": 0.95,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.97,
+            "2": 0.01
+          }
+        }
+      },
+      "4": {
+        "must0": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.55,
+          "probabilities": {
+            "shown": 0.3,
+            "other_words": 0.64,
+            "different": 0.05,
+            "missing": 0,
+            "not_described": 0.01
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.7,
+          "probabilities": {
+            "shown": 0.76,
+            "other_words": 0.09,
+            "different": 0.01,
+            "missing": 0.01,
+            "not_described": 0.13
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.84,
+          "probabilities": {
+            "shown": 0.13,
+            "other_words": 0.87,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must3": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.35,
+          "probabilities": {
+            "shown": 0.48,
+            "other_words": 0.28,
+            "different": 0.03,
+            "missing": 0.15,
+            "not_described": 0.06
+          }
+        },
+        "must4": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.84,
+          "probabilities": {
+            "shown": 0.13,
+            "other_words": 0.87,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "detail0": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.76,
+          "probabilities": {
+            "shown": 0.03,
+            "other_words": 0.03,
+            "different": 0.02,
+            "missing": 0.11,
+            "not_described": 0.81
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "front",
+          "confidence": 1,
+          "probabilities": {
+            "front": 1,
+            "quarter": 0,
+            "side": 0,
+            "back": 0,
+            "top": 0,
+            "not_shown": 0
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "biggest",
+          "confidence": 1,
+          "probabilities": {
+            "biggest": 1,
+            "smaller": 0,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "medium",
+          "confidence": 1,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 0,
+            "medium": 1,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.7
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.06
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 1.81,
+          "confidence": 0.7,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.14,
+            "2": 0.83
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.79,
+          "confidence": 0.7,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.14,
+            "2": 0.83
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 1.99,
+          "confidence": 1,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0,
+            "2": 1
+          }
+        }
+      },
+      "5": {
+        "must0": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.46,
+          "probabilities": {
+            "shown": 0.11,
+            "other_words": 0.57,
+            "different": 0.18,
+            "missing": 0.11,
+            "not_described": 0.03
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.81,
+          "probabilities": {
+            "shown": 0.85,
+            "other_words": 0.05,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0.1
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.76,
+          "probabilities": {
+            "shown": 0.12,
+            "other_words": 0.81,
+            "different": 0.02,
+            "missing": 0.05,
+            "not_described": 0
+          }
+        },
+        "must3": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.59,
+          "probabilities": {
+            "shown": 0.67,
+            "other_words": 0.29,
+            "different": 0.01,
+            "missing": 0.02,
+            "not_described": 0.01
+          }
+        },
+        "must4": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.71,
+          "probabilities": {
+            "shown": 0.23,
+            "other_words": 0.77,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "detail0": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.49,
+          "probabilities": {
+            "shown": 0.16,
+            "other_words": 0.16,
+            "different": 0.01,
+            "missing": 0.08,
+            "not_described": 0.59
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "top",
+          "confidence": 0.56,
+          "probabilities": {
+            "front": 0.02,
+            "quarter": 0.01,
+            "side": 0,
+            "back": 0.02,
+            "top": 0.63,
+            "not_shown": 0.32
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "biggest",
+          "confidence": 0.89,
+          "probabilities": {
+            "biggest": 0.92,
+            "smaller": 0.04,
+            "tiny": 0,
+            "not_shown": 0.04
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "medium",
+          "confidence": 1,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 0,
+            "medium": 1,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.22
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.09
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.07
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 0.63,
+          "confidence": 0.43,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.38,
+            "1": 0.62,
+            "2": 0
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.35,
+          "confidence": 0.02,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.11,
+            "1": 0.43,
+            "2": 0.46
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 1.99,
+          "confidence": 0.98,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0.01,
+            "2": 0.99
+          }
+        }
+      },
+      "6": {
+        "must0": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.57,
+          "probabilities": {
+            "shown": 0.28,
+            "other_words": 0.66,
+            "different": 0.04,
+            "missing": 0.01,
+            "not_described": 0.01
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.59,
+          "probabilities": {
+            "shown": 0.67,
+            "other_words": 0.16,
+            "different": 0.01,
+            "missing": 0.01,
+            "not_described": 0.15
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.92,
+          "probabilities": {
+            "shown": 0.05,
+            "other_words": 0.94,
+            "different": 0,
+            "missing": 0.01,
+            "not_described": 0
+          }
+        },
+        "must3": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.8,
+          "probabilities": {
+            "shown": 0.84,
+            "other_words": 0.14,
+            "different": 0.01,
+            "missing": 0,
+            "not_described": 0.01
+          }
+        },
+        "must4": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.91,
+          "probabilities": {
+            "shown": 0.04,
+            "other_words": 0.93,
+            "different": 0.01,
+            "missing": 0.02,
+            "not_described": 0
+          }
+        },
+        "detail0": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.59,
+          "probabilities": {
+            "shown": 0.05,
+            "other_words": 0.14,
+            "different": 0.03,
+            "missing": 0.11,
+            "not_described": 0.67
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "front",
+          "confidence": 0.99,
+          "probabilities": {
+            "front": 0.99,
+            "quarter": 0.01,
+            "side": 0,
+            "back": 0,
+            "top": 0,
+            "not_shown": 0
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "biggest",
+          "confidence": 1,
+          "probabilities": {
+            "biggest": 1,
+            "smaller": 0,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "medium",
+          "confidence": 1,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 0,
+            "medium": 1,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.62
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.09
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 1.8,
+          "confidence": 0.7,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.05,
+            "1": 0.1,
+            "2": 0.85
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.61,
+          "confidence": 0.4,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.07,
+            "1": 0.26,
+            "2": 0.67
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 2,
+          "confidence": 1,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0,
+            "2": 1
+          }
+        }
+      },
+      "7": {
+        "must0": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.77,
+          "probabilities": {
+            "shown": 0.08,
+            "other_words": 0.82,
+            "different": 0.05,
+            "missing": 0.04,
+            "not_described": 0.01
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.75,
+          "probabilities": {
+            "shown": 0.8,
+            "other_words": 0.1,
+            "different": 0.01,
+            "missing": 0.01,
+            "not_described": 0.08
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.69,
+          "probabilities": {
+            "shown": 0.25,
+            "other_words": 0.75,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must3": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.16,
+          "probabilities": {
+            "shown": 0.33,
+            "other_words": 0.22,
+            "different": 0.03,
+            "missing": 0.27,
+            "not_described": 0.15
+          }
+        },
+        "must4": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.73,
+          "probabilities": {
+            "shown": 0.22,
+            "other_words": 0.78,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "detail0": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.68,
+          "probabilities": {
+            "shown": 0.08,
+            "other_words": 0.09,
+            "different": 0.01,
+            "missing": 0.08,
+            "not_described": 0.74
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "not_shown",
+          "confidence": 0.98,
+          "probabilities": {
+            "front": 0,
+            "quarter": 0.02,
+            "side": 0,
+            "back": 0,
+            "top": 0,
+            "not_shown": 0.98
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "smaller",
+          "confidence": 0.51,
+          "probabilities": {
+            "biggest": 0.14,
+            "smaller": 0.63,
+            "tiny": 0.01,
+            "not_shown": 0.22
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "close_up",
+          "confidence": 0.47,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 0.6,
+            "medium": 0.4,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.15
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 0.17,
+          "confidence": 0.74,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.91,
+            "1": 0.01,
+            "2": 0.08
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.85,
+          "confidence": 0.76,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.1,
+            "2": 0.87
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 1.89,
+          "confidence": 0.83,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0.11,
+            "2": 0.89
+          }
+        }
+      },
+      "8": {
+        "must0": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.66,
+          "probabilities": {
+            "shown": 0.09,
+            "other_words": 0.73,
+            "different": 0.11,
+            "missing": 0.04,
+            "not_described": 0.03
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.22,
+          "probabilities": {
+            "shown": 0.38,
+            "other_words": 0.16,
+            "different": 0.04,
+            "missing": 0.05,
+            "not_described": 0.37
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.85,
+          "probabilities": {
+            "shown": 0.04,
+            "other_words": 0.88,
+            "different": 0.03,
+            "missing": 0.05,
+            "not_described": 0
+          }
+        },
+        "must3": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.84,
+          "probabilities": {
+            "shown": 0.87,
+            "other_words": 0.06,
+            "different": 0.03,
+            "missing": 0.01,
+            "not_described": 0.03
+          }
+        },
+        "must4": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.77,
+          "probabilities": {
+            "shown": 0.06,
+            "other_words": 0.82,
+            "different": 0.03,
+            "missing": 0.08,
+            "not_described": 0.01
+          }
+        },
+        "detail0": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.54,
+          "probabilities": {
+            "shown": 0.09,
+            "other_words": 0.17,
+            "different": 0.05,
+            "missing": 0.06,
+            "not_described": 0.63
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "quarter",
+          "confidence": 0.9,
+          "probabilities": {
+            "front": 0,
+            "quarter": 0.92,
+            "side": 0,
+            "back": 0.06,
+            "top": 0,
+            "not_shown": 0.02
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "smaller",
+          "confidence": 0.65,
+          "probabilities": {
+            "biggest": 0.19,
+            "smaller": 0.74,
+            "tiny": 0.01,
+            "not_shown": 0.06
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "medium",
+          "confidence": 1,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 0,
+            "medium": 1,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.18
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.3
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.02
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 1.18,
+          "confidence": 0.25,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.16,
+            "1": 0.5,
+            "2": 0.34
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 0.79,
+          "confidence": 0.16,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.38,
+            "1": 0.44,
+            "2": 0.18
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 1.99,
+          "confidence": 0.98,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0.01,
+            "2": 0.99
+          }
+        }
+      },
+      "9": {
+        "must0": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.36,
+          "probabilities": {
+            "shown": 0.26,
+            "other_words": 0.49,
+            "different": 0.23,
+            "missing": 0.01,
+            "not_described": 0.01
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.76,
+          "probabilities": {
+            "shown": 0.81,
+            "other_words": 0.06,
+            "different": 0.01,
+            "missing": 0.01,
+            "not_described": 0.11
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.82,
+          "probabilities": {
+            "shown": 0.1,
+            "other_words": 0.86,
+            "different": 0.02,
+            "missing": 0.02,
+            "not_described": 0
+          }
+        },
+        "must3": {
+          "type": "choice",
+          "choice": "missing",
+          "confidence": 0.65,
+          "probabilities": {
+            "shown": 0.02,
+            "other_words": 0.02,
+            "different": 0.15,
+            "missing": 0.72,
+            "not_described": 0.09
+          }
+        },
+        "must4": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.84,
+          "probabilities": {
+            "shown": 0.09,
+            "other_words": 0.87,
+            "different": 0.02,
+            "missing": 0.02,
+            "not_described": 0
+          }
+        },
+        "detail0": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.45,
+          "probabilities": {
+            "shown": 0.17,
+            "other_words": 0.15,
+            "different": 0.02,
+            "missing": 0.1,
+            "not_described": 0.56
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "front",
+          "confidence": 0.99,
+          "probabilities": {
+            "front": 0.99,
+            "quarter": 0.01,
+            "side": 0,
+            "back": 0,
+            "top": 0,
+            "not_shown": 0
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "biggest",
+          "confidence": 1,
+          "probabilities": {
+            "biggest": 1,
+            "smaller": 0,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "medium",
+          "confidence": 1,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 0,
+            "medium": 1,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.62
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 1.95,
+          "confidence": 0.93,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.03,
+            "2": 0.96
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.61,
+          "confidence": 0.43,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.06,
+            "1": 0.26,
+            "2": 0.68
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 1,
+          "confidence": 0.98,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0.99,
+            "2": 0.01
+          }
+        }
+      }
+    },
+    "ms": 5430,
+    "costUsd": 0,
+    "model": "qwen/qwen3-vl-8b",
+    "at": "2026-10-19T04:35:23.915Z"
+  },
+  "G010": {
+    "cells": {
+      "1": "weak",
+      "2": "weak",
+      "3": "wrong",
+      "4": "weak",
+      "5": "weak",
+      "6": "wrong",
+      "7": "wrong",
+      "8": "weak",
+      "9": "weak"
+    },
+    "notes": {
+      "1": "size smaller; unsure: detail1",
+      "2": "size smaller; unsure: detail1 size",
+      "3": "missing: the surgeon cuts; size smaller; unsure: must1 must2",
+      "4": "size smaller; unsure: detail1",
+      "5": "size smaller; unsure: detail0 detail1",
+      "6": "different: the surgeon cuts; unsure: must1 must2 detail1",
+      "7": "other_words: the surgeon cuts; unsure: must1 detail1",
+      "8": "size smaller; unsure: must2 detail1 size",
+      "9": "size smaller; unsure: must1 detail1"
+    },
+    "reason": "no cell passed the rules",
+    "points": {
+      "main_actor": "the surgeon (1 person)",
+      "must": [
+        "the surgeon (1 person)",
+        "the surgeon cuts",
+        "a blade"
+      ],
+      "details": [
+        "the scalp gleams",
+        "the cut is precise"
+      ]
+    },
+    "descriptions": {
+      "1": "People and animals: Two people. One is a surgeon in scrubs and cap, leaning over a patient. The other is a patient lying down, bald, with eyes closed.\n\nAction: The surgeon holds a scalpel in their right hand, making a mark on the patient's scalp. Their left hand rests on the patient's head. The patient is lying still with eyes closed.\n\nObjects: Green surgical scrubs, surgical cap, surgical mask, blue scalpel, patient's bare scalp.\n\nPlace: No place shown.\n\nView: Surgeon: side view, camera looks from the side. Patient: side view, camera looks from the side.\n\nSize: The patient is the biggest in the picture. The surgeon is smaller in frame, but appears closer.\n\nShot: Close-up. The frame cuts off the top of the surgeon's head and the bottom of the patient's body.\n\nFaces: Surgeon: focused, intense expression. Patient: calm, unconscious.\n\nSigns: No symbols, question marks, sparks, or text.\n\nEyes and hands: Surgeon's eyes: both open, looking down at the patient's head. Right hand: holds scalpel, fingers curled around the handle. Left hand: fingers spread, resting on the patient's scalp. Patient's eyes: closed. No visible hands on the patient.\n\nStrange parts: None. All body parts and objects appear normal.",
+      "2": "People and animals: One person, a surgeon, is visible. No animals.\nAction: The surgeon holds a scalpel in their right hand, positioning it to make a cut on skin. Their left hand is not visible.\nObjects: A scalpel with a blue handle and silver blade, human skin, surgical cap, surgical mask.\nPlace: No place shown.\nView: The surgeon faces the camera at a quarter angle, looking down at the skin. The camera looks down from above.\nSize: The skin is the biggest element in the frame. The surgeon is smaller and appears farther away.\nShot: Close-up, focusing on the scalpel tip and the skin. The frame cuts off the surgeon's shoulders and the top of the head.\nFaces: The surgeon's face is partially visible, showing focused eyes. The expression is serious and concentrated.\nSigns: No symbols, question marks, sparks, or text.\nEyes and hands: The surgeon's right eye is visible, looking down with a focused gaze. The left eye is partially visible. The right hand holds the scalpel with the index finger and thumb gripping the handle, the blade angled downward toward the skin. The left hand is not visible.\nStrange parts: None. All parts appear normal.",
+      "3": "People and animals: One person, a surgeon, visible from the chest up.\nAction: The surgeon holds a scalpel in their right hand, raised above the patient's body. Their head is tilted slightly downward, looking at the patient.\nObjects: A scalpel, surgical cap, surgical mask, surgical gown, patient's skin (visible as a rounded surface).\nPlace: No place shown.\nView: The camera looks up from below the patient's body, facing the surgeon's face (quarter view from below).\nSize: The patient's body is the biggest visible element, occupying the lower half of the frame. The surgeon is medium-sized.\nShot: Close-up, cutting off the top of the surgeon's head and the upper part of the patient's body.\nFaces: The surgeon's eyes are wide open, looking down with intense focus.\nSigns: No symbols, question marks, or text visible.\nEyes and hands: The surgeon's eyes are wide and alert. The right hand holds the scalpel with the thumb and index finger gripping the handle, the other fingers curled around it. The left hand is not visible.\nStrange parts: No broken or unidentifiable parts. The scalpel is a standard surgical instrument. The patient's body is shown as a smooth, rounded surface without any visible features.",
+      "4": "People and animals: One person, a surgeon, is visible. No animals.\nAction: The surgeon holds a surgical tool in their right hand, making a mark on the patient's scalp. Their left hand holds the patient's head steady. The patient is lying still with eyes closed.\nObjects: Surgical tool (blue handle), surgical cap, surgical mask, gloves, patient's scalp, surgical drapes.\nPlace: Operating room, implied by the setting and attire.\nView: The camera looks down from above, showing the surgeon's face partially and the patient's head from a top-down perspective.\nSize: The patient's head is the largest visible object. The surgeon is partially cropped, appearing smaller in frame.\nShot: Close-up, focusing on the surgeon's hands and the patient's head. The frame cuts off the surgeon's shoulders and the top of the patient's head.\nFaces: The surgeon's face is partially visible, showing concentration. The patient's face is mostly obscured, with eyes closed.\nSigns: A vertical surgical line is drawn on the patient's scalp. No other symbols or text.\nEyes and hands: The surgeon's eyes are narrowed, focused downward. The right hand holds the surgical tool with fingers curled around the handle. The left hand is open, fingers spread to grip the patient's head. No broken or strange hands.\nStrange parts: None apparent. All body parts and objects appear normal and consistent with a surgical scene.",
+      "5": "People and animals: One person, a surgeon, is shown. No animals.\nAction: The surgeon holds a surgical scalpel in their right hand, positioning it to make an incision on a patient's skin. Their left hand is partially visible, supporting or steadying the patient's skin.\nObjects: Surgical scalpel (blue handle, metallic blade), surgical cap, surgical mask (partially visible), patient's skin (smooth, pale).\nPlace: No place shown.\nView: The camera looks from the side, slightly above, focusing on the surgeon's right hand and the patient's skin. The surgeon's face is not visible.\nSize: The patient's skin is the largest visible area. The surgeon's body is partially shown, appearing smaller in frame than the skin. The surgeon's hands are medium-sized in the frame.\nShot: Close-up. The frame cuts off the top of the surgeon's head and the bottom of the patient's body.\nFaces: No faces are visible.\nSigns: No symbols, text, or question marks.\nEyes and hands: The surgeon's eyes are not visible. The right hand holds the scalpel with the index finger and thumb gripping the handle, the blade angled downward toward the skin. The left hand is partially visible, fingers spread to hold the skin taut.\nStrange parts: None. All parts appear normal.",
+      "6": "People and animals: One person, a surgeon, is visible. No animals.\nAction: The surgeon holds a pen-like tool in one hand and gently presses on the patient's forehead with the other hand. The patient is lying still.\nObjects: Surgical cap, surgical mask, surgical gown, gloves, pen-like surgical tool, surgical bed, blue surgical drape, overhead surgical lamp with four bulbs.\nPlace: Operating room.\nView: The surgeon faces slightly to the side, partially toward the camera. The patient faces away from the camera, toward the surgeon.\nSize: The surgeon appears largest, occupying the left and center of the frame. The patient is smaller in comparison, lying down.\nShot: Medium shot. The frame cuts off the bottom of the surgeon's gown and the top of the surgical lamp.\nFaces: The surgeon's face is partially obscured by the mask, but the eyes are visible and focused. The patient's face is relaxed, eyes closed.\nSigns: No symbols, question marks, sparkles, or text.\nEyes and hands: The surgeon's eyes are wide open and focused downward. The right hand holds the tool with the tip touching the patient's forehead. The left hand is open, fingers spread, pressing gently on the patient's forehead. No broken or strange hands or eyes.\nStrange parts: None. All body parts and objects appear normal and consistent with a surgical setting.",
+      "7": "People and animals: One person, a surgeon, visible from the chest up.\nAction: The surgeon holds a scalpel in their right hand, poised to make an incision on the skin below.\nObjects: A surgical mask covering the lower face, a green surgical cap, a scalpel with a blue handle and silver blade, human skin.\nPlace: No place shown.\nView: The surgeon faces the camera directly, looking down at the surgical site.\nSize: The surgeon's face and upper body are the biggest element in the frame. The skin being operated on is large but appears closer to the camera than the surgeon's face.\nShot: Close-up, focusing on the surgeon's eyes and the point of the scalpel on the skin. The frame cuts off the top of the surgeon's head and the bottom of the skin.\nFaces: The surgeon's face shows intense concentration, with furrowed brows and wide, focused eyes.\nSigns: No symbols, question marks, sparkles, or text visible.\nEyes and hands: The surgeon's eyes are wide open, dark, and focused downward. The right hand holds the scalpel with the thumb and index finger gripping the handle, the blade pointing down toward the skin. The left hand is not visible.\nStrange parts: None. All parts appear normal.",
+      "8": "People and animals: One person, a surgeon, partially visible.\nAction: The surgeon holds a scalpel with their right hand, poised to make a cut on skin.\nObjects: A scalpel, surgical mask, surgical cap, skin.\nPlace: No place shown.\nView: The surgeon faces the camera at a quarter angle, looking down at the skin.\nSize: The skin is biggest in the picture; the surgeon is smaller and farther away.\nShot: Close-up, cutting off the top of the surgeon's head and the bottom of the skin.\nFaces: The surgeon's face is partially obscured by the mask, but their eyes show intense focus.\nSigns: A spark symbol appears near the tip of the scalpel.\nEyes and hands: The surgeon's right eye is visible, wide open and focused. Their right hand holds the scalpel with the thumb and index finger gripping the handle, the other fingers curled around it. The left hand is not visible.\nStrange parts: None.",
+      "9": "People and animals: One person, a surgeon, visible from the chest up.\nAction: The surgeon holds a scalpel in their right hand, poised as if about to make a cut.\nObjects: A scalpel with a blue handle and silver blade, surgical cap, surgical mask, surgical gown, and a patient's bare back/shoulder area.\nPlace: No place shown.\nView: The camera looks at the surgeon from a low angle, looking up at them.\nSize: The patient's back is the biggest object in the frame, taking up the bottom half. The surgeon is medium-sized.\nShot: Close-up, cutting off the top of the surgeon's head and the bottom of the patient's back.\nFaces: The surgeon's face is partially obscured by the mask, but their eyes are wide open, looking down at the patient.\nSigns: Two small lines above the scalpel blade suggest a spark or a sharp point.\nEyes and hands: The surgeon's eyes are wide and alert. The right hand holds the scalpel with the thumb and index finger gripping the handle, the other fingers curled around it. The left hand is not visible.\nStrange parts: None apparent."
+    },
+    "checks": {
+      "1": {
+        "must0": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.74,
+          "probabilities": {
+            "shown": 0.79,
+            "other_words": 0.15,
+            "different": 0.06,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.81,
+          "probabilities": {
+            "shown": 0.05,
+            "other_words": 0.85,
+            "different": 0.06,
+            "missing": 0.04,
+            "not_described": 0
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.51,
+          "probabilities": {
+            "shown": 0.61,
+            "other_words": 0.39,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "detail0": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.8,
+          "probabilities": {
+            "shown": 0.05,
+            "other_words": 0.03,
+            "different": 0.01,
+            "missing": 0.07,
+            "not_described": 0.84
+          }
+        },
+        "detail1": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.29,
+          "probabilities": {
+            "shown": 0.05,
+            "other_words": 0.43,
+            "different": 0.1,
+            "missing": 0.09,
+            "not_described": 0.33
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "side",
+          "confidence": 1,
+          "probabilities": {
+            "front": 0,
+            "quarter": 0,
+            "side": 1,
+            "back": 0,
+            "top": 0,
+            "not_shown": 0
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "smaller",
+          "confidence": 1,
+          "probabilities": {
+            "biggest": 0,
+            "smaller": 1,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "close_up",
+          "confidence": 1,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 1,
+            "medium": 0,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.06
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.02
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 1.87,
+          "confidence": 0.82,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.04,
+            "1": 0.04,
+            "2": 0.92
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.93,
+          "confidence": 0.9,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.05,
+            "2": 0.94
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 1,
+          "confidence": 0.98,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.99,
+            "2": 0
+          }
+        }
+      },
+      "2": {
+        "must0": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.94,
+          "probabilities": {
+            "shown": 0.95,
+            "other_words": 0.05,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.59,
+          "probabilities": {
+            "shown": 0.08,
+            "other_words": 0.67,
+            "different": 0.11,
+            "missing": 0.13,
+            "not_described": 0.01
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.8,
+          "probabilities": {
+            "shown": 0.84,
+            "other_words": 0.16,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "detail0": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.76,
+          "probabilities": {
+            "shown": 0.03,
+            "other_words": 0.03,
+            "different": 0.01,
+            "missing": 0.12,
+            "not_described": 0.81
+          }
+        },
+        "detail1": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.42,
+          "probabilities": {
+            "shown": 0.1,
+            "other_words": 0.22,
+            "different": 0.02,
+            "missing": 0.12,
+            "not_described": 0.54
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "quarter",
+          "confidence": 1,
+          "probabilities": {
+            "front": 0,
+            "quarter": 1,
+            "side": 0,
+            "back": 0,
+            "top": 0,
+            "not_shown": 0
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "smaller",
+          "confidence": 0.36,
+          "probabilities": {
+            "biggest": 0.19,
+            "smaller": 0.52,
+            "tiny": 0.28,
+            "not_shown": 0.01
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "close_up",
+          "confidence": 0.64,
+          "probabilities": {
+            "extreme_close_up": 0.27,
+            "close_up": 0.73,
+            "medium": 0,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.2
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 1.72,
+          "confidence": 0.58,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.26,
+            "2": 0.73
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.93,
+          "confidence": 0.88,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.06,
+            "2": 0.9299999999999999
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 0.02,
+          "confidence": 0.97,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0.98,
+            "1": 0.02,
+            "2": 0
+          }
+        }
+      },
+      "3": {
+        "must0": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.92,
+          "probabilities": {
+            "shown": 0.94,
+            "other_words": 0.06,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "missing",
+          "confidence": 0.21,
+          "probabilities": {
+            "shown": 0.04,
+            "other_words": 0.37,
+            "different": 0.21,
+            "missing": 0.37,
+            "not_described": 0.01
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.4,
+          "probabilities": {
+            "shown": 0.52,
+            "other_words": 0.48,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "detail0": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.68,
+          "probabilities": {
+            "shown": 0.05,
+            "other_words": 0.12,
+            "different": 0.03,
+            "missing": 0.06,
+            "not_described": 0.74
+          }
+        },
+        "detail1": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.52,
+          "probabilities": {
+            "shown": 0.02,
+            "other_words": 0.1,
+            "different": 0.05,
+            "missing": 0.21,
+            "not_described": 0.62
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "quarter",
+          "confidence": 0.96,
+          "probabilities": {
+            "front": 0.03,
+            "quarter": 0.97,
+            "side": 0,
+            "back": 0,
+            "top": 0,
+            "not_shown": 0
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "smaller",
+          "confidence": 0.95,
+          "probabilities": {
+            "biggest": 0.04,
+            "smaller": 0.96,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "close_up",
+          "confidence": 1,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 1,
+            "medium": 0,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.13
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.12
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 1.87,
+          "confidence": 0.8,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.09,
+            "2": 0.89
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.47,
+          "confidence": 0.2,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.05,
+            "1": 0.43,
+            "2": 0.52
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 0.75,
+          "confidence": 0.61,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0.26,
+            "1": 0.74,
+            "2": 0
+          }
+        }
+      },
+      "4": {
+        "must0": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.92,
+          "probabilities": {
+            "shown": 0.94,
+            "other_words": 0.06,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.8,
+          "probabilities": {
+            "shown": 0.08,
+            "other_words": 0.84,
+            "different": 0.05,
+            "missing": 0.03,
+            "not_described": 0
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.69,
+          "probabilities": {
+            "shown": 0.2,
+            "other_words": 0.75,
+            "different": 0.01,
+            "missing": 0.04,
+            "not_described": 0
+          }
+        },
+        "detail0": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.91,
+          "probabilities": {
+            "shown": 0.01,
+            "other_words": 0.01,
+            "different": 0,
+            "missing": 0.05,
+            "not_described": 0.93
+          }
+        },
+        "detail1": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.47,
+          "probabilities": {
+            "shown": 0.11,
+            "other_words": 0.58,
+            "different": 0.02,
+            "missing": 0.04,
+            "not_described": 0.25
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "quarter",
+          "confidence": 0.59,
+          "probabilities": {
+            "front": 0.04,
+            "quarter": 0.66,
+            "side": 0,
+            "back": 0,
+            "top": 0.29,
+            "not_shown": 0.01
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "smaller",
+          "confidence": 0.95,
+          "probabilities": {
+            "biggest": 0.04,
+            "smaller": 0.96,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "close_up",
+          "confidence": 0.96,
+          "probabilities": {
+            "extreme_close_up": 0.03,
+            "close_up": 0.97,
+            "medium": 0,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.06
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.02
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 1.36,
+          "confidence": 0.43,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.62,
+            "2": 0.37
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.96,
+          "confidence": 0.93,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.03,
+            "2": 0.96
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 1.17,
+          "confidence": 0.71,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.8099999999999999,
+            "2": 0.18
+          }
+        }
+      },
+      "5": {
+        "must0": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.94,
+          "probabilities": {
+            "shown": 0.95,
+            "other_words": 0.05,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.62,
+          "probabilities": {
+            "shown": 0.08,
+            "other_words": 0.7,
+            "different": 0.09,
+            "missing": 0.13,
+            "not_described": 0
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.81,
+          "probabilities": {
+            "shown": 0.85,
+            "other_words": 0.15,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "detail0": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.37,
+          "probabilities": {
+            "shown": 0.06,
+            "other_words": 0.09,
+            "different": 0.08,
+            "missing": 0.27,
+            "not_described": 0.5
+          }
+        },
+        "detail1": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.49,
+          "probabilities": {
+            "shown": 0.1,
+            "other_words": 0.19,
+            "different": 0.04,
+            "missing": 0.08,
+            "not_described": 0.59
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "side",
+          "confidence": 0.7,
+          "probabilities": {
+            "front": 0,
+            "quarter": 0,
+            "side": 0.75,
+            "back": 0.01,
+            "top": 0.02,
+            "not_shown": 0.22
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "smaller",
+          "confidence": 0.85,
+          "probabilities": {
+            "biggest": 0.11,
+            "smaller": 0.89,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "close_up",
+          "confidence": 0.97,
+          "probabilities": {
+            "extreme_close_up": 0.02,
+            "close_up": 0.98,
+            "medium": 0,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 0,
+          "confidence": 1,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 1,
+            "1": 0,
+            "2": 0
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.87,
+          "confidence": 0.82,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.1,
+            "2": 0.89
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 0.66,
+          "confidence": 0.47,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0.35,
+            "1": 0.65,
+            "2": 0
+          }
+        }
+      },
+      "6": {
+        "must0": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.94,
+          "probabilities": {
+            "shown": 0.95,
+            "other_words": 0.05,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "different",
+          "confidence": 0.2,
+          "probabilities": {
+            "shown": 0.06,
+            "other_words": 0.28,
+            "different": 0.36,
+            "missing": 0.29,
+            "not_described": 0.01
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.42,
+          "probabilities": {
+            "shown": 0.08,
+            "other_words": 0.54,
+            "different": 0.19,
+            "missing": 0.18,
+            "not_described": 0.01
+          }
+        },
+        "detail0": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.73,
+          "probabilities": {
+            "shown": 0.02,
+            "other_words": 0.01,
+            "different": 0.03,
+            "missing": 0.16,
+            "not_described": 0.78
+          }
+        },
+        "detail1": {
+          "type": "choice",
+          "choice": "different",
+          "confidence": 0.16,
+          "probabilities": {
+            "shown": 0.05,
+            "other_words": 0.13,
+            "different": 0.33,
+            "missing": 0.28,
+            "not_described": 0.21
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "quarter",
+          "confidence": 1,
+          "probabilities": {
+            "front": 0,
+            "quarter": 1,
+            "side": 0,
+            "back": 0,
+            "top": 0,
+            "not_shown": 0
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "biggest",
+          "confidence": 1,
+          "probabilities": {
+            "biggest": 1,
+            "smaller": 0,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "medium",
+          "confidence": 1,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 0,
+            "medium": 1,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.11
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 1.19,
+          "confidence": 0.68,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.79,
+            "2": 0.2
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.41,
+          "confidence": 0.11,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.1,
+            "1": 0.39,
+            "2": 0.51
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 1.87,
+          "confidence": 0.8,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0,
+            "1": 0.13,
+            "2": 0.87
+          }
+        }
+      },
+      "7": {
+        "must0": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.92,
+          "probabilities": {
+            "shown": 0.94,
+            "other_words": 0.06,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.26,
+          "probabilities": {
+            "shown": 0.03,
+            "other_words": 0.41,
+            "different": 0.24,
+            "missing": 0.31,
+            "not_described": 0.01
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.79,
+          "probabilities": {
+            "shown": 0.83,
+            "other_words": 0.17,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "detail0": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.74,
+          "probabilities": {
+            "shown": 0.02,
+            "other_words": 0.03,
+            "different": 0.02,
+            "missing": 0.14,
+            "not_described": 0.79
+          }
+        },
+        "detail1": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.34,
+          "probabilities": {
+            "shown": 0.08,
+            "other_words": 0.19,
+            "different": 0.08,
+            "missing": 0.18,
+            "not_described": 0.47000000000000003
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "front",
+          "confidence": 1,
+          "probabilities": {
+            "front": 1,
+            "quarter": 0,
+            "side": 0,
+            "back": 0,
+            "top": 0,
+            "not_shown": 0
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "biggest",
+          "confidence": 0.95,
+          "probabilities": {
+            "biggest": 0.96,
+            "smaller": 0.04,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "close_up",
+          "confidence": 0.96,
+          "probabilities": {
+            "extreme_close_up": 0.03,
+            "close_up": 0.97,
+            "medium": 0,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.08
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.02
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.17
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.04
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 1.92,
+          "confidence": 0.86,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.07,
+            "2": 0.92
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.7,
+          "confidence": 0.55,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.24,
+            "2": 0.73
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 0.04,
+          "confidence": 0.94,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0.96,
+            "1": 0.04,
+            "2": 0
+          }
+        }
+      },
+      "8": {
+        "must0": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.9,
+          "probabilities": {
+            "shown": 0.92,
+            "other_words": 0.08,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.5,
+          "probabilities": {
+            "shown": 0.05,
+            "other_words": 0.6,
+            "different": 0.19,
+            "missing": 0.15,
+            "not_described": 0.01
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.46,
+          "probabilities": {
+            "shown": 0.43,
+            "other_words": 0.57,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "detail0": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.84,
+          "probabilities": {
+            "shown": 0.01,
+            "other_words": 0.02,
+            "different": 0.01,
+            "missing": 0.09,
+            "not_described": 0.87
+          }
+        },
+        "detail1": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.37,
+          "probabilities": {
+            "shown": 0.09,
+            "other_words": 0.24,
+            "different": 0.04,
+            "missing": 0.13,
+            "not_described": 0.5
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "quarter",
+          "confidence": 1,
+          "probabilities": {
+            "front": 0,
+            "quarter": 1,
+            "side": 0,
+            "back": 0,
+            "top": 0,
+            "not_shown": 0
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "smaller",
+          "confidence": 0.43,
+          "probabilities": {
+            "biggest": 0.1,
+            "smaller": 0.57,
+            "tiny": 0.33,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "close_up",
+          "confidence": 0.81,
+          "probabilities": {
+            "extreme_close_up": 0.14,
+            "close_up": 0.86,
+            "medium": 0,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.06
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.18
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 1.38,
+          "confidence": 0.4,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.6,
+            "2": 0.39
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.76,
+          "confidence": 0.66,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.21,
+            "2": 0.78
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 0.05,
+          "confidence": 0.94,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0.96,
+            "1": 0.04,
+            "2": 0
+          }
+        }
+      },
+      "9": {
+        "must0": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.94,
+          "probabilities": {
+            "shown": 0.95,
+            "other_words": 0.05,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "must1": {
+          "type": "choice",
+          "choice": "other_words",
+          "confidence": 0.37,
+          "probabilities": {
+            "shown": 0.01,
+            "other_words": 0.5,
+            "different": 0.27,
+            "missing": 0.22,
+            "not_described": 0
+          }
+        },
+        "must2": {
+          "type": "choice",
+          "choice": "shown",
+          "confidence": 0.79,
+          "probabilities": {
+            "shown": 0.83,
+            "other_words": 0.17,
+            "different": 0,
+            "missing": 0,
+            "not_described": 0
+          }
+        },
+        "detail0": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.54,
+          "probabilities": {
+            "shown": 0.03,
+            "other_words": 0.05,
+            "different": 0.13,
+            "missing": 0.16,
+            "not_described": 0.63
+          }
+        },
+        "detail1": {
+          "type": "choice",
+          "choice": "not_described",
+          "confidence": 0.18,
+          "probabilities": {
+            "shown": 0.08,
+            "other_words": 0.22,
+            "different": 0.12,
+            "missing": 0.24,
+            "not_described": 0.34
+          }
+        },
+        "view": {
+          "type": "choice",
+          "choice": "front",
+          "confidence": 0.58,
+          "probabilities": {
+            "front": 0.65,
+            "quarter": 0.31,
+            "side": 0.01,
+            "back": 0.01,
+            "top": 0.01,
+            "not_shown": 0.01
+          }
+        },
+        "size": {
+          "type": "choice",
+          "choice": "smaller",
+          "confidence": 0.91,
+          "probabilities": {
+            "biggest": 0.07,
+            "smaller": 0.93,
+            "tiny": 0,
+            "not_shown": 0
+          }
+        },
+        "shot": {
+          "type": "choice",
+          "choice": "close_up",
+          "confidence": 1,
+          "probabilities": {
+            "extreme_close_up": 0,
+            "close_up": 1,
+            "medium": 0,
+            "long": 0
+          }
+        },
+        "feeling": {
+          "type": "noul",
+          "noul": 0.28
+        },
+        "apart": {
+          "type": "noul",
+          "noul": 0.05
+        },
+        "eye": {
+          "type": "noul",
+          "noul": 0.03
+        },
+        "hand": {
+          "type": "noul",
+          "noul": 0.11
+        },
+        "part": {
+          "type": "noul",
+          "noul": 0.06
+        },
+        "fit_face": {
+          "type": "score",
+          "score": 1.26,
+          "confidence": 0.58,
+          "legend": {
+            "0": "The main actor's face does not show.",
+            "1": "The face shows, but the feeling is hard to read.",
+            "2": "The face shows clearly, with a feeling that fits the story."
+          },
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.72,
+            "2": 0.27
+          }
+        },
+        "fit_action": {
+          "type": "score",
+          "score": 1.26,
+          "confidence": 0.31,
+          "legend": {
+            "0": "The main action is hard to see.",
+            "1": "The main action shows, but not clearly.",
+            "2": "The main action shows clearly."
+          },
+          "probabilities": {
+            "0": 0.1,
+            "1": 0.54,
+            "2": 0.36
+          }
+        },
+        "fit_scene": {
+          "type": "score",
+          "score": 0.89,
+          "confidence": 0.83,
+          "legend": {
+            "0": "The picture shows only the main actor, with no place and no other actor.",
+            "1": "The picture shows some of the place or the other actors.",
+            "2": "The picture shows the place and the other actors around the action."
+          },
+          "probabilities": {
+            "0": 0.11,
+            "1": 0.89,
+            "2": 0
+          }
+        }
+      }
+    },
+    "ms": 5348,
+    "costUsd": 0,
+    "model": "qwen/qwen3-vl-8b",
+    "at": "2026-10-19T04:35:31.840Z"
+  }
+}

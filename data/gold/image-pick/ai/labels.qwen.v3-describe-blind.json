@@ -1,0 +1,581 @@
+{
+  "G003": {
+    "cells": {
+      "1": "wrong",
+      "2": "weak",
+      "3": "wrong",
+      "4": "wrong",
+      "5": "wrong",
+      "6": "wrong",
+      "7": "weak",
+      "8": "wrong",
+      "9": "wrong"
+    },
+    "notes": {
+      "1": "missing, back",
+      "2": "small, closeup",
+      "3": "missing, action, back, small, unclear",
+      "4": "missing, back",
+      "5": "missing, back, small, closeup",
+      "6": "missing, action, back, feeling, unclear",
+      "7": "small",
+      "8": "missing, action, feeling, unclear",
+      "9": "missing, action, unclear"
+    },
+    "reason": "no cell passed the rules",
+    "points": [
+      "Who: Carl (1 man)",
+      "Who: the cat (1)",
+      "Action: Carl knocks",
+      "Action: the cat tilts its head",
+      "Object: a door (implied)"
+    ],
+    "descriptions": {
+      "1": "People and animals: One person, one cat.\nAction: The person is pressing their fist against the door. The cat is sitting still.\nObjects: Door, doorknob, doormat, shoes, pants, sweater.\nPlace: Inside a house, near an entrance door.\nView: Person: side view. Cat: front view.\nSize: The person is biggest. The cat is small.\nShot: Medium shot. The frame cuts off the bottom of the person's feet and the top of the door.\nFaces: The person's face is turned away. The cat's face is visible, with wide eyes.\nSigns: Spark lines emanate from where the person's fist touches the door.\nEyes and hands: The person's eyes are not visible. The cat's eyes are large and round. The person's hand is a closed fist pressing against the door.\nStrange parts: None.",
+      "2": "People and animals: One person (partial view, arm and hand visible), one cat (full view).\nAction: The person's hand is clenched into a fist and is striking or knocking on a door. The cat is looking up at the hand and the door.\nObjects: A light blue wooden door, a brass-colored doorknob, a person's arm in a yellow sweater, a cat's head and shoulders.\nPlace: No place shown.\nView: The person is viewed from the side, partially. The cat faces the camera front-on.\nSize: The cat appears larger in the frame than the person's visible arm. The person's arm is partially cut off, so the cat appears more prominent.\nShot: Close-up. The frame cuts off the top of the person's head and the bottom of the cat's body.\nFaces: The cat's face shows wide, startled eyes. The person's face is not visible.\nSigns: There are small lines radiating from the point of impact between the fist and the door, suggesting a knock or a sound.\nEyes and hands: The cat has large, round, wide-open eyes. The person's hand is clenched into a fist, with the thumb tucked in and fingers curled.\nStrange parts: None apparent. All parts appear normal.",
+      "3": "People and animals: One person and one cat.\nAction: The person stands with their back to the camera, right hand on the door. The cat sits, head tilted up, looking at the person.\nObjects: A door, a rug, a yellow sweater, grey pants, brown shoes.\nPlace: Inside a house, near a doorway.\nView: The person is viewed from the back. The cat is viewed from the front.\nSize: The cat appears biggest in the picture. The person is far away and appears smaller.\nShot: Medium shot. The frame cuts off the top of the person's head and the bottom of the cat's tail.\nFaces: The person's face is not visible. The cat's face is visible, with wide, alert eyes.\nSigns: No symbols, question marks, sparkles, lines, or text.\nEyes and hands: The cat has large, round, black eyes. The person's right hand is flat against the door. The left hand is not visible.\nStrange parts: No broken or unidentifiable parts.",
+      "4": "People and animals: One person, one cat.\nAction: The person has their right hand raised and is hitting the door. The cat is sitting still.\nObjects: A blue door, a brass doorknob, a brown doormat, a yellow sweater, dark pants.\nPlace: Inside a house, at the front door.\nView: The person is viewed from behind. The cat is viewed from the front.\nSize: The person appears larger due to perspective. The cat is smaller.\nShot: Medium shot, cutting off the top of the person's head and the bottom of the door.\nFaces: The person's face is not visible. The cat's face is visible, with large, round, unblinking eyes.\nSigns: There are small lines near the door indicating a knock or impact.\nEyes and hands: The cat has large, round, unblinking eyes. The person's right hand is a clenched fist, raised to strike the door. The left hand is not visible.\nStrange parts: None.",
+      "5": "People and animals: One person and one animal. The person is a man in a yellow sweater and grey pants. The animal is an orange tabby cat.\nAction: The man has his right hand raised and is knocking on a door. The cat is looking forward, presumably at the man or the door.\nObjects: A light blue door with a brass doorknob, a person's back, a cat's face, and a small portion of a floor visible at the bottom.\nPlace: Inside a house, near a door.\nView: The cat faces the camera directly. The man's back is to the camera.\nSize: The cat appears largest in the frame, occupying the foreground. The man is smaller and farther away.\nShot: Close-up, focusing on the cat's face, with the man's back visible in the background. The frame cuts off the bottom of the man's legs and the floor.\nFaces: The cat's face shows wide, alert eyes. The man's face is not visible.\nSigns: No symbols, text, or question marks.\nEyes and hands: The cat has large, round, black eyes with white highlights. The man's right hand is clenched into a fist, pressing against the doorknob. The left hand is not visible.\nStrange parts: No broken or strange parts visible.",
+      "6": "People and animals: One person, one cat.\nAction: The person has their right hand on a door, fingers spread. The cat sits still, facing the person.\nObjects: A door, a mat on the floor, a yellow sweater.\nPlace: Inside a room, near a door.\nView: The person is seen from the back and side. The cat faces the person, so it's seen from the front.\nSize: The person is biggest. The cat is small.\nShot: Medium shot. The frame cuts off the top of the person's head and the bottom of the cat's body.\nFaces: The cat has wide, surprised eyes. The person's face is not visible.\nSigns: There are three short, vertical lines on the door, suggesting a doorbell or a knock.\nEyes and hands: The cat's eyes are large and round, looking directly at the person. The person's right hand is on the door, fingers spread, not clenched into a fist.\nStrange parts: None.",
+      "7": "People and animals: One animal (a cat) and one person (partially visible).\nAction: The cat sits still, looking up. The person's hand is raised, knocking on the door.\nObjects: A cat, a door, a doormat, a doorknob, a person's arm and hand, a question mark.\nPlace: Inside a house, at the front door.\nView: The cat faces front, slightly turned. The camera looks from the front.\nSize: The cat appears largest. The person is partially shown, so appears smaller or farther away.\nShot: Medium shot. The frame cuts off the person's head and the top of the door.\nFaces: The cat has a confused or curious expression. The person's face is not visible.\nSigns: A question mark appears above the cat's head.\nEyes and hands: The cat's eyes are large and round, looking upward. The person's hand is a clenched fist, knocking on the door.\nStrange parts: None apparent.",
+      "8": "People and animals: One person, one cat.\nAction: The person has a clenched fist raised as if to strike. The cat is sitting still, looking up.\nObjects: A light blue door, a brass doorknob, a brown doormat, a wall.\nPlace: Inside a doorway, near a door.\nView: The person is viewed from the side, facing the cat. The cat is viewed from the front, facing the person.\nSize: The person appears larger due to perspective, though the cat is physically smaller. The cat is closer to the camera.\nShot: Medium shot, cutting off the top of the person's head and the bottom of the cat's paws.\nFaces: The person's face is tense, eyes wide. The cat's face is wide-eyed and startled.\nSigns: Lines above the cat's head indicate shock or fear. Curved lines above the person's fist suggest motion.\nEyes and hands: The person's eyes are wide and focused on the cat. The hand is a clenched fist. The cat's eyes are wide and round, looking up. No hands are visible on the cat.\nStrange parts: None.",
+      "9": "People and animals: One person, one cat.\nAction: The person kneels, reaching out with their right hand toward the cat. The cat sits, facing the person.\nObjects: A light blue door with a brass doorknob, a brown doormat, a yellow sweater, dark pants, a wooden floor.\nPlace: Inside a house, near a door.\nView: The person faces the camera with a slight side angle. The cat faces the person, so its back is mostly to the camera.\nSize: The person appears bigger than the cat. The cat is small and close to the camera.\nShot: Medium shot. The frame cuts off the top of the person's head and the top of the door.\nFaces: The person has a happy, smiling expression. The cat has wide, alert eyes.\nSigns: There are small lines near the person's hand, suggesting a touch or a spark.\nEyes and hands: The person's eyes are wide and smiling. Their right hand is open, fingers slightly curled as if reaching. The left hand is on the floor. The cat's eyes are large and round, looking up at the person. Both hands are visible, and none are broken or strange.\nStrange parts: None. All parts appear normal."
+    },
+    "checks": {
+      "1": {
+        "p": {
+          "missing": 0.81,
+          "count": 0.07,
+          "action": 0.33,
+          "setting": 0.1,
+          "fault": 0.16,
+          "back": 0.65,
+          "small": 0.17,
+          "closeup": 0.17,
+          "apart": 0.15,
+          "feeling": 0.28,
+          "unclear": 0.29
+        },
+        "fit": 0.52
+      },
+      "2": {
+        "p": {
+          "missing": 0.44,
+          "count": 0.04,
+          "action": 0.06,
+          "setting": 0.06,
+          "fault": 0.09,
+          "back": 0.34,
+          "small": 0.87,
+          "closeup": 0.79,
+          "apart": 0.06,
+          "feeling": 0.43,
+          "unclear": 0.09
+        },
+        "fit": 0.62
+      },
+      "3": {
+        "p": {
+          "missing": 0.73,
+          "count": 0.08,
+          "action": 0.74,
+          "setting": 0.13,
+          "fault": 0.09,
+          "back": 0.78,
+          "small": 0.83,
+          "closeup": 0.18,
+          "apart": 0.22,
+          "feeling": 0.19,
+          "unclear": 0.67
+        },
+        "fit": 0.45
+      },
+      "4": {
+        "p": {
+          "missing": 0.66,
+          "count": 0.04,
+          "action": 0.26,
+          "setting": 0.09,
+          "fault": 0.17,
+          "back": 0.95,
+          "small": 0.16,
+          "closeup": 0.16,
+          "apart": 0.13,
+          "feeling": 0.13,
+          "unclear": 0.27
+        },
+        "fit": 0.61
+      },
+      "5": {
+        "p": {
+          "missing": 0.75,
+          "count": 0.07,
+          "action": 0.27,
+          "setting": 0.08,
+          "fault": 0.28,
+          "back": 0.89,
+          "small": 0.82,
+          "closeup": 0.71,
+          "apart": 0.19,
+          "feeling": 0.22,
+          "unclear": 0.25
+        },
+        "fit": 0.51
+      },
+      "6": {
+        "p": {
+          "missing": 0.86,
+          "count": 0.09,
+          "action": 0.82,
+          "setting": 0.17,
+          "fault": 0.4,
+          "back": 0.67,
+          "small": 0.34,
+          "closeup": 0.11,
+          "apart": 0.1,
+          "feeling": 0.61,
+          "unclear": 0.81
+        },
+        "fit": 0.38
+      },
+      "7": {
+        "p": {
+          "missing": 0.25,
+          "count": 0.05,
+          "action": 0.12,
+          "setting": 0.09,
+          "fault": 0.14,
+          "back": 0.32,
+          "small": 0.83,
+          "closeup": 0.23,
+          "apart": 0.09,
+          "feeling": 0.12,
+          "unclear": 0.12
+        },
+        "fit": 1.16
+      },
+      "8": {
+        "p": {
+          "missing": 0.85,
+          "count": 0.08,
+          "action": 0.87,
+          "setting": 0.16,
+          "fault": 0.35,
+          "back": 0.03,
+          "small": 0.38,
+          "closeup": 0.09,
+          "apart": 0.09,
+          "feeling": 0.79,
+          "unclear": 0.82
+        },
+        "fit": 0.65
+      },
+      "9": {
+        "p": {
+          "missing": 0.9,
+          "count": 0.12,
+          "action": 0.95,
+          "setting": 0.18,
+          "fault": 0.06,
+          "back": 0.03,
+          "small": 0.33,
+          "closeup": 0.09,
+          "apart": 0.12,
+          "feeling": 0.47,
+          "unclear": 0.91
+        },
+        "fit": 0.45
+      }
+    },
+    "ms": 160953,
+    "costUsd": 0,
+    "model": "qwen/qwen3-vl-8b",
+    "at": "2026-10-19T04:15:00.837Z"
+  },
+  "G006": {
+    "cells": {
+      "1": "wrong",
+      "2": "best",
+      "3": "wrong",
+      "4": "wrong",
+      "5": "wrong",
+      "6": "wrong",
+      "7": "wrong",
+      "8": "wrong",
+      "9": "wrong"
+    },
+    "notes": {
+      "1": "missing, action, unclear",
+      "2": "fit 1.94",
+      "3": "missing, count, back, closeup",
+      "4": "missing, feeling",
+      "5": "missing, back",
+      "6": "missing, action, unclear",
+      "7": "missing, small",
+      "8": "missing, action, back, small, unclear",
+      "9": "missing"
+    },
+    "reason": "highest fit 1.94",
+    "points": [
+      "Who: He (1 person)",
+      "Who: they (2 or more people)",
+      "Action: He grabs a tab",
+      "Action: they sit unspoken",
+      "Object: a tab"
+    ],
+    "descriptions": {
+      "1": "People and animals: Three people, all human, no animals. Left: a man with spiky brown hair. Center: a woman with brown hair in a bun. Right: a man with curly brown hair, glasses, and a beard.\n\nAction: Left man: extends his right hand, pointing at a yellow slip. Center woman: rests her chin on her right hand, elbow on table. Right man: hands clasped together on the table.\n\nObjects: Three white plates with food remnants, three clear glasses (two full, one empty), a yellow paper slip with \"$42\" printed, a plant visible on the far left.\n\nPlace: A dining table inside a room, likely a restaurant or home dining area.\n\nView: Left man: front view. Center woman: front view. Right man: front view. Camera is at eye level, looking directly at the subjects.\n\nSize: All three people are depicted at similar sizes, appearing to be of comparable height. No one is clearly bigger or smaller than the others.\n\nShot: Medium shot. The frame cuts off the top of the heads and the very bottom of the table and floor.\n\nFaces: Left man: smiling, looking at the bill. Center woman: neutral to slightly amused, looking at the bill. Right man: smiling, looking at the bill.\n\nSigns: A yellow slip of paper with \"$42\" written on it.\n\nEyes and hands: Left man: both eyes wide and looking at the bill. Right hand extended, index finger pointing at the bill. Center woman: both eyes looking at the bill, right hand supporting her chin. Right man: both eyes looking at the bill, hands clasped. All eyes are normal. All hands are normal.\n\nStrange parts: None. All elements appear consistent and normal.",
+      "2": "People and animals: Three people are shown: a man in the foreground, a woman in the middle, and a bearded man on the right. No animals.\n\nAction: The man in the foreground holds out a yellow slip of paper with his right hand. The woman and bearded man are seated and looking forward.\n\nObjects: A yellow slip of paper with \"$42\" written on it, a clear glass, plates (partially visible), and a table.\n\nPlace: No place shown.\n\nView: The camera looks at the people from the front, slightly elevated. The man in the foreground is viewed from a front-quarter angle. The woman is viewed from a front-quarter angle. The bearded man is viewed from a front-quarter angle.\n\nSize: The man in the foreground is the biggest. The woman and bearded man are smaller and appear farther away.\n\nShot: Medium shot. The frame cuts off the top of the people's heads and the table edge.\n\nFaces: The man in the foreground has a smug, self-satisfied expression. The woman has a calm, slightly amused expression. The bearded man has a neutral, perhaps slightly amused expression.\n\nSigns: The text \"$42\" is written on the yellow slip of paper.\n\nEyes and hands: The man's eyes are wide and looking down at the paper. His right hand holds the paper. The woman's eyes are looking up at the man. Her hands are not visible. The bearded man's eyes are looking forward. His hands are not visible.\n\nStrange parts: None.",
+      "3": "People and animals: One person, partially visible, wearing a dark green sleeve. No animals.\nAction: The person’s right hand is holding and placing a yellow slip of paper on a table.\nObjects: A yellow paper slip with \"$42\" printed on it, a clear drinking glass, a white plate with a small amount of green food on it, a table surface.\nPlace: A table, likely in a restaurant or dining setting.\nView: The camera is looking down at the scene from a slightly elevated angle, focusing on the hand and the table.\nSize: The hand and the paper slip are the most prominent objects in the frame. The glass and plate are smaller and slightly farther away.\nShot: Close-up. The frame cuts off the person’s arm above the elbow and the top of the table.\nFaces: No faces are visible.\nSigns: The text \"$42\" is clearly visible on the yellow paper.\nEyes and hands: The hand is visible, with fingers gripping the paper. The thumb is on the left side of the paper, and the index finger is on the right. The other fingers are curled around the paper. The hand appears normal. No eyes are visible.\nStrange parts: No broken or strange parts are visible. The paper has three horizontal lines above the \"$42\", but it is unclear what they represent.",
+      "4": "People and animals: Three people are shown, all human. One man is facing the camera, another is seen from the back, and a third is seen from the side. No animals.\n\nAction: The man facing the camera holds a yellow slip of paper with his right hand. The other two people have their hands out of view or are resting on the table.\n\nObjects: A yellow slip of paper with \"$42\" written on it, a glass of water, a plate with food, chairs, a table, and a white wall in the background.\n\nPlace: The scene is indoors, likely at a restaurant or cafe.\n\nView: The man facing the camera is seen from the front. The person on the left is seen from the back. The person on the right is seen from the side.\n\nSize: The man facing the camera appears largest due to his position and direct gaze. The person on the right appears slightly smaller due to perspective. The person on the left is partially obscured.\n\nShot: Medium shot. The frame cuts off the top of the heads and the floor.\n\nFaces: The man facing the camera has a smiling expression. The other two faces are not visible.\n\nSigns: The text \"$42\" is written on the yellow slip of paper.\n\nEyes and hands: The man facing the camera has large, round eyes and is holding the yellow slip with his right hand. His left hand is not visible. The other people's eyes and hands are not visible.\n\nStrange parts: None. All parts appear normal.",
+      "5": "People and animals: Two people are shown, both human. One is on the left, the other on the right. No animals.\n\nAction: The person on the left has their hands clasped together, elbows on the table, looking up. The person on the right has their hands clasped together, elbows on the table, looking down. The arm extending from above has a hand holding a bill.\n\nObjects: A round table, plates with food remnants and forks, three glasses of water, a yellow bill with \"$42\" written on it, a fork on a plate.\n\nPlace: A dining table, likely in a restaurant or home.\n\nView: The camera looks down from above, showing the top view of the table and the people's heads and upper bodies.\n\nSize: The table is the largest object in the picture. The people are medium-sized. The bill is small.\n\nShot: Medium shot, cutting off the tops of the people's heads and the bottom of the table.\n\nFaces: The faces are not clearly visible, but the person on the left appears to be looking up with a neutral or concerned expression. The person on the right is looking down, so their expression is not visible.\n\nSigns: The text \"$42\" is written on the yellow bill.\n\nEyes and hands: The eyes are not clearly visible. The left person's hands are clasped. The right person's hands are clasped. The hand extending from above is holding the bill.\n\nStrange parts: None.",
+      "6": "People and animals: Three people, all human. A standing man, a seated woman, and a seated bearded man.\nAction: The standing man holds a yellow card up with his right hand. The woman rests her chin on her left hand. The bearded man has his hands clasped together on the table.\nObjects: A yellow card, two glasses of water, two plates with food, a chair, and plants in the background.\nPlace: A dining room or similar indoor setting.\nView: The standing man faces front. The woman faces front, slightly turned. The bearded man faces front. The camera looks from the front, level with the subjects.\nSize: The standing man appears biggest due to his height and position. The seated people are smaller in comparison.\nShot: Medium shot. The frame cuts off the top of the standing man's head and the bottom of the seated people's legs.\nFaces: The standing man has a smiling, confident expression. The woman has a curious, attentive expression. The bearded man has a calm, slightly amused expression.\nSigns: The yellow card has three horizontal lines, possibly indicating a menu or list.\nEyes and hands: The standing man's eyes are wide and looking down at the card. His right hand holds the card. The woman's eyes are wide and looking up at the standing man. Her left hand is supporting her chin. The bearded man's eyes are looking up at the standing man. His hands are clasped together. All eyes and hands appear normal.\nStrange parts: None.",
+      "7": "People and animals: Two people are shown. One is a woman with brown hair in a bun, wearing a green shirt. The other is a person whose only visible part is an arm and hand, wearing a dark blue or green sleeve.\nAction: The woman rests her chin on her hand, looking up at the hand holding the bill. The hand is holding a yellow receipt or bill.\nObjects: A yellow receipt or bill with \"$42\" printed on it, a clear glass of water, a white plate with a small amount of food (possibly broccoli and a spoon), and a table.\nPlace: The scene is indoors, likely at a restaurant or cafe, based on the table, food, and bill.\nView: The woman faces the camera at a three-quarter angle, looking up. The camera appears to be at eye level with her.\nSize: The woman appears to be the biggest subject in the frame. The hand holding the bill is also large in the frame, but the person it belongs to is not visible. The bill is small, and the food on the plate is small.\nShot: Medium close-up. The frame cuts off the top of the woman's head and the bottom of the table and the person's arm.\nFaces: The woman has a slightly surprised or amused expression, with wide eyes and a small smile. The other person's face is not visible.\nSigns: The text \"$42\" is visible on the yellow receipt/bill. There are three horizontal lines above the text, possibly indicating a total or a line item.\nEyes and hands: The woman's eyes are large and round, looking upward. Her left hand is resting under her chin. The hand holding the bill is open, with fingers gripping the top edge of the yellow receipt/bill. The thumb is on the left side of the bill, and the fingers are on the right side, holding it up.\nStrange parts: None. All parts appear normal. The bill is a standard-sized receipt or bill. The woman's hair is in a bun, and her eyes are drawn in a cartoon style. The hand is a normal human hand.",
+      "8": "People and animals: Four people. A man with a beard and glasses sits at a table. A woman with her hair in a bun sits beside him. A man in a teal shirt walks toward the counter. A woman in an apron stands behind the counter.\nAction: The man at the table looks toward the walking man. The bearded man has his hands clasped. The walking man holds a yellow card or ticket in his right hand and gestures with his left. The woman at the counter looks toward the walking man. The seated woman looks toward the walking man.\nObjects: A white tablecloth, a glass of water, a potted plant, a counter, a menu board, a hanging lamp, a small container on the counter, a yellow card or ticket.\nPlace: A cafe or restaurant interior.\nView: The bearded man faces slightly left of center, seen in a three-quarter view. The woman beside him faces slightly left of center, seen in a three-quarter view. The walking man faces right, seen from the back. The woman at the counter faces left, seen in a three-quarter view.\nSize: The walking man appears largest due to his position closer to the camera. The woman at the counter appears smaller due to distance. The seated couple appears medium-sized.\nShot: Medium shot. The frame cuts off the top of the scene and the bottom edge of the floor.\nFaces: The bearded man has a neutral expression. The woman beside him looks attentive. The walking man has a neutral expression. The woman at the counter has a neutral or slightly attentive expression.\nSigns: The menu board has lines of text, but the text is illegible. No other symbols are visible.\nEyes and hands: The bearded man's eyes are open and looking toward the walking man. The woman beside him has her eyes open and looking toward the walking man. The walking man's eyes are open and looking toward the woman at the counter. The woman at the counter has her eyes open and looking toward the walking man. The bearded man's hands are clasped. The woman beside him has her hands resting on her lap. The walking man's right hand holds a yellow card or ticket. His left hand is open and gesturing. The woman at the counter has her hands resting on the counter.\nStrange parts: None. All objects and body parts appear normal.",
+      "9": "People and animals: Two men are shown. One has messy brown hair and is smiling, holding a receipt. The other has a beard, glasses, and is looking at the first man with a slight smile.\nAction: The man on the left holds a yellow receipt with his right hand, fingers curled around it. The man on the right has his hands down by his sides, not visible in action.\nObjects: A yellow receipt with \"$42\" printed on it, and three horizontal lines above the price. The men are wearing shirts.\nPlace: No place shown.\nView: The man on the left faces the camera frontally. The man on the right faces slightly to his left, so the camera sees him in a three-quarter view.\nSize: Both men appear to be the same size, occupying roughly equal space in the frame.\nShot: Medium shot. The frame cuts off just below the men's waists and above their heads.\nFaces: The man on the left has a happy, excited expression. The man on the right has a calm, slightly amused or knowing expression.\nSigns: The text \"$42\" is visible on the receipt. Three horizontal lines are printed above the price.\nEyes and hands: The man on the left has large, round, white eyes with black pupils, looking directly at the viewer. His right hand holds the receipt. The man on the right has round, white eyes with black pupils, looking at the man on the left. His hands are not visible.\nStrange parts: None. All parts appear normal."
+    },
+    "checks": {
+      "1": {
+        "p": {
+          "missing": 0.64,
+          "count": 0.13,
+          "action": 0.75,
+          "setting": 0.09,
+          "fault": 0.07,
+          "back": 0.02,
+          "small": 0.08,
+          "closeup": 0.13,
+          "apart": 0.05,
+          "feeling": 0.47,
+          "unclear": 0.57
+        },
+        "fit": 1.79
+      },
+      "2": {
+        "p": {
+          "missing": 0.45,
+          "count": 0.08,
+          "action": 0.34,
+          "setting": 0.06,
+          "fault": 0.12,
+          "back": 0.02,
+          "small": 0.08,
+          "closeup": 0.24,
+          "apart": 0.08,
+          "feeling": 0.32,
+          "unclear": 0.23
+        },
+        "fit": 1.94
+      },
+      "3": {
+        "p": {
+          "missing": 0.87,
+          "count": 0.92,
+          "action": 0.34,
+          "setting": 0.11,
+          "fault": 0.09,
+          "back": 0.85,
+          "small": 0.22,
+          "closeup": 0.65,
+          "apart": 0.08,
+          "feeling": 0.06,
+          "unclear": 0.33
+        },
+        "fit": 0.24
+      },
+      "4": {
+        "p": {
+          "missing": 0.72,
+          "count": 0.1,
+          "action": 0.26,
+          "setting": 0.1,
+          "fault": 0.28,
+          "back": 0.02,
+          "small": 0.14,
+          "closeup": 0.19,
+          "apart": 0.08,
+          "feeling": 0.5,
+          "unclear": 0.3
+        },
+        "fit": 1.77
+      },
+      "5": {
+        "p": {
+          "missing": 0.52,
+          "count": 0.09,
+          "action": 0.37,
+          "setting": 0.09,
+          "fault": 0.33,
+          "back": 0.9,
+          "small": 0.34,
+          "closeup": 0.18,
+          "apart": 0.09,
+          "feeling": 0.16,
+          "unclear": 0.34
+        },
+        "fit": 0.55
+      },
+      "6": {
+        "p": {
+          "missing": 0.61,
+          "count": 0.22,
+          "action": 0.52,
+          "setting": 0.11,
+          "fault": 0.09,
+          "back": 0.02,
+          "small": 0.23,
+          "closeup": 0.13,
+          "apart": 0.1,
+          "feeling": 0.39,
+          "unclear": 0.6
+        },
+        "fit": 1.45
+      },
+      "7": {
+        "p": {
+          "missing": 0.72,
+          "count": 0.47,
+          "action": 0.33,
+          "setting": 0.11,
+          "fault": 0.15,
+          "back": 0.31,
+          "small": 0.57,
+          "closeup": 0.49,
+          "apart": 0.06,
+          "feeling": 0.33,
+          "unclear": 0.32
+        },
+        "fit": 1.65
+      },
+      "8": {
+        "p": {
+          "missing": 0.7,
+          "count": 0.17,
+          "action": 0.71,
+          "setting": 0.11,
+          "fault": 0.08,
+          "back": 0.62,
+          "small": 0.68,
+          "closeup": 0.12,
+          "apart": 0.28,
+          "feeling": 0.2,
+          "unclear": 0.6
+        },
+        "fit": 1.03
+      },
+      "9": {
+        "p": {
+          "missing": 0.81,
+          "count": 0.17,
+          "action": 0.39,
+          "setting": 0.08,
+          "fault": 0.23,
+          "back": 0.02,
+          "small": 0.11,
+          "closeup": 0.2,
+          "apart": 0.07,
+          "feeling": 0.37,
+          "unclear": 0.43
+        },
+        "fit": 1.29
+      }
+    },
+    "ms": 214287,
+    "costUsd": 0,
+    "model": "qwen/qwen3-vl-8b",
+    "at": "2026-10-19T04:18:37.072Z"
+  },
+  "G010": {
+    "cells": {
+      "1": "wrong",
+      "2": "wrong",
+      "3": "wrong",
+      "4": "wrong",
+      "5": "wrong",
+      "6": "wrong",
+      "7": "wrong",
+      "8": "wrong",
+      "9": "wrong"
+    },
+    "notes": {
+      "1": "missing, action, small, closeup",
+      "2": "missing, small, closeup",
+      "3": "missing, action, small, closeup, unclear",
+      "4": "missing, action, small, closeup, unclear",
+      "5": "missing, small, closeup",
+      "6": "missing, count, action, unclear",
+      "7": "missing, action, closeup",
+      "8": "missing, small, closeup",
+      "9": "missing, action, small, closeup, unclear"
+    },
+    "reason": "no cell passed the rules",
+    "points": [
+      "Who: a surgeon (1 person)",
+      "Action: the bald scalp gleams",
+      "Action: the surgeon's blade cuts precisely",
+      "Object: a bald scalp",
+      "Object: a thin blade"
+    ],
+    "descriptions": {
+      "1": "People and animals: Two people. One is a surgeon in scrubs and cap, leaning over a patient. The other is a patient lying down, bald, with eyes closed.\n\nAction: The surgeon holds a scalpel in their right hand, making a mark on the patient's scalp. Their left hand rests on the patient's head. The patient is lying still with eyes closed.\n\nObjects: Green surgical scrubs, surgical cap, surgical mask, blue scalpel, patient's bare scalp.\n\nPlace: No place shown.\n\nView: Surgeon: side view, camera looks from the side. Patient: side view, camera looks from the side.\n\nSize: The patient is the biggest in the picture. The surgeon is smaller in frame, but appears closer.\n\nShot: Close-up. The frame cuts off the top of the surgeon's head and the bottom of the patient's body.\n\nFaces: Surgeon: focused, intense expression. Patient: calm, unconscious.\n\nSigns: No symbols, question marks, sparks, or text.\n\nEyes and hands: Surgeon's eyes: both open, looking down at the patient's head. Right hand: holds scalpel, fingers curled around the handle. Left hand: fingers spread, resting on the patient's scalp. Patient's eyes: closed. No visible hands on the patient.\n\nStrange parts: None. All body parts and objects appear normal.",
+      "2": "People and animals: One person, a surgeon, is visible. No animals.\nAction: The surgeon holds a scalpel in their right hand, positioning it to make a cut on skin. Their left hand is not visible.\nObjects: A scalpel with a blue handle and silver blade, human skin, surgical cap, surgical mask.\nPlace: No place shown.\nView: The surgeon faces the camera at a quarter angle, looking down at the skin. The camera looks down from above.\nSize: The skin is the biggest element in the frame. The surgeon is smaller and appears farther away.\nShot: Close-up, focusing on the scalpel tip and the skin. The frame cuts off the surgeon's shoulders and the top of the head.\nFaces: The surgeon's face is partially visible, showing focused eyes. The expression is serious and concentrated.\nSigns: No symbols, question marks, sparks, or text.\nEyes and hands: The surgeon's right eye is visible, looking down with a focused gaze. The left eye is partially visible. The right hand holds the scalpel with the index finger and thumb gripping the handle, the blade angled downward toward the skin. The left hand is not visible.\nStrange parts: None. All parts appear normal.",
+      "3": "People and animals: One person, a surgeon, visible from the chest up.\nAction: The surgeon holds a scalpel in their right hand, raised above the patient's body. Their head is tilted slightly downward, looking at the patient.\nObjects: A scalpel, surgical cap, surgical mask, surgical gown, patient's skin (visible as a rounded surface).\nPlace: No place shown.\nView: The camera looks up from below the patient's body, facing the surgeon's face (quarter view from below).\nSize: The patient's body is the biggest visible element, occupying the lower half of the frame. The surgeon is medium-sized.\nShot: Close-up, cutting off the top of the surgeon's head and the upper part of the patient's body.\nFaces: The surgeon's eyes are wide open, looking down with intense focus.\nSigns: No symbols, question marks, or text visible.\nEyes and hands: The surgeon's eyes are wide and alert. The right hand holds the scalpel with the thumb and index finger gripping the handle, the other fingers curled around it. The left hand is not visible.\nStrange parts: No broken or unidentifiable parts. The scalpel is a standard surgical instrument. The patient's body is shown as a smooth, rounded surface without any visible features.",
+      "4": "People and animals: One person, a surgeon, is visible. No animals.\nAction: The surgeon holds a surgical tool in their right hand, making a mark on the patient's scalp. Their left hand holds the patient's head steady. The patient is lying still with eyes closed.\nObjects: Surgical tool (blue handle), surgical cap, surgical mask, gloves, patient's scalp, surgical drapes.\nPlace: Operating room, implied by the setting and attire.\nView: The camera looks down from above, showing the surgeon's face partially and the patient's head from a top-down perspective.\nSize: The patient's head is the largest visible object. The surgeon is partially cropped, appearing smaller in frame.\nShot: Close-up, focusing on the surgeon's hands and the patient's head. The frame cuts off the surgeon's shoulders and the top of the patient's head.\nFaces: The surgeon's face is partially visible, showing concentration. The patient's face is mostly obscured, with eyes closed.\nSigns: A vertical surgical line is drawn on the patient's scalp. No other symbols or text.\nEyes and hands: The surgeon's eyes are narrowed, focused downward. The right hand holds the surgical tool with fingers curled around the handle. The left hand is open, fingers spread to grip the patient's head. No broken or strange hands.\nStrange parts: None apparent. All body parts and objects appear normal and consistent with a surgical scene.",
+      "5": "People and animals: One person, a surgeon, is shown. No animals.\nAction: The surgeon holds a surgical scalpel in their right hand, positioning it to make an incision on a patient's skin. Their left hand is partially visible, supporting or steadying the patient's skin.\nObjects: Surgical scalpel (blue handle, metallic blade), surgical cap, surgical mask (partially visible), patient's skin (smooth, pale).\nPlace: No place shown.\nView: The camera looks from the side, slightly above, focusing on the surgeon's right hand and the patient's skin. The surgeon's face is not visible.\nSize: The patient's skin is the largest visible area. The surgeon's body is partially shown, appearing smaller in frame than the skin. The surgeon's hands are medium-sized in the frame.\nShot: Close-up. The frame cuts off the top of the surgeon's head and the bottom of the patient's body.\nFaces: No faces are visible.\nSigns: No symbols, text, or question marks.\nEyes and hands: The surgeon's eyes are not visible. The right hand holds the scalpel with the index finger and thumb gripping the handle, the blade angled downward toward the skin. The left hand is partially visible, fingers spread to hold the skin taut.\nStrange parts: None. All parts appear normal.",
+      "6": "People and animals: One person, a surgeon, is visible. No animals.\nAction: The surgeon holds a pen-like tool in one hand and gently presses on the patient's forehead with the other hand. The patient is lying still.\nObjects: Surgical cap, surgical mask, surgical gown, gloves, pen-like surgical tool, surgical bed, blue surgical drape, overhead surgical lamp with four bulbs.\nPlace: Operating room.\nView: The surgeon faces slightly to the side, partially toward the camera. The patient faces away from the camera, toward the surgeon.\nSize: The surgeon appears largest, occupying the left and center of the frame. The patient is smaller in comparison, lying down.\nShot: Medium shot. The frame cuts off the bottom of the surgeon's gown and the top of the surgical lamp.\nFaces: The surgeon's face is partially obscured by the mask, but the eyes are visible and focused. The patient's face is relaxed, eyes closed.\nSigns: No symbols, question marks, sparkles, or text.\nEyes and hands: The surgeon's eyes are wide open and focused downward. The right hand holds the tool with the tip touching the patient's forehead. The left hand is open, fingers spread, pressing gently on the patient's forehead. No broken or strange hands or eyes.\nStrange parts: None. All body parts and objects appear normal and consistent with a surgical setting.",
+      "7": "People and animals: One person, a surgeon, visible from the chest up.\nAction: The surgeon holds a scalpel in their right hand, poised to make an incision on the skin below.\nObjects: A surgical mask covering the lower face, a green surgical cap, a scalpel with a blue handle and silver blade, human skin.\nPlace: No place shown.\nView: The surgeon faces the camera directly, looking down at the surgical site.\nSize: The surgeon's face and upper body are the biggest element in the frame. The skin being operated on is large but appears closer to the camera than the surgeon's face.\nShot: Close-up, focusing on the surgeon's eyes and the point of the scalpel on the skin. The frame cuts off the top of the surgeon's head and the bottom of the skin.\nFaces: The surgeon's face shows intense concentration, with furrowed brows and wide, focused eyes.\nSigns: No symbols, question marks, sparkles, or text visible.\nEyes and hands: The surgeon's eyes are wide open, dark, and focused downward. The right hand holds the scalpel with the thumb and index finger gripping the handle, the blade pointing down toward the skin. The left hand is not visible.\nStrange parts: None. All parts appear normal.",
+      "8": "People and animals: One person, a surgeon, partially visible.\nAction: The surgeon holds a scalpel with their right hand, poised to make a cut on skin.\nObjects: A scalpel, surgical mask, surgical cap, skin.\nPlace: No place shown.\nView: The surgeon faces the camera at a quarter angle, looking down at the skin.\nSize: The skin is biggest in the picture; the surgeon is smaller and farther away.\nShot: Close-up, cutting off the top of the surgeon's head and the bottom of the skin.\nFaces: The surgeon's face is partially obscured by the mask, but their eyes show intense focus.\nSigns: A spark symbol appears near the tip of the scalpel.\nEyes and hands: The surgeon's right eye is visible, wide open and focused. Their right hand holds the scalpel with the thumb and index finger gripping the handle, the other fingers curled around it. The left hand is not visible.\nStrange parts: None.",
+      "9": "People and animals: One person, a surgeon, visible from the chest up.\nAction: The surgeon holds a scalpel in their right hand, poised as if about to make a cut.\nObjects: A scalpel with a blue handle and silver blade, surgical cap, surgical mask, surgical gown, and a patient's bare back/shoulder area.\nPlace: No place shown.\nView: The camera looks at the surgeon from a low angle, looking up at them.\nSize: The patient's back is the biggest object in the frame, taking up the bottom half. The surgeon is medium-sized.\nShot: Close-up, cutting off the top of the surgeon's head and the bottom of the patient's back.\nFaces: The surgeon's face is partially obscured by the mask, but their eyes are wide open, looking down at the patient.\nSigns: Two small lines above the scalpel blade suggest a spark or a sharp point.\nEyes and hands: The surgeon's eyes are wide and alert. The right hand holds the scalpel with the thumb and index finger gripping the handle, the other fingers curled around it. The left hand is not visible.\nStrange parts: None apparent."
+    },
+    "checks": {
+      "1": {
+        "p": {
+          "missing": 0.6,
+          "count": 0.33,
+          "action": 0.63,
+          "setting": 0.05,
+          "fault": 0.08,
+          "back": 0.04,
+          "small": 0.78,
+          "closeup": 0.58,
+          "apart": 0.03,
+          "feeling": 0.15,
+          "unclear": 0.45
+        },
+        "fit": 1.32
+      },
+      "2": {
+        "p": {
+          "missing": 0.66,
+          "count": 0.06,
+          "action": 0.35,
+          "setting": 0.04,
+          "fault": 0.12,
+          "back": 0.11,
+          "small": 0.63,
+          "closeup": 0.63,
+          "apart": 0.06,
+          "feeling": 0.07,
+          "unclear": 0.31
+        },
+        "fit": 1
+      },
+      "3": {
+        "p": {
+          "missing": 0.78,
+          "count": 0.26,
+          "action": 0.74,
+          "setting": 0.04,
+          "fault": 0.1,
+          "back": 0.02,
+          "small": 0.7,
+          "closeup": 0.53,
+          "apart": 0.07,
+          "feeling": 0.16,
+          "unclear": 0.53
+        },
+        "fit": 1.1
+      },
+      "4": {
+        "p": {
+          "missing": 0.74,
+          "count": 0.42,
+          "action": 0.75,
+          "setting": 0.1,
+          "fault": 0.06,
+          "back": 0.18,
+          "small": 0.74,
+          "closeup": 0.65,
+          "apart": 0.04,
+          "feeling": 0.1,
+          "unclear": 0.62
+        },
+        "fit": 1.51
+      },
+      "5": {
+        "p": {
+          "missing": 0.73,
+          "count": 0.31,
+          "action": 0.37,
+          "setting": 0.04,
+          "fault": 0.08,
+          "back": 0.45,
+          "small": 0.75,
+          "closeup": 0.63,
+          "apart": 0.04,
+          "feeling": 0.04,
+          "unclear": 0.29
+        },
+        "fit": 0.2
+      },
+      "6": {
+        "p": {
+          "missing": 0.88,
+          "count": 0.54,
+          "action": 0.89,
+          "setting": 0.11,
+          "fault": 0.05,
+          "back": 0.04,
+          "small": 0.17,
+          "closeup": 0.11,
+          "apart": 0.07,
+          "feeling": 0.26,
+          "unclear": 0.86
+        },
+        "fit": 0.73
+      },
+      "7": {
+        "p": {
+          "missing": 0.75,
+          "count": 0.1,
+          "action": 0.5,
+          "setting": 0.04,
+          "fault": 0.09,
+          "back": 0.02,
+          "small": 0.23,
+          "closeup": 0.54,
+          "apart": 0.05,
+          "feeling": 0.11,
+          "unclear": 0.4
+        },
+        "fit": 1
+      },
+      "8": {
+        "p": {
+          "missing": 0.69,
+          "count": 0.09,
+          "action": 0.42,
+          "setting": 0.04,
+          "fault": 0.14,
+          "back": 0.03,
+          "small": 0.69,
+          "closeup": 0.64,
+          "apart": 0.06,
+          "feeling": 0.09,
+          "unclear": 0.33
+        },
+        "fit": 1.46
+      },
+      "9": {
+        "p": {
+          "missing": 0.84,
+          "count": 0.35,
+          "action": 0.78,
+          "setting": 0.04,
+          "fault": 0.21,
+          "back": 0.06,
+          "small": 0.67,
+          "closeup": 0.54,
+          "apart": 0.09,
+          "feeling": 0.2,
+          "unclear": 0.58
+        },
+        "fit": 0.86
+      }
+    },
+    "ms": 177364,
+    "costUsd": 0,
+    "model": "qwen/qwen3-vl-8b",
+    "at": "2026-10-19T04:21:36.657Z"
+  }
+}

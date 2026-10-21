@@ -54,8 +54,17 @@ function definedOnly(env) {
   return Object.fromEntries(Object.entries(env).filter(([, v]) => v !== undefined && v !== ""));
 }
 
-// A yes/no question (the SDK's `noul()` without criteria).
-const noul = (instructions) => ({ type: "noul", instructions });
+// A yes/no question (the SDK's `noul()`); `criteria`, if given, is `{ yes, no }`:
+// what each answer means.
+const noul = (instructions, criteria) => (criteria ? { type: "noul", instructions, criteria } : { type: "noul", instructions });
+
+// A question that picks one of a set of unordered options (the SDK's
+// `choice()`): `options` maps each option's name to its description. Jev
+// answers `{ choice, probabilities: { <option>: p }, confidence }`.
+function choice(instructions, options) {
+  if (!options || typeof options !== "object" || Object.keys(options).length < 2) throw new JevError("choice options must name at least two options");
+  return { type: "choice", instructions, criteria: options };
+}
 
 // A question scored over an ordered rubric (the SDK's `score()`): `levels`
 // are the descriptions indexed from 0. Jev answers `{ score: <expected
@@ -99,4 +108,4 @@ async function systemOne({ state, questions }, { config: cfg = config(), fetch: 
   return body.answers;
 }
 
-module.exports = { config, systemOne, noul, score, JevError };
+module.exports = { config, systemOne, noul, score, choice, JevError };
