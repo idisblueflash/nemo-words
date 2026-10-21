@@ -102,6 +102,14 @@ user or `scripts/find-mnemonic.js` — `_vivian` never writes them. House
 style is fixed (brush-pen comic line art + light gouache); see ADR-0008
 and ADR-0009 in `docs/decisions/`.
 
+## Image-pick gold set
+
+Flash's hand labels for _vivian's grids (best / ok / weak / wrong per cell) live in
+`data/gold/image-pick/`, and a picker is scored against them. `/gold-image-pick` starts
+the labeling page (`node scripts/gold-image-pick.js` → `http://localhost:8791`);
+`/gold-image-pick report` prints the counts and agreement. AI labels for the same grids
+come from `scripts/gold-image-pick-ai.js`. See `data/gold/image-pick/README.md`.
+
 ## The word / mnemonic agents
 
 The recurring task here is **explaining a word and saving it** — a plain-language
