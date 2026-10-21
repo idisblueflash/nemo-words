@@ -1,0 +1,292 @@
+{
+  "G001": {
+    "cells": {
+      "1": "ok",
+      "2": "ok",
+      "3": "ok",
+      "4": "weak",
+      "5": "best",
+      "6": "ok",
+      "7": "ok",
+      "8": "weak",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "She reaches for the broom in the corner, matching the first part of the sentence.",
+      "2": "She grabs the broom handle, showing the action of taking it.",
+      "3": "She pulls the broom from the corner, continuing the action.",
+      "4": "She is pulling the broom away, but the action is not clearly 'grabbing' as per the sentence.",
+      "5": "She is firmly gripping the broom handle, clearly showing the 'grab' action. The camera angle is good, showing her face and the broom clearly.",
+      "6": "She is holding the broom, but the action is more about holding than grabbing.",
+      "7": "She is reaching for the broom, but the broom is not yet grabbed.",
+      "8": "She is holding the broom, but the action is more about sweeping than grabbing.",
+      "9": "She is actively sweeping, which is the result of grabbing the broom, but the sentence is about grabbing, not sweeping."
+    },
+    "reason": "Cell 5 is the best because it clearly shows the woman grabbing the broom handle with a firm grip, matching the action in the sentence. Other cells show actions that are either incomplete (like cell 1, 7) or show the result (sweeping in cell 9) rather than the specific 'grab' action.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 36520,
+    "costUsd": 0,
+    "at": "2026-10-19T01:59:32.912Z"
+  },
+  "G002": {
+    "cells": {
+      "1": "ok",
+      "2": "ok",
+      "3": "weak",
+      "4": "weak",
+      "5": "best",
+      "6": "ok",
+      "7": "weak",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "Shows the man at the end of the pier, but the perspective is distant, making the 'eon of peace' feel abstract, not the end.",
+      "2": "Close-up of the man looking out, showing contemplation, which fits the 'stretch' of peace.",
+      "3": "Back view hides the face and emotion, making it hard to read the 'end' of the peace.",
+      "4": "Extreme close-up on the man's head, cutting off the pier and the setting, hiding the 'end' of the peace.",
+      "5": "The man is shown in a clear three-quarter view, looking out thoughtfully. The pier stretches into the distance, visually representing the 'eon of peace' that then ends with the man turning away or the perspective shifting. This cell best captures the transition from stretch to end.",
+      "6": "The man walks away from the viewer, suggesting the end of the peace, but the perspective is from behind, making the action less clear.",
+      "7": "The man is shown from the side, but his back is to the viewer, hiding the action of the 'end' of the peace.",
+      "8": "The man walks toward the viewer, which could represent the end of the peace, but the action is not as clear as in cell 5.",
+      "9": "The man stands at the end of the pier, looking out, which fits the 'stretch' of peace, but the 'end' is not visually clear."
+    },
+    "reason": "Cell 5 is the best because it shows the man in a clear three-quarter view, looking out thoughtfully, with the pier stretching into the distance. This visually represents the 'eon of peace' stretching, and the man's posture suggests the moment it ends. Other cells either hide the face, show the action from the wrong angle, or lack the clear transition from stretch to end.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 42141,
+    "costUsd": 0,
+    "at": "2026-10-19T02:00:15.071Z"
+  },
+  "G003": {
+    "cells": {
+      "1": "ok",
+      "2": "ok",
+      "3": "ok",
+      "4": "ok",
+      "5": "best",
+      "6": "ok",
+      "7": "ok",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "Carl knocks, cat looks on. Action is clear, but cat's head is not tilted.",
+      "2": "Close-up on cat's face as Carl knocks. Action is clear, but cat's head is not tilted.",
+      "3": "Carl knocks, cat looks up. Action is clear, but cat's head is not tilted.",
+      "4": "Carl knocks, cat looks on. Action is clear, but cat's head is not tilted.",
+      "5": "Close-up on cat's face, head tilted slightly, as Carl knocks. Best match for 'tilted its head'.",
+      "6": "Carl knocks, cat looks on. Action is clear, but cat's head is not tilted.",
+      "7": "Carl knocks, cat looks puzzled with a question mark. Action is clear, but cat's head is not tilted.",
+      "8": "Carl knocks, cat looks on. Action is clear, but cat's head is not tilted.",
+      "9": "Carl stops knocking, cat looks up. Action is clear, but cat's head is not tilted."
+    },
+    "reason": "Cell 5 is the best because it shows Carl knocking and the cat with its head tilted, matching the story exactly. Other cells show the action (knocking) but lack the 'tilted head' detail, making them less precise.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 35770,
+    "costUsd": 0,
+    "at": "2026-10-19T02:00:50.862Z"
+  },
+  "G004": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "ok",
+      "4": "weak",
+      "5": "weak",
+      "6": "weak",
+      "7": "weak",
+      "8": "weak",
+      "9": "wrong"
+    },
+    "notes": {
+      "1": "Clear three-quarter view of the wig-wearing clerk stuffing ballots into the box. The action is complete and the main actor is fully visible.",
+      "2": "Good action shot, but the clerk's face shows confusion, not matching the neutral 'stuffing' action of the sentence.",
+      "3": "Side view, action is clear, but we don't see the clerk's face or full context of stuffing.",
+      "4": "The clerk is shown with an angry expression, which is not in the neutral sentence. The action is clear.",
+      "5": "Close-up on the ballot with a checkmark, but the clerk's face is not visible, and the action is partially obscured.",
+      "6": "The clerk is shown from the side, looking away, so the action of stuffing is not the focus.",
+      "7": "The clerk is shown with a stern expression, and the action is partially obscured by the ballot box.",
+      "8": "The clerk is shown from a side angle, and the action of stuffing is not fully clear.",
+      "9": "The clerk is shown opening the box, which is the opposite of 'stuffing'. The action is incorrect."
+    },
+    "reason": "Cell 1 is the best because it shows the wig-wearing clerk clearly stuffing ballots into the box, matching the sentence's action and actor. Cell 9 is wrong because it shows the clerk opening the box, which contradicts 'stuffing'.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 37685,
+    "costUsd": 0,
+    "at": "2026-10-19T02:01:28.579Z"
+  },
+  "G005": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "ok",
+      "4": "weak",
+      "5": "best",
+      "6": "best",
+      "7": "weak",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "Clear shot of surgeon with headlamp on, power surge symbol (zigzag) visible, and she is operating. Perfectly matches the story's key elements: power surge, dark OR, and headlamp operation.",
+      "2": "Shows the OR dark, surgeon operating by headlamp, but the power surge symbol is missing. Still acceptable as it shows the core action.",
+      "3": "Close-up of surgeon's face with headlamp, showing focus. Lacks the power surge visual, but the action is clear.",
+      "4": "View from behind the surgeon; we cannot see her face or the action clearly. The power surge is not shown.",
+      "5": "Overhead shot showing surgeon operating with headlamp, power surge symbol visible. The action and setting are clear, and the headlamp is central to the story.",
+      "6": "Extreme close-up of surgeon's face with headlamp on, showing intense focus. The power surge is implied by the context of the story and the headlamp being the only light source.",
+      "7": "Surgeon with headlamp, power surge symbol visible. However, the camera angle is too low, and the OR setting is not fully visible, making the scene feel less complete.",
+      "8": "Surgeon operating with headlamp, and another person's hand is visible offering a tool. The power surge is not shown, but the action is clear.",
+      "9": "Surgeon operating with headlamp, power surge symbol visible. The OR setting is clear, but the camera angle is slightly too far, making the action feel less immediate."
+    },
+    "reason": "Cell 1 is the best because it clearly shows the power surge (zigzag), the OR is dark, and the surgeon is operating by headlamp. Cell 5 is also 'best' as it shows the surgeon operating with the headlamp and the power surge symbol, but cell 1 is more direct in showing the power surge visually. Cell 6 is also 'best' as it shows the surgeon's focused expression with the headlamp on, which is key to the story, but cell 1 is superior because it includes the power surge visual, which is a key part of the story.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 46353,
+    "costUsd": 0,
+    "at": "2026-10-19T02:02:14.951Z"
+  },
+  "G006": {
+    "cells": {
+      "1": "ok",
+      "2": "best",
+      "3": "ok",
+      "4": "ok",
+      "5": "weak",
+      "6": "ok",
+      "7": "weak",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "The man holds the tab, and the others are seated. The action is clear, though the camera is slightly behind, not showing the full face.",
+      "2": "The man holds the tab up, clearly showing the $42, and the two others are visible. This is the clearest moment of 'He grabs the tab' with the group context. The action is unambiguous and the main actor is in a three-quarter view.",
+      "3": "Close-up of the tab being placed. The action is clear, but the context of 'they sit unspoken' is not shown. It's a good shot for the tab, but lacks the group.",
+      "4": "The man is placing the tab, and the others are seated. The camera is from behind, so we don't see the full faces, but the action is clear.",
+      "5": "Overhead shot. The action is clear (placing the tab), but the camera angle hides the faces and the full context of the group. The 'unspoken' part is implied but not visually confirmed.",
+      "6": "The man holds the tab up to the group. The action is clear, and the group is visible. The camera is slightly from the side, showing the man's face and the others' reactions.",
+      "7": "Close-up on the woman's face. The action (grabbing the tab) is not shown. The story is about the man's action, not her reaction. This is a weak choice for the main action.",
+      "8": "The man walks to the counter with the tab, and the two others are seated at the table. This shows the action and the context. The camera is at a medium distance, showing the scene clearly.",
+      "9": "Close-up of the man and the bearded man. The man holds the tab, and the bearded man looks at him. The action is clear, and the feeling is neutral, matching 'unspoken'."
+    },
+    "reason": "Cell 2 is the best because it shows the man clearly holding the tab ($42) with the full context of the two others seated at the table. The action is unambiguous, and the main actor is in a three-quarter view, making it the clearest depiction of 'He grabs the tab' for the story. Cell 8 is also strong, showing the action and context, but it's a bit more distant. Cell 2 is superior because it captures the moment of the tab being presented to the group, which is the core of the story.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 49982,
+    "costUsd": 0,
+    "at": "2026-10-19T02:03:04.957Z"
+  },
+  "G007": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "ok",
+      "4": "weak",
+      "5": "weak",
+      "6": "weak",
+      "7": "ok",
+      "8": "best",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "Clear shot: boss smiles and throws keys to Tom. Action and emotion match the story perfectly.",
+      "2": "Close-up on boss's face, smiling, but Tom is not visible. Action is implied but less direct than cell 1.",
+      "3": "Tom reaches up, boss throws keys. Good action, but boss's face is not visible, reducing emotional impact.",
+      "4": "Tom's back is to viewer; we can't see his reaction. Boss is partially visible, but action is unclear.",
+      "5": "Overhead view; boss is visible but Tom's face is hidden. The key throw is clear, but the emotional connection is lost.",
+      "6": "Extreme close-up on keys; actors are out of frame. The action is implied but not shown clearly.",
+      "7": "Boss hands keys to Tom. Action is clear, but it's a handover, not a 'throw' as in the story.",
+      "8": "Boss smiles as Tom catches the keys. The action is a throw, and the emotion is joyful. This is a strong contender, but cell 1 is better because it shows the initial throw, which is more dynamic.",
+      "9": "Boss throws keys from a distance; Tom reaches. The action is clear, but the throw is not as direct as in cell 1."
+    },
+    "reason": "Cell 1 is the best because it shows the boss smiling and actively throwing the keys to Tom, matching the story's action and emotion perfectly. Cell 8 is also strong, but it shows Tom catching the keys, which is a slightly different moment in the sequence. Cell 1 captures the beginning of the throw, making it more dynamic and aligned with the story's phrasing 'lightly throws him the keys'.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 41490,
+    "costUsd": 0,
+    "at": "2026-10-19T02:03:46.475Z"
+  },
+  "G008": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "weak",
+      "4": "weak",
+      "5": "best",
+      "6": "ok",
+      "7": "ok",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "Clear full shot: man tripping on sidewalk, woman watching with surprise. Action and emotion match the story perfectly.",
+      "2": "Close-up of man falling, woman's reaction visible. Good action, but less context than cell 1.",
+      "3": "Back view of woman, man running away. Action is clear, but we don't see the woman's reaction or the full context of the fall.",
+      "4": "Low angle, man falling, woman looking down. The action is visible, but the woman's reaction is less clear and the camera angle hides the full scene.",
+      "5": "Close-up of man's face showing panic, woman's shocked face visible. Emotion and action are both clear and match the story.",
+      "6": "Man tripping, woman watching. The action is clear, but the camera is slightly off-center, making the woman's reaction less prominent.",
+      "7": "Man tripping, woman watching. The action is clear, but the camera is slightly off-center, making the woman's reaction less prominent.",
+      "8": "Man tripping, woman watching. The action is clear, but the camera is slightly off-center, making the woman's reaction less prominent.",
+      "9": "Close-up of woman's face, she is smiling. The action (man tripping) is not visible, so it's not the best for the story."
+    },
+    "reason": "Cell 1 is the best because it shows the man tripping clearly on the sidewalk, with the woman watching in surprise, matching the story perfectly. Cell 5 is also strong, showing the man's panic and the woman's shock, but cell 1 provides more context of the action. The other cells are either 'ok' or 'weak' because they lack the full context or clear action.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 41805,
+    "costUsd": 0,
+    "at": "2026-10-19T02:04:28.310Z"
+  },
+  "G009": {
+    "cells": {
+      "1": "ok",
+      "2": "ok",
+      "3": "ok",
+      "4": "weak",
+      "5": "best",
+      "6": "ok",
+      "7": "ok",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "Judge laughs, magician shows card — action clear, but not the best shot.",
+      "2": "Close-up of card and judge's joyful face — good action, but not the most complete scene.",
+      "3": "Extreme close-up of card, judge's face is out of frame — action is clear but incomplete.",
+      "4": "Judge's back to viewer, action unclear — we don't see the card or the judge's reaction.",
+      "5": "Magician drops card on table, judge reacts with surprise — perfect action, clear emotion, and full context.",
+      "6": "Magician shows card to judge, judge looks surprised — good, but less dynamic than cell 5.",
+      "7": "Magician throws card, judge reacts — action is clear, but the throw is not as central as in cell 5.",
+      "8": "Magician holds card near judge, judge laughs — good, but less dramatic than cell 5.",
+      "9": "Magician stands far from judge, card is small — action is visible but lacks intimacy."
+    },
+    "reason": "Cell 5 is the best because it shows the magician dropping the card on the table, and the judge reacting with surprise — this is the core action of the trick being performed, and the judge's expression clearly shows the 'charm' mentioned in the story. It is more dynamic and complete than the others, which either show the card being held, are too close-up, or lack the full action.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 38068,
+    "costUsd": 0,
+    "at": "2026-10-19T02:05:06.407Z"
+  },
+  "G010": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "ok",
+      "4": "ok",
+      "5": "weak",
+      "6": "ok",
+      "7": "ok",
+      "8": "weak",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "The surgeon's blade is clearly cutting the scalp, and the bald scalp gleams under the light. The action and setting match the story perfectly.",
+      "2": "Close-up of the blade cutting, but the scalp's gleam is not visible. Still, the action is clear.",
+      "3": "Surgeon holds blade ready to cut; the scalp gleams, but the action is not yet in progress.",
+      "4": "Surgeon is cutting a line down the middle of the scalp; the gleam is visible, but the focus is on the action, not the gleam.",
+      "5": "Close-up on the blade and scalp, but the surgeon's face is not visible, and the gleam is implied, not shown.",
+      "6": "Surgeon is cutting the scalp; the operating room setting is visible, and the scalp gleams under the lights.",
+      "7": "Extreme close-up of the surgeon's eyes and the blade; the scalp gleam is implied but not clearly shown.",
+      "8": "The blade is shown cutting, but the scalp's gleam is not visible. The camera angle hides the key visual element.",
+      "9": "Surgeon holds blade, ready to cut; the scalp gleams, but the action is not yet happening."
+    },
+    "reason": "Cell 1 is the best because it clearly shows both the bald scalp gleaming and the surgeon's blade cutting precisely, matching the story sentence exactly. Other cells are 'ok' or 'weak' because they either lack the gleam, show the action without the gleam, or are too close-up to show the full context.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 39959,
+    "costUsd": 0,
+    "at": "2026-10-19T02:05:46.397Z"
+  }
+}

@@ -1,0 +1,584 @@
+{
+  "G003": {
+    "cells": {
+      "1": "ok",
+      "2": "weak",
+      "3": "wrong",
+      "4": "weak",
+      "5": "wrong",
+      "6": "weak",
+      "7": "wrong",
+      "8": "wrong",
+      "9": "best"
+    },
+    "notes": {
+      "1": "fit 1.08",
+      "2": "closeup",
+      "3": "missing, action, back, small",
+      "4": "back",
+      "5": "missing, action, back, small, closeup",
+      "6": "back",
+      "7": "missing, small",
+      "8": "missing, action, unclear",
+      "9": "fit 1.78"
+    },
+    "reason": "highest fit 1.78 vs cell 1 1.08",
+    "points": [
+      "Carl (1 actor)",
+      "Cat (1 actor)",
+      "Carl knocked",
+      "Cat tilted its head",
+      "Cat",
+      "Door (implied by knocking)"
+    ],
+    "descriptions": {
+      "1": "People and animals: One person, one cat.\nAction: The person leans forward, right hand raised to knock on the door. The cat sits still, head tilted up toward the person.\nObjects: Door, doorknob, doormat, floor tiles, wall.\nPlace: Inside a house, at an interior door.\nView: Person: side view. Cat: front view. Camera: level with the subjects.\nSize: The person is biggest. The cat is small.\nShot: Medium shot. Frame cuts off the top of the person's head and the bottom of the door.\nFaces: The person's face is turned away. The cat's face is visible, with wide eyes.\nSigns: Spark lines indicate a knock on the door.\nEyes and hands: Person's eyes are not visible. Cat's eyes are large and round. Person's right hand is clenched in a fist, touching the door.\nStrange parts: Not shown.\nStory points:\n- Carl (1 actor): Standing, leaning forward, right fist raised to knock on the door.\n- Cat (1 actor): Sitting upright, head tilted upward, looking at the person.\n- Carl knocked: Right fist clenched and pressed against the door, with spark lines indicating impact.\n- Cat tilted its head: Head angled upward, looking at the person.\n- Cat: Sitting on a doormat, facing the person.\n- Door (implied by knocking): Light blue, with a brass doorknob visible.",
+      "2": "People and animals: One person (Carl) and one cat.\nAction: Carl's hand is knocking on a door; the cat is looking up at the hand.\nObjects: A person's arm and hand, a cat's head, a door, a doorknob.\nPlace: No place shown.\nView: The person is viewed from the side; the cat is viewed from the front.\nSize: The person's arm is biggest; the cat is small.\nShot: Close-up, cutting off the person's head and the top of the door.\nFaces: The cat's face shows wide-eyed surprise or curiosity.\nSigns: Lines radiate from the point of impact, indicating a knock.\nEyes and hands: The cat has large, round, black eyes. Carl's hand is a clenched fist.\nStrange parts: Not shown.\nStory points:\n- Carl (1 actor): A person's arm and hand are shown, with the hand clenched into a fist and striking the door.\n- Cat (1 actor): The cat's head is shown, tilted slightly upward, looking at the hand.\n- Carl knocked: The person's fist is shown making contact with the door, with impact lines indicating the action.\n- Cat tilted its head: The cat's head is angled upward, looking at the hand.\n- Cat: The cat's head is shown, with large, round, black eyes and a small pink nose.\n- Door (implied by knocking): The door is shown as a surface being knocked on, with a doorknob visible.",
+      "3": "People and animals: One person and one cat.\nAction: The person stands with their back to the camera, right hand on the door. The cat sits facing forward, head tilted.\nObjects: A person, a cat, a door, a rug, a floor.\nPlace: Inside a house, near a door.\nView: The person is viewed from the back. The cat is viewed from the front.\nSize: The cat appears largest in the frame. The person is farther away and appears smaller.\nShot: Medium shot. The frame cuts off the top of the person's head and the top of the door.\nFaces: The person's face is not visible. The cat's face is visible, with large, wide eyes.\nSigns: No symbols or text.\nEyes and hands: The cat has large, round, black eyes. The person's hands are not clearly visible except the right hand on the door.\nStrange parts: No broken or strange parts visible.\nStory points:\n- Carl (1 actor): Standing with back to camera, right hand on door.\n- Cat (1 actor): Sitting, head tilted to the side, facing forward.\n- Carl knocked: Not shown, but implied by hand on door.\n- Cat tilted its head: Yes, head is tilted to the side.\n- Cat: Sitting, facing forward, head tilted.\n- Door (implied by knocking): Not shown, but implied by Carl's action.",
+      "4": "People and animals: one person, one cat.\nAction: person raises right fist to knock; cat sits still.\nObjects: door, doorknob, doormat, sweater, pants.\nPlace: inside a house, at a door.\nView: person seen from back; cat seen from front.\nSize: person appears biggest; cat appears small.\nShot: medium shot, frame cuts off top of person's head and bottom of door.\nFaces: not shown.\nSigns: not shown.\nEyes and hands: cat has large round eyes; person's right hand is a clenched fist.\nStrange parts: not shown.\nStory points:\n- Carl (1 actor): seen from back, raising right fist to knock.\n- Cat (1 actor): sitting, facing forward, head tilted slightly to the side.\n- Carl knocked: right fist raised and poised to strike the door.\n- Cat tilted its head: head angled slightly to the right, looking up at the person.\n- Cat: sitting upright on a doormat, facing forward.\n- Door (implied by knocking): light blue, with a brass doorknob visible.",
+      "5": "People and animals: One person (Carl) and one cat.\nAction: Carl has his right hand on the doorknob, body facing the door. The cat is stationary, head tilted.\nObjects: A light blue door with a brass doorknob, a person wearing a yellow sweater and grey pants, a fluffy orange and white cat.\nPlace: Inside a room, near a door.\nView: The cat faces the camera front-on. Carl's back is to the camera.\nSize: The cat is biggest in the picture. Carl is far away and appears smaller.\nShot: Close-up on the cat, with Carl visible in the background. The frame cuts off the bottom of Carl's legs and the top of the door.\nFaces: The cat has wide, alert eyes. Carl's face is not visible.\nSigns: No symbols or text.\nEyes and hands: The cat has large, round, black eyes. Carl's right hand is gripping the doorknob.\nStrange parts: None apparent.\nStory points:\n- Carl (1 actor): Standing with his back to the camera, right hand on the doorknob, body facing the door.\n- Cat (1 actor): Head tilted to its right, facing the camera front-on.\n- Carl knocked: Not shown, but implied by hand on doorknob.\n- Cat tilted its head: Yes, head is tilted to the right.\n- Cat: Not shown, but implied by the cat's position and expression.\n- Door (implied by knocking): Not shown, but implied by Carl's action.",
+      "6": "People and animals: One person (Carl) and one cat.\nAction: Carl has his right hand on a door, as if knocking. The cat sits still, facing Carl.\nObjects: A door, a mat on the floor, a yellow sweater worn by Carl.\nPlace: Inside a house, near a door.\nView: Carl is seen from the back and side. The cat is seen from the front.\nSize: Carl is biggest, the cat is small.\nShot: Medium shot, cutting off the top of Carl's head and the bottom of the cat's body.\nFaces: Carl's face is not visible. The cat has wide, alert eyes.\nSigns: Two short, diagonal lines near the door suggest a knock or sound.\nEyes and hands: The cat's eyes are large and round, looking directly at Carl. Carl's hand is clenched into a fist on the door.\nStrange parts: Not shown.\nStory points:\n- Carl (1 actor): Seen from the back, wearing a yellow sweater, with his right hand clenched into a fist on a door.\n- Cat (1 actor): Sitting upright on a mat, facing Carl, with large, round eyes looking directly at him.\n- Carl knocked: His right hand is clenched into a fist and pressed against the door, implying a knock.\n- Cat tilted its head: The cat's head is slightly tilted to its right, looking at Carl.\n- Cat: Sitting upright, facing Carl, with large, round eyes.\n- Door (implied by knocking): The door is implied by Carl's hand on it, though not fully visible.",
+      "7": "People and animals: One person (partially shown) and one cat.\nAction: The person's hand is raised and appears to be knocking on a door. The cat is sitting still, looking up.\nObjects: A cat, a person's arm and hand, a door, a doormat, a doorknob.\nPlace: Inside a house, at the front door.\nView: The cat faces front, slightly turned. The person is seen from the side. The camera looks from the front.\nSize: The cat appears largest in the frame. The person is partially shown, so size is less clear, but appears larger than the cat. The door is far away, so appears smaller.\nShot: Medium shot. The frame cuts off the person's head and the top of the door.\nFaces: The cat has a confused or curious expression. The person's face is not visible.\nSigns: A question mark appears above the cat's head.\nEyes and hands: The cat's eyes are large and round, looking upward. The person's hand is clenched into a fist, raised to knock.\nStrange parts: Not shown.\nStory points:\n- Carl (1 actor): Not shown, only the arm and hand are visible.\n- Cat (1 actor): Sitting upright on a doormat, head tilted slightly upward, looking at the person's hand.\n- Carl knocked: The person's hand is raised, clenched into a fist, positioned to strike the door.\n- Cat tilted its head: The cat's head is tilted slightly to its right, looking upward.\n- Cat: Sitting upright, front paws on the doormat, body facing forward.\n- Door (implied by knocking): The door is visible, with a doorknob, and the person's hand is positioned to knock on it.",
+      "8": "People and animals: One person (Carl) and one cat.\nAction: Carl raises his right fist toward the cat; the cat sits still, looking up at Carl.\nObjects: A light blue door with a brass doorknob, a brown doormat, and a beige wall.\nPlace: Inside a house, near a door.\nView: Carl is shown in profile, facing left, with the camera looking from the side. The cat faces slightly left, also in profile, with the camera looking from the side.\nSize: Carl is the biggest figure in the picture; the cat is small and appears closer to the camera than Carl.\nShot: Medium shot, cutting off the top of Carl's head and the bottom of the door.\nFaces: Carl's face shows a focused, determined expression; the cat's face shows wide, startled eyes.\nSigns: Lines radiate from the cat's head to indicate shock or surprise; curved lines near Carl's fist suggest motion.\nEyes and hands: Carl's eyes are wide and directed at the cat; his right hand is a clenched fist. The cat's eyes are wide and round, looking up at Carl; its paws are visible and resting on the mat.\nStrange parts: Not shown.\nStory points:\n- Carl (1 actor): He is shown in profile, raising his right fist toward the cat, appearing to be about to knock or strike.\n- Cat (1 actor): The cat sits upright on the doormat, tilting its head slightly upward to look at Carl.\n- Carl knocked: Not shown, but implied by the raised fist and motion lines.\n- Cat tilted its head: The cat's head is slightly tilted upward, looking at Carl.\n- Cat: The cat is sitting upright, facing slightly left, with wide eyes and a small open mouth.\n- Door (implied by knocking): The door is partially visible to the right, with a brass doorknob.",
+      "9": "People and animals: one person and one cat.\nAction: The person kneels, reaching out with their right hand toward the door. The cat sits, facing the person.\nObjects: a door, a doorknob, a mat, a sweater, pants.\nPlace: inside a house, near a door.\nView: person faces front, cat faces front.\nSize: the person is bigger, the cat is small.\nShot: medium shot, frame cuts off the top of the person's head and the bottom of the door.\nFaces: the person has a happy, smiling expression. The cat has wide, surprised eyes.\nSigns: small lines near the door suggest a knock.\nEyes and hands: person's eyes are wide and smiling; right hand is open, reaching. Cat's eyes are large and round. No broken or strange parts.\nStrange parts: not shown.\nStory points:\n- Carl (1 actor): kneeling, right hand extended toward the door.\n- Cat (1 actor): sitting, head tilted slightly to the side.\n- Carl knocked: right hand is near the door, with small lines indicating a knock.\n- Cat tilted its head: head is turned slightly to the side, looking up at the person.\n- Cat: sitting, facing the person.\n- Door (implied by knocking): door is partially visible, with a doorknob."
+    },
+    "checks": {
+      "1": {
+        "p": {
+          "missing": 0.11,
+          "count": 0.04,
+          "action": 0.06,
+          "setting": 0.1,
+          "fault": 0.12,
+          "back": 0.36,
+          "small": 0.17,
+          "closeup": 0.11,
+          "apart": 0.04,
+          "feeling": 0.1,
+          "unclear": 0.07
+        },
+        "fit": 1.08
+      },
+      "2": {
+        "p": {
+          "missing": 0.22,
+          "count": 0.03,
+          "action": 0.03,
+          "setting": 0.06,
+          "fault": 0.13,
+          "back": 0.24,
+          "small": 0.47,
+          "closeup": 0.87,
+          "apart": 0.04,
+          "feeling": 0.16,
+          "unclear": 0.05
+        },
+        "fit": 1.19
+      },
+      "3": {
+        "p": {
+          "missing": 0.88,
+          "count": 0.04,
+          "action": 0.61,
+          "setting": 0.11,
+          "fault": 0.09,
+          "back": 0.96,
+          "small": 0.89,
+          "closeup": 0.12,
+          "apart": 0.14,
+          "feeling": 0.08,
+          "unclear": 0.26
+        },
+        "fit": 0.51
+      },
+      "4": {
+        "p": {
+          "missing": 0.2,
+          "count": 0.04,
+          "action": 0.19,
+          "setting": 0.12,
+          "fault": 0.11,
+          "back": 0.98,
+          "small": 0.23,
+          "closeup": 0.08,
+          "apart": 0.07,
+          "feeling": 0.04,
+          "unclear": 0.24
+        },
+        "fit": 0.53
+      },
+      "5": {
+        "p": {
+          "missing": 0.87,
+          "count": 0.05,
+          "action": 0.68,
+          "setting": 0.1,
+          "fault": 0.1,
+          "back": 0.89,
+          "small": 0.85,
+          "closeup": 0.64,
+          "apart": 0.23,
+          "feeling": 0.1,
+          "unclear": 0.41
+        },
+        "fit": 0.48
+      },
+      "6": {
+        "p": {
+          "missing": 0.28,
+          "count": 0.03,
+          "action": 0.12,
+          "setting": 0.1,
+          "fault": 0.12,
+          "back": 0.96,
+          "small": 0.23,
+          "closeup": 0.09,
+          "apart": 0.07,
+          "feeling": 0.06,
+          "unclear": 0.16
+        },
+        "fit": 0.84
+      },
+      "7": {
+        "p": {
+          "missing": 0.69,
+          "count": 0.05,
+          "action": 0.09,
+          "setting": 0.09,
+          "fault": 0.13,
+          "back": 0.16,
+          "small": 0.62,
+          "closeup": 0.12,
+          "apart": 0.06,
+          "feeling": 0.09,
+          "unclear": 0.09
+        },
+        "fit": 0.92
+      },
+      "8": {
+        "p": {
+          "missing": 0.57,
+          "count": 0.04,
+          "action": 0.6,
+          "setting": 0.09,
+          "fault": 0.16,
+          "back": 0.02,
+          "small": 0.19,
+          "closeup": 0.07,
+          "apart": 0.06,
+          "feeling": 0.43,
+          "unclear": 0.57
+        },
+        "fit": 1.65
+      },
+      "9": {
+        "p": {
+          "missing": 0.14,
+          "count": 0.03,
+          "action": 0.38,
+          "setting": 0.08,
+          "fault": 0.04,
+          "back": 0.02,
+          "small": 0.22,
+          "closeup": 0.13,
+          "apart": 0.04,
+          "feeling": 0.26,
+          "unclear": 0.27
+        },
+        "fit": 1.78
+      }
+    },
+    "ms": 169074,
+    "costUsd": 0,
+    "model": "qwen/qwen3-vl-8b",
+    "at": "2026-10-19T03:17:05.145Z"
+  },
+  "G006": {
+    "cells": {
+      "1": "wrong",
+      "2": "wrong",
+      "3": "wrong",
+      "4": "wrong",
+      "5": "wrong",
+      "6": "wrong",
+      "7": "wrong",
+      "8": "wrong",
+      "9": "wrong"
+    },
+    "notes": {
+      "1": "missing, action, unclear",
+      "2": "missing, action, closeup, unclear",
+      "3": "missing, count, action, back, closeup, unclear",
+      "4": "missing, feeling",
+      "5": "missing, action, back, unclear",
+      "6": "missing, action, unclear",
+      "7": "missing, action, small, unclear",
+      "8": "missing, action, unclear",
+      "9": "missing, action, unclear"
+    },
+    "reason": "no cell passed the rules",
+    "points": [
+      "One actor: He",
+      "One actor: They",
+      "Action: He grabs",
+      "Object: the tab",
+      "Action: They sit",
+      "Action: They sit unspoken",
+      "Place: not specified"
+    ],
+    "descriptions": {
+      "1": "People and animals: Three people, no animals. A man on the left, a woman in the center, and a man on the right.\nAction: The man on the left extends his right hand toward the table, holding a receipt. The woman rests her chin on her left hand. The man on the right has his hands clasped on the table.\nObjects: Three plates with food, three glasses, a yellow receipt with \"$42\" written on it, a plant in the background.\nPlace: A dining table, likely a restaurant or home dining area.\nView: All three people are facing front, toward the camera.\nSize: All three people are depicted at a similar size, with the man on the left appearing slightly larger due to his position and the camera angle.\nShot: Medium shot, cutting off the top of the heads and the very top of the table.\nFaces: The man on the left has a slight smile. The woman has a neutral, thoughtful expression. The man on the right has a slight, content smile.\nSigns: The text \"$42\" is visible on the receipt.\nEyes and hands: The man on the left has large, round eyes. The woman has large, round eyes looking slightly to her right. The man on the right has round eyes behind glasses. All hands are normal and appear intact. No broken or strange parts.\nStrange parts: None apparent.\nStory points:\n- One actor: He: The man on the left is extending his right hand, holding the receipt.\n- One actor: They: The woman is sitting with her left hand supporting her chin.\n- Action: He grabs: Not shown, he is holding the receipt, not grabbing it.\n- Object: the tab: He is holding the receipt, which is the tab.\n- Action: They sit: The woman is sitting, and the man on the right is sitting.\n- Action: They sit unspoken: The woman is sitting with her chin on her hand, and the man on the right is sitting with his hands clasped.\n- Place: not specified: The setting is a dining table, but the specific location is not specified.",
+      "2": "People and animals: Three people: one man in the foreground, a woman in the middle, and a bearded man on the right.\nAction: The man in the foreground holds out a tab with his right hand. The woman and bearded man sit with their hands not visible.\nObjects: A yellow tab with \"$42\" written on it, a glass, plates.\nPlace: not specified\nView: The man in the foreground faces front. The woman faces front. The bearded man faces front.\nSize: The man in the foreground is biggest. The woman and bearded man are smaller and farther away.\nShot: Close-up, cutting off the top of the heads and the background.\nFaces: The man in the foreground has a smug, self-satisfied smile. The woman has a calm, slightly amused expression. The bearded man has a neutral, slightly amused expression.\nSigns: The text \"$42\" on the tab.\nEyes and hands: The man's eyes are wide and smiling. The woman's eyes are looking up at the tab. The bearded man's eyes are looking at the tab. The man's right hand holds the tab. The woman's and bearded man's hands are not visible.\nStrange parts: not shown\nStory points:\n- One actor: He holds out a tab with his right hand, smiling smugly.\n- One actor: They sit, looking at the tab.\n- Action: He grabs: not shown, he holds.\n- Object: the tab: He holds it out.\n- Action: They sit: not shown, they are seated.\n- Action: They sit unspoken: not shown, they are seated.\n- Place: not specified",
+      "3": "People and animals: One person, not specified as male or female, shown by their hand and arm.\nAction: The person's hand is placing a tab on the table.\nObjects: A yellow tab with \"$42\" written on it, a glass of water, a plate with a small amount of food, a table.\nPlace: A table, likely in a restaurant or cafe.\nView: The camera looks down at the scene from above, showing the hand and the table.\nSize: The tab is the biggest object in the frame, the hand is medium, and the glass and plate are smaller and farther away.\nShot: Close-up, focusing on the hand placing the tab, with the table and objects in the background.\nFaces: Not shown.\nSigns: The text \"$42\" on the tab.\nEyes and hands: The hand is shown, with fingers gripping the tab. No eyes are visible.\nStrange parts: Not shown.\nStory points:\n- One actor: He: A person's hand is shown, wearing a dark green sleeve.\n- One actor: They: Not shown.\n- Action: He grabs: The hand is gripping the tab, not grabbing it in a forceful way, but placing it down.\n- Object: the tab: The tab is yellow with \"$42\" written on it.\n- Action: They sit: Not shown.\n- Action: They sit unspoken: Not shown.\n- Place: not specified: The scene is at a table, likely in a restaurant or cafe.",
+      "4": "People and animals: Three people, all human. One man with brown hair and glasses seen from the back, one man with brown hair seen from the front, and one woman with brown hair in a bun seen from the back.\nAction: The man in the front leans forward, smiling, and holds out a yellow tab with his right hand. The man in the back sits with his back to the camera. The woman sits with her back to the camera.\nObjects: A white table, a white plate with food, a clear glass of water, a yellow tab with \"$42\" written on it, a brown chair, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair back, a brown chair",
+      "5": "People and animals: Two people are shown, both human. One is on the left, one on the right. No animals.\nAction: The person on the left has their hands clasped together, looking up. The person on the right has their hands clasped together, looking down. A hand from above holds a bill.\nObjects: A round table, plates with food remnants, forks, glasses of water, a yellow bill with \"$42\" written on it.\nPlace: The scene is at a dining table.\nView: The camera looks down from above on the table and the people.\nSize: The table is the largest object. The people are medium-sized. The hand holding the bill is medium-sized.\nShot: Medium shot, framed to show the table, the people, and the hand holding the bill. The frame cuts off the top of the people's heads and the bottom of the table.\nFaces: The faces are not clearly visible, but the person on the left appears to be looking up with a neutral or slightly concerned expression. The person on the right is looking down with a neutral or concerned expression.\nSigns: The bill has the text \"$42\" written on it.\nEyes and hands: The eyes are not clearly visible. The hands are clasped together for both people. The hand holding the bill is open, holding the bill.\nStrange parts: Not shown.\nStory points:\n- One actor: He: The hand is holding the bill.\n- One actor: They: The person on the left is sitting with hands clasped.\n- Action: He grabs: Not shown, he is holding the bill.\n- Object: the tab: The bill is the tab.\n- Action: They sit: The person on the left is sitting.\n- Action: They sit unspoken: The person on the right is sitting.\n- Place: not specified: The place is not specified.",
+      "6": "People and animals: Three people, all human. One standing man, one seated woman, one seated man.\nAction: The standing man holds up a yellow card with his right hand. The woman rests her chin on her left hand. The seated man has his hands clasped on the table.\nObjects: A yellow card, two glasses of water, two plates with food, a chair, plants in the background.\nPlace: A dining or meeting room, not specified.\nView: The standing man faces front. The woman faces front, slightly turned. The seated man faces front.\nSize: The standing man appears biggest due to his height and position. The seated people are smaller in frame.\nShot: Medium shot. The frame cuts off the top of the standing man's head and the bottom of the seated people's legs.\nFaces: The standing man has a smiling, confident expression. The woman has a curious, attentive expression. The seated man has a calm, slightly amused expression.\nSigns: The yellow card has three horizontal lines, possibly indicating a menu or list.\nEyes and hands: The standing man's eyes are wide and smiling. His right hand holds the card. The woman's left hand supports her chin. Her right hand is not visible. The seated man's eyes are wide and looking at the card. His hands are clasped. All eyes and hands appear normal.\nStrange parts: Not shown.\nStory points:\n- One actor: He: The standing man holds a yellow card with his right hand, smiling and looking at the seated people.\n- One actor: They: The woman rests her chin on her left hand, looking up at the standing man. The seated man has his hands clasped on the table, looking at the standing man.\n- Action: He grabs: Not shown, he holds the card, not grabbing it.\n- Object: the tab: Not shown, the card is not a tab.\n- Action: They sit: The woman sits with her chin on her hand. The seated man sits with hands clasped.\n- Action: They sit unspoken: Not shown, the seated people are not shown speaking.\n- Place: not specified: Not shown, the place is not specified.",
+      "7": "People and animals: One person, a woman with brown hair in a bun, is shown. One person, a man, is shown only by his arm and hand. No animals.\nAction: The woman rests her chin on her hand, looking up at the man. The man holds out a bill with his right hand.\nObjects: A yellow bill with \"$42\" written on it, a white plate with a small amount of food, a clear glass of water, a spoon, and a table.\nPlace: A restaurant table, implied by the bill and food.\nView: The woman faces the camera at a three-quarter angle. The man's hand faces the camera at a three-quarter angle.\nSize: The woman appears largest in the frame. The man is partially shown, so his full size is not visible. The bill is small.\nShot: Medium shot. The frame cuts off the top of the woman's head and the man's shoulder.\nFaces: The woman has a slightly surprised or amused expression. The man's face is not shown.\nSigns: The text \"$42\" is written on the bill. No other symbols.\nEyes and hands: The woman's eyes are large and round, looking up at the man. The man's hand is holding the bill, fingers curled around it.\nStrange parts: Not shown.\nStory points:\n- One actor: He: The man is shown only by his arm and hand, holding out a bill.\n- One actor: They: The woman is shown sitting at the table.\n- Action: He grabs: Not shown; he is holding the bill, not grabbing it.\n- Object: the tab: The man is holding a yellow bill with \"$42\" written on it.\n- Action: They sit: The woman is sitting at the table.\n- Action: They sit unspoken: The woman is sitting, not speaking.\n- Place: not specified: The setting is implied to be a restaurant.",
+      "8": "People and animals: Four people. A man with a beard and glasses, a woman with her hair in a bun, a man in a teal shirt walking away from the camera, and a woman in an apron behind a counter.\nAction: The man in teal walks toward the counter, holding a yellow object. The bearded man sits with hands clasped. The woman with the bun sits with her hands on her lap. The woman in the apron stands with her hands by her side.\nObjects: A white tablecloth, a glass, a potted plant, a counter, a menu board, a hanging light fixture, a yellow object (possibly a tab or card), a small container on the counter.\nPlace: A cafe or restaurant interior.\nView: The man in teal is seen from the back. The bearded man is seen from the front. The woman with the bun is seen from the side. The woman in the apron is seen from the front.\nSize: The man in teal appears largest due to his position and stride. The woman in the apron appears smallest due to her position near the counter.\nShot: Medium shot. The frame cuts off the top of the scene and the bottom of the floor.\nFaces: The bearded man has a neutral expression. The woman with the bun looks toward the man in teal. The man in teal has a neutral expression. The woman in the apron has a neutral expression.\nSigns: A menu board with lines of text is visible, but the text is illegible. No other symbols are visible.\nEyes and hands: The bearded man's eyes are visible and looking forward. The woman with the bun's eyes are visible and looking toward the man in teal. The man in teal's eyes are visible and looking toward the woman in the apron. The woman in the apron's eyes are visible and looking toward the man in teal. The man in teal holds the yellow object with his right hand. The woman in the apron has her hands by her side. The bearded man has his hands clasped. The woman with the bun has her hands on her lap.\nStrange parts: None.\nStory points:\n- One actor: He walks toward the counter, holding a yellow object in his right hand.\n- One actor: They sit at the table, the bearded man with hands clasped, the woman with the bun with hands on her lap.\n- Action: He grabs: not shown, he is holding the object, not grabbing it.\n- Object: the tab: He is holding a yellow object, possibly a tab or card.\n- Action: They sit: The bearded man sits with hands clasped. The woman with the bun sits with hands on her lap.\n- Action: They sit unspoken: The bearded man sits with hands clasped. The woman with the bun sits with hands on her lap.\n- Place: not specified: The scene is a cafe or restaurant interior.",
+      "9": "People and animals: Two men are shown. One has messy brown hair and is smiling. The other has a beard, glasses, and a more neutral expression.\nAction: The man on the left holds up a yellow receipt with \"$42\" on it. The man on the right sits with his hands presumably in his lap or by his sides, not visible in action.\nObjects: A yellow receipt or tab with \"$42\" printed on it. The men are wearing shirts.\nPlace: No place shown.\nView: Both men are facing front, looking toward the camera or slightly off to the side.\nSize: Both men appear to be the same size, full frame, neither is clearly bigger or smaller.\nShot: Medium shot, cutting off just below the waist of the men.\nFaces: The man on the left has a happy, excited expression. The man on the right has a calm, perhaps slightly amused or resigned expression.\nSigns: The text \"$42\" is visible on the receipt. There are no other symbols or signs.\nEyes and hands: The man on the left has large, round eyes looking forward. His right hand holds the receipt. The man on the right has round glasses and eyes looking slightly to his left. His hands are not visible.\nStrange parts: None apparent.\nStory points:\n- One actor: He holds up a receipt.\n- One actor: They sit.\n- Action: He grabs: not shown, he holds the receipt, not grabbing.\n- Object: the tab: He holds the tab.\n- Action: They sit: The man on the right is sitting.\n- Action: They sit unspoken: The man on the right is sitting without any action shown.\n- Place: not specified"
+    },
+    "checks": {
+      "1": {
+        "p": {
+          "missing": 0.8,
+          "count": 0.07,
+          "action": 0.8,
+          "setting": 0.06,
+          "fault": 0.04,
+          "back": 0.02,
+          "small": 0.22,
+          "closeup": 0.03,
+          "apart": 0.05,
+          "feeling": 0.43,
+          "unclear": 0.7
+        },
+        "fit": 1.53
+      },
+      "2": {
+        "p": {
+          "missing": 0.83,
+          "count": 0.06,
+          "action": 0.83,
+          "setting": 0.04,
+          "fault": 0.18,
+          "back": 0.01,
+          "small": 0.06,
+          "closeup": 0.63,
+          "apart": 0.07,
+          "feeling": 0.31,
+          "unclear": 0.6
+        },
+        "fit": 1.42
+      },
+      "3": {
+        "p": {
+          "missing": 0.93,
+          "count": 0.75,
+          "action": 0.75,
+          "setting": 0.1,
+          "fault": 0.08,
+          "back": 0.93,
+          "small": 0.17,
+          "closeup": 0.82,
+          "apart": 0.08,
+          "feeling": 0.03,
+          "unclear": 0.68
+        },
+        "fit": 0.18
+      },
+      "4": {
+        "p": {
+          "missing": 0.59,
+          "count": 0.07,
+          "action": 0.4,
+          "setting": 0.1,
+          "fault": 0.39,
+          "back": 0.1,
+          "small": 0.22,
+          "closeup": 0.24,
+          "apart": 0.05,
+          "feeling": 0.51,
+          "unclear": 0.32
+        },
+        "fit": 1.61
+      },
+      "5": {
+        "p": {
+          "missing": 0.76,
+          "count": 0.13,
+          "action": 0.76,
+          "setting": 0.08,
+          "fault": 0.24,
+          "back": 0.83,
+          "small": 0.37,
+          "closeup": 0.11,
+          "apart": 0.08,
+          "feeling": 0.17,
+          "unclear": 0.66
+        },
+        "fit": 0.51
+      },
+      "6": {
+        "p": {
+          "missing": 0.93,
+          "count": 0.06,
+          "action": 0.88,
+          "setting": 0.06,
+          "fault": 0.06,
+          "back": 0.01,
+          "small": 0.22,
+          "closeup": 0.05,
+          "apart": 0.09,
+          "feeling": 0.45,
+          "unclear": 0.88
+        },
+        "fit": 0.72
+      },
+      "7": {
+        "p": {
+          "missing": 0.88,
+          "count": 0.19,
+          "action": 0.83,
+          "setting": 0.09,
+          "fault": 0.15,
+          "back": 0.19,
+          "small": 0.67,
+          "closeup": 0.18,
+          "apart": 0.04,
+          "feeling": 0.28,
+          "unclear": 0.75
+        },
+        "fit": 1.59
+      },
+      "8": {
+        "p": {
+          "missing": 0.82,
+          "count": 0.07,
+          "action": 0.84,
+          "setting": 0.06,
+          "fault": 0.11,
+          "back": 0.4,
+          "small": 0.26,
+          "closeup": 0.04,
+          "apart": 0.22,
+          "feeling": 0.18,
+          "unclear": 0.79
+        },
+        "fit": 0.86
+      },
+      "9": {
+        "p": {
+          "missing": 0.83,
+          "count": 0.05,
+          "action": 0.84,
+          "setting": 0.03,
+          "fault": 0.22,
+          "back": 0.01,
+          "small": 0.05,
+          "closeup": 0.05,
+          "apart": 0.06,
+          "feeling": 0.34,
+          "unclear": 0.74
+        },
+        "fit": 1.38
+      }
+    },
+    "ms": 405496,
+    "costUsd": 0,
+    "model": "qwen/qwen3-vl-8b",
+    "at": "2026-10-19T03:43:57.512Z"
+  },
+  "G010": {
+    "cells": {
+      "1": "weak",
+      "2": "wrong",
+      "3": "wrong",
+      "4": "weak",
+      "5": "weak",
+      "6": "wrong",
+      "7": "wrong",
+      "8": "weak",
+      "9": "weak"
+    },
+    "notes": {
+      "1": "small, closeup",
+      "2": "missing, action, small, closeup",
+      "3": "missing, action, small, closeup, unclear",
+      "4": "small, closeup",
+      "5": "small, closeup",
+      "6": "missing, action, unclear",
+      "7": "missing, small, closeup",
+      "8": "small, closeup",
+      "9": "small, closeup"
+    },
+    "reason": "no cell passed the rules",
+    "points": [
+      "Bald scalp gleaming",
+      "Surgeon (1) cutting",
+      "Thin blade (1)",
+      "Action: cutting precisely",
+      "Place: surgical setting (implied)"
+    ],
+    "descriptions": {
+      "1": "People and animals: One person, a surgeon, is shown; no animals.\nAction: The surgeon holds a blade in their right hand, positioning it to cut the patient's scalp; their left hand rests on the patient's head.\nObjects: Surgical cap, surgical mask, surgical gown, surgical gloves, scalpel (blade), patient's head.\nPlace: No place shown, but implied to be a surgical setting.\nView: The surgeon faces the camera at a quarter angle; the patient faces the camera at a side angle.\nSize: The patient's head is the biggest visible element; the surgeon is smaller in frame but appears closer.\nShot: Close-up, focusing on the surgeon's hands and the patient's scalp; the frame cuts off the surgeon's lower body and the patient's feet.\nFaces: The surgeon's face is partially obscured by the mask, but their eyes show intense focus; the patient's face is calm with closed eyes.\nSigns: No symbols, question marks, sparks, or text.\nEyes and hands: The surgeon's eyes are wide and focused; their right hand holds the scalpel with a steady grip; their left hand is open and resting on the scalp. No broken or strange parts.\nStrange parts: None apparent.\nStory points:\n- Bald scalp gleaming: The patient's scalp is shown shiny, likely from surgical prep or lighting.\n- Surgeon (1) cutting: The surgeon is positioned to make a cut on the patient's scalp.\n- Thin blade (1): A thin, blue-handled scalpel is held in the surgeon's right hand.\n- Action: cutting precisely: The surgeon holds the blade at a precise angle, ready to make an incision.\n- Place: surgical setting (implied): The attire and action strongly suggest a surgical environment.",
+      "2": "People and animals: One person, a surgeon, is shown. No animals.\nAction: The surgeon holds a scalpel in their right hand, positioning it to make a cut on skin.\nObjects: A scalpel with a blue handle and silver blade, human skin, surgical cap, surgical mask.\nPlace: No place shown, but implied to be a surgical setting.\nView: The surgeon faces the camera at a quarter angle, looking down at the skin. The camera looks down from above.\nSize: The skin is the biggest element in the frame. The surgeon is far away and smaller in scale.\nShot: Close-up, focusing on the scalpel tip and the skin. The frame cuts off the surgeon's shoulders and the top of the scalp.\nFaces: The surgeon's face is partially obscured by the mask, but their eye is visible and focused intently on the procedure.\nSigns: No symbols, question marks, or text.\nEyes and hands: The surgeon's right eye is visible, looking down with focus. The right hand holds the scalpel; the left hand is not visible. No broken or strange parts.\nStrange parts: None apparent.\nStory points:\n- Bald scalp gleaming: Not shown.\n- Surgeon (1) cutting: The surgeon is holding a scalpel, positioned to cut skin, but the cut is not yet made.\n- Thin blade (1): The scalpel blade is thin and pointed, held at an angle to the skin.\n- Action: cutting precisely: The scalpel is positioned to make a precise incision, with the surgeon's eye focused on the point of contact.\n- Place: surgical setting (implied): The presence of a surgical cap and mask implies a surgical setting.",
+      "3": "People and animals: One person, a surgeon, visible from the chest up.\nAction: The surgeon holds a scalpel in their right hand, raised as if preparing to make a cut.\nObjects: A scalpel with a blue handle and silver blade, surgical cap, surgical mask, surgical gown, and a bald scalp.\nPlace: No place shown, but implied to be a surgical setting.\nView: The surgeon faces the camera at a quarter angle, looking down at the scalp. The camera looks from above.\nSize: The bald scalp is the biggest object in the picture. The surgeon's head and shoulders are medium-sized. The scalpel is small.\nShot: Close-up, cutting off the top of the surgeon's head and the bottom of the scalp.\nFaces: The surgeon's eyes are wide open, looking down at the scalp.\nSigns: No symbols or text.\nEyes and hands: The surgeon's eyes are wide and alert. The right hand holds the scalpel with a firm grip, fingers curled around the handle.\nStrange parts: Not shown.\nStory points:\n- Bald scalp gleaming: The scalp is shiny, with highlights indicating it is gleaming under surgical lights.\n- Surgeon (1) cutting: The surgeon is holding the scalpel, poised to cut, not actively cutting.\n- Thin blade (1): The scalpel has a thin, pointed blade.\n- Action: cutting precisely: The surgeon is holding the scalpel steady, not yet cutting.\n- Place: surgical setting (implied): The surgeon is wearing surgical attire, and the scene suggests a surgical environment.",
+      "4": "People and animals: One person, a surgeon, is shown; no animals.\nAction: The surgeon holds a blade in their right hand and uses it to cut a line on the patient's scalp; their left hand holds the patient's head steady.\nObjects: A surgical blade, surgical gloves, surgical mask, surgical cap, patient's scalp, surgical drapes.\nPlace: No place shown, but implied to be a surgical setting.\nView: The camera looks down from the top on the patient's scalp and the surgeon's hands.\nSize: The patient's head is the biggest object in the frame; the surgeon is partially obscured by the frame.\nShot: Close-up, focusing on the scalp and the surgeon's hands; the frame cuts off the surgeon's shoulders and the top of the patient's head.\nFaces: The surgeon's face is partially obscured by the mask; the patient's eyes are closed.\nSigns: No symbols, question marks, or text.\nEyes and hands: The surgeon's eyes are visible under the mask, looking down; the hands are gloved and steady. The patient's eyes are closed. No broken or strange hands or eyes.\nStrange parts: No broken or unidentifiable parts.\nStory points:\n- Bald scalp gleaming: The patient's scalp is shiny and hairless, reflecting light.\n- Surgeon (1) cutting: The surgeon is using a blade to make a precise incision down the middle of the scalp.\n- Thin blade (1): A thin, blue-handled surgical blade is being used.\n- Action: cutting precisely: The surgeon is making a straight, central incision with controlled, steady motion.\n- Place: surgical setting (implied): The scene is set in a surgical environment, indicated by the drapes, mask, and gloves.",
+      "5": "People and animals: One person, a surgeon, is shown. No animals.\nAction: The surgeon holds a scalpel in their right hand and is using it to make a small incision on a bald scalp. Their left hand is partially visible, supporting the area.\nObjects: A blue-handled scalpel, a bald scalp, surgical cap, surgical mask, and surgical gown.\nPlace: No place shown, but implied to be a surgical setting.\nView: The camera looks from the side and slightly above, focusing on the surgeon's action on the scalp.\nSize: The scalp is the largest visible element, appearing close to the camera. The surgeon's body is partially visible but smaller in frame.\nShot: Close-up, focusing on the hands and the incision. The frame cuts off the surgeon's head and the top of the scalp.\nFaces: Not shown.\nSigns: Not shown.\nEyes and hands: Eyes are not visible due to the mask and angle. The right hand holds the scalpel with a precise grip. The left hand is partially visible, fingers curled to support the scalp.\nStrange parts: Not shown.\nStory points:\n- Bald scalp gleaming: The scalp is shown with a smooth, slightly shiny surface, reflecting light.\n- Surgeon (1) cutting: The surgeon is shown holding a scalpel and making a small incision on the scalp.\n- Thin blade (1): The scalpel has a thin, pointed blade, shown in the act of cutting.\n- Action: cutting precisely: The surgeon's hand is steady, and the blade is positioned to make a controlled, small incision.\n- Place: surgical setting (implied): The surgeon's attire (cap, mask, gown) and the action of cutting indicate a surgical environment.",
+      "6": "People and animals: One person, a surgeon, is shown; no animals.\nAction: The surgeon holds a pen-like tool in one hand, pressing it to the patient's scalp, while the other hand holds the patient's forehead. The patient is lying still.\nObjects: Surgical cap, mask, gloves, surgical gown, pen-like tool, surgical bed, blue surgical drape, overhead surgical light with four bulbs.\nPlace: Surgical setting (implied).\nView: The surgeon faces slightly to the side, partially toward the camera. The patient faces away from the camera, toward the surgeon.\nSize: The surgeon is the biggest figure in the picture. The patient is smaller in frame but appears close to the camera.\nShot: Medium shot, cutting off the top of the surgeon's head and the bottom of the patient's body.\nFaces: The surgeon's face is partially obscured by the mask, but the eyes are visible and focused. The patient's face is relaxed, eyes closed.\nSigns: No symbols, question marks, sparks, or text.\nEyes and hands: The surgeon's eyes are wide and focused. The right hand holds the tool, the left hand holds the patient's forehead. No broken or strange hands or eyes.\nStrange parts: The tool resembles a pen, not a surgical scalpel. The patient's scalp is bald and gleaming, but no hair is visible.\nStory points:\n- Bald scalp gleaming: The patient's scalp is shiny and hairless, reflecting the surgical lights.\n- Surgeon (1) cutting: The surgeon is not cutting; they are marking or drawing on the scalp with a pen-like tool.\n- Thin blade (1): Not shown; the tool is a pen-like instrument, not a blade.\n- Action: cutting precisely: Not shown; the action is marking, not cutting.\n- Place: surgical setting (implied): The setting is implied by the surgical attire, tools, and lighting.",
+      "7": "People and animals: One person, a surgeon, is shown.\nAction: The surgeon holds a scalpel in their right hand, positioning it to make a cut on a patient's skin.\nObjects: A scalpel with a blue handle and silver blade, a green surgical mask, a green surgical cap, and human skin.\nPlace: No place shown, but implied to be a surgical setting.\nView: The camera looks at the surgeon's face from a front angle, slightly below eye level.\nSize: The patient's skin is the largest visible area, while the surgeon's face is partially obscured by the mask and cap.\nShot: Close-up, cutting off the top of the surgeon's head and the bottom of the patient's body.\nFaces: The surgeon's eyes are wide and focused, conveying intense concentration.\nSigns: No symbols, question marks, or text are visible.\nEyes and hands: The surgeon's eyes are large, dark, and alert. The right hand holds the scalpel; the left hand is partially visible, gripping the handle. No broken or strange parts.\nStrange parts: None apparent.\nStory points:\n- Bald scalp gleaming: Not shown.\n- Surgeon (1) cutting: The surgeon is holding a scalpel, poised to cut.\n- Thin blade (1): The scalpel has a thin, pointed blade.\n- Action: cutting precisely: The blade is positioned at a precise point on the skin.\n- Place: surgical setting (implied): The presence of a surgical mask and cap implies a surgical setting.",
+      "8": "People and animals: One person, a surgeon, partially visible.\nAction: The surgeon holds a scalpel in their right hand, positioning it to make a cut on the scalp.\nObjects: A teal scalpel with a silver blade, a bald scalp.\nPlace: No place shown.\nView: The surgeon faces the camera at a quarter angle, looking down at the scalp.\nSize: The scalp is biggest; the surgeon is smaller and farther away.\nShot: Close-up, cutting off the top of the surgeon's head and the bottom of the scalp.\nFaces: Not shown.\nSigns: A spark symbol appears near the tip of the scalpel.\nEyes and hands: The surgeon's right eye is visible, looking down; the left eye is partially visible. The right hand holds the scalpel; the left hand is not visible.\nStrange parts: Not shown.\nStory points:\n- Bald scalp gleaming: The scalp is shiny, with a white highlight indicating it is gleaming.\n- Surgeon (1) cutting: The surgeon holds the scalpel, positioned to make a precise cut on the scalp.\n- Thin blade (1): The scalpel has a thin, pointed blade.\n- Action: cutting precisely: The scalpel is positioned at the edge of the scalp, ready to cut.\n- Place: surgical setting (implied): The context suggests a surgical environment.",
+      "9": "People and animals: One person, a surgeon, visible from the chest up.\nAction: The surgeon holds a scalpel in their right hand, poised to cut.\nObjects: Green surgical cap, green surgical mask, green surgical gown, blue-handled scalpel with a thin blade, a bald scalp.\nPlace: No place shown, but implied to be a surgical setting.\nView: The surgeon faces the camera, looking down at the scalp, with a slight upward tilt of the head.\nSize: The bald scalp is the biggest object in the picture; the surgeon is medium-sized; no small or far-away objects are visible.\nShot: Close-up, cutting off the top of the surgeon's head and the bottom of the scalp.\nFaces: The surgeon's eyes are wide open, looking down at the scalp, conveying intense focus.\nSigns: A small spark or flash near the tip of the scalpel, suggesting a precise cut or a moment of action.\nEyes and hands: The surgeon's eyes are wide and focused downward. The right hand holds the scalpel with the thumb and index finger gripping the handle, the blade pointing downward toward the scalp. The left hand is not visible.\nStrange parts: Not shown.\nStory points:\n- Bald scalp gleaming: The scalp is shown shiny and smooth, with a white highlight indicating it is gleaming under light.\n- Surgeon (1) cutting: The surgeon is holding the scalpel, positioned to make a cut, with the blade aimed at the scalp.\n- Thin blade (1): The scalpel has a thin, pointed blade.\n- Action: cutting precisely: The surgeon is holding the scalpel steady, with the blade aimed at the scalp, suggesting a precise cut is about to happen.\n- Place: surgical setting (implied): The surgeon is wearing surgical attire, and the context suggests a surgical environment."
+    },
+    "checks": {
+      "1": {
+        "p": {
+          "missing": 0.13,
+          "count": 0.17,
+          "action": 0.2,
+          "setting": 0.09,
+          "fault": 0.04,
+          "back": 0.03,
+          "small": 0.79,
+          "closeup": 0.82,
+          "apart": 0.02,
+          "feeling": 0.14,
+          "unclear": 0.08
+        },
+        "fit": 1.69
+      },
+      "2": {
+        "p": {
+          "missing": 0.89,
+          "count": 0.05,
+          "action": 0.64,
+          "setting": 0.12,
+          "fault": 0.05,
+          "back": 0.16,
+          "small": 0.81,
+          "closeup": 0.76,
+          "apart": 0.09,
+          "feeling": 0.08,
+          "unclear": 0.43
+        },
+        "fit": 0.87
+      },
+      "3": {
+        "p": {
+          "missing": 0.75,
+          "count": 0.06,
+          "action": 0.89,
+          "setting": 0.09,
+          "fault": 0.1,
+          "back": 0.07,
+          "small": 0.58,
+          "closeup": 0.71,
+          "apart": 0.04,
+          "feeling": 0.2,
+          "unclear": 0.78
+        },
+        "fit": 1.08
+      },
+      "4": {
+        "p": {
+          "missing": 0.11,
+          "count": 0.15,
+          "action": 0.03,
+          "setting": 0.11,
+          "fault": 0.03,
+          "back": 0.31,
+          "small": 0.7,
+          "closeup": 0.88,
+          "apart": 0.02,
+          "feeling": 0.06,
+          "unclear": 0.04
+        },
+        "fit": 1.12
+      },
+      "5": {
+        "p": {
+          "missing": 0.13,
+          "count": 0.05,
+          "action": 0.03,
+          "setting": 0.09,
+          "fault": 0.12,
+          "back": 0.48,
+          "small": 0.72,
+          "closeup": 0.85,
+          "apart": 0.02,
+          "feeling": 0.03,
+          "unclear": 0.04
+        },
+        "fit": 0.6
+      },
+      "6": {
+        "p": {
+          "missing": 0.93,
+          "count": 0.16,
+          "action": 0.97,
+          "setting": 0.17,
+          "fault": 0.05,
+          "back": 0.03,
+          "small": 0.17,
+          "closeup": 0.2,
+          "apart": 0.04,
+          "feeling": 0.17,
+          "unclear": 0.93
+        },
+        "fit": 0.45
+      },
+      "7": {
+        "p": {
+          "missing": 0.84,
+          "count": 0.19,
+          "action": 0.33,
+          "setting": 0.12,
+          "fault": 0.09,
+          "back": 0.02,
+          "small": 0.6,
+          "closeup": 0.81,
+          "apart": 0.04,
+          "feeling": 0.12,
+          "unclear": 0.24
+        },
+        "fit": 0.97
+      },
+      "8": {
+        "p": {
+          "missing": 0.18,
+          "count": 0.06,
+          "action": 0.15,
+          "setting": 0.12,
+          "fault": 0.26,
+          "back": 0.09,
+          "small": 0.86,
+          "closeup": 0.76,
+          "apart": 0.05,
+          "feeling": 0.06,
+          "unclear": 0.09
+        },
+        "fit": 1.35
+      },
+      "9": {
+        "p": {
+          "missing": 0.27,
+          "count": 0.06,
+          "action": 0.27,
+          "setting": 0.08,
+          "fault": 0.15,
+          "back": 0.02,
+          "small": 0.52,
+          "closeup": 0.77,
+          "apart": 0.02,
+          "feeling": 0.11,
+          "unclear": 0.2
+        },
+        "fit": 1.58
+      }
+    },
+    "ms": 216853,
+    "costUsd": 0,
+    "model": "qwen/qwen3-vl-8b",
+    "at": "2026-10-19T03:47:36.586Z"
+  }
+}

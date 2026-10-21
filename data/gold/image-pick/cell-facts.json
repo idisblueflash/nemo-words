@@ -1,0 +1,45 @@
+{
+  "_about": {
+    "what": "Gold 3: what each cell shows, fact by fact. The points are the must and details lists in ai/story-points.json, in the same order.",
+    "point": "shown | close (a close form, e.g. holds the bill for grabs it) | different (a different thing in its place) | missing | unclear (drawn, but you cannot read it)",
+    "view": "which way the main actor faces: front | quarter | side | back | top | not_shown",
+    "size": "the main actor next to the other people and animals: biggest | smaller | tiny | not_shown",
+    "shot": "extreme_close_up | close_up | medium | long",
+    "others_view": "which way the other actors face, same values as view",
+    "faults": "eye | hand | part (a broken or unreadable object or body part)",
+    "status": "draft by Claude from the images and Flash's notes in labels.json; Flash to check"
+  },
+  "G003": {
+    "1": { "must": ["shown", "shown", "shown", "shown", "shown"], "details": [], "view": "front", "size": "smaller", "shot": "medium", "others_view": "side", "apart": false, "faults": ["eye"] },
+    "2": { "must": ["close", "shown", "shown", "shown", "shown"], "details": [], "view": "front", "size": "biggest", "shot": "close_up", "others_view": "not_shown", "apart": false, "faults": [], "note": "only Carl's arm shows" },
+    "3": { "must": ["shown", "shown", "shown", "shown", "shown"], "details": [], "view": "front", "size": "biggest", "shot": "medium", "others_view": "back", "apart": true, "faults": [] },
+    "4": { "must": ["shown", "shown", "shown", "shown", "shown"], "details": [], "view": "front", "size": "smaller", "shot": "medium", "others_view": "top", "apart": false, "faults": [] },
+    "5": { "must": ["shown", "shown", "shown", "shown", "shown"], "details": [], "view": "front", "size": "biggest", "shot": "close_up", "others_view": "back", "apart": true, "faults": [] },
+    "6": { "must": ["shown", "shown", "shown", "shown", "unclear"], "details": [], "view": "front", "size": "smaller", "shot": "close_up", "others_view": "back", "apart": false, "faults": [], "note": "the fist is at an edge that does not read as a door" },
+    "7": { "must": ["close", "shown", "shown", "shown", "shown"], "details": [], "view": "front", "size": "biggest", "shot": "medium", "others_view": "not_shown", "apart": false, "faults": [], "note": "only Carl's arm shows; a question mark over the cat" },
+    "8": { "must": ["shown", "shown", "different", "shown", "shown"], "details": [], "view": "front", "size": "smaller", "shot": "medium", "others_view": "side", "apart": false, "faults": [], "note": "the fist swings at the cat, not at the door" },
+    "9": { "must": ["shown", "shown", "different", "shown", "shown"], "details": [], "view": "front", "size": "smaller", "shot": "medium", "others_view": "front", "apart": false, "faults": [], "note": "an open hand pats the door" }
+  },
+  "G006": {
+    "1": { "must": ["shown", "shown", "shown", "shown", "shown"], "details": ["shown"], "view": "front", "size": "biggest", "shot": "medium", "others_view": "front", "apart": false, "faults": ["eye"] },
+    "2": { "must": ["shown", "shown", "shown", "shown", "shown"], "details": ["shown"], "view": "front", "size": "biggest", "shot": "close_up", "others_view": "front", "apart": false, "faults": [] },
+    "3": { "must": ["missing", "missing", "shown", "missing", "shown"], "details": ["missing"], "view": "not_shown", "size": "not_shown", "shot": "extreme_close_up", "others_view": "not_shown", "apart": false, "faults": [], "note": "only a hand and the bill" },
+    "4": { "must": ["shown", "shown", "shown", "shown", "shown"], "details": ["shown"], "view": "front", "size": "smaller", "shot": "medium", "others_view": "back", "apart": false, "faults": [] },
+    "5": { "must": ["missing", "shown", "shown", "shown", "shown"], "details": ["shown"], "view": "top", "size": "not_shown", "shot": "medium", "others_view": "top", "apart": false, "faults": [], "note": "only the man's arm shows, from the top" },
+    "6": { "must": ["shown", "shown", "close", "shown", "shown"], "details": ["shown"], "view": "front", "size": "biggest", "shot": "medium", "others_view": "front", "apart": false, "faults": [], "note": "he holds up the bill" },
+    "7": { "must": ["missing", "different", "close", "shown", "shown"], "details": ["shown"], "view": "not_shown", "size": "not_shown", "shot": "close_up", "others_view": "front", "apart": false, "faults": [], "note": "1 woman and a hand with the bill" },
+    "8": { "must": ["shown", "shown", "close", "shown", "shown"], "details": ["shown"], "view": "back", "size": "biggest", "shot": "long", "others_view": "front", "apart": false, "faults": [], "note": "he takes the bill to the counter to pay" },
+    "9": { "must": ["shown", "different", "close", "unclear", "shown"], "details": ["shown"], "view": "front", "size": "biggest", "shot": "close_up", "others_view": "front", "apart": false, "faults": [], "note": "only 1 other person; no table or chair shows" }
+  },
+  "G010": {
+    "1": { "must": ["shown", "shown", "shown", "shown"], "details": ["shown", "shown", "shown"], "view": "quarter", "size": "biggest", "shot": "close_up", "others_view": "side", "apart": false, "faults": [] },
+    "2": { "must": ["shown", "unclear", "shown", "shown"], "details": ["unclear", "shown", "shown"], "view": "front", "size": "biggest", "shot": "extreme_close_up", "others_view": "not_shown", "apart": false, "faults": ["part"], "note": "you cannot tell the shape is a head" },
+    "3": { "must": ["shown", "unclear", "different", "shown"], "details": ["unclear", "shown", "missing"], "view": "front", "size": "biggest", "shot": "close_up", "others_view": "not_shown", "apart": false, "faults": ["part"], "note": "the blade is raised, not cutting; you cannot tell the shape is a head" },
+    "4": { "must": ["shown", "shown", "shown", "shown"], "details": ["shown", "shown", "shown"], "view": "front", "size": "smaller", "shot": "close_up", "others_view": "top", "apart": false, "faults": ["part"], "note": "the head lies in a wrong position" },
+    "5": { "must": ["shown", "unclear", "shown", "shown"], "details": ["unclear", "shown", "shown"], "view": "back", "size": "biggest", "shot": "extreme_close_up", "others_view": "not_shown", "apart": false, "faults": ["part"], "note": "you cannot tell the shape is a head" },
+    "6": { "must": ["shown", "shown", "shown", "shown"], "details": ["shown", "missing", "shown"], "view": "side", "size": "biggest", "shot": "medium", "others_view": "side", "apart": false, "faults": [] },
+    "7": { "must": ["shown", "unclear", "close", "shown"], "details": ["unclear", "shown", "missing"], "view": "front", "size": "biggest", "shot": "extreme_close_up", "others_view": "not_shown", "apart": false, "faults": ["part"], "note": "the blade touches the skin, no cut line; you cannot tell the shape is a head" },
+    "8": { "must": ["shown", "unclear", "shown", "shown"], "details": ["unclear", "shown", "shown"], "view": "front", "size": "biggest", "shot": "extreme_close_up", "others_view": "not_shown", "apart": false, "faults": ["part"], "note": "you cannot tell the shape is a head" },
+    "9": { "must": ["shown", "unclear", "close", "shown"], "details": ["unclear", "shown", "shown"], "view": "front", "size": "biggest", "shot": "close_up", "others_view": "not_shown", "apart": false, "faults": ["part"], "note": "the blade is raised over a cut line; you cannot tell the shape is a head" }
+  }
+}

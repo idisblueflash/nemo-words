@@ -1,0 +1,147 @@
+{
+  "G003": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "ok",
+      "4": "ok",
+      "5": "weak",
+      "6": "weak",
+      "7": "weak",
+      "8": "weak",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "The full scene shows Carl knocking on the door while the cat sits nearby, looking up. The action is clear and the composition is balanced, showing both actors and the setting.",
+      "2": "Close-up on the hand knocking and the cat's face. The action is clear, but the camera is too tight on the cat, hiding the full context of Carl and the door.",
+      "3": "The cat is in the foreground, looking directly at the viewer, while Carl is in the background knocking. The cat's expression is clear, but the focus is on the cat, not the action of knocking.",
+      "4": "Overhead view showing Carl knocking and the cat sitting. The action is clear, but the perspective is less dynamic than the first cell.",
+      "5": "Extreme close-up on the cat's face, which is the main actor. The cat's expression is clear, but the action of Carl knocking is not visible, and the story is incomplete without showing the action.",
+      "6": "Over-the-shoulder view from Carl's perspective. The action of knocking is visible, and the cat is in focus, but the camera angle hides the full context of the scene.",
+      "7": "The cat is centered, and a question mark appears above its head, suggesting confusion. The action of Carl knocking is partially visible, but the cat's expression is the focus, not the action.",
+      "8": "Carl is leaning in, and the cat is looking up. The action of knocking is implied by the motion lines, but the cat's expression is not tilted as the story says. The action is not as clear as in cell 1.",
+      "9": "Carl is kneeling and smiling, and the cat is looking up. The action of knocking is not shown, but the interaction is positive. The story is incomplete without the action of knocking."
+    },
+    "reason": "Cell 1 is the best because it shows the full scene: Carl is clearly knocking on the door, and the cat is sitting nearby, looking up. This directly matches the story sentence. Cell 9 is 'ok' because it shows Carl and the cat interacting, but it does not show the action of knocking, which is a key part of the story. The other cells are 'weak' or 'ok' because they either lack the full context or focus too much on one actor, making the action less clear.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 83232,
+    "costUsd": 0,
+    "at": "2026-10-19T02:17:46.215Z"
+  },
+  "G001": {
+    "cells": {
+      "1": "weak",
+      "2": "ok",
+      "3": "weak",
+      "4": "weak",
+      "5": "best",
+      "6": "ok",
+      "7": "ok",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "The woman is reaching for the broom, but the action is not clearly 'grabbing' as the story says. The camera angle is from behind, hiding the face and the full action.",
+      "2": "She is crouching and reaching for the broom, which matches the 'grab' part of the story. The face shows focus, but it's not the clearest shot of the action.",
+      "3": "The woman is in a low stance, reaching for the broom, but the camera angle is from behind, making it hard to see the action clearly. The story says 'swing deep into the corner' which is not shown.",
+      "4": "The woman is falling or sliding towards the broom, which is not the action described in the story. The story says 'grab', not 'slide' or 'fall'.",
+      "5": "The woman is crouching and grabbing the broom handle. The action is clear, the camera is at a medium shot showing her face and the broom, and the setting is the corner as described. This is the most direct match to 'grab the broom'.",
+      "6": "She is holding the broom and crouching, which is a continuation of the action. The face shows effort, but it's not the best shot for the 'grab' action.",
+      "7": "She is holding the broom and in a low stance, but the camera angle is from the side, and she is not 'swinging' into the corner as the story says. The action is clear, but the story's 'swing' is not shown.",
+      "8": "A close-up of the woman gripping the broom. The action is clear, but the camera is too close, cutting off the context of the corner and the full body movement. It's a good shot for the 'grab' part, but not the best for the full story.",
+      "9": "The woman is sweeping, which is the action that follows 'grab the broom'. The story is about grabbing, not sweeping. This cell shows the result, not the action described."
+    },
+    "reason": "Cell 5 is the best because it clearly shows the woman grabbing the broom handle in a medium shot, with her face visible and the setting (corner) clear. It directly matches the action 'grab the broom' from the story. Cell 9 is 'ok' because it shows the result of the action (sweeping), not the action itself. Cell 2 is 'ok' because it shows the beginning of the action, but Cell 5 is superior as it captures the 'grab' more directly and clearly.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 88556,
+    "costUsd": 0,
+    "at": "2026-10-19T02:19:28.828Z"
+  },
+  "G002": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "weak",
+      "4": "weak",
+      "5": "weak",
+      "6": "weak",
+      "7": "weak",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "The man stands at the end of the pier, looking out, which visually represents the 'eon of peace' stretching. The perspective from the side shows his contemplative pose and the vastness of the water, setting the stage for the story's end.",
+      "2": "The man looks up, suggesting a moment of reflection or discovery, but the action doesn't directly connect to the 'ending' of the peace. It's a good shot, but not the best for the sentence's climax.",
+      "3": "The back of the man is shown, hiding his expression. The viewer can't see if he is enjoying the peace or if it's ending. The camera angle is too far back to feel like a climax.",
+      "4": "An overhead shot that makes the man look small and insignificant. It doesn't convey the emotional weight of the 'eon of peace' ending. The perspective is too detached.",
+      "5": "The man is smiling and looking thoughtfully, which suggests contentment, not the end of a peace. The action is positive, but it doesn't match the implied conclusion of the sentence.",
+      "6": "The man is walking away from the viewer, down the pier. This suggests movement and continuation, not the end of the peace. It's action-oriented, not concluding.",
+      "7": "The man leans on the railing, looking down. This is a moment of pause or contemplation, but it doesn't clearly show the 'ending' of the peace. It's a strong candidate, but not the best.",
+      "8": "The man walks confidently toward the viewer, suggesting he is moving on. It's a positive action, but it doesn't directly represent the 'ending' of the peace as described in the sentence.",
+      "9": "The man stands with his arms crossed, looking out. It's a neutral, contemplative pose. It doesn't convey the end of the peace as strongly as cell 1 does."
+    },
+    "reason": "Cell 1 is the best because it shows the man at the end of the pier, looking out over the water, which visually represents the 'eon of peace' stretching. The side view captures his contemplative pose and the vastness of the scene, setting up the implied end of that peace. The other cells are either too detached, show positive action, or don't clearly represent the conclusion of the 'eon'.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 85212,
+    "costUsd": 0,
+    "at": "2026-10-19T02:20:56.358Z"
+  },
+  "G004": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "weak",
+      "4": "ok",
+      "5": "ok",
+      "6": "weak",
+      "7": "ok",
+      "8": "weak",
+      "9": "weak"
+    },
+    "notes": {
+      "1": "Clear three-quarter view showing the wig-wearing clerk stuffing ballots into the box. The action is complete and the main actor is fully visible.",
+      "2": "Good action, but the clerk is viewed from a high angle, making the face less expressive and the action slightly less clear than cell 1.",
+      "3": "The clerk's face is mostly hidden, and we only see the side view. The action is clear, but the lack of facial expression makes it less engaging.",
+      "4": "Good action and clear view, but the clerk is leaning over the box, which slightly obscures the full action of stuffing the ballots.",
+      "5": "Close-up on the action, but the clerk's face is partially obscured by the ballots, reducing the emotional impact of the scene.",
+      "6": "The clerk is viewed from a distance, and the action is less clear. The face is visible but not as expressive as in the best cell.",
+      "7": "The clerk is leaning in, and the action is clear, but the face is partially hidden by the ballots, making it less dynamic than cell 1.",
+      "8": "The clerk is viewed from the side, and the action is clear, but the face is not fully visible, reducing the impact of the scene.",
+      "9": "The clerk is opening the box, which is not the action described in the sentence. The action is different, and the face is partially obscured."
+    },
+    "reason": "Cell 1 is the best because it provides a clear, three-quarter view of the wig-wearing clerk actively stuffing ballots into the box. This directly matches the story sentence. The next best is cell 2, which is 'ok' because it also shows the action well, though the angle is less dynamic. The rest are 'weak' or 'ok' because they either show a less clear action, a less expressive face, or a different action (like opening the box in cell 9).",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 80001,
+    "costUsd": 0,
+    "at": "2026-10-19T02:22:19.622Z"
+  },
+  "G005": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "ok",
+      "4": "ok",
+      "5": "ok",
+      "6": "ok",
+      "7": "ok",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "The surgeon is shown in a clear, focused shot, operating under her headlamp. The power surge is visually implied by the lightning bolt near the wall outlet, setting up the story's premise. This cell best captures the moment of crisis and her immediate response.",
+      "2": "Shows the wider operating room, confirming the setting. The surgeon is visible, but the camera angle is too wide to capture the specific action of the power surge or her headlamp use as clearly as cell 1.",
+      "3": "A close-up of the surgeon's face, showing intense focus. It supports the story but lacks the context of the power surge or the action of operating.",
+      "4": "Shows the surgeon from behind, focusing on the action of operating. However, the viewer cannot see her face or the immediate reaction to the power surge, making it less effective than cell 1.",
+      "5": "A top-down view showing the surgeon's hands and the surgical field. It confirms the action but removes the emotional and narrative context provided by the surgeon's face and the power surge visual.",
+      "6": "A close-up of the surgeon's face, showing intense concentration. It's a good shot, but it doesn't show the power surge or the action of operating, making it less complete than cell 1.",
+      "7": "The surgeon is shown reacting to the power surge, with a lightning bolt and a startled expression. This is a strong candidate, but it's a bit less focused on the core action of operating by headlamp compared to cell 1.",
+      "8": "Shows the surgeon receiving a tool from an assistant. This is a supporting action, not the core event of the story, which is the power surge and her response by using the headlamp.",
+      "9": "Similar to cell 7, this shows the surgeon operating under the headlamp. It's a good shot, but it doesn't include the power surge visual, which is a key part of the story's setup."
+    },
+    "reason": "Cell 1 is the best because it combines the key narrative elements: the surgeon is clearly shown operating under her headlamp, and the power surge is visually indicated by the lightning bolt. This single cell encapsulates the entire story's premise and action more effectively than any other. Cell 7 is also strong, but it focuses more on the surgeon's reaction to the surge rather than the action of operating by headlamp, which is the core of the sentence.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 86494,
+    "costUsd": 0,
+    "at": "2026-10-19T02:23:48.201Z"
+  }
+}

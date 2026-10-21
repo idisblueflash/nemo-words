@@ -1,0 +1,292 @@
+{
+  "G001": {
+    "cells": {
+      "1": "ok",
+      "2": "ok",
+      "3": "ok",
+      "4": "weak",
+      "5": "best",
+      "6": "ok",
+      "7": "ok",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "She's reaching for the broom in the corner, matching the start of the sentence.",
+      "2": "She's crouching and reaching, showing effort to grab the broom.",
+      "3": "She's lunging toward the broom, clearly trying to grab it from the corner.",
+      "4": "She's pulling the broom away, not grabbing it. Action is backward.",
+      "5": "She's firmly gripping the broom handle, clearly 'grabbing' it as the sentence commands. The broom is clear and the action is decisive.",
+      "6": "She's holding the broom with both hands, but the posture is more of a stance than a 'grab'.",
+      "7": "She's reaching for the broom, but not yet grabbing it. Action is incomplete.",
+      "8": "She's holding the broom tightly, but the sentence is about grabbing, not necessarily sweeping.",
+      "9": "She's actively sweeping, which implies she has the broom, but the sentence is about the action of grabbing."
+    },
+    "reason": "Cell 5 is the best because it shows the exact moment of 'grabbing' the broom handle with a firm grip, matching the sentence's command. Other cells show reaching, holding, or sweeping, which are not as precise as the 'grab' action described.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 40775,
+    "costUsd": 0,
+    "at": "2026-10-19T01:40:17.508Z"
+  },
+  "G002": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "ok",
+      "4": "weak",
+      "5": "ok",
+      "6": "ok",
+      "7": "weak",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "The man is at the very end of the pier, looking out over the water — the visual of 'off the pier' and the implied 'stretch' of the horizon fits the sentence's opening. The 'eon of peace' is suggested by the vast, calm expanse.",
+      "2": "Shows the man at the pier's edge, looking out — a good visual for the 'stretch' of peace, but lacks the 'ending' implied by the sentence.",
+      "3": "The back view shows the man looking forward along the pier, suggesting the 'stretch' but not the 'ending' of the peace.",
+      "4": "The man is almost off the pier, but the perspective is from the side, making the 'ending' feel abrupt and less atmospheric than the sentence suggests.",
+      "5": "The man leaning on the railing, looking out, captures the contemplative mood of 'peace' but doesn't visually represent the 'ending' of it.",
+      "6": "The man walking away from the viewer down the pier, suggesting movement away from the 'peace' — a good visual for the 'ending'.",
+      "7": "The man is looking down, suggesting introspection or melancholy, but the 'eon of peace' is not visually conveyed; it feels more like a moment of pause or sadness.",
+      "8": "The man walking toward the viewer, suggesting a return or movement, but the 'ending' of the peace is not visually clear.",
+      "9": "The man standing at the end of the pier, looking out, captures the 'stretch' of peace, but the 'ending' is not visually represented — it's more of a pause than a conclusion."
+    },
+    "reason": "Cell 1 is the best because it visually embodies the sentence's opening: 'Off the pier' (the man is at the very end) and 'an eon of peace stretched' (the vast, calm water and horizon suggest endless peace). While the sentence ends with 'and ended,' cell 1 doesn't show the end visually, but it best captures the beginning and the feeling of the stretch. The other cells either show movement away (suggesting the end) or lack the full atmospheric 'stretch' of peace.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 42920,
+    "costUsd": 0,
+    "at": "2026-10-19T01:41:04.653Z"
+  },
+  "G003": {
+    "cells": {
+      "1": "ok",
+      "2": "ok",
+      "3": "ok",
+      "4": "ok",
+      "5": "best",
+      "6": "ok",
+      "7": "ok",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "Shows Carl knocking, and the cat looking up, but head tilt not visible",
+      "2": "Close-up of Carl knocking, cat looks up with wide eyes, head tilt not clear",
+      "3": "Carl knocks, cat sits upright, head tilt not visible",
+      "4": "Carl knocks from behind, cat looks up, head tilt not visible",
+      "5": "Close-up of cat's face: head is tilted, eyes wide, matching 'tilted its head' part of sentence",
+      "6": "Carl knocks, cat looks up, head tilt not visible",
+      "7": "Cat looks puzzled with question mark, Carl knocks, head tilt not visible",
+      "8": "Carl knocks, cat looks up, head tilt not visible",
+      "9": "Carl stops knocking, cat looks up, head tilt not visible"
+    },
+    "reason": "Cell 5 is the best because it clearly shows the cat with its head tilted, which directly matches the sentence's action. Other cells show Carl knocking or the cat looking up, but none as clearly depict the head tilt as cell 5 does.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 30194,
+    "costUsd": 0,
+    "at": "2026-10-19T01:41:34.861Z"
+  },
+  "G004": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "ok",
+      "4": "ok",
+      "5": "ok",
+      "6": "ok",
+      "7": "ok",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "The clerk is shown stuffing ballots into the box, matching 'stuff' in the sentence. The wig and ballot box are present, and the action is clear.",
+      "2": "The clerk is actively stuffing ballots, but the focus is on the ballot with a checkmark, not the act of stuffing the box.",
+      "3": "The clerk is shown from the side, still stuffing ballots into the box, matching the action.",
+      "4": "The clerk is stuffing ballots, but the ballot has an 'X' which may imply a different vote, not necessarily 'fixed' as per the sentence.",
+      "5": "The clerk is stuffing ballots, and the ballot has a checkmark, matching the action. The 'fixed' aspect is implied by the context of stuffing.",
+      "6": "The clerk is shown from the side, still stuffing ballots into the box, matching the action.",
+      "7": "The clerk is stuffing ballots, and the ballot has a checkmark, matching the action. The 'fixed' aspect is implied by the context of stuffing.",
+      "8": "The clerk is stuffing ballots, and the ballot has a checkmark, matching the action. The 'fixed' aspect is implied by the context of stuffing.",
+      "9": "The clerk is opening the box to reveal ballots, which is not 'stuffing' as per the sentence."
+    },
+    "reason": "Cell 1 is the best because it clearly shows the wig-wearing clerk actively stuffing ballots into the box, directly matching the action in the sentence. Other cells show similar actions but lack the same directness or focus on the act of stuffing.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 36392,
+    "costUsd": 0,
+    "at": "2026-10-19T01:42:11.281Z"
+  },
+  "G005": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "ok",
+      "4": "ok",
+      "5": "ok",
+      "6": "ok",
+      "7": "ok",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "Directly shows the power surge (lightning bolt) and the surgeon operating under her headlamp, matching the story sentence's key events.",
+      "2": "Shows the OR dark and the surgeon operating under headlamp, but lacks the power surge visual cue.",
+      "3": "Close-up of surgeon's focused face under headlamp, but no power surge shown.",
+      "4": "Shows surgeon from behind, operating under headlamp, but no power surge visual.",
+      "5": "Top-down view of surgeon operating under headlamp, but no power surge visual.",
+      "6": "Close-up of surgeon's face with headlamp, but no power surge visual.",
+      "7": "Shows power surge (lightning bolt) and surgeon operating under headlamp, but the headlamp is not clearly illuminating the surgical field as in cell 1.",
+      "8": "Shows surgeon receiving an instrument from an assistant, with headlamp on, but no power surge visual.",
+      "9": "Shows surgeon operating under headlamp, with power surge visual, but the headlamp is not clearly illuminating the surgical field as in cell 1."
+    },
+    "reason": "Cell 1 is the best because it uniquely combines both key elements of the story: the power surge (lightning bolt) and the surgeon operating under her headlamp. The other cells show one or the other, but not both together in the most direct way.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 34312,
+    "costUsd": 0,
+    "at": "2026-10-19T01:42:45.617Z"
+  },
+  "G006": {
+    "cells": {
+      "1": "ok",
+      "2": "best",
+      "3": "ok",
+      "4": "ok",
+      "5": "ok",
+      "6": "ok",
+      "7": "ok",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "Shows the tab being placed, but not the grabbing action.",
+      "2": "The man is actively grabbing the tab (the yellow slip) and holding it up, matching 'He grabs the tab'.",
+      "3": "Close-up of the tab being placed, but the grabbing action is implied, not explicit.",
+      "4": "The tab is being placed, but the action is more passive than 'grabs'.",
+      "5": "Overhead view showing the tab being placed, but not the grabbing motion.",
+      "6": "The man is holding the tab up, but the 'grabbing' action is not the focus.",
+      "7": "Close-up of the woman's face, not showing the tab or grabbing action.",
+      "8": "The man is walking away with the tab, but the 'grabbing' action is not shown.",
+      "9": "Close-up of the man holding the tab, but the 'grabbing' action is not shown."
+    },
+    "reason": "Cell 2 is the best because it clearly shows the man actively grabbing and holding the tab, which directly matches the first part of the sentence 'He grabs the tab'. The other cells show the tab being placed, held, or viewed, but none capture the dynamic 'grabbing' action as vividly as cell 2.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 33440,
+    "costUsd": 0,
+    "at": "2026-10-19T01:43:19.085Z"
+  },
+  "G007": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "ok",
+      "4": "weak",
+      "5": "weak",
+      "6": "weak",
+      "7": "ok",
+      "8": "best",
+      "9": "weak"
+    },
+    "notes": {
+      "1": "The boss is smiling and lightly throwing the keys to Tom, matching the sentence exactly. The action is clear and the key moment is captured.",
+      "2": "Close-up of the boss throwing the keys, but lacks the recipient's reaction to fully convey the story.",
+      "3": "Tom is reaching for the keys, but the boss is not visibly smiling in this frame.",
+      "4": "Only the keys are shown falling, with no clear view of the boss smiling or the action of throwing.",
+      "5": "Tom is seen from behind, so the boss's smile and the act of throwing are not clearly visible.",
+      "6": "Only hands and keys are shown, with no clear depiction of the boss smiling or the throwing action.",
+      "7": "The boss is smiling and handing the keys, but the action is 'handing' not 'throwing' as per the sentence.",
+      "8": "Tom is excitedly holding the keys, and the boss is smiling in the background. This captures the emotional climax of the story, even if the 'throwing' is implied by the prior frames.",
+      "9": "The boss is throwing the keys, but Tom is not clearly receiving them, and the boss's smile is not prominent."
+    },
+    "reason": "Cell 1 is the best because it directly and clearly shows the boss smiling while lightly throwing the keys to Tom, matching the sentence exactly. Cell 8 is also strong as it captures the emotional payoff, but it doesn't show the 'throwing' action as explicitly as cell 1.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 36064,
+    "costUsd": 0,
+    "at": "2026-10-19T01:43:55.171Z"
+  },
+  "G008": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "ok",
+      "4": "weak",
+      "5": "best",
+      "6": "weak",
+      "7": "ok",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "Best cell: shows the man tripping on the sidewalk right before the date, with the woman watching in shock. This directly illustrates the 'trips before the date' and 'clumsy characteristic' from the sentence.",
+      "2": "Good action: man is falling, but the woman is not in the frame, so it doesn't fully show the date context.",
+      "3": "Shows the man running away from the woman, but the trip isn't visible, so it's less direct for the sentence.",
+      "4": "Man is falling, but the woman is not visible, so the 'date' context is missing.",
+      "5": "Best cell: man is falling directly in front of the woman, who is reacting. This shows the clumsiness in front of the date, matching the sentence.",
+      "6": "Man is tripping over a hose, which is not a typical 'clumsy characteristic' in a date context, and the woman is not reacting to the fall.",
+      "7": "Man is falling, woman is watching, but the fall is not clearly a trip — it looks more like a stumble or fall from a step.",
+      "8": "Man is falling, woman is watching, but the fall is not clearly a trip — it looks more like a stumble or fall from a step.",
+      "9": "Close-up of the woman smiling, which implies she finds his clumsiness amusing, but it doesn't show the actual trip."
+    },
+    "reason": "Cell 5 is the best because it clearly shows the man tripping directly in front of the woman, who is reacting with surprise. This directly illustrates the 'trips before the date' and 'clumsy characteristic' from the sentence. Cell 1 is also strong, but cell 5 is more direct in showing the fall in front of the date. Cell 1 is a close second, but cell 5 is more centered on the action of the fall.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 40296,
+    "costUsd": 0,
+    "at": "2026-10-19T01:44:35.499Z"
+  },
+  "G009": {
+    "cells": {
+      "1": "ok",
+      "2": "best",
+      "3": "ok",
+      "4": "ok",
+      "5": "weak",
+      "6": "ok",
+      "7": "ok",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "Judge is laughing, but the trick isn't yet shown.",
+      "2": "The judge is laughing heartily as the card is held up, capturing the 'jovial' reaction and the 'minor act' of the trick in progress.",
+      "3": "Close-up of the card, emphasizing the trick, with judge still smiling.",
+      "4": "Judge is seen from behind, reacting to the trick.",
+      "5": "The judge is looking down, not reacting with the joviality described.",
+      "6": "Judge is smiling broadly, clearly charmed by the trick.",
+      "7": "Judge is clapping, clearly enjoying the trick.",
+      "8": "Judge is laughing, the trick is in motion.",
+      "9": "Judge is laughing from a distance, the trick is complete."
+    },
+    "reason": "Cell 2 is the best because it captures the judge's jovial, delighted reaction as the trick is being performed — the card is held up, the judge is laughing heartily, and the moment feels like a minor, charming act. Other cells show the judge reacting, but none capture the peak of the trick's effect as clearly as cell 2.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 31832,
+    "costUsd": 0,
+    "at": "2026-10-19T01:45:07.359Z"
+  },
+  "G010": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "ok",
+      "4": "ok",
+      "5": "weak",
+      "6": "ok",
+      "7": "ok",
+      "8": "weak",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "The bald scalp gleams and the surgeon's thin blade is shown cutting precisely — matching the sentence's key visual elements.",
+      "2": "Close-up of the blade cutting, but lacks the gleaming scalp context.",
+      "3": "Surgeon holding blade, scalp visible, but not the gleam or precise cut action.",
+      "4": "Blade cutting a line on scalp, but the gleam is not emphasized.",
+      "5": "Close-up of blade, but scalp is not visible or gleaming.",
+      "6": "Surgeon operating with blade, scalp visible, but the gleam is not highlighted.",
+      "7": "Close-up of eyes and blade, but scalp and gleam are not shown.",
+      "8": "Blade shown, but scalp is not visible or gleaming.",
+      "9": "Surgeon holding blade, scalp visible, but the gleam is not emphasized."
+    },
+    "reason": "Cell 1 is the best because it shows both the gleaming bald scalp and the surgeon’s thin blade actively cutting, directly matching the story sentence. Other cells show the action or the scalp but lack the full combination or the gleam.",
+    "model": "qwen/qwen3-vl-8b",
+    "ms": 31778,
+    "costUsd": 0,
+    "at": "2026-10-19T01:45:39.156Z"
+  }
+}

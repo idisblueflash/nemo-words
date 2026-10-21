@@ -1,0 +1,292 @@
+{
+  "G003": {
+    "cells": {
+      "1": "wrong",
+      "2": "ok",
+      "3": "weak",
+      "4": "weak",
+      "5": "weak",
+      "6": "weak",
+      "7": "ok",
+      "8": "ok",
+      "9": "best"
+    },
+    "notes": {
+      "1": "The story content is all there: Carl knocks with a visible spark, and the cat tilts its head. But the cat's eyes are a drawing fault. They are mismatched googly eyes, with one bulging at the edge of the head, and they don't read as normal cat eyes.",
+      "2": "The fist knocking on the door is clear, with impact lines. The cat's head is clearly tilted and looking up at the hand. Both eyes and the face read fine, and the door shows the setting. Carl is only a fist, arm and head corner, but both actors and both actions are present.",
+      "3": "Carl is seen from behind, so his face doesn't show. The cat is much bigger than he is and dominates the frame. The knock and the head tilt both read clearly, and the cat's eyes are stylized but not broken. The camera and layout hide the main actor, so I would not use it.",
+      "4": "Camera looks down from the top, so Carl's face is hidden and only his hair, back and raised fist show. The cat is clear, with a head tilt and the door knock marks, but the main actor's face can't be read.",
+      "5": "The cat's head tilt reads clearly. But Carl, the main actor, shows only his back and is small next to the huge cat. His fist lands on the wall beside the door, so the knock is unclear. The cat's eyes are oddly placed, though still readable.",
+      "6": "Carl is seen from behind, so his face is hidden, and he is bigger than the cat. The knock (raised fist, motion lines) and the cat's head tilt both read clearly, and nothing is missing or wrong.",
+      "7": "The cat tilts its head with a question mark, and a fist knocks on the door, so both actions read clearly. Carl is only an arm and fist, but that is enough to read as the knocker. The cat's eyes are cartoonish but not faulty. The face is clear and the door and mat give the setting.",
+      "8": "Carl is shown in three-quarter view with his fist raised and motion lines, so the knock reads clearly. The cat sits near the door and tilts its head, with clear eyes and no drawing faults. The door and the hallway setting are visible. Carl's face is partly cropped, but the action and the cat's reaction both read.",
+      "9": "Carl knocks on the door with marks showing the sound, and the cat sits close by with a clear head tilt. His face is in three-quarter view and the door sets the place. I saw no clear drawing faults in the eyes or hands."
+    },
+    "reason": "Cell 9 shows Carl's whole face in three-quarter view. His hand is on the door, with sound marks beside it, so the knock reads clearly. The cat sits close to him on the mat and tilts its head with clear eyes, and the door, mat and floor give the setting. Both actors, both actions and the place read as one scene. Cell 8 is the next best, but Carl's fist is in the air away from the door and his face is partly cropped. He is also much bigger than the cat, so the knock is less clear. Cells 2 and 7 show Carl only as an arm and fist, with no face.",
+    "ms": 169633,
+    "costUsd": 0.468225,
+    "model": "sonnet",
+    "at": "2026-10-19T02:26:48.992Z"
+  },
+  "G001": {
+    "cells": {
+      "1": "ok",
+      "2": "ok",
+      "3": "weak",
+      "4": "weak",
+      "5": "weak",
+      "6": "best",
+      "7": "ok",
+      "8": "weak",
+      "9": "weak"
+    },
+    "notes": {
+      "1": "A woman lunges deep toward the corner with her arm stretched out to the broom, which stands in the corner. She is in side view with her face visible. The corner and broom both read clearly. The hands, eyes and broom look fine. She hasn't gripped the broom yet, so it shows the reach, not the grab.",
+      "2": "An older woman lunges in three-quarter view toward the wall corner and reaches for the broom. The face, glasses, hands and broom are clear and readable, and I see no drawing faults. The lunge reads as a deep step and she is reaching to grab, though the grab has not happened yet.",
+      "3": "The woman lunges toward the broom in the corner, so the action, the broom and the setting all read. But we see her from behind and above, so her face is mostly hidden. The broom floats a little away from her hand, so the grab doesn't land as one clear action.",
+      "4": "Top-down camera shows mostly her back and the top of her head, so the face isn't readable. The reach toward the broom and the corner both show, but the swing action is weak. The lunge is not a clear 'swing deep'.",
+      "5": "The broom and corner read clearly. The woman's face is cut off at the frame edge and she is crouched, so the 'swing deep' action is unclear. A sliver of another panel shows at the bottom.",
+      "6": "Side/three-quarter view of an older woman with a clear face and glasses. She lunges deep toward the corner and grips the broom, and the room corner is visible. The hands, eyes and broom are drawn cleanly. The broom is the clearest part. The swing is only fairly readable as a crouched lunge.",
+      "7": "A woman in a deep lunge reaches into the corner and grips the broom handle. The side view shows her face, and the corner, the broom and the action are all clear. The eye, glasses and hands read fine, with no clear drawing fault. 'Swing' is shown as a lunge, which is acceptable.",
+      "8": "The woman and broom are clear and drawn well, but there is no corner. The setting is a flat wall and floor. She looks like she is leaning or crouching, not swinging deep into a corner. The broom is huge in the foreground and cuts off the action, so the story does not read as one scene.",
+      "9": "Nothing is clearly wrong. A woman swings a broom in a clear three-quarter view, and the face, hands and broom read well. The wall corner is in the background, but the broom sweeps the open floor in the foreground, not 'deep into the corner'. The corner and the action don't read as one scene."
+    },
+    "reason": "Cell 6 shows both parts of the sentence: a deep crouched lunge into the room corner, and a hand closed around the broom handle. Cells 1 and 2 stop at the reach and never show the grab, so they read as weak. The next best is cell 7, which also shows the grip and a wide lunge, but it is a flat side view with a small face. Cell 6 is a three-quarter view with a clear face, glasses and eyes, which the guidelines prefer. In cell 6 the grip, the broom and the corner are all clearly drawn, and I see no drawing faults.",
+    "ms": 158879,
+    "costUsd": 0.45900359999999996,
+    "model": "sonnet",
+    "at": "2026-10-19T02:29:50.151Z"
+  },
+  "G002": {
+    "cells": {
+      "1": "weak",
+      "2": "weak",
+      "3": "weak",
+      "4": "weak",
+      "5": "best",
+      "6": "weak",
+      "7": "wrong",
+      "8": "wrong",
+      "9": "weak"
+    },
+    "notes": {
+      "1": "The pier and calm sea show the peace and the place. Nothing shows it ending. The only figure is tiny and seen from behind, so no face reads. The water also has an odd hard vertical edge on the right.",
+      "2": "Eon of peace stretched and ended isn't shown: the cell has a lone man on a pier looking up, with a blank sky and a flat blue block for the sea. The pier and the man read clearly, but the ending is missing. The low-angle camera also shows no real water or place around the pier. It's not clearly wrong, but it's thin on the story.",
+      "3": "The man is seen from behind, so no face shows, and the story's action is unclear. The long empty pier and calm sea suggest peace. Nothing shows it stretching and then ending. The pier is also drawn so it ends at an open frame, and it does not read as 'off the pier'. The back view hides the story.",
+      "4": "Top-down view of a pier with a tiny figure at its end, so the face is hidden and the actor is very small. Nothing in the image shows an eon of peace stretching and ending. The scene is not wrong, but the camera hides the story.",
+      "5": "A side view shows a peaceful person leaning on a pier rail and looking out at the sea. The face, hand and eye are drawn cleanly, and the pier and water are both clear. The 'ended' part of the sentence isn't shown, but the sentence is abstract and the calm mood fits. The sea has an odd hard edge on the right.",
+      "6": "The man is seen from behind and the camera is high, so his face is hidden. The water is a flat blue block with an odd cut-off edge, and nothing shows an eon of peace stretching and ending. The pier and sea are clear, but the story is not.",
+      "7": "The water is drawn as a flat slab with a hard slanted edge against the blank sky, which reads as a broken object. The person also has their back to us, so no face shows. Nothing shows peace stretching and ending.",
+      "8": "A man strolls calmly on the pier, which shows peace but nothing that stretches or ends, so the action is missing. He is on the pier rather than off it. The sea also stops at an odd vertical edge on the right, which looks like a drawing fault.",
+      "9": "A man stands on the pier with arms crossed, looking up and away. The pier and water show the setting. But nothing reads as 'an eon of peace stretched and ended', so the story's action and the ending are missing. The pose and smile are only calm. The pier also has an odd shape at the right end, where the water edge looks cut off. The cell is not clearly wrong, but I would not use it."
+    },
+    "reason": "the only cell that passed the check",
+    "ms": 138506,
+    "costUsd": 0.3977004,
+    "model": "sonnet",
+    "at": "2026-10-19T02:30:43.696Z"
+  },
+  "G004": {
+    "cells": {
+      "1": "best",
+      "2": "weak",
+      "3": "ok",
+      "4": "ok",
+      "5": "ok",
+      "6": "ok",
+      "7": "ok",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "A three-quarter view of a wig-wearing clerk with a sly sideways glance, stuffing a stack of ballots into the box. The wig, the action and the box all read clearly. The eyes and hands look fine. The only small gap is that nothing marks the box as 'fixed', though the sneaky look and the thick stack of ballots suggest it.",
+      "2": "The wig, ballot box, and stuffing action all read, and the sideways glance looks sneaky. But the camera looks up at the actor from below, and the huge box hides most of the scene. Nothing marks the box as 'fixed', and it looks more like a podium than a ballot box. The clerk is not clearly a clerk.",
+      "3": "A wigged clerk stuffs a wad of ballots into the box slot. The three-quarter view shows the face with a sly sideways glance. The eye, face and hand are drawn cleanly. The setting is minimal, and the 'fixed' sense comes only from the glance and the stack of ballots.",
+      "4": "The wig, the ballot box and the hands stuffing a wad of ballots into the slot all read clearly. The sly sideways glance suggests cheating, and the face is visible from a high three-quarter angle. The eyes and hands look fine. The 'clerk' role and the 'fixed' box are only weakly shown.",
+      "5": "Wig-wearing figure in a three-quarter view stuffs a stack of checked ballots into the box slot. The shifty sideways glance reads as cheating. Eyes, face and hands look sound. It is a close shot, but the box and ballots are clear. The 'clerk' role is only implied by the suit.",
+      "6": "A wigged person in a suit pushes a wad of ballots into a wooden box. The three-quarter view shows the face and the action. The darting eyes and sweat marks read as sneaky. The eyes and hand look fine. The room is plain, but the story names no setting. The 'clerk' role is only implied by the suit, and the 'fixed' box is only implied by the stuffing.",
+      "7": "Wig, ballots being stuffed into the box slot, and a sneaky sideways glance all read clearly in a three-quarter view. The eyes and hands look fine. The clerk role is only hinted at by the dark jacket, which is minor.",
+      "8": "Side view of a wig-wearing clerk with the face clear. Their hand pushes a stack of ballots into the box slot, so the stuffing action reads well. The sweat drop and wide eye suit a rigged vote. The eye, hand and box are drawn cleanly. The 'fixed' part of the box is not shown, but that is hard to draw anyway.",
+      "9": "A three-quarter view of a wig-wearing man stuffing a wad of papers into a wooden ballot box with the lid lifted. The action, wig and box all read clearly. The sweat drop and sideways glance suit the sneaky act. The eyes and hands look fine. The 'clerk' role and the 'fixed' sense are only implied, which is minor."
+    },
+    "reason": "Cell 1 wins because it has the clearest three-quarter view. The wig, the sly sideways glance and the hand pushing a thick stack of ballots into the box slot all read at once. The eyes, face and hands are clean. The table, the chair and the extra pile of ballots also show a place and support the rigged-vote idea. The next best cells are weaker. Cell 4 is shot from above, and cell 5 is a tight close-up with a tongue gesture that cuts off the place. In cell 7 the hands cover the nose and mouth. Cell 6 has a worried frown rather than a sly look, and cell 8 is a side view with the face turned away.",
+    "ms": 155070,
+    "costUsd": 0.4792888000000001,
+    "model": "sonnet",
+    "at": "2026-10-19T02:31:55.540Z"
+  },
+  "G005": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "ok",
+      "4": "ok",
+      "5": "weak",
+      "6": "weak",
+      "7": "ok",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "Quarter view of a surgeon operating by headlamp in a dark OR. The dark monitor, the dark overhead lamp and the spark on the wall box show the power cut. Face, hands and scalpels read clearly, and the eyes look fine.",
+      "2": "Dark operating room with a dead monitor and OR light, a spark on the wall panel for the power cut, and a three-quarter view of a surgeon with a lit headlamp operating on a draped patient. The place, actor and action all read. The face, glasses and hands look clean. The surgeon is somewhat small in the frame, but still clear.",
+      "3": "A masked surgeon in a quarter view wears a lit headlamp, and the dead surgical light and dark room read as a power cut. The patient's sheet shows she is operating. Her hands are hidden, and her eyes look slightly wide and crossed, but this is not a clear drawing fault.",
+      "4": "The dark room, the lit headlamp beam, the instrument tray and the draped patient all read as a surgeon operating by headlamp. The view is from behind and over the shoulder, with the cheek, mask and glasses partly visible. Her hands and the forceps are clear and look fine. There is no spark or other sign of a power cut, but the darkness carries it.",
+      "5": "The headlamp beam, dark OR and surgeon with a bun all read well. But the camera looks from the top, so her face is hidden behind the bowed head and mask. Nothing clearly shows the power cut, such as a spark or dead lights.",
+      "6": "Extreme close-up of a surgeon's face with a lit headlamp. It shows no operating room, no patient and no operating action, so the OR setting and the surgery don't read. The eyes are also odd: the glasses and the beam overlap on the left, and the left eye is distorted. A close-up that cuts off the place is a weak cell, not a wrong one.",
+      "7": "Three-quarter view of a surgeon in a dark OR with a lit headlamp. A spark by the wall outlet signals the power cut, and the dark monitor and dim surgical light support it. She is operating, with instruments in both hands over a lit patch on the drape. The face and eyes read clearly. She looks toward the spark with a startled expression, which fits the surge. No drawing faults seen.",
+      "8": "A woman surgeon in a three-quarter side view wears a lit headlamp. Its beam falls on the draped patient. The dark room and dark monitor show the power cut. The eye, glasses and hands are drawn cleanly. There is no spark sign, but the story reads.",
+      "9": "Dark OR with a dead monitor and a dead overhead light. The surgeon works by headlamp, and the beam clearly lights the incision. Three-quarter view, with the face and hands readable. Eyes, glasses and hands look fine. The power-cut cue is only implied, not shown with a spark."
+    },
+    "reason": "Cell 1 shows every part of the sentence in one quarter view. The spark on the wall box, the dead monitor and the dark overhead lamp show the power cut. The headlamp beam falls on the incision, and she looks down at her work with a scalpel in each hand, so she is plainly operating by headlamp. Her face, glasses, eyes and hands are clean. Cell 7 is the closest rival, with a spark and a startled look. But its headlamp throws no beam on the work and she looks away from the patient, so 'operates by headlamp' reads less clearly. Cell 9 has no spark. Cell 2 shows the surgeon too small. Cell 8 has no spark, and a second person's hand is passing her an instrument.",
+    "ms": 148353,
+    "costUsd": 0.47558200000000006,
+    "model": "sonnet",
+    "at": "2026-10-19T02:33:04.362Z"
+  },
+  "G006": {
+    "cells": {
+      "1": "ok",
+      "2": "ok",
+      "3": "wrong",
+      "4": "best",
+      "5": "weak",
+      "6": "ok",
+      "7": "weak",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "The man in front reaches for the $42 bill, and two other diners sit beside him looking sidelong and silent, so 'they' is 2 or more. The restaurant table setting shows. The faces and hands read clearly and I see no drawing faults. The man is in three-quarter view and is the main actor.",
+      "2": "The man in three-quarter view grabs the $42 bill, and two people sit silent beside him looking up at it, so the actor, the object and the 'they' (2) all show. The restaurant setting reads from the plates and glass. The hand is big from the perspective but still reads as a hand. His eyes sit a little odd against the nose, but nothing is clearly broken.",
+      "3": "Only a hand grabbing the $42 bill shows. 'They' (2+ people sitting in silence) are missing, and so is the man's face. The fingers are also muddled: the thumb and fingers merge and are hard to read.",
+      "4": "The man faces the camera and his hand is clearly on the $42 bill. Two other people sit silently at the table, so the count for 'they' is met. His eyes and hand are drawn correctly. The other two are seen from behind, but they are secondary, and the quiet mood reads.",
+      "5": "The camera looks straight down, so the grabber (he) shows only as an arm with no face. The two seated people show mostly their heads and clasped hands, and the left woman's face is partly hidden by the plate and forks. The grab of the $42 tab reads clearly and the two people sit silent, but the layout hides the story and the feelings.",
+      "6": "The standing man holds a slip that reads as the bill, and two people sit silent at a dining table. Setting, count and faces all read, and I saw no drawing faults. The slip is held up rather than grabbed, and the mood is mildly pleasant rather than awkward, but both are minor.",
+      "7": "Nothing is clearly wrong, but the camera hides the story. The man who grabs the tab is only a hand and a cropped torso, with no face. The woman fills the frame. The hand holds the $42 bill out rather than clearly grabbing it. The two people don't read as both sitting in silence.",
+      "8": "He holds a yellow tab slip and walks toward the counter, shown in side or three-quarter view. Two people sit quietly at the table and watch him, so the 'they' count of 2 is met. The restaurant setting reads clearly. I saw no clear drawing faults in the hands or faces. Minor weaknesses: his face is only partly visible, and the 'grab' reads more as holding the slip while walking.",
+      "9": "Two men sit side by side with closed mouths, so 'they' and the silence read. The left man holds the $42 bill clearly in his fist, which fits grabbing the tab. Faces and hands are clean, with no drawing faults. The smiles are slightly cheerful for 'unspoken', but nothing is wrong."
+    },
+    "reason": "Cell 4 shows the man facing the camera. His hand is clearly on the $42 bill, and his eyes and hand are drawn correctly. The two others sit silently at the same table, so 'they' is 2 and the restaurant table setting shows. The action, the result and the other actors all read as one scene, and the quiet mood fits 'unspoken'. Cell 1 is next best. It has the same elements and a three-quarter view, but the two others look sidelong and smile, so the mood is less tense. Cell 2 has an oversized hand and odd eyes. Cell 6 holds the slip up instead of grabbing it, and its mood is pleasant. Cell 8 shows the man mostly from behind and walking away. Cell 9 has only two people, and the smiles are cheerful.",
+    "ms": 158169,
+    "costUsd": 0.47542680000000004,
+    "model": "sonnet",
+    "at": "2026-10-19T02:34:12.089Z"
+  },
+  "G007": {
+    "cells": {
+      "1": "best",
+      "2": "wrong",
+      "3": "ok",
+      "4": "weak",
+      "5": "ok",
+      "6": "wrong",
+      "7": "weak",
+      "8": "weak",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "The boss is smiling and has just tossed the keys, which are in the air with motion lines between him and Tom. Tom reaches out with both hands to catch them. Both faces and hands are clean and readable, and both actors are in frame. Tom's face is in profile and a bit cropped, which is a minor issue.",
+      "2": "Drawing fault: a detached peach blob floats above the hand with a broken outline, so a body part reads as something else. Tom, the recipient, is also not shown. The boss's smile and the flying keys read clearly.",
+      "3": "Both actors are in frame. The boss smiles warmly, the keys arc through the air with motion lines, and Tom reaches up to catch them. The faces and hands look fine. Tom's joy is a small mismatch, but the action reads clearly.",
+      "4": "Top-down camera shows only Tom's hair and hands, with no face. The boss shows only a hand and sleeve, so there is no smile and the boss isn't identifiable. The keys are in the air, but the story's smile and the two actors don't read.",
+      "5": "The smiling boss's face is clear, his hand is out in a throwing gesture, and the keys are in mid-air with a motion line. Tom's reaching hand shows who receives them. Tom is seen from behind, but this reads as an over-the-shoulder shot and the boss is the main actor. I found no drawing faults.",
+      "6": "Only keys and two disembodied hands show. Tom and his boss are missing, and so is the boss's smile. The throw is only suggested by motion lines, and the hands read as a catch, not a boss tossing keys. Part of the story is missing, and the action cannot be read.",
+      "7": "The boss smiles clearly and Tom's open hands are ready to catch, but the keys hang from the boss's fingers. They are not in flight, so this reads as dangling or offering the keys, not lightly throwing them. The drawing has no faults.",
+      "8": "Tom is the larger figure in front and holds the keys. The boss smiles but is small and in the background, and no throw shows. The action reads as Tom already holding the keys, not the boss lightly throwing them. Tom's wide-open excited mouth is a different feeling from a light catch. No drawing faults.",
+      "9": "The boss, in an office with a desk, smiles and has just tossed the keys, which are mid-air toward Tom. Tom has his hands up to catch them. Both faces and the keys are clear, and I saw no drawing faults. The actors are a little far apart, but the keys link them."
+    },
+    "reason": "Cell 1 shows the whole story in one medium shot. The boss's smiling face is in three-quarter view. His open hand is still out from the toss. The keys are mid-air with motion lines, and Tom reaches to catch them in profile. His face and both hands read cleanly, and the boss's hand and the keys are both bigger and clearer than in cell 9. Cell 3 is next, but the boss's throwing hand is out of frame, so the throw itself does not show. Cell 5 shows Tom from behind, and cell 9 has the two men far apart with tiny keys.",
+    "ms": 141799,
+    "costUsd": 0.45638199999999995,
+    "model": "sonnet",
+    "at": "2026-10-19T02:35:14.964Z"
+  },
+  "G008": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "weak",
+      "4": "weak",
+      "5": "ok",
+      "6": "ok",
+      "7": "ok",
+      "8": "ok",
+      "9": "weak"
+    },
+    "notes": {
+      "1": "The man trips in a clear three-quarter view with a surprised face. The woman waits at a lit doorway at dusk, so the date reads. Both actors and the place show, and I saw no eye, hand or shoe faults.",
+      "2": "The man is clearly mid-trip on the steps, with a three-quarter view of his surprised face. A woman, the date, watches at the doorway. The faces and eyes are clean and the setting reads. The foreshortened near hand is a little odd but still readable.",
+      "3": "The trip reads clearly, and so does the date, who is the woman in the foreground. But the man shows only his back, with no face. The woman is bigger than him and also faces away. The camera hides the main actor, so I would not use it.",
+      "4": "The camera looks down from above, and the tripping man shows only his back and hair, so his face can't be read. The trip and the untied shoelace are clear, and the woman is present. The woman's hands cover her face, so her reaction is also hard to read. The top-down view hides the story.",
+      "5": "The man lunges forward with a startled face and a reaching hand, so it reads as a trip. The woman, the date, watches in the background. His face is clear and three-quarter view. The foreground hand is large but still reads as a hand, and the eyes are stylized but not broken.",
+      "6": "Man trips over a hose on a doorstep in side view, with his face and the stumble both readable. The date waits at the door with a surprised look, so the 'before the date' setting reads. Hands, eyes and hose show no drawing faults.",
+      "7": "Medium shot, three-quarter view. The man's face shows alarm. He is mid-trip with arms flailing and a loose shoelace under his foot, so the clumsy stumble reads clearly. A woman in a dress stands beside him, smiling and covering her mouth, which suggests the date. The date setting is implied, not stated. The anatomy and eyes look fine.",
+      "8": "The man is clearly mid-trip on an untied lace, in a three-quarter view with a surprised face. The date waits at a restaurant doorway, so the setting and both actors read as one scene. The eyes and hands look fine. The woman's laugh is a mild stretch for 'before the date', but it doesn't break the story.",
+      "9": "The tripping man is small and blurred in the background. A large smiling woman in the foreground dominates the cell. She is not in the story, and the man's fall is not clearly a trip. There is no date setting and no clear sign of a date."
+    },
+    "reason": "Cell 1 shows the man's face in clear three-quarter view with a surprised expression, and he is plainly mid-trip. The woman waits at a lit doorway at dusk, so the date reads. Her startled look fits 'before the date'. Cell 8 is the next best. It shows the untied lace more clearly, but the woman is laughing hard, which suggests the date is already underway. The man is also a little smaller in the frame. Cell 6 shows him in side view with his face mostly hidden. Cells 2 and 5 distort the near hand or crop too close.",
+    "ms": 215179,
+    "costUsd": 0.4681378,
+    "model": "sonnet",
+    "at": "2026-10-19T02:37:26.490Z"
+  },
+  "G009": {
+    "cells": {
+      "1": "ok",
+      "2": "ok",
+      "3": "ok",
+      "4": "weak",
+      "5": "weak",
+      "6": "best",
+      "7": "ok",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "1": "A man holds up a red card, which reads as a small card trick. A jovial judge in robes and bands laughs behind a bench with a gavel, so the courtroom shows. The man is in three-quarter view and both faces are clear. The hands and eyes look fine. The judge's beaming laugh is a bit more joy than charm, but it suits 'jovial'.",
+      "2": "The judge is jovial, with a clear three-quarter face, a gavel and a bench. A hand holds up a red card, so the card trick reads. The drawing has no faults. The laughing face is a little more joy than charm, but it suits 'jovial'. The performer shows only as an arm.",
+      "3": "A hand holds up a card with spark lines, so a small trick reads. A round, laughing judge in a robe sits at a bench in a courtroom setting. The judge's face and closed eyes are clean and match 'jovial'. The hand is large, but the judge is still clearly readable. No drawing faults.",
+      "4": "The magician, with a card trick and a clear happy face, reads well. The judge is only a back-of-head view and is bigger than the magician, so the judge's charmed, jovial reaction can't be seen. No drawing faults.",
+      "5": "The magician, card, gavel and judge all show, but the judge is seen from above and behind, so his face and any charm or jovial look are hidden. The view is a high angle. The magician's hands look odd, but the cell is not clearly wrong.",
+      "6": "Quarter view of the performer showing a red card trick, and the jovial judge in the courtroom with a gavel and bench. The judge's delighted, charmed face with hands on cheeks reads clearly. The faces and hands look fine, with no drawing faults. The two actors are close, so the action and its result read as one scene.",
+      "7": "A magician tosses a playing card, a jovial judge laughs and claps, and the gavel and bench show the courtroom. The magician is in side view with a clear face and the judge is clearly visible. The eyes and hands look fine. 'A minor act' is only loosely shown, but nothing is missing or wrong.",
+      "8": "A magician holds up a red card and a jovial judge laughs, with a gavel and a bench that read as a courtroom. The trick, the judge and the setting are all clear. The judge shows joy where the story says charm, but that fits 'jovial'. The faces look clean, and the performer is in side view with eyes closed, which is minor.",
+      "9": "A man holds up a red card (the trick) toward a laughing, jovial judge at the bench, in a courtroom with a gavel. The actors, action, setting and faces all read clearly and have no drawing faults. The magician is in side view and fairly small, and the judge's joy is a bit stronger than 'charmed'. These are minor problems."
+    },
+    "reason": "Cell 6 shows the performer in quarter view with a clear face, holding up a small red card. The judge sits right beside them with a gavel and bench, hands on cheeks and a delighted, charmed look. The action and its result read as one scene, and the feeling matches 'charmed' rather than plain joy. The next best, cell 1, is also clean and clear, but the judge is laughing hard, which is joy more than charm. Cells 7 and 8 have the same joy problem. Cell 7 also has the card flying in the air, so it reads less as a small trick. Cell 8 has the performer's eyes closed. Cell 9 has a small performer and a door that adds nothing. Cells 2 and 3 show the performer only as an arm or a hand.",
+    "ms": 1530410,
+    "costUsd": 0.43772400000000006,
+    "model": "sonnet",
+    "at": "2026-10-19T02:46:17.675Z"
+  },
+  "G010": {
+    "cells": {
+      "1": "best",
+      "2": "ok",
+      "3": "weak",
+      "4": "ok",
+      "5": "weak",
+      "6": "ok",
+      "7": "ok",
+      "8": "ok",
+      "9": "weak"
+    },
+    "notes": {
+      "1": "Quarter view of the surgeon. A thin scalpel touches the bald scalp and leaves a fine incision line. The scalp has a clear gleam highlight. The patient is lying down with eyes closed, and the surgeon's mask, cap and gown read as surgical. Hands and eyes look fine. The surgeon's wide eyes are slightly intense, but they still read as close focus.",
+      "2": "A masked surgeon in scrubs watches closely while a thin scalpel cuts a fine line in a glossy, bald-looking skin dome with gleam highlights. The action, the actor, the gleam and the precision all read. The eye is clean. The gloved fingers are slightly blobby but readable. The close-up shows little of the operating room, but the scrubs and mask imply it.",
+      "3": "The scalp is the huge foreground element, and it shows no bald gleam and no clear head shape. The surgeon is wide-eyed and startled, not precise, and the blade is held up in the air, not cutting. There is no operating-room setting, and the action does not read as a precise cut.",
+      "4": "The scalp is bald with clear gleam highlights. A surgeon in mask and gown holds a thin scalpel at a fine incision line. The surgical drapes show the setting. The eyes and hands read cleanly. The view is from above the patient, but both faces are visible and the cut reads clearly.",
+      "5": "The gleaming bald scalp, the thin blade and the incision are all clear, and the hands read fine. The surgeon is seen from behind with the face hidden, and it is a tight close-up with no operating room visible. The story is readable but the camera hides the face and the setting.",
+      "6": "The scene has all the story parts: a surgeon in a three-quarter view with a clear face, a thin scalpel at a bald scalp that has gleam highlights, and an operating lamp and table for the setting. The hands and eyes read cleanly and I saw no drawing faults. The scalpel only touches the scalp and shows no cut yet, which is a minor point.",
+      "7": "The surgeon's focused eyes, the thin scalpel touching the glossy bald scalp and the highlights all read clearly. The eyes and hand are drawn without faults. It is a tight close-up, but the story names no setting, so nothing required is missing.",
+      "8": "The scalp gleams with a clear highlight. The scalpel is thin, and a fine incision line shows the precise cut. The surgeon in mask and cap is visible with a readable eye and a focused look, and a spark sign adds to the story. The hand is partly cropped but still reads as a hand. It is a close shot, but the surgeon and scrubs keep the setting clear.",
+      "9": "The scalp gleams and a faint cut line shows, but the scalpel is raised in the air away from the scalp, so the cutting does not read. The surgeon's wide, startled eyes don't fit 'precisely'. The scalp is a huge, bald, belly-like dome with no head around it, and no operating room shows."
+    },
+    "reason": "Cell 1 shows the surgeon in a quarter view, so the masked face and the action both read. The thin scalpel touches the scalp and leaves a visible fine incision line, which shows the precise cut. The bald scalp has a clear gleam highlight. The patient lies with closed eyes, and the cap, mask and gown make the setting read as surgical. The next best, cell 6, has a good setting with a lamp and table. But its scalpel only touches the scalp and shows no cut yet, and the surgeon and scalp are small. Cell 4 is shot from above with the surgeon's face cropped. Cells 2, 7 and 8 are tight close-ups that show little of the setting.",
+    "ms": 160450,
+    "costUsd": 0.4764736,
+    "model": "sonnet",
+    "at": "2026-10-19T02:47:31.249Z"
+  }
+}

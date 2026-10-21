@@ -1,0 +1,253 @@
+{
+  "G001": {
+    "cells": {
+      "1": "weak",
+      "2": "ok",
+      "3": "weak",
+      "4": "weak",
+      "5": "weak",
+      "6": "best",
+      "7": "weak",
+      "8": "ok",
+      "9": "wrong"
+    },
+    "notes": {
+      "1": "side view",
+      "3": "top side view, can't see the face",
+      "4": "top view, can't see the face",
+      "5": "extreme close-up shot , can't see the room",
+      "7": "side view, wrong action",
+      "9": "there's no sweep action in our sentence."
+    },
+    "noneGood": false,
+    "reason": "the main character (grandma) has a quarter view, which provide more information in a single image.",
+    "guidelines": "v1",
+    "at": "2026-10-19T01:07:30.096Z"
+  },
+  "G002": {
+    "cells": {
+      "1": "weak",
+      "2": "ok",
+      "3": "weak",
+      "4": "weak",
+      "5": "weak",
+      "6": "weak",
+      "7": "weak",
+      "8": "ok",
+      "9": "best"
+    },
+    "notes": {
+      "1": "actor is too small",
+      "3": "back view of actor",
+      "4": "top view and actor is too small",
+      "5": "close-up shot, can't see the full pier",
+      "6": "back view and small actor",
+      "7": "back view and small actor"
+    },
+    "noneGood": false,
+    "reason": "pier and the man showed clear, quarter view of pier, man standing pose represent the peace",
+    "guidelines": "v1",
+    "at": "2026-10-19T01:09:14.261Z"
+  },
+  "G003": {
+    "cells": {
+      "1": "wrong",
+      "2": "ok",
+      "3": "weak",
+      "4": "ok",
+      "5": "weak",
+      "6": "wrong",
+      "7": "best",
+      "8": "wrong",
+      "9": "wrong"
+    },
+    "notes": {
+      "1": "one eye of cat is drawing wrong.",
+      "3": "knocking actor is far away from the cat",
+      "5": "knocking actor is far away from the cat",
+      "6": "I can't see that's a door",
+      "8": "the man doesn't knock the door, seems to hit the cat",
+      "9": "the man doesn't knock the door, but pat the door"
+    },
+    "noneGood": false,
+    "reason": "although I can't see the full body of man, but his knocking action with hand is readable, and a question mark hover the cat makes the image more reasonable",
+    "guidelines": "v1",
+    "at": "2026-10-19T01:10:13.166Z"
+  },
+  "G004": {
+    "cells": {
+      "1": "ok",
+      "2": "weak",
+      "3": "weak",
+      "4": "weak",
+      "5": "weak",
+      "6": "ok",
+      "7": "best",
+      "8": "weak",
+      "9": "wrong"
+    },
+    "notes": {
+      "2": "emotion of clear seems missing something, not stuffing",
+      "3": "back view of actor",
+      "4": "top view, can't see clear the emotion of clerk",
+      "5": "extreme close-up shot, expression of clerk looks confuse, like he's hungry",
+      "8": "side view, he looks like busy and hurry, not sneakily",
+      "9": "ballot box is drawing wrong"
+    },
+    "noneGood": false,
+    "reason": "front view of the clerk, side peeking eyes, action of pushing the votes make the stuffs more plausible",
+    "guidelines": "v1",
+    "at": "2026-10-19T01:12:48.229Z"
+  },
+  "G005": {
+    "cells": {
+      "1": "best",
+      "2": "weak",
+      "3": "ok",
+      "4": "weak",
+      "5": "weak",
+      "6": "wrong",
+      "7": "weak",
+      "8": "ok",
+      "9": "ok"
+    },
+    "notes": {
+      "2": "actor is too small",
+      "4": "back view of the actor, not sense of operation room is dark",
+      "5": "top view",
+      "6": "there's no operation room as a background",
+      "7": "actor is looking aside, it's not plausible when she already heads the headlamp and focus"
+    },
+    "noneGood": false,
+    "reason": "two electric flash symbol hints the black out. focus on the operation action more reasonable about knowing the black out and continue work. quarter view makes the view more informative ",
+    "guidelines": "v2",
+    "at": "2026-10-19T01:16:21.693Z"
+  },
+  "G006": {
+    "cells": {
+      "1": "wrong",
+      "2": "ok",
+      "3": "wrong",
+      "4": "weak",
+      "5": "weak",
+      "6": "ok",
+      "7": "wrong",
+      "8": "best",
+      "9": "wrong"
+    },
+    "notes": {
+      "1": "girl's eye is drawing wrong",
+      "3": "didn't show `they` actors",
+      "4": "back view of `they` actors",
+      "5": "top view of `they` actors",
+      "7": "one actor instead of two more actor for `they`",
+      "9": "one actor instead of two more actor for `they`"
+    },
+    "noneGood": false,
+    "reason": "a going to pay action is better than grabs the tab action.",
+    "guidelines": "v2",
+    "at": "2026-10-19T01:18:42.280Z"
+  },
+  "G007": {
+    "cells": {
+      "1": "best",
+      "2": "wrong",
+      "3": "weak",
+      "4": "weak",
+      "5": "ok",
+      "6": "weak",
+      "7": "wrong",
+      "8": "weak",
+      "9": "ok"
+    },
+    "notes": {
+      "2": "no actor to take the key",
+      "3": "action didn't looks like a toss, more like throw high",
+      "4": "top view, can't see both faces",
+      "6": "no actors show here",
+      "7": "pick action is not a toss",
+      "8": "grab key action is not a toss"
+    },
+    "noneGood": false,
+    "reason": "close-up shot, two actions inside, correct toss action",
+    "guidelines": "v2",
+    "at": "2026-10-19T01:20:18.583Z"
+  },
+  "G008": {
+    "cells": {
+      "1": "best",
+      "2": "weak",
+      "3": "weak",
+      "4": "weak",
+      "5": "ok",
+      "6": "weak",
+      "7": "ok",
+      "8": "weak",
+      "9": "weak"
+    },
+    "notes": {
+      "2": "can't see why he trips",
+      "3": "both actors in back view",
+      "4": "top view didn't show both actor's faces.",
+      "6": "back view of main character",
+      "8": "the girl (support actor)'s emotion is wrong, she shouldn't smile",
+      "9": "main character is smaller than the support actor"
+    },
+    "noneGood": false,
+    "reason": "quarter view of the boy, trips action, close-up shot, with restraut background hints a date",
+    "guidelines": "v2",
+    "at": "2026-10-19T01:22:13.609Z"
+  },
+  "G009": {
+    "cells": {
+      "1": "weak",
+      "2": "weak",
+      "3": "weak",
+      "4": "weak",
+      "5": "weak",
+      "6": "ok",
+      "7": "best",
+      "8": "weak",
+      "9": "weak"
+    },
+    "notes": {
+      "1": "judge's express is not charming but joy",
+      "2": "didn't show the other actor",
+      "3": "didn't show the other actor",
+      "4": "can't see the charmed judge's fact to read jovial emotion",
+      "5": "can't see the charmed judge's fact to read jovial emotion",
+      "8": "judge's express is not charming but joy",
+      "9": "long shot makes hard to see the action and expression"
+    },
+    "noneGood": false,
+    "reason": "close-up shot, live action of playing the card, smile face of the judge, and we can see both actor's face( the judge in quarter, the waiter in side)",
+    "guidelines": "v2",
+    "at": "2026-10-19T01:24:31.692Z"
+  },
+  "G010": {
+    "cells": {
+      "1": "best",
+      "2": "wrong",
+      "3": "wrong",
+      "4": "weak",
+      "5": "wrong",
+      "6": "ok",
+      "7": "wrong",
+      "8": "wrong",
+      "9": "wrong"
+    },
+    "notes": {
+      "2": "can't tell is a human head",
+      "3": "can't tell is a human head",
+      "4": "the head position is wrong",
+      "5": "can't tell is a human head",
+      "7": "can't tell is a human head",
+      "8": "can't tell is a human head",
+      "9": "can't tell is a human head"
+    },
+    "noneGood": false,
+    "reason": "close-up shot, with a cut seam",
+    "guidelines": "v2",
+    "at": "2026-10-19T01:24:59.794Z"
+  }
+}

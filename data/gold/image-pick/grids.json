@@ -1,0 +1,92 @@
+[
+  {
+    "id": "G001",
+    "word": "sweep",
+    "grid": "sweep.grid.png",
+    "story": "Swing deep into the corner; grab the broom.",
+    "split": "dev",
+    "batch": 1,
+    "earlierPick": 2
+  },
+  {
+    "id": "G002",
+    "word": "period",
+    "grid": "period.grid.png",
+    "story": "Off the pier, an eon of peace stretched and ended.",
+    "split": "dev",
+    "batch": 1,
+    "earlierPick": 9
+  },
+  {
+    "id": "G003",
+    "word": "cocked",
+    "grid": "cocked.grid.png",
+    "story": "Carl knocked, and the cat tilted its head.",
+    "split": "dev",
+    "batch": 1,
+    "earlierPick": 7
+  },
+  {
+    "id": "G004",
+    "word": "rigged",
+    "grid": "rigged.grid-2.png",
+    "story": "Wig-wearing clerk stuffs the fixed ballot box.",
+    "split": "dev",
+    "batch": 1,
+    "earlierPick": 7
+  },
+  {
+    "id": "G005",
+    "word": "surgeon",
+    "grid": "surgeon.grid.png",
+    "story": "Power surge! An OR goes dark; she operates by headlamp.",
+    "split": "dev",
+    "batch": 1,
+    "earlierPick": 1
+  },
+  {
+    "id": "G006",
+    "word": "tacit",
+    "grid": "tacit.grid.png",
+    "story": "He grabs the tab; they sit unspoken.",
+    "split": "test",
+    "batch": 1,
+    "earlierPick": 8
+  },
+  {
+    "id": "G007",
+    "word": "toss",
+    "grid": "toss.grid.png",
+    "story": "Tom's boss smiles, then lightly throws him the keys.",
+    "split": "test",
+    "batch": 1,
+    "earlierPick": 1
+  },
+  {
+    "id": "G008",
+    "word": "trait",
+    "grid": "trait.grid.png",
+    "story": "He trips before the date, revealing a clumsy characteristic.",
+    "split": "test",
+    "batch": 1,
+    "earlierPick": 1
+  },
+  {
+    "id": "G009",
+    "word": "trivial",
+    "grid": "trivial.grid.png",
+    "story": "The trick charmed our jovial judge — a minor act.",
+    "split": "test",
+    "batch": 1,
+    "earlierPick": 7
+  },
+  {
+    "id": "G010",
+    "word": "scalpel",
+    "grid": "scalpel.grid.png",
+    "story": "The bald scalp gleams; the surgeon's thin blade cuts precisely.",
+    "split": "test",
+    "batch": 1,
+    "earlierPick": 6
+  }
+]
