@@ -16,6 +16,10 @@
 // Under Dagu the caller's environment reaches a step only as DAG params:
 // card.js/dags/card.yaml forward the proxy variables (Jev needs one from a CN
 // address, HTTP 451 otherwise, see SP-037); the key comes from `.env`. No key = not configured = unreachable.
+//
+// A proxy can drop the TLS handshake now and then, so a connection error is
+// tried again after RETRY_DELAYS_MS (3 tries in all). An HTTP answer or a
+// timeout is not: the server did answer, or a retry would only wait longer.
 
 const fs = require("fs");
 const path = require("path");
@@ -26,6 +30,7 @@ const DOTENV = path.join(__dirname, "..", "..", ".env");
 const DEFAULT_BASE_URL = "https://api.typesafe.ai";
 const DEFAULT_MODEL = "jev-latest";
 const TIMEOUT_MS = 30000;
+const RETRY_DELAYS_MS = [500, 1000];
 const PROXY_VARS = ["HTTP_PROXY", "HTTPS_PROXY", "NO_PROXY", "http_proxy", "https_proxy", "no_proxy"];
 
 class JevError extends Error {}
@@ -76,23 +81,30 @@ function score(instructions, levels) {
 
 // One systemOne call; resolves to the `answers` object. Any failure — not
 // configured, unreachable, non-2xx, unreadable body — is a JevError.
-async function systemOne({ state, questions }, { config: cfg = config(), fetch: doFetch } = {}) {
+async function systemOne({ state, questions }, { config: cfg = config(), fetch: doFetch, retryDelaysMs = RETRY_DELAYS_MS } = {}) {
   if (!cfg) throw new JevError("Jev is not configured: no TYPESAFE_API_KEY (set it in the repo's .env)");
   if (!doFetch) {
     if (Object.keys(cfg.proxyEnv).length) http.setGlobalProxyFromEnv(cfg.proxyEnv);
     doFetch = globalThis.fetch;
   }
   let res;
-  try {
-    res = await doFetch(`${cfg.baseURL}/v1/systemone`, {
-      method: "POST",
-      headers: { Authorization: `Bearer ${cfg.apiKey}`, "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ state, questions, model: cfg.model }),
-      signal: AbortSignal.timeout(TIMEOUT_MS),
-    });
-  } catch (e) {
-    const cause = e.cause && e.cause.message ? ` (${e.cause.message})` : "";
-    throw new JevError(`Jev could not be reached: ${e.message}${cause}`);
+  for (let attempt = 0; ; attempt++) {
+    try {
+      res = await doFetch(`${cfg.baseURL}/v1/systemone`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${cfg.apiKey}`, "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ state, questions, model: cfg.model }),
+        signal: AbortSignal.timeout(TIMEOUT_MS),
+      });
+      break;
+    } catch (e) {
+      if (e.name !== "TimeoutError" && attempt < retryDelaysMs.length) {
+        await new Promise((r) => setTimeout(r, retryDelaysMs[attempt]));
+        continue;
+      }
+      const cause = e.cause && e.cause.message ? ` (${e.cause.message})` : "";
+      throw new JevError(`Jev could not be reached: ${e.message}${cause}`);
+    }
   }
   const text = await res.text();
   if (!res.ok) throw new JevError(`Jev answered HTTP ${res.status}: ${text.slice(0, 200)}`);
@@ -108,4 +120,4 @@ async function systemOne({ state, questions }, { config: cfg = config(), fetch: 
   return body.answers;
 }
 
-module.exports = { config, systemOne, noul, score, choice, JevError };
+module.exports = { config, systemOne, noul, score, choice, JevError, RETRY_DELAYS_MS };
