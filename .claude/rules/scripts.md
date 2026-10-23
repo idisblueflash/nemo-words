@@ -199,6 +199,9 @@ Jev is unavailable (no key, unreachable, an error or an unusable answer), the ru
 later`, and nothing is written. Jev needs `TYPESAFE_API_KEY` in the repo's gitignored
 `.env` (or the env file `NEMO_JEV_ENV_FILE` names), and from a CN address a proxy
 (`HTTPS_PROXY` etc., forwarded by `card.js`); without one it answers HTTP 451.
+Every Jev call (`scripts/lib/jev.js`) tries a dropped connection again, 3 tries in all, after
+0.5 s and 1 s, because a proxy can drop the TLS handshake now and then. An HTTP answer or a
+timeout is not tried again. Covered by `test/jev-retry.test.js`.
 
 Env overrides `ANKI_FILE`, `ANKI_CONNECT_URL`, `ANKI_SYNC_LOG`, `NEMO_MNEMONIC_LOG`,
 `NEMO_CLAUDE_BIN`, `NEMO_WORDS_BIN`, `NEMO_WORD_FREQ_BIN`, `NEMO_ARM` work as usual: Dagu doesn't
